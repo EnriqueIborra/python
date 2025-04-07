@@ -1,0 +1,1 @@
+# Configurar un entorno de desarrollo para Python en Linux es un proceso sencillo, pero tiene varios pasos que puedes seguir para asegurarte de que tu entorno esté optimizado y listo para el desarrollo.
