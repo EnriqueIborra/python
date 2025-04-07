@@ -1,0 +1,1 @@
+# La criptografía es el estudio y la práctica de técnicas para asegurar la comunicación frente a adversarios. Se utiliza para proteger datos sensibles, garantizar la privacidad y validar la autenticidad.
