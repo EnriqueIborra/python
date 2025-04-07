@@ -1,0 +1,1 @@
+# El Python Shell es el modo interactivo básico de Python. Cuando instalas Python, este viene con un entorno de consola interactiva que te permite ejecutar código Python línea por línea y obtener resultados inmediatos
