@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="es-ES">
+<html lang="ca-ES">  
+  <!--  al ponerlo en catalan, fuerzo al navegador a poner el traductor-->
   <!-- es-ES  lenguaje - ubicacion    -->
 <head>
   <meta charset="UTF-8">
-  <link rel="alternate" hreflang="es-ES">
+  <link rel="alternate" hreflang="ca-ES">
   <link rel="icon" href="https://www.python.org/favicon.ico"> 
   <title> Criptografia con Python</title>
   <link rel="stylesheet" href="estilsunitatspy.css">
@@ -13,435 +14,537 @@
 
   <header>
     <a href="index.html"><img src="imgs/phyton2-rbg.png" alt="python"></a>
-    <h1>Unidad Didáctica 1: Preparar entorno</h1>
+    <h1>Unitat Didàctica 1: Preparar entorn</h1>
     <h1> </h1>
   </header>
 
 <nav>
   <h3>Índex</h3>
-  <a href="#instalar">Verificar e Instalar Pyghon</a>
-  <a href="#pip">Instalar PIP</a>
-  <a href="#entornov">Entorno virtual en Python</a>
-  <a href="#paquetes">Instalar paquetes</a>
-  <a href="#editor">Instalar un editor o IDE</a>
-  <a href="#linters">linters y formateadores</a>
-  <a href="#depuracion">Herramientas de depuracion</a>
-  <a href="#git">Control de versiones</a>
-  <a href="#entornoss">Configuracion de entornos seguros</a>
+  <a href="#instalar">Verificar i instal·lar Python</a>
+  <a href="#pip">Instal·lar PIP</a>
+  <a href="#entornov">Entorn virtual en Python</a>
+  <a href="#paquetes">Instal·lar paquets</a>
+  <a href="#editor">Instal·lar un editor o IDE</a>
+  <a href="#linters">Linters i formatejadors</a>
+  <a href="#depuracion">Eines de depuració</a>
+  <a href="#git">Control de versions</a>
+  <a href="#entornoss">Configuració d'entorns segurs</a>
+  <a href="#bibliotecas">Biblioteques de criptografia</a>
+  
 </nav>
 
 <main>
 
   <section id="instalar">
       
-    <h1>1. Verificar e instalar Python</h1>
-    <p>Para poder programar en Python, es necesario tener instalado este lenguaje en nuestro equipo. En esta sección aprenderás a verificar si Python ya está instalado y, si no lo está, cómo instalarlo.</p>
-  
-    <h2>Verificar si Python está instalado</h2>
+    <h1>1. Verificar i instal·lar Python</h1>
+    <p>Per a poder programar en Python, és necessari tindre instal·lat aquest llenguatge al nostre equip. En esta secció aprendràs a verificar si Python ja està instal·lat i, si no ho està, com instal·lar-lo.</p>
+    
+    <h2>Verificar si Python està instal·lat</h2>
     <ol>
-      <li>Abre una terminal o consola de comandos:
+      <li>Obri una terminal o consola de comandes:
         <ul>
-          <li>En Windows, busca “cmd” en el menú de inicio.</li>
-          <li>En macOS o Linux, abre la aplicación “Terminal”.</li>
+          <li>En Windows, busca “cmd” en el menú d'inici.</li>
+          <li>En macOS o Linux, obri l'aplicació “Terminal”.</li>
         </ul>
       </li>
-      <li>Escribe el siguiente comando y presiona <strong>Enter</strong>:
+      <li>Escriu la següent comanda i prem <strong>Enter</strong>:
         <pre>c:\> python --version   /  # python3 --version</pre>
       </li>
-      <li>Si Python está instalado, verás un mensaje con la versión, por ejemplo:
+      <li>Si Python està instal·lat, veuràs un missatge amb la versió, per exemple:
         <pre><code>Python 3.10.4</code></pre>
-        Si ves un mensaje de error o dice que no se reconoce el comando, entonces necesitas instalar Python.
+        Si veus un missatge d'error o diu que no es reconeix la comanda, aleshores necessites instal·lar Python.
       </li>
     </ol>
-
-      <h1>2. Instalar Python</h1>
     
-      <p>Si no tienes Python instalado o necesitas actualizarlo, puedes seguir los pasos adecuados para tu sistema operativo:</p>
+    <h1>2. Instal·lar Python</h1>
     
-      <h2>2.1. En Windows</h2>
-      <ol>
-        <li>Accede al sitio web oficial: 
-          <a href="https://www.python.org/downloads/windows/" target="_blank">https://www.python.org/downloads/windows/</a>
-        </li>
-        <li>Haz clic en el botón de descarga de la última versión.</li>
-        <li>Ejecuta el archivo descargado.</li>
-        <li>En la ventana del instalador:
-          <ul>
-            <li>Marca la opción <strong>"Add Python to PATH"</strong>.</li>
-            <li>Haz clic en <strong>"Install Now"</strong>.</li>
-          </ul>
-        </li>
-        <li>Una vez instalada, puedes verificarlo abriendo la consola (cmd) y escribiendo:
-          <pre><code>python --version</code></pre>
-        </li>
-      </ol>
+    <p>Si no tens Python instal·lat o necessites actualitzar-lo, pots seguir els passos adequats segons el teu sistema operatiu:</p>
     
-      <h2>2.2. En macOS</h2>
-      <ol>
-        <li>Descarga el instalador desde:
-          <a href="https://www.python.org/downloads/macos/" target="_blank">https://www.python.org/downloads/macos/</a>
-        </li>
-        <li>Abre el archivo <code>.pkg</code> descargado y sigue los pasos del instalador.</li>
-        <li>Para verificar la instalación, abre la Terminal y escribe:
-          <pre>python3 --version</pre>
-        </li>
-      </ol>
+    <h2>2.1. En Windows</h2>
+    <ol>
+      <li>Accedeix al lloc web oficial: 
+        <a href="https://www.python.org/downloads/windows/" target="_blank">https://www.python.org/downloads/windows/</a>
+      </li>
+      <li>Fes clic en el botó de descàrrega de l'última versió.</li>
+      <li>Executa l'arxiu descarregat.</li>
+      <li>En la finestra de l’instal·lador:
+        <ul>
+          <li>Marca l’opció <strong>"Add Python to PATH"</strong>.</li>
+          <li>Fes clic en <strong>"Install Now"</strong>.</li>
+        </ul>
+      </li>
+      <li>Una vegada instal·lat, pots verificar-ho obrint la consola (cmd) i escrivint:
+        <pre><code>python --version</code></pre>
+      </li>
+    </ol>
     
-      <h2>2.3. En Linux</h2>
-      <p>La mayoría de distribuciones Linux ya incluyen Python. Para verificarlo, abre la terminal y escribe:</p>
-      <pre>python3 --version</pre>
-      <p>Si no está instalado o deseas actualizarlo, puedes usar el gestor de paquetes correspondiente. Por ejemplo, en Debian/Ubuntu:</p>
-      <pre>
+    <h2>2.2. En macOS</h2>
+    <ol>
+      <li>Descarrega l’instal·lador des de:
+        <a href="https://www.python.org/downloads/macos/" target="_blank">https://www.python.org/downloads/macos/</a>
+      </li>
+      <li>Obri l'arxiu <code>.pkg</code> descarregat i seguix els passos de l’instal·lador.</li>
+      <li>Per verificar la instal·lació, obri la Terminal i escriu:
+        <pre>python3 --version</pre>
+      </li>
+    </ol>
+    
+    <h2>2.3. En Linux</h2>
+    <p>La majoria de distribucions Linux ja inclouen Python. Per a verificar-ho, obri la terminal i escriu:</p>
+    <pre>python3 --version</pre>
+    <p>Si no està instal·lat o desitges actualitzar-lo, pots utilitzar el gestor de paquets corresponent. Per exemple, en Debian/Ubuntu:</p>
+    <pre>
     sudo apt update
-    sudo apt install python3</pre>
-
+    sudo apt install python3
+    </pre>
+    
  </section>
 
  <section id="pip">
 
-    <h1>3. Instalar pip</h1>
-  
-    <p><strong>pip</strong> es una herramienta que permite instalar paquetes y librerías adicionales en Python. Normalmente, se instala automáticamente junto con Python. Aquí aprenderás cómo verificar si ya está instalado y cómo instalarlo en caso de que no lo esté.</p>
-  
-    <h2>3.1 Verificar si pip está instalado</h2>
-    <ol>
-      <li>Abre una terminal o consola de comandos.</li>
-      <li>Escribe el siguiente comando y presiona <strong>Enter</strong>:
-        <pre><code>pip --version</code></pre>
-        o en algunos sistemas:
-        <pre><code>pip3 --version</code></pre>
-      </li>
-      <li>Si ves un mensaje con la versión de pip (por ejemplo, <code>pip 23.1.2</code>), entonces ya está instalado.</li>
-      <li>Si aparece un mensaje de error indicando que el comando no se reconoce, deberás instalar pip manualmente.</li>
-    </ol>
-  
-    <h2>3.2 Instalar pip (si es necesario)</h2>
-  
-    <h3>En Windows o macOS (si no se instaló con Python)</h3>
-    <ol>
-      <li>Descarga el script <code>get-pip.py</code> desde el sitio oficial:
-        <a href="https://bootstrap.pypa.io/get-pip.py" target="_blank">https://bootstrap.pypa.io/get-pip.py</a>
-      </li>
-      <li>Guarda el archivo en una ubicación fácil de acceder, por ejemplo en el escritorio.</li>
-      <li>Abre una terminal o consola, navega a la carpeta donde está guardado el archivo y ejecuta:
-        <pre><code>python get-pip.py</code></pre>
-      </li>
-    </ol>
-  
-    <h3>En Linux (usando el gestor de paquetes)</h3>
-    <p>En la mayoría de distribuciones de Linux puedes instalar pip con el gestor de paquetes. Por ejemplo, en Debian/Ubuntu:</p>
-    <pre><code>sudo apt update
-  sudo apt install python3-pip</code></pre>
-    <p>Luego verifica la instalación con:</p>
-    <pre><code>pip3 --version</code></pre>
-  
-    <p>Una vez instalado pip, podrás usarlo para instalar paquetes de Python, como por ejemplo:</p>
-    <pre><code>pip install nombre_del_paquete</code></pre>
-    <h4 class="alert"> ⚠️ De momento , no uses el instalador PIP !!, espera al siquiente punto.</h4>
+  <h1>3. Instal·lar pip</h1>
 
+  <p><strong>pip</strong> és una eina que permet instal·lar paquets i biblioteques addicionals en Python. Normalment, s’instal·la automàticament junt amb Python. Ací aprendràs com verificar si ja està instal·lat i com instal·lar-lo en cas que no ho estiga.</p>
+  
+  <h2>3.1 Verificar si pip està instal·lat</h2>
+  <ol>
+    <li>Obri una terminal o consola de comandes.</li>
+    <li>Escriu la següent comanda i prem <strong>Enter</strong>:
+      <pre><code>pip --version</code></pre>
+      o en alguns sistemes:
+      <pre><code>pip3 --version</code></pre>
+    </li>
+    <li>Si veus un missatge amb la versió de pip (per exemple, <code>pip 23.1.2</code>), aleshores ja està instal·lat.</li>
+    <li>Si apareix un missatge d’error indicant que no es reconeix la comanda, hauràs d’instal·lar pip manualment.</li>
+  </ol>
+  
+  <h2>3.2 Instal·lar pip (si és necessari)</h2>
+  
+  <h3>En Windows o macOS (si no s’instal·là amb Python)</h3>
+  <ol>
+    <li>Descarrega l’script <code>get-pip.py</code> des del lloc oficial:
+      <a href="https://bootstrap.pypa.io/get-pip.py" target="_blank">https://bootstrap.pypa.io/get-pip.py</a>
+    </li>
+    <li>Guarda l’arxiu en una ubicació fàcil d’accedir, per exemple a l’escriptori.</li>
+    <li>Obri una terminal o consola, navega a la carpeta on està guardat l’arxiu i executa:
+      <pre><code>python get-pip.py</code></pre>
+    </li>
+  </ol>
+  
+  <h3>En Linux (usant el gestor de paquets)</h3>
+  <p>En la majoria de distribucions de Linux pots instal·lar pip amb el gestor de paquets. Per exemple, en Debian/Ubuntu:</p>
+  <pre><code>sudo apt update
+  sudo apt install python3-pip</code></pre>
+  <p>Després, verifica la instal·lació amb:</p>
+  <pre><code>pip3 --version</code></pre>
+  
+  <p>Una vegada instal·lat pip, podràs usar-lo per a instal·lar paquets de Python, com per exemple:</p>
+  <pre><code>pip install nom_del_paquet</code></pre>
+  <h4 class="alert"> ⚠️ De moment, no utilitzes l’instal·lador PIP!! Espera al següent punt.</h4>
+  
 
  </section>
 
  <section id="entornov">
 
-    <h1>4. Configurar entorno virtual</h1>
-  
-    <p>Un entorno virtual en Python es una herramienta que permite crear un espacio aislado para instalar dependencias y paquetes específicos para un proyecto, sin afectar otras configuraciones del sistema.</p>
-    <p>Para evitar problemas con dependencias entre proyectos y tener un entorno aislado para cada uno de tus proyectos, es recomendable usar entornos virtuales. Además, en Linux, si no configuras un entorno virtual, tendrás problemas con pip .
-        (si estás en Windows, te puedes saltar este paso)</p>
+  <h1>4. Configurar entorn virtual</h1>
 
-    <h2>Instalar la herramienta para crear entornos virtuales - VENV</h2>
-    <pre>$ sudo apt install python3-venv</pre>
-    
-    <h2>4.1 Crear un entorno virtual</h2>
-    <ol>
-      <li>Abre una terminal o consola de comandos.</li>
-      <li>Ubícate en la carpeta donde quieres crear el entorno virtual o crea una nueva:
-        <pre><code>mkdir mi_proyecto
-  cd mi_proyecto</code></pre>
-      </li>
-      <li>Ejecuta el siguiente comando para crear el entorno virtual (por convención lo llamaremos <code>mientorno</code>):
-        <pre><code>python -m venv mientorno</code></pre>
-        <p>Este comando creará una carpeta llamada <code>mientorno</code> que contendrá el entorno virtual.</p>
-      </li>
-    </ol>
-  
-    <h2>4.2 Activar el entorno virtual</h2>
-  
-    <h3>En Windows</h3>
-    <pre><code>mientorno\Scripts\activate</code></pre>
-  
-    <h3>En macOS o Linux</h3>
-    <pre><code>source mientorno/bin/activate</code></pre>
-  
-    <p>Después de activar el entorno virtual, deberías ver el nombre del entorno (por ejemplo, <code>(mientorno)</code>) al inicio de la línea en la consola, indicando que está activo.</p>
-  
-    <h2>4.3 Verificar instalación de pip en el entorno</h2>
-    <p>Una vez activado el entorno, asegúrate de que pip esté disponible:</p>
-    <pre><code>pip --version</code></pre>
-    <p>A partir de aquí, ya se pueden instalar paquetes <strong>dentro del entorno virtual</strong></p>
-  
-    <h2>4.4 Desactivar el entorno virtual</h2>
-    <p>Cuando termines de trabajar en tu proyecto, puedes salir del entorno virtual ejecutando:</p>
-    <pre><code>deactivate</code></pre>
-  
-    <p>Esto te devolverá al entorno global del sistema.</p>
+<p>Un entorn virtual en Python és una eina que permet crear un espai aïllat per a instal·lar dependències i paquets específics per a un projecte, sense afectar altres configuracions del sistema.</p>
+<p>Per a evitar problemes amb dependències entre projectes i tindre un entorn aïllat per a cadascun dels teus projectes, és recomanable usar entorns virtuals. A més, en Linux, si no configures un entorn virtual, tindràs problemes amb pip.  
+(si estàs en Windows, pots saltar-te este pas)</p>
+
+<h2>Instal·lar l’eina per a crear entorns virtuals - VENV</h2>
+<pre>$ sudo apt install python3-venv</pre>
+
+<h2>4.1 Crear un entorn virtual</h2>
+<ol>
+  <li>Obri una terminal o consola de comandes.</li>
+  <li>Ubica’t en la carpeta on vols crear l’entorn virtual o crea’n una de nova:
+    <pre><code>mkdir mi_proyecto
+cd mi_proyecto</code></pre>
+  </li>
+  <li>Executa la següent comanda per a crear l’entorn virtual (per convenció el cridarem <code>mientorno</code>):
+    <pre><code>python -m venv mientorno</code></pre>
+    <p>Aquesta comanda crearà una carpeta anomenada <code>mientorno</code> que contindrà l’entorn virtual.</p>
+  </li>
+</ol>
+
+<h2>4.2 Activar l’entorn virtual</h2>
+
+<h3>En Windows</h3>
+<pre><code>mientorno\Scripts\activate</code></pre>
+
+<h3>En macOS o Linux</h3>
+<pre><code>source mientorno/bin/activate</code></pre>
+
+<p>Després d’activar l’entorn virtual, hauries de vore el nom de l’entorn (per exemple, <code>(mientorno)</code>) al principi de la línia en la consola, indicant que està actiu.</p>
+
+<h2>4.3 Verificar instal·lació de pip en l’entorn</h2>
+<p>Una vegada activat l’entorn, assegura’t que pip estiga disponible:</p>
+<pre><code>pip --version</code></pre>
+<p>A partir d’ací, ja es poden instal·lar paquets <strong>dins de l’entorn virtual</strong></p>
+
+<h2>4.4 Desactivar l’entorn virtual</h2>
+<p>Quan acabes de treballar en el teu projecte, pots eixir de l’entorn virtual executant:</p>
+<pre><code>deactivate</code></pre>
+
+<p>Això et retornarà a l’entorn global del sistema.</p>
 
  </section>
 
  <section id="paquetes">
-    <h1>5. Instalar paquetes</h1>
-  
-    <p>En Python, los paquetes son módulos reutilizables que extienden las funcionalidades del lenguaje. Para gestionar e instalar estos paquetes se utiliza <strong>pip</strong>, el gestor oficial de paquetes de Python.</p>
-  
-    <h2>5.1 Instalar un paquete con pip</h2>
-    <p>Para instalar un paquete, utiliza el siguiente comando en la consola <strong>(preferentemente con el entorno virtual activado)</strong></p>
-    <pre><code>pip install nombre_del_paquete</code></pre>
-    <p>Ejemplo:</p>
-    <pre><code>pip install requests</code></pre>
-    <p>Ejemplo:</p>
-    <pre><code>pip install pyfiglet
-      uso:   pyfiglet hola python   </code></pre>
+  <h1>5. Instal·lar paquets</h1>
 
-    <h2>5.2 Instalar múltiples paquetes desde un archivo</h2>
-    <p>También es posible instalar varios paquetes definidos en un archivo <code>requirements.txt</code> con el siguiente comando:</p>
-    <pre><code>pip install -r requirements.txt</code></pre>
-    <p>Este archivo contiene una lista de paquetes, uno por línea, que el proyecto necesita.</p>
+  <p>En Python, els paquets són mòduls reutilitzables que amplien les funcionalitats del llenguatge. Per a gestionar i instal·lar estos paquets s’utilitza <strong>pip</strong>, el gestor oficial de paquets de Python.</p>
   
-    <h2>5.3 Ver paquetes instalados</h2>
-    <p>Para ver qué paquetes están instalados en tu entorno actual:</p>
-    <pre><code>pip list</code></pre>
+  <h2>5.1 Instal·lar un paquet amb pip</h2>
+  <p>Per a instal·lar un paquet, utilitza la següent comanda en la consola <strong>(preferiblement amb l’entorn virtual activat)</strong></p>
+  <pre><code>pip install nom_del_paquet</code></pre>
+  <p>Exemple:</p>
+  <pre><code>pip install requests</code></pre>
+  <p>Exemple:</p>
+  <pre><code>pip install pyfiglet
+        ús:   pyfiglet hola python   </code></pre>
   
-    <h2>5.4 Desinstalar un paquete</h2>
-    <p>Si necesitas desinstalar un paquete:</p>
-    <pre><code>pip uninstall nombre_del_paquete</code></pre>
+  <h2>5.2 Instal·lar múltiples paquets des d’un fitxer</h2>
+  <p>També és possible instal·lar diversos paquets definits en un fitxer <code>requirements.txt</code> amb la següent comanda:</p>
+  <pre><code>pip install -r requirements.txt</code></pre>
+  <p>Este fitxer conté una llista de paquets, un per línia, que el projecte necessita.</p>
   
-    <h2>5.5 Actualizar un paquete</h2>
-    <p>Para actualizar un paquete a su última versión:</p>
-    <pre><code>pip install --upgrade nombre_del_paquete</code></pre>
-
+  <h2>5.3 Veure paquets instal·lats</h2>
+  <p>Per a veure quins paquets estan instal·lats en el teu entorn actual:</p>
+  <pre><code>pip list</code></pre>
+  
+  <h2>5.4 Desinstal·lar un paquet</h2>
+  <p>Si necessites desinstal·lar un paquet:</p>
+  <pre><code>pip uninstall nom_del_paquet</code></pre>
+  
+  <h2>5.5 Actualitzar un paquet</h2>
+  <p>Per a actualitzar un paquet a la seua última versió:</p>
+  <pre><code>pip install --upgrade nom_del_paquet</code></pre>
+  
 
  </section>
 
  <section id="editor">
-     <h1>6. Instalar un editor de texto o un IDE</h1>
-  
-    <p>Para escribir y ejecutar código en Python de manera eficiente, es recomendable usar un <strong>editor de texto avanzado</strong> o un <strong>IDE (Entorno de Desarrollo Integrado)</strong>. Estas herramientas ofrecen características como resaltado de sintaxis, autocompletado, depuración y gestión de proyectos.</p>
-  
-    <h2>6.1 Visual Studio Code (VS Code)</h2>
-    <p><strong>Visual Studio Code</strong> es uno de los editores más populares para desarrollo en Python. Es liviano, extensible y gratuito.</p>
-  
-    <ol>
-      <li>Descárgalo desde: 
-        <a href="https://code.visualstudio.com/" target="_blank">https://code.visualstudio.com/</a>
-      </li>
-      <li>Instálalo como cualquier otra aplicación para tu sistema operativo.</li>
-      <li>Una vez abierto, instala la extensión oficial de Python:
-        <ul>
-          <li>Haz clic en el icono de extensiones (barra lateral izquierda).</li>
-          <li>Busca “Python” (editor: Microsoft) e instálala.</li>
-        </ul>
-      </li>
-      <li>Con la extensión instalada, podrás ejecutar scripts, usar depuración, y trabajar con entornos virtuales desde VS Code.</li>
-    </ol>
-  
-    <h2>6.2 Otros editores o IDEs populares</h2>
-    <ul>
-      <li><strong>PyCharm</strong>: IDE profesional desarrollado por JetBrains. Disponible en versión gratuita (Community) y de pago. Web: 
-        <a href="https://www.jetbrains.com/pycharm/" target="_blank">https://www.jetbrains.com/pycharm/</a>
-      </li>
-      <li><strong>Sublime Text</strong>: Editor de texto rápido y personalizable. Web:
-        <a href="https://www.sublimetext.com/" target="_blank">https://www.sublimetext.com/</a>
-      </li>
-      <li><strong>Jupyter Notebook</strong>: Ideal para proyectos de ciencia de datos. Se instala con pip:
-        <pre><code>pip install notebook</code></pre>
-        Luego se ejecuta con:
-        <pre><code>jupyter notebook</code></pre>
-      </li>
-    </ul>
-  
-    <h2>6.3 Recomendación</h2>
-    <p>Para quienes están comenzando, <strong>Visual Studio Code</strong> es una excelente opción por su simplicidad y potencia. Además, permite integrar control de versiones con Git y múltiples herramientas para desarrollo moderno.</p>
+  <h1>6. Instal·lar un editor de text o un IDE</h1>
 
+  <p>Per a escriure i executar codi en Python de manera eficient, és recomanable usar un <strong>editor de text avançat</strong> o un <strong>IDE (Entorn de Desenvolupament Integrat)</strong>. Estes eines ofereixen característiques com el ressaltat de sintaxi, autocompletat, depuració i gestió de projectes.</p>
+  
+  <h2>6.1 Visual Studio Code (VS Code)</h2>
+  <p><strong>Visual Studio Code</strong> és un dels editors més populars per al desenvolupament en Python. És lleuger, extensible i gratuït.</p>
+  
+  <ol>
+    <li>Descarrega’l des de:
+      <a href="https://code.visualstudio.com/" target="_blank">https://code.visualstudio.com/</a>
+    </li>
+    <li>Instal·la’l com qualsevol altra aplicació per al teu sistema operatiu.</li>
+    <li>Una vegada obert, instal·la l’extensió oficial de Python:
+      <ul>
+        <li>Fes clic en la icona d’extensions (barra lateral esquerra).</li>
+        <li>Cerca “Python” (editor: Microsoft) i instal·la-la.</li>
+      </ul>
+    </li>
+    <li>Amb l’extensió instal·lada, podràs executar scripts, usar la depuració, i treballar amb entorns virtuals des de VS Code.</li>
+  </ol>
+  
+  <h2>6.2 Altres editors o IDEs populars</h2>
+  <ul>
+    <li><strong>PyCharm</strong>: IDE professional desenvolupat per JetBrains. Disponible en versió gratuïta (Community) i de pagament. Web:
+      <a href="https://www.jetbrains.com/pycharm/" target="_blank">https://www.jetbrains.com/pycharm/</a>
+    </li>
+    <li><strong>Sublime Text</strong>: Editor de text ràpid i personalitzable. Web:
+      <a href="https://www.sublimetext.com/" target="_blank">https://www.sublimetext.com/</a>
+    </li>
+    <li><strong>Jupyter Notebook</strong>: Ideal per a projectes de ciència de dades. S’instal·la amb pip:
+      <pre><code>pip install notebook</code></pre>
+      Després s’executa amb:
+      <pre><code>jupyter notebook</code></pre>
+    </li>
+  </ul>
+  
+  <h2>6.3 Recomanació</h2>
+  <p>Per a qui està començant, <strong>Visual Studio Code</strong> és una excel·lent opció per la seua simplicitat i potència. A més, permet integrar control de versions amb Git i múltiples eines per al desenvolupament modern.</p>
+  
  </section>
 
  <section id="linters">
-    <h1>7. Configuración de Linters y Formateadores</h1>
-  
-    <p>Los <strong>linters</strong> y <strong>formateadores</strong> ayudan a mejorar la calidad del código. Los linters detectan errores, advertencias o malas prácticas, mientras que los formateadores corrigen automáticamente el estilo del código para que sea más legible y uniforme.</p>
-  
-    <h2>7.1 Herramientas recomendadas</h2>
-    <ul>
-      <li><strong>Flake8</strong>: Linter que verifica errores de sintaxis y estilo.</li>
-      <li><strong>Black</strong>: Formateador de código que aplica reglas de estilo consistentes.</li>
-      <li><strong>isort</strong>: Organiza automáticamente las importaciones en el código.</li>
-    </ul>
-  
-    <h2>7.2 Instalación de herramientas</h2>
-    <p>Con tu entorno virtual activado, instala las herramientas con pip:</p>
-    <pre><code>pip install flake8 black isort</code></pre>
-  
-    <h2>7.3 Configuración en Visual Studio Code</h2>
-    <ol>
-      <li>Abre el menú de configuración (⚙️ &rarr; "Settings").</li>
-      <li>Busca <strong>Python Linting</strong> y habilita la opción <strong>Linting: Enabled</strong>.</li>
-      <li>Selecciona <strong>flake8</strong> como linter predeterminado.</li>
-      <li>Para configurar el formateador, busca <strong>Python Formatting Provider</strong> y selecciona <code>black</code>.</li>
-      <li>Habilita el formato al guardar (opcional pero recomendado):
-        <ul>
-          <li>Busca "Format On Save" y actívalo.</li>
-        </ul>
-      </li>
-    </ol>
-  
-    <h2>7.4 Uso manual desde la terminal</h2>
-    <p>También puedes ejecutar estas herramientas desde la consola:</p>
-    <ul>
-      <li><strong>flake8</strong> para analizar el código:
-        <pre><code>flake8 nombre_archivo.py</code></pre>
-      </li>
-      <li><strong>black</strong> para formatear automáticamente:
-        <pre><code>black nombre_archivo.py</code></pre>
-      </li>
-      <li><strong>isort</strong> para ordenar importaciones:
-        <pre><code>isort nombre_archivo.py</code></pre>
-      </li>
-    </ul>
-  
-    <h2>7.5 Archivos de configuración (opcional)</h2>
-    <p>Puedes crear archivos como <code>pyproject.toml</code> o <code>.flake8</code> para definir configuraciones personalizadas para cada herramienta.</p>
-  
-    <p><strong>Ejemplo de pyproject.toml para Black:</strong></p>
-    <pre>
-  <code>[tool.black]
-  line-length = 88
-  target-version = ['py39']</code></pre>
+  <h1>7. Configuració de Linters i Formatejadors</h1>
 
+  <p>Els <strong>linters</strong> i <strong>formatejadors</strong> ajuden a millorar la qualitat del codi. Els linters detecten errors, advertiments o males pràctiques, mentre que els formatejadors corregeixen automàticament l’estil del codi perquè siga més llegible i uniforme.</p>
+  
+  <h2>7.1 Eines recomanades</h2>
+  <ul>
+    <li><strong>Flake8</strong>: Linter que verifica errors de sintaxi i d’estil.</li>
+    <li><strong>Black</strong>: Formatejador de codi que aplica regles d’estil consistents.</li>
+    <li><strong>isort</strong>: Organitza automàticament les importacions en el codi.</li>
+  </ul>
+  
+  <h2>7.2 Instal·lació d’eines</h2>
+  <p>Amb el teu entorn virtual activat, instal·la les eines amb pip:</p>
+  <pre><code>pip install flake8 black isort</code></pre>
+  
+  <h2>7.3 Configuració en Visual Studio Code</h2>
+  <ol>
+    <li>Obri el menú de configuració (⚙️ &rarr; "Settings").</li>
+    <li>Cerca <strong>Python Linting</strong> i habilita l’opció <strong>Linting: Enabled</strong>.</li>
+    <li>Selecciona <strong>flake8</strong> com a linter predeterminat.</li>
+    <li>Per configurar el formatejador, busca <strong>Python Formatting Provider</strong> i selecciona <code>black</code>.</li>
+    <li>Habilita el format al guardar (opcional però recomanat):
+      <ul>
+        <li>Cerca "Format On Save" i activa-ho.</li>
+      </ul>
+    </li>
+  </ol>
+  
+  <h2>7.4 Ús manual des de la terminal</h2>
+  <p>També pots executar aquestes eines des de la consola:</p>
+  <ul>
+    <li><strong>flake8</strong> per analitzar el codi:
+      <pre><code>flake8 nom_arxiu.py</code></pre>
+    </li>
+    <li><strong>black</strong> per formatejar automàticament:
+      <pre><code>black nom_arxiu.py</code></pre>
+    </li>
+    <li><strong>isort</strong> per ordenar les importacions:
+      <pre><code>isort nom_arxiu.py</code></pre>
+    </li>
+  </ul>
+  
+  <h2>7.5 Arxius de configuració (opcional)</h2>
+  <p>Pots crear arxius com <code>pyproject.toml</code> o <code>.flake8</code> per definir configuracions personalitzades per a cada eina.</p>
+  
+  <p><strong>Exemple de pyproject.toml per a Black:</strong></p>
+  <pre>
+    <code>[tool.black]
+    line-length = 88
+    target-version = ['py39']</code></pre>
+  
  </section>
 
  <section id="depuracion">
-  <h2>8. Depuración</h2>
-  <p>Para depurar tu código Python, puedes usar herramientas como pdb, que es el depurador integrado en Python. Solo necesitas incluir la línea: 
-    <code> import pdb; pdb.set_trace() </code> en tu código para comenzar a depurar.</p>
- </section>
-
-
- <section id="git">
-    <h1>9. Control de versiones</h1>
+  <h2>8. Depuració</h2>
+  <p>Per depurar el teu codi Python, pots utilitzar eines com <code>pdb</code>, que és el depurador integrat en Python. Només has d’incloure la línia:
+    <code> import pdb; pdb.set_trace() </code> al teu codi per començar a depurar.</p>
+  </section>
   
-    <p>El control de versiones permite gestionar los cambios en el código fuente de manera eficiente. La herramienta más utilizada para esto es <strong>Git</strong>, que permite mantener un historial de versiones, colaborar con otras personas y trabajar en múltiples ramas del proyecto.</p>
+  <section id="git">
+    <h1>9. Control de versions</h1>
   
-    <h2>9.1 Instalar Git</h2>
-    <p>Descarga Git desde su sitio oficial:</p>
+    <p>El control de versions permet gestionar els canvis en el codi font de manera eficient. L’eina més utilitzada per a això és <strong>Git</strong>, que permet mantenir un historial de versions, col·laborar amb altres persones i treballar en múltiples branques del projecte.</p>
+  
+    <h2>9.1 Instal·lar Git</h2>
+    <p>Descarrega Git des del seu lloc oficial:</p>
     <a href="https://git-scm.com/" target="_blank">https://git-scm.com/</a>
-    <p>La instalación es sencilla y depende del sistema operativo. En Windows, incluye una terminal llamada <strong>Git Bash</strong>.</p>
+    <p>L’installació és senzilla i depèn del sistema operatiu. A Windows, inclou una terminal anomenada <strong>Git Bash</strong>.</p>
   
-    <h2>9.2 Configuración inicial</h2>
-    <p>Después de instalar Git, es recomendable configurar tu nombre de usuario y correo electrónico:</p>
+    <h2>9.2 Configuració inicial</h2>
+    <p>Després d'instal·lar Git, és recomanable configurar el teu nom d'usuari i correu electrònic:</p>
     <pre>
-  <code>git config --global user.name "Tu Nombre"
+  <code>git config --global user.name "El teu Nom"
   git config --global user.email "tu.email@example.com"</code></pre>
   
-    <h2>9.3 Comandos básicos de Git</h2>
+    <h2>9.3 Comandes bàsiques de Git</h2>
     <ul>
-      <li><strong>Inicializar un repositorio:</strong>
+      <li><strong>Inicialitzar un repositori:</strong>
         <pre><code>git init</code></pre>
       </li>
-      <li><strong>Ver el estado del repositorio:</strong>
+      <li><strong>Veure l'estat del repositori:</strong>
         <pre><code>git status</code></pre>
       </li>
-      <li><strong>Agregar archivos al área de preparación:</strong>
-        <pre><code>git add nombre_archivo.py</code>
-  <code>git add .</code>  <em>  -- Agrega todos los archivos modificados --</em></pre>
+      <li><strong>Afegeir arxius a l'àrea de preparació:</strong>
+        <pre><code>git add nom_arxiu.py</code>
+  <code>git add .</code> <em> -- Afegeix tots els arxius modificats --</em></pre>
       </li>
-      <li><strong>Hacer un commit (guardar los cambios):</strong>
-        <pre><code>git commit -m "Mensaje descriptivo del cambio"</code></pre>
+      <li><strong>Fer un commit (desar els canvis):</strong>
+        <pre><code>git commit -m "Missatge descriptiu del canvi"</code></pre>
       </li>
-      <li><strong>Ver el historial de commits:</strong>
+      <li><strong>Veure l'historial de commits:</strong>
         <pre><code>git log</code></pre>
       </li>
     </ul>
   
-    <h2>9.4 Usar GitHub (repositorio remoto)</h2>
-    <p><strong>GitHub</strong> es una plataforma para alojar repositorios Git en la nube. Permite colaborar y respaldar proyectos.</p>
+    <h2>9.4 Fer servir GitHub (repositori remot)</h2>
+    <p><strong>GitHub</strong> és una plataforma per allotjar repositoris Git al núvol. Permet col·laborar i fer còpies de seguretat de projectes.</p>
   
     <ol>
-      <li>Crea una cuenta en <a href="https://github.com/" target="_blank">https://github.com/</a></li>
-      <li>Crea un nuevo repositorio desde la web.</li>
-      <li>Conecta tu repositorio local con GitHub:
+      <li>Crea un compte a <a href="https://github.com/" target="_blank">https://github.com/</a></li>
+      <li>Crea un nou repositori des de la web.</li>
+      <li>Connecta el teu repositori local amb GitHub:
         <pre><code>
-  git remote add origin https://github.com/usuario/nombre-repo.git
+  git remote add origin https://github.com/usuari/nombre-repo.git
   git push -u origin master</code></pre>
       </li>
     </ol>
   
     <h2>9.5 .gitignore</h2>
-    <p>El archivo <code>.gitignore</code> indica a Git qué archivos o carpetas no deben incluirse en el control de versiones (por ejemplo, entornos virtuales, archivos temporales, etc.).</p>
+    <p>L'arxiu <code>.gitignore</code> indica a Git quins arxius o carpetes no s’han d'incloure en el control de versions (per exemple, entorns virtuals, arxius temporals, etc.).</p>
   
-    <p><strong>Ejemplo de contenido de .gitignore:</strong></p>
+    <p><strong>Exemple de contingut de .gitignore:</strong></p>
     <pre>
   <code>venv/
   __pycache__/
   *.pyc
   .env</code></pre>
   
-    <p>Con estas herramientas y buenas prácticas, podrás mantener un proyecto bien organizado y controlado.</p>
-
+    <p>Amb aquestes eines i bones pràctiques, podràs mantenir un projecte ben organitzat i controlat.</p>
+  
  </section>
 
  <section id="entornoss">
-    <h1>10. Configuración de entornos seguros</h1>
-  
-    <p>Cuando se trabaja en proyectos de software, es importante mantener un entorno seguro para proteger credenciales, datos sensibles y evitar errores por mal manejo de configuraciones. A continuación se presentan buenas prácticas para lograrlo.</p>
-  
-    <h2>10.1 Variables de entorno</h2>
-    <p>Las variables de entorno permiten almacenar información sensible, como claves API o contraseñas, sin incluirlas directamente en el código fuente.</p>
-    
-    <p>Para gestionar estas variables, se puede usar un archivo <code>.env</code> junto con la librería <strong>python-dotenv</strong>:</p>
-    <pre><code>pip install python-dotenv</code></pre>
-  
-    <p>Ejemplo de un archivo <code>.env</code>:</p>
-    <pre>
-  <code>SECRET_KEY=mi_clave_secreta
-  DEBUG=False</code></pre>
-  
-    <p>Y para cargarlo en tu aplicación Python:</p>
-    <pre>
-  <code>from dotenv import load_dotenv
-  import os
-  load_dotenv()
-  clave = os.getenv("SECRET_KEY")</code></pre>
-  
-    <h2>10.2 Uso del archivo <code>.gitignore</code></h2>
-    <p>Es importante asegurarse de que archivos como <code>.env</code>, archivos de configuración local y entornos virtuales no se suban a repositorios públicos:</p>
-    <pre>
-  <code>.env
-  venv/
-  __pycache__/
-  *.pyc</code></pre>
-  
-    <h2>10.3 Gestión de dependencias seguras</h2>
-    <ul>
-      <li>Utiliza entornos virtuales para aislar tus proyectos.</li>
-      <li>Congela las versiones de tus paquetes con:
-        <pre><code>pip freeze > requirements.txt</code></pre>
-      </li>
-      <li>Revisa actualizaciones y vulnerabilidades en dependencias con herramientas como <code>pip-audit</code>:
-        <pre><code>pip install pip-audit
-  pip-audit</code></pre>
-      </li>
-    </ul>
-  
-    <h2>10.4 Control de acceso y buenas prácticas</h2>
-    <ul>
-      <li>No compartas credenciales por correo ni en repositorios.</li>
-      <li>Usa autenticación en dos pasos en plataformas como GitHub.</li>
-      <li>Aplica principios de mínimo privilegio en tus entornos.</li>
-    </ul>
-  
-    <p>Estas prácticas contribuyen a desarrollar aplicaciones más seguras y profesionales, especialmente en entornos colaborativos o de producción.</p>
+  <h1>10. Configuració d'entorns segurs</h1>
 
+  <p>Quan es treballa en projectes de programari, és important mantenir un entorn segur per protegir credencials, dades sensibles i evitar errors per un mal maneig de configuracions. A continuació es presenten bones pràctiques per aconseguir-ho.</p>
+  
+  <h2>10.1 Variables d'entorn</h2>
+  <p>Les variables d'entorn permeten emmagatzemar informació sensible, com claus API o contrasenyes, sense incloure-les directament en el codi font.</p>
+  
+  <p>Per gestionar aquestes variables, es pot utilitzar un arxiu <code>.env</code> juntament amb la llibreria <strong>python-dotenv</strong>:</p>
+  <pre><code>pip install python-dotenv</code></pre>
+  
+  <p>Exemple d'un arxiu <code>.env</code>:</p>
+  <pre>
+    <code>SECRET_KEY=la_meva_clau_secreta
+    DEBUG=False</code></pre>
+  
+  <p>I per carregar-lo a la teva aplicació Python:</p>
+  <pre>
+    <code>from dotenv import load_dotenv
+    import os
+    load_dotenv()
+    clau = os.getenv("SECRET_KEY")</code></pre>
+  
+  <h2>10.2 Ús de l'arxiu <code>.gitignore</code></h2>
+  <p>És important assegurar-se que arxius com <code>.env</code>, arxius de configuració local i entorns virtuals no es pujan a repositoris públics:</p>
+  <pre>
+    <code>.env
+    venv/
+    __pycache__/
+    *.pyc</code></pre>
+  
+  <h2>10.3 Gestió de dependències segures</h2>
+  <ul>
+    <li>Utilitza entorns virtuals per aislar els teus projectes.</li>
+    <li>Congela les versions dels teus paquets amb:
+      <pre><code>pip freeze > requirements.txt</code></pre>
+    </li>
+    <li>Revisa actualitzacions i vulnerabilitats en dependències amb eines com <code>pip-audit</code>:
+      <pre><code>pip install pip-audit
+    pip-audit</code></pre>
+    </li>
+  </ul>
+  
+  <h2>10.4 Control d'accés i bones pràctiques</h2>
+  <ul>
+    <li>No comparteixis credencials per correu electrònic ni en repositoris.</li>
+    <li>Utilitza autenticació en dos passos en plataformes com GitHub.</li>
+    <li>Aplica principis de mínim privilegi als teus entorns.</li>
+  </ul>
+  
+  <p>Aquestes pràctiques contribueixen a desenvolupar aplicacions més segures i professionals, especialment en entorns col·laboratius o de producció.</p>
+  
  </section>  
+
+ <section id="bibliotecas">
+  <h2>Biblioteques de criptografia</h2>
+  <p>Python té un gran nombre de biblioteques amb diferents propòsits, de les quals els programadors poden fer ús.</p>
+  <p>Per a criptografia, hi ha unes quantes, de les quals es citaran les més importants i populars.</p>
+  
+  <ul>
+    <li>1. cryptography:</li>
+    <li>2. PyCryptodome (successor de PyCrypto):</li>
+    <li>3. hashlib (inclosa en la instal·lació de Python)</li>
+    <li>4. ecdsa</li>
+  </ul>
+  
+  <h3>cryptography</h3>
+  <p>La biblioteca cryptography és una de les més populars i completes en Python per a la implementació de criptografia moderna. 
+     Ofereix una àmplia varietat d'algoritmes criptogràfics tant per a la protecció de dades com per a l'autenticació i la firma digital.</p>
+  
+  <p>Algunes de les característiques principals de la biblioteca són:</p>
+  
+  <ul>
+    <li>Cifrat simètric: AES, ChaCha20, etc.</li>
+    <li>Cifrat asimètric: RSA, DSA, ECDSA.</li>
+    <li>Firmes digitals: Usant RSA i ECDSA.</li>
+    <li>Funcions de hash: SHA-256, SHA-512, i més.</li>
+    <li>Gestió de claus: Generació de claus, emmagatzematge segur i gestió de certificats X.509.</li>
+    <li>Protocols segurs: Suport per crear i verificar certificats X.509.</li>
+  </ul>
+  
+  <p>Instal·lació (dins de l'entorn virtual !!)</p>
+  <pre>pip install cryptography</pre>
+  
+  API de cryptography <a href="https://cryptography.io/en/latest/">https://cryptography.io/en/latest/</a>
+  <br>API del mòdul secrets de Python
+  <a href="https://docs.python.org/es/3.13/library/secrets.html">https://docs.python.org/es/3.13/library/secrets.html</a>
+  <p>Exemple d'ús</p>
+  <pre>
+    from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
+    from cryptography.hazmat.backends import default_backend
+    import os
+    
+    key = os.urandom(32)  # Generar una clau aleatòria de 32 bytes
+    iv = os.urandom(16)   # Generar un vector d'inicialització de 16 bytes
+    
+    cipher = Cipher(algorithms.AES(key), modes.CBC(iv), backend=default_backend())
+    encryptor = cipher.encryptor()
+    ciphertext = encryptor.update(b"missatge a xifrar") + encryptor.finalize()
+    print(ciphertext)
+  </pre>
+  
+  <h3>PyCryptodome</h3>
+  <p>Es continua mantenint i es considera una excel·lent alternativa per treballar amb criptografia en Python.</p>
+  Instal·lació:  <br>
+  <pre>pip install pycryptodome</pre>
+  
+  API  <br>
+  <a href="https://www.pycryptodome.org/">https://www.pycryptodome.org/</a>
+  <p>Exemple bàsic</p>
+  <pre>
+    from Crypto.Random import get_random_bytes
+    # Generar un número aleatori de 4 bytes
+    random_bytes = get_random_bytes(4)
+    # Convertir els bytes a un enter si és necessari
+    random_number = int.from_bytes(random_bytes, byteorder="big")
+    print(f"Número aleatori generat (enter): {random_number}")
+    random_in_range = random_number % 1001
+    print(f"Número aleatori entre 0 i 1000: {random_in_range}")
+  </pre>
+  
+  <h3>hashlib</h3>
+  <p>La biblioteca hashlib és part de la llibreria estàndard de Python i s'utilitza per generar funcions de hash 
+     criptogràfiques. Les funcions de hash són fonamentals en criptografia, especialment per a la verificació de integritat de dades i l'autenticació.</p>
+  <p>API</p>
+  <a href="https://docs.python.org/es/3/library/hashlib.html">https://docs.python.org/es/3/library/hashlib.html</a>
+  <p>Exemple d'ús:</p>
+  <pre>
+    import hashlib
+    # Crear un objecte hash SHA-256
+    hash_obj = hashlib.sha256()
+    hash_obj.update(b"missatge a hashear")
+    print("Hash:", hash_obj.hexdigest())
+  </pre>
+  
+  <h3>ecdsa</h3>
+  <p>Aquest paquet és una implementació en Python de la criptografia de corba elíptica, que inclou algoritmes
+     com ECDSA (Elliptic Curve Digital Signature Algorithm), EdDSA (Edwards-curve Digital Signature 
+     Algorithm) i ECDH (Elliptic Curve Diffie-Hellman). La documentació proporciona informació detallada 
+     sobre la generació de claus, firma, verificació i derivació de secrets compartits.</p>
+  
+  <h3>Altres biblioteques</h3>
+  <pre>
+    pip3 install M2Crypto       pip3 install pynacl
+    pip3 install simplecrypt    pip3 install pysodium
+    pip3 install pyopenssl      pip3 install bcrypt
+  </pre>
+  
+  <hr>
+  <p>Per començar a treballar amb criptografia en Python, és necessari instal·lar les biblioteques 
+     que puguis necessitar.</p>
+  
+ </section>
 
 
 </main>
