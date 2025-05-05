@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="https://www.python.org/favicon.ico"> 
+  <title> Criptografia con Python</title>
+  <link rel="stylesheet" href="estilsunitatspy.css">
+  <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
+</head>
+<body>
+
+  <header>
+    <a href="index.html"><img src="imgs/phyton2-rbg.png" alt="python"></a>
+    <h1>Unidad Didáctica 1: Preparar entorno</h1>
+    <h1> </h1>
+  </header>
+
+<nav>
+  <h3>Índex</h3>
+  <a href="#instalar">Verificar e Instalar Pyghon</a>
+  <a href="#pip">Instalar PIP</a>
+  <a href="#entornov">Entorno virtual en Python</a>
+  <a href="#paquetes">Instalar paquetes</a>
+  <a href="#editor">Instalar un editor o IDE</a>
+  <a href="#linters">linters y formateadores</a>
+  <a href="#depuracion">Herramientas de depuracion</a>
+  <a href="#git">Control de versiones</a>
+  <a href="#entornoss">Configuracion de entornos seguros</a>
+</nav>
+
+<main>
+
+  <section id="instalar">
+      
+    <h1>1. Verificar e instalar Python</h1>
+    <p>Para poder programar en Python, es necesario tener instalado este lenguaje en nuestro equipo. En esta sección aprenderás a verificar si Python ya está instalado y, si no lo está, cómo instalarlo.</p>
+  
+    <h2>Verificar si Python está instalado</h2>
+    <ol>
+      <li>Abre una terminal o consola de comandos:
+        <ul>
+          <li>En Windows, busca “cmd” en el menú de inicio.</li>
+          <li>En macOS o Linux, abre la aplicación “Terminal”.</li>
+        </ul>
+      </li>
+      <li>Escribe el siguiente comando y presiona <strong>Enter</strong>:
+        <pre>c:\> python --version   /  # python3 --version</pre>
+      </li>
+      <li>Si Python está instalado, verás un mensaje con la versión, por ejemplo:
+        <pre><code>Python 3.10.4</code></pre>
+        Si ves un mensaje de error o dice que no se reconoce el comando, entonces necesitas instalar Python.
+      </li>
+    </ol>
+
+      <h1>2. Instalar Python</h1>
+    
+      <p>Si no tienes Python instalado o necesitas actualizarlo, puedes seguir los pasos adecuados para tu sistema operativo:</p>
+    
+      <h2>2.1. En Windows</h2>
+      <ol>
+        <li>Accede al sitio web oficial: 
+          <a href="https://www.python.org/downloads/windows/" target="_blank">https://www.python.org/downloads/windows/</a>
+        </li>
+        <li>Haz clic en el botón de descarga de la última versión.</li>
+        <li>Ejecuta el archivo descargado.</li>
+        <li>En la ventana del instalador:
+          <ul>
+            <li>Marca la opción <strong>"Add Python to PATH"</strong>.</li>
+            <li>Haz clic en <strong>"Install Now"</strong>.</li>
+          </ul>
+        </li>
+        <li>Una vez instalada, puedes verificarlo abriendo la consola (cmd) y escribiendo:
+          <pre><code>python --version</code></pre>
+        </li>
+      </ol>
+    
+      <h2>2.2. En macOS</h2>
+      <ol>
+        <li>Descarga el instalador desde:
+          <a href="https://www.python.org/downloads/macos/" target="_blank">https://www.python.org/downloads/macos/</a>
+        </li>
+        <li>Abre el archivo <code>.pkg</code> descargado y sigue los pasos del instalador.</li>
+        <li>Para verificar la instalación, abre la Terminal y escribe:
+          <pre>python3 --version</pre>
+        </li>
+      </ol>
+    
+      <h2>2.3. En Linux</h2>
+      <p>La mayoría de distribuciones Linux ya incluyen Python. Para verificarlo, abre la terminal y escribe:</p>
+      <pre>python3 --version</pre>
+      <p>Si no está instalado o deseas actualizarlo, puedes usar el gestor de paquetes correspondiente. Por ejemplo, en Debian/Ubuntu:</p>
+      <pre>
+    sudo apt update
+    sudo apt install python3</pre>
+
+ </section>
+
+ <section id="pip">
+
+    <h1>3. Instalar pip</h1>
+  
+    <p><strong>pip</strong> es una herramienta que permite instalar paquetes y librerías adicionales en Python. Normalmente, se instala automáticamente junto con Python. Aquí aprenderás cómo verificar si ya está instalado y cómo instalarlo en caso de que no lo esté.</p>
+  
+    <h2>3.1 Verificar si pip está instalado</h2>
+    <ol>
+      <li>Abre una terminal o consola de comandos.</li>
+      <li>Escribe el siguiente comando y presiona <strong>Enter</strong>:
+        <pre><code>pip --version</code></pre>
+        o en algunos sistemas:
+        <pre><code>pip3 --version</code></pre>
+      </li>
+      <li>Si ves un mensaje con la versión de pip (por ejemplo, <code>pip 23.1.2</code>), entonces ya está instalado.</li>
+      <li>Si aparece un mensaje de error indicando que el comando no se reconoce, deberás instalar pip manualmente.</li>
+    </ol>
+  
+    <h2>3.2 Instalar pip (si es necesario)</h2>
+  
+    <h3>En Windows o macOS (si no se instaló con Python)</h3>
+    <ol>
+      <li>Descarga el script <code>get-pip.py</code> desde el sitio oficial:
+        <a href="https://bootstrap.pypa.io/get-pip.py" target="_blank">https://bootstrap.pypa.io/get-pip.py</a>
+      </li>
+      <li>Guarda el archivo en una ubicación fácil de acceder, por ejemplo en el escritorio.</li>
+      <li>Abre una terminal o consola, navega a la carpeta donde está guardado el archivo y ejecuta:
+        <pre><code>python get-pip.py</code></pre>
+      </li>
+    </ol>
+  
+    <h3>En Linux (usando el gestor de paquetes)</h3>
+    <p>En la mayoría de distribuciones de Linux puedes instalar pip con el gestor de paquetes. Por ejemplo, en Debian/Ubuntu:</p>
+    <pre><code>sudo apt update
+  sudo apt install python3-pip</code></pre>
+    <p>Luego verifica la instalación con:</p>
+    <pre><code>pip3 --version</code></pre>
+  
+    <p>Una vez instalado pip, podrás usarlo para instalar paquetes de Python, como por ejemplo:</p>
+    <pre><code>pip install nombre_del_paquete</code></pre>
+
+
+ </section>
+
+ <section id="entornov">
+
+    <h1>4. Configurar entorno virtual</h1>
+  
+    <p>Un entorno virtual en Python es una herramienta que permite crear un espacio aislado para instalar dependencias y paquetes específicos para un proyecto, sin afectar otras configuraciones del sistema.</p>
+    <p>Para evitar problemas con dependencias entre proyectos y tener un entorno aislado para cada uno de tus proyectos, es recomendable usar entornos virtuales. Además, en Linux, si no configuras un entorno virtual, tendrás problemas con pip .
+        (si estás en Windows, te puedes saltar este paso)</p>
+
+    <h2>Instalar la herramienta para crear entornos virtuales - VENV</h2>
+    <pre>$ sudo apt install python3-venv</pre>
+    
+    <h2>4.1 Crear un entorno virtual</h2>
+    <ol>
+      <li>Abre una terminal o consola de comandos.</li>
+      <li>Ubícate en la carpeta donde quieres crear el entorno virtual o crea una nueva:
+        <pre><code>mkdir mi_proyecto
+  cd mi_proyecto</code></pre>
+      </li>
+      <li>Ejecuta el siguiente comando para crear el entorno virtual (por convención lo llamaremos <code>venv</code>):
+        <pre><code>python -m venv venv</code></pre>
+        <p>Este comando creará una carpeta llamada <code>venv</code> que contendrá el entorno virtual.</p>
+      </li>
+    </ol>
+  
+    <h2>4.2 Activar el entorno virtual</h2>
+  
+    <h3>En Windows</h3>
+    <pre><code>venv\Scripts\activate</code></pre>
+  
+    <h3>En macOS o Linux</h3>
+    <pre><code>source venv/bin/activate</code></pre>
+  
+    <p>Después de activar el entorno virtual, deberías ver el nombre del entorno (por ejemplo, <code>(venv)</code>) al inicio de la línea en la consola, indicando que está activo.</p>
+  
+    <h2>4.3 Verificar instalación de pip en el entorno</h2>
+    <p>Una vez activado el entorno, asegúrate de que pip esté disponible:</p>
+    <pre><code>pip --version</code></pre>
+    <p>A partir de aquí, ya se pueden instalar paquetes <strong>dentro del entorno virtual</strong></p>
+  
+    <h2>4.4 Desactivar el entorno virtual</h2>
+    <p>Cuando termines de trabajar en tu proyecto, puedes salir del entorno virtual ejecutando:</p>
+    <pre><code>deactivate</code></pre>
+  
+    <p>Esto te devolverá al entorno global del sistema.</p>
+
+ </section>
+
+ <section id="paquetes">
+    <h1>5. Instalar paquetes</h1>
+  
+    <p>En Python, los paquetes son módulos reutilizables que extienden las funcionalidades del lenguaje. Para gestionar e instalar estos paquetes se utiliza <strong>pip</strong>, el gestor oficial de paquetes de Python.</p>
+  
+    <h2>5.1 Instalar un paquete con pip</h2>
+    <p>Para instalar un paquete, utiliza el siguiente comando en la consola <strong>(preferentemente con el entorno virtual activado)</strong></p>
+    <pre><code>pip install nombre_del_paquete</code></pre>
+    <p>Ejemplo:</p>
+    <pre><code>pip install requests</code></pre>
+    <p>Ejemplo:</p>
+    <pre><code>pip install pyfiglet
+      uso:   pyfiglet hola python   </code></pre>
+
+    <h2>5.2 Instalar múltiples paquetes desde un archivo</h2>
+    <p>También es posible instalar varios paquetes definidos en un archivo <code>requirements.txt</code> con el siguiente comando:</p>
+    <pre><code>pip install -r requirements.txt</code></pre>
+    <p>Este archivo contiene una lista de paquetes, uno por línea, que el proyecto necesita.</p>
+  
+    <h2>5.3 Ver paquetes instalados</h2>
+    <p>Para ver qué paquetes están instalados en tu entorno actual:</p>
+    <pre><code>pip list</code></pre>
+  
+    <h2>5.4 Desinstalar un paquete</h2>
+    <p>Si necesitas desinstalar un paquete:</p>
+    <pre><code>pip uninstall nombre_del_paquete</code></pre>
+  
+    <h2>5.5 Actualizar un paquete</h2>
+    <p>Para actualizar un paquete a su última versión:</p>
+    <pre><code>pip install --upgrade nombre_del_paquete</code></pre>
+
+
+ </section>
+
+ <section id="editor">
+     <h1>6. Instalar un editor de texto o un IDE</h1>
+  
+    <p>Para escribir y ejecutar código en Python de manera eficiente, es recomendable usar un <strong>editor de texto avanzado</strong> o un <strong>IDE (Entorno de Desarrollo Integrado)</strong>. Estas herramientas ofrecen características como resaltado de sintaxis, autocompletado, depuración y gestión de proyectos.</p>
+  
+    <h2>6.1 Visual Studio Code (VS Code)</h2>
+    <p><strong>Visual Studio Code</strong> es uno de los editores más populares para desarrollo en Python. Es liviano, extensible y gratuito.</p>
+  
+    <ol>
+      <li>Descárgalo desde: 
+        <a href="https://code.visualstudio.com/" target="_blank">https://code.visualstudio.com/</a>
+      </li>
+      <li>Instálalo como cualquier otra aplicación para tu sistema operativo.</li>
+      <li>Una vez abierto, instala la extensión oficial de Python:
+        <ul>
+          <li>Haz clic en el icono de extensiones (barra lateral izquierda).</li>
+          <li>Busca “Python” (editor: Microsoft) e instálala.</li>
+        </ul>
+      </li>
+      <li>Con la extensión instalada, podrás ejecutar scripts, usar depuración, y trabajar con entornos virtuales desde VS Code.</li>
+    </ol>
+  
+    <h2>6.2 Otros editores o IDEs populares</h2>
+    <ul>
+      <li><strong>PyCharm</strong>: IDE profesional desarrollado por JetBrains. Disponible en versión gratuita (Community) y de pago. Web: 
+        <a href="https://www.jetbrains.com/pycharm/" target="_blank">https://www.jetbrains.com/pycharm/</a>
+      </li>
+      <li><strong>Sublime Text</strong>: Editor de texto rápido y personalizable. Web:
+        <a href="https://www.sublimetext.com/" target="_blank">https://www.sublimetext.com/</a>
+      </li>
+      <li><strong>Jupyter Notebook</strong>: Ideal para proyectos de ciencia de datos. Se instala con pip:
+        <pre><code>pip install notebook</code></pre>
+        Luego se ejecuta con:
+        <pre><code>jupyter notebook</code></pre>
+      </li>
+    </ul>
+  
+    <h2>6.3 Recomendación</h2>
+    <p>Para quienes están comenzando, <strong>Visual Studio Code</strong> es una excelente opción por su simplicidad y potencia. Además, permite integrar control de versiones con Git y múltiples herramientas para desarrollo moderno.</p>
+
+ </section>
+
+ <section id="linters">
+    <h1>7. Configuración de Linters y Formateadores</h1>
+  
+    <p>Los <strong>linters</strong> y <strong>formateadores</strong> ayudan a mejorar la calidad del código. Los linters detectan errores, advertencias o malas prácticas, mientras que los formateadores corrigen automáticamente el estilo del código para que sea más legible y uniforme.</p>
+  
+    <h2>7.1 Herramientas recomendadas</h2>
+    <ul>
+      <li><strong>Flake8</strong>: Linter que verifica errores de sintaxis y estilo.</li>
+      <li><strong>Black</strong>: Formateador de código que aplica reglas de estilo consistentes.</li>
+      <li><strong>isort</strong>: Organiza automáticamente las importaciones en el código.</li>
+    </ul>
+  
+    <h2>7.2 Instalación de herramientas</h2>
+    <p>Con tu entorno virtual activado, instala las herramientas con pip:</p>
+    <pre><code>pip install flake8 black isort</code></pre>
+  
+    <h2>7.3 Configuración en Visual Studio Code</h2>
+    <ol>
+      <li>Abre el menú de configuración (⚙️ &rarr; "Settings").</li>
+      <li>Busca <strong>Python Linting</strong> y habilita la opción <strong>Linting: Enabled</strong>.</li>
+      <li>Selecciona <strong>flake8</strong> como linter predeterminado.</li>
+      <li>Para configurar el formateador, busca <strong>Python Formatting Provider</strong> y selecciona <code>black</code>.</li>
+      <li>Habilita el formato al guardar (opcional pero recomendado):
+        <ul>
+          <li>Busca "Format On Save" y actívalo.</li>
+        </ul>
+      </li>
+    </ol>
+  
+    <h2>7.4 Uso manual desde la terminal</h2>
+    <p>También puedes ejecutar estas herramientas desde la consola:</p>
+    <ul>
+      <li><strong>flake8</strong> para analizar el código:
+        <pre><code>flake8 nombre_archivo.py</code></pre>
+      </li>
+      <li><strong>black</strong> para formatear automáticamente:
+        <pre><code>black nombre_archivo.py</code></pre>
+      </li>
+      <li><strong>isort</strong> para ordenar importaciones:
+        <pre><code>isort nombre_archivo.py</code></pre>
+      </li>
+    </ul>
+  
+    <h2>7.5 Archivos de configuración (opcional)</h2>
+    <p>Puedes crear archivos como <code>pyproject.toml</code> o <code>.flake8</code> para definir configuraciones personalizadas para cada herramienta.</p>
+  
+    <p><strong>Ejemplo de pyproject.toml para Black:</strong></p>
+    <pre>
+  <code>[tool.black]
+  line-length = 88
+  target-version = ['py39']</code></pre>
+
+ </section>
+
+ <section id="depuracion">
+  <h2>8. Depuración</h2>
+  <p>Para depurar tu código Python, puedes usar herramientas como pdb, que es el depurador integrado en Python. Solo necesitas incluir la línea: 
+    <code> import pdb; pdb.set_trace() </code> en tu código para comenzar a depurar.</p>
+ </section>
+
+
+ <section id="git">
+    <h1>9. Control de versiones</h1>
+  
+    <p>El control de versiones permite gestionar los cambios en el código fuente de manera eficiente. La herramienta más utilizada para esto es <strong>Git</strong>, que permite mantener un historial de versiones, colaborar con otras personas y trabajar en múltiples ramas del proyecto.</p>
+  
+    <h2>9.1 Instalar Git</h2>
+    <p>Descarga Git desde su sitio oficial:</p>
+    <a href="https://git-scm.com/" target="_blank">https://git-scm.com/</a>
+    <p>La instalación es sencilla y depende del sistema operativo. En Windows, incluye una terminal llamada <strong>Git Bash</strong>.</p>
+  
+    <h2>9.2 Configuración inicial</h2>
+    <p>Después de instalar Git, es recomendable configurar tu nombre de usuario y correo electrónico:</p>
+    <pre>
+  <code>git config --global user.name "Tu Nombre"
+  git config --global user.email "tu.email@example.com"</code></pre>
+  
+    <h2>9.3 Comandos básicos de Git</h2>
+    <ul>
+      <li><strong>Inicializar un repositorio:</strong>
+        <pre><code>git init</code></pre>
+      </li>
+      <li><strong>Ver el estado del repositorio:</strong>
+        <pre><code>git status</code></pre>
+      </li>
+      <li><strong>Agregar archivos al área de preparación:</strong>
+        <pre><code>git add nombre_archivo.py</code>
+  <code>git add .</code>  <em>  -- Agrega todos los archivos modificados --</em></pre>
+      </li>
+      <li><strong>Hacer un commit (guardar los cambios):</strong>
+        <pre><code>git commit -m "Mensaje descriptivo del cambio"</code></pre>
+      </li>
+      <li><strong>Ver el historial de commits:</strong>
+        <pre><code>git log</code></pre>
+      </li>
+    </ul>
+  
+    <h2>9.4 Usar GitHub (repositorio remoto)</h2>
+    <p><strong>GitHub</strong> es una plataforma para alojar repositorios Git en la nube. Permite colaborar y respaldar proyectos.</p>
+  
+    <ol>
+      <li>Crea una cuenta en <a href="https://github.com/" target="_blank">https://github.com/</a></li>
+      <li>Crea un nuevo repositorio desde la web.</li>
+      <li>Conecta tu repositorio local con GitHub:
+        <pre><code>
+  git remote add origin https://github.com/usuario/nombre-repo.git
+  git push -u origin master</code></pre>
+      </li>
+    </ol>
+  
+    <h2>9.5 .gitignore</h2>
+    <p>El archivo <code>.gitignore</code> indica a Git qué archivos o carpetas no deben incluirse en el control de versiones (por ejemplo, entornos virtuales, archivos temporales, etc.).</p>
+  
+    <p><strong>Ejemplo de contenido de .gitignore:</strong></p>
+    <pre>
+  <code>venv/
+  __pycache__/
+  *.pyc
+  .env</code></pre>
+  
+    <p>Con estas herramientas y buenas prácticas, podrás mantener un proyecto bien organizado y controlado.</p>
+
+ </section>
+
+ <section id="entornoss">
+    <h1>10. Configuración de entornos seguros</h1>
+  
+    <p>Cuando se trabaja en proyectos de software, es importante mantener un entorno seguro para proteger credenciales, datos sensibles y evitar errores por mal manejo de configuraciones. A continuación se presentan buenas prácticas para lograrlo.</p>
+  
+    <h2>10.1 Variables de entorno</h2>
+    <p>Las variables de entorno permiten almacenar información sensible, como claves API o contraseñas, sin incluirlas directamente en el código fuente.</p>
+    
+    <p>Para gestionar estas variables, se puede usar un archivo <code>.env</code> junto con la librería <strong>python-dotenv</strong>:</p>
+    <pre><code>pip install python-dotenv</code></pre>
+  
+    <p>Ejemplo de un archivo <code>.env</code>:</p>
+    <pre>
+  <code>SECRET_KEY=mi_clave_secreta
+  DEBUG=False</code></pre>
+  
+    <p>Y para cargarlo en tu aplicación Python:</p>
+    <pre>
+  <code>from dotenv import load_dotenv
+  import os
+  load_dotenv()
+  clave = os.getenv("SECRET_KEY")</code></pre>
+  
+    <h2>10.2 Uso del archivo <code>.gitignore</code></h2>
+    <p>Es importante asegurarse de que archivos como <code>.env</code>, archivos de configuración local y entornos virtuales no se suban a repositorios públicos:</p>
+    <pre>
+  <code>.env
+  venv/
+  __pycache__/
+  *.pyc</code></pre>
+  
+    <h2>10.3 Gestión de dependencias seguras</h2>
+    <ul>
+      <li>Utiliza entornos virtuales para aislar tus proyectos.</li>
+      <li>Congela las versiones de tus paquetes con:
+        <pre><code>pip freeze > requirements.txt</code></pre>
+      </li>
+      <li>Revisa actualizaciones y vulnerabilidades en dependencias con herramientas como <code>pip-audit</code>:
+        <pre><code>pip install pip-audit
+  pip-audit</code></pre>
+      </li>
+    </ul>
+  
+    <h2>10.4 Control de acceso y buenas prácticas</h2>
+    <ul>
+      <li>No compartas credenciales por correo ni en repositorios.</li>
+      <li>Usa autenticación en dos pasos en plataformas como GitHub.</li>
+      <li>Aplica principios de mínimo privilegio en tus entornos.</li>
+    </ul>
+  
+    <p>Estas prácticas contribuyen a desarrollar aplicaciones más seguras y profesionales, especialmente en entornos colaborativos o de producción.</p>
+
+ </section>  
+
+
+</main>
+
+<script>
+
+  // Per poder copiar codi en el porta-retalls. S'ha de posar un botó en cada <pre>
+      //  <div class="pre-container">
+      //    <button class="copy-button">Copia Codi !</button>
+  document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.copy-button');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', function () {
+        const code = this.nextElementSibling.innerText;
+        navigator.clipboard.writeText(code).then(() => {
+          this.innerText = ' ✔ Copiat!';
+          setTimeout(() => this.innerText = 'Copia Codi !', 3000);
+        });
+      });
+    });
+  });
+
+</script>
+
+</body>
+</html>

@@ -1,1 +1,192 @@
-<p> ..</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://www.python.org/favicon.ico">    
+    <title>Curso de Python</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .light-mode {
+            background-color: #adacac;
+            color: #000000;
+        }
+        .toggle-switch {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .toggle-switch input {
+            display: none;
+        }
+        .toggle-switch label {
+            cursor: pointer;
+            width: 60px;
+            height: 30px;
+            background-color: #ccc;
+            border-radius: 15px;
+            position: relative;
+            transition: background-color 0.3s;
+        }
+        .toggle-switch label::before {
+            content: '';
+            position: absolute;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background-color: #fff;
+            top: 2px;
+            left: 2px;
+            transition: transform 0.3s;
+        }
+        .toggle-switch input:checked + label {
+            background-color: #333;
+        }
+        .toggle-switch input:checked + label::before {
+            transform: translateX(30px);
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .card {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        .dark-mode .card {
+            background-color: #1e1e1e;
+        }
+        .icon {
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+        .image {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Curso de Python <img src="ico/python.svg" alt="Icono de Python" width="30px"> + Criptografía 🔑</h1>
+        <div class="toggle-switch">☀️
+            <input type="checkbox" id="theme-switch" />
+            <label for="theme-switch"></label>🌙
+        </div>
+        <h2>Temario</h2>
+        <div class="card-container">
+            <a href="ud1py.html">  
+            <div class="card">
+                <h3><span class="icon">🛠️</span>Ud 1. Preparación del entorno</h3>
+            </div>   </a>
+            <div class="card">
+                <h3><span class="icon">🐍</span>Ud 2. Python básico</h3>
+            </div>
+            <div class="card">
+                <h3><span class="icon">🚀</span>Ud 3. Python avanzado</h3>
+            </div>
+            <div class="card">
+                <h3><span class="icon">🔒</span>Ud 4. Criptografía con Python</h3>
+            </div>
+            <div class="card">
+                <h3><span class="icon">🕵️</span>Ud 5. Esteganografía con Python</h3>
+            </div>
+            <div class="card">
+                <h3><span class="icon">🔑</span>Ud 6. Criptografía moderna con Python</h3>
+            </div>
+            <div class="card">
+                <h3><span class="icon">💻</span>Ud 7. Aplicaciones avanzadas</h3>
+            </div>
+        </div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python Logo" class="image">
+    </div>
+    <h2>Preguntas Frecuentes (FAQ)</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3>¿Qué conocimientos previos necesito?</h3>
+            <p style="display: none;">No se requieren conocimientos previos de programación. Este curso está diseñado para principiantes.</p>
+        </div>
+        <div class="card">
+            <h3>¿Cuánto dura el curso?</h3>
+            <p style="display: none;">El curso tiene una duración de 30 semanas, con una dedicación de aproximadamente 3 horas por semana.</p>
+        </div>
+        <div class="card">
+            <h3>¿Se entrega certificado al finalizar el curso?</h3>
+            <p style="display: none;">No, este cuso forma parte de una ciclo formativo, en el cual ya se entrega un título del ciclo entero.</p>
+        </div>
+        <div class="card">
+            <h3>¿Qué software necesito instalar?</h3>
+            <p style="display: none;">Necesitarás instalar Python y un editor de código como Visual Studio Code o PyCharm. Las instrucciones detalladas se proporcionan en el primer módulo.</p>
+        </div>
+        <div class="card">
+            <h3>¿Hay soporte disponible durante el curso?</h3>
+            <p style="display: none;">Sí, hay un foro de discusión y sesiones de tutoría en vivo para resolver dudas y preguntas.</p>
+        </div>
+    </div>
+    
+    <script>
+        document.querySelectorAll('.card h3').forEach(cardHeader => {
+            cardHeader.addEventListener('click', () => {
+                const cardContent = cardHeader.nextElementSibling;
+                const isVisible = cardContent.style.display === 'block';
+                document.querySelectorAll('.card p').forEach(p => p.style.display = 'none');
+                cardContent.style.display = isVisible ? 'none' : 'block';
+            });
+          });
+
+          document.querySelectorAll('.card').forEach(cardHeader => {
+            cardHeader.addEventListener('mouseleave', () => {
+                const cardContent = cardHeader.nextElementSibling;
+                const isVisible = cardContent.style.display === 'block';
+                document.querySelectorAll('.card p').forEach(p => p.style.display = 'none');
+                /*cardContent.style.display = isVisible ? 'none' : 'block';*/
+            });            
+        
+          });
+
+        const themeSwitch = document.getElementById('theme-switch');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        document.body.classList.add(currentTheme + '-mode');
+
+        themeSwitch.checked = currentTheme === 'dark';
+
+        themeSwitch.addEventListener('change', () => {
+            if (themeSwitch.checked) {
+                document.body.classList.replace('light-mode', 'dark-mode');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.body.classList.replace('dark-mode', 'light-mode');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
+</body>
+</html>

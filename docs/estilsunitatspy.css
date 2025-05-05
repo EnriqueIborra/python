@@ -1,0 +1,198 @@
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #f8f9f9, #9dc1f0);
+    color: #333;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 10px 30px;
+    height: 70px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+
+  header img {
+    height: 40px;
+  }
+
+  header h1 {
+    font-size: 22px;
+    color: #1f3c88;
+    margin: 0;
+  }
+
+  nav {
+    width: 260px;
+    background: linear-gradient(180deg, #1f3c88, #2e86de);
+    color: white;
+    padding: 100px 20px 30px;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+    top: 0;
+  }
+
+  /* les fulles de repas  i de seguretat canvia el color, perquè és un nivell més */
+  .repas {
+    background: linear-gradient(180deg, #399c5f, #50d889);
+    color: white;
+  }
+/* les fulles de repas  i de seguretat canvia el color, perquè és un nivell més */
+  .segu {
+    background: linear-gradient(180deg, #8f3636, #d65858);
+    color: white;
+  }
+
+  nav h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: 12px 0;
+    padding: 8px 10px;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+  }
+
+  nav a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(5px);
+  }
+
+  main {
+    margin-left: 280px;
+    padding: 100px 40px 40px;
+  }
+
+  section {
+    background: white;
+    margin-bottom: 40px;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    scroll-margin-top: 100px; /* Ajusta aquest valor segons l'alçada del teu header */
+  }
+
+  h2 {
+    color: #1f3c88;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  ul {
+    padding-left: 20px;
+  }
+
+  ul li {
+    margin-bottom: 8px;
+  }
+
+  iframe {
+    background-color: white; /* Fondo blanco */
+    background: white;
+ width: 100%;
+ height: 100vh; /* Ajusta la altura según tus necesidades */
+ border: none; 
+}
+
+.imatge-dreta {
+  float: right;
+  margin-left: 15px;
+  margin-bottom: 10px;
+}
+
+.imatge-esquerra {
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
+
+.pre-container {
+  position: relative;
+}
+
+.code-type{
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background-color: #93a294;
+  border: none;
+  padding: 3px 12px;
+  font-size: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+
+
+}
+
+.copy-button  {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #93a294;
+  border: none;
+  padding: 4px 12px;
+  font-size: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.copy-button:hover {
+  background-color: #ddd;
+}
+
+
+/* Estils per als elements de codi */
+pre {
+  background: #f7f9fc;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-family: 'Courier New', monospace;
+}
+
+pre {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.pre-container pre{
+  padding-top: 27px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 1em;
+}
+th, td {
+  border: 1px solid #ccc;
+  padding: 0.5em;
+  text-align: left;
+}
+th {
+  background-color: #e0e0ff;
+}
