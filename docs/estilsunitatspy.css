@@ -7,6 +7,7 @@
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     background: linear-gradient(to right, #f8f9f9, #9dc1f0);
+    background: linear-gradient(to right, #f8f9f9, #f0ed9d);
     color: #333;
   }
 
@@ -37,6 +38,7 @@
   nav {
     width: 260px;
     background: linear-gradient(180deg, #1f3c88, #2e86de);
+    background: linear-gradient(180deg, #1f3c88, #dee269);
     color: white;
     padding: 100px 20px 30px;
     position: fixed;
@@ -195,4 +197,48 @@ th, td {
 }
 th {
   background-color: #e0e0ff;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 1em;
+}
+th, td {
+  border: 1px solid #ccc;
+  padding: 0.5em;
+  text-align: left;
+}
+th {
+  background-color: #e0e0ff;
+}
+
+.imatge-dreta {
+  float: right;
+  margin-left: 15px;
+  margin-bottom: 10px;
+}
+
+.imatge-esquerra {
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
+
+.alert {
+  background: #f9dcce;
+  border-left: 6px solid #f39c12;
+  padding: 10px;
+}
+body.dark-mode .alert {
+  background: #c29473;
+}
+.tips {
+  background: #d2f8e1;
+  border-left: 6px solid #27ae60;
+  padding: 10px;
+}
+body.dark-mode .tips {
+  background: #84b196;
+  border-left: 6px solid #27ae60;
 }
