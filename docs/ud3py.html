@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="ca-ES">  
+  <!--  al ponerlo en catalan, fuerzo al navegador a poner el traductor-->
+  <!-- es-ES  lenguaje - ubicacion    -->
+<head>
+  <meta charset="UTF-8">
+  <link rel="alternate" hreflang="ca-ES">
+  <link rel="icon" href="https://www.python.org/favicon.ico"> 
+  <title> Criptografia en Python</title>
+  <link rel="stylesheet" href="estilsunitatspy.css">
+  <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
+</head>
+<body>
+
+  <header>
+    <a href="index.html"><img src="imgs/phyton2-rbg.png" alt="python"></a>
+    <h1>Unitat Didàctica 3: Python Avançat</h1>
+    <h1> </h1>
+  </header>
+
+<nav>
+  <h3>Índex</h3>
+  <a href="#estruc">Estructures avançades</a>
+  <a href="#llistes">Llistes en Python</a>
+  <a href="#tuples">Tuples</a>
+  <a href="#conjunts">Conjunts</a>
+  <a href="#diccionaris">Diccionaris</a>
+  <a href="#gc">El Garbage Collector</a>
+  <a href="#funcionsav">Funcions avançades en Python</a>
+   
+</nav>
+
+<main>
+
+<section id="estruc">
+
+      <h1>Estructures avançades en Python</h1>
+  
+      <p>En Python, les dades es divideixen en mutables i immutables, depenent de si el seu contingut pot canviar després de la seua creació.</p>
+  
+      <p>Els objectes immutables no poden canviar el seu contingut després de ser creats. Qualsevol “modificació” realment crea un nou objecte en memòria.</p>
+  
+      <p><strong>Exemples de dades immutables:</strong></p>
+      <ul>
+          <li>Nombres (int, float, complex)</li>
+          <li>Cadenes de text (str)</li>
+          <li>Tuples (tuple)</li>
+          <li>Conjunts immutables (frozenset)</li>
+          <li>Booleans (bool)</li>
+      </ul>
+  
+      <p>Els objectes mutables poden canviar el seu contingut sense canviar la seua identitat en memòria.</p>
+  
+      <p><strong>Exemples de dades mutables:</strong></p>
+      <ul>
+          <li>Llistes (list)</li>
+          <li>Diccionaris (dict)</li>
+          <li>Conjunts (set)</li>
+          <li>Objectes definits per l'usuari (classes)</li>
+      </ul>
+  
+      <h2>Objectes immutables (int, str, bool...)</h2>
+      <p>a = 3 &nbsp; &nbsp;# Es crea el literal 3 en memòria i s'assigna el seu “identificador” a la variable a</p>
+      <p>b = 3 &nbsp; &nbsp;# Com que el literal 3 ja existeix, se li assigna el seu “identificador” a la variable b</p>
+      <p>a = 5 &nbsp; &nbsp;# Es crea el literal 5 en memòria i s'assigna el seu “identificador” a la variable a</p>
+      <img src="imgs/inmutables.png" alt="inmutables" width="60%">
+      <p>Per “identificador” es fa referència a un identificador d'objecte (no a una adreça de memòria). Aquest identificador es pot obtindre amb la funció <code>id(var)</code>.</p>
+       
+      <h3>Prova:</h3>
+      <pre>
+  >>> a = 9
+  >>> b = 10
+  >>> id(a)
+     11754152
+  >>> id(b)
+     11754184
+  >>> b = a
+  >>> id(b)
+     11754152
+      </pre>
+  
+      <p>En Python es produeix <strong>aliasing</strong>, és a dir, els objectes tenen individualitat, i múltiples noms poden referir-se al mateix objecte.</p>
+      <hr>
+      <h2>Objectes mutables (llistes, diccionaris, conjunts, definits per l'usuari...)</h2>
+      <p>En Python, les variables són referències a objectes en memòria, no contenidors de dades directament. Quan fas una assignació com:</p>
+      <p><code>a = [1, 2, 3]</code> &nbsp; &nbsp;# a és una llista, per tant mutable</p>
+      <p><code>b = a</code></p>
+      <p>Tant <code>a</code> com <code>b</code> apunten al mateix objecte (una llista en aquest cas). No es crea una còpia de la llista; simplement, ambdues variables fan referència al mateix objecte. Si modifiques la llista a través de <code>b</code>:</p>
+      <p><code>b.append(4)</code> &nbsp; &nbsp;# això afegeix un element al final de la llista</p>
+      <p>La llista a la qual <code>a</code> apunta també es veu modificada, ja que <code>a</code> i <code>b</code> fan referència al mateix objecte en memòria.</p>
+  
+      <h3>Referències i aliasing</h3>
+      <img src="imgs/mutables.png" alt="mutables" width="60%">
+  
+      <p>La diferència amb els objectes immutables és que quan modifiquem un objecte mutable, no es crea un de nou (si no existeix), com passa amb els immutables. Es modifica l’objecte i es mantenen les referències.</p>
+  
+    
+      <p>Una altra diferència amb els immutables és que quan assignem una llista a una variable, ES CREA una nova llista (encara que ja n’existisca una amb els mateixos elements).</p>
+      <img src="imgs/mutables2.png" alt="mutables2" width="30%" class="imatge-dreta">
+      <p><code>a = [1, 2, 3]</code></p>
+      <p><code>b = [1, 2, 3]</code></p>
+      
+      <p>Això no pot passar amb els objectes immutables. En el cas de dos objectes immutables iguals, s’apunta al mateix.</p>
+  
+          <h2>Objectes mutables (llistes, diccionaris, conjunts, definits per l'usuari...)</h2>
+      
+          <p>En Python, les variables són referències a objectes en memòria, no contenidors de dades directament. Quan fas una assignació com:</p>
+      
+          <pre>a = [1, 2, 3]     # a és una llista, per tant mutable  
+      b = a</pre>
+      
+          <p>Tant <code>a</code> com <code>b</code> apunten al mateix objecte (una llista en aquest cas). No es crea una còpia de la llista; simplement, ambdues variables fan referència al mateix objecte. Si modifiques la llista a través de <code>b</code>:</p>
+      
+          <pre>b.append(4)   # això afegeix un element al final de la llista</pre>
+      
+          <p>La llista a la qual <code>a</code> apunta també es veu modificada, ja que <code>a</code> i <code>b</code> fan referència al mateix objecte en memòria.</p>
+      
+          <h3>Referències i aliasing</h3>
+      
+          <p>La diferència amb els objectes immutables és que quan modifiquem un objecte mutable, no es crea un de nou (si no existeix), com passa amb els immutables. Es modifica l’objecte i es mantenen les referències.</p>
+      
+          <p>Una altra diferència amb els immutables és que quan assignem una llista a una variable, ES CREA una nova llista (encara que ja n’existisca una amb els mateixos elements).</p>
+      
+          <pre>a = [1, 2, 3]
+      b = [1, 2, 3]</pre>
+      
+          <p>Això no pot passar amb els objectes immutables. En el cas de dos objectes immutables iguals, s’apunta al mateix.</p>
+   
+
+</section>
+
+<section id="llistes">
+      <h2>Llistes []</h2>
+      <img src="imgs/llista.png" alt="llista" width="40%" class="imatge-dreta">
+      <p>Les llistes són estructures de dades que poden emmagatzemar diversos elements.</p>
+      <ul>
+          <li>Són ordenades. Suporten indexació i slicing.</li>
+          <li>Són Mutables: Es poden modificar després de ser creades.</li>
+          <li>Es poden afegir o eliminar elements amb mètodes com <code>append()</code>, <code>remove()</code>, <code>pop()</code>, etc.</li>
+          <li>Els elements poden ser mutables o immutables.</li>
+          <li>Es poden niar.</li>
+      </ul>
+  <h4>Vegem com manipular llistes amb exemples..</h4>
+      <pre>
+  fruites = ["poma", "plàtan", "cirera"]
+  llista = list("1234")
+  llista = [1, "Hola", 3.67, [1, 2, 3]]
+  print(fruites[0])
+  fruites[0] = "pera"
+  del fruites[1]
+  fruites.append("taronja")
+  print(fruites)    print(*fruites)    print(*fruites, sep=' -> ')
+  len(fruites)
+  max(fruites)   min(fruites)
+  sum(mevallista)
+  mevallista = []
+  mevallista[0] = 24   mevallista[1] = 46
+  mevallista[-1] = 33  mevallista[-2] = 57
+  nouafruita = fruites[2:4]
+  nouafruita2 = fruites[:4]   nouafruita3 = fruites[2:]
+  llista2 = [1, 4, 7, "plàtan"]
+  mevallista.insert(1, 15)
+  mevallista.extend([7, 8, 9])
+  mevallista.remove(15)
+  mevallista.clear()
+  ultim = mevallista.pop()
+  altre = mevallista.pop(2)
+  print(10 in mevallista)
+  index = mevallista.index("plàtan")
+  mevallista.sort()
+  llista_ordenada = sorted(mevallista)
+  mevallista.reverse()
+  print(mevallista.count("pera"))
+  copia_llista = mevallista.copy()
+  copia_llista = mevallista[:]
+  llista_niada = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+  llista3 = llista1 + llista2
+  llista_repetida = llista1 * 3
+  x, y, z = llista
+  llista_sense_duplicats = list(set(mevallista))
+  resultat = all(x % 2 == 0 for x in mevallista)
+  resultat = any(x % 2 == 0 for x in mevallista)
+  
+  for e in llista: print(e)
+  for index, l in enumerate(llista): print(index, l)
+  type(llista1) is list
+  isinstance(llista1, list)
+      </pre>
+  
+      <h3>Python List comprehension o Comprensió de llistes en Python</h3>
+      <p>La comprensió de llistes en Python és una manera concisa i eficient de crear llistes a partir d'iterables com llistes, tuples, rangs, etc.</p>
+      <p><strong>Sintaxi bàsica:</strong></p>
+      <pre>
+  nova_llista = [expressio for element in iterable if condició]
+      • expressio: operació o transformació aplicada a cada element
+      • element: variable que pren els valors de l'iterable
+      • iterable: objecte iterable (llista, tupla, rang, etc.)
+      • if condició (opcional): filtra els elements
+      </pre>
+  
+      <h4>Exemples de comprensió de llistes</h4>
+      <ol>
+          <li>
+              <strong>Crear una llista de quadrats:</strong>
+              <pre>
+  quadrats = [x**2 for x in range(10)]
+  print(quadrats)  
+  # Resultat: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</pre>
+          </li>
+          <li>
+              <strong>Filtrar nombres parells:</strong>
+              <pre>
+  parells = [x for x in range(10) if x % 2 == 0]
+  print(parells)  
+  # Resultat: [0, 2, 4, 6, 8]</pre>
+          </li>
+          <li>
+              <strong>Convertir paraules a majúscules:</strong>
+              <pre>
+  paraules = ["hola", "món", "python"]
+  majuscules = [paraula.upper() for paraula in paraules]
+  print(majuscules)  
+  # Resultat: ['HOLA', 'MÓN', 'PYTHON']</pre>
+          </li>
+      </ol>
+       
+</section>
+
+<section id="tuples">
+
+      <h2>Tuples ()</h2>
+      <img src="imgs/tupla.png" alt="tupla" width="40%" class="imatge-dreta">
+      <p>Les tuples són com les llistes però, una vegada declarades, <strong>no es poden modificar</strong> (són immutables).</p>
+  
+      <pre>
+  mesosAny = ("Gen", "Feb", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Oct", "Nov", "Des")
+  mesosAny[1]           # accés al segon element
+  mesosAny[-1]          # accés a l'últim element
+  mesosAny[:2]          # slicing
+  mesosAny[0] = 8       # ERROR, no podem modificar
+  tupla1 = ()           # tupla buida
+  tupla2 = (6,)         # tupla d'un sol element, cal posar la coma!
+  tupla1 + tupla2       # concatenar tuples
+  tupla2 * 3            # repetir la tupla 3 vegades
+  "Mai" in mesosAny     # retorna True
+  len(tupla2)           # nombre d'elements
+  max, min, sum         # si els valors són compatibles
+  tupla1.count(23)      # comptar ocurrències
+  tupla1.index(23)      # posició d'un valor
+  tupla1.index(23, 3)   # a partir de la posició 3
+  tupla = tuple(llista) # convertir una llista en tupla
+  sorted(tupla)         # retorna una llista ordenada
+  nova_llista = list(tupla)  # convertir una tupla en llista
+  tupla = (1, 2, 3)
+  a, b, c = tupla       # desempaquetat
+  tupla = (1, 2, 3, 4, 5)
+  TUPLA2 = 1, 2, 3, 4    # altra forma de definir
+  a, *b, c = tupla       # a=1, b=[2,3,4], c=5
+  v = 1                 # NO és una tupla
+  x = (2)               # NO és una tupla
+  y = (1,)              # SÍ és una tupla
+  tupla = 1, 2, ('a', 'b'), 3   # tupla amb elements niats
+  for t in tupla: print(t)     # recorregut de la tupla
+  type(tupla2) is tuple        # comprova si és una tupla
+      </pre>
+  
+      <h3>Quan usar tuples en lloc de llistes?</h3>
+      <ul>
+          <li>Quan les dades no han de canviar (exemple: coordenades, dies de la setmana).</li>
+          <li>Quan es busca més eficiència (les tuples consumeixen menys memòria i són més ràpides).</li>
+          <li>Quan es necessiten dades <strong>hashables</strong> (les tuples es poden usar com a claus en diccionaris, les llistes no).</li>
+      </ul>
+  
+      <h3>Tuple Comprehension?</h3>
+      <p>En Python <strong>no existeix</strong> la "tuple comprehension" com a tal.</p>
+      <p>Si usem parèntesis (<code>()</code>) per intentar fer una comprensió, Python ho interpreta com un <strong>generator expression</strong>:</p>
+      <pre>
+  tupla = (x**2 for x in range(5))
+  print(tupla)
+  # Resultat: &lt;generator object at 0x...&gt;
+      </pre>
+      <p>Açò <strong>no</strong> crea una tupla, sinó un objecte generador. Per convertir-lo en tupla:</p>
+      <pre>
+  tupla = tuple(x**2 for x in range(5))
+  print(tupla)
+      </pre>
+  
+      <h4>Avantatges d’un generador:</h4>
+      <ol>
+          <li><strong>Eficiència de memòria</strong>: no carrega tots els elements a memòria.</li>
+          <li><strong>Rendiment</strong>: útil per a grans volums de dades.</li>
+          <li><strong>Simplicitat</strong>: codi més net que una funció generadora.</li>
+      </ol>
+
+
+</section>
+
+<section id="conjunts">
+
+      <h2>Conjunts -sets-  {}</h2>
+      <img src="imgs/conjunt.png" alt="conjunt" width="40%" class="imatge-dreta">
+      <h3>Característiques principals</h3>
+      <ol>
+          <li><strong>Elements únics</strong>: Un conjunt no pot contindre duplicats.</li>
+          <li><strong>No ordenats</strong>: Els elements no tenen un ordre específic.</li>
+          <li><strong>Mutables</strong>: Es poden afegir o eliminar elements.</li>
+          <li><strong>Els elements han de ser immutables</strong>: podem afegir o llevar, però no modificar un element concret.</li>
+      </ol>
+  
+      <h3>Exemples d’ús</h3>
+      <pre>
+  conjunt_buit = set()
+  conjunt = {1, 2, 2, 3}
+  print(conjunt)               # Eixida: {1, 2, 3}
+  conjunt = set([1, 2, 3, 3])  # convertir una llista en conjunt
+  conjunt.add(3)               # afegir un element
+  conjunt.remove(2)            # elimina 2, dona error si no existeix
+  conjunt.discard(4)           # elimina 4, no dona error si no existeix
+  conjunt.pop()                # elimina i retorna un element aleatori
+  conjunt.clear()              # buida el conjunt
+  
+  len(conjunt)                 # número d’elements
+  print(5 in conjunt)          # pertinença: True si 5 està en el conjunt
+  type(conjunt) is set         # comprova si és un conjunt
+  
+  a = frozenset([1, 2, 3])     # conjunt immutable
+  conjunt = {1, 2.5, "hola", (1, 2), frozenset([3, 4])}
+  
+  for element in conjunt:
+      print(element)
+      </pre>
+  
+      <h3>Operacions entre conjunts</h3>
+      <pre>
+  print(a.issubset(b))         # a està contingut en b
+  print(a.issuperset(b))       # a conté tots els elements de b
+  print(a.isdisjoint(b))       # a i b no tenen cap element en comú
+ 
+  # Unió
+  print(s1 | s2)
+  print(s1.union(s2))
+  <img src="imgs/conjunts_ops.png" alt="opseracions conjunts" width="40%" class="imatge-dreta">
+  # Intersecció
+  print(s1 & s2)
+  print(s1.intersection(s2))
+  
+  # Diferència
+  print(s1 - s2)
+  print(s1.difference(s2))
+  
+  # Diferència simètrica
+  print(s1 ^ s2)
+  print(s1.symmetric_difference(s2))
+      </pre>
+  
+      <h4>Mètodes destructius (modifiquen el conjunt original):</h4>
+      <pre>
+  conjunt.update(iterable)
+  conjunt.intersection_update(iterable)
+  conjunt.difference_update(iterable)
+  conjunt.symmetric_difference_update(iterable)
+      </pre>
+  
+      <h3>Set Comprehension</h3>
+      <p>És una forma compacta de crear conjunts.</p>
+      <pre>
+  nou_conjunt = {expressio for element in iterable if condició}
+  # Exemple:
+  parells = {x for x in range(10) if x % 2 == 0}
+      </pre>
+  
+</section>
+
+<section id="diccionaris">
+      <h2>Diccionaris { , }</h2>
+      <img src="imgs/diccionaris.png" alt="diccionaris" width="55%" class="imatge-dreta">
+      <p>Els diccionaris emmagatzemen parells clau-valor.</p>
+  
+      <h3>Característiques principals</h3>
+      <ol>
+          <li>Mutables</li>
+          <li>No permeten claus duplicades. Si s’afegeix una clau repetida, el seu valor serà sobreescrit.</li>
+          <li>Les claus han de ser <strong>immutables</strong>. Poden ser <code>str</code>, <code>int</code>, <code>tuple</code>, però no <code>list</code> o <code>dict</code>.</li>
+          <li>Mantenen l’ordre d’inserció (des de Python 3.7).</li>
+      </ol>
+  
+      <h3>Exemples d’ús</h3>
+      <pre>
+  dic = {}  # Diccionari buit
+  persona = {"nom": "Carlos", "edat": 30, "ciutat": "Madrid"}
+  print(persona["nom"])  # Accedeix al valor d’una clau. Imprimeix 'Carlos'
+  
+  dic["nova_clau"] = "nou_valor"   # Afegir una nova clau
+  dic["clau1"] = "valor_actualitzat"  # Modificar una clau existent
+  valor = dic["clau1"]  # Accedir a un valor (error si no existeix)
+  valor = dic.get("clau1", "per defecte")  # Evita errors si no existeix
+  
+  del dic["clau1"]  # Eliminar una clau
+  valor = dic.pop("clau2", None)  # Elimina i retorna el valor, o None
+  
+  dic.clear()  # Buida el diccionari
+  
+  if "clau1" in dic:
+      print("Clau trobada")
+  
+  # Iteracions
+  for clau in dic:
+      print(clau)
+  
+  for valor in dic.values():
+      print(valor)
+  
+  for clau, valor in dic.items():
+      print(clau, valor)
+  
+  tamany = len(dic)  # Nombre d’elements
+  nou_dic = dic.copy()  # Còpia superficial
+  dic.update({"clau3": "valor3", "clau4": "valor4"})  # Afegir/modificar diverses claus
+  
+  claus = dic.keys()     # objecte dict_keys
+  valors = dic.values()  # objecte dict_values
+  items = dic.items()    # objecte dict_items
+  
+  type(dic) is dict  # Comprova si és un diccionari
+  
+  dic1 | dic2   # (Python 3.9+) Fundeix dos diccionaris. Prioritza dic2
+  dic1 |= dic2  # Fusiona i actualitza dic1
+      </pre>
+  
+      <h3>Claus i valors mutables</h3>
+      <p>Les claus han de ser immutables, però els valors poden ser de qualsevol tipus, fins i tot llistes o altres diccionaris.</p>
+      <pre>
+  dic = {(1, 2): "punt", (3, 4): "altre punt"}
+  print(dic[(1, 2)])  # "punt"
+      </pre>
+  
+      <h3>Comprensió de Diccionaris (Dictionary Comprehension)</h3>
+      <p>Permet construir diccionaris de manera compacta a partir d’un iterable:</p>
+      <pre>
+  numeros = [1, 2, 3, 4]
+  quadrats = {n: n**2 for n in numeros}
+  print(quadrats)  # {1: 1, 2: 4, 3: 9, 4: 16}
+      </pre>
+
+      <h2>Funcions <code>lambda</code> (funcions anònimes)</h2>
+
+      <p>Una expressió <code>lambda</code> en Python permet crear funcions petites i anònimes (sense nom). Són útils per definir comportaments ràpids o temporals, especialment dins d’estructures com diccionaris, funcions d’ordre superior (<code>map</code>, <code>filter</code>, <code>sorted</code>, etc.) o comprensions.</p>
+      
+      <h3>Sintaxi</h3>
+      <pre>
+      lambda arguments: expressió
+      </pre>
+      <p>Exemple bàsic:</p>
+      <pre>
+      f = lambda x: x * 2
+      print(f(4))   # Imprimeix 8
+      </pre>
+      
+      <h3>Exemple amb diccionari de funcions</h3>
+      <pre>
+      operacions = {
+          "suma": lambda x, y: x + y,
+          "resta": lambda x, y: x - y
+      }
+      print(operacions["suma"](10, 5))  # Imprimeix 15
+      print(operacions["resta"](10, 5))  # Imprimeix 5
+      </pre>
+      
+      <p>En este cas, <code>operacions</code> és un diccionari que guarda funcions lambda com a valors. Cada clau representa una operació aritmètica, i pots executar la funció cridant-la amb els arguments corresponents.</p>
+
+</section>
+
+<section id="gc">
+  <h2>El Garbage Collector (GC) de Python</h2>
+  <p>   El <strong>Garbage Collector</strong> és el mecanisme encarregat d'<strong>administrar la memòria automàticament</strong> en Python. Elimina els objectes que ja no s’utilitzen, alliberant espai i evitant fugues de memòria.
+  </p>
+  
+  <h3>Exemple conceptual</h3>
+  <pre>
+    <img src="imgs/gc.png" alt="gc" width="65%" class="imatge-dreta">
+  >>> b = 3
+  >>> a = 5
+  >>> a = b
+  </pre>
+  
+  <p>   Quan <code>a = 5</code>, l’objecte <code>5</code> té una referència. Però després <code>a = b</code>, <code>a</code> passa a referenciar <code>3</code>. Com ningú apunta ja a <code>5</code>, queda sense ús i el GC el pot eliminar.
+  </p>
+  <hr>
+  <h3>Funcionament intern</h3>
+  <ul>
+    <li><strong>Conteig de referències:</strong> cada objecte té un comptador que indica quantes referències l’apunten. Si arriba a zero, es pot eliminar automàticament.</li>
+    <li><strong>Recol·lecció de brossa generacional:</strong> els objectes s’organitzen en <em>generacions</em> (0, 1 i 2). Els nous comencen en la generació 0, i si “sobreviuen” diverses neteges, passen a generacions superiors.</li>
+  </ul>
+  
+  <p>   Python fa neteges més freqüents en la generació 0 que en les superiors, perquè és més probable que els objectes nous siguen de curta duració.
+  </p>
+  
+  <h3>Control manual amb el mòdul <code>gc</code></h3>
+  <p>Encara que el GC funciona automàticament, es pot controlar manualment amb el mòdul <code>gc</code>:</p>
+  <pre>
+  import gc
+  
+  gc.collect()      # Força una execució del garbage collector
+  gc.get_stats()    # Mostra estadístiques sobre el GC
+  </pre>
+
+</section>
+
+<section id="funcionsav">
+  <h2>Funcions Avançades en Python</h2>
+
+  <h3>Ús de <code>*args</code> i <code>**kwargs</code></h3>
+  <p>
+  <strong>*args</strong> permet passar un nombre variable d’arguments posicionals a una funció. S’emmagatzemen com una tupla.
+  </p>
+  <pre>
+  def sumar(*args):
+      return sum(args)
+  
+  print(sumar(1, 2, 3, 4))  # Output: 10
+  </pre>
+  
+  <p>
+  <strong>**kwargs</strong> permet passar arguments amb clau i valor (com un diccionari) sense definir-los prèviament.
+  </p>
+  <pre>
+  def mostrar_info(**kwargs):
+      for clau, valor in kwargs.items():
+          print(f"{clau}: {valor}")
+  
+  mostrar_info(nom="Anna", edat=30, ciutat="València")
+  </pre>
+  
+  <p><strong>Diferència:</strong></p>
+  <ul>
+    <li><code>*args</code>: tupla d’arguments posicionals.</li>
+    <li><code>**kwargs</code>: diccionari d’arguments amb nom.</li>
+  </ul>
+  
+  <p>Exemple combinat:</p>
+  <pre>
+  def exemple(*args, **kwargs):
+      print("Args:", args)
+      print("Kwargs:", kwargs)
+  
+  exemple(1, 2, 3, nom="Joan", edat=25)
+  </pre>
+  
+  <h3>Funcions Lambda</h3>
+  <p>
+  Les funcions <strong>lambda</strong> són funcions anònimes d’una sola línia, útils per a operacions curtes.
+  </p>
+  <pre>
+  suma = lambda x, y: x + y
+  print(suma(3, 5))  # 8
+  
+  cuadrat = lambda x: x ** 2
+  print(cuadrat(4))  # 16
+  
+  es_par = lambda x: x % 2 == 0
+  print(es_par(10))  # True
+  </pre>
+  
+  <h4>Exemples amb funcions d’ordre superior</h4>
+  <pre>
+  # map
+  numeros = [1, 2, 3, 4]
+  dobles = list(map(lambda x: x * 2, numeros))
+  
+  # filter
+  pares = list(filter(lambda x: x % 2 == 0, numeros))
+  
+  # sorted amb clau
+  paraules = ["poma", "plàtan", "kiwi"]
+  ordenades = sorted(paraules, key=lambda x: len(x))
+  </pre>
+  
+  <h3>Decoradors en Python</h3>
+  <p>
+  Un <strong>decorador</strong> és una funció que rep una altra funció, l’amplia amb funcionalitat addicional, i retorna una nova funció.
+  </p>
+  <pre>
+  def mi_decorador(func):
+      def nova_funcio():
+          print("Abans de cridar la funció")
+          func()
+          print("Després de cridar la funció")
+      return nova_funcio
+  
+  @mi_decorador
+  def salutacio():
+      print("Hola, món!")
+  
+  salutacio()
+  </pre>
+  
+  <h4>Decoradors amb paràmetres</h4>
+  <pre>
+  def decorador_amb_args(func):
+      def embolcall(*args, **kwargs):
+          print(f"Cridant {func.__name__} amb {args} {kwargs}")
+          return func(*args, **kwargs)
+      return embolcall
+  
+  @decorador_amb_args
+  def suma(a, b):
+      return a + b
+  </pre>
+  
+  <h4>Decorador amb paràmetres personalitzats</h4>
+  <pre>
+  def repetidor(n):
+      def decorador(func):
+          def embolcall(*args, **kwargs):
+              for _ in range(n):
+                  func(*args, **kwargs)
+          return embolcall
+      return decorador
+  
+  @repetidor(3)
+  def hola():
+      print("Hola!")
+  
+  hola()
+  </pre>
+  
+  <h4>Decoradors predefinits</h4>
+  <ul>
+    <li><code>@staticmethod</code>: mètode estàtic d’una classe.</li>
+    <li><code>@classmethod</code>: accedeix a la classe com a primer argument.</li>
+    <li><code>@property</code>: converteix un mètode en propietat.</li>
+  </ul>
+  
+  <pre>
+  class Persona:
+      def __init__(self, nom):
+          self._nom = nom
+  
+      @property
+      def nom(self):
+          return self._nom
+  
+  p = Persona("Carles")
+  print(p.nom)  # Sense parèntesis
+  </pre>
+  
+
+
+
+</section>
+
+</main>
+
+<script>
+
+  // Per poder copiar codi en el porta-retalls. S'ha de posar un botó en cada <pre>
+      //  <div class="pre-container">
+      //    <button class="copy-button">Copia Codi !</button>
+  document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.copy-button');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', function () {
+        const code = this.nextElementSibling.innerText;
+        navigator.clipboard.writeText(code).then(() => {
+          this.innerText = ' ✔ Copiat!';
+          setTimeout(() => this.innerText = 'Copia Codi !', 3000);
+        });
+      });
+    });
+  });
+
+</script>
+
+</body>
+</html>

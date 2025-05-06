@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ca-ES">  
+  <!--  al ponerlo en catalan, fuerzo al navegador a poner el traductor-->
+  <!-- es-ES  lenguaje - ubicacion    -->
+<head>
+  <meta charset="UTF-8">
+  <link rel="alternate" hreflang="ca-ES">
+  <link rel="icon" href="https://www.python.org/favicon.ico"> 
+  <title> Criptografia en Python</title>
+  <link rel="stylesheet" href="estilsunitatspy.css">
+  <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
+</head>
+<body>
+
+  <header>
+    <a href="index.html"><img src="imgs/phyton2-rbg.png" alt="python"></a>
+    <h1>Unitat Didàctica 3: Python Avançat (II)</h1>
+    <h1> </h1>
+  </header>
+
+<nav>
+  <h3>Índex</h3>
+  <a href="#fitxers">Fitxers en Python</a>
+  <a href="#dates">Dates</a>
+  <a href="#arrays">Arrays o Vectors</a>
+  <a href="#oo">POO Programació Orientada a Objectes</a>
+  <a href="#exercicis">Exercicis</a>
+   
+</nav>
+
+<main>
+
+<section id="fitxers">
+  <h2>Gestió de Fitxers en Python</h2>
+
+  <p>
+  La funció <code>open()</code> forma part de la biblioteca estàndard de Python, per la qual cosa es pot utilitzar sense necessitat d’importar res.
+  </p>
+  
+  <h3>Obrir un fitxer</h3>
+  <p>
+  La funció <strong>open()</strong> accepta dos arguments principals:
+  </p>
+  <ol>
+    <li><strong>Nom del fitxer</strong>: El nom o camí del fitxer que vols obrir o crear.</li>
+    <li><strong>Mode d'obertura</strong>: Indica com vols accedir al fitxer (lectura, escriptura, etc.).</li>
+  </ol>
+  
+  <h4>Modes comuns d’obertura</h4>
+  <ul>
+    <li><code>"r"</code>: Lectura (per defecte). Dona error si el fitxer no existeix.</li>
+    <li><code>"w"</code>: Escriptura. Sobreescriu el fitxer si existeix o el crea si no.</li>
+    <li><code>"a"</code>: Afegir. Escriu al final del fitxer si existeix, o el crea si no.</li>
+    <li><code>"x"</code>: Crear. Crea un nou fitxer i dona error si ja existeix.</li>
+    <li><code>"b"</code>: Mode binari (es pot combinar amb altres, per exemple <code>"rb"</code>).</li>
+    <li><code>"t"</code>: Mode text (per defecte, combinable amb <code>"r"</code>, <code>"w"</code>, etc.).</li>
+  </ul>
+  
+  <h3>Lectura de fitxers</h3>
+  
+  <h4>Llegir tot el contingut</h4>
+  <pre>
+  with open("fitxer.txt", "r") as fitxer:
+      contingut = fitxer.read()
+      print(contingut)
+  </pre>
+  
+  <h4>Llegir línia per línia</h4>
+  <pre>
+  with open("fitxer.txt", "r") as fitxer:
+      for linia in fitxer:
+          print(linia.strip())  # Elimina els salts de línia
+  </pre>
+  
+  <h4>Llegir com a llista de línies</h4>
+  <pre>
+  with open("fitxer.txt", "r") as fitxer:
+      linies = fitxer.readlines()
+      print(linies)
+  </pre>
+  
+  <h3>Escriptura en fitxers</h3>
+  
+  <h4>Escriure una sola línia</h4>
+  <pre>
+  with open("fitxer.txt", "w") as fitxer:
+      fitxer.write("Hola, món\n")
+  </pre>
+  
+  <h4>Escriure múltiples línies</h4>
+  <pre>
+  linies = ["Primera línia\n", "Segona línia\n", "Tercera línia\n"]
+  with open("fitxer.txt", "w") as fitxer:
+      fitxer.writelines(linies)
+  </pre>
+  
+  <h4>Afegir contingut a un fitxer existent</h4>
+  <pre>
+  with open("fitxer.txt", "a") as fitxer:
+      fitxer.write("Nova línia afegida\n")
+  </pre>
+ <hr>
+ <h2>Consideracions importants sobre fitxers en Python</h2>
+
+<ol>
+  <li>
+    <strong>Ús de <code>with</code>:</strong> 
+    L’ús del bloc <code>with</code> assegura que el fitxer es tanque automàticament, encara que hi haja errors. És preferible a fer servir <code>open()</code> i <code>close()</code> manualment.
+  </li>
+  <li>
+    <strong>Gestió d’excepcions:</strong> 
+    És recomanable utilitzar blocs <code>try-except</code> per evitar errors si el fitxer no existeix o hi ha problemes d'accés.
+    <pre>
+try:
+    with open("fitxer_inexistent.txt", "r") as fitxer:
+        contingut = fitxer.read()
+except FileNotFoundError:
+    print("El fitxer no existeix.")
+    </pre>
+  </li>
+  <li>
+    <strong>Codificació:</strong> 
+    Si treballes amb caràcters especials (com accents o símbols), és important indicar la codificació:
+    <pre>
+with open("fitxer.txt", "r", encoding="utf-8") as fitxer:
+    contingut = fitxer.read()
+    </pre>
+  </li>
+</ol>
+
+<h2>Guardar objectes en fitxers amb <code>pickle</code></h2>
+
+<p>
+Per guardar i recuperar objectes complexos (com diccionaris, llistes, etc.) es pot usar el mòdul <code>pickle</code>, que permet <strong>serialitzar</strong> i <strong>deserialitzar</strong> objectes.
+</p>
+
+<h3>Serialitzar (guardar) un objecte</h3>
+<p>Converteix l’objecte a una seqüència de bytes i el guarda al fitxer.</p>
+<pre>
+import pickle
+
+dades = {"nom": "Joan", "edat": 25, "ciutat": "València"}
+
+with open("dades.pkl", "wb") as fitxer:
+    pickle.dump(dades, fitxer)
+</pre>
+
+<h3>Deserialitzar (recuperar) un objecte</h3>
+<p>Recupera l’objecte des del fitxer.</p>
+<pre>
+import pickle
+
+with open("dades.pkl", "rb") as fitxer:
+    dades_carregades = pickle.load(fitxer)
+
+print(dades_carregades)
+</pre>
+
+<p><strong>Nota:</strong> Quan es fa servir <code>pickle</code>, cal obrir els fitxers en mode binari (<code>"wb"</code> per escriure, <code>"rb"</code> per llegir).</p>
+
+<h2>Exemple pràctic: Guardar i recuperar objectes amb <code>pickle</code></h2>
+
+<h3>Guardar un objecte en un fitxer</h3>
+<pre>
+import pickle
+
+# Suposem que existeix una classe Persona
+persona = Persona("Ana", 25)
+
+# Guardar l’objecte en un fitxer
+with open("persona.pkl", "wb") as fitxer:  # 'wb' per a escriptura en mode binari
+    pickle.dump(persona, fitxer)
+
+print("Objecte guardat al fitxer 'persona.pkl'.")
+</pre>
+
+<h3>Recuperar un objecte des d’un fitxer</h3>
+<pre>
+import pickle
+
+# Llegir l’objecte des del fitxer
+with open("persona.pkl", "rb") as fitxer:  # 'rb' per a lectura en mode binari
+    persona_recuperada = pickle.load(fitxer)
+
+print("Objecte recuperat del fitxer:")
+print(persona_recuperada)  # Exemple de resultat: Ana, 25 anys
+</pre>
+
+<h3>Guardar i recuperar múltiples objectes</h3>
+<p>Pots guardar diversos objectes (per exemple, una llista de persones) i recuperar-los posteriorment.</p>
+
+<h4>Guardar diversos objectes</h4>
+<pre>
+import pickle
+
+persones = [
+    Persona("Ana", 25),
+    Persona("Lluís", 30),
+    Persona("Maria", 28)
+]
+
+# Guardar la llista d’objectes en un fitxer
+with open("persones.pkl", "wb") as fitxer:
+    pickle.dump(persones, fitxer)
+
+print("Llista d’objectes guardada al fitxer 'persones.pkl'.")
+</pre>
+
+<h4>Recuperar diversos objectes</h4>
+<pre>
+import pickle
+
+# Llegir la llista d’objectes des del fitxer
+with open("persones.pkl", "rb") as fitxer:
+    persones_recuperades = pickle.load(fitxer)
+
+print("Objectes recuperats:")
+for persona in persones_recuperades:
+    print(persona)
+</pre>
+
+<p><strong>Nota:</strong> Assegura’t que la definició de la classe <code>Persona</code> estiga disponible en el moment de deserialitzar l’objecte, ja que <code>pickle</code> necessita accedir a la classe original per reconstruir l’instància.</p>
+
+<h2>Consideracions importants</h2>
+<ol>
+    <li>
+        <strong>Mode binari:</strong>
+        <ul>
+            <li>Usa <code>"wb"</code> per a escriure en binari i <code>"rb"</code> per a llegir en binari.</li>
+        </ul>
+    </li>
+    <li>
+        <strong>Compatibilitat:</strong>
+        <ul>
+            <li>Els objectes serialitzats són específics de la versió de Python i de l’estructura de les classes. Canviar la classe després de guardar els objectes pot causar errors en recuperar-los.</li>
+        </ul>
+    </li>
+    <li>
+        <strong>Seguretat:</strong>
+        <ul>
+            <li>No carregues fitxers <code>pickle</code> de fonts no fiables, ja que podrien executar codi maliciós.</li>
+        </ul>
+    </li>
+    <li>
+        <strong>Serialització amb JSON:</strong>
+        <ul>
+            <li>Si els objectes són simples (com diccionaris o llistes), pots usar <code>json</code> en lloc de <code>pickle</code>. No obstant això, JSON no suporta objectes complexos directament.</li>
+            <li><code>import json</code>, <code>json.dump()</code>, etc. — <em>queda fora d’aquest curs</em>.</li>
+        </ul>
+    </li>
+</ol>
+      
+
+</section>
+
+
+<section id="dates">
+     
+
+</section>
+
+<section id="arrays">
+     
+
+</section>
+
+<section id="oo">
+     
+
+</section>
+
+<section id="exercicis">
+     
+
+</section>
+
+
+
+
+</main>
+
+<script>
+
+  // Per poder copiar codi en el porta-retalls. S'ha de posar un botó en cada <pre>
+      //  <div class="pre-container">
+      //    <button class="copy-button">Copia Codi !</button>
+  document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.copy-button');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', function () {
+        const code = this.nextElementSibling.innerText;
+        navigator.clipboard.writeText(code).then(() => {
+          this.innerText = ' ✔ Copiat!';
+          setTimeout(() => this.innerText = 'Copia Codi !', 3000);
+        });
+      });
+    });
+  });
+
+</script>
+
+</body>
+</html>

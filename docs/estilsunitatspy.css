@@ -93,6 +93,12 @@
     scroll-margin-top: 100px; /* Ajusta aquest valor segons l'alçada del teu header */
   }
 
+  h1 {
+    color: #691f87;
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
   h2 {
     color: #1f3c88;
     font-size: 24px;
