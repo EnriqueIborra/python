@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ca-ES">  
+  <!--  al ponerlo en catalan, fuerzo al navegador a poner el traductor-->
+  <!-- es-ES  lenguaje - ubicacion    -->
+<head>
+  <meta charset="UTF-8">
+  <link rel="alternate" hreflang="ca-ES">
+  <link rel="icon" href="https://www.python.org/favicon.ico"> 
+  <title> Introducció a la programació</title>
+  <link rel="stylesheet" href="estilsunitatspy.css">
+  <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
+</head>
+<body>
+
+  <header>
+    <a href="index.html"><img src="imgs/phyton2-rbg.png" alt="python"></a>
+    <h1>Unitat Didàctica 5: Fonaments de POO</h1>
+    <h1> </h1>
+  </header>
+
+<nav>
+  <h3>Índex</h3>
+  
+  <a href="#objecte">Concepte d'objecte</a>
+  <a href="#instanciacio">Instanciació d'objectes</a>
+  <a href="#utilitzacio">Utilització d'objectes</a>
+  <a href="#llibreries">Llibreries</a>
+  <a href="#constructors">Constructors</a>
+  <a href="#destruccio">Destruccio</a>
+   
+</nav>
+
+<main>
+
+<section id="objecte">
+         
+        <h1>Programació Orientada a Objectes (POO) en Python</h1>
+        <p>En Python, un objecte és una entitat que conté dades (atributs) i comportaments (mètodes). 
+            Tot en Python és un objecte: nombres, cadenes, llistes, funcions, etc.</p>
+        <pre>
+        x = 5
+        print(type(x))  # < class 'int'>
+        </pre>
+        <p>Aquí, <code>x</code> és un objecte de la classe <code>int</code>.</p>
+        <pre>
+Classe: És un motle que permet crear un objecte. 
+   Una classe és capaç de definir un objecte juntament amb les seues propietats (atributs) 
+   i les seues modificacions (mètodes)
+Objecte: És la instància d'una classe i consta de:
+Estat. Representat pels atributs de l'objecte, que reflecteixen les seues propietats
+Comportament. Representat pels mètodes de l'objecte, que reflecteixen la seua resposta a altres objectes            
+        </pre>
+        <p>Un <strong>objecte</strong> en Python és una instància d’una <strong>classe</strong> i pot tindre:</p>
+        <ul>
+            <li><strong>Atributs:</strong> Dades que descriuen les propietats de l’objecte.</li>
+            <li><strong>Mètodes:</strong> Funcions que defineixen el comportament de l’objecte.</li>
+        </ul>
+    
+        <p><strong>Exemple bàsic:</strong></p>
+        <pre><code>
+    # Definir classe
+    class Gos:
+        def __init__(self, nom, raça):
+            self.nom = nom        # Atribut nom
+            self.raça = raça      # Atribut raça
+    
+        def bordar(self):         # Mètode que fa que el gos bordi
+            print(f"{self.nom} diu: ¡Bup!")
+    
+    # Crear un objecte (instància) de la classe
+    el_meu_gos = Gos("Fido", "Labrador")
+    
+    # Accedir als atributs i mètodes
+    print(el_meu_gos.nom)      # Output: Fido
+    el_meu_gos.bordar()        # Output: Fido diu: ¡Bup!
+        </code></pre>
+    
+        <p>En aquest exemple, la classe <code>Gos</code> defineix com es comporten tots els gossos. Cada instància (objecte) com <code>el_meu_gos</code> té els seus propis atributs (<code>nom</code> i <code>raça</code>) i pot executar els seus propis mètodes, com <code>bordar()</code>.</p>
+
+    
+        <h1>Creació de Classes i Objectes en Python</h1>
+    
+        <p>Una <strong>classe</strong> és la plantilla o el model que defineix com es creen els objectes.</p>
+    
+        <h2>Crear una classe</h2>
+        <pre><code>class Cotxe:
+        def __init__(self, marca, model, color):
+            self.marca = marca   # Atribut marca
+            self.model = model   # Atribut model
+            self.color = color   # Atribut color
+    
+        def descriure(self):     # Mètode per descriure el cotxe
+            print(f"Aquest cotxe és un {self.color} {self.marca} {self.model}.")
+        </code></pre>
+    
+        <h2>Crear objectes (instàncies d'una classe)</h2>
+        <pre><code>el_meu_cotxe = Cotxe("Toyota", "Corolla", "roig")
+    altre_cotxe = Cotxe("Honda", "Civic", "blau")
+    
+    # Accedir als atributs i mètodes
+    print(el_meu_cotxe.marca)     # Output: Toyota
+    el_meu_cotxe.descriure()      # Output: Aquest cotxe és un roig Toyota Corolla.
+        </code></pre>
+    
+        <p>En aquest exemple, hem creat una classe <code>Cotxe</code> amb tres atributs: <code>marca</code>, <code>model</code> i <code>color</code>. També hem definit un mètode <code>descriure()</code> per imprimir una descripció del cotxe.</p>
+        
+        <p>Després, hem creat dues instàncies de la classe: <code>el_meu_cotxe</code> i <code>altre_cotxe</code>. Cada objecte té els seus propis valors per als atributs, però comparteixen els mateixos mètodes definits a la classe.</p>
+        
+        <h1>Atributs d’instància vs. atributs de classe</h1>
+
+        <ul>
+            <li><strong>Atributs d’instància</strong>: Són propietats específiques d’un objecte concret (definides al mètode <code>__init__</code>).</li>
+            <li><strong>Atributs de classe</strong>: Són compartits per totes les instàncies d’una mateixa classe.</li>
+        </ul>
+
+        <pre><code>class Animal:
+        especie = "Mamífer"  # Atribut de classe
+
+        def __init__(self, nom):
+            self.nom = nom  # Atribut d’instància
+
+    gat = Animal("Gat")
+    gos = Animal("Gos")
+
+    print(gat.especie)  # Output: Mamífer (compartit)
+    print(gat.nom)      # Output: Gat (específic de l’objecte)
+        </code></pre>
+
+        <h2>Mètodes especials (mètodes màgics o “dunder”)</h2>
+        <p>Els mètodes especials comencen i acaben amb dos guions baixos (<code>__</code>). Se'ls anomena sovint “dunder” (de l'anglés “<strong>Double UNDERscore</strong>”).</p>
+
+        <ul>
+            <li><code>__init__</code>: Inicialitza un objecte. Sempre s’executa quan es crea una nova instància.</li>
+            <li><code>__str__</code>: Retorna una representació en forma de cadena de text de l’objecte (útil per imprimir-lo).</li>
+            <li><code>__len__</code>: Permet definir la longitud de l’objecte (quan s’utilitza amb <code>len(obj)</code>).</li>
+        </ul>
+
+        <h3>Exemple amb __str__</h3>
+        <pre><code>class Persona:
+        def __init__(self, nom, edat):
+            self.nom = nom
+            self.edat = edat
+
+        def __str__(self):
+            return f"{self.nom}, {self.edat} anys"
+
+    persona = Persona("Anna", 30)
+    print(persona)  # Output: Anna, 30 anys
+        </code></pre>
+
+        <h3>Altres mètodes dunder habituals:</h3>
+        <ul>
+            <li><code>__add__</code>, <code>__sub__</code>: Per sumar o restar objectes.</li>
+            <li><code>__eq__</code>, <code>__lt__</code>, <code>__gt__</code>: Per comparar objectes (igual, menor, major).</li>
+            <li><code>__iter__</code>, <code>__next__</code>: Per fer iterables personalitzats (com en bucles <code>for</code>).</li>
+            <li><code>__getattr__</code>, <code>__setattr__</code>, <code>__delattr__</code>: Per controlar l’accés i modificació d’atributs.</li>
+        </ul>
+
+        <p>Per veure tots els mètodes i atributs disponibles d’un objecte pots utilitzar:</p>
+        <pre><code>print(dir(obj))</code></pre>
+                       
+        <h1>Herència</h1>
+    
+        <p>Les classes poden heretar d’altres per reutilitzar codi. Una subclasse pot accedir als mètodes i atributs de la seua classe base.</p>
+    
+        <h2>Exemple bàsic</h2>
+        <pre><code>
+    # Classe base ( o Superclasse )
+    class Vehicle:
+        def __init__(self, marca, model):
+            self.marca = marca
+            self.model = model
+    
+        def descriure(self):
+            print(f"Vehicle: {self.marca} {self.model}")
+    
+    # Subclasse que hereta de Vehicle
+    class Cotxe(Vehicle):
+        def __init__(self, marca, model, portes):
+            super().__init__(marca, model)  # Crida al constructor de la classe base
+            self.portes = portes
+    
+        def descriure(self):
+            print(f"Cotxe: {self.marca} {self.model} amb {self.portes} portes.")
+    
+    # Crea objecte        
+    meucotxe = Cotxe("Ford", "Fiesta", 4)
+    meucotxe.descriure()  # Output: Cotxe: Ford Fiesta amb 4 portes.
+        </code></pre>
+    
+        <h2>Notes:</h2>
+        <ul>
+            <li><code>super()</code> s'utilitza per a cridar mètodes de la classe base.</li>
+            <li>Les subclasses poden sobrescriure mètodes de la classe base si necessiten comportament específic.</li>
+        </ul>
+         
+        <h1>Encapsulació</h1>
+    
+        <p>En Python, pots controlar l'accés als atributs mitjançant modificadors d'accés:</p>
+        <ul>
+            <li><strong>Públic</strong> (<code>nom</code>): Es pot accedir des de qualsevol lloc.</li>
+            <li><strong>Protegit</strong> (<code>_nom</code>): Indica que és per a ús intern (per convenció).</li>
+            <li><strong>Privat</strong> (<code>__nom</code>): Només accessible dins de la classe.</li>
+        </ul>
+    
+        <h2>Exemple:</h2>
+        <pre><code>
+    class CompteBancari:
+        def __init__(self, titular, saldo):
+            self.titular = titular
+            self.__saldo = saldo  # Atribut privat
+    
+        def depositar(self, quantitat):
+            self.__saldo += quantitat
+    
+        def mostrar_saldo(self):
+            print(f"Saldo: {self.__saldo}")
+    
+    compte = CompteBancari("Carlos", 1000)
+    compte.depositar(500)
+    compte.mostrar_saldo()  # Output: Saldo: 1500
+        </code></pre>
+    
+        <p><strong>Nota:</strong> Encara que els atributs privats no es poden accedir directament, es poden consultar mitjançant mètodes públics. Python també permet accedir-hi usant el nom modificat (<code>_Classe__atribut</code>), però això no es recomana.</p>
+    
+        <hr>
+    
+        <h1>Polimorfisme</h1>
+        <p>El polimorfisme permet que diferents classes tinguen un mateix mètode però amb comportaments diferents.</p>
+    
+        <h2>Exemple:</h2>
+        <pre><code>
+    class Au:
+        def so(self):
+            print("Cant genèric")
+    
+    class Canari(Au):
+        def so(self):
+            print("Trinar")
+    
+    class Ànec(Au):
+        def so(self):
+            print("Quac quac")
+    
+    animals = [Canari(), Ànec(), Au()]
+    for animal in animals:
+        animal.so()
+        </code></pre>
+    
+        <p>En aquest exemple, encara que totes les classes comparteixen el mètode <code>so()</code>, cada una executa una acció diferent. Això és una aplicació del polimorfisme.</p>
+        
+        <h1>Classes Iterables</h1>
+    
+        <p>Pots crear els teus propis <strong>iterables</strong> definint una classe que implemente els mètodes <code>__iter__()</code> i <code>__next__()</code>. Això et permet crear seqüències personalitzades que es poden recórrer amb bucles <code>for</code>.</p>
+    
+        <h2>Exemple d'un iterable personalitzat:</h2>
+    
+        <pre><code>class Comptador:
+        def __init__(self, inici, fi):
+            self.inici = inici
+            self.fi = fi
+    
+        def __iter__(self):
+            self.numero = self.inici
+            return self
+    
+        def __next__(self):
+            if self.numero <= self.fi:
+                resultat = self.numero
+                self.numero += 1
+                return resultat
+            else:
+                raise StopIteration
+    
+    comptador = Comptador(1, 5)
+    
+    for numero in comptador:
+        print(numero)
+        </code></pre>
+    
+        <p>En aquest exemple, la classe <code>Comptador</code> és un iterable que genera nombres del 1 al 5. El bucle <code>for</code> recorre cada nombre generat per l'iterable i el mostra per consola.</p>
+        <hr>
+    
+   
+
+</section>
+
+</main>
+
+<script>
+
+  // Per poder copiar codi en el porta-retalls. S'ha de posar un botó en cada <pre>
+      //  <div class="pre-container">
+      //    <button class="copy-button">Copia Codi !</button>
+  document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.copy-button');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', function () {
+        const code = this.nextElementSibling.innerText;
+        navigator.clipboard.writeText(code).then(() => {
+          this.innerText = ' ✔ Copiat!';
+          setTimeout(() => this.innerText = 'Copia Codi !', 3000);
+        });
+      });
+    });
+  });
+
+</script>
+
+</body>
+</html>

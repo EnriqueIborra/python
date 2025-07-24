@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <link rel="alternate" hreflang="ca-ES">
   <link rel="icon" href="https://www.python.org/favicon.ico"> 
-  <title> Criptografia en Python</title>
+  <title> Introducció a la programació</title>
   <link rel="stylesheet" href="estilsunitatspy.css">
   <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
 </head>
@@ -14,564 +14,26 @@
 
   <header>
     <a href="index.html"><img src="imgs/phyton2-rbg.png" alt="python"></a>
-    <h1>Unitat Didàctica 2: Python Bàsic</h1>
+    <h1>Unitat Didàctica 2: Entrada i Eixida en Python</h1>
     <h1> </h1>
   </header>
 
 <nav>
   <h3>Índex</h3>
-  <a href="#entorn">L'entorn de programació</a>
-  <a href="#variables">Variables</a>
-  <a href="#escritura">Escritura</a>
-  <a href="#lectura">Lectura</a>
-  <a href="#operacions">Operacions en Python</a>
+  <a href="#escritura">Escritura / Eixida</a>
+  <a href="#lectura">Lectura / Entrada </a>
+  <a href="#fitxers">Entrada i Eixida en Fitxers</a>
+  <a href="#GUI">Entrada i Eixida en GUI</a>
+  <a href="#bbdd">Entrada i Eixida en BBDD</a>
+  <a href="#exercicis">Exercicis</a>
    
 </nav>
 
 <main>
 
-<section id="entorn">
-        <h1>1. L'entorn de programació per a Python</h1>
-        <p>Un entorn de programació (o entorn de desenvolupament) per a un llenguatge de programació com Python és un conjunt
-             d'eines i recursos que faciliten la creació, el desenvolupament, l'execució i la depuració del codi font d'un programa
-              escrit en aquell llenguatge. Aquests entorns estan dissenyats per fer el treball del programador més eficient, 
-              proporcionant una sèrie d'eines per facilitar la redacció del codi, la seva execució i la detecció d'errors. 
-              Els entorns de programació poden variar des d'entorns simples fins a entorns molt complets que inclouen moltes funcionalitats</p>
-              
-              <ul> <u>Un entorn de programació:</u>
-                  <li>Facilita l’escriptura de codi</li>
-                  <li>Millora la productivitat</li>
-                  <li>Ajuda a detectar errors</li>
-                  <li>Organitza projectes</li>
-              </ul>
-              <ul><u>Components comuns d'un entorn de programació per Python:</u>
-                <li>Editor de codi</li>
-                <li>Interpret o Compilador</li>
-                <li>Depurador o Debugger</li>
-                <li>Sistema de gestió de projectes</li>
-                <li>Terminal o Consola integrada</li>
-                <li>Eines de Visualització i Documentació</li>
-              </ul>
-
-        <h2>Python Shell (Intèrpret Interactiu)</h2>
-        <p>El Python Shell és el mode interactiu bàsic de Python. Quan instal·les Python, aquest ve amb un entorn de consola interactiva que et permet executar codi Python línia a línia i obtindre resultats immediats.</p>
-    
-        <h3>Com utilitzar el Python Shell:</h3>
-    
-        <ul>
-            <li><strong>Obrir el Shell:</strong><br>
-                A la terminal o línia d'ordres (cmd o PowerShell en Windows), simplement escriu:<br>
-                <code>C:\&gt; python</code> o <code>C:\&gt; py</code><br>
-                Si estàs utilitzant Linux, necessitaràs escriure <code>python3</code>:<br>
-                <code>$ python3</code><br>
-                <!-- Aclariment: Python3 és la versió moderna de Python. Python2 està en desús. -->
-                <em>* Pots trobar més informació sobre python2/python3 al final del document</em>
-            </li>
-    
-            <li><strong>Treballar de manera interactiva:</strong><br>
-                Després d'executar l'ordre anterior, veuràs alguna cosa com això:
-                <pre>
-    Python 3.x.x (default, ...)
-    [GCC x.x.x ...] on linux
-    Type "help", "copyright", "credits" or "license" for more information.
-    >>>
-                </pre>
-                En este prompt (<code>&gt;&gt;&gt;</code>), pots començar a escriure codi Python directament. Per exemple:
-                <pre>
-    &gt;&gt;&gt; 2 + 3      # Açò ho escrius tu 
-    5              #  Açò ho mostra Python 
-    &gt;&gt;&gt; print("Hola, món!")     # Açò ho escrius tu 
-    Hola, món!     #  Resultat en la consola 
-                </pre>
-    
-                <p>El botó <strong>Intro</strong> indica a Python que execute la línia (ordre), però amb una <code>\</code> podem afegir més línies a una ordre.</p>
-                <!-- Aclariment: Això permet superar la limitació de 79 caràcters per línia de codi -->
-                <pre>
-    &gt;&gt;&gt; 2 + 3 \    # Quan es prem Intro, no evalua, obre una nova linea
-    ... * 5        # Aquest prompt (...) indica que espera més informació 
-    17
-                </pre>
-    
-                <p>També podem ajuntar ordres en una sola línia:</p>
-                <pre>
-    &gt;&gt;&gt; a = 20 ; b = 14 ; c = a + b; print(c)
-    44
-                </pre>
-    
-                <p class="alert"><strong>⚠️ Compte</strong> amb no deixar espais en blanc al principi d'una línia, a no ser que es vulga fer una <em>indentació</em></p>
-                <p>Es parlarà més sobre la indentació més endavant.</p>
-                <!-- Aclariment: La indentació és important en Python perquè indica blocs de codi -->
-                <pre>
-    &gt;&gt;&gt;   2 + 3
-    SyntaxError: unexpected indent
-                </pre>
-            </li>
-    
-            <li><strong>Eixir del Shell:</strong><br>
-                <ul>
-                    <li>Escriu <code>exit()</code></li>
-                    <li>O prem <kbd>Ctrl</kbd>+<kbd>D</kbd> (en macOS/Linux)</li>
-                    <li>O prem <kbd>Ctrl</kbd>+<kbd>Z</kbd> i després <kbd>Intro</kbd> (en Windows)</li>
-                </ul>
-            </li>
-        </ul>
-        <h2>IDLE, entorn de desenvolupament de Python</h2>
-
-        <p>
-            <strong>IDLE</strong> (Entorn de Desenvolupament Integrat per a Python) és un entorn gràfic de desenvolupament elemental que permet editar i executar programes en Python.
-        </p>
-    
-        <p>
-            IDLE també és un entorn interactiu en què es poden executar instruccions soltes de Python.
-        </p>
-    
-        <p>
-            En <strong>Windows</strong>, IDLE es distribueix juntament amb l'intèrpret de Python. És a dir, quan instal·les Python en Windows, també s’instal·la IDLE automàticament.
-        </p>
-    
-        <p>
-            En <strong>Linux</strong>, IDLE es distribueix com una aplicació separada que es pot instal·lar des dels repositoris de cada distribució.
-        </p>
-    
-        <pre>
-    $ sudo apt install idle3    <!-- Per a Debian, Ubuntu o derivats -->
-        </pre>
-    
-        <!-- Aclariment: Aquest comandament instal·la la versió d'IDLE compatible amb Python 3 -->
-    
-        <p>
-            Una vegada finalitze la instal·lació, podrem iniciar aquest entorn des del menú principal del sistema Linux.
-        </p>
-    
-        <p>
-            Visualment és molt paregut al Python Shell, però amb una interfície gràfica d’usuari (GUI), que facilita l’edició i execució de codi.
-        </p>
-    
-        <!-- Aclariment: GUI vol dir “Graphical User Interface”, i facilita l'ús per a principiants comparat amb la línia d'ordres -->
-        <h2>Python des de Bash</h2>
-
-        <p>
-            Utilitzant un editor del sistema operatiu (<code>nano</code>, <code>gedit</code>, <code>notepad</code> en Windows, <code>VSCode</code>, etc.), editem un fitxer amb extensió <code>.py</code> que continga el codi Python.
-        </p>
-    
-        <p>
-            Per exemple, creem un fitxer anomenat <code>exemple.py</code>.
-        </p>
-    
-        <p>Contingut de <code>exemple.py</code>:</p>
-        <pre>
-    a = 5
-    b = 3
-    suma = a + b
-    print("La suma de", a, "i", b, "és:", suma)
-        </pre>
-    
-        <p>
-            Guardem el fitxer i executem el codi des de la terminal:
-        </p>
-        <pre>
-    $ python3 exemple.py       
-    C:\&gt; py exemple.py       #  En Windows 
-        </pre>
-    
-        <!-- Aclariment: En Windows, “py” és un iniciador automàtic instal·lat amb Python -->
-    
-        <h3>Executar com a script autònom</h3>
-        <p>
-            Una altra forma d'executar un fitxer Python és indicant en la primera línia on es troba l'intèrpret de Python:
-        </p>
-    
-        <pre>
-    #! /usr/bin/python3
-    a = 5
-    b = 3
-    suma = a + b
-    print("La suma de", a, "i", b, "és:", suma)
-        </pre>
-    
-        <!-- Aclariment: Aquesta línia s’anomena “shebang” i indica quin intèrpret ha d’usar el sistema -->
-    
-        <p>
-            A continuació, cal donar permisos d’execució al fitxer:
-        </p>
-        <pre>
-    $ chmod +x exemple.py
-    $ ./exemple.py
-        </pre>
-    
-        <!-- Aclariment: chmod +x fa que el fitxer siga executable com un script de shell -->
-        <h2>IPython: Un Shell Interactiu Millorat</h2>
-
-        <p>
-            <strong>IPython</strong> és una versió millorada del Python Shell que proporciona funcionalitats addicionals com l'autocompletat, documentació en línia, historial d’ordres i més.
-        </p>
-    
-        <h3>Instal·lació d’IPython:</h3>
-        <p>
-            Si no tens IPython instal·lat, pots fer-ho fàcilment amb pip:
-        </p>
-        <pre>
-    $ pip3 install ipython        <!-- Per a Linux/macOS -->
-    C:\&gt; pip install ipython      <!-- En Windows -->          </pre>
-    <p class="alert"> ⚠️ Recorda carregar el teu entorn virtual primer...</p>
-    
-        <!-- Aclariment: Assegura't d’activar el teu entorn virtual abans de fer servir pip si treballes amb entorns aïllats -->
-    
-        <h3>Com utilitzar IPython:</h3>
-        <ul>
-            <li><strong>Obrir IPython:</strong><br>
-                Després de la instal·lació, simplement escriu <code>ipython</code> a la terminal:
-                <pre>
-    $ ipython3
-                </pre>
-    
-                Veuràs alguna cosa com:
-                <pre>
-    Python 3.x.x (default, ... )
-    Type "copyright", "credits" or "license" for more information.
-    IPython x.x.x -- An enhanced Interactive Python. Type '?' for help.
-    In [1]:
-                </pre>
-            </li>
-    
-            <li><strong>Característiques d’IPython:</strong>
-                <ul>
-                    <li><strong>Autocompletat:</strong> Pots començar a escriure una variable o funció i prémer <kbd>Tab</kbd> per completar automàticament.</li>
-                    <li><strong>Historial:</strong> Pots usar les fletxes amunt i avall per recuperar ordres anteriors.</li>
-                    <li><strong>Documentació ràpida:</strong> Escriu el nom d'una funció o objecte seguit de <code>?</code> per veure’n la documentació.<br>
-                        <code>In [1]: print?</code>
-                    </li>
-                    <li><strong>Execució d’ordres del sistema operatiu:</strong> Pots executar ordres del sistema directament amb <code>!</code>:
-                        <pre>
-    In [2]: !dir     <!-- Mostra els fitxers en Windows (equivalent a `ls` en Linux) -->
-                        </pre>
-                    </li>
-                    <li><strong>Magics:</strong> IPython inclou ordres màgiques que comencen amb <code>%</code> (línia) o <code>%%</code> (cel·la).
-                        <pre>
-    In [3]: %timeit sum(range(1000))   <!-- Mesura el temps d'execució -->
-                        </pre>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-        <h2>Jupyter Notebooks</h2>
-
-        <p>
-            <strong>Jupyter Notebooks</strong> és una eina web interactiva que et permet escriure codi Python, text i equacions en un mateix document. És ideal per a l’exploració de dades, l’anàlisi i l’experimentació.
-        </p>
-    
-        <h3>Instal·lació de Jupyter Notebooks:</h3>
-        <p>
-            Si no tens Jupyter instal·lat, pots fer-ho utilitzant pip:
-        </p>
-        <pre>
-    $ pip3 install notebook         </pre>
-        <p class="alert"> ⚠️ Recorda carregar el teu entorn virtual primer...</p>        
-        <!-- Aclariment: Recorda activar el teu entorn virtual abans d’utilitzar pip, si n’estàs usant un -->
-    
-        <h3>Com utilitzar Jupyter Notebooks:</h3>
-    
-        <ol>
-            <li><strong>Iniciar el servidor de Jupyter:</strong>
-                <p>En la terminal, escriu:</p>
-                <pre>$ jupyter notebook</pre>
-                <p>
-                    Açò obrirà una pàgina web en el teu navegador, generalment en <code>http://localhost:8888</code>,
-                    des d’on podràs crear, editar i executar quaderns interactius de Python.
-                </p>
-            </li>
-    
-            <li><strong>Executar codi en cel·les:</strong>
-                <p>
-                    En Jupyter, el codi s’organitza en cel·les. Pots escriure codi dins d’una cel·la i executar-lo amb la combinació de tecles <kbd>Shift</kbd> + <kbd>Enter</kbd>.
-                </p>
-                <p>
-                    També pots combinar codi i text (en format <em>Markdown</em>) dins del mateix quadern, cosa que el fa ideal per documentar projectes.
-                </p>
-            </li>
-    
-            <li><strong>Altres característiques:</strong>
-                <ul>
-                    <li><strong>Visualització de gràfics:</strong> Si treballes amb llibreries com <code>matplotlib</code> o <code>seaborn</code>, els gràfics es mostren directament dins del quadern.</li>
-                    <li><strong>Exportació:</strong> Pots exportar els teus quaderns com a fitxers <code>HTML</code> o <code>PDF</code> per compartir-los o presentar-los.</li>
-                </ul>
-            </li>
-        </ol>
-                
-        <h2>Python en Entorns de Desenvolupament Integrats (IDE)</h2>
-
-        <p>
-            Molts IDEs (Entorns de Desenvolupament Integrats) també proporcionen una consola interactiva on pots executar codi Python de manera ràpida, a més d’oferir funcionalitats addicionals com la depuració (debugging) i l’autocompletat.
-        </p>
-    
-        <h3>Alguns IDEs populars:</h3>
-        <ul>
-            <li><strong>PyCharm:</strong> Ofereix un intèrpret interactiu que et permet executar codi directament des de l’editor.</li>
-            <li><strong>Visual Studio Code:</strong> Té suport per executar scripts Python en la terminal integrada o en la consola interactiva (utilitzant l’extensió de Python).</li>
-            <li><strong>Thonny:</strong> Un IDE senzill per a Python que inclou un shell interactiu fàcil d’utilitzar. Molt recomanat per a principiants.</li>
-        </ul>
-    
-        <h3>Exemple en Visual Studio Code:</h3>
-        <ol>
-            <li>Instal·la <strong>Visual Studio Code</strong> i l’extensió de Python.</li>
-            <li>
-                Obri un fitxer Python i prem
-                <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> (Windows) o
-                <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> (Mac),
-                i escriu <em>Python: Start REPL</em> per obrir una consola interactiva dins de VS Code.
-            </li>
-            <li>
-                Pots executar codi en la consola interactiva i veure els resultats immediatament.
-            </li>
-        </ol>
-            <!-- Aclariment: En molts editors, pots prémer F5 o un botó de “run” per executar directament el fitxer -->
-        <!-- Aclariment: REPL vol dir “Read-Eval-Print Loop”, i és una forma d’interacció on s’escriu una ordre, s’avalua i es mostra el resultat -->
-        <h2>Ús de Python Interactiu des de Scripts</h2>
-
-        <p>
-            Si prefereixes escriure el teu codi en fitxers <code>.py</code>, però vols executar de manera interactiva certes seccions, pots utilitzar la funció <code>code.InteractiveConsole</code> per emular un entorn interactiu dins d’un script Python.
-        </p>
-    
-        <h3>Exemple d’ús de <code>InteractiveConsole</code>:</h3>
-    
-        <pre>
-    import code
-    
-    # Crear una consola interactiva
-    console = code.InteractiveConsole()
-    
-    # Executar codi en la consola
-    console.push('x = 10')
-    console.push('print(x * 2)')
-        </pre>
-    
-        <p>
-            Aquest enfocament és útil si vols incorporar una sessió interactiva dins d’una aplicació o script Python, per exemple per a proves, prototipat o entorns educatius.
-        </p>
-    
-        <h2>Ús de Python des d'una Plataforma Web</h2>
-
-        <p>
-            Existen plataformes web des de les quals es pot practicar codi Python directament escrivint en el navegador.
-        </p>
-    
-        <h3>Exemples (sense registre):</h3>
-        <ul>
-            <li><a href="https://www.w3schools.com/python/" target="_blank">W3Schools Python</a></li>
-            <li><a href="https://www.online-python.com/" target="_blank">Online Python Compiler</a></li>
-            <li><a href="https://www.programiz.com/python-programming/online-compiler/" target="_blank">Programiz Python Compiler</a></li>
-        </ul>
-    
-        <h3>Exemples (amb registre):</h3>
-        <ul>
-            <li><a href="https://replit.com/languages/python3" target="_blank">Replit</a></li>
-            <li><a href="https://colab.research.google.com/" target="_blank">Google Colab</a></li>
-        </ul>
-    
-        <!-- Aclariment: Amb registres en plataformes com Replit o Colab, pots guardar els teus projectes, compartir-los i fins i tot treballar amb altres persones en temps real -->
-         
-
-   
-
-    
-        <h2>Python 2 vs Python 3</h2>
-        <p>Python 3 és la versió moderna i recomanada. Python 2 ha deixat de rebre suport oficial des del 2020.</p>
-        <ul>
-            <li><code>print</code> en Python 3 és una funció: <code>print("Hola")</code></li>
-            <li>En Python 2 es podia escriure: <code>print "Hola"</code>, però això ja no és vàlid en Python 3</li>
-            <li>Moltes llibreries noves només funcionen amb Python 3</li>
-        </ul>
-    
-        <!-- Aclariment: Si tens dubtes sobre quina versió tens, escriu en la terminal: python --version o python3 --version -->
-        <p>Per comprovar la versió de Python:</p>
-        <pre>
-    $ python --version
-    o
-    $ python3 --version
-        </pre>
-    
-        <p>Això et mostrarà alguna cosa com:</p>
-        <pre>
-    Python 3.10.7
-        </pre>
-
-</section> 
-
-<section id="variables">
-    <h1>El llenguatge de programació Python</h1>
-    <h2>Primer de tot, anem a fer-nos amb una Cheat Sheet</h2>
-    <p>  Una <strong>cheat sheet</strong> (fulla de referència ràpida) en el context d'un llenguatge de programació és un document concís i ben organitzat que resumeix les característiques, comandes, funcions i conceptes clau del llenguatge. Està dissenyada com una guia pràctica per a programadors, ajudant-los a recordar ràpidament sintaxi, mètodes i estructures comunes sense necessitat de consultar documentació extensa.  </p>
-    <p>  Podem trobar un exemple en el següent enllaç:
-        <a href="https://perso.limsi.fr/pointal/_media/python:cours:mementopython3-english.pdf" target="_blank">Memento Python 3 (en anglès)</a>
-    </p>
-    <p> I per descomptat, també està disponible a la documentació oficial de Python:
-        <a href="https://docs.python.org/es/3.12/" target="_blank">Documentació oficial de Python 3.12 (en espanyol)</a>
-    </p>
-    <h2>2.1. Variables i Tipus de Dades</h2>
-
-    <p>
-        Per a començar a utilitzar Python, és més recomanable utilitzar Python des del Shell o IPython (o IDLE en Windows), per la seva ràpida resposta a comandes senzilles.
-    </p>
-
-    <p>  En Python, no és necessari declarar el tipus d'una variable. Python el dedueix automàticament. Les variables es creen quan es realitza la seva primera assignació.   </p>
-     <p class="tips">—Entra a Python i practica—</p>   
-
-    <pre>
-x = 10             # Número enter (integer)
-nombre = "Ana"     # Cadena de text (String)
-nombre2 = 'Pedro'  # String amb cometes simples
-precio = 15.5      # Número decimal (float)
-es_activo = True   # Booleà (True o False)
-b = None           # Valor nul, absència de valor
-a = b = c = 100    # Assignació múltiple, un sol valor
-userAge, userName = 30, 'Pedro'   # Assignació múltiple, múltiples valors
-a, b = 23, 67      # Assignació múltiple
-a, b = b, a        # Intercanvi de valors (sense utilitzar variable temporal !!)      </pre>
-
-    <p>         S'evita l'ús d'una variable temporal per realitzar l'intercanvi:
-    </p>
-
-    <pre># intercanvi típic de dos variables 
-temp = a
-a = b
-b = temp      </pre>
-    <p>    Per saber quin tipus de dada té una variable, podem utilitzar la funció <code>type()</code>:
-    </p>
-    <pre>
-type(x)             # Ens diu el tipus actual de la variable
-del v   o  del(v)   # Deixa la variable lliure, sense tipus ni valor      </pre>
-    <p>         Exemple en Python:
-    </p>
-    <pre>
-$ python3
->>> x = 10
->>> x
-   10
->>> type(x)
-   <class 'int'>      </pre>
-
-    <p>  Amb <code>del(a)</code> es deixa de fer servir una variable (també amb <code>del a</code>).     </p>
-    <h2>Regles per als Noms de Variables (Identificadors)</h2>
-    <p>     <strong>Los noms de variables (o identificadors) són sensibles a majúscules i minúscules.</strong>
-        És a dir, <code>username</code> no és el mateix que <code>userName</code>.     </p>
-    <p>         Els noms de variables només poden contenir lletres majúscules, lletres minúscules, números (dígits) i el caràcter de subratllat (<code>_</code>), 
-        i no poden començar amb un número.     </p>
-    <p>    A partir de Python 3, també es poden utilitzar lletres internacionals, com ara <code>α</code>, <code>β</code>, <code>ñ</code>, <code>é</code>, <code>π</code>, <code>变</code>, etc.     </p>
-    <p>         <strong>Els noms de variables no poden ser paraules reservades de Python.</strong> És a dir, no es poden utilitzar paraules clau del llenguatge com a noms de variables. Per exemple, no es pot usar <code>else</code> com a nom de variable.     </p>
-     <p>   <strong>Prova d'equivocar-te intencionadament i familiaritza't amb els errors que transmet Python:</strong>    </p>
-
-    <pre>
->>> else = 9
-SyntaxError: invalid syntax
-
->>> 5var = 67
-SyntaxError: invalid syntax
-    </pre>
-    <h2>Paraules Reservades de Python</h2>
-
-    <p>
-        Python té un conjunt de paraules reservades que no poden ser utilitzades com a noms de variables, funcions o qualsevol altre identificador. Aquestes paraules tenen un significat especial dins del llenguatge i són part del seu sistema de sintaxi.
-    </p>
-
-    <p>
-        Per a veure quines són les paraules reservades de Python, podem utilitzar el mòdul <code>keyword</code>:
-    </p>
-
-    <pre>
-import keyword
-print(keyword.kwlist)
-    </pre>
-
-    <p>         Algunes de les paraules reservades de Python inclouen:     </p>
-
-    <pre>
-False      await      else       import     pass      None        break
-except     in         raise      True       class     finally     is
-Return     and        continue   for        lambda    try         as
-def        from       nonlocal   while      assert    del         global
-not        with       async      elif       if        or          yield       </pre>
-
-    <p>         Aquestes paraules no poden ser utilitzades com a noms de variables, ja que tenen un significat especial en Python.     </p>
-    <h2>Assignació de Variables i Literals en Python</h2>
-
-    <p>    En la part esquerra de l'assignació s'indica la variable en què s'emmagatzemarà el valor. 
-        En la part dreta de l'assignació s'indica un literal que serà interpretat per Python.     </p>
-
-    <p>         Els <strong>literals</strong> són els dades simples que Python és capaç de gestionar:     números o cadenes de text.   </p>
-
-    <h3>Números:</h3>
-    <p>
-        Python pot manejar diversos tipus de números:
-    </p>
-    <ul>
-        <li><strong>Enteros</strong> (són números sencers, com 10, -5, 0)</li>
-        <li><strong>Decimals</strong> (números amb punt decimal, com 3.14, -0.5, 0.0)</li>
-        <li><strong>Complexos</strong> (números amb una part imaginària, com 1 + 2j)</li>
-        <li><strong>En notació decimal, octal o hexadecimal:</strong> es poden representar números en diferents bases numèriques, com <code>0o</code> per a octals (ex. <code>0o10</code>), <code>0x</code> per a hexadecimals (ex. <code>0xFF</code>), i en decimal com és habitual.</li>
-    </ul>
-
-    <h3>Cadenes:</h3>
-    <p>          Les cadenes de text poden estar entre cometes simples (<code>'Hola'</code>) o dobles (<code>"Hola"</code>).    </p>
-
-    <h3>Valors lògics:</h3>
-    <p>         Els valors lògics en Python són:      </p>
-    <ul>
-        <li><strong>True</strong> (cert)</li>
-        <li><strong>False</strong> (fals)</li>
-    </ul>
-
-    <h3>Valor nul:</h3>
-    <p>         El valor nul en Python és <code>None</code>, el qual s'utilitza per representar l'absència de valor.      </p>
-
-    <p>         Exemple d'assignació:    </p>
-
-    <pre>
-x = 10       # Un número enter
-y = 3.14     # Un número decimal
-z = "Hola"   # Una cadena de text
-a = True     # Un valor lògic
-b = None     # Un valor nul     </pre>
-
-<h2>Comentaris en el Codi de Python</h2>
-
-<p>     Els <strong>comentaris</strong> en Python serveixen per afegir notes o explicacions al codi que no són executades pel intèrpret de Python. 
-    Són útils per fer que el codi sigui més comprensible tant per a tu com per a altres persones que el llegeixin. </p>
-
-<h3>Formes de fer comentaris</h3>
-<p>     Hi ha dues formes de posar comentaris en Python: 
-    <strong>en una línia</strong> o <strong>en múltiples línies</strong>. </p>
-
-<ul>
-    <li><strong>Comentari d'una línia:</strong> Els comentaris d'una sola línia comencen amb el símbol <code>#</code>. El codi que segueix a aquest símbol serà ignorat per l'intèrpret.</li>
-    <li><strong>Comentari de múltiples línies:</strong> Els comentaris de diverses línies es poden crear amb cometes dobles triples (<code>""" ... """</code>) o cometes simples triples (<code>''' ... '''</code>).</li>
-</ul>
-
-<h3>Exemples de Comentaris:</h3>
-
-<pre>
-# Això és un comentari d'una línia, pot anar també darrere de codi
-x = 10  # Assignació d'un valor a x
-
-""" Això és un comentari 
-de diverses línies: Comentari Multilinia """
-y = 20  # Assignació d'un valor a y
-
-''' Amb tres cometes simples
-també es poden crear comentaris de diverses línies '''
-z = 30  # Assignació d'un valor a z  </pre>
-
-<h3>Alguns usos dels comentaris són:</h3>
-<ul>
-    <li>Explicar el propòsit del codi</li>
-    <li>Anotar recordatoris o tasques pendents (TODOs)</li>
-    <li>Desactivar parts del codi temporalment</li>
-    <li>Documentar el codi (com funciona)</li>
-    <li>Ajuda en la depuració</li>
-</ul>
-</section>
 
 <section id="escritura">
-    <h1>Escritura de dades en Python</h1>
+    <h1>Escritura de dades en Python (EIXIDA)</h1>
     <h2>Funció <code>print()</code></h2>
 
     <p>
@@ -688,7 +150,7 @@ z = 30  # Assignació d'un valor a z  </pre>
         <p>En Python, tots els elements són objectes, fins i tot els literals. Quan utilitzem un literal, Python crea un objecte amb un identificador únic, un tipus i un valor.</p>
         <p>Pots obtindre l'identificador d'un objecte amb la funció <code>id()</code>:</p>
         <pre><code>x = 100
-        print(id(x))</code></pre>
+print(id(x))</code></pre>
 
     <h2>Literals Strings o Cadenes</h2>
 
@@ -697,26 +159,26 @@ z = 30  # Assignació d'un valor a z  </pre>
         <p>En Python, les cometes dobles i simples són equivalents, encara que en altres llenguatges de programació poden no ser-ho.</p>
         
         <pre><code>print("Això és una cadena")     # Correcte
-        print('Això és una cadena')     # Correcte</code></pre>
+print('Això és una cadena')     # Correcte</code></pre>
         
         <p>Si utilitzem cometes simples, la cadena ha de començar i acabar amb cometes simples (no amb dobles), i viceversa:</p>
         
         <pre><code>print("Això és una cadena')     # Error de sintaxi
-        print("Això "és una cadena")    # Error de sintaxi</code></pre>
+print("Això "és una cadena")    # Error de sintaxi</code></pre>
         
         <h3>Cometes triples</h3>
         <p>Les cometes triples permeten escriure cadenes que ocupen diverses línies, útil quan es vol superar el límit recomanat de 79 caràcters per línia:</p>
         
         <pre><code>print("""Això és una cadena
-        que ocupa
-        diverses línies""")</code></pre>
+que ocupa
+diverses línies""")</code></pre>
         
         <h3>També es pot fer amb el caràcter \</h3>
         <p>El caràcter <code>\</code> permet continuar la cadena en una altra línia sense trencar-la:</p>
         
         <pre><code>print("Això és una cadena \
-        que ocupa \
-        diverses línies")</code></pre>
+que ocupa \
+diverses línies")</code></pre>
         
         <h3>Comportament de les línies amb <code>\</code></h3>
         <p><strong>Nota:</strong> En aquests casos, el resultat és una cadena contínua, sense salts de línia. Si vols realment afegir salts, cal usar <code>\n</code>.</p>
@@ -724,23 +186,23 @@ z = 30  # Assignació d'un valor a z  </pre>
         <h3>Inserir cometes del mateix tipus</h3>
         <p>Si vols utilitzar cometes del mateix tipus que el delimitador dins de la cadena, cal escapar-les amb el caràcter de barra invertida <code>\</code>:</p>
         
-        <pre><code>print("Això és una cadena amb cometes dobles: \"exemple\"")
-        print('Això és una cadena amb cometes simples: \'exemple\'')</code></pre>
+        <pre><code>print("Això és una cadena amb cometes dobles: \"exemple\"") </code></pre>
         
         <h3>Caràcters especials dins de cadenes</h3>
         <ul>
-          <li><code>\"</code> – cometa doble dins de cometes dobles</li>
-          <li><code>\'</code> – cometa simple dins de cometes simples</li>
-          <li><code>\n</code> – salt de línia</li>
-          <li><code>\t</code> – tabulació horitzontal</li>
-          <li><code>\v</code> – tabulació vertical</li>
-          <li><code>\\</code> – barra invertida literal</li>
+          <li><code>\"</code>  cometa doble dins de cometes dobles</li>
+          <li><code>\'</code>  cometa simple dins de cometes simples</li>
+          <li><code>\n</code>  salt de línia</li>
+          <li><code>\t</code>  tabulació horitzontal</li>
+          <li><code>\v</code>  tabulació vertical</li>
+          <li><code>\\</code>  barra invertida literal</li>
         </ul>
         
-        <pre><code>print("Hola\tmón")         # Hola    món
+        <pre><code>
+        print("Hola\tmón")         # Hola    món
         print("Línia 1\nLínia 2")   # Línia 1
                                     # Línia 2
-        print("Ruta: C:\\fitxers\\usuari")</code></pre>
+        print("Ruta: C:\\fitxers\\usuari")   # Ruta: C:\fitxers\usuari </code></pre>
         
         <h3>Inserció de valors dins de cadenes</h3>
         <p>Python ofereix diversos mecanismes per a inserir valors de variables dins de cadenes de text, com ara:</p>
@@ -761,13 +223,15 @@ z = 30  # Assignació d'un valor a z  </pre>
         
         <h4>2. Format amb <code>.format()</code></h4>
         <p>Permet especificar la posició dels valors i aplicar formatacions:</p>
-        <pre><code>message = 'El preu d’aquest portàtil {0:s} és {1:d} USD i el tipus de canvi és {2:4.2f} USD per 1 EUR'.format('Apple', 1299, 1.235235245)
+        <pre><code>
+        message = 'El preu d’aquest portàtil {0:s} és {1:d} USD i el tipus de canvi és {2:4.2f} USD per 1 EUR'.format('Apple', 1299, 1.235235245)
         print(message)</code></pre>
         <p><strong>Nota:</strong> <code>{0}</code> és el primer argument, <code>{1}</code> el segon, etc.</p>
         
         <h4>3. f-strings (des de Python 3.6)</h4>
         <p>Forma moderna, clara i recomanada:</p>
-        <pre><code>nom = "Joan"
+        <pre><code>
+        nom = "Joan"
         edat = 25
         a, b = 4, 5
         pi = 3.141592
@@ -782,7 +246,8 @@ z = 30  # Assignació d'un valor a z  </pre>
         print(f"Percentatge: {0.25:.2%}")       # 25.00%</code></pre>
         
         <h4>4. Alineació i formats especials</h4>
-        <pre><code>print(f"|{nom:<10}|")       # A l'esquerra
+        <pre><code>
+        print(f"|{nom:<10}|")       # A l'esquerra
         print(f"|{nom:>10}|")       # A la dreta
         print(f"|{nom:_>10}|")      # A la dreta amb "_"
         print(f"|{nom:^10}|")       # Centrat
@@ -798,17 +263,20 @@ z = 30  # Assignació d'un valor a z  </pre>
         
         <h4><code>r</code> o <code>R</code> – Cadena crua (raw string)</h4>
         <p>No interpreta caràcters d’escapament com <code>\n</code> o <code>\t</code>. Molt útil per a expressions regulars o rutes de fitxers en Windows.</p>
-        <pre><code>raw_string = r"C:\Usuaris\Joan\Documents"
+        <pre><code>
+        raw_string = r"C:\Usuaris\Joan\Documents"
         print(raw_string)  # C:\Usuaris\Joan\Documents</code></pre>
         
         <h4><code>f</code> o <code>F</code> – Cadena formatejada (f-string)</h4>
         <p>Permet incrustar variables o expressions dins la cadena amb <code>{}</code>. Disponible des de Python 3.6.</p>
-        <pre><code>nom = "Joan"
+        <pre><code>
+        nom = "Joan"
         print(f"Hola, {nom}!")  # Hola, Joan!</code></pre>
         
         <h4><code>b</code> o <code>B</code> – Cadena de bytes (byte string)</h4>
         <p>Representa una cadena de bytes (no Unicode). Es fa servir per treballar amb dades binàries.</p>
-        <pre><code>byte_string = b"Hola"
+        <pre><code>
+        byte_string = b"Hola"
         print(byte_string)  # b'Hola'</code></pre>
         
         <h4><code>u</code> o <code>U</code> – Cadena Unicode</h4>
@@ -816,7 +284,8 @@ z = 30  # Assignació d'un valor a z  </pre>
         
         <h4>Prefixos combinats</h4>
         <p>Pots combinar prefixos per combinar comportaments:</p>
-        <pre><code>path = "Usuaris"
+        <pre><code>
+        path = "Usuaris"
         cad = rf"C:\{path}\Joan"
         print(cad)  # C:\Usuaris\Joan</code></pre>
 
@@ -824,7 +293,7 @@ z = 30  # Assignació d'un valor a z  </pre>
 </section>
 
 <section id="lectura">
-      <h1>Lectura de dades per teclat en Python</h1>
+      <h1>Lectura de dades per teclat en Python (ENTRADA)</h1>
     
       <p>         En qualsevol llenguatge de programació és essencial la <strong>entrada de dades</strong> a un programa perquè aquest puga reaccionar de diferents maneres. 
         Aquestes dades poden servir com a base per a càlculs o per a prendre decisions, realitzant una acció o una altra segons el valor introduït.      </p>
@@ -922,140 +391,274 @@ $ python3 programa.py Juan --edat 25
 
 </section>
 
-<section id="operacions">
-      <h1>Operadors en Python</h1>
-       <h2>Operadors Aritmètics</h2>
-      <p>         Els operadors aritmètics permeten realitzar operacions matemàtiques bàsiques.       </p>
-      <pre><code>
-    suma = 10 + 5              # 15
-    resta = 10 - 5             # 5
-    multiplicació = 10 * 5    # 50
-    divisió = 10 / 5          # 2.0  NO ENTERO, decimal o float
-    divisió_entera = 10 // 3  # 3 (entero)
-    modulo = 10 % 3           # 1 (resto)
-    exponent = 2 ** 3         # 8 (2 elevat a 3) enter
-    exponent = 2 ** -3        # 0,125 (2 elevat a -3) float
-    exponent = 2.2 ** 3       # 10.64800  float
-    exponent = 64 ** 0.5      # 8.0   float  arrel quadrada        </code></pre>
-    
-      <h2>Operadors d'Assignació</h2>
-      <p>         Els operadors d'assignació permeten modificar el valor d'una variable de manera concisa.       </p>
-      <pre><code>
-    =    # Assignació
-    +=   # x += 1 equivaleix a x = x + 1
-    -=   # x -= 1 equival a x = x - 1
-    *=   # x *= 1 equival a x = x * 1
-    /=   # x /= 1 equival a x = x / 1
-    //=  # x //= 1 equival a x = x // 1
-    %=   # x %= 1 equival a x = x % 1
-    **=  # x **= 1 equival a x = x ** 1         </code></pre>
-    
-      <h2>Operadors de Comparació</h2>
-      <p>         Els operadors de comparació s'utilitzen per comparar dos valors.       </p>
-      <pre><code>
-    5 == 5    # True (igual)     ¡¡  el == no és el mateix que el = !!
-    5 != 3    # True (diferent)
-    5 < 10    # True (menor que)
-    5 > 10    # False (major que)
-    5 <= 10   # True (menor o igual que)
-    5 >= 10   # False (major o igual que)       </code></pre>
-    
-      <h2>Operadors Lògics</h2>
-      <p>         Els operadors lògics s'utilitzen per combinar expressions booleanes.       </p>
-      <pre><code>
-    True and False   # False
-    True or False    # True
-    not True         # False        </code></pre>
-    
-      <h2>Operadors d'Identitat</h2>
-      <p>         Els operadors d'identitat comproven si dues variables referencien al mateix objecte de memòria.       </p>
-      <pre><code>
-    a is b
-    a is not b         </code></pre>
-    
-      <h2>Operadors de Pertenència o Membresia</h2>
-      <p>         Els operadors de membresia s'utilitzen per comprovar si un element està present en una col·lecció com una cadena, llista, etc.       </p>
-      <pre><code>
-    'a' in 'hola'      # True
-    'a' not in 'hola'  # False         </code></pre>
-    
-      <h2>Operadors a Nivell de Bits (Bitwise)</h2>
-      <p>         Els operadors bitwise operen sobre els bits individuals de les variables.       </p>
-      <pre><code>
-    5  &  3   # AND bit a bit
-    5 | 3     # OR bit a bit
-    5 ~ 3     # NOT bit a bit
-    5 ^ 3     # XOR bit a bit
-    5 << 3    # desplaçament a l'esquerra bit a bit
-    5 >> 3    # desplaçament a la dreta bit a bit         </code></pre> 
-    
-      <h2>Problemes de Precisió amb Nombres Decimals</h2>
-      <p>          A causa de la representació interna dels nombres decimals, es poden obtenir resultats poc precisos en algunes operacions.       </p>
-      <pre><code>
-    a = 0.1
-    b = 0.2
-    a + b    # 0.30000000000000004        </code></pre>
-      <p>         Aquest problema no es produeix en totes les operacions, però és important tenir-ho en compte. Per a comparar aquests valors de manera precisa, es pot utilitzar <code>math.isclose()</code>.       </p>
-      <pre><code>
-    import math
-    math.isclose(0.1 + 0.2, 0.3)  # True        </code></pre>
 
+<section id="fitxers">
+  <h2>Gestió de Fitxers en Python</h2>
 
-    
-  <h1>Operadors sobre Strings en Python</h1>
-  <h2>Definir Strings</h2>
-  <p>      Pots definir cadenes de text utilitzant cometes simples ('), dobles (") o triples (''' o """).   </p>
-
-  <h2>Concatenació de Strings</h2>
-  <p>     La concatenació permet unir dues o més cadenes de text.   </p>
-  <pre><code>
-saludo = "Hola" + " " + "mundo"
-print(saludo)  # Hola mundo     </code></pre>
-
-  <h2>Repetició de Strings</h2>
-  <p>     La repetició d'una cadena es pot aconseguir mitjançant l'operador de multiplicació.  </p>
-  <pre><code>
-print("Hola" * 3)  # HolaHolaHola     </code></pre>
-
-  <h2>Comparació de Strings</h2>
-  <p>    Les cadenes es poden comparar utilitzant els operadors de comparació. Es distingeixen les majúscules de les minúscules.   </p>
-  <pre><code>
-print("Hola" == "hola")  # False (distinció de majúscules/minúscules)
-print("a" < "b")         # True (ordre alfabètic)  També es pot fer amb > o !=      </code></pre>
-
-  <h2>Accés per Índex</h2>
-  <p>     Pots accedir als caràcters d'una cadena mitjançant el seu índex. Recorda que l'índex comença des de 0.   </p>
-  <pre><code>
-texto = "Python"
-print(texto[0])  # P
-print(texto[-1])  # n (últim caràcter)   </code></pre>
- <img src="imgs/slicing.png" alt="que es slicing" width="50%" class="imatge-dreta">
-  <h2>Accés per Slicing (Rebanat)</h2>
-  <p>      El slicing permet extreure subcadenes mitjançant un rang d'índexs.  </p>
-  <pre><code>
-print(texto[0:4])  # Pyth (índexs de 0 a 3)
-print(texto[::2])  # Pto (caràcters del 0 al 5 de 2 en 2)
-print(texto[1:4:2])  # yh (caràcters 1 al 3 de 2 en 2)
-print(texto[:3])  # Hol (de l'índex 0 a l'índex 2)   </code></pre>
-
-  <h2>Iteració sobre Strings</h2>
-  <p>      Pots recórrer una cadena de text caràcter per caràcter mitjançant un bucle <code>for</code>.   </p>
-  <pre><code>
-texto = "Python"
-for letra in texto:
-    print(letra)    </code></pre>
-
-  <h2>Inmutabilitat de Strings</h2>
-  <p>      Les cadenes de text en Python són immutables, això vol dir que no es poden modificar després de la seva creació.   </p>
-  <pre><code>
->>>texto[0] = 'J'
-Traceback (most recent call last):
-  File "<pyshell#2>", line 1, in <module>
-    texto[0] = 'J'
-TypeError: 'str' object does not support item assignment     </code></pre>
+  <p>
+  La funció <code>open()</code> forma part de la biblioteca estàndard de Python, per la qual cosa es pot utilitzar sense necessitat d’importar res.
+  </p>
   
+  <h3>Obrir un fitxer</h3>
+  <p>
+  La funció <strong>open()</strong> accepta dos arguments principals:
+  </p>
+  <ol>
+    <li><strong>Nom del fitxer</strong>: El nom o camí del fitxer que vols obrir o crear.</li>
+    <li><strong>Mode d'obertura</strong>: Indica com vols accedir al fitxer (lectura, escriptura, etc.).</li>
+  </ol>
+  
+  <h4>Modes comuns d’obertura</h4>
+  <ul>
+    <li><code>"r"</code>: Lectura (per defecte). Dona error si el fitxer no existeix.</li>
+    <li><code>"w"</code>: Escriptura. Sobreescriu el fitxer si existeix o el crea si no.</li>
+    <li><code>"a"</code>: Afegir. Escriu al final del fitxer si existeix, o el crea si no.</li>
+    <li><code>"x"</code>: Crear. Crea un nou fitxer i dona error si ja existeix.</li>
+    <li><code>"b"</code>: Mode binari (es pot combinar amb altres, per exemple <code>"rb"</code>).</li>
+    <li><code>"t"</code>: Mode text (per defecte, combinable amb <code>"r"</code>, <code>"w"</code>, etc.).</li>
+  </ul>
+  
+  <h3>Lectura de fitxers</h3>
+  
+  <h4>Llegir tot el contingut</h4>
+  <pre>
+  with open("fitxer.txt", "r") as fitxer:
+      contingut = fitxer.read()
+      print(contingut)
+  </pre>
+  
+  <h4>Llegir línia per línia</h4>
+  <pre>
+  with open("fitxer.txt", "r") as fitxer:
+      for linia in fitxer:
+          print(linia.strip())  # Elimina els salts de línia
+  </pre>
+  
+  <h4>Llegir com a llista de línies</h4>
+  <pre>
+  with open("fitxer.txt", "r") as fitxer:
+      linies = fitxer.readlines()
+      print(linies)
+  </pre>
+  
+  <h3>Escriptura en fitxers</h3>
+  
+  <h4>Escriure una sola línia</h4>
+  <pre>
+  with open("fitxer.txt", "w") as fitxer:
+      fitxer.write("Hola, món\n")
+  </pre>
+  
+  <h4>Escriure múltiples línies</h4>
+  <pre>
+  linies = ["Primera línia\n", "Segona línia\n", "Tercera línia\n"]
+  with open("fitxer.txt", "w") as fitxer:
+      fitxer.writelines(linies)
+  </pre>
+  
+  <h4>Afegir contingut a un fitxer existent</h4>
+  <pre>
+  with open("fitxer.txt", "a") as fitxer:
+      fitxer.write("Nova línia afegida\n")
+  </pre>
+ <hr>
+ <h2>Consideracions importants sobre fitxers en Python</h2>
+
+<ol>
+  <li>
+    <strong>Ús de <code>with</code>:</strong> 
+    L’ús del bloc <code>with</code> assegura que el fitxer es tanque automàticament, encara que hi haja errors. És preferible a fer servir <code>open()</code> i <code>close()</code> manualment.
+  </li>
+  <li>
+    <strong>Gestió d’excepcions:</strong> 
+    És recomanable utilitzar blocs <code>try-except</code> per evitar errors si el fitxer no existeix o hi ha problemes d'accés.
+    <pre>
+try:
+    with open("fitxer_inexistent.txt", "r") as fitxer:
+        contingut = fitxer.read()
+except FileNotFoundError:
+    print("El fitxer no existeix.")
+    </pre>
+  </li>
+  <li>
+    <strong>Codificació:</strong> 
+    Si treballes amb caràcters especials (com accents o símbols), és important indicar la codificació:
+    <pre>
+with open("fitxer.txt", "r", encoding="utf-8") as fitxer:
+    contingut = fitxer.read()
+    </pre>
+  </li>
+</ol>
+
+<h2>Guardar objectes en fitxers amb <code>pickle</code></h2>
+
+<p>
+Per guardar i recuperar objectes complexos (com diccionaris, llistes, etc.) es pot usar el mòdul <code>pickle</code>, que permet <strong>serialitzar</strong> i <strong>deserialitzar</strong> objectes.
+</p>
+
+<h3>Serialitzar (guardar) un objecte</h3>
+<p>Converteix l’objecte a una seqüència de bytes i el guarda al fitxer.</p>
+<pre>
+import pickle
+
+dades = {"nom": "Joan", "edat": 25, "ciutat": "València"}
+
+with open("dades.pkl", "wb") as fitxer:
+    pickle.dump(dades, fitxer)
+</pre>
+
+<h3>Deserialitzar (recuperar) un objecte</h3>
+<p>Recupera l’objecte des del fitxer.</p>
+<pre>
+import pickle
+
+with open("dades.pkl", "rb") as fitxer:
+    dades_carregades = pickle.load(fitxer)
+
+print(dades_carregades)
+</pre>
+
+<p><strong>Nota:</strong> Quan es fa servir <code>pickle</code>, cal obrir els fitxers en mode binari (<code>"wb"</code> per escriure, <code>"rb"</code> per llegir).</p>
+
+<h2>Exemple pràctic: Guardar i recuperar objectes amb <code>pickle</code></h2>
+
+<h3>Guardar un objecte en un fitxer</h3>
+<pre>
+import pickle
+
+# Suposem que existeix una classe Persona
+persona = Persona("Ana", 25)
+
+# Guardar l’objecte en un fitxer
+with open("persona.pkl", "wb") as fitxer:  # 'wb' per a escriptura en mode binari
+    pickle.dump(persona, fitxer)
+
+print("Objecte guardat al fitxer 'persona.pkl'.")
+</pre>
+
+<h3>Recuperar un objecte des d’un fitxer</h3>
+<pre>
+import pickle
+
+# Llegir l’objecte des del fitxer
+with open("persona.pkl", "rb") as fitxer:  # 'rb' per a lectura en mode binari
+    persona_recuperada = pickle.load(fitxer)
+
+print("Objecte recuperat del fitxer:")
+print(persona_recuperada)  # Exemple de resultat: Ana, 25 anys
+</pre>
+
+<h3>Guardar i recuperar múltiples objectes</h3>
+<p>Pots guardar diversos objectes (per exemple, una llista de persones) i recuperar-los posteriorment.</p>
+
+<h4>Guardar diversos objectes</h4>
+<pre>
+import pickle
+
+persones = [
+    Persona("Ana", 25),
+    Persona("Lluís", 30),
+    Persona("Maria", 28)
+]
+
+# Guardar la llista d’objectes en un fitxer
+with open("persones.pkl", "wb") as fitxer:
+    pickle.dump(persones, fitxer)
+
+print("Llista d’objectes guardada al fitxer 'persones.pkl'.")
+</pre>
+
+<h4>Recuperar diversos objectes</h4>
+<pre>
+import pickle
+
+# Llegir la llista d’objectes des del fitxer
+with open("persones.pkl", "rb") as fitxer:
+    persones_recuperades = pickle.load(fitxer)
+
+print("Objectes recuperats:")
+for persona in persones_recuperades:
+    print(persona)
+</pre>
+
+<p><strong>Nota:</strong> Assegura’t que la definició de la classe <code>Persona</code> estiga disponible en el moment de deserialitzar l’objecte, ja que <code>pickle</code> necessita accedir a la classe original per reconstruir l’instància.</p>
+
+<h2>Consideracions importants</h2>
+<ol>
+    <li>
+        <strong>Mode binari:</strong>
+        <ul>
+            <li>Usa <code>"wb"</code> per a escriure en binari i <code>"rb"</code> per a llegir en binari.</li>
+        </ul>
+    </li>
+    <li>
+        <strong>Compatibilitat:</strong>
+        <ul>
+            <li>Els objectes serialitzats són específics de la versió de Python i de l’estructura de les classes. Canviar la classe després de guardar els objectes pot causar errors en recuperar-los.</li>
+        </ul>
+    </li>
+    <li>
+        <strong>Seguretat:</strong>
+        <ul>
+            <li>No carregues fitxers <code>pickle</code> de fonts no fiables, ja que podrien executar codi maliciós.</li>
+        </ul>
+    </li>
+    <li>
+        <strong>Serialització amb JSON:</strong>
+        <ul>
+            <li>Si els objectes són simples (com diccionaris o llistes), pots usar <code>json</code> en lloc de <code>pickle</code>. No obstant això, JSON no suporta objectes complexos directament.</li>
+            <li><code>import json</code>, <code>json.dump()</code>, etc. — <em>queda fora d’aquest curs</em>.</li>
+        </ul>
+    </li>
+</ol>
+      
 
 </section>
+
+
+
+
+
+
+<section id="exercicis">
+    <h2>Exercicis</h2>
+    <h3>Exercicis per a practicar:</h3>
+    <ol>
+        <li>Taula de multiplicar: Crea una llista amb les multiplicacions del número 5 (del 1 al 10).</li>
+        <li>Taula de multiplicar genèrica: Crea una llista amb les multiplicacions d’un número donat (del 1 al 10).</li>
+        <li>Diccionari de persones: Crea un diccionari amb el nom i l’edat de diverses persones i després imprimeix-lo.</li>
+    </ol>
+    <h3>Exercicis Bàsics:</h3>
+
+    <ol>
+        <li>Suma de números en una llista: Crea una funció que reba una llista de números i retorne la suma de tots ells.</li>
+        <li>Número més gran en una llista: Crea un programa que reba una llista de números i retorne el número més gran.</li>
+        <li>Fibonacci: Crea una funció que reba un número n i retorne els primers n números de la successió de Fibonacci.</li>
+    </ol>
+
+    <h3>Exercicis Intermedis:</h3>
+    Ordenar una llista de tuples: Donada una llista de tuples amb dos elements (nom, edat), ordena la llista segons l’edat de menor a major.    
+    <h3>Exercicis Avançats:</h3>
+    <ol>
+        <li>Buscar un element en una llista: Crea una funció que busque un valor en una llista i retorne el seu índex si el troba. Si no el troba, ha de retornar "No trobat".</li>
+        <li>Matriu transposada: Crea una funció que reba una matriu (llista de llistes) i retorne la seua transposada.</li>
+        <li>Generador de contrasenyes aleatòries: Crea una funció que genere una contrasenya aleatòria amb una longitud especificada. Ha de tindre almenys una lletra majúscula, una minúscula, un número i un caràcter especial.</li>
+        <li>Eliminar duplicats d’una llista: Crea una funció que reba una llista amb elements duplicats i retorne una nova llista amb només els únics.</li>
+        <li>Trobar nombres primers: Crea una funció que reba un número n i retorne una llista amb tots els nombres primers menors o iguals a n.</li>
+        <li>Simulació d’un sistema de qualificació: Permet introduir qualificacions de diversos estudiants, calcula la mitjana i mostra les qualificacions per damunt i per davall de la mitjana.</li>
+    </ol>
+
+    <h3>Exercicis amb Llibreries Externes:</h3>
+    <ol>
+        <li>Ús de random: Usa la llibreria random per generar una llista de 10 números aleatoris entre 1 i 100, i després troba el més gran i el més xicotet.</li>
+        <li>Treball amb dates (datetime): Crea un programa que reba una data (format DD/MM/YYYY) i calcule quants dies han passat des d’eixa data fins hui.</li>
+        <li>Llegir un fitxer: Crea un programa que llija un fitxer de text línia per línia i imprima cada línia per consola.</li>
+    </ol>
+
+</section>
+
+
+
 
 </main>
 

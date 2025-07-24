@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="ca-ES">  
+  <!--  al ponerlo en catalan, fuerzo al navegador a poner el traductor-->
+  <!-- es-ES  lenguaje - ubicacion    -->
+<head>
+  <meta charset="UTF-8">
+  <link rel="alternate" hreflang="ca-ES">
+  <link rel="icon" href="https://www.python.org/favicon.ico"> 
+  <title> Introducció a la programació</title>
+  <link rel="stylesheet" href="estilsunitatspy.css">
+  <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
+</head>
+<body>
+
+  <header>
+    <a href="index.html"><img src="imgs/phyton2-rbg.png" alt="python"></a>
+    <h1>Unitat Didàctica 1: Python Bàsic</h1>
+    <h1> </h1>
+  </header>
+
+<nav>
+  <h3>Índex</h3>
+  
+  <a href="#variables">Variables i Tipus</a>
+  <a href="#literals">Literals</a>
+  <a href="#constants">Constants</a>
+  <a href="#operacions">Operacions en Python</a>
+  <a href="#conversio">Conversió de tipus</a>
+   
+</nav>
+
+<main>
+
+
+
+<section id="variables">
+    <h1>El llenguatge de programació Python</h1>
+    <h2>Primer de tot, anem a fer-nos amb una Cheat Sheet</h2>
+    <p>  Una <strong>cheat sheet</strong> (fulla de referència ràpida) en el context d'un llenguatge de programació és un document concís i ben organitzat que resumeix les característiques, comandes, funcions i conceptes clau del llenguatge. Està dissenyada com una guia pràctica per a programadors, ajudant-los a recordar ràpidament sintaxi, mètodes i estructures comunes sense necessitat de consultar documentació extensa.  </p>
+    <p>  Podem trobar un exemple en el següent enllaç:
+        <a href="https://perso.limsi.fr/pointal/_media/python:cours:mementopython3-english.pdf" target="_blank">Memento Python 3 (en anglès)</a>
+    </p>
+    <p> I per descomptat, també està disponible a la documentació oficial de Python:
+        <a href="https://docs.python.org/es/3.12/" target="_blank">Documentació oficial de Python 3.12 (en espanyol)</a>
+    </p>
+    <h2>Variables i Tipus de Dades</h2>
+
+    <p>
+        Per a començar a utilitzar Python, és més recomanable utilitzar Python des del Shell o IPython (o IDLE en Windows), per la seva ràpida resposta a comandes senzilles.
+    </p>
+
+    <p>  <strong>En Python</strong>, no és necessari declarar el tipus d'una variable. Python el dedueix automàticament. Les variables es creen quan es realitza la seva primera assignació.   </p>
+     <p class="tips">—Entra a Python i practica—</p>   
+
+    <pre>
+x = 10             # Número enter (integer)
+nombre = "Ana"     # Cadena de text (String)
+nombre2 = 'Pedro'  # String amb cometes simples
+precio = 15.5      # Número decimal (float)
+es_activo = True   # Booleà (True o False)
+b = None           # Valor nul, absència de valor
+a = b = c = 100    # Assignació múltiple, un sol valor
+userAge, userName = 30, 'Pedro'   # Assignació múltiple, múltiples valors
+a, b = 23, 67      # Assignació múltiple
+a, b = b, a        # Intercanvi de valors (sense utilitzar variable temporal !!)      </pre>
+
+    <p>         S'evita l'ús d'una variable temporal per realitzar l'intercanvi:
+    </p>
+
+    <pre># intercanvi típic de dos variables 
+temp = a
+a = b
+b = temp      </pre>
+    <p>    Per saber quin tipus de dada té una variable, podem utilitzar la funció <code>type()</code>:
+    </p>
+    <pre>
+type(x)             # Ens diu el tipus actual de la variable
+del v   o  del(v)   # Deixa la variable lliure, sense tipus ni valor      </pre>
+    <p>         Exemple en Python:
+    </p>
+    <pre>
+$ python3
+>>> x = 10
+>>> x
+   10
+>>> type(x)
+   <class 'int'>      </pre>
+
+    <p>  Amb <code>del(a)</code> es deixa de fer servir una variable (també amb <code>del a</code>).     </p>
+    <h2>Regles per als Noms de Variables (Identificadors)</h2>
+    <p>     <strong>Los noms de variables (o identificadors) són sensibles a majúscules i minúscules.</strong>
+        És a dir, <code>username</code> no és el mateix que <code>userName</code>.     </p>
+    <p>         Els noms de variables només poden contenir lletres majúscules, lletres minúscules, números (dígits) i el caràcter de subratllat (<code>_</code>), 
+        i no poden començar amb un número.     </p>
+    <p>    A partir de Python 3, també es poden utilitzar lletres internacionals, com ara <code>α</code>, <code>β</code>, <code>ñ</code>, <code>é</code>, <code>π</code>, <code>变</code>, etc.     </p>
+    <p>         <strong>Els noms de variables no poden ser paraules reservades de Python.</strong> És a dir, no es poden utilitzar paraules clau del llenguatge com a noms de variables. Per exemple, no es pot usar <code>else</code> com a nom de variable.     </p>
+     <p>   <strong>Prova d'equivocar-te intencionadament i familiaritza't amb els errors que transmet Python:</strong>    </p>
+
+    <pre>
+>>> else = 9
+SyntaxError: invalid syntax
+
+>>> 5var = 67
+SyntaxError: invalid syntax
+    </pre>
+    <h2>Paraules Reservades de Python</h2>
+
+    <p>
+        Python té un conjunt de paraules reservades que no poden ser utilitzades com a noms de variables, funcions o qualsevol altre identificador. Aquestes paraules tenen un significat especial dins del llenguatge i són part del seu sistema de sintaxi.
+    </p>
+
+    <p>
+        Per a veure quines són les paraules reservades de Python, podem utilitzar el mòdul <code>keyword</code>:
+    </p>
+
+    <pre>
+import keyword
+print(keyword.kwlist)
+    </pre>
+
+    <p>         Algunes de les paraules reservades de Python inclouen:     </p>
+
+    <pre>
+False      await      else       import     pass      None        break
+except     in         raise      True       class     finally     is
+Return     and        continue   for        lambda    try         as
+def        from       nonlocal   while      assert    del         global
+not        with       async      elif       if        or          yield       </pre>
+
+    <p>         Aquestes paraules no poden ser utilitzades com a noms de variables, ja que tenen un significat especial en Python.     </p>
+    <h2>Assignació de Variables i Literals en Python</h2>
+
+    <p>    En la part esquerra de l'assignació s'indica la variable en què s'emmagatzemarà el valor. 
+        En la part dreta de l'assignació s'indica un literal que serà interpretat per Python.     </p>
+
+    <p>         Els <strong>literals</strong> són les dades simples que Python és capaç de gestionar:     números o cadenes de text.   </p>
+
+    <h3>Números:</h3>
+    <p>
+        Python pot manejar diversos tipus de números:
+    </p>
+    <ul>
+        <li><strong>Enters</strong> (són números sencers, com 10, -5, 0)</li>
+        <li><strong>Decimals</strong> (números amb punt decimal, com 3.14, -0.5, 0.0)</li>
+        <li><strong>Complexos</strong> (números amb una part imaginària, com 1 + 2j)</li>
+        <li><strong>En notació decimal, octal o hexadecimal:</strong> es poden representar números en diferents bases numèriques, com <code>0o</code> per a octals (ex. <code>0o10</code>), <code>0x</code> per a hexadecimals (ex. <code>0xFF</code>), i en decimal com és habitual.</li>
+    </ul>
+
+    <h3>Cadenes:</h3>
+    <p>          Les cadenes de text poden estar entre cometes simples (<code>'Hola'</code>) o dobles (<code>"Hola"</code>).    </p>
+
+    <h3>Valors lògics:</h3>
+    <p>         Els valors lògics en Python són:      </p>
+    <ul>
+        <li><strong>True</strong> (cert)</li>
+        <li><strong>False</strong> (fals)</li>
+    </ul>
+
+    <h3>Valor nul:</h3>
+    <p>         El valor nul en Python és <code>None</code>, el qual s'utilitza per representar l'absència de valor.      </p>
+
+    <p>         Exemple d'assignació:    </p>
+
+    <pre>
+x = 10       # Un número enter
+y = 3.14     # Un número decimal
+z = "Hola"   # Una cadena de text
+a = True     # Un valor lògic
+b = None     # Un valor nul     </pre>
+<p class="tips"> Recorda: None es distint de none, True es distint de true  </p>
+
+<h2>Comentaris en el Codi de Python</h2>
+
+<p>     Els <strong>comentaris</strong> en Python serveixen per afegir notes o explicacions al codi que no són executades pel intèrpret de Python. 
+    Són útils per fer que el codi sigui més comprensible tant per a tu com per a altres persones que el llegeixin. </p>
+
+<h3>Formes de fer comentaris</h3>
+<p>     Hi ha dues formes de posar comentaris en Python: 
+    <strong>en una línia</strong> o <strong>en múltiples línies</strong>. </p>
+
+<ul>
+    <li><strong>Comentari d'una línia:</strong> Els comentaris d'una sola línia comencen amb el símbol <code>#</code>. El codi que segueix a aquest símbol serà ignorat per l'intèrpret.</li>
+    <li><strong>Comentari de múltiples línies:</strong> Els comentaris de diverses línies es poden crear amb cometes dobles triples (<code>""" ... """</code>) o cometes simples triples (<code>''' ... '''</code>).</li>
+</ul>
+
+<h3>Exemples de Comentaris:</h3>
+
+<pre>
+# Això és un comentari d'una línia, pot anar també darrere de codi
+x = 10  # Assignació d'un valor a x
+
+""" Això és un comentari 
+de diverses línies: Comentari Multilinia """
+y = 20  # Assignació d'un valor a y
+
+''' Amb tres cometes simples
+també es poden crear comentaris de diverses línies '''
+z = 30  # Assignació d'un valor a z  </pre>
+
+<h3>Alguns usos dels comentaris són:</h3>
+<ul>
+    <li>Explicar el propòsit del codi</li>
+    <li>Anotar recordatoris o tasques pendents (TODOs)</li>
+    <li>Desactivar parts del codi temporalment</li>
+    <li>Documentar el codi (com funciona)</li>
+    <li>Ajuda en la depuració</li>
+</ul>
+
+    <h1>Escritura de dades en Python</h1>
+    <h2>Funció <code>print()</code></h2>
+
+    <p>
+        La funció <code>print()</code> en Python és una de les més utilitzades i serveix per a mostrar missatges, dades o qualsevol eixida per pantalla a la consola. 
+        És molt versàtil i permet personalitzar què i com es mostra la informació.
+    </p>
+    
+    <p>
+        Per defecte, <code>print()</code> afegeix un salt de línia (<code>\n</code>) al final de cada línia impresa.
+    </p>
+    
+    <pre><code>
+    &gt;&gt;&gt; a = 3332 + 23223 * 23
+    &gt;&gt;&gt; print(a)
+    &gt;&gt;&gt; print(a + 23334)
+    &gt;&gt;&gt; print("Hola, món!")
+    </code></pre>
+    
+    <p>    La funció <code>print()</code> adquireix més sentit quan s’utilitza en un entorn no interactiu, com ara en programes amb extensió <code>.py</code> que s’executen directament des de la línia d’ordres del sistema operatiu.     </p>
+    <h3>Personalització amb l'argument <code>end</code></h3>
+     <p>         Per defecte, <code>print()</code> imprimeix un salt de línia al final. Aquest comportament es pot modificar amb el paràmetre <code>end</code>.     </p>
+    <ul>
+        <li><strong>Imprimir en la mateixa línia:</strong></li>
+    </ul>
+    
+    <pre><code>
+    print("Hola", end=" ")
+    print("Món", end="!")       </code></pre>
+    <ul>
+        <li><strong>Sense salt de línia:</strong></li>
+    </ul>
+
+    <ul>
+        <li><strong>Insertar un salt de línia manualment amb <code>\n</code>:</strong></li>
+    </ul>
+    <pre><code>
+    print("Hola\nMón")      </code></pre>
+  </section>
+
+
+    <section id="literals">
+      <h2>Literals</h2>
+      <p>Un <strong>literal</strong>  en Python (i en programació en general) és un valor fix escrit directament al codi, 
+        que no es calcula ni es deriva de cap altra expressió. És simplement una representació literal d’un valor.</p>
+    <h2>Literals numèrics</h2>
+
+        <p>Podem representar números enters en diferents bases:</p>
+        <ul>
+            <li><strong>Decimal:</strong> Representació habitual. Exemples: <code>345</code></li>
+            <li><strong>Binària:</strong> Anteposant <code>0b</code>. Exemples: <code>0b101001001</code></li>
+            <li><strong>Octal:</strong> Anteposant <code>0o</code>. Exemples: <code>0o546</code></li>
+            <li><strong>Hexadecimal:</strong> Anteposant <code>0x</code>. Exemples: <code>0xf9af9d</code></li>
+        </ul>
+        
+        <p>Els <strong>números reals</strong> (amb decimals) es representen separant la part entera de la decimal amb un punt <code>.</code>:</p>
+        <pre><code>123.50    0.56    .56    12.    12.00</code></pre>
+        <p>També poden usar notació científica:</p>
+        <pre><code>1.2e3     5e-2</code></pre>
+        
+        <p>Els <strong>números complexos</strong> (amb part real i imaginària) s'escriuen amb una <code>j</code> o <code>J</code> al final de la part imaginària:</p>
+        <pre><code>1+2j     8+15J</code></pre>
+        
+        <p>Es pot representar l'<strong>infinit</strong> amb:</p>
+        <pre><code>float("inf")     float("-inf")</code></pre>
+        
+        <h3>Tots són objectes</h3>
+        <p>En Python, tots els elements són objectes, fins i tot els literals. Quan utilitzem un literal, Python crea un objecte amb un identificador únic, un tipus i un valor.</p>
+        <p>Pots obtindre l'identificador d'un objecte amb la funció <code>id()</code>:</p>
+        <pre><code>x = 100
+print(id(x))</code></pre>
+
+    <h2>Literals Strings o Cadenes</h2>
+
+        <p>Els literals de tipus <strong>string</strong> van delimitats per cometes simples <code>'</code> o dobles <code>"</code>, o també per cometes triples (<code>'''</code> o <code>"""</code>).</p>
+        
+        <p>En Python, les cometes dobles i simples són equivalents, encara que en altres llenguatges de programació poden no ser-ho.</p>
+        
+        <pre><code>print("Això és una cadena")     # Correcte
+print('Això és una cadena')     # Correcte</code></pre>
+        
+        <p>Si utilitzem cometes simples, la cadena ha de començar i acabar amb cometes simples (no amb dobles), i viceversa:</p>
+        
+        <pre><code>print("Això és una cadena')     # Error de sintaxi
+print("Això "és una cadena")    # Error de sintaxi</code></pre>
+        
+        <h3>Cometes triples</h3>
+        <p>Les cometes triples permeten escriure cadenes que ocupen diverses línies, útil quan es vol superar el límit recomanat de 79 caràcters per línia:</p>
+        
+        <pre><code>print("""Això és una cadena
+que ocupa
+diverses línies""")</code></pre>
+        
+        <h3>També es pot fer amb el caràcter \</h3>
+        <p>El caràcter <code>\</code> permet continuar la cadena en una altra línia sense trencar-la:</p>
+        
+        <pre><code>print("Això és una cadena \
+que ocupa \
+diverses línies")</code></pre>
+        
+        <h3>Comportament de les línies amb <code>\</code></h3>
+        <p><strong>Nota:</strong> En aquests casos, el resultat és una cadena contínua, sense salts de línia. Si vols realment afegir salts, cal usar <code>\n</code>.</p>
+        
+        <h3>Inserir cometes del mateix tipus</h3>
+        <p>Si vols utilitzar cometes del mateix tipus que el delimitador dins de la cadena, cal escapar-les amb el caràcter de barra invertida <code>\</code>:</p>
+        
+        <pre><code>print("Això és una cadena amb cometes dobles: \"exemple\"") </code></pre>
+        
+        <h3>Caràcters especials dins de cadenes</h3>
+        <ul>
+          <li><code>\"</code>  cometa doble dins de cometes dobles</li>
+          <li><code>\'</code>  cometa simple dins de cometes simples</li>
+          <li><code>\n</code>  salt de línia</li>
+          <li><code>\t</code>  tabulació horitzontal</li>
+          <li><code>\v</code>  tabulació vertical</li>
+          <li><code>\\</code>  barra invertida literal</li>
+        </ul>
+        
+        <pre><code>
+        print("Hola\tmón")         # Hola    món
+        print("Línia 1\nLínia 2")   # Línia 1
+                                    # Línia 2
+        print("Ruta: C:\\fitxers\\usuari")   # Ruta: C:\fitxers\usuari</code></pre>
+
+      <h1>Lectura de dades per teclat en Python</h1>
+    
+      <p>         En qualsevol llenguatge de programació és essencial la <strong>entrada de dades</strong> a un programa perquè aquest puga reaccionar de diferents maneres. 
+        Aquestes dades poden servir com a base per a càlculs o per a prendre decisions, realitzant una acció o una altra segons el valor introduït.      </p>
+    
+      <h2>Ús de la funció <code>input()</code></h2>
+      <p>         En Python, utilitzem <code>input()</code> per demanar a l’usuari que introduïsca dades per teclat. Aquestes dades es poden usar posteriorment dins del programa.       </p>
+    
+      <pre><code>
+    numero1 = input("Digue'm el primer número: ")  # Aquí, numero1 serà una cadena (string)
+    # El programa es quedarà esperant que l'usuari escriga un valor i premeta intro.
+    # Aquesta entrada s'assignarà a la variable numero1 com a text.
+    numero1 = int(numero1)  # Cal convertir-la a enter si volem fer operacions numèriques.
+    print(numero1, "+", numero2, "=", numero1 + numero2)
+    print("{numero1} + {numero2} = ", numero1 + numero2)  # No fa interpolació real       </code></pre>
+    
+      <h3>Exemple d’error comú</h3>
+      <pre><code>
+    n1 = input("Digue'm el primer número: ")
+    n2 = input("Digue'm el segon número: ")
+    print("La suma és", n1 + n2)  # Açò farà una concatenació de cadenes!
+    # Què ha passat???
+    print("La suma és", int(n1) + int(n2))  # Açò sí que suma nombres correctament       </code></pre>
+    
+      <h2>Entrada de múltiples valors separats per comes</h2>
+      <p>         També podem demanar a l’usuari que introduïsca diversos valors separats per comes (o altres caràcters), i convertir-los a una llista de números:      </p>
+    
+      <pre><code>
+    entrada = input("Introdueix números separats per comes: ")
+    numeros = entrada.split(',')  # Separa cada valor utilitzant la coma com a separador
+    # Convertim cada valor a enter, eliminant espais en blanc
+    numeros = [int(num.strip()) for num in numeros]
+    print("Llista de números:", numeros)    </code></pre>
+    
+      <h2>Conclusió</h2>
+      <ul>
+        <li>La funció <code>input()</code> sempre retorna cadenes de text.</li>
+        <li>És necessari convertir aquestes cadenes a nombres si volem fer càlculs.</li>
+        <li>Podem usar <code>split()</code> i <code>strip()</code> per processar entrades múltiples.</li>
+      </ul>
+
+
+</section>
+
+<section id="constants">
+  <h1>Constants en Python</h1>
+  <p>En Python, no hi ha suport natiu per constants, però es poden definir per <strong>convenció</strong> amb noms en majúscules:</p>
+
+  <pre><code>
+PI = 3.14159
+VELOCITAT_DE_LLUM = 299_792_458
+MAX_INTENTS = 5</code></pre>
+
+  <p>Python <strong>no impedeix</strong> modificar aquestes constants:</p>
+
+  <pre><code>PI = 3  # Això està permès, però no recomanat</code></pre>
+
+  <p>També pots posar-les en un mòdul separat anomenat <code>constants.py</code>:</p>
+
+  <pre><code># constants.py
+PI = 3.14159
+G = 9.81</code></pre>
+
+  <p>I importar-les des del fitxer principal:</p>
+
+  <pre><code>import constants
+
+print(constants.PI)</code></pre>
+
+  <p><strong>Important:</strong> Aquesta tècnica es basa en la disciplina del programador, no en la protecció del llenguatge.</p>
+
+<h3>Immutabilitat en Python</h3>
+  <p>En Python, <strong>immutabilitat</strong> vol dir que un objecte <em>no es pot modificar</em> després de ser creat.</p>
+  <p>No es el mateix concepte que CONSTANT. Es vorà més endavant</p>
+
+
+</section>
+
+<section id="operacions">
+      <h1>Operadors en Python</h1>
+  <h2>Expressions vs Literals en Python</h2>
+
+  <h2> Què és un literal?</h2>
+  <p>Un <strong>literal</strong> és un valor escrit directament al codi. Exemples:</p>
+  <pre><code>42
+"Hola"
+3.14
+True
+[1, 2, 3]</code></pre>
+
+  <h2> Què és una expressió?</h2>
+  <p>Una <strong>expressió</strong> és qualsevol combinació de literals, variables i <strong>operadors</strong> que retorna un valor:</p>
+  <pre><code>5 + 3
+nom + " és aquí"
+len([1, 2, 3])
+a * b - c</code></pre>
+
+  
+
+       <h2>Operadors Aritmètics</h2>
+      <p>         Els operadors aritmètics permeten realitzar operacions matemàtiques bàsiques.       </p>
+      <pre><code>
+    suma = 10 + 5              # 15
+    resta = 10 - 5             # 5
+    multiplicació = 10 * 5    # 50
+    divisió = 10 / 5          # 2.0  NO ENTERO, decimal o float
+    divisió_entera = 10 // 3  # 3 (entero)
+    modulo = 10 % 3           # 1 (resto)
+    exponent = 2 ** 3         # 8 (2 elevat a 3) enter
+    exponent = 2 ** -3        # 0,125 (2 elevat a -3) float
+    exponent = 2.2 ** 3       # 10.64800  float
+    exponent = 64 ** 0.5      # 8.0   float  arrel quadrada        </code></pre>
+    
+      <h2>Operadors d'Assignació</h2>
+      <p>         Els operadors d'assignació permeten modificar el valor d'una variable de manera concisa.       </p>
+      <pre><code>
+    =    # Assignació
+    +=   # x += 1 equivaleix a x = x + 1
+    -=   # x -= 1 equival a x = x - 1
+    *=   # x *= 1 equival a x = x * 1
+    /=   # x /= 1 equival a x = x / 1
+    //=  # x //= 1 equival a x = x // 1
+    %=   # x %= 1 equival a x = x % 1
+    **=  # x **= 1 equival a x = x ** 1         </code></pre>
+    
+      <h2>Operadors de Comparació</h2>
+      <p>         Els operadors de comparació s'utilitzen per comparar dos valors.       </p>
+      <pre><code>
+    5 == 5    # True (igual)     ¡¡  el == no és el mateix que el = !!
+    5 != 3    # True (diferent)
+    5 < 10    # True (menor que)
+    5 > 10    # False (major que)
+    5 <= 10   # True (menor o igual que)
+    5 >= 10   # False (major o igual que)       </code></pre>
+    
+      <h2>Operadors Lògics</h2>
+      <p>         Els operadors lògics s'utilitzen per combinar expressions booleanes.       </p>
+      <pre><code>
+    True and False   # False
+    True or False    # True
+    not True         # False        </code></pre>
+    
+      <h2>Operadors d'Identitat</h2>
+      <p>         Els operadors d'identitat comproven si dues variables referencien al mateix objecte de memòria.       </p>
+      <pre><code>
+    a is b
+    a is not b         </code></pre>
+    
+      <h2>Operadors de Pertenència o Membresia</h2>
+      <p>         Els operadors de membresia s'utilitzen per comprovar si un element està present en una col·lecció com una cadena, llista, etc.       </p>
+      <pre><code>
+    'a' in 'hola'      # True
+    'a' not in 'hola'  # False         </code></pre>
+    
+      <h2>Operadors a Nivell de Bits (Bitwise)</h2>
+      <p>         Els operadors bitwise operen sobre els bits individuals de les variables.       </p>
+      <pre><code>
+    5  &  3   # AND bit a bit
+    5 | 3     # OR bit a bit
+    5 ~ 3     # NOT bit a bit
+    5 ^ 3     # XOR bit a bit
+    5 << 3    # desplaçament a l'esquerra bit a bit
+    5 >> 3    # desplaçament a la dreta bit a bit         </code></pre> 
+    
+      <h2>Problemes de Precisió amb Nombres Decimals</h2>
+      <p>          A causa de la representació interna dels nombres decimals, es poden obtenir resultats poc precisos en algunes operacions.       </p>
+      <pre><code>
+    a = 0.1
+    b = 0.2
+    a + b    # 0.30000000000000004        </code></pre>
+      <p>         Aquest problema no es produeix en totes les operacions, però és important tenir-ho en compte. Per a comparar aquests valors de manera precisa, es pot utilitzar <code>math.isclose()</code>.       </p>
+      <pre><code>
+    import math
+    math.isclose(0.1 + 0.2, 0.3)  # True        </code></pre>
+
+
+    
+  <h1>Operadors sobre Strings en Python</h1>
+  <h2>Definir Strings</h2>
+  <p>      Pots definir cadenes de text utilitzant cometes simples ('), dobles (") o triples (''' o """).   </p>
+
+  <h2>Concatenació de Strings</h2>
+  <p>     La concatenació permet unir dues o més cadenes de text.   </p>
+  <pre><code>
+saludo = "Hola" + " " + "mundo"
+print(saludo)  # Hola mundo     </code></pre>
+
+  <h2>Repetició de Strings</h2>
+  <p>     La repetició d'una cadena es pot aconseguir mitjançant l'operador de multiplicació.  </p>
+  <pre><code>
+print("Hola" * 3)  # HolaHolaHola     </code></pre>
+
+  <h2>Comparació de Strings</h2>
+  <p>    Les cadenes es poden comparar utilitzant els operadors de comparació. Es distingeixen les majúscules de les minúscules.   </p>
+  <pre><code>
+print("Hola" == "hola")  # False (distinció de majúscules/minúscules)
+print("a" < "b")         # True (ordre alfabètic)  També es pot fer amb > o !=      </code></pre>
+
+  <h2>Accés per Índex</h2>
+  <p>     Pots accedir als caràcters d'una cadena mitjançant el seu índex. Recorda que l'índex comença des de 0.   </p>
+  <pre><code>
+texto = "Python"
+print(texto[0])  # P
+print(texto[-1])  # n (últim caràcter)   </code></pre>
+ <img src="imgs/slicing.png" alt="que es slicing" width="50%" class="imatge-dreta">
+  <h2>Accés per Slicing (Rebanat)</h2>
+  <p>      El slicing permet extreure subcadenes mitjançant un rang d'índexs.  </p>
+  <pre><code>
+print(texto[0:4])  # Pyth (índexs de 0 a 3)
+print(texto[::2])  # Pto (caràcters del 0 al 5 de 2 en 2)
+print(texto[1:4:2])  # yh (caràcters 1 al 3 de 2 en 2)
+print(texto[:3])  # Hol (de l'índex 0 a l'índex 2)   </code></pre>
+
+  <h2>Iteració sobre Strings</h2>
+  <p>      Pots recórrer una cadena de text caràcter per caràcter mitjançant un bucle <code>for</code>.   </p>
+  <pre><code>
+texto = "Python"
+for letra in texto:
+    print(letra)    </code></pre>
+
+  <h2>Inmutabilitat de Strings</h2>
+  <p>      Les cadenes de text en Python són immutables, això vol dir que no es poden modificar després de la seva creació.   </p>
+  <pre><code>
+>>>texto[0] = 'J'
+Traceback (most recent call last):
+  File "<pyshell#2>", line 1, in <module>
+    texto[0] = 'J'
+TypeError: 'str' object does not support item assignment     </code></pre>
+  
+</section>
+
+<section id="conversio">
+
+
+
+
+</section>
+
+</main>
+
+<script>
+
+  // Per poder copiar codi en el porta-retalls. S'ha de posar un botó en cada <pre>
+      //  <div class="pre-container">
+      //    <button class="copy-button">Copia Codi !</button>
+  document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.copy-button');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', function () {
+        const code = this.nextElementSibling.innerText;
+        navigator.clipboard.writeText(code).then(() => {
+          this.innerText = ' ✔ Copiat!';
+          setTimeout(() => this.innerText = 'Copia Codi !', 3000);
+        });
+      });
+    });
+  });
+
+</script>
+
+</body>
+</html>

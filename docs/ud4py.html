@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="ca-ES">  
+  <!--  al ponerlo en catalan, fuerzo al navegador a poner el traductor-->
+  <!-- es-ES  lenguaje - ubicacion    -->
+<head>
+  <meta charset="UTF-8">
+  <link rel="alternate" hreflang="ca-ES">
+  <link rel="icon" href="https://www.python.org/favicon.ico"> 
+  <title> Introducció a la programació</title>
+  <link rel="stylesheet" href="estilsunitatspy.css">
+  <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
+</head>
+<body>
+
+  <header>
+    <a href="index.html"><img src="imgs/phyton2-rbg.png" alt="python"></a>
+    <h1>Unitat Didàctica 4: Tipus Avançats</h1>
+    <h1> </h1>
+  </header>
+
+<nav>
+  <h3>Índex</h3>
+  <a href="#estruc">Estructures avançades</a>
+  <a href="#llistes">Llistes en Python</a>
+  <a href="#tuples">Tuples</a>
+  <a href="#conjunts">Conjunts</a>
+  <a href="#diccionaris">Diccionaris</a>
+  <a href="#gc">El Garbage Collector</a>
+  <a href="#funcionsav">Funcions avançades en Python</a>
+  <a href="#arrays">Arrays</a>
+  <a href="#dates">Dates</a>
+
+   
+</nav>
+
+<main>
+
+<section id="estruc">
+
+      <h1>Estructures avançades en Python</h1>
+  
+      <p>En Python, les dades es divideixen en mutables i immutables, depenent de si el seu contingut pot canviar després de la seua creació.</p>
+  
+      <p>Els objectes immutables no poden canviar el seu contingut després de ser creats. Qualsevol “modificació” realment crea un nou objecte en memòria.</p>
+  
+      <p><strong>Exemples de dades immutables:</strong></p>
+      <ul>
+          <li>Nombres (int, float, complex)</li>
+          <li>Cadenes de text (str)</li>
+          <li>Tuples (tuple)</li>
+          <li>Conjunts immutables (frozenset)</li>
+          <li>Booleans (bool)</li>
+      </ul>
+  
+      <p>Els objectes mutables poden canviar el seu contingut sense canviar la seua identitat en memòria.</p>
+  
+      <p><strong>Exemples de dades mutables:</strong></p>
+      <ul>
+          <li>Llistes (list)</li>
+          <li>Diccionaris (dict)</li>
+          <li>Conjunts (set)</li>
+          <li>Objectes definits per l'usuari (classes)</li>
+      </ul>
+  
+      <h2>Objectes immutables (int, str, bool...)</h2>
+      <p>a = 3 &nbsp; &nbsp;# Es crea el literal 3 en memòria i s'assigna el seu “identificador” a la variable a</p>
+      <p>b = 3 &nbsp; &nbsp;# Com que el literal 3 ja existeix, se li assigna el seu “identificador” a la variable b</p>
+      <p>a = 5 &nbsp; &nbsp;# Es crea el literal 5 en memòria i s'assigna el seu “identificador” a la variable a</p>
+      <img src="imgs/inmutables.png" alt="inmutables" width="60%">
+      <p>Per “identificador” es fa referència a un identificador d'objecte (no a una adreça de memòria). Aquest identificador es pot obtindre amb la funció <code>id(var)</code>.</p>
+       
+      <h3>Prova:</h3>
+      <pre>
+  >>> a = 9
+  >>> b = 10
+  >>> id(a)
+     11754152
+  >>> id(b)
+     11754184
+  >>> b = a
+  >>> id(b)
+     11754152
+      </pre>
+  
+      <p>En Python es produeix <strong>aliasing</strong>, és a dir, els objectes tenen individualitat, i múltiples noms poden referir-se al mateix objecte.</p>
+      <hr>
+      <h2>Objectes mutables (llistes, diccionaris, conjunts, definits per l'usuari...)</h2>
+      <p>En Python, les variables són referències a objectes en memòria, no contenidors de dades directament. Quan fas una assignació com:</p>
+      <p><code>a = [1, 2, 3]</code> &nbsp; &nbsp;# a és una llista, per tant mutable</p>
+      <p><code>b = a</code></p>
+      <p>Tant <code>a</code> com <code>b</code> apunten al mateix objecte (una llista en aquest cas). No es crea una còpia de la llista; simplement, ambdues variables fan referència al mateix objecte. Si modifiques la llista a través de <code>b</code>:</p>
+      <p><code>b.append(4)</code> &nbsp; &nbsp;# això afegeix un element al final de la llista</p>
+      <p>La llista a la qual <code>a</code> apunta també es veu modificada, ja que <code>a</code> i <code>b</code> fan referència al mateix objecte en memòria.</p>
+  
+      <h3>Referències i aliasing</h3>
+      <img src="imgs/mutables.png" alt="mutables" width="60%">
+  
+      <p>La diferència amb els objectes immutables és que quan modifiquem un objecte mutable, no es crea un de nou (si no existeix), com passa amb els immutables. Es modifica l’objecte i es mantenen les referències.</p>
+  
+    
+      <p>Una altra diferència amb els immutables és que quan assignem una llista a una variable, ES CREA una nova llista (encara que ja n’existisca una amb els mateixos elements).</p>
+      <img src="imgs/mutables2.png" alt="mutables2" width="30%" class="imatge-dreta">
+      <p><code>a = [1, 2, 3]</code></p>
+      <p><code>b = [1, 2, 3]</code></p>
+      
+      <p>Això no pot passar amb els objectes immutables. En el cas de dos objectes immutables iguals, s’apunta al mateix.</p>
+  
+          <h2>Objectes mutables (llistes, diccionaris, conjunts, definits per l'usuari...)</h2>
+      
+          <p>En Python, les variables són referències a objectes en memòria, no contenidors de dades directament. Quan fas una assignació com:</p>
+      
+          <pre>a = [1, 2, 3]     # a és una llista, per tant mutable  
+      b = a</pre>
+      
+          <p>Tant <code>a</code> com <code>b</code> apunten al mateix objecte (una llista en aquest cas). No es crea una còpia de la llista; simplement, ambdues variables fan referència al mateix objecte. Si modifiques la llista a través de <code>b</code>:</p>
+      
+          <pre>b.append(4)   # això afegeix un element al final de la llista</pre>
+      
+          <p>La llista a la qual <code>a</code> apunta també es veu modificada, ja que <code>a</code> i <code>b</code> fan referència al mateix objecte en memòria.</p>
+      
+          <h3>Referències i aliasing</h3>
+      
+          <p>La diferència amb els objectes immutables és que quan modifiquem un objecte mutable, no es crea un de nou (si no existeix), com passa amb els immutables. Es modifica l’objecte i es mantenen les referències.</p>
+      
+          <p>Una altra diferència amb els immutables és que quan assignem una llista a una variable, ES CREA una nova llista (encara que ja n’existisca una amb els mateixos elements).</p>
+      
+          <pre>a = [1, 2, 3]
+      b = [1, 2, 3]</pre>
+      
+          <p>Això no pot passar amb els objectes immutables. En el cas de dos objectes immutables iguals, s’apunta al mateix.</p>
+   
+
+</section>
+
+<section id="llistes">
+      <h2>Llistes []</h2>
+      <img src="imgs/llista.png" alt="llista" width="40%" class="imatge-dreta">
+      <p>Les llistes són estructures de dades que poden emmagatzemar diversos elements.</p>
+      <ul>
+          <li>Són ordenades. Suporten indexació i slicing.</li>
+          <li>Són Mutables: Es poden modificar després de ser creades.</li>
+          <li>Es poden afegir o eliminar elements amb mètodes com <code>append()</code>, <code>remove()</code>, <code>pop()</code>, etc.</li>
+          <li>Els elements poden ser mutables o immutables.</li>
+          <li>Es poden niar.</li>
+      </ul>
+  <h4>Vegem com manipular llistes amb exemples..</h4>
+      <pre>
+  fruites = ["poma", "plàtan", "cirera"]
+  llista = list("1234")
+  llista = [1, "Hola", 3.67, [1, 2, 3]]
+  print(fruites[0])
+  fruites[0] = "pera"
+  del fruites[1]
+  fruites.append("taronja")
+  print(fruites)    print(*fruites)    print(*fruites, sep=' -> ')
+  len(fruites)
+  max(fruites)   min(fruites)
+  sum(mevallista)
+  mevallista = []
+  mevallista[0] = 24   mevallista[1] = 46
+  mevallista[-1] = 33  mevallista[-2] = 57
+  nouafruita = fruites[2:4]
+  nouafruita2 = fruites[:4]   nouafruita3 = fruites[2:]
+  llista2 = [1, 4, 7, "plàtan"]
+  mevallista.insert(1, 15)
+  mevallista.extend([7, 8, 9])
+  mevallista.remove(15)
+  mevallista.clear()
+  ultim = mevallista.pop()
+  altre = mevallista.pop(2)
+  print(10 in mevallista)
+  index = mevallista.index("plàtan")
+  mevallista.sort()
+  llista_ordenada = sorted(mevallista)
+  mevallista.reverse()
+  print(mevallista.count("pera"))
+  copia_llista = mevallista.copy()
+  copia_llista = mevallista[:]
+  llista_niada = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+  llista3 = llista1 + llista2
+  llista_repetida = llista1 * 3
+  x, y, z = llista
+  llista_sense_duplicats = list(set(mevallista))
+  resultat = all(x % 2 == 0 for x in mevallista)
+  resultat = any(x % 2 == 0 for x in mevallista)
+  
+  for e in llista: print(e)
+  for index, l in enumerate(llista): print(index, l)
+  type(llista1) is list
+  isinstance(llista1, list)
+      </pre>
+  
+      <h3>Python List comprehension o Comprensió de llistes en Python</h3>
+      <p>La comprensió de llistes en Python és una manera concisa i eficient de crear llistes a partir d'iterables com llistes, tuples, rangs, etc.</p>
+      <p><strong>Sintaxi bàsica:</strong></p>
+      <pre>
+  nova_llista = [expressio for element in iterable if condició]
+      • expressio: operació o transformació aplicada a cada element
+      • element: variable que pren els valors de l'iterable
+      • iterable: objecte iterable (llista, tupla, rang, etc.)
+      • if condició (opcional): filtra els elements
+      </pre>
+  
+      <h4>Exemples de comprensió de llistes</h4>
+      <ol>
+          <li>
+              <strong>Crear una llista de quadrats:</strong>
+              <pre>
+  quadrats = [x**2 for x in range(10)]
+  print(quadrats)  
+  # Resultat: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</pre>
+          </li>
+          <li>
+              <strong>Filtrar nombres parells:</strong>
+              <pre>
+  parells = [x for x in range(10) if x % 2 == 0]
+  print(parells)  
+  # Resultat: [0, 2, 4, 6, 8]</pre>
+          </li>
+          <li>
+              <strong>Convertir paraules a majúscules:</strong>
+              <pre>
+  paraules = ["hola", "món", "python"]
+  majuscules = [paraula.upper() for paraula in paraules]
+  print(majuscules)  
+  # Resultat: ['HOLA', 'MÓN', 'PYTHON']</pre>
+          </li>
+      </ol>
+       
+</section>
+
+<section id="tuples">
+
+      <h2>Tuples ()</h2>
+      <img src="imgs/tupla.png" alt="tupla" width="40%" class="imatge-dreta">
+      <p>Les tuples són com les llistes però, una vegada declarades, <strong>no es poden modificar</strong> (són immutables).</p>
+  
+      <pre>
+  mesosAny = ("Gen", "Feb", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Oct", "Nov", "Des")
+  mesosAny[1]           # accés al segon element
+  mesosAny[-1]          # accés a l'últim element
+  mesosAny[:2]          # slicing
+  mesosAny[0] = 8       # ERROR, no podem modificar
+  tupla1 = ()           # tupla buida
+  tupla2 = (6,)         # tupla d'un sol element, cal posar la coma!
+  tupla1 + tupla2       # concatenar tuples
+  tupla2 * 3            # repetir la tupla 3 vegades
+  "Mai" in mesosAny     # retorna True
+  len(tupla2)           # nombre d'elements
+  max, min, sum         # si els valors són compatibles
+  tupla1.count(23)      # comptar ocurrències
+  tupla1.index(23)      # posició d'un valor
+  tupla1.index(23, 3)   # a partir de la posició 3
+  tupla = tuple(llista) # convertir una llista en tupla
+  sorted(tupla)         # retorna una llista ordenada
+  nova_llista = list(tupla)  # convertir una tupla en llista
+  tupla = (1, 2, 3)
+  a, b, c = tupla       # desempaquetat
+  tupla = (1, 2, 3, 4, 5)
+  TUPLA2 = 1, 2, 3, 4    # altra forma de definir
+  a, *b, c = tupla       # a=1, b=[2,3,4], c=5
+  v = 1                 # NO és una tupla
+  x = (2)               # NO és una tupla
+  y = (1,)              # SÍ és una tupla
+  tupla = 1, 2, ('a', 'b'), 3   # tupla amb elements niats
+  for t in tupla: print(t)     # recorregut de la tupla
+  type(tupla2) is tuple        # comprova si és una tupla
+      </pre>
+  
+      <h3>Quan usar tuples en lloc de llistes?</h3>
+      <ul>
+          <li>Quan les dades no han de canviar (exemple: coordenades, dies de la setmana).</li>
+          <li>Quan es busca més eficiència (les tuples consumeixen menys memòria i són més ràpides).</li>
+          <li>Quan es necessiten dades <strong>hashables</strong> (les tuples es poden usar com a claus en diccionaris, les llistes no).</li>
+      </ul>
+  
+      <h3>Tuple Comprehension?</h3>
+      <p>En Python <strong>no existeix</strong> la "tuple comprehension" com a tal.</p>
+      <p>Si usem parèntesis (<code>()</code>) per intentar fer una comprensió, Python ho interpreta com un <strong>generator expression</strong>:</p>
+      <pre>
+  tupla = (x**2 for x in range(5))
+  print(tupla)
+  # Resultat: &lt;generator object at 0x...&gt;
+      </pre>
+      <p>Açò <strong>no</strong> crea una tupla, sinó un objecte generador. Per convertir-lo en tupla:</p>
+      <pre>
+  tupla = tuple(x**2 for x in range(5))
+  print(tupla)
+      </pre>
+  
+      <h4>Avantatges d’un generador:</h4>
+      <ol>
+          <li><strong>Eficiència de memòria</strong>: no carrega tots els elements a memòria.</li>
+          <li><strong>Rendiment</strong>: útil per a grans volums de dades.</li>
+          <li><strong>Simplicitat</strong>: codi més net que una funció generadora.</li>
+      </ol>
+
+
+</section>
+
+<section id="conjunts">
+
+      <h2>Conjunts -sets-  {}</h2>
+      <img src="imgs/conjunt.png" alt="conjunt" width="40%" class="imatge-dreta">
+      <h3>Característiques principals</h3>
+      <ol>
+          <li><strong>Elements únics</strong>: Un conjunt no pot contindre duplicats.</li>
+          <li><strong>No ordenats</strong>: Els elements no tenen un ordre específic.</li>
+          <li><strong>Mutables</strong>: Es poden afegir o eliminar elements.</li>
+          <li><strong>Els elements han de ser immutables</strong>: podem afegir o llevar, però no modificar un element concret.</li>
+      </ol>
+  
+      <h3>Exemples d’ús</h3>
+      <pre>
+  conjunt_buit = set()
+  conjunt = {1, 2, 2, 3}
+  print(conjunt)               # Eixida: {1, 2, 3}
+  conjunt = set([1, 2, 3, 3])  # convertir una llista en conjunt
+  conjunt.add(3)               # afegir un element
+  conjunt.remove(2)            # elimina 2, dona error si no existeix
+  conjunt.discard(4)           # elimina 4, no dona error si no existeix
+  conjunt.pop()                # elimina i retorna un element aleatori
+  conjunt.clear()              # buida el conjunt
+  
+  len(conjunt)                 # número d’elements
+  print(5 in conjunt)          # pertinença: True si 5 està en el conjunt
+  type(conjunt) is set         # comprova si és un conjunt
+  
+  a = frozenset([1, 2, 3])     # conjunt immutable
+  conjunt = {1, 2.5, "hola", (1, 2), frozenset([3, 4])}
+  
+  for element in conjunt:
+      print(element)
+      </pre>
+  
+      <h3>Operacions entre conjunts</h3>
+      <pre>
+  print(a.issubset(b))         # a està contingut en b
+  print(a.issuperset(b))       # a conté tots els elements de b
+  print(a.isdisjoint(b))       # a i b no tenen cap element en comú
+ 
+  # Unió
+  print(s1 | s2)
+  print(s1.union(s2))
+  <img src="imgs/conjunts_ops.png" alt="opseracions conjunts" width="40%" class="imatge-dreta">
+  # Intersecció
+  print(s1 & s2)
+  print(s1.intersection(s2))
+  
+  # Diferència
+  print(s1 - s2)
+  print(s1.difference(s2))
+  
+  # Diferència simètrica
+  print(s1 ^ s2)
+  print(s1.symmetric_difference(s2))
+      </pre>
+  
+      <h4>Mètodes destructius (modifiquen el conjunt original):</h4>
+      <pre>
+  conjunt.update(iterable)
+  conjunt.intersection_update(iterable)
+  conjunt.difference_update(iterable)
+  conjunt.symmetric_difference_update(iterable)
+      </pre>
+  
+      <h3>Set Comprehension</h3>
+      <p>És una forma compacta de crear conjunts.</p>
+      <pre>
+  nou_conjunt = {expressio for element in iterable if condició}
+  # Exemple:
+  parells = {x for x in range(10) if x % 2 == 0}
+      </pre>
+  
+</section>
+
+<section id="diccionaris">
+      <h2>Diccionaris { , }</h2>
+      <img src="imgs/diccionaris.png" alt="diccionaris" width="55%" class="imatge-dreta">
+      <p>Els diccionaris emmagatzemen parells clau-valor.</p>
+  
+      <h3>Característiques principals</h3>
+      <ol>
+          <li>Mutables</li>
+          <li>No permeten claus duplicades. Si s’afegeix una clau repetida, el seu valor serà sobreescrit.</li>
+          <li>Les claus han de ser <strong>immutables</strong>. Poden ser <code>str</code>, <code>int</code>, <code>tuple</code>, però no <code>list</code> o <code>dict</code>.</li>
+          <li>Mantenen l’ordre d’inserció (des de Python 3.7).</li>
+      </ol>
+  
+      <h3>Exemples d’ús</h3>
+      <pre>
+  dic = {}  # Diccionari buit
+  persona = {"nom": "Carlos", "edat": 30, "ciutat": "Madrid"}
+  print(persona["nom"])  # Accedeix al valor d’una clau. Imprimeix 'Carlos'
+  
+  dic["nova_clau"] = "nou_valor"   # Afegir una nova clau
+  dic["clau1"] = "valor_actualitzat"  # Modificar una clau existent
+  valor = dic["clau1"]  # Accedir a un valor (error si no existeix)
+  valor = dic.get("clau1", "per defecte")  # Evita errors si no existeix
+  
+  del dic["clau1"]  # Eliminar una clau
+  valor = dic.pop("clau2", None)  # Elimina i retorna el valor, o None
+  
+  dic.clear()  # Buida el diccionari
+  
+  if "clau1" in dic:
+      print("Clau trobada")
+  
+  # Iteracions
+  for clau in dic:
+      print(clau)
+  
+  for valor in dic.values():
+      print(valor)
+  
+  for clau, valor in dic.items():
+      print(clau, valor)
+  
+  tamany = len(dic)  # Nombre d’elements
+  nou_dic = dic.copy()  # Còpia superficial
+  dic.update({"clau3": "valor3", "clau4": "valor4"})  # Afegir/modificar diverses claus
+  
+  claus = dic.keys()     # objecte dict_keys
+  valors = dic.values()  # objecte dict_values
+  items = dic.items()    # objecte dict_items
+  
+  type(dic) is dict  # Comprova si és un diccionari
+  
+  dic1 | dic2   # (Python 3.9+) Fundeix dos diccionaris. Prioritza dic2
+  dic1 |= dic2  # Fusiona i actualitza dic1
+      </pre>
+  
+      <h3>Claus i valors mutables</h3>
+      <p>Les claus han de ser immutables, però els valors poden ser de qualsevol tipus, fins i tot llistes o altres diccionaris.</p>
+      <pre>
+  dic = {(1, 2): "punt", (3, 4): "altre punt"}
+  print(dic[(1, 2)])  # "punt"
+      </pre>
+  
+      <h3>Comprensió de Diccionaris (Dictionary Comprehension)</h3>
+      <p>Permet construir diccionaris de manera compacta a partir d’un iterable:</p>
+      <pre>
+  numeros = [1, 2, 3, 4]
+  quadrats = {n: n**2 for n in numeros}
+  print(quadrats)  # {1: 1, 2: 4, 3: 9, 4: 16}
+      </pre>
+
+      <h2>Funcions <code>lambda</code> (funcions anònimes)</h2>
+
+      <p>Una expressió <code>lambda</code> en Python permet crear funcions petites i anònimes (sense nom). Són útils per definir comportaments ràpids o temporals, especialment dins d’estructures com diccionaris, funcions d’ordre superior (<code>map</code>, <code>filter</code>, <code>sorted</code>, etc.) o comprensions.</p>
+      
+      <h3>Sintaxi</h3>
+      <pre>
+      lambda arguments: expressió
+      </pre>
+      <p>Exemple bàsic:</p>
+      <pre>
+      f = lambda x: x * 2
+      print(f(4))   # Imprimeix 8
+      </pre>
+      
+      <h3>Exemple amb diccionari de funcions</h3>
+      <pre>
+      operacions = {
+          "suma": lambda x, y: x + y,
+          "resta": lambda x, y: x - y
+      }
+      print(operacions["suma"](10, 5))  # Imprimeix 15
+      print(operacions["resta"](10, 5))  # Imprimeix 5
+      </pre>
+      
+      <p>En este cas, <code>operacions</code> és un diccionari que guarda funcions lambda com a valors. Cada clau representa una operació aritmètica, i pots executar la funció cridant-la amb els arguments corresponents.</p>
+
+</section>
+
+<section id="gc">
+  <h2>El Garbage Collector (GC) de Python</h2>
+  <p>   El <strong>Garbage Collector</strong> és el mecanisme encarregat d'<strong>administrar la memòria automàticament</strong> en Python. Elimina els objectes que ja no s’utilitzen, alliberant espai i evitant fugues de memòria.
+  </p>
+  
+  <h3>Exemple conceptual</h3>
+  <pre>
+    <img src="imgs/gc.png" alt="gc" width="65%" class="imatge-dreta">
+  >>> b = 3
+  >>> a = 5
+  >>> a = b
+  </pre>
+  
+  <p>   Quan <code>a = 5</code>, l’objecte <code>5</code> té una referència. Però després <code>a = b</code>, <code>a</code> passa a referenciar <code>3</code>. Com ningú apunta ja a <code>5</code>, queda sense ús i el GC el pot eliminar.
+  </p>
+  <hr>
+  <h3>Funcionament intern</h3>
+  <ul>
+    <li><strong>Conteig de referències:</strong> cada objecte té un comptador que indica quantes referències l’apunten. Si arriba a zero, es pot eliminar automàticament.</li>
+    <li><strong>Recol·lecció de brossa generacional:</strong> els objectes s’organitzen en <em>generacions</em> (0, 1 i 2). Els nous comencen en la generació 0, i si “sobreviuen” diverses neteges, passen a generacions superiors.</li>
+  </ul>
+  
+  <p>   Python fa neteges més freqüents en la generació 0 que en les superiors, perquè és més probable que els objectes nous siguen de curta duració.
+  </p>
+  
+  <h3>Control manual amb el mòdul <code>gc</code></h3>
+  <p>Encara que el GC funciona automàticament, es pot controlar manualment amb el mòdul <code>gc</code>:</p>
+  <pre>
+  import gc
+  
+  gc.collect()      # Força una execució del garbage collector
+  gc.get_stats()    # Mostra estadístiques sobre el GC
+  </pre>
+
+</section>
+
+<section id="funcionsav">
+  <h2>Funcions Avançades en Python</h2>
+
+  <h3>Ús de <code>*args</code> i <code>**kwargs</code></h3>
+  <p>
+  <strong>*args</strong> permet passar un nombre variable d’arguments posicionals a una funció. S’emmagatzemen com una tupla.
+  </p>
+  <pre>
+  def sumar(*args):
+      return sum(args)
+  
+  print(sumar(1, 2, 3, 4))  # Output: 10
+  </pre>
+  
+  <p>
+  <strong>**kwargs</strong> permet passar arguments amb clau i valor (com un diccionari) sense definir-los prèviament.
+  </p>
+  <pre>
+  def mostrar_info(**kwargs):
+      for clau, valor in kwargs.items():
+          print(f"{clau}: {valor}")
+  
+  mostrar_info(nom="Anna", edat=30, ciutat="València")
+  </pre>
+  
+  <p><strong>Diferència:</strong></p>
+  <ul>
+    <li><code>*args</code>: tupla d’arguments posicionals.</li>
+    <li><code>**kwargs</code>: diccionari d’arguments amb nom.</li>
+  </ul>
+  
+  <p>Exemple combinat:</p>
+  <pre>
+  def exemple(*args, **kwargs):
+      print("Args:", args)
+      print("Kwargs:", kwargs)
+  
+  exemple(1, 2, 3, nom="Joan", edat=25)
+  </pre>
+  
+  <h3>Funcions Lambda</h3>
+  <p>
+  Les funcions <strong>lambda</strong> són funcions anònimes d’una sola línia, útils per a operacions curtes.
+  </p>
+  <pre>
+  suma = lambda x, y: x + y
+  print(suma(3, 5))  # 8
+  
+  cuadrat = lambda x: x ** 2
+  print(cuadrat(4))  # 16
+  
+  es_par = lambda x: x % 2 == 0
+  print(es_par(10))  # True
+  </pre>
+  
+  <h4>Exemples amb funcions d’ordre superior</h4>
+  <pre>
+  # map
+  numeros = [1, 2, 3, 4]
+  dobles = list(map(lambda x: x * 2, numeros))
+  
+  # filter
+  pares = list(filter(lambda x: x % 2 == 0, numeros))
+  
+  # sorted amb clau
+  paraules = ["poma", "plàtan", "kiwi"]
+  ordenades = sorted(paraules, key=lambda x: len(x))
+  </pre>
+  
+  <h3>Decoradors en Python</h3>
+  <p>
+  Un <strong>decorador</strong> és una funció que rep una altra funció, l’amplia amb funcionalitat addicional, i retorna una nova funció.
+  </p>
+  <pre>
+  def mi_decorador(func):
+      def nova_funcio():
+          print("Abans de cridar la funció")
+          func()
+          print("Després de cridar la funció")
+      return nova_funcio
+  
+  @mi_decorador
+  def salutacio():
+      print("Hola, món!")
+  
+  salutacio()
+  </pre>
+  
+  <h4>Decoradors amb paràmetres</h4>
+  <pre>
+  def decorador_amb_args(func):
+      def embolcall(*args, **kwargs):
+          print(f"Cridant {func.__name__} amb {args} {kwargs}")
+          return func(*args, **kwargs)
+      return embolcall
+  
+  @decorador_amb_args
+  def suma(a, b):
+      return a + b
+  </pre>
+  
+  <h4>Decorador amb paràmetres personalitzats</h4>
+  <pre>
+  def repetidor(n):
+      def decorador(func):
+          def embolcall(*args, **kwargs):
+              for _ in range(n):
+                  func(*args, **kwargs)
+          return embolcall
+      return decorador
+  
+  @repetidor(3)
+  def hola():
+      print("Hola!")
+  
+  hola()
+  </pre>
+  
+  <h4>Decoradors predefinits</h4>
+  <ul>
+    <li><code>@staticmethod</code>: mètode estàtic d’una classe.</li>
+    <li><code>@classmethod</code>: accedeix a la classe com a primer argument.</li>
+    <li><code>@property</code>: converteix un mètode en propietat.</li>
+  </ul>
+  
+  <pre>
+  class Persona:
+      def __init__(self, nom):
+          self._nom = nom
+  
+      @property
+      def nom(self):
+          return self._nom
+  
+  p = Persona("Carles")
+  print(p.nom)  # Sense parèntesis
+  </pre>
+  <hr>
+  <h1>Generadors</h1>
+    
+  <p>Els <strong>generadors</strong> són una manera més senzilla i eficient de crear iterables en Python. S'utilitzen funcions amb la paraula clau <code>yield</code> en lloc de <code>return</code>.</p>
+
+  <p>Quan una funció conté <code>yield</code>, es converteix en un generador i pot conservar l'estat entre iteracions.</p>
+
+  <h2>Exemple de generador:</h2>
+
+  <pre><code>def comptador(inici, fi):
+  while inici <= fi:
+      yield inici
+      inici += 1
+
+for numero in comptador(1, 5):
+  print(numero)
+  </code></pre>
+
+  <p>Este codi té el mateix comportament que la classe <code>Comptador</code> de l'exemple anterior, però és molt més curt i fàcil de llegir.</p>
+
+  <h3>Avantatges dels generadors:</h3>
+  <ul>
+      <li>Menys codi i més llegibilitat.</li>
+      <li>No cal gestionar <code>__iter__</code> ni <code>__next__</code>.</li>
+      <li>Estalvi de memòria, ja que els valors es generen sobre la marxa (lazy evaluation).</li>
+  </ul>
+ 
+</section>
+
+<section id="arrays">
+
+    <h1>Treballar amb Arrays en Python</h1>
+    <img src="imgs/numpy.png" alt="numpy" class="imatge-dreta" width="40%">
+
+    <p>En Python, es poden gestionar arrays mitjançant <strong>llistes</strong> o utilitzant el mòdul <strong>NumPy</strong>. Aquesta és una biblioteca externa que proporciona funcionalitats específiques per a computació numèrica.</p>
+
+    <h2>Què és NumPy?</h2>
+    <p><strong>NumPy</strong> (Numerical Python) és una de les biblioteques més fonamentals i populars de Python per treballar amb computació científica i manipulació de dades numèriques.</p>
+    <p>És àmpliament utilitzada en àrees com:</p>
+    <ul>
+        <li>Anàlisi de dades</li>
+        <li>Intel·ligència artificial</li>
+        <li>Aprenentatge automàtic (<em>machine learning</em>)</li>
+        <li>Processament d’imatges</li>
+        <li>I molt més</li>
+    </ul>
+
+    <h3>NumPy proporciona:</h3>
+    <ol>
+        <li><strong>Arrays multidimensionals</strong> per treballar amb dades de manera més eficient que amb llistes de Python.</li>
+        <li><strong>Funcions matemàtiques optimitzades</strong> per fer operacions ràpides i vectoritzades.</li>
+        <li><strong>Eines per manipulació de dades</strong>, àlgebra lineal, transformades de Fourier, generació de nombres aleatoris, etc.</li>
+    </ol>
+
+    <h2>Instal·lació</h2>
+    <p>Si no tens instal·lat NumPy, pots fer-ho amb la següent comanda:</p>
+    <pre><code>$ pip3 install numpy</code></pre>
+
+    <h2>Característiques principals de NumPy</h2>
+
+    <h3>Arrays</h3>
+    <p>El tipus de dades principal de NumPy és l'<code>ndarray</code> (array N-dimensional). Aquests són més ràpids i ocupen menys memòria que les llistes de Python.</p>
+
+    <h3>Exemple bàsic:</h3>
+    <pre><code>import numpy as np
+
+# Crear un array unidimensional
+arreglo = np.array([1, 2, 3, 4])
+print("Array:", arreglo)
+
+# Crear un array bidimensional (matriu)
+matriu = np.array([[1, 2, 3], [4, 5, 6]])
+print("Matriu:\n", matriu)</code></pre>
+
+    <p><strong>Explicació dels exemples:</strong></p>
+    <ul>
+        <li><code>np.array([...])</code>: crea un array de NumPy a partir d'una llista de Python.</li>
+        <li>Els arrays poden ser d'una sola dimensió (com una llista) o multidimensionals (com una matriu o tensor).</li>
+        <li>Les operacions amb arrays són molt més eficients que amb llistes, especialment en càlculs matemàtics o estadístics.</li>
+    </ul>
+    <hr>
+
+    <h1>Vectorització amb NumPy</h1>
+
+    <p>NumPy permet realitzar operacions matemàtiques sobre tots els elements d’un array d’una sola vegada, sense necessitat d’utilitzar bucles (<em>loops</em>).</p>
+
+    <h3>Exemple:</h3>
+    <pre><code># Operacions matemàtiques amb arrays
+a = np.array([1, 2, 3])
+b = np.array([4, 5, 6])
+print("Suma:", a + b)  # [5 7 9]
+print("Producte escalar:", a * 2)  # [2 4 6]</code></pre>
+
+    <h2>Estalvi de memòria</h2>
+    <p>NumPy emmagatzema les dades en un tipus homogeni (tots els elements són del mateix tipus), la qual cosa fa que siga més eficient en ús de memòria que les llistes tradicionals de Python.</p>
+
+    <h3>Exemple:</h3>
+    <pre><code>import sys
+
+llista = range(1000)
+print("Mida de la llista:", sys.getsizeof(1) * len(llista))
+
+arrel = np.arange(1000)
+print("Mida de l'array NumPy:", arrel.nbytes)</code></pre>
+
+    <h2>Funcions útils</h2>
+    <p>NumPy inclou moltes funcions predefinides per a càlculs matemàtics:</p>
+    <ul>
+        <li><strong>Aritmètiques:</strong> <code>np.sum</code>, <code>np.mean</code>, <code>np.median</code>, <code>np.std</code>, <code>np.var</code></li>
+        <li><strong>Operacions lògiques:</strong> <code>np.all</code>, <code>np.any</code></li>
+        <li><strong>Generació de nombres aleatoris:</strong> <code>np.random.rand</code>, <code>np.random.randint</code></li>
+        <li><strong>Àlgebra lineal:</strong> <code>np.dot</code>, <code>np.linalg.inv</code>, <code>np.linalg.eig</code></li>
+    </ul>
+
+    <h3>Exemple de càlculs estadístics:</h3>
+    <pre><code># Estadístiques bàsiques
+dades = np.array([10, 20, 30, 40])
+print("Mitjana:", np.mean(dades))
+print("Desviació estàndard:", np.std(dades))</code></pre>
+
+    <h2>Creació d'arrays especialitzats</h2>
+    <p>NumPy facilita la creació d'arrays amb valors específics de forma ràpida i senzilla.</p>
+
+    <h3>Exemples:</h3>
+    <pre><code># Array de zeros
+zeros = np.zeros((2, 3))  # 2 files, 3 columnes
+print("Zeros:\n", zeros)
+
+# Array d'unos
+unos = np.ones((3, 2))
+print("Unos:\n", unos)
+
+# Array amb valors en un rang
+rang = np.arange(0, 10, 2)  # Inici, fi, pas
+print("Rang:", rang)
+
+# Array amb valors espaiats uniformement
+espaiats = np.linspace(0, 1, 5)  # Inici, fi, quantitat
+print("Espaiats uniformement:", espaiats)</code></pre>
+
+    <p><strong>Nota:</strong> Aquestes funcions són molt útils per preparar dades per a experiments, simulacions o per crear estructures numèriques base de manera ràpida.</p>
+  <hr>
+
+    <h1>Indexació i slicing avançats</h1>
+
+    <p>Amb NumPy pots accedir i modificar elements dels arrays utilitzant índexs o fins i tot condicions.</p>
+
+    <pre><code>arrel = np.array([10, 20, 30, 40, 50])
+
+# Accés per índex
+print("Element en l'índex 2:", arrel[2])  # 30
+
+# Slicing (subarray)
+print("Subarray:", arrel[1:4])  # [20 30 40]
+
+# Condicionals
+print("Elements majors que 25:", arrel[arrel > 25])  # [30 40 50]</code></pre>
+
+    <h2>Operacions amb matrius</h2>
+    <p>NumPy és molt eficient per a fer càlculs amb matrius, com el producte punt o la transposició.</p>
+
+    <pre><code>A = np.array([[1, 2], [3, 4]])
+B = np.array([[5, 6], [7, 8]])
+
+# Producte punt (matriu A · matriu B)
+print("Producte punt:\n", np.dot(A, B))
+
+# Transposició de matriu A
+print("Transposada de A:\n", A.T)</code></pre>
+
+    <p><strong>Nota:</strong> El mètode <code>np.dot</code> calcula el producte matricial clàssic, mentre que <code>A.T</code> retorna la transposada (intercanviant files per columnes).</p>
+
+    <h2>Generació de nombres aleatoris</h2>
+    <p>NumPy ofereix diverses funcions per generar valors aleatoris de manera senzilla:</p>
+
+    <pre><code># Nombre aleatori entre 0 i 1
+aleatori = np.random.rand()
+print("Nombre aleatori:", aleatori)
+
+# Matriu aleatòria d'enters
+aleatoris = np.random.randint(1, 10, size=(3, 3))
+print("Matriu aleatòria:\n", aleatoris)</code></pre>
+
+    <p>Aquestes funcions són útils per simular dades, inicialitzar variables o fer proves estadístiques.</p>
+
+<hr>
+
+    <h1>Per què utilitzar NumPy?</h1>
+    <p>NumPy és una biblioteca fonamental en Python per al càlcul numèric i l'anàlisi de dades. Els principals motius per a utilitzar-la són:</p>
+    <ol>
+        <li><strong>Velocitat:</strong> NumPy pot ser fins a 50 vegades més ràpid que les llistes normals de Python per a operacions numèriques gràcies al seu codi optimitzat en C.</li>
+        <li><strong>Optimització de memòria:</strong> Els arrays de NumPy utilitzen menys memòria que les estructures estàndard de Python.</li>
+        <li><strong>Facilitat d’ús:</strong> Inclou moltes funcions matemàtiques, estadístiques i d’àlgebra lineal que es poden utilitzar directament.</li>
+        <li><strong>Interoperabilitat:</strong> Funciona perfectament amb altres biblioteques com <em>Pandas</em>, <em>Matplotlib</em>, <em>Scikit-learn</em>, entre altres.</li>
+    </ol>
+
+    <h2>Altres biblioteques en Python</h2>
+
+    <h3>Incloses en la biblioteca estàndard</h3>
+    <ul>
+        <li><strong>os:</strong> Per a interactuar amb el sistema operatiu (crear carpetes, llegir fitxers, etc.).</li>
+        <li><strong>sys:</strong> Per accedir a informació del sistema i dels arguments passats al programa.</li>
+        <li><strong>json:</strong> Per llegir i escriure dades en format JSON.</li>
+        <li><strong>datetime:</strong> Per gestionar dates i hores.</li>
+        <li><strong>math:</strong> Proporciona funcions matemàtiques avançades com arrels quadrades, trigonometria, etc.</li>
+        <li><strong>decimal:</strong> Per a càlculs de precisió elevada, útil en contextos financers.</li>
+        <li><strong>random:</strong> Per generar nombres aleatoris.</li>
+        <li><strong>re:</strong> Per treballar amb expressions regulars (regex).</li>
+        <li><strong>collections:</strong> Ofereix estructures de dades avançades com <code>Counter</code>, <code>deque</code>, <code>defaultdict</code>, etc.</li>
+        <li><strong>itertools:</strong> Funcions per manipular iteradors de forma eficient.</li>
+        <li><strong>sqlite3:</strong> Per gestionar bases de dades SQLite de forma directa en Python.</li>
+    </ul>
+    <p>Pots veure tots els mòduls disponibles amb <code>help()</code> dins de l’intèrpret de Python, i després escriure <code>modules</code>.</p>
+
+    <h3>Biblioteques externes populars</h3>
+    <ul>
+        <li><strong>NumPy:</strong> Per a càlculs numèrics ràpids i eficients.</li>
+        <li><strong>Pandas:</strong> Per al tractament de dades tabulars (com taules, fulls de càlcul, etc.).</li>
+        <li><strong>Matplotlib:</strong> Per crear gràfics i visualitzacions bàsiques.</li>
+        <li><strong>Seaborn:</strong> Basada en Matplotlib, permet crear gràfics estadístics atractius i senzills.</li>
+        <li><strong>Scikit-learn:</strong> Llibreria per a aprenentatge automàtic (machine learning).</li>
+        <li><strong>Flask</strong> i <strong>Django:</strong> Frameworks per a desenvolupament web amb Python.</li>
+        <li><strong>Requests:</strong> Per fer peticions HTTP com GET, POST, etc.</li>
+        <li><strong>BeautifulSoup:</strong> Per fer <em>web scraping</em> (extracció d’informació de pàgines web).</li>
+        <li><strong>TensorFlow</strong> i <strong>PyTorch:</strong> Llibreries potents per a intel·ligència artificial i <em>deep learning</em>.</li>
+        <li><strong>Typer:</strong> Per crear interfícies de línia de comandes (CLI) de forma ràpida i elegant.</li>
+        <li><strong>OpenCV:</strong> Per a processament d’imatges i visió artificial.</li>
+        <li><strong>Pillow:</strong> Per a manipulació d’imatges (redimensionar, retallar, etc.).</li>
+        <li>...i moltes més.</li>
+    </ul>
+
+    <p><strong>Nota:</strong> Les biblioteques externes s’instal·len normalment amb <code>pip</code>, per exemple: <code>pip install numpy</code>.</p>
+
+</section>
+
+<section id="dates">
+
+      <h1>Dates en Python</h1>
+      <p>Python inclou de manera nativa eines per al tractament de dates i hores mitjançant el mòdul estàndard <code>datetime</code>. Aquest mòdul ve integrat en Python i no necessites instal·lar cap llibreria addicional per utilitzar-lo.</p>
+  
+      <h2>Importar el mòdul datetime</h2>
+      <pre><code>from datetime import datetime, timedelta, date</code></pre>
+  
+      <h2>Obtenir la data i hora actuals</h2>
+      <p><strong>Data i hora actuals:</strong></p>
+      <pre><code>ahora = datetime.now()
+  print("Data i hora actual:", ahora)</code></pre>
+  
+      <p><strong>Només la data actual:</strong></p>
+      <pre><code>hoy = date.today()
+  print("Data actual:", hoy)</code></pre>
+  
+      <h2>Crear una data o hora específica</h2>
+      <p><strong>Crear una data específica:</strong></p>
+      <pre><code>mi_fecha = datetime(2025, 1, 28)  # Any, mes, dia
+  print("Data específica:", mi_fecha)</code></pre>
+  
+      <p><strong>Crear una data i hora específica:</strong></p>
+      <pre><code>mi_fecha_hora = datetime(2025, 1, 28, 14, 30, 0)  # Any, mes, dia, hora, minut, segon
+  print("Data i hora específica:", mi_fecha_hora)</code></pre>
+  
+      <h2>Format de dates (<code>strftime</code>)</h2>
+      <p>Pots convertir una data o hora en un format específic com a text:</p>
+      <pre><code>formato = ahora.strftime("%d/%m/%Y %H:%M:%S")
+  print("Format personalitzat:", formato)</code></pre>
+  
+      <h3>Exemples de codis de format:</h3>
+      <ul>
+          <li><code>%Y</code> - Any complet (2025)</li>
+          <li><code>%m</code> - Mes en número (01)</li>
+          <li><code>%d</code> - Dia (28)</li>
+          <li><code>%H</code> - Hora en format de 24 hores</li>
+          <li><code>%I</code> - Hora en format de 12 hores</li>
+          <li><code>%M</code> - Minut</li>
+          <li><code>%S</code> - Segon</li>
+          <li><code>%p</code> - AM o PM</li>
+      </ul>
+
+      <!DOCTYPE html>
+
+          <h1>Convertir i Operar amb Dates en Python</h1>
+      
+          <h2>Convertir text en data (<code>strptime</code>)</h2>
+          <p>Pots convertir una cadena de text en un objecte <code>datetime</code>:</p>
+          <pre><code>texto = "28/01/2025 14:30:00"
+      fecha_convertida = datetime.strptime(texto, "%d/%m/%Y %H:%M:%S")
+      print("Text convertit a data:", fecha_convertida)</code></pre>
+      
+          <h2>Operacions amb dates</h2>
+          <p>Aquí tens algunes operacions que pots realitzar amb dates:</p>
+      
+          <h3>1. Afegir o restar temps amb <code>timedelta</code>:</h3>
+          <p><strong>Afegir 10 dies a la data actual:</strong></p>
+          <pre><code>nueva_fecha = ahora + timedelta(days=10)
+      print("Data amb 10 dies més:", nueva_fecha)</code></pre>
+      
+          <p><strong>Restar 5 hores:</strong></p>
+          <pre><code>nueva_hora = ahora - timedelta(hours=5)
+      print("Data amb 5 hores menys:", nueva_hora)</code></pre>
+      
+          <h3>2. Calcular la diferència entre dues dates:</h3>
+          <pre><code>fecha1 = datetime(2025, 1, 28)
+      fecha2 = datetime(2025, 2, 5)
+      diferencia = fecha2 - fecha1
+      print("Dies de diferència:", diferencia.days)</code></pre>
+      
+          <h2>Comparar dates</h2>
+          <p>Pots utilitzar operadors de comparació com <code>&lt;</code>, <code>&gt;</code>, <code>==</code> per comparar objectes de data i hora:</p>
+          <pre><code>if fecha1 < fecha2:
+          print("Fecha1 és anterior a Fecha2")
+      else:
+          print("Fecha1 és posterior o igual a Fecha2")</code></pre>
+      
+
+          <h1>Altres Mòduls Relacionats amb Dates en Python</h1>
+      
+          <h2>Mòdul <code>time</code></h2>
+          <p>El mòdul <code>time</code> s'utilitza per treballar amb el temps del sistema i realitzar operacions com mesurar intervals o fer pauses.</p>
+          <h3>Característiques principals:</h3>
+          <ul>
+              <li>Gestió de <strong>timestamps</strong> (segons des de l'Epoch, 1 de gener de 1970).</li>
+              <li>Realitzar pauses en l'execució del programa.</li>
+          </ul>
+      
+          <h3>Exemple bàsic:</h3>
+          <pre><code>import time
+      
+      # Pausar l'execució per 2 segons
+      time.sleep(2)
+      
+      # Obtenir el timestamp actual
+      timestamp = time.time()
+      print("Timestamp actual:", timestamp)</code></pre>
+      
+          <h2>Mòdul <code>calendar</code></h2>
+          <p>Aquest mòdul és útil per treballar amb calendaris i verificar propietats de dates (com dies de la setmana, anys bessis, etc.).</p>
+          <h3>Característiques principals:</h3>
+          <ul>
+              <li>Generar calendaris en text o HTML.</li>
+              <li>Verificar si un any és bisiest.</li>
+              <li>Obtenir el primer dia de la setmana i el nombre de dies en un mes.</li>
+          </ul>
+      
+          <h3>Exemple bàsic:</h3>
+          <pre><code>import calendar
+      
+      # Verificar si un any és bisiest
+      print("¿2024 és bisiest?", calendar.isleap(2024))
+      
+      # Obtenir el calendari de gener 2025
+      print(calendar.month(2025, 1))</code></pre>
+      
+          <h2>Mòdul <code>zoneinfo</code> (Python 3.9+)</h2>
+          <p>Aquest mòdul permet gestionar zones horàries de manera més senzilla i eficient.</p>
+          <h3>Característiques principals:</h3>
+          <ul>
+              <li>Treballar amb zones horàries específiques.</li>
+              <li>Convertir temps entre zones horàries.</li>
+          </ul>
+      
+          <h3>Exemple bàsic:</h3>
+          <pre><code>from datetime import datetime
+      from zoneinfo import ZoneInfo
+      
+      # Definir zones horàries
+      utc = datetime.now(ZoneInfo("UTC"))
+      madrid = datetime.now(ZoneInfo("Europe/Madrid"))
+      
+      print("Hora UTC:", utc)
+      print("Hora Madrid:", madrid)</code></pre>
+      
+          <h2>Llibreries externes (opcionals)</h2>
+          <p>Tot i que Python inclou eines robustes per gestionar dates, de vegades pots necessitar llibretes externes per a casos més complexos. Les més populars són:</p>
+          <ul>
+              <li><strong>dateutil</strong></li>
+              <li><strong>arrow</strong></li>
+          </ul>
+
+</section>
+
+
+</main>
+
+<script>
+
+  // Per poder copiar codi en el porta-retalls. S'ha de posar un botó en cada <pre>
+      //  <div class="pre-container">
+      //    <button class="copy-button">Copia Codi !</button>
+  document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.copy-button');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', function () {
+        const code = this.nextElementSibling.innerText;
+        navigator.clipboard.writeText(code).then(() => {
+          this.innerText = ' ✔ Copiat!';
+          setTimeout(() => this.innerText = 'Copia Codi !', 3000);
+        });
+      });
+    });
+  });
+
+</script>
+
+</body>
+</html>

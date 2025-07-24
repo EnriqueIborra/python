@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="ca-ES">  
+  <!--  al ponerlo en catalan, fuerzo al navegador a poner el traductor-->
+  <!-- es-ES  lenguaje - ubicacion    -->
+<head>
+  <meta charset="UTF-8">
+  <link rel="alternate" hreflang="ca-ES">
+  <link rel="icon" href="https://www.python.org/favicon.ico"> 
+  <title> Introducció a la programació</title>
+  <link rel="stylesheet" href="estilsunitatspy.css">
+  <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
+</head>
+<body>
+
+  <header>
+    <a href="index.html"><img src="imgs/phyton2-rbg.png" alt="python"></a>
+    <h1>Unitat Didàctica 1: Preparar entorn</h1>  
+  </header>
+
+<nav>
+  <h3>Índex</h3>
+  <a href="#instalar">Verificar i instal·lar Python</a>
+  <a href="#pip">Instal·lar PIP</a>
+  <a href="#entornov">Entorn virtual en Python</a>
+  <a href="#paquetes">Instal·lar paquets</a>
+  <a href="#editor">Instal·lar un editor o IDE</a>
+  <a href="#linters">Linters i formatejadors</a>
+  <a href="#depuracion">Eines de depuració</a>
+  <a href="#git">Control de versions</a>
+  <a href="#entornoss">Configuració d'entorns segurs</a>
+  <a href="#bibliotecas">Biblioteques</a>
+  <a href="#entorn">L'entorn de programació</a>
+  
+</nav>
+
+<main>
+
+  <section id="instalar">
+      
+    <h1>1. Verificar i instal·lar Python</h1>
+    <p>Per a poder programar en Python, és necessari tindre instal·lat aquest llenguatge al nostre equip. En esta secció aprendràs a verificar si Python ja està instal·lat i, si no ho està, com instal·lar-lo.</p>
+    
+    <h2>Verificar si Python està instal·lat</h2>
+    <ol>
+      <li>Obri una terminal o consola de comandes:
+        <ul>
+          <li>En Windows, busca “cmd” en el menú d'inici.</li>
+          <li>En macOS o Linux, obri l'aplicació “Terminal”.</li>
+        </ul>
+      </li>
+      <li>Escriu la següent ordre i prem <strong>Enter</strong>:
+        <pre>c:\> python --version   /  # python3 --version</pre>
+      </li>
+      <li>Si Python està instal·lat, veuràs un missatge amb la versió, per exemple:
+        <pre><code>Python 3.10.4</code></pre>
+        Si veus un missatge d'error o diu que no es reconeix l'ordre, aleshores necessites instal·lar Python.
+      </li>
+    </ol>
+    
+    <h1>2. Instal·lar Python</h1>
+    
+    <p>Si no tens Python instal·lat o necessites actualitzar-lo, pots seguir els passos adequats segons el teu sistema operatiu:</p>
+    
+    <h2>2.1. En Windows</h2>
+    <ol>
+      <li>Accedeix al lloc web oficial: 
+        <a href="https://www.python.org/downloads/windows/" target="_blank">https://www.python.org/downloads/windows/</a>
+      </li>
+      <li>Fes clic en el botó de descàrrega de l'última versió.</li>
+      <li>Executa l'arxiu descarregat.</li>
+      <li>En la finestra de l’instal·lador:
+        <ul>
+          <li>Marca l’opció <strong>"Add Python to PATH"</strong>.</li>
+          <li>Fes clic en <strong>"Install Now"</strong>.</li>
+        </ul>
+      </li>
+      <li>Una vegada instal·lat, pots verificar-ho obrint la consola (cmd) i escrivint:
+        <pre><code>python --version</code></pre>
+      </li>
+    </ol>
+    
+    <h2>2.2. En macOS</h2>
+    <ol>
+      <li>Descarrega l’instal·lador des de:
+        <a href="https://www.python.org/downloads/macos/" target="_blank">https://www.python.org/downloads/macos/</a>
+      </li>
+      <li>Obri l'arxiu <code>.pkg</code> descarregat i seguix els passos de l’instal·lador.</li>
+      <li>Per verificar la instal·lació, obri la Terminal i escriu:
+        <pre>python3 --version</pre>
+      </li>
+    </ol>
+    
+    <h2>2.3. En Linux</h2>
+    <p>La majoria de distribucions Linux ja inclouen Python. Per a verificar-ho, obri la terminal i escriu:</p>
+    <pre>python3 --version</pre>
+    <p>Si no està instal·lat o desitges actualitzar-lo, pots utilitzar el gestor de paquets corresponent. Per exemple, en Debian/Ubuntu:</p>
+    <pre>
+    sudo apt update
+    sudo apt install python3
+    </pre>
+    
+ </section>
+
+ <section id="pip">
+
+  <h1>3. Instal·lar pip</h1>
+
+  <p><strong>pip</strong> és una eina que permet instal·lar paquets i biblioteques addicionals en Python. Normalment, s’instal·la automàticament junt amb Python. Ací aprendràs com verificar si ja està instal·lat i com instal·lar-lo en cas que no ho estiga.</p>
+  
+  <h2>3.1 Verificar si pip està instal·lat</h2>
+  <ol>
+    <li>Obri una terminal o consola de comandes.</li>
+    <li>Escriu la següent ordre i prem <strong>Enter</strong>:
+      <pre><code>pip --version</code></pre>
+      o en alguns sistemes:
+      <pre><code>pip3 --version</code></pre>
+    </li>
+    <li>Si veus un missatge amb la versió de pip (per exemple, <code>pip 23.1.2</code>), aleshores ja està instal·lat.</li>
+    <li>Si apareix un missatge d’error indicant que no es reconeix la ordre, hauràs d’instal·lar pip manualment.</li>
+  </ol>
+  
+  <h2>3.2 Instal·lar pip (si és necessari)</h2>
+  
+  <h3>En Windows o macOS (si no s’instal·là amb Python)</h3>
+  <ol>
+    <li>Descarrega l’script <code>get-pip.py</code> des del lloc oficial:
+      <a href="https://bootstrap.pypa.io/get-pip.py" target="_blank">https://bootstrap.pypa.io/get-pip.py</a>
+    </li>
+    <li>Guarda l’arxiu en una ubicació fàcil d’accedir, per exemple a l’escriptori.</li>
+    <li>Obri una terminal o consola, navega a la carpeta on està guardat l’arxiu i executa:
+      <pre><code>python get-pip.py</code></pre>
+    </li>
+  </ol>
+  
+  <h3>En Linux (usant el gestor de paquets)</h3>
+  <p>En la majoria de distribucions de Linux pots instal·lar pip amb el gestor de paquets. Per exemple, en Debian/Ubuntu:</p>
+  <pre><code>sudo apt update
+  sudo apt install python3-pip</code></pre>
+  <p>Després, verifica la instal·lació amb:</p>
+  <pre><code>pip3 --version</code></pre>
+  
+  <p>Una vegada instal·lat pip, podràs usar-lo per a instal·lar paquets de Python, com per exemple:</p>
+  <pre><code>pip install nom_del_paquet</code></pre>
+  <h4 class="alert"> ⚠️ De moment, no utilitzes l’instal·lador PIP!! Espera al següent punt.</h4>
+  
+
+ </section>
+
+ <section id="entornov">
+
+  <h1>4. Configurar entorn virtual</h1>
+
+<p>Un entorn virtual en Python és una eina que permet crear un espai aïllat per a instal·lar dependències i paquets específics per a un projecte, sense afectar altres configuracions del sistema.</p>
+<p>Per a evitar problemes amb dependències entre projectes i tindre un entorn aïllat per a cadascun dels teus projectes, és recomanable usar entorns virtuals. A més, en Linux, si no configures un entorn virtual, tindràs problemes amb pip.  
+(si estàs en Windows, pots saltar-te este pas)</p>
+
+<h2>Instal·lar l’eina per a crear entorns virtuals - VENV</h2>
+<pre>$ sudo apt install python3-venv</pre>
+
+<h2>4.1 Crear un entorn virtual</h2>
+<ol>
+  <li>Obri una terminal o consola de comandes.</li>
+  <li>Ubica’t en la carpeta on vols crear l’entorn virtual o crea’n una de nova:
+    <pre><code>mkdir mi_proyecto
+cd mi_proyecto</code></pre>
+  </li>
+  <li>Executa la següent ordre per a crear l’entorn virtual (per convenció el cridarem <code>mientorno</code>):
+    <pre><code>python -m venv mientorno</code></pre>
+    <p>Aquesta ordre crearà una carpeta anomenada <code>mientorno</code> que contindrà l’entorn virtual.</p>
+  </li>
+</ol>
+
+<h2>4.2 Activar l’entorn virtual</h2>
+
+<h3>En Windows</h3>
+<pre><code>mientorno\Scripts\activate</code></pre>
+
+<h3>En macOS o Linux</h3>
+<pre><code>source mientorno/bin/activate</code></pre>
+
+<p>Després d’activar l’entorn virtual, hauries de vore el nom de l’entorn (per exemple, <code>(mientorno)</code>) al principi de la línia en la consola, indicant que està actiu.</p>
+
+<h2>4.3 Verificar instal·lació de pip en l’entorn</h2>
+<p>Una vegada activat l’entorn, assegura’t que pip estiga disponible:</p>
+<pre><code>pip --version</code></pre>
+<p>A partir d’ací, ja es poden instal·lar paquets <strong>dins de l’entorn virtual</strong></p>
+
+<h2>4.4 Desactivar l’entorn virtual</h2>
+<p>Quan acabes de treballar en el teu projecte, pots eixir de l’entorn virtual executant:</p>
+<pre><code>deactivate</code></pre>
+
+<p>Això et retornarà a l’entorn global del sistema.</p>
+
+ </section>
+
+ <section id="paquetes">
+  <h1>5. Instal·lar paquets</h1>
+
+  <p>En Python, els paquets són mòduls reutilitzables que amplien les funcionalitats del llenguatge. Per a gestionar i instal·lar estos paquets s’utilitza <strong>pip</strong>, el gestor oficial de paquets de Python.</p>
+  
+  <h2>5.1 Instal·lar un paquet amb pip</h2>
+  
+ <h4 class="alert"> ⚠️ Primer, activar el teu entorn virtual.</h4>
+ <pre><code>source mientorno/bin/activate</code></pre>
+ <p>Per a instal·lar un paquet, utilitza la següent ordre en la consola <strong>(preferiblement amb l’entorn virtual activat)</strong></p>
+ <pre><code>pip install nom_del_paquet</code></pre>
+  <p>Exemple:</p>
+  <pre><code>pip install requests</code></pre>
+  <p>Exemple:</p>
+  <pre><code>  pip install pyfiglet
+  ús:   pyfiglet hola python   </code></pre>
+  
+  <h2>5.2 Instal·lar múltiples paquets des d’un fitxer</h2>
+  <p>També és possible instal·lar diversos paquets definits en un fitxer <code>requirements.txt</code> amb la següent ordre:</p>
+  <pre><code>pip install -r requirements.txt</code></pre>
+  <p>Este fitxer conté una llista de paquets, un per línia, que el projecte necessita.</p>
+  
+  <h2>5.3 Veure paquets instal·lats</h2>
+  <p>Per a veure quins paquets estan instal·lats en el teu entorn actual:</p>
+  <pre><code>pip list</code></pre>
+  
+  <h2>5.4 Desinstal·lar un paquet</h2>
+  <p>Si necessites desinstal·lar un paquet:</p>
+  <pre><code>pip uninstall nom_del_paquet</code></pre>
+  
+  <h2>5.5 Actualitzar un paquet</h2>
+  <p>Per a actualitzar un paquet a la seua última versió:</p>
+  <pre><code>pip install --upgrade nom_del_paquet</code></pre>
+  
+
+ </section>
+
+ <section id="editor">
+  <h1>6. Instal·lar un editor de text o un IDE</h1>
+
+  <p>Per a escriure i executar codi en Python de manera eficient, és recomanable usar un <strong>editor de text avançat</strong> o un <strong>IDE (Entorn de Desenvolupament Integrat)</strong>. Estes eines ofereixen característiques com el ressaltat de sintaxi, autocompletat, depuració i gestió de projectes.</p>
+  
+  <h2>6.1 Visual Studio Code (VS Code)</h2>
+  <p><strong>Visual Studio Code</strong> és un dels editors més populars per al desenvolupament en Python. És lleuger, extensible i gratuït.</p>
+  
+  <ol>
+    <li>Descarrega’l des de:
+      <a href="https://code.visualstudio.com/" target="_blank">https://code.visualstudio.com/</a>
+    </li>
+    <li>Instal·la’l com qualsevol altra aplicació per al teu sistema operatiu.</li>
+    <li>Una vegada obert, instal·la l’extensió oficial de Python:
+      <ul>
+        <li>Fes clic en la icona d’extensions (barra lateral esquerra).</li>
+        <li>Cerca “Python” (editor: Microsoft) i instal·la-la.</li>
+      </ul>
+    </li>
+    <li>Amb l’extensió instal·lada, podràs executar scripts, usar la depuració, i treballar amb entorns virtuals des de VS Code.</li>
+  </ol>
+  
+  <h2>6.2 Altres editors o IDEs populars</h2>
+  <ul>
+    <li><strong>PyCharm</strong>: IDE professional desenvolupat per JetBrains. Disponible en versió gratuïta (Community) i de pagament. Web:
+      <a href="https://www.jetbrains.com/pycharm/" target="_blank">https://www.jetbrains.com/pycharm/</a>
+    </li>
+    <li><strong>Sublime Text</strong>: Editor de text ràpid i personalitzable. Web:
+      <a href="https://www.sublimetext.com/" target="_blank">https://www.sublimetext.com/</a>
+    </li>
+    <li><strong>Jupyter Notebook</strong>: Ideal per a projectes de ciència de dades. S’instal·la amb pip:
+      <pre><code>pip install notebook</code></pre>
+      Després s’executa amb:
+      <pre><code>jupyter notebook</code></pre>
+    </li>
+  </ul>
+  
+  <h2>6.3 Recomanació</h2>
+  <p>Per a qui està començant, <strong>Visual Studio Code</strong> és una excel·lent opció per la seua simplicitat i potència. A més, permet integrar control de versions amb Git i múltiples eines per al desenvolupament modern.</p>
+  
+ </section>
+
+ <section id="linters">
+  <h1>7. Configuració de Linters i Formatejadors</h1>
+
+  <p>Els <strong>linters</strong> i <strong>formatejadors</strong> ajuden a millorar la qualitat del codi. Els linters detecten errors, advertiments o males pràctiques, mentre que els formatejadors corregeixen automàticament l’estil del codi perquè siga més llegible i uniforme.</p>
+  
+  <h2>7.1 Eines recomanades</h2>
+  <ul>
+    <li><strong>Flake8</strong>: Linter que verifica errors de sintaxi i d’estil.</li>
+    <li><strong>Black</strong>: Formatejador de codi que aplica regles d’estil consistents.</li>
+    <li><strong>isort</strong>: Organitza automàticament les importacions en el codi.</li>
+  </ul>
+  
+  <h2>7.2 Instal·lació d’eines</h2>
+  <p>Amb el teu entorn virtual activat, instal·la les eines amb pip:</p>
+  <pre><code>pip install flake8 black isort</code></pre>
+  
+  <h2>7.3 Configuració en Visual Studio Code</h2>
+  <ol>
+    <li>Obri el menú de configuració (⚙️ &rarr; "Settings").</li>
+    <li>Cerca <strong>Python Linting</strong> i habilita l’opció <strong>Linting: Enabled</strong>.</li>
+    <li>Selecciona <strong>flake8</strong> com a linter predeterminat.</li>
+    <li>Per configurar el formatejador, busca <strong>Python Formatting Provider</strong> i selecciona <code>black</code>.</li>
+    <li>Habilita el format al guardar (opcional però recomanat):
+      <ul>
+        <li>Cerca "Format On Save" i activa-ho.</li>
+      </ul>
+    </li>
+  </ol>
+  
+  <h2>7.4 Ús manual des de la terminal</h2>
+  <p>També pots executar aquestes eines des de la consola:</p>
+  <ul>
+    <li><strong>flake8</strong> per analitzar el codi:
+      <pre><code>flake8 nom_arxiu.py</code></pre>
+    </li>
+    <li><strong>black</strong> per formatejar automàticament:
+      <pre><code>black nom_arxiu.py</code></pre>
+    </li>
+    <li><strong>isort</strong> per ordenar les importacions:
+      <pre><code>isort nom_arxiu.py</code></pre>
+    </li>
+  </ul>
+  
+  <h2>7.5 Arxius de configuració (opcional)</h2>
+  <p>Pots crear arxius com <code>pyproject.toml</code> o <code>.flake8</code> per definir configuracions personalitzades per a cada eina.</p>
+  
+  <p><strong>Exemple de pyproject.toml per a Black:</strong></p>
+  <pre>
+    <code>[tool.black]
+    line-length = 88
+    target-version = ['py39']</code></pre>
+  
+ </section>
+
+ <section id="depuracion">
+  <h2>8. Depuració</h2>
+  <p>Per depurar el teu codi Python, pots utilitzar eines com <code>pdb</code>, que és el depurador integrat en Python. Només has d’incloure la línia:
+    <code> import pdb; pdb.set_trace() </code> al teu codi per començar a depurar.</p>
+  </section>
+  
+  <section id="git">
+    <h1>9. Control de versions</h1>
+  
+    <p>El control de versions permet gestionar els canvis en el codi font de manera eficient. L’eina més utilitzada per a això és <strong>Git</strong>, que permet mantenir un historial de versions, col·laborar amb altres persones i treballar en múltiples branques del projecte.</p>
+  
+    <h2>9.1 Instal·lar Git</h2>
+    <p>Descarrega Git des del seu lloc oficial:</p>
+    <a href="https://git-scm.com/" target="_blank">https://git-scm.com/</a>
+    <p>L’installació és senzilla i depèn del sistema operatiu. A Windows, inclou una terminal anomenada <strong>Git Bash</strong>.</p>
+  
+    <h2>9.2 Configuració inicial</h2>
+    <p>Després d'instal·lar Git, és recomanable configurar el teu nom d'usuari i correu electrònic:</p>
+    <pre>
+  <code>git config --global user.name "El teu Nom"
+  git config --global user.email "tu.email@example.com"</code></pre>
+  
+    <h2>9.3 Comandes bàsiques de Git</h2>
+    <ul>
+      <li><strong>Inicialitzar un repositori:</strong>
+        <pre><code>git init</code></pre>
+      </li>
+      <li><strong>Veure l'estat del repositori:</strong>
+        <pre><code>git status</code></pre>
+      </li>
+      <li><strong>Afegeir arxius a l'àrea de preparació:</strong>
+        <pre><code>git add nom_arxiu.py</code>
+  <code>git add .</code> <em> -- Afegeix tots els arxius modificats --</em></pre>
+      </li>
+      <li><strong>Fer un commit (desar els canvis):</strong>
+        <pre><code>git commit -m "Missatge descriptiu del canvi"</code></pre>
+      </li>
+      <li><strong>Veure l'historial de commits:</strong>
+        <pre><code>git log</code></pre>
+      </li>
+    </ul>
+  
+    <h2>9.4 Fer servir GitHub (repositori remot)</h2>
+    <p><strong>GitHub</strong> és una plataforma per allotjar repositoris Git al núvol. Permet col·laborar i fer còpies de seguretat de projectes.</p>
+  
+    <ol>
+      <li>Crea un compte a <a href="https://github.com/" target="_blank">https://github.com/</a></li>
+      <li>Crea un nou repositori des de la web.</li>
+      <li>Connecta el teu repositori local amb GitHub:
+        <pre><code>
+  git remote add origin https://github.com/usuari/nombre-repo.git
+  git push -u origin master</code></pre>
+      </li>
+    </ol>
+  
+    <h2>9.5 .gitignore</h2>
+    <p>L'arxiu <code>.gitignore</code> indica a Git quins arxius o carpetes no s’han d'incloure en el control de versions (per exemple, entorns virtuals, arxius temporals, etc.).</p>
+  
+    <p><strong>Exemple de contingut de .gitignore:</strong></p>
+    <pre>
+  <code>venv/
+  __pycache__/
+  *.pyc
+  .env</code></pre>
+  
+    <p>Amb aquestes eines i bones pràctiques, podràs mantenir un projecte ben organitzat i controlat.</p>
+  
+ </section>
+
+ <section id="entornoss">
+  <h1>10. Configuració d'entorns segurs</h1>
+
+  <p>Quan es treballa en projectes de programari, és important mantenir un entorn segur per protegir credencials, dades sensibles i evitar errors per un mal maneig de configuracions. A continuació es presenten bones pràctiques per aconseguir-ho.</p>
+  
+  <h2>10.1 Variables d'entorn</h2>
+  <p>Les variables d'entorn permeten emmagatzemar informació sensible, com claus API o contrasenyes, sense incloure-les directament en el codi font.</p>
+  
+  <p>Per gestionar aquestes variables, es pot utilitzar un arxiu <code>.env</code> juntament amb la llibreria <strong>python-dotenv</strong>:</p>
+  <pre><code>pip install python-dotenv</code></pre>
+  
+  <p>Exemple d'un arxiu <code>.env</code>:</p>
+  <pre>
+    <code>SECRET_KEY=la_meva_clau_secreta
+    DEBUG=False</code></pre>
+  
+  <p>I per carregar-lo a la teva aplicació Python:</p>
+  <pre>
+    <code>from dotenv import load_dotenv
+    import os
+    load_dotenv()
+    clau = os.getenv("SECRET_KEY")</code></pre>
+  
+  <h2>10.2 Ús de l'arxiu <code>.gitignore</code></h2>
+  <p>És important assegurar-se que arxius com <code>.env</code>, arxius de configuració local i entorns virtuals no es pujan a repositoris públics:</p>
+  <pre>
+    <code>.env
+    venv/
+    __pycache__/
+    *.pyc</code></pre>
+  
+  <h2>10.3 Gestió de dependències segures</h2>
+  <ul>
+    <li>Utilitza entorns virtuals per aislar els teus projectes.</li>
+    <li>Congela les versions dels teus paquets amb:
+      <pre><code>pip freeze > requirements.txt</code></pre>
+    </li>
+    <li>Revisa actualitzacions i vulnerabilitats en dependències amb eines com <code>pip-audit</code>:
+      <pre><code>pip install pip-audit
+    pip-audit</code></pre>
+    </li>
+  </ul>
+  
+  <h2>10.4 Control d'accés i bones pràctiques</h2>
+  <ul>
+    <li>No comparteixis credencials per correu electrònic ni en repositoris.</li>
+    <li>Utilitza autenticació en dos passos en plataformes com GitHub.</li>
+    <li>Aplica principis de mínim privilegi als teus entorns.</li>
+  </ul>
+  
+  <p>Aquestes pràctiques contribueixen a desenvolupar aplicacions més segures i professionals, especialment en entorns col·laboratius o de producció.</p>
+  
+ </section>  
+
+ <section id="bibliotecas">
+  <h1>11. Biblioteques</h1>
+  <p>Python té un gran nombre de biblioteques amb diferents propòsits, de les quals els programadors poden fer ús.</p>
+  <p>D'entre les més importants i populars, podem citar:</p>
+  
+  <ul>
+    <li>1. os / sys:</li>
+    <li>2. datetime </li>
+    <li>3. logging</li>
+    <li>4. argparse</li>
+    <li>5. tkinter (python con gui)</li>
+  </ul>
+  
+  <h3>biblioteca tkinter</h3>
+  <p>La biblioteca tkinter és una de les més populars i completes en Python per a gui </p>
+     
+    <p>Algunes de les característiques principals de la biblioteca són:</p>
+  
+  <ul>
+    <li>Crear finestres.</li>
+    <li>Botons</li>
+    <li>Etiquetes</li>
+    <li>Caixes de texts</li>
+    <li>Llistes</li>
+    <li>Menus</li>
+  </ul>
+   
+  <p>API</p>
+  <a href="https://docs.python.org/3/library/tkinter.html">https://docs.python.org/3/library/tkinter.html</a>
+
+  <p>Exemple d'ús</p>
+  <pre>
+import tkinter as tk
+ventana = tk.Tk()
+ventana.title("Mi primera GUI")
+ventana.geometry("300x100")
+
+etiqueta = tk.Label(ventana, text="Hola, mundo!")
+etiqueta.pack()
+
+ventana.mainloop()
+  </pre>
+  
+  
+  <h3>biblioteca hashlib</h3>
+  <p>La biblioteca hashlib és part de la llibreria estàndard de Python i s'utilitza per generar funcions de hash 
+     criptogràfiques. Les funcions de hash són fonamentals en criptografia, especialment per a la verificació de integritat de dades i l'autenticació.</p>
+  <p>API</p>
+  <a href="https://docs.python.org/es/3/library/hashlib.html">https://docs.python.org/es/3/library/hashlib.html</a>
+  <p>Exemple d'ús:</p>
+  <pre>
+    import hashlib
+    # Crear un objecte hash SHA-256
+    hash_obj = hashlib.sha256()
+    hash_obj.update(b"missatge a hashear")
+    print("Hash:", hash_obj.hexdigest())
+  </pre>
+
+  <p>Algunes biblioteques no les porta el llenguatge Python incorporades i cal instal·lar-les primer</p> 
+  <p>Instal·lació (dins de l'entorn virtual !!)</p>
+  <pre>pip install numpy</pre>
+  
+  <h2>Altres biblioteques agrupades per tematica</h2>
+ <h3>📊 Ciència de dades i anàlisi numèric</h3>
+    <ul>
+        <li>
+            <strong>NumPy</strong>: Tractament eficient de vectors, matrius i càlculs matemàtics.
+        </li>
+        <li>
+            <strong>Pandas</strong>: Manipulació i anàlisi de dades estructurades (taules, sèries, etc.).
+        </li>
+        <li>
+            <strong>Matplotlib</strong>: Creació de gràfics i visualitzacions 2D.
+        </li>
+        <li>
+            <strong>Seaborn</strong>: Visualitzacions estadístiques més elegants basades en Matplotlib.
+        </li>
+        <li>
+            <strong>SciPy</strong>: Funcions científiques avançades (àlgebra lineal, estadística, càlcul numèric).
+        </li>
+        <li>
+            <strong>Plotly</strong>: Gràfics interactius per a la web i anàlisi exploratòria.
+        </li>
+    </ul>
+
+    <h3>🧰 Eines i utilitats generals</h3>
+    <ul>
+        <li><strong>os / sys</strong>: Mòduls natius per interactuar amb el sistema operatiu i paràmetres.</li>
+        <li><strong>datetime</strong>: Gestió de dates i hores.</li>
+        <li><strong>logging</strong>: Registre d’activitat per a debugging i manteniment.</li>
+        <li><strong>argparse</strong>: Anàlisi d’arguments per línia de comandes.</li>
+        <li><strong>pathlib</strong>: Manipulació de rutes de fitxers de forma moderna.</li>
+    </ul>
+
+    <h3>🗃️ Bases de dades</h3>
+    <ul>
+        <li><strong>SQLAlchemy</strong>: ORM per treballar amb bases de dades SQL.</li>
+        <li><strong>SQLite3</strong>: Inclòs amb Python, ideal per bases de dades lleugeres.</li>
+        <li><strong>Peewee</strong>: ORM senzill i lleuger.</li>
+        <li><strong>PyMongo</strong>: Connexió amb bases de dades MongoDB (NoSQL).</li>
+    </ul>
+
+     <h3>🧪 Ciència i enginyeria</h3>
+    <ul>
+        <li><strong>SymPy</strong>: Càlcul simbòlic (matemàtiques simbòliques).</li>
+        <li><strong>OpenCV</strong>: Tractament d’imatges i visió artificial.</li>
+        <li><strong>Biopython</strong>: Bioinformàtica i anàlisi de dades biològiques.</li>
+        <li><strong>Astropy</strong>: Astronomia i manipulació de dades astronòmiques.</li>
+    </ul>
+
+    <h3>🌐 Web i APIs</h3>
+    <ul>
+        <li><strong>Flask</strong>: Micro-framework per a aplicacions web lleugeres.</li>
+        <li><strong>Django</strong>: Framework complet per a desenvolupament web amb bases de dades, autenticació, etc.</li>
+        <li><strong>FastAPI</strong>: Desenvolupament d’APIs molt ràpid i modern.</li>
+        <li><strong>Requests</strong>: Enviament de peticions HTTP senzill i intuïtiu.</li>
+        <li><strong>BeautifulSoup</strong>: Extracció de dades de pàgines web (web scraping).</li>
+        <li><strong>Selenium</strong>: Automatització de navegadors web.</li>
+    </ul>
+      <h3>🖥️ Interfícies gràfiques d'usuari (GUI)</h3>
+    <ul>
+        <li><strong>Tkinter</strong>: Biblioteca estàndard de Python per crear interfícies gràfiques de manera senzilla.</li>
+        <li><strong>PyQt / PySide</strong>: Interfícies modernes i potents basades en el framework Qt.</li>
+        <li><strong>Kivy</strong>: Dissenyat per crear aplicacions amb interfície tàctil, també útil per a mòbils.</li>
+        <li><strong>wxPython</strong>: GUI nativa multiplataforma amb controls avançats.</li>
+    </ul>
+ 
+  
+ </section>
+
+<section id="entorn">
+        <h1>12. L'entorn de programació per a Python</h1>
+        <p>Un entorn de programació (o entorn de desenvolupament) per a un llenguatge de programació com Python és un conjunt
+             d'eines i recursos que faciliten la creació, el desenvolupament, l'execució i la depuració del codi font d'un programa
+              escrit en aquell llenguatge. Aquests entorns estan dissenyats per fer el treball del programador més eficient, 
+              proporcionant una sèrie d'eines per facilitar la redacció del codi, la seva execució i la detecció d'errors. 
+              Els entorns de programació poden variar des d'entorns simples fins a entorns molt complets que inclouen moltes funcionalitats</p>
+              
+              <ul> <u>Un entorn de programació:</u>
+                  <li>Facilita l’escriptura de codi</li>
+                  <li>Millora la productivitat</li>
+                  <li>Ajuda a detectar errors</li>
+                  <li>Organitza projectes</li>
+              </ul>
+              <ul><u>Components comuns d'un entorn de programació per Python:</u>
+                <li>Editor de codi</li>
+                <li>Interpret o Compilador</li>
+                <li>Depurador o Debugger</li>
+                <li>Sistema de gestió de projectes</li>
+                <li>Terminal o Consola integrada</li>
+                <li>Eines de Visualització i Documentació</li>
+              </ul>
+
+        <h2>Python Shell (Intèrpret Interactiu)</h2>
+        <p>El Python Shell és el mode interactiu bàsic de Python. Quan instal·les Python, aquest ve amb un entorn de consola interactiva que et permet executar codi Python línia a línia i obtindre resultats immediats.</p>
+    
+        <h3>Com utilitzar el Python Shell:</h3>
+    
+        <ul>
+            <li><strong>Obrir el Shell:</strong><br>
+                A la terminal o línia d'ordres (cmd o PowerShell en Windows), simplement escriu:<br>
+                <code>C:\&gt; python</code> o <code>C:\&gt; py</code><br>
+                Si estàs utilitzant Linux, necessitaràs escriure <code>python3</code>:<br>
+                <code>$ python3</code><br>
+                <!-- Aclariment: Python3 és la versió moderna de Python. Python2 està en desús. -->
+                <em>* Pots trobar més informació sobre python2/python3 al final del punt</em>
+            </li>
+    
+            <li><strong>Treballar de manera interactiva:</strong><br>
+                Després d'executar l'ordre anterior, veuràs alguna cosa com això:
+                <pre>
+    Python 3.x.x (default, ...)
+    [GCC x.x.x ...] on linux
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>>
+                </pre>
+                En este prompt (<code>&gt;&gt;&gt;</code>), pots començar a escriure codi Python directament. Per exemple:
+                <pre>
+    &gt;&gt;&gt; 2 + 3      # Açò ho escrius tu 
+    5              #  Açò ho mostra Python 
+    &gt;&gt;&gt; print("Hola, món!")     # Açò ho escrius tu 
+    Hola, món!     #  Resultat en la consola 
+                </pre>
+    
+                <p>El botó <strong>Intro</strong> indica a Python que execute la línia (ordre), però amb una <code>\</code> podem afegir més línies a una ordre.</p>
+                <!-- Aclariment: Això permet superar la limitació de 79 caràcters per línia de codi -->
+                <pre>
+    &gt;&gt;&gt; 2 + 3 \    # Quan es prem Intro, no evalua, obre una nova linea
+    ... * 5        # Aquest prompt (...) indica que espera més informació 
+    17
+                </pre>
+    
+                <p>També podem ajuntar ordres en una sola línia:</p>
+                <pre>
+    &gt;&gt;&gt; a = 20 ; b = 14 ; c = a + b; print(c)
+    44
+                </pre>
+    
+                <p class="alert"><strong>⚠️ Compte</strong> amb no deixar espais en blanc al principi d'una línia, a no ser que es vulga fer una <em>indentació</em></p>
+                <p>Es parlarà més sobre la indentació més endavant.</p>
+                <!-- Aclariment: La indentació és important en Python perquè indica blocs de codi -->
+                <pre>
+    &gt;&gt;&gt;   2 + 3
+    SyntaxError: unexpected indent
+                </pre>
+            </li>
+    
+            <li><strong>Eixir del Shell:</strong><br>
+                <ul>
+                    <li>Escriu <code>exit()</code></li>
+                    <li>O prem <kbd>Ctrl</kbd>+<kbd>D</kbd> (en macOS/Linux)</li>
+                    <li>O prem <kbd>Ctrl</kbd>+<kbd>Z</kbd> i després <kbd>Intro</kbd> (en Windows)</li>
+                </ul>
+            </li>
+        </ul>
+        <h2>IDLE, entorn de desenvolupament de Python</h2>
+
+        <p>
+            <strong>IDLE</strong> (Entorn de Desenvolupament Integrat per a Python) és un entorn gràfic de desenvolupament elemental que permet editar i executar programes en Python.
+        </p>
+    
+        <p>
+            IDLE també és un entorn interactiu en què es poden executar instruccions soltes de Python.
+        </p>
+    
+        <p>
+            En <strong>Windows</strong>, IDLE es distribueix juntament amb l'intèrpret de Python. És a dir, quan instal·les Python en Windows, també s’instal·la IDLE automàticament.
+        </p>
+    
+        <p>
+            En <strong>Linux</strong>, IDLE es distribueix com una aplicació separada que es pot instal·lar des dels repositoris de cada distribució.
+        </p>
+    
+        <pre>
+    $ sudo apt install idle3    <!-- Per a Debian, Ubuntu o derivats -->
+        </pre>
+    
+        <!-- Aclariment: Aquest comandament instal·la la versió d'IDLE compatible amb Python 3 -->
+    
+        <p>
+            Una vegada finalitze la instal·lació, podrem iniciar aquest entorn des del menú principal del sistema Linux.
+        </p>
+    
+        <p>
+            Visualment és molt paregut al Python Shell, però amb una interfície gràfica d’usuari (GUI), que facilita l’edició i execució de codi.
+        </p>
+    
+        <!-- Aclariment: GUI vol dir “Graphical User Interface”, i facilita l'ús per a principiants comparat amb la línia d'ordres -->
+        <h2>Python des de Bash</h2>
+
+        <p>
+            Utilitzant un editor del sistema operatiu (<code>nano</code>, <code>gedit</code>, <code>notepad</code> en Windows, <code>VSCode</code>, etc.), editem un fitxer amb extensió <code>.py</code> que continga el codi Python.
+        </p>
+    
+        <p>
+            Per exemple, creem un fitxer anomenat <code>exemple.py</code>.
+        </p>
+    
+        <p>Contingut de <code>exemple.py</code>:</p>
+        <pre>
+    a = 5
+    b = 3
+    suma = a + b
+    print("La suma de", a, "i", b, "és:", suma)
+        </pre>
+    
+        <p>
+            Guardem el fitxer i executem el codi des de la terminal:
+        </p>
+        <pre>
+    $ python3 exemple.py       
+    C:\&gt; py exemple.py       #  En Windows 
+
+    (s'escriurà per pantalla....)
+    La suma de 5 i 3 és: 8
+        </pre>
+    
+        <p> Aclariment: En Windows, “py” és un iniciador automàtic instal·lat amb Python </p>
+        <hr>
+        <p>Un altre exemple. Ara, Python ens demana el nostre nom, i el programa no continua fins que teclegem i polsem intro. Vegem-ho</p>
+        <p>Contingut de <code>exemple-llegir.py</code>:</p>
+        <pre>
+    nom = input("Hola, dis-me el teu nom : ");
+    print("Hola ", nom , "practiquem codi en pyton !!");
+        </pre>
+    
+        <p>
+            Guardem el fitxer i executem el codi des de la terminal:
+        </p>
+        <pre>
+    $ python3 exemple-llegir.py       
+    C:\&gt; py exemple-llegir.py       #  En Windows 
+        </pre>
+
+    <hr>
+        <h3>Executar com a script autònom</h3>
+        <p>
+            Una altra forma d'executar un fitxer Python és indicant en la primera línia on es troba l'intèrpret de Python:
+        </p>
+        <pre>
+    #! /usr/bin/python3
+    a = 5
+    b = 3
+    suma = a + b
+    print("La suma de", a, "i", b, "és:", suma)
+        </pre>
+    
+        <!-- Aclariment: Aquesta línia s’anomena “shebang” i indica quin intèrpret ha d’usar el sistema -->
+    
+        <p>
+            A continuació, cal donar permisos d’execució al fitxer:
+        </p>
+        <pre>
+    $ chmod +x exemple.py
+    $ ./exemple.py
+        </pre>
+    
+        <!-- Aclariment: chmod +x fa que el fitxer siga executable com un script de shell -->
+        <h2>IPython: Un Shell Interactiu Millorat</h2>
+
+        <p>
+            <strong>IPython</strong> és una versió millorada del Python Shell que proporciona funcionalitats addicionals com l'autocompletat, documentació en línia, historial d’ordres i més.
+        </p>
+    
+        <h3>Instal·lació d’IPython:</h3>
+        <p>
+            Si no tens IPython instal·lat, pots fer-ho fàcilment amb pip:
+        </p>
+        <pre>
+    $ pip3 install ipython        <!-- Per a Linux/macOS -->
+    C:\&gt; pip install ipython      <!-- En Windows -->          </pre>
+    <p class="alert"> ⚠️ Recorda carregar el teu entorn virtual primer...</p>
+    
+        <!-- Aclariment: Assegura't d’activar el teu entorn virtual abans de fer servir pip si treballes amb entorns aïllats -->
+    
+        <h3>Com utilitzar IPython:</h3>
+        <ul>
+            <li><strong>Obrir IPython:</strong><br>
+                Després de la instal·lació, simplement escriu <code>ipython</code> a la terminal:
+                <pre>
+    $ ipython3
+                </pre>
+    
+                Veuràs alguna cosa com:
+                <pre>
+    Python 3.x.x (default, ... )
+    Type "copyright", "credits" or "license" for more information.
+    IPython x.x.x -- An enhanced Interactive Python. Type '?' for help.
+    In [1]:
+                </pre>
+            </li>
+    
+            <li><strong>Característiques d’IPython:</strong>
+                <ul>
+                    <li><strong>Autocompletat:</strong> Pots començar a escriure una variable o funció i prémer <kbd>Tab</kbd> per completar automàticament.</li>
+                    <li><strong>Historial:</strong> Pots usar les fletxes amunt i avall per recuperar ordres anteriors.</li>
+                    <li><strong>Documentació ràpida:</strong> Escriu el nom d'una funció o objecte seguit de <code>?</code> per veure’n la documentació.<br>
+                        <code>In [1]: print?</code>
+                    </li>
+                    <li><strong>Execució d’ordres del sistema operatiu:</strong> Pots executar ordres del sistema directament amb <code>!</code>:
+                        <pre>
+    In [2]: !dir     <!-- Mostra els fitxers en Windows (equivalent a `ls` en Linux) -->
+                        </pre>
+                    </li>
+                    <li><strong>Magics:</strong> IPython inclou ordres màgiques que comencen amb <code>%</code> (línia) o <code>%%</code> (cel·la).
+                        <pre>
+    In [3]: %timeit sum(range(1000))   <!-- Mesura el temps d'execució -->
+                        </pre>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <h2>Jupyter Notebooks</h2>
+
+        <p>
+            <strong>Jupyter Notebooks</strong> és una eina web interactiva que et permet escriure codi Python, text i equacions en un mateix document. És ideal per a l’exploració de dades, l’anàlisi i l’experimentació.
+        </p>
+    
+        <h3>Instal·lació de Jupyter Notebooks:</h3>
+        <p>
+            Si no tens Jupyter instal·lat, pots fer-ho utilitzant pip:
+        </p>
+        <pre>
+    $ pip3 install notebook         </pre>
+        <p class="alert"> ⚠️ Recorda carregar el teu entorn virtual primer...</p>        
+        <!-- Aclariment: Recorda activar el teu entorn virtual abans d’utilitzar pip, si n’estàs usant un -->
+    
+        <h3>Com utilitzar Jupyter Notebooks:</h3>
+    
+        <ol>
+            <li><strong>Iniciar el servidor de Jupyter:</strong>
+                <p>En la terminal, escriu:</p>
+                <pre>$ jupyter notebook</pre>
+                <p>
+                    Açò obrirà una pàgina web en el teu navegador, generalment en <code>http://localhost:8888</code>,
+                    des d’on podràs crear, editar i executar quaderns interactius de Python.
+                </p>
+            </li>
+    
+            <li><strong>Executar codi en cel·les:</strong>
+                <p>
+                    En Jupyter, el codi s’organitza en cel·les. Pots escriure codi dins d’una cel·la i executar-lo amb la combinació de tecles <kbd>Shift</kbd> + <kbd>Enter</kbd>.
+                </p>
+                <p>
+                    També pots combinar codi i text (en format <em>Markdown</em>) dins del mateix quadern, cosa que el fa ideal per documentar projectes.
+                </p>
+            </li>
+    
+            <li><strong>Altres característiques:</strong>
+                <ul>
+                    <li><strong>Visualització de gràfics:</strong> Si treballes amb llibreries com <code>matplotlib</code> o <code>seaborn</code>, els gràfics es mostren directament dins del quadern.</li>
+                    <li><strong>Exportació:</strong> Pots exportar els teus quaderns com a fitxers <code>HTML</code> o <code>PDF</code> per compartir-los o presentar-los.</li>
+                </ul>
+            </li>
+        </ol>
+                
+        <h2>Python en Entorns de Desenvolupament Integrats (IDE)</h2>
+
+        <p>
+            Molts IDEs (Entorns de Desenvolupament Integrats) també proporcionen una consola interactiva on pots executar codi Python de manera ràpida, a més d’oferir funcionalitats addicionals com la depuració (debugging) i l’autocompletat.
+        </p>
+    
+        <h3>Alguns IDEs populars:</h3>
+        <ul>
+            <li><strong>PyCharm:</strong> Ofereix un intèrpret interactiu que et permet executar codi directament des de l’editor.</li>
+            <li><strong>Visual Studio Code:</strong> Té suport per executar scripts Python en la terminal integrada o en la consola interactiva (utilitzant l’extensió de Python).</li>
+            <li><strong>Thonny:</strong> Un IDE senzill per a Python que inclou un shell interactiu fàcil d’utilitzar. Molt recomanat per a principiants.</li>
+        </ul>
+    
+        <h3>Exemple en Visual Studio Code:</h3>
+        <ol>
+            <li>Instal·la <strong>Visual Studio Code</strong> i l’extensió de Python.</li>
+            <li>
+                Obri un fitxer Python i prem
+                <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> (Windows) o
+                <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> (Mac),
+                i escriu <em>Python: Start REPL</em> per obrir una consola interactiva dins de VS Code.
+            </li>
+            <li>
+                Pots executar codi en la consola interactiva i veure els resultats immediatament.
+            </li>
+        </ol>
+            <!-- Aclariment: En molts editors, pots prémer F5 o un botó de “run” per executar directament el fitxer -->
+        <!-- Aclariment: REPL vol dir “Read-Eval-Print Loop”, i és una forma d’interacció on s’escriu una ordre, s’avalua i es mostra el resultat -->
+        <h2>Ús de Python Interactiu des de Scripts</h2>
+
+        <p>
+            Si prefereixes escriure el teu codi en fitxers <code>.py</code>, però vols executar de manera interactiva certes seccions, pots utilitzar la funció <code>code.InteractiveConsole</code> per emular un entorn interactiu dins d’un script Python.
+        </p>
+    
+        <h3>Exemple d’ús de <code>InteractiveConsole</code>:</h3>
+    
+        <pre>
+    import code
+    
+    # Crear una consola interactiva
+    console = code.InteractiveConsole()
+    
+    # Executar codi en la consola
+    console.push('x = 10')
+    console.push('print(x * 2)')
+        </pre>
+    
+        <p>
+            Aquest enfocament és útil si vols incorporar una sessió interactiva dins d’una aplicació o script Python, per exemple per a proves, prototipat o entorns educatius.
+        </p>
+    
+        <h2>Ús de Python des d'una Plataforma Web</h2>
+
+        <p>
+            Existen plataformes web des de les quals es pot practicar codi Python directament escrivint en el navegador.
+        </p>
+    
+        <h3>Exemples (sense registre):</h3>
+        <ul>
+            <li><a href="https://www.w3schools.com/python/" target="_blank">W3Schools Python</a></li>
+            <li><a href="https://www.online-python.com/" target="_blank">Online Python Compiler</a></li>
+            <li><a href="https://www.programiz.com/python-programming/online-compiler/" target="_blank">Programiz Python Compiler</a></li>
+        </ul>
+    
+        <h3>Exemples (amb registre):</h3>
+        <ul>
+            <li><a href="https://replit.com/languages/python3" target="_blank">Replit</a></li>
+            <li><a href="https://colab.research.google.com/" target="_blank">Google Colab</a></li>
+        </ul>
+    
+        <!-- Aclariment: Amb registres en plataformes com Replit o Colab, pots guardar els teus projectes, compartir-los i fins i tot treballar amb altres persones en temps real -->
+         
+
+   
+
+    
+        <h2>Python 2 vs Python 3</h2>
+        <p>Python 3 és la versió moderna i recomanada. Python 2 ha deixat de rebre suport oficial des del 2020.</p>
+        <ul>
+            <li><code>print</code> en Python 3 és una funció: <code>print("Hola")</code></li>
+            <li>En Python 2 es podia escriure: <code>print "Hola"</code>, però això ja no és vàlid en Python 3</li>
+            <li>Moltes llibreries noves només funcionen amb Python 3</li>
+        </ul>
+    
+        <!-- Aclariment: Si tens dubtes sobre quina versió tens, escriu en la terminal: python --version o python3 --version -->
+        <p>Per comprovar la versió de Python:</p>
+        <pre>
+    $ python --version    o  python -V
+    o
+    $ python3 --version    o  python3 -V  s
+        </pre>
+    
+        <p>Això et mostrarà alguna cosa com:</p>
+        <pre>
+    Python 3.10.7
+        </pre>
+
+</section> 
+
+
+</main>
+
+<script>
+
+  // Per poder copiar codi en el porta-retalls. S'ha de posar un botó en cada <pre>
+      //  <div class="pre-container">
+      //    <button class="copy-button">Copia Codi !</button>
+  document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.copy-button');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', function () {
+        const code = this.nextElementSibling.innerText;
+        navigator.clipboard.writeText(code).then(() => {
+          this.innerText = ' ✔ Copiat!';
+          setTimeout(() => this.innerText = 'Copia Codi !', 3000);
+        });
+      });
+    });
+  });
+
+</script>
+
+</body>
+</html>

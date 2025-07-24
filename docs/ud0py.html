@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ca-ES">  
+  <!--  al ponerlo en catalan, fuerzo al navegador a poner el traductor-->
+  <!-- es-ES  lenguaje - ubicacion    -->
+<head>
+  <meta charset="UTF-8">
+  <link rel="alternate" hreflang="ca-ES">
+  <link rel="icon" href="https://www.python.org/favicon.ico"> 
+  <title> Introducció a la programació</title>
+  <link rel="stylesheet" href="estilsunitatspy.css">
+  <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
+</head>
+<body>
+
+  <header>
+    <a href="index.html"><img src="imgs/phyton2-rbg.png" alt="python"></a>
+    <h1>Unitat Didàctica 0: Programció i algorismes</h1>
+    <h1> </h1>
+  </header>
+
+<nav>
+  <h3>Índex</h3>
+  <a href="#programar">Que es programar</a>
+  <a href="#programa">Que es un programa</a>
+  <a href="#algorisme">Que es un algorisme</a>
+  <a href="#llenguatge">Llenguatge de programació</a>
+  <a href="#pasos">Pasos a seguir per a programar</a>
+  <a href="#IDE">IDE's</a>
+  <a href="#abstraccio">La abstracció</a>
+  <a href="#pensament">Pensament computacional</a>
+  <a href="#representacio">Representació d'algorismes</a>
+  
+  
+</nav>
+
+<main>
+
+  <section id="programar">
+      
+    <h1>1. Que és programar</h1>
+  <p>
+    La programació és el procés que s'aplica quan es crea algun tipus d'aplicació o programari, així com quan cal dur a terme algun concepte o projecte que necessita l'ús d'un llenguatge informàtic.
+    Existeixen molts tipus de programació, depenent del llenguatge de programació que s'utilitze.
+  </p>
+  <p>
+    Programar (en informàtica) és dir-li a un ordinador què ha de fer, pas a pas, utilitzant un llenguatge que puga entendre.
+  </p>
+  <p>
+    És com donar-li instruccions molt clares, per exemple:
+  </p>
+  <ul>
+    <li>"Encén la llum"</li>
+    <li>"Suma aquests dos números"</li>
+    <li>"Mostra aquest missatge a la pantalla"</li>
+  </ul>
+  <p>
+    L'ordinador no pensa per si mateix, així que tu, com a programador o programadora, li escrius un conjunt d'instruccions anomenades programa perquè faça el que tu vols.
+  </p>
+  <p>
+    Programar és crear solucions automatitzades a problemes reals o lògics mitjançant codi, perquè les execute un ordinador.
+  </p>    
+    
+ </section>
+
+ 
+   <section id="programa">
+
+  <h1>Què és un programa?</h1>
+  <p>
+    Un programa és un conjunt organitzat d'instruccions que han sigut escrites en un llenguatge de programació comprensible per un ordinador. Aquestes instruccions indiquen a la màquina quines operacions ha de realitzar per a dur a terme una tasca determinada o resoldre un problema específic.
+  </p>
+  <p>
+    Els programes poden variar molt en complexitat: des de senzilles aplicacions com una calculadora o una llanterna digital, fins a sistemes molt avançats com videojocs amb intel·ligència artificial o programes de gestió bancària que processen milions d'operacions.
+  </p>
+  <p>
+    Quan un usuari executa un programa, aquest comença a funcionar seguint les instruccions pas a pas, de manera precisa i ordenada, tal com han sigut dissenyades pel programador o programadora.
+  </p>
+
+  <h2>Característiques d’un programa</h2>
+  <ul>
+    <li><strong>Està escrit per un programador:</strong> Una persona amb coneixements d’informàtica i llenguatges de programació que crea les instruccions.</li>
+    <li><strong>Segueix una lògica específica (algorisme):</strong> El funcionament del programa es basa en una seqüència ordenada de passos que resolen un problema o realitzen una acció.</li>
+    <li><strong>S’executa pas a pas pel processador de l’ordinador:</strong> L’ordinador interpreta les instruccions i les executa en l’ordre indicat.</li>
+    <li><strong>Pot ser simple o complex:</strong> Hi ha programes molt senzills amb poques línies de codi, i altres molt avançats amb milers o milions de línies.</li>
+  </ul>
+
+  <p>
+    En resum, un programa és una eina fonamental per a comunicar-se amb les màquines i fer que realitzen exactament allò que necessitem, des d’automatitzar processos fins a crear experiències interactives i útils per a les persones.
+  </p>
+  </section>
+
+
+<section id="algorisme">
+    <h1>Què és un algorisme?</h1>
+  <p>
+    Un algorisme és un conjunt d'instruccions ben definides i ordenades (normalment escrites mitjançant codi de programació informàtic) que tenen com a finalitat resoldre un problema concret, donar com a resultat un càlcul determinat o dur a terme una tasca específica.
+  </p>
+  <p>
+    En altres paraules, un algorisme és un procediment detallat que s'executa pas a pas. Pot incloure bucles (repeticions), interaccions amb l'usuari, i condicions (com "si passa això, fes allò"), i totes aquestes parts estan interconnectades per a aconseguir un objectiu determinat.
+  </p>
+  <p>
+    Els algorismes són essencials en el món de la programació i la informàtica, ja que permeten estructurar el pensament lògic i convertir-lo en accions que l’ordinador pot seguir.
+  </p>
+
+  <h2>Instruccions o regles</h2>
+  <p>
+    S’anomena instrucció o regla a la forma més bàsica de programació amb sentit. Podem dir que una instrucció és una o diverses línies de codi que tenen una lògica pròpia i representen una acció o una ordre dins del programa.
+  </p>
+  <p>
+    Per exemple, una instrucció pot ser:
+  </p>
+  <ul>
+    <li><code>mostra("Hola món")</code> — Mostra un missatge en pantalla.</li>
+    <li><code>si (x &gt; 0) { suma = x + y }</code> — Comprova una condició i executa una suma si es compleix.</li>
+    <li><code>repetix 10 vegades { dibuixa una línia }</code> — Executa una acció múltiples vegades.</li>
+  </ul>
+
+  <p>
+    Les instruccions són les peces bàsiques amb què es construeixen els algorismes, i estos, al seu torn, són la base del funcionament de qualsevol programa informàtic.
+  </p>
+</section>
+
+<section id="llenguatge">
+ <h1>Llenguatges de programació</h1>
+
+  <p>
+    Els ordinadors no entenen el llenguatge humà (com ara el valencià, el castellà o l’anglés). Necessiten instruccions precises i estructurades, sense ambigüitats ni dobles sentits.
+  </p>
+
+  <p>
+    Els llenguatges de programació estan dissenyats per ser clars, lògics i estrictes en la seua estructura, però alhora molt més fàcils d'utilitzar que el llenguatge màquina (format només per zeros i uns).
+  </p>
+
+  <p>
+    Un llenguatge de programació és una manera de comunicar-se amb un ordinador per donar-li instruccions. Es tracta d’un conjunt de regles i símbols que els programadors utilitzen per escriure programes que la màquina puga comprendre i executar.
+  </p>
+
+  <p>
+    Cada llenguatge té les seues pròpies normes i sintaxi, adaptades per resoldre certs tipus de problemes o realitzar determinades tasques. Per exemple:
+  </p>
+
+  <ul>
+    <li><strong>Python:</strong> Conegut per la seua simplicitat i llegibilitat. És ideal per a principiants i per a aplicacions de ciència de dades.</li>
+    <li><strong>C++:</strong> Destaca en el desenvolupament de sistemes i videojocs, gràcies al seu alt rendiment i capacitat de control del maquinari.</li>
+  </ul>
+
+  <p>
+    L’elecció del llenguatge més adequat depén del projecte i dels objectius que es volen aconseguir. A mesura que la tecnologia evoluciona, apareixen nous llenguatges i es modernitzen els existents, cosa que amplia constantment les possibilitats per als programadors i assegura que la programació continue sent un camp dinàmic i en creixement continu.
+  </p>
+</section>
+
+<section id="pasos">
+  <h1>Com s'aborda la programació</h1>
+
+  <p>
+    La programació, encara que pot paréixer intimidant al principi, es pot abordar de manera sistemàtica seguint alguns passos clau. Amb una bona metodologia, és possible desenvolupar programes útils i funcionals fins i tot sense experiència prèvia.
+  </p>
+
+  <h2>Passos per programar de manera efectiva</h2>
+  <ol>
+    <li><strong>Definir el problema:</strong> El primer pas és identificar clarament quin problema es vol resoldre o quin objectiu es pretén aconseguir amb el programari.</li>
+    <li><strong>Seleccionar el llenguatge de programació:</strong> Escollir el llenguatge més adequat segons el tipus de projecte, el rendiment desitjat i el nivell d’experiència.</li>
+    <li><strong>Dissenyar un algorisme:</strong> Elaborar un pla que descriga pas a pas com s’aconseguirà l’objectiu, utilitzant una lògica clara i estructurada.</li>
+    <li><strong>Escriure el codi:</strong> Traduir l’algorisme al llenguatge de programació escollit, respectant la seua sintaxi.</li>
+    <li><strong>Depurar:</strong> Comprovar que el codi no conté errors i corregir-ne qualsevol que impedisca el funcionament correcte del programa.</li>
+    <li><strong>Provar i mantindre:</strong> Realitzar proves exhaustives per assegurar que el programa funciona com cal i dur a terme el manteniment necessari al llarg del temps.</li>
+  </ol>
+
+  <p>
+    La programació és un procés iteratiu i creatiu que requereix paciència, atenció als detalls i capacitat de resoldre problemes. No obstant això, amb pràctica i dedicació, qualsevol persona pot aprendre a programar de manera eficaç.
+  </p>
+
+
+</section>
+
+<section id="IDE">
+  <h1>Què és un IDE?</h1>
+
+  <p>
+    IDE significa «Entorn de Desenvolupament Integrat» (en anglès: <em>Integrated Development Environment</em>).
+    És un programa que reuneix totes les eines que necessites per programar en un sol lloc.
+  </p>
+
+  <p>
+    Un IDE normalment inclou:
+  </p>
+
+  <ul>
+    <li><strong>Editor de codi:</strong> Per escriure i editar el teu codi.</li>
+    <li><strong>Compilador o intèrpret:</strong> Per traduir el codi a un llenguatge que l’ordinador puga entendre.</li>
+    <li><strong>Depurador (debugger):</strong> Per detectar i corregir errors en el codi.</li>
+    <li><strong>Gestor de projectes:</strong> Per organitzar els fitxers i carpetes del projecte de manera ordenada.</li>
+    <li><strong>Colorejat de sintaxi:</strong> Per facilitar la lectura del codi amb colors segons la sintaxi.</li>
+    <li><strong>Botó d’execució:</strong> Per provar el teu programa directament des de l’IDE.</li>
+  </ul>
+
+  <p>
+    A més, molts IDEs inclouen funcionalitats addicionals com a la integració amb sistemes de control de versions (com Git), completat automàtic (autocompletion), plantilles de codi i eines de testing, que fan el procés de desenvolupament més eficient i còmode.
+  </p>
+</section>
+
+
+<section id="abstraccio">
+ <h1>Què és l'abstracció en programació?</h1>
+
+  <p>
+    L’abstracció és el procés d’ocultar els detalls complexos i mostrar només allò necessari perquè una cosa siga més fàcil d’entendre i d’utilitzar.
+  </p>
+
+  <p>
+    És com centrar-se en el que és important i ignorar el que no cal saber en un moment determinat.
+  </p>
+
+  <h2>Exemple senzill (vida real):</h2>
+  <p>
+    Pensa en un cotxe:
+  </p>
+  <ul>
+    <li>Només necessites el volant, els pedals i la palanca de canvis per a conduir.</li>
+    <li>No necessites saber com funciona el motor internament ni com circula la gasolina.</li>
+  </ul>
+  <p>
+    Això és abstracció: fer ús d’una cosa sense conéixer tots els seus detalls interns.
+  </p>
+
+  <h2>En programació:</h2>
+  <p>
+    Quan programes, utilitzes funcions, classes i mòduls que realitzen tasques complexes, però només t’importa <strong>què fan</strong>, no <strong>com ho fan per dins</strong> (a menys que necessites modificar-los).
+  </p>
+
+  <p>
+    L’abstracció et permet treballar a un nivell més alt i centrar-te en la resolució de problemes sense quedar atrapat en la complexitat tècnica de cada component.
+  </p>
+</section>
+
+<section id="pensament">
+  <h1>Què és el pensament algorítmic?</h1>
+
+  <p>
+    És la capacitat de resoldre problemes pas a pas, de manera lògica, ordenada i sistemàtica, com si estigueres creant un algorisme.
+  </p>
+
+  <p>
+    Un algorisme és una seqüència clara i finita de passos que condueixen a una solució concreta.
+  </p>
+
+  <p>
+    Per tant, el pensament algorítmic és:
+  </p>
+  <ul>
+    <li>Pensar com si anares a escriure un programa.</li>
+    <li>Dividir el problema en parts més xicotetes.</li>
+    <li>Planificar els passos a seguir.</li>
+    <li>Assegurar-te que cada pas tinga sentit i estiga en l’ordre correcte.</li>
+  </ul>
+
+  <h2>Exemple</h2>
+  <p>
+    En la sèrie <em>The Big Bang Theory</em>, hi ha un moment divertit on Sheldon explica l’"Algorisme de l’amistat", un procés lògic i detallat per a fer amics.
+    És un exemple simpàtic i visual de pensament algorítmic.
+  </p>
+  <p>
+    Pots veure’l al minut 1:49 d’aquest vídeo: <br>
+    <a href="https://www.youtube.com/watch?v=bfZTXUcDl9U" target="_blank">
+      Algoritme de l’amistat – The Big Bang Theory
+    </a>
+  </p>
+
+ <h1>Què inclou el pensament algorítmic?</h1>
+
+  <ol>
+    <li><strong>Descomposició:</strong> dividir un problema gran en parts més petites.</li>
+    <li><strong>Reconeixement de patrons:</strong> identificar similituds o repeticions en les dades o processos.</li>
+    <li><strong>Abstracció:</strong> centrar-se en l’essencial i descartar el que no és necessari.</li>
+    <li><strong>Disseny d’algorismes:</strong> crear els passos per arribar a la solució.</li>
+  </ol>
+
+  <h2>Exemple senzill (vida real): Fer un cafè</h2>
+  <p><strong>Problema:</strong> Fer un cafè.</p>
+  <p><strong>Pensament algorítmic:</strong></p>
+  <ol>
+    <li>Posar aigua a la cafetera.</li>
+    <li>Col·locar el filtre.</li>
+    <li>Afegir cafè mòlt.</li>
+    <li>Encendre la cafetera.</li>
+    <li>Esperar que acabe.</li>
+    <li>Servir en una tassa.</li>
+  </ol>
+  <p>      Cada pas està clarament definit, en ordre, i condueix al resultat desitjat.    </p>  
+
+<h1>La descomposició</h1>
+
+  <p>     La descomposició consisteix en el procés de dividir un problema complex o sistema en parts més petites, que són més senzilles i més fàcils d’entendre. 
+  </p>
+  <p>     Cada part es pot examinar i resoldre, o dissenyar individualment, ja que són més fàcils de treballar.
+  </p>
+  <p>     La descomposició és una habilitat important per crear algorismes i processos que es poden implementar en un dispositiu informàtic, perquè els ordinadors necessiten instruccions molt específiques. 
+  </p>
+  <p>     Necessiten que se’ls diguen cadascun dels passos petits que han de seguir per fer les coses.
+  </p>
+
+</section>
+
+<section id="representacio">
+  <h1>Representació d'algorismes</h1>
+
+  <p>
+    Amb la creació d’un algorisme, es fa evident la necessitat de plasmar una idea abstracta en una representació objectiva que guie el lector a través del procés de resolució del problema.
+    Per això, hi ha moltes formes de representació que serveixen com un mapa que mostra els diferents camins que es poden seguir.
+  </p>
+
+  <h2>1 Diagrama de flux</h2>
+    <img src="imgs/algo1.png" alt="flujograma1" width="22%" class="imatge-dreta">
+  <p>
+    El diagrama de flux, també conegut com a flujograma o diagrama d’activitats, representa mitjançant figures geomètriques codificades, fletxes i text el procés que s’ha de seguir per resoldre un problema concret.
+    Això facilita la visualització de diversos camins, que poden ser circulars (quan tornen al punt previ) o unidireccionals (quan comencen un procés).
+  </p>
+
+  <h3>Símbols bàsics utilitzats:</h3>
+  
+  <ul>
+    <li><strong>Rectàngul o caixa:</strong> representa una activitat, operació o tasca.</li>
+    <li><strong>Rombe:</strong> representa una condició, pregunta o decisió plantejada. Sempre s’ha de respondre amb “Sí” o “No”.</li>
+    <li><strong>Línia amb fletxa:</strong> representa la direcció de les activitats o flux.</li>
+  </ul>
+    <img src="imgs/taula1.png" alt="taula-diagrama-de-flux" width="42%" >
+    <img src="imgs/algo2.png" alt="flujograma2" width="50%" >
+  <p>
+    És important conèixer que en els diagrames de flux hi ha <strong>només un punt d'inici</strong> i <strong>només un punt final</strong>. A més d’això, existeixen altres normes tècniques que normalitzen el seu ús.
+  </p>
+
+    <h2>2 Pseudocodi</h2>
+
+  <p>
+    El pseudocodi és una descripció <strong>INFORMAL</strong> i resumida d’una sèrie d’instruccions, del funcionament bàsic d’un programa o d’un algorisme.
+  </p>
+
+  <p>Veiem-ho amb un exemple: com fer una trucada amb un telèfon mòbil:</p>
+
+  <pre>
+INICI
+    Desbloquejar mòbil
+    Entrar a l'aplicació de trucades
+    Marcar el número desitjat
+    Premre la tecla de trucada
+    Esperar la resposta
+    Parlar
+    Premre la tecla de finalització de trucada
+    Bloquejar mòbil
+FI
+  </pre>
+
+  <h2>3 Programació amb codi</h2>
+
+  <p>
+    La programació amb codi fa referència a aquella que utilitza un llenguatge o codi propi per dur a terme una sèrie d’accions en un programa determinat.
+  </p>
+  <p>
+    És necessari, doncs, conèixer el llenguatge del programa per poder escriure les ordres necessàries.
+  </p>
+  <p>
+    Hi ha una gran varietat de llenguatges informàtics per programar; alguns exemples són: <strong>JAVA</strong>, <strong>C</strong>, <strong>C++</strong>, <strong>Python</strong> i <strong>C#</strong>.
+  </p>
+  
+   <h2>4 Programació visual</h2>
+<img src="imgs/bloc1.png" alt="progvisual" width="22%" class="imatge-dreta">
+  <p>
+    La programació visual és aquella que simplifica enormement la creació de l’algorisme de resolució, ja que la codificació del codi ja ha estat prèviament creada i codificada en una sèrie d’elements visuals que l’editor només ha de seleccionar en l’ordre que desitja per crear el seu codi.
+  </p>
+
+  <p>
+    Generalment, aquests elements visuals estan situats dins d’un IDE (Entorn Integrat de Desenvolupament), força amigable, que ajuda a seleccionar-los, dividint-los per categories, pintant-los de diferents colors i assignant-los diferents formes segons la seva aplicació.
+  </p>
+
+  <p>
+    En el cas de <strong>Scratch</strong>, aquests elements visuals es coneixen com a “bloques” i fan referència a la seva forma.
+  </p>
+
+    <h1>Resum</h1>
+
+  <p>
+    La formació del pensament computacional ajuda a aprendre a descriure un problema, identificar quins són els detalls importants que es necessiten per resoldre aquest problema, dividir-lo en petits passos lògics (per tal de crear un procés que solucioni el problema) i després avaluar aquest procés.
+  </p>
+
+  <h2>Quin és l’algorisme més important de la història?</h2>
+  <p>
+    <a href="https://www.youtube.com/watch?v=kflbmvCWdwk" target="_blank">
+      Vídeo explicatiu a YouTube
+    </a>
+  </p>
+
+
+</section>
+
+
+
+</main>
+
+<script>
+
+  // Per poder copiar codi en el porta-retalls. S'ha de posar un botó en cada <pre>
+      //  <div class="pre-container">
+      //    <button class="copy-button">Copia Codi !</button>
+  document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.copy-button');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', function () {
+        const code = this.nextElementSibling.innerText;
+        navigator.clipboard.writeText(code).then(() => {
+          this.innerText = ' ✔ Copiat!';
+          setTimeout(() => this.innerText = 'Copia Codi !', 3000);
+        });
+      });
+    });
+  });
+
+</script>
+
+</body>
+</html>
