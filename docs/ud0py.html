@@ -29,7 +29,7 @@
   <a href="#abstraccio">La abstracció</a>
   <a href="#pensament">Pensament computacional</a>
   <a href="#representacio">Representació d'algorismes</a>
-  
+  <a href="#tipusprog">Tipus de programació</a>
   
 </nav>
 
@@ -197,6 +197,20 @@
   <p>
     A més, molts IDEs inclouen funcionalitats addicionals com a la integració amb sistemes de control de versions (com Git), completat automàtic (autocompletion), plantilles de codi i eines de testing, que fan el procés de desenvolupament més eficient i còmode.
   </p>
+
+  <hr>
+  <p>
+    Exemples d'IDEs 
+  </p>
+
+  <ul>
+    <li><strong>Visual Studio Code:</strong> IDE sencill i generalista</li>
+    <li><strong>PyCharm:</strong> IDE per a Python</li>
+    <li><strong>Eclipse:</strong> IDE multi-llenguatge. Java, C++, Python, PHP, JavaScript i més</li>
+    <li><strong>NetBeans:</strong> IDE multi-llenguatge de Sun Microsystems, ara de ASF. </li>
+    <li><strong>Bluej:</strong> Per a java.</li>
+    <li> i més....</li>
+  </ul>
 </section>
 
 
@@ -389,9 +403,76 @@ FI
     </a>
   </p>
 
-
 </section>
 
+<section id="tipusprog">
+ <h1>Programació Imperativa vs Declarativa en Python</h1>
+
+  <h2> Programació imperativa</h2>
+  <p>La <strong>programació imperativa</strong> consisteix a <em>dir-li a l’ordinador pas a pas què ha de fer</em> per aconseguir un resultat.</p>
+
+  <h3> Exemple:</h3>
+  <pre><code>llista = [1, 2, 3, 4, 5, 6]
+suma = 0
+for x in llista:
+    if x % 2 == 0:
+        suma += x
+print(suma)</code></pre>
+
+  <ul>
+    <li>Control explícit del flux (bucles, condicions).</li>
+    <li>Centrat en el “com” es fa.</li>
+    <li>Més prop del funcionament intern del sistema.</li>
+  </ul>
+
+  <h2> Programació declarativa</h2>
+  <p>En la <strong>programació declarativa</strong>, <em>descrius el que vols aconseguir</em>, no com aconseguir-ho pas a pas.</p>
+
+  <h3> Exemple:</h3>
+  <pre><code>llista = [1, 2, 3, 4, 5, 6]
+suma = sum(filter(lambda x: x % 2 == 0, llista))
+print(suma)</code></pre>
+
+  <ul>
+    <li>Evita estat mutable i bucles explícits.</li>
+    <li>Centrat en el “què” es vol fer.</li>
+    <li>Ús de funcions com <code>map</code>, <code>filter</code>, <code>reduce</code>.</li>
+  </ul>
+
+  <h2> Diferències clau</h2>
+  <table>
+    <tr>
+      <th>Aspecte</th>
+      <th>Imperativa</th>
+      <th>Declarativa</th>
+    </tr>
+    <tr>
+      <td>Enfocament</td>
+      <td>Com fer-ho (pas a pas)</td>
+      <td>Què vull fer</td>
+    </tr>
+    <tr>
+      <td>Llegibilitat</td>
+      <td>Més llarga, més explícita</td>
+      <td>Més concisa, menys intuïtiva</td>
+    </tr>
+    <tr>
+      <td>Control del flux</td>
+      <td>Bucle <code>for</code>, <code>while</code></td>
+      <td>Funcions de més alt nivell</td>
+    </tr>
+    <tr>
+      <td>Estat mutable</td>
+      <td>Normalment sí</td>
+      <td>Evita-ho</td>
+    </tr>
+  </table>
+
+  <p><strong>✅ En Python es poden usar ambdós estils</strong>, i combinar-los segons convinga.</p>
+
+
+
+</section>
 
 
 </main>
