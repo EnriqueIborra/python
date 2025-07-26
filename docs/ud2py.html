@@ -393,12 +393,75 @@ $ python3 programa.py Juan --edat 25
 
 
 <section id="fitxers">
-  <h2>Gestió de Fitxers en Python</h2>
+  <h1>Gestió de Fitxers en Python</h1>
+<h2>📂 Què és un fitxer en Python?</h2>
+
+<p>Un <strong>fitxer</strong> en Python és una entitat externa (com un arxiu de text, CSV, JSON, etc.) que el teu 
+  programa pot <strong>llegir, escriure o modificar</strong> per a emmagatzemar o recuperar informació de manera <strong> permanent</strong> .</p>
+
+  <h2>Persitència de dades</h2>
+<p>
+  La <strong>persistència de dades</strong> és la capacitat de <strong>guardar informació de manera permanent</strong>, de forma que <strong>no es perda quan s’apaga el programa o l’ordinador</strong>.
+</p>
+<p>
+  Dit d'una altra manera: són dades que <em>persistixen més enllà de la memòria RAM</em>, i que poden ser recuperades en futures execucions.
+</p>
+
+<h3> Mètodes per aconseguir persistència en Python</h3>
+
+<h4> Fitxers</h4>
+<ul>
+  <li>Fitxers de text (<code>.txt</code>)</li>
+  <li>Fitxers CSV</li>
+  <li>Fitxers JSON</li>
+  <li>Fitxers binaris (<code>.dat</code>)</li>
+</ul>
+
+<h4> Bases de dades</h4>
+<ul>
+  <li>SQLite (ja integrada en Python)</li>
+  <li>MySQL, PostgreSQL, etc. (amb connectors externs)</li>
+</ul>
+
+<h4> Serialització (guardar objectes)</h4>
+<ul>
+  <li>Amb el mòdul <code>pickle</code></li>
+  <li>Amb <code>json</code> per a estructures simples</li>
+</ul>
+
+<h2> Definició de fitxer</h2>
+<p>
+  En informàtica, un <strong>fitxer</strong> (o <em>arxiu</em>) és un conjunt de dades guardades al disc dur o a un altre dispositiu d’emmagatzematge. En Python, podem interactuar amb fitxers mitjançant la funció integrada <code>open()</code>.
+</p>
+
+<h2> Operacions bàsiques amb fitxers en Python</h2>
+<table border="1" cellpadding="6">
+  <tr>
+    <th>Operació</th>
+    <th>Mètode Python</th>
+  </tr>
+  <tr>
+    <td>Obrir un fitxer</td>
+    <td><code>open("nom_fitxer", "mode")</code></td>
+  </tr>
+  <tr>
+    <td>Llegir dades</td>
+    <td><code>read()</code>, <code>readline()</code>, <code>readlines()</code></td>
+  </tr>
+  <tr>
+    <td>Escriure dades</td>
+    <td><code>write()</code>, <code>writelines()</code></td>
+  </tr>
+  <tr>
+    <td>Tancar el fitxer</td>
+    <td><code>close()</code> (o <code>with</code> per tancar automàticament)</td>
+  </tr>
+</table>
+
 
   <p>
   La funció <code>open()</code> forma part de la biblioteca estàndard de Python, per la qual cosa es pot utilitzar sense necessitat d’importar res.
   </p>
-  
   <h3>Obrir un fitxer</h3>
   <p>
   La funció <strong>open()</strong> accepta dos arguments principals:
@@ -615,39 +678,75 @@ for persona in persones_recuperades:
 
 </section>
 
+<section id="GUI">
+    <h1>🖥️ GUI amb Tkinter en Python</h1>
+
+    <p>Una <strong>GUI</strong> (Interfície Gràfica d'Usuari) permet interactuar amb el programa mitjançant elements com botons, caixes de text, etiquetes, etc. <strong>Tkinter</strong> és la llibreria estàndard de Python per a fer-ho.</p>
+
+    <h2> Estructura bàsica</h2>
+    <pre><code>import tkinter as tk
+
+    finestra = tk.Tk()
+    finestra.title("La meua primera GUI")
+    finestra.mainloop()</code></pre>
+
+    <h2>🧩 Widgets comuns</h2>
+     <img src="imgs/exemplegui1.png" alt="gui1" class="imatge-dreta" width="45%">
+    <ul>
+      <li><code>Label</code> – Mostra text</li>
+      <li><code>Entry</code> – Entrada d’usuari</li>
+      <li><code>Button</code> – Executa accions</li>
+      <li><code>Text</code> – Caixa de text gran</li>
+      <li><code>Checkbutton</code> – Caixa de selecció</li>
+      <li><code>Radiobutton</code> – Opcions exclusives</li>
+      <li><code>Listbox</code> – Llista seleccionable</li>
+    </ul>
+
+    <h2>🧪 Exemple amb diversos widgets</h2>
+    <pre><code>import tkinter as tk
+
+    def mostrar_salutacio():
+        nom = entrada.get()
+        etiqueta_resultat.config(text=f"Hola, {nom}!")
+
+    finestra = tk.Tk()
+    finestra.title("Exemple complet")
+
+    etiqueta = tk.Label(finestra, text="Escriu el teu nom:")
+    etiqueta.pack()
+
+    entrada = tk.Entry(finestra)
+    entrada.pack()
+
+    boto = tk.Button(finestra, text="Saluda’m", command=mostrar_salutacio)
+    boto.pack()
+
+    etiqueta_resultat = tk.Label(finestra, text="")
+    etiqueta_resultat.pack()
+
+    finestra.mainloop()</code></pre>
+
+    <h2>📐 Sistemes de posicionament</h2>
+    <ul>
+      <li><code>pack()</code> – Organització vertical o horitzontal</li>
+      <li><code>grid()</code> – Organització en taula (files i columnes)</li>
+      <li><code>place()</code> – Ubicació exacta per coordenades</li>
+    </ul>
+
+</section>
 
 
+<section id="bbdd">
+<h1> Entrada i Eixida cap a BBDD</h1>
 
+
+</section>
 
 
 <section id="exercicis">
     <h2>Exercicis</h2>
-    <h3>Exercicis per a practicar:</h3>
-    <ol>
-        <li>Taula de multiplicar: Crea una llista amb les multiplicacions del número 5 (del 1 al 10).</li>
-        <li>Taula de multiplicar genèrica: Crea una llista amb les multiplicacions d’un número donat (del 1 al 10).</li>
-        <li>Diccionari de persones: Crea un diccionari amb el nom i l’edat de diverses persones i després imprimeix-lo.</li>
-    </ol>
-    <h3>Exercicis Bàsics:</h3>
-
-    <ol>
-        <li>Suma de números en una llista: Crea una funció que reba una llista de números i retorne la suma de tots ells.</li>
-        <li>Número més gran en una llista: Crea un programa que reba una llista de números i retorne el número més gran.</li>
-        <li>Fibonacci: Crea una funció que reba un número n i retorne els primers n números de la successió de Fibonacci.</li>
-    </ol>
-
-    <h3>Exercicis Intermedis:</h3>
-    Ordenar una llista de tuples: Donada una llista de tuples amb dos elements (nom, edat), ordena la llista segons l’edat de menor a major.    
-    <h3>Exercicis Avançats:</h3>
-    <ol>
-        <li>Buscar un element en una llista: Crea una funció que busque un valor en una llista i retorne el seu índex si el troba. Si no el troba, ha de retornar "No trobat".</li>
-        <li>Matriu transposada: Crea una funció que reba una matriu (llista de llistes) i retorne la seua transposada.</li>
-        <li>Generador de contrasenyes aleatòries: Crea una funció que genere una contrasenya aleatòria amb una longitud especificada. Ha de tindre almenys una lletra majúscula, una minúscula, un número i un caràcter especial.</li>
-        <li>Eliminar duplicats d’una llista: Crea una funció que reba una llista amb elements duplicats i retorne una nova llista amb només els únics.</li>
-        <li>Trobar nombres primers: Crea una funció que reba un número n i retorne una llista amb tots els nombres primers menors o iguals a n.</li>
-        <li>Simulació d’un sistema de qualificació: Permet introduir qualificacions de diversos estudiants, calcula la mitjana i mostra les qualificacions per damunt i per davall de la mitjana.</li>
-    </ol>
-
+   
+ 
     <h3>Exercicis amb Llibreries Externes:</h3>
     <ol>
         <li>Ús de random: Usa la llibreria random per generar una llista de 10 números aleatoris entre 1 i 100, i després troba el més gran i el més xicotet.</li>

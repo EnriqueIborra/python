@@ -45,8 +45,27 @@
     </p>
     <h2>Variables i Tipus de Dades</h2>
 
-    <p>
-        Per a començar a utilitzar Python, és més recomanable utilitzar Python des del Shell o IPython (o IDLE en Windows), per la seva ràpida resposta a comandes senzilles.
+<h4> Què és una variable en informàtica</h4>
+
+<p>   En informàtica, una <strong>variable</strong> és un espai d’emmagatzematge en la memòria d’un programa que s’utilitza per a guardar un valor que pot canviar durant l’execució del programa.
+</p>
+
+<h4> Característiques clau d’una variable:</h4>
+<ul>
+  <li>Té un <strong>nom</strong> (identificador), com ara <code>edat</code>, <code>nom</code>, <code>comptador</code>, etc.</li>
+  <li>Té un <strong>valor</strong>, com ara <code>25</code>, <code>"Joan"</code>, <code>true</code>, etc.</li>
+  <li>El valor pertany a un <strong>tipus de dada</strong>:
+    <ul>
+      <li><strong>Enter</strong> (nombre sencer)</li>
+      <li><strong>Decimal</strong> (<code>float</code>)</li>
+      <li><strong>Text</strong> (cadena de caràcters)</li>
+      <li><strong>Booleà</strong> (<code>true</code> o <code>false</code>)</li>
+    </ul>
+  </li>
+  <li>El seu valor <strong>pot modificar-se</strong> al llarg del temps que dure el procés.</li>
+</ul>
+
+    <p>  Per a començar a utilitzar Python, és més recomanable utilitzar Python des del Shell o IPython (o IDLE en Windows), per la seva ràpida resposta a comandes senzilles.
     </p>
 
     <p>  <strong>En Python</strong>, no és necessari declarar el tipus d'una variable. Python el dedueix automàticament. Les variables es creen quan es realitza la seva primera assignació.   </p>
@@ -562,7 +581,60 @@ TypeError: 'str' object does not support item assignment     </code></pre>
 </section>
 
 <section id="conversio">
+  <h1> Conversió de tipus en Python</h1>
 
+  <p>
+    En Python, la <strong>conversió de tipus</strong> (també anomenada <em>casting</em>) fa referència a transformar un valor d’un tipus de dada a un altre, per exemple, convertir un nombre a cadena de text, o una cadena a nombre.
+  </p>
+
+  <h2> Conversió implícita</h2>
+  <p>
+    Python a vegades converteix tipus automàticament quan no hi ha pèrdua d’informació.
+  </p>
+
+  <pre><code>enter = 5
+decimal = 2.5
+resultat = enter + decimal
+print(resultat)            # 7.5
+print(type(resultat))      # &lt;class 'float'&gt;</code></pre>
+
+  <p>
+    Ací, Python converteix automàticament <code>enter</code> (int) a <code>float</code> per fer la suma.
+  </p>
+
+  <h2> Conversió explícita</h2>
+  <p>
+    La fas manualment amb funcions com:
+  </p>
+  <ul>
+    <li><code>int()</code> – converteix a enter</li>
+    <li><code>float()</code> – converteix a decimal</li>
+    <li><code>str()</code> – converteix a cadena de text</li>
+    <li><code>bool()</code> – converteix a booleà (<code>True</code> o <code>False</code>)</li>
+  </ul>
+
+  <h2> Exemples:</h2>
+
+  <h3> De cadena a nombre</h3>
+  <pre><code>numero = int("10")         # ara és 10 (int)
+decimal = float("3.14")    # ara és 3.14 (float)</code></pre>
+
+  <h3> De nombre a cadena</h3>
+  <pre><code>text = str(123)            # "123"</code></pre>
+
+  <h3> De nombre a booleà</h3>
+  <pre><code>print(bool(0))             # False
+print(bool(5))             # True</code></pre>
+
+  <h3> De cadena a booleà</h3>
+  <pre><code>print(bool(""))            # False (cadena buida)
+print(bool("hola"))        # True</code></pre>
+
+  <h2>⚠️ Compte amb errors comuns</h2>
+  <p>
+    Si intentes convertir una cadena que no representa un número vàlid, obtindràs un error:
+  </p>
+  <pre><code>int("hola")    # ValueError</code></pre>
 
 
 

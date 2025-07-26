@@ -26,7 +26,6 @@
   <a href="#llenguatge">Llenguatge de programació</a>
   <a href="#pasos">Pasos a seguir per a programar</a>
   <a href="#IDE">IDE's</a>
-  <a href="#abstraccio">La abstracció</a>
   <a href="#pensament">Pensament computacional</a>
   <a href="#representacio">Representació d'algorismes</a>
   <a href="#tipusprog">Tipus de programació</a>
@@ -214,41 +213,8 @@
 </section>
 
 
-<section id="abstraccio">
- <h1>Què és l'abstracció en programació?</h1>
-
-  <p>
-    L’abstracció és el procés d’ocultar els detalls complexos i mostrar només allò necessari perquè una cosa siga més fàcil d’entendre i d’utilitzar.
-  </p>
-
-  <p>
-    És com centrar-se en el que és important i ignorar el que no cal saber en un moment determinat.
-  </p>
-
-  <h2>Exemple senzill (vida real):</h2>
-  <p>
-    Pensa en un cotxe:
-  </p>
-  <ul>
-    <li>Només necessites el volant, els pedals i la palanca de canvis per a conduir.</li>
-    <li>No necessites saber com funciona el motor internament ni com circula la gasolina.</li>
-  </ul>
-  <p>
-    Això és abstracció: fer ús d’una cosa sense conéixer tots els seus detalls interns.
-  </p>
-
-  <h2>En programació:</h2>
-  <p>
-    Quan programes, utilitzes funcions, classes i mòduls que realitzen tasques complexes, però només t’importa <strong>què fan</strong>, no <strong>com ho fan per dins</strong> (a menys que necessites modificar-los).
-  </p>
-
-  <p>
-    L’abstracció et permet treballar a un nivell més alt i centrar-te en la resolució de problemes sense quedar atrapat en la complexitat tècnica de cada component.
-  </p>
-</section>
-
 <section id="pensament">
-  <h1>Què és el pensament algorítmic?</h1>
+  <h1>Què és el pensament algorítmic, o pensament computacional</h1>
 
   <p>
     És la capacitat de resoldre problemes pas a pas, de manera lògica, ordenada i sistemàtica, com si estigueres creant un algorisme.
@@ -301,7 +267,7 @@
     <li>Servir en una tassa.</li>
   </ol>
   <p>      Cada pas està clarament definit, en ordre, i condueix al resultat desitjat.    </p>  
-
+<hr>
 <h1>La descomposició</h1>
 
   <p>     La descomposició consisteix en el procés de dividir un problema complex o sistema en parts més petites, que són més senzilles i més fàcils d’entendre. 
@@ -313,6 +279,69 @@
   <p>     Necessiten que se’ls diguen cadascun dels passos petits que han de seguir per fer les coses.
   </p>
 
+  <hr>
+   <h1>Què és l'abstracció en programació?</h1>
+  <p>     L’abstracció és el procés d’ocultar els detalls complexos i mostrar només allò necessari perquè una cosa siga més fàcil d’entendre i d’utilitzar.
+  </p>
+  <p>     És com centrar-se en el que és important i ignorar el que no cal saber en un moment determinat.
+  </p>
+
+  <h2>Exemple senzill (vida real):</h2>
+  <p>
+    Pensa en un cotxe:
+  </p>
+  <ul>
+    <li>Només necessites el volant, els pedals i la palanca de canvis per a conduir.</li>
+    <li>No necessites saber com funciona el motor internament ni com circula la gasolina.</li>
+  </ul>
+  <p>
+    Això és abstracció: fer ús d’una cosa sense conéixer tots els seus detalls interns.
+  </p>
+
+  <h2>En programació:</h2>
+  <p>     Quan programes, utilitzes funcions, classes i mòduls que realitzen tasques complexes, però només t’importa <strong>què fan</strong>, no <strong>com ho fan per dins</strong> (a menys que necessites modificar-los).
+  </p>
+  <p>     L’abstracció et permet treballar a un nivell més alt i centrar-te en la resolució de problemes sense quedar atrapat en la complexitat tècnica de cada component.
+  </p>
+<hr>
+ <h1> Reconeixement de patrons en un context de pensament computacional</h1>
+
+  <h2> Què és el reconeixement de patrons?</h2>
+  <p>
+    És el procés de <strong>detectar estructures que es repeteixen</strong> o característiques comunes entre diferents situacions o problemes.
+    Aquest reconeixement permet <strong>resoldre problemes de manera més eficient</strong>, ja que es poden aplicar solucions conegudes a situacions semblants.
+  </p>
+
+  <h2> Exemple simple</h2>
+  <p>
+    Suposa que tens aquests números:
+  </p>
+  <pre><code>2, 4, 6, 8, 10, ?</code></pre>
+  <p>
+    Amb reconeixement de patrons, observes que <strong>cada nombre augmenta en 2</strong>, així que pots predir que el següent és <strong>12</strong>.
+  </p>
+
+  <h2> Per a què serveix en pensament computacional?</h2>
+  <ul>
+    <li><strong>Simplificar problemes complexos</strong> detectant similituds</li>
+    <li><strong>Evitar repetir treball</strong> aplicant solucions reutilitzables</li>
+    <li><strong>Millorar l’eficiència</strong> de programes i algorismes</li>
+    <li><strong>Identificar errors o comportaments no desitjats</strong> (com en dades o sistemes)</li>
+  </ul>
+
+  <h2> Exemples en programació</h2>
+
+  <p><strong>1. Validar correus electrònics:</strong></p>
+  <pre><code>import re
+re.match(r"\w+@\w+\.\w+", "usuari@email.com")</code></pre>
+
+  <p><strong>2. Detectar patrons en l’entrada de l’usuari</strong> (paraules repetides, errors, formats, etc.)</p>
+
+  <p><strong>3. Fer servir bucles quan una acció es repeteix:</strong></p>
+  <pre><code>for i in range(5):  # Patró: repetir 5 vegades
+    print("Hola")</code></pre>
+
+  
 </section>
 
 <section id="representacio">
@@ -470,6 +499,107 @@ print(suma)</code></pre>
 
   <p><strong>✅ En Python es poden usar ambdós estils</strong>, i combinar-los segons convinga.</p>
 
+<hr><hr>
+   <h1>Programació estructurada vs  Codi espagueti</h1>
+
+  <h2>🍝 Què és el "codi espagueti"?</h2>
+  <p>
+    El <strong>codi espagueti</strong> és un terme informal per descriure un programa:
+  </p>
+  <ul>
+    <li>Difícil d’entendre</li>
+    <li>Ple de salts (com <code>goto</code> o <code>break</code> a tot arreu)</li>
+    <li>Sense estructura clara</li>
+    <li>Difícil de mantenir o modificar</li>
+  </ul>
+  <p>
+     <em>Sembla un plat d’espaguetis</em>: tot enredat i sense ordre.
+  </p>
+
+  <h2>🧱 Què és la programació estructurada?</h2>
+  <p>
+    La <strong>programació estructurada</strong> és un estil que organitza el codi de forma lògica i clara. Fa ús de:
+  </p>
+  <ul>
+    <li><strong>Seqüències</strong>: instruccions una rere l’altra</li>
+    <li><strong>Condicionals</strong>: <code>if</code>, <code>else</code></li>
+    <li><strong>Bucle</strong>s: <code>for</code>, <code>while</code></li>
+    <li><strong>Funcions</strong>: per dividir el codi en parts reutilitzables</li>
+  </ul>
+
+  <p>
+    ✅ Això ajuda a que el codi sigui:
+  </p>
+  <ul>
+    <li>Més fàcil d’entendre</li>
+    <li>Més fàcil de mantenir</li>
+    <li>Més fàcil de provar</li>
+  </ul>
+
+  <h2>🔍 Comparació ràpida</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Característica</th>
+        <th>Codi espagueti 🍝</th>
+        <th>Programació estructurada 🧱</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Organització</td>
+        <td>Caòtica</td>
+        <td>Lògica i modular</td>
+      </tr>
+      <tr>
+        <td>Ús de funcions</td>
+        <td>Poc o gens</td>
+        <td>Repartit en funcions</td>
+      </tr>
+      <tr>
+        <td>Control de flux</td>
+        <td>Saltant entre línies (com <code>goto</code>)</td>
+        <td>Seqüencial, condicional i amb bucles</td>
+      </tr>
+      <tr>
+        <td>Mantenibilitat</td>
+        <td>Molt difícil</td>
+        <td>Fàcil d’actualitzar</td>
+      </tr>
+      <tr>
+        <td>Llegibilitat</td>
+        <td>Confusa</td>
+        <td>Clara i ordenada</td>
+      </tr>
+      <tr>
+        <td>Exemple visual</td>
+        <td>Bola d'espaguetis</td>
+        <td>Blocs de construcció</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>🧪 Exemple de codi espagueti</h2>
+  <pre><code>x = int(input("Introdueix un nombre: "))
+if x > 0:
+    print("És positiu")
+else:
+    if x == 0:
+        print("És zero")
+    else:
+        print("És negatiu")</code></pre>
+
+  <h2>✅ Exemple amb programació estructurada</h2>
+  <pre><code>def classifica_nombre(x):
+    if x > 0:
+        return "És positiu"
+    elif x == 0:
+        return "És zero"
+    else:
+        return "És negatiu"
+
+x = int(input("Introdueix un nombre: "))
+print(classifica_nombre(x))</code></pre>
 
 
 </section>

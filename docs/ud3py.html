@@ -22,6 +22,7 @@
   <h3>Índex</h3>
  
   <a href="#estructures">Estructures de control</a>
+  <a href="#salts">Salts en Python</a>
   <a href="#excepcions">Excepcions</a>
   <a href="#funcions">Funcions</a>
   <a href="#moduls">Moduls i paquets</a>
@@ -190,7 +191,97 @@
             
             <hr>
 
+ <h1> Clàusula <code>else</code> en bucles en Python</h1>
+
+  <p>Aquesta tècnica de fer servir <code>else</code> després d’un bucle <code>while</code> o <code>for</code> en Python s’anomena:</p>
+
+  <h2><strong>▶️ Clàusula <code>else</code> en bucles</strong> <em>(Loop else clause)</em></h2>
+
+  <h2> Descripció:</h2>
+  <p>És una <strong>característica pròpia de Python</strong> (i poc comuna en altres llenguatges) que permet executar un bloc de codi <strong>quan el bucle s'acaba sense un <code>break</code></strong>.</p>
+
+  <h2> Es pot aplicar a:</h2>
+  <ul>
+    <li><code>while</code> + <code>else</code></li>
+    <li><code>for</code> + <code>else</code></li>
+  </ul>
+
+  <h2> Per què és útil?</h2>
+  <p>Permet distingir entre:</p>
+  <ul>
+    <li>Casos on <strong>s’ha recorregut tot el bucle</strong> sense trobar res especial</li>
+    <li>Casos on <strong>s’ha interromput amb <code>break</code></strong></li>
+  </ul>
+
+  <h2> Exemple típic:</h2>
+  <pre><code>for numero in [1, 3, 5, 7]:
+    if numero % 2 == 0:
+        print("Té un nombre parell")
+        break
+else:
+    print("Cap nombre parell trobat")</code></pre>
+
+  <p><strong>🔹 Resultat:</strong> Si no es troba cap parell, s’executa l’<code>else</code>.</p>
+
           
+</section>
+
+<section id="salts">
+ <h1>Salts en Python</h1>
+
+  <p>En Python <strong>es poden fer salts en el flux d'execució</strong>, però <strong>d'una manera limitada i controlada</strong>. Python <strong>no té una instrucció <code>goto</code></strong>, com altres llenguatges antics (C, BASIC...), però pots modificar el flux amb altres estructures.</p>
+
+  <h2>🔀 Maneres de fer "salts" en Python</h2>
+
+  <h3>1. <code>break</code></h3>
+  <p>Surt d’un bucle (<code>for</code> o <code>while</code>) immediatament.</p>
+  <pre><code>for i in range(10):
+    if i == 5:
+        break
+    print(i)
+# Resultat: 0, 1, 2, 3, 4
+</code></pre>
+
+  <h3>2. <code>continue</code></h3>
+  <p>Salta a la <strong>següent iteració</strong> del bucle, sense executar la resta del codi de dins.</p>
+  <pre><code>for i in range(5):
+    if i == 2:
+        continue
+    print(i)
+# Resultat: 0, 1, 3, 4
+</code></pre>
+
+  <h3>3. <code>return</code></h3>
+  <p>Surt immediatament d’una funció i pot retornar un valor.</p>
+  <pre><code>def verifica(x):
+    if x &lt; 0:
+        return "Negatiu"
+    return "Positiu o zero"
+</code></pre>
+
+  <h3>4. <code>raise</code></h3>
+  <p>Fa un "salt" provocant una excepció: trenca l'execució normal.</p>
+  <pre><code>def dividir(x, y):
+    if y == 0:
+        raise ValueError("No es pot dividir per zero")
+    return x / y
+</code></pre>
+
+  <h2>🚫 No hi ha <code>goto</code> en Python</h2>
+  <p>Python <strong>no permet <code>goto</code></strong> perquè va en contra dels principis de llegibilitat i claredat que promou el llenguatge. En lloc d’això, es recomana:</p>
+  <ul>
+    <li>Fer servir <strong>funcions</strong> i <strong>estructures condicionals</strong></li>
+    <li>Organitzar el codi en <strong>blocs clars</strong></li>
+    <li>Evitar duplicació i repetició de lògica</li>
+  </ul>
+
+  <h2>✅ Alternatives recomanades</h2>
+  <ul>
+    <li>Usa <strong>funcions</strong> per evitar repetir codi</li>
+    <li>Usa <code>break</code>/<code>continue</code> només quan té sentit i millora la claredat</li>
+    <li>Escriu codi llegible, mantenible i estructurat</li>
+  </ul>
+
 </section>
 
 <section id="excepcions">
