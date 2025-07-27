@@ -21,7 +21,10 @@
 <nav>
   <h3>Índex</h3>
   
+  <a href="#elements">Elements d'un programa</a>
+  <a href="#estructura">Estructura i blocs</a>
   <a href="#variables">Variables i Tipus</a>
+  <a href="#comentaris">Comentaris</a>
   <a href="#literals">Literals</a>
   <a href="#constants">Constants</a>
   <a href="#operacions">Operacions en Python</a>
@@ -30,7 +33,244 @@
 </nav>
 
 <main>
+<section id="elements">
+<h1>Identificació dels elements d’un programa informàtic</h1>
+<p> Identificar els elements d’un programa informàtic és fonamental per entendre com es construeixen i com funcionen. 
+  A continuació tens una explicació clara i estructurada dels principals elements d’un programa informàtic:</p>
+<h2>1. Instruccions</h2>
+  <p>Les instruccions són les ordres que el programa dóna a l’ordinador perquè faci una acció concreta, com per exemple mostrar un missatge o un càlcul per pantalla.</p>
+  <pre><code>print("Hola, món!")
+print( 223 + 665 * 67)      </code></pre>
 
+  <h2>2. Variables</h2>
+  <p>Les variables serveixen per <strong>emmagatzemar dades</strong> que poden canviar durant l’execució del programa.</p>
+  <pre><code>nom = "Anna"
+edat = 20</code></pre>
+
+  <h2>3. Estructures de control</h2>
+  <p>Permeten <strong>controlar el flux d’execució</strong> del programa:</p>
+  <ul>
+    <li><strong>Condicionals (if/else):</strong> permeten executar diferents blocs de codi segons una condició.</li>
+  </ul>
+  <pre><code>if edat &gt;= 18:
+    print("Ets major d’edat")
+else:
+    print("Ets menor d’edat")</code></pre>
+  <ul>
+    <li><strong>Bucles (while, for):</strong> repeteixen una acció diverses vegades.</li>
+  </ul>
+  <pre><code>for i in range(5):
+    print(i)</code></pre>
+
+  <h2>4. Funcions</h2>
+  <p>Les funcions són blocs de codi reutilitzables que realitzen una tasca concreta.</p>
+  <pre><code>def saludar(nom):
+    print("Hola, " + nom + "!")
+
+saludar("Pau")</code></pre>
+
+  <h2>5. Entrada i sortida (Input/Output)</h2>
+  <ul>
+    <li><strong>Entrada:</strong> Permet rebre dades de l’usuari.</li>
+    <li><strong>Sortida:</strong> Mostra resultats per pantalla.</li>
+  </ul>
+  <pre><code>nom = input("Com et dius? ")
+print("Hola, " + nom)</code></pre>
+
+  <h2>6. Tipus de dades</h2>
+  <p>Dades que pot gestionar un programa:</p>
+  <ul>
+    <li>Números: <code>int</code>, <code>float</code></li>
+    <li>Text: <code>str</code></li>
+    <li>Booleans: <code>True</code> / <code>False</code></li>
+    <li>Llistes, diccionaris, conjunts, etc. (estructures més avançades)</li>
+  </ul>
+
+  <h2>7. Comentaris</h2>
+  <p>Text que s’inclou al codi per explicar què fa, però <strong>no s’executa</strong>.</p>
+  <pre><code># Aquesta funció suma dos nombres
+def suma(a, b):
+    return a + b</code></pre>
+
+  <h2>8. Mòduls i llibreries</h2>
+  <p>Codi ja preparat que es pot reutilitzar per fer tasques més complexes sense haver de programar-les des de zero.</p>
+  <pre><code>import math
+print(math.sqrt(25))  # Arrel quadrada de 25</code></pre>
+
+</section>
+
+  <section id="estructura">
+  <h1>Estructura i blocs fonamentals</h1>
+  <h2>Instruccions soltes</h2>
+  <p>Per començar es poden fer servir instruccions senzilles de manera aillada</p>
+  <pre><code>
+  print("Hola mon")
+  print(34456 + 23345 )
+  </code></pre>
+  <p>Esta sera la forma en que treballarem en esta unitat</p>
+  <h2>Estructura d'un programa</h2>
+  <p>Encara que en Python, un programa pot ser una sola instrucció, sense encapçalament, ni res més, 
+    l'estructura bàsica d’un programa en Python sol seguir un esquema senzill i clar. A continuació et presento una estructura 
+    típica d’un programa Python ben organitzat</p>
+    <p class="alert">Important !!, no deixar espais en blanc al principi de les instruccions (si no son identacions)</p>
+    <pre><code>
+# 1. Imports (llibreries o mòduls externs o propis)
+import math
+import sys
+
+# 2. Constants globals
+PI = 3.14159
+MAX_RETRIES = 5
+
+# 3. Definició de funcions
+def calcular_area_cercle(radi):
+    return PI * radi ** 2
+
+def saludar(nom):
+    print(f"Hola, {nom}!")
+
+# 4. Classe (opcional)
+class Persona:
+    def __init__(self, nom, edat):
+        self.nom = nom
+        self.edat = edat
+
+    def presentar(self):
+        print(f"Soc {self.nom} i tinc {self.edat} anys.")
+
+# 5. Bloc principal (punt d'entrada del programa)
+def main():
+    saludar("Anna")
+    area = calcular_area_cercle(5)
+    print(f"L'àrea del cercle és: {area:.2f}")
+
+    p = Persona("Joan", 30)
+    p.presentar()
+
+# 6. Comprovació si s'executa com a script principal
+if __name__ == "__main__":
+    main()
+    </code></pre>
+
+  <h2>Fitxers amb codi Python ( .py )</h2>
+  <p>Totes les instruccions d'un programa s'han de guardar en un fitxer amb nom i amb extensió  .py </p>
+ 
+  <h2>Execució del fitxer</h2>
+  <p>Per executar un programa Python, s'ha de cridar al binari python, amb un espai i el nom del fitxer que conté el programa python a executar</p>
+ <h3>1. Des del terminal o línia de comandes</h3>
+  <p>Obre el terminal i escriu:</p>
+  <pre><code>python programa.py</code></pre>
+  <p>O si tens <code>python3</code> instal·lat:</p>
+  <pre><code>python3 programa.py</code></pre>
+
+  <h3>2. Des d’un entorn de desenvolupament (IDE)</h3>
+  <ul>
+    <li>Obre el fitxer amb un editor com <strong>VS Code</strong>, <strong>PyCharm</strong> o <strong>Thonny</strong>.</li>
+    <li>Prem el botó de "Play" (▶️) o selecciona "Executar".</li>
+  </ul>
+
+  <h3>3. Amb permisos d’execució (Linux/macOS)</h3>
+  <p>Fes que el fitxer sigui executable:</p>
+  <pre><code>chmod +x programa.py</code></pre>
+  <p>Afegeix la línia següent al principi del fitxer:</p>
+  <pre><code>#!/usr/bin/env python3</code></pre>
+  <p>I després l’executes així:</p>
+  <pre><code>./programa.py</code></pre>
+
+ 
+  <h2>Programa vs Procés</h2>
+   <p>La diferència entre programa i procés és fonamental en informàtica</p>
+ <h4>📄 Programa</h4>
+  <ul>
+    <li>És un <strong>fitxer de codi</strong> o conjunt d'instruccions escrites en un llenguatge de programació (com Python, C, etc.).</li>
+    <li><strong>No està en execució</strong>, només és el pla o recepta del que ha de fer l’ordinador.</li>
+    <li><strong>Exemples</strong>:
+      <ul>
+        <li>Un fitxer <code>main.py</code> que conté codi Python.</li>
+        <li>Un executable com <code>firefox.exe</code>.</li>
+      </ul>
+    </li>
+  </ul>
+  <p><strong>Metàfora:</strong> És com una recepta de cuina escrita en paper.</p>
+
+  <h4>⚙️ Procés</h4>
+  <ul>
+    <li>És un <strong>programa en execució</strong>.</li>
+    <li>Quan el sistema operatiu carrega un programa a la memòria i el comença a executar, esdevé un procés.</li>
+    <li>Té el seu <strong>espai de memòria</strong>, <strong>variables</strong>, <strong>estat</strong>, <strong>identificador (PID)</strong>, etc.</li>
+    <li>Poden haver-hi <strong>diversos processos</strong> del mateix programa alhora (ex: dues finestres de Firefox).</li>
+  </ul>
+  <p><strong>Metàfora:</strong> És com un cuiner que està seguint una recepta a la cuina, ara mateix.</p>
+
+  <h4> Taula resum</h4>
+  <table border="1" cellpadding="8">
+    <tr>
+      <th>Concepte</th>
+      <th>Programa</th>
+      <th>Procés</th>
+    </tr>
+    <tr>
+      <td>Què és</td>
+      <td>Codi font o binari</td>
+      <td>Programa en execució</td>
+    </tr>
+    <tr>
+      <td>Estat</td>
+      <td>Passiu</td>
+      <td>Actiu</td>
+    </tr>
+    <tr>
+      <td>Emmagatzematge</td>
+      <td>Disc dur</td>
+      <td>Memòria RAM</td>
+    </tr>
+    <tr>
+      <td>Únic?</td>
+      <td>Pot ser usat per molts processos</td>
+      <td>Cada procés és independent</td>
+    </tr>
+  </table>
+
+  <h4> Exemple amb Python</h4>
+  <pre><code># Programa:
+hello.py  → és només codi
+
+# Procés:
+python hello.py → quan l'executes, el sistema crea un procés
+  </code></pre>
+
+
+  <h2>Depuració de programes</h2>
+  <p>La depuració (o debugging) d’un programa en Python consisteix en el procés de localitzar i corregir errors (bugs) en el codi perquè funcioni correctament.</p>
+  <h3> Eines i tècniques de depuració</h3>
+
+  <h4>1. Impressions (<code>print</code>)</h4>
+  <pre><code>print("Valor de x:", x)</code></pre>
+
+  <h4>2. Ús d’excepcions (<code>try</code> / <code>except</code>)</h4>
+  <pre><code>try:
+    resultat = 10 / 0
+except ZeroDivisionError:
+    print("No es pot dividir entre zero!")</code></pre>
+
+  <h4>3. Depurador interactiu (<code>pdb</code>)</h4>
+  <pre><code>import pdb
+pdb.set_trace()</code></pre>
+
+  <h4>4. IDEs amb depurador</h4>
+  <p>Entorns com <strong>VS Code</strong>, <strong>PyCharm</strong> o <strong>Thonny</strong> ofereixen depuració gràfica amb punts de ruptura, seguiment pas a pas i visualització de variables.</p>
+
+  <h4>5. Comprovacions amb <code>assert</code></h4>
+  <pre><code>assert x > 0, "x hauria de ser positiu"</code></pre>
+
+  <h3> Objectiu de la depuració</h3>
+  <ul>
+    <li>Que el programa funcioni correctament</li>
+    <li>Que sigua estable en situacions imprevistes</li>
+    <li>Que sigua fàcil de mantenir</li>
+  </ul>
+
+</section>
 
 
 <section id="variables">
@@ -70,8 +310,19 @@
 
     <p>  <strong>En Python</strong>, no és necessari declarar el tipus d'una variable. Python el dedueix automàticament. Les variables es creen quan es realitza la seva primera assignació.   </p>
      <p class="tips">—Entra a Python i practica—</p>   
+  <p>Utilitza python des d'una terminal/cmd, o IDLE</p>   
+   <pre><code>
+          -- Exemple des de cmd, s'obri un cmd i s'executa l'ordre  python
+C:\Users\enrique>python
+Python 3.13.1 (tags/v3.13.1:0671451, Dec  3 2024, 19:06:28) [MSC v.1942 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+   </code></pre>
+   <p>o s'executa la utilitat IDLE </p>
+   <img src="imgs/idle.png" alt="eina idle"  width="90%">
 
-    <pre>
+   <pre>
+   
 x = 10             # Número enter (integer)
 nombre = "Ana"     # Cadena de text (String)
 nombre2 = 'Pedro'  # String amb cometes simples
@@ -186,44 +437,8 @@ y = 3.14     # Un número decimal
 z = "Hola"   # Una cadena de text
 a = True     # Un valor lògic
 b = None     # Un valor nul     </pre>
-<p class="tips"> Recorda: None es distint de none, True es distint de true  </p>
+<p class="tips"> Recorda: <strong> None</strong> és distint de <strong> none</strong>, <strong> True</strong> és distint de <strong> true</strong>  </p>
 
-<h2>Comentaris en el Codi de Python</h2>
-
-<p>     Els <strong>comentaris</strong> en Python serveixen per afegir notes o explicacions al codi que no són executades pel intèrpret de Python. 
-    Són útils per fer que el codi sigui més comprensible tant per a tu com per a altres persones que el llegeixin. </p>
-
-<h3>Formes de fer comentaris</h3>
-<p>     Hi ha dues formes de posar comentaris en Python: 
-    <strong>en una línia</strong> o <strong>en múltiples línies</strong>. </p>
-
-<ul>
-    <li><strong>Comentari d'una línia:</strong> Els comentaris d'una sola línia comencen amb el símbol <code>#</code>. El codi que segueix a aquest símbol serà ignorat per l'intèrpret.</li>
-    <li><strong>Comentari de múltiples línies:</strong> Els comentaris de diverses línies es poden crear amb cometes dobles triples (<code>""" ... """</code>) o cometes simples triples (<code>''' ... '''</code>).</li>
-</ul>
-
-<h3>Exemples de Comentaris:</h3>
-
-<pre>
-# Això és un comentari d'una línia, pot anar també darrere de codi
-x = 10  # Assignació d'un valor a x
-
-""" Això és un comentari 
-de diverses línies: Comentari Multilinia """
-y = 20  # Assignació d'un valor a y
-
-''' Amb tres cometes simples
-també es poden crear comentaris de diverses línies '''
-z = 30  # Assignació d'un valor a z  </pre>
-
-<h3>Alguns usos dels comentaris són:</h3>
-<ul>
-    <li>Explicar el propòsit del codi</li>
-    <li>Anotar recordatoris o tasques pendents (TODOs)</li>
-    <li>Desactivar parts del codi temporalment</li>
-    <li>Documentar el codi (com funciona)</li>
-    <li>Ajuda en la depuració</li>
-</ul>
 
     <h1>Escritura de dades en Python</h1>
     <h2>Funció <code>print()</code></h2>
@@ -265,9 +480,49 @@ z = 30  # Assignació d'un valor a z  </pre>
     print("Hola\nMón")      </code></pre>
   </section>
 
+<section id="comentaris">
+    <h1>Comentaris en el Codi de Python</h1>
+
+    <p>     Els <strong>comentaris</strong> en Python serveixen per afegir notes o explicacions al codi que no són executades pel intèrpret de Python. 
+        Són útils per fer que el codi sigui més comprensible tant per a tu com per a altres persones que el llegeixin. </p>
+
+    <h3>Formes de fer comentaris</h3>
+    <p>     Hi ha dues formes de posar comentaris en Python: 
+        <strong>en una línia</strong> o <strong>en múltiples línies</strong>. </p>
+
+    <ul>
+        <li><strong>Comentari d'una línia:</strong> Els comentaris d'una sola línia comencen amb el símbol <code>#</code>. El codi que segueix a aquest símbol serà ignorat per l'intèrpret.</li>
+        <li><strong>Comentari de múltiples línies:</strong> Els comentaris de diverses línies es poden crear amb cometes dobles triples (<code>""" ... """</code>) o cometes simples triples (<code>''' ... '''</code>).</li>
+    </ul>
+
+    <h3>Exemples de Comentaris:</h3>
+
+    <pre>
+    # Això és un comentari d'una línia, pot anar també darrere de codi
+    x = 10  # Assignació d'un valor a x
+
+    """ Això és un comentari 
+    de diverses línies: Comentari Multilinia """
+    y = 20  # Assignació d'un valor a y
+
+    ''' Amb tres cometes simples
+    també es poden crear comentaris de diverses línies '''
+    z = 30  # Assignació d'un valor a z  </pre>
+
+    <h3>Alguns usos dels comentaris són:</h3>
+    <ul>
+        <li>Explicar el propòsit del codi</li>
+        <li>Anotar recordatoris o tasques pendents (TODOs)</li>
+        <li>Desactivar parts del codi temporalment</li>
+        <li>Documentar el codi (com funciona)  **</li>
+        <li>Ajuda en la depuració</li>
+    </ul>
+
+</section>
+
 
     <section id="literals">
-      <h2>Literals</h2>
+      <h1>Literals</h1>
       <p>Un <strong>literal</strong>  en Python (i en programació en general) és un valor fix escrit directament al codi, 
         que no es calcula ni es deriva de cap altra expressió. És simplement una representació literal d’un valor.</p>
     <h2>Literals numèrics</h2>

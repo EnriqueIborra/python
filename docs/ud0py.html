@@ -600,6 +600,88 @@ else:
 
 x = int(input("Introdueix un nombre: "))
 print(classifica_nombre(x))</code></pre>
+<hr><hr>
+  <h1>Programació OO vs Programació OE (esdeveniments) </h1>
+  <h2> <strong>Programació Orientada a Objectes (POO)</strong></h2>
+
+  <h3> Definició:</h3>
+  <p>És un paradigma basat en la creació d'<strong>objectes</strong> que encapsulen dades i comportament. Cada objecte és una instància d'una <strong>classe</strong>.</p>
+
+  <h3> Característiques:</h3>
+  <ul>
+    <li><strong>Classes i objectes</strong>: Definim estructures (classes) i en creem instàncies (objectes).</li>
+    <li><strong>Encapsulament</strong>: Les dades i funcions es mantenen dins de l'objecte.</li>
+    <li><strong>Herència</strong>: Les classes poden derivar-ne d'altres per reutilitzar codi.</li>
+    <li><strong>Polimorfisme</strong>: Diferents objectes poden respondre de manera diferent al mateix missatge/metode.</li>
+  </ul>
+
+  <h3>📎 Exemple (en Python):</h3>
+  <pre><code>class Cotxe:
+    def __init__(self, marca):
+        self.marca = marca
+
+    def arrancar(self):
+        print(f"El cotxe {self.marca} ha arrancat.")
+
+cotxe1 = Cotxe("Toyota")
+cotxe1.arrancar()</code></pre>
+
+  <hr>
+
+  <h2> <strong>Programació Orientada a Esdeveniments (POE)</strong></h2>
+
+  <h3> Definició:</h3>
+  <p>És un paradigma on el flux del programa es controla a través de la <strong>gestió d’esdeveniments</strong> com clics de ratolí, entrada de teclat, missatges de xarxa, etc.</p>
+
+  <h3> Característiques:</h3>
+  <ul>
+    <li><strong>Gestors d’esdeveniments</strong>: Funcions que responen a determinats esdeveniments.</li>
+    <li><strong>Listeners (o observadors)</strong>: Estan a l’espera d’un esdeveniment per actuar.</li>
+    <li><strong>Desencadenament (trigger)</strong>: L’execució no segueix un flux lineal, sinó que reacciona als esdeveniments.</li>
+    <li>Molt usada en <strong>interfaces gràfiques</strong>, videojocs i aplicacions web asíncrones.</li>
+  </ul>
+
+  <h3>📎 Exemple (en JavaScript):</h3>
+  <pre><code>document.getElementById("boto").addEventListener("click", function() {
+    alert("Has fet clic al botó!");
+});</code></pre>
+
+  <hr>
+
+  <h2> <strong>Diferències Clau</strong></h2>
+
+  <table border="1" cellspacing="0" cellpadding="6">
+    <tr>
+      <th>Aspecte</th>
+      <th>POO</th>
+      <th>POE</th>
+    </tr>
+    <tr>
+      <td>Enfocament</td>
+      <td>Modelar entitats com objectes</td>
+      <td>Reaccionar a esdeveniments</td>
+    </tr>
+    <tr>
+      <td>Flux de control</td>
+      <td>Controlat per lògica interna de les classes</td>
+      <td>Controlat per l’activació d’esdeveniments</td>
+    </tr>
+    <tr>
+      <td>Ús típic</td>
+      <td>Aplicacions amb lògica de negoci complexa</td>
+      <td>Aplicacions interactives, UI, videojocs</td>
+    </tr>
+    <tr>
+      <td>Exemple d’ús</td>
+      <td>ERP, sistemes de gestió, models de domini</td>
+      <td>Aplicacions web, GUI, videojocs, Arduino</td>
+    </tr>
+  </table>
+
+  <hr>
+
+  <h2>🧩 <strong>Combinació dels dos</strong></h2>
+  <p>Molts entorns de programació combinen <strong>POO</strong> amb <strong>POE</strong>. Per exemple, una aplicació web pot tenir objectes (usuari, producte, comanda) i també respondre a esdeveniments com clics o sol·licituds del servidor.</p>
 
 
 </section>
