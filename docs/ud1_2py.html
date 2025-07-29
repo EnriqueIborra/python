@@ -271,6 +271,7 @@ pdb.set_trace()</code></pre>
     <li>Que sigua fàcil de mantenir</li>
   </ul>
   <br><hr>
+  <h2>Com utilitzar la depuració des de VSCode</h2>
   <a href="https://www.youtube.com/watch?v=VL5xJmdAHes">Video sobre com utilitzar la depuració (debugger) des de VSCode</a>
 
 </section>
@@ -299,10 +300,11 @@ pdb.set_trace()</code></pre>
   <li>Té un <strong>valor</strong>, com ara <code>25</code>, <code>"Joan"</code>, <code>true</code>, etc.</li>
   <li>El valor pertany a un <strong>tipus de dada</strong>:
     <ul>
-      <li><strong>Enter</strong> (nombre sencer)</li>
-      <li><strong>Decimal</strong> (<code>float</code>)</li>
+      <li><strong>Numeric</strong> Enter (nombre sencer), Decimal (float) , Complexe (complex) </li>
       <li><strong>Text</strong> (cadena de caràcters)</li>
       <li><strong>Booleà</strong> (<code>true</code> o <code>false</code>)</li>
+      <li><strong>None</strong> Tipus especial, buit</li>
+      <li><strong>Colecció</strong> Tipus avançats (es voran més endavant....)</li>
     </ul>
   </li>
   <li>El seu valor <strong>pot modificar-se</strong> al llarg del temps que dure el procés.</li>
@@ -882,11 +884,17 @@ decimal = float("3.14")    # ara és 3.14 (float)</code></pre>
 
   <h3> De nombre a booleà</h3>
   <pre><code>print(bool(0))             # False
-print(bool(5))             # True</code></pre>
+print(bool(5))             # True
+print(bool(0.0))</code></pre>
 
   <h3> De cadena a booleà</h3>
   <pre><code>print(bool(""))            # False (cadena buida)
 print(bool("hola"))        # True</code></pre>
+  <h3> Altres</h3>
+  <pre><code>
+print ( 5 + True )
+print ( True + True)
+print(int(True))   </code></pre>
 
   <h2>⚠️ Compte amb errors comuns</h2>
   <p>

@@ -74,7 +74,7 @@
         La indentació s'indica amb 4 espais (mínim) o un tabulador. Aquest principi és fonamental en Python, ja que defineix l'estructura del programa, a diferència d'altres llenguatges que utilitzen claus <code>{}</code>.
       </p>
     
-      <h3>Exemple d'ús de la condicional if</h3>
+      <h3>Exemple d'ús del condicional if - else</h3>
       <pre><code>
     edad = 20
     if edad >= 18:
@@ -83,7 +83,20 @@
     else:
         print("Eres menor de edad")  # aquesta ordre també està indentada
       </code></pre>
-    
+
+  <h3>Exemple d'ús del condicional if amb elif i  else</h3>      
+      <pre><code>
+if n<=4:
+    print ("Suspes")
+elif n<=6:
+    print("Aprovat")
+elif n<=8:
+    print("Notable")
+else:
+    print("Excelent")         
+      </code></pre>            
+
+      
       <h3>Condicional en una sola línia</h3>
       <p>
         Si la estructura només té una línia, no és necessari indentat, tot i que és habitual fer-ho així:
@@ -91,6 +104,7 @@
       <pre><code>
     if edad >= 18: print("Eres mayor de edad")
       </code></pre>
+
     <hr>
       <h2>Guia de Estils de Python (PEP 8)</h2>
       <p>
@@ -142,8 +156,23 @@
           <li>Si l'edat (<code>edad</code>) és 18 o més, la variable <code>missatge</code> rep el valor <code>"Major d'edat"</code>.</li>
           <li>Si l'edat és menor a 18, la variable <code>missatge</code> rep el valor <code>"Menor d'edat"</code>.</li>
       </ul>
+      <h2>match-case</h2>
+      <p>Desde Python 3.10: <code> match-case</code>, una estructura pareguda al <code>switch</code></p>
+      <pre><code>
+def switch_example(value):
+    match value:
+        case 1:
+            return "Uno"
+        case 2:
+            return "Dos"
+        case 3:
+            return "Tres"
+        case _:
+            return "Otro valor"
+      </code></pre>
+      <p>case _: funciona como <strong> default </strong></p>
 
-        <hr>
+        <br><br><hr><hr>
       <img src="imgs/bucle.png" alt="bucles" class="imatge-dreta" width="20%">
       <h1>Bucles (for, while) en Python</h1>
           <p>Els bucles són una estructura essencial en la programació que permet repetir un conjunt d'operacions múltiples vegades.</p>

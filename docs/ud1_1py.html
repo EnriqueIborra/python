@@ -39,7 +39,8 @@
 
   <section id="instalar">
       
-    <h1>1. Verificar i instal·lar Python</h1>
+    <h1>Verificar i instal·lar Python</h1>
+    <h2>1. Verificar Python</h2>
     <p>Per a poder programar en Python, és necessari tindre instal·lat aquest llenguatge al nostre equip. En esta secció aprendràs a verificar si Python ja està instal·lat i, si no ho està, com instal·lar-lo.</p>
     
     <h2>Verificar si Python està instal·lat</h2>
@@ -59,11 +60,11 @@
       </li>
     </ol>
     
-    <h1>2. Instal·lar Python</h1>
+    <h2>2. Instal·lar Python</h2>
     
     <p>Si no tens Python instal·lat o necessites actualitzar-lo, pots seguir els passos adequats segons el teu sistema operatiu:</p>
     
-    <h2>2.1. En Windows</h2>
+    <h3>2.1. En Windows</h3>
     <ol>
       <li>Accedeix al lloc web oficial: 
         <a href="https://www.python.org/downloads/windows/" target="_blank">https://www.python.org/downloads/windows/</a>
@@ -82,7 +83,7 @@
       *** També en PowerShell
     </ol>
     
-    <h2>2.2. En macOS</h2>
+    <h3>2.2. En macOS</h3>
     <ol>
       <li>Descarrega l’instal·lador des de:
         <a href="https://www.python.org/downloads/macos/" target="_blank">https://www.python.org/downloads/macos/</a>
@@ -93,7 +94,7 @@
       </li>
     </ol>
     
-    <h2>2.3. En Linux</h2>
+    <h3>2.3. En Linux</h3>
     <p>La majoria de distribucions Linux ja inclouen Python. Per a verificar-ho, obri la terminal i escriu:</p>
     <pre>python3 --version</pre>
     <p>Si no està instal·lat o desitges actualitzar-lo, pots utilitzar el gestor de paquets corresponent. Per exemple, en Debian/Ubuntu:</p>
@@ -160,7 +161,7 @@
 <h2>Instal·lar l’eina per a crear entorns virtuals - VENV</h2>
 <pre>$ sudo apt install python3-venv</pre>
 
-<h2>4.1 Crear un entorn virtual</h2>
+<h3>4.1 Crear un entorn virtual</h3>
 <ol>
   <li>Obri una terminal o consola de comandes.</li>
   <li>Ubica’t en la carpeta on vols crear l’entorn virtual o crea’n una de nova:
@@ -173,27 +174,28 @@ cd mi_proyecto</code></pre>
   </li>
 </ol>
 
-<h2>4.2 Activar l’entorn virtual</h2>
+<h3>4.2 Activar l’entorn virtual</h3>
 
-<h3>En Windows</h3>
+<h4>En Windows</h4>
 <pre><code>mientorno\Scripts\activate</code></pre>
 
-<h3>En macOS o Linux</h3>
+<h4>En macOS o Linux</h4>
 <pre><code>source mientorno/bin/activate</code></pre>
 
 <p>Després d’activar l’entorn virtual, hauries de vore el nom de l’entorn (per exemple, <code>(mientorno)</code>) al principi de la línia en la consola, indicant que està actiu.</p>
 
-<h2>4.3 Verificar instal·lació de pip en l’entorn</h2>
+<h3>4.3 Verificar instal·lació de pip en l’entorn</h3>
 <p>Una vegada activat l’entorn, assegura’t que pip estiga disponible:</p>
 <pre><code>pip --version</code></pre>
 <p>A partir d’ací, ja es poden instal·lar paquets <strong>dins de l’entorn virtual</strong></p>
 
-<h2>4.4 Desactivar l’entorn virtual</h2>
+<h3>4.4 Desactivar l’entorn virtual</h3>
 <p>Quan acabes de treballar en el teu projecte, pots eixir de l’entorn virtual executant:</p>
 <pre><code>deactivate</code></pre>
 
 <p>Això et retornarà a l’entorn global del sistema.</p>
 <br><hr>
+<h2>Entorn virtual des de VSCode</h2>
 <a href="https://www.youtube.com/watch?v=TNtrAvNNxTY">Video sobre entorns virtuals en VSCode</a>
 
  </section>
@@ -215,25 +217,45 @@ cd mi_proyecto</code></pre>
   <pre><code>  pip install pyfiglet
   ús:   pyfiglet hola python   </code></pre>
   
-  <h2>5.2 Instal·lar múltiples paquets des d’un fitxer</h2>
-  <p>També és possible instal·lar diversos paquets definits en un fitxer <code>requirements.txt</code> amb la següent ordre:</p>
-  <pre><code>pip install -r requirements.txt</code></pre>
-  <p>Este fitxer conté una llista de paquets, un per línia, que el projecte necessita.</p>
-  
-  <h2>5.3 Veure paquets instal·lats</h2>
+  <h2>5.2 Veure paquets instal·lats</h2>
   <p>Per a veure quins paquets estan instal·lats en el teu entorn actual:</p>
   <pre><code>pip list</code></pre>
   
-  <h2>5.4 Desinstal·lar un paquet</h2>
+  <h2>5.3 Desinstal·lar un paquet</h2>
   <p>Si necessites desinstal·lar un paquet:</p>
   <pre><code>pip uninstall nom_del_paquet</code></pre>
   
-  <h2>5.5 Actualitzar un paquet</h2>
+  <h2>5.4 Actualitzar un paquet</h2>
   <p>Per a actualitzar un paquet a la seua última versió:</p>
   <pre><code>pip install --upgrade nom_del_paquet</code></pre>
-  
 
+<h2>5.5 Instal·lar múltiples paquets des d’un fitxer</h2>
+  <p>També és possible instal·lar diversos paquets definits en un fitxer <code>requirements.txt</code> amb la següent ordre:</p>
+  <pre><code>pip install -r requirements.txt</code></pre>
+  <p>Este fitxer conté una llista de paquets, un per línia, que el projecte necessita.</p>
+    
+  <h2>5.6 Obtindre el fitxer <strong> requirements.txt</strong></h2>
+  <pre><code>pip freeze > requirements.txt
+</code></pre>
+<p>Però, si només vols les dependències utilitzades realment al teu projecte (no tot el que hi ha instal·lat), 
+  pots usar eines com:  <strong>pipreqs</strong></p>
+
+  <pre><code>
+pip install pipreqs
+pipreqs /ruta/al/teu/projecte    
+  </code></pre>
+<p>Això crearà un fitxer <code>requirements.txt</code> només amb els paquets utilitzats al codi font.</p>
+
+<p>Obtenir el fitxer requirements.txt és important perquè:</p>
+<ol>
+  <li>El fitxer requirements.txt conté totes les dependències del teu projecte (amb les versions). Això permet a altres persones (o a tu mateix més endavant) instal·lar exactament les mateixes biblioteques i versions</li>
+  <li>Quan treballes amb altres desenvolupadors, poden preparar el seu entorn amb una sola comanda. És una pràctica estàndard en projectes Python</li>
+  <li>Plataformes com Heroku, AWS, Docker, etc. utilitzen el requirements.txt per instal·lar les dependències quan desplegues una aplicació</li>
+  <li>Et permet assegurar que les versions dels paquets que estàs utilitzant no canviïn inesperadament. Així evites errors quan es publiquen noves versions incompatibles</li>
+  <li>Forma part de l'estàndard de qualsevol projecte Python ben estructurat. Juntament amb altres fitxers com README.md, .gitignore, etc.</li>
+</ol>
  </section>
+
 
  <section id="editor">
   <h1>6. Instal·lar un editor de text o un IDE</h1>
@@ -963,9 +985,7 @@ ventana.mainloop()
 
 <section id="exercicis">
   <h1>Exercicis</h1>
-<h3>Els exercicis i tests corresponents a esta unitat es troben en Aules</h3>
-
-
+  <h3>Els exercicis i tests corresponents a esta unitat es troben en Aules</h3>
 </section>
 
 </main>
