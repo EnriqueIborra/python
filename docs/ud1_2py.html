@@ -715,8 +715,8 @@ a * b - c</code></pre>
     resta = 10 - 5             # 5
     multiplicació = 10 * 5    # 50
     divisió = 10 / 5          # 2.0  NO ENTERO, decimal o float
-    divisió_entera = 10 // 3  # 3 (entero)
-    modulo = 10 % 3           # 1 (resto)
+    divisió_entera = 10 // 3  # 3 (enter)
+    mòdul = 10 % 3           # 1 (resto)
     exponent = 2 ** 3         # 8 (2 elevat a 3) enter
     exponent = 2 ** -3        # 0,125 (2 elevat a -3) float
     exponent = 2.2 ** 3       # 10.64800  float
@@ -733,6 +733,8 @@ a * b - c</code></pre>
     //=  # x //= 1 equival a x = x // 1
     %=   # x %= 1 equival a x = x % 1
     **=  # x **= 1 equival a x = x ** 1         </code></pre>
+    <p>Python no té els operadors ++ ni -- com en C/C++ o Java. Si escrius i++ o i--, obtindràs un error de sintaxi</p>
+    <p>Aquest disseny és coherent amb la immutabilitat dels ints a Python i evita confusions sobre l’ordre d’avaluació</p>
     
       <h2>Operadors de Comparació</h2>
       <p>         Els operadors de comparació s'utilitzen per comparar dos valors.       </p>
@@ -743,6 +745,8 @@ a * b - c</code></pre>
     5 > 10    # False (major que)
     5 <= 10   # True (menor o igual que)
     5 >= 10   # False (major o igual que)       </code></pre>
+    <p>En Python, l’operador <> era usat com a operador de desigualtat (com !=) en versions antigues de Python (com Python 2)</p>
+    <p>L’ús de <> ja no és vàlid i donarà un error de sintaxi. Per comparar desigualtats, s’utilitza només !=</p>
     
       <h2>Operadors Lògics</h2>
       <p>         Els operadors lògics s'utilitzen per combinar expressions booleanes.       </p>
@@ -750,6 +754,12 @@ a * b - c</code></pre>
     True and False   # False
     True or False    # True
     not True         # False        </code></pre>
+    <p>Precedència</p>
+    <ol>
+      <li>not</li>
+      <li>and</li>
+      <li>or</li>
+    </ol>
     
       <h2>Operadors d'Identitat</h2>
       <p>         Els operadors d'identitat comproven si dues variables referencien al mateix objecte de memòria.       </p>

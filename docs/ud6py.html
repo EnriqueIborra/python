@@ -14,516 +14,742 @@
 
   <header>
     <a href="index.html"><img src="imgs/phyton2-rbg.png" alt="python"></a>
-    <h1>Unitat Didàctica 6: Classes en POO</h1>
+    <h1>Unitat Didàctica 6: Entrada i Eixida en Python</h1>
     <h1> </h1>
   </header>
 
 <nav>
   <h3>Índex</h3>
-  
-  <a href="#classe">Concepte de classe</a>
-  <a href="#estructura">Estructura i membres d'una classe</a>
-  <a href="#visibilitat">Visibilitat</a>
-  <a href="#metodes">Metodes</a>
-  <a href="#herencia">Herencia</a>
-  <a href="#iterables">Classes iterables</a>
+  <a href="#escritura">Escritura / Eixida</a>
+  <a href="#lectura">Lectura / Entrada </a>
+  <a href="#fitxers">Entrada i Eixida en Fitxers</a>
+  <a href="#GUI">Entrada i Eixida en GUI</a>
+  <a href="#bbdd">Entrada i Eixida en BBDD</a>
   <a href="#exercicis">Exercicis</a>
-  
+   
 </nav>
 
 <main>
 
-<section id="classe">
-  <h1> Concepte de Classe en Python</h1>
 
-  <p>Una <strong>classe</strong> és una plantilla que serveix per crear <strong>objectes</strong>. Defineix quins atributs (dades) i mètodes (funcions) tindran aquests objectes.</p>
+<section id="escritura">
+    <h1>Escritura de dades en Python (EIXIDA)</h1>
+    <h2>Funció <code>print()</code></h2>
 
-  <h2> Exemple bàsic de definició de classe</h2>
-  <pre><code>class Cotxe:
-    def __init__(self, marca, model):
-        self.marca = marca
-        self.model = model
+    <p>
+        La funció <code>print()</code> en Python és una de les més utilitzades i serveix per a mostrar missatges, dades o qualsevol eixida per pantalla a la consola. 
+        És molt versàtil i permet personalitzar què i com es mostra la informació.
+    </p>
+    
+    <p>
+        Per defecte, <code>print()</code> afegeix un salt de línia (<code>\n</code>) al final de cada línia impresa.
+    </p>
+    
+    <pre><code>
+    &gt;&gt;&gt; a = 3332 + 23223 * 23
+    &gt;&gt;&gt; print(a)
+    &gt;&gt;&gt; print(a + 23334)
+    &gt;&gt;&gt; print("Hola, món!")
+    </code></pre>
+    
+    <p>    La funció <code>print()</code> adquireix més sentit quan s’utilitza en un entorn no interactiu, com ara en programes amb extensió <code>.py</code> que s’executen directament des de la línia d’ordres del sistema operatiu.     </p>
+     <p class="tips"> <br>==>  A partir d'ací, utilitzem VSCode   <br><br>
+      Per utilitzar VSCode, s'ha de posar el codi en un fitxer, i el fitxer dins d'una carpeta <br>
+      Primer) Crear carpeta  <br>
+      Segon) Obrir el VSCode, i des del VSCode obrirem un projecte (carpeta) <br>
+       . ==>  Open Folder  <br>
+      Tercer) Crear fitxer  (new file) <br>
+      Quart)  Escriure codi  <br>
+      Cinqué) Executar codi  (click dret sobre el codi -> Run Python File in Terminal)<br>
+      . <br>
+      <a href="https://www.youtube.com/watch?v=LOGZAf08c6E"> Tutorial ràpid de VSCode-Python</a>
+     </p>   
+     
+    <h3>Personalització amb l'argument <code>end</code></h3>
+     <p>         Per defecte, <code>print()</code> imprimeix un salt de línia al final. Aquest comportament es pot modificar amb el paràmetre <code>end</code>.     </p>
+     <ul>
+        <li><strong>Imprimir en la mateixa línia:</strong></li>
+    </ul>
+    
+    <pre><code>
+    print("Hola", end=" ")
+    print("Món", end="!")       </code></pre>
+    <ul>
+        <li><strong>Sense salt de línia:</strong></li>
+    </ul>
+    <pre><code>
+    for i in range(5):
+        print(i, end="")  # No afegeix salt de línia       </code></pre>
+    <ul>
+        <li><strong>Insertar un salt de línia manualment amb <code>\n</code>:</strong></li>
+    </ul>
+    <pre><code>
+    print("Hola\nMón")      </code></pre>
+     <img src="imgs/provaVSCode1.png" alt="VSCode1"  width="45%"> 
+    <h2>Altres consideracions sobre <code>print()</code></h2>
 
-    def mostrar_info(self):
-        print(f"{self.marca} {self.model}")</code></pre>
-
-  <h2>🚗 Creació d’objectes a partir de la classe</h2>
-  <pre><code>cotxe1 = Cotxe("Toyota", "Corolla")
-cotxe2 = Cotxe("Ford", "Focus")
-
-cotxe1.mostrar_info()  # Toyota Corolla
-cotxe2.mostrar_info()  # Ford Focus</code></pre>
-
-  <h2> Parts d'una classe</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Component</th>
-        <th>Descripció</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>class</code></td>
-        <td>Paraula clau per crear una classe</td>
-      </tr>
-      <tr>
-        <td><code>__init__()</code></td>
-        <td>Constructor: defineix com s'inicialitza l’objecte</td>
-      </tr>
-      <tr>
-        <td><code>self</code></td>
-        <td>Referència a l'objecte actual</td>
-      </tr>
-      <tr>
-        <td>Atributs</td>
-        <td>Informació de l’objecte (com <code>self.marca</code>)</td>
-      </tr>
-      <tr>
-        <td>Mètodes</td>
-        <td>Funcions dins la classe (com <code>mostrar_info()</code>)</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h2>🧾 Resum ràpid</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Concepte</th>
-        <th>Significat</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Classe</td>
-        <td>Plantilla per crear objectes</td>
-      </tr>
-      <tr>
-        <td>Objecte</td>
-        <td>Instància concreta d’una classe</td>
-      </tr>
-      <tr>
-        <td>Atribut</td>
-        <td>Característica de l’objecte (com el nom o l’edat)</td>
-      </tr>
-      <tr>
-        <td>Mètode</td>
-        <td>Acció o comportament de l’objecte</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h2>🎓 Exemple de la vida real</h2>
-  <ul>
-    <li><strong>Classe:</strong> <code>Persona</code></li>
-    <li><strong>Objecte:</strong> <code>p1 = Persona("Anna", 30)</code></li>
-    <li><strong>Atributs:</strong> nom, edat</li>
-    <li><strong>Mètodes:</strong> parlar(), caminar(), etc.</li>
-  </ul>
-
-</section>  
-
-
-<section id="estructura">
-
-  <h1> Estructura i Membres d'una Classe en Python</h1>
-
-  <p>Una <strong>classe</strong> en Python és una plantilla per crear objectes. Conté atributs (dades) i mètodes (funcions) que defineixen el comportament i l’estat dels objectes.</p>
-
-  <h2> Estructura bàsica</h2>
-  <pre><code>class NomClasse:
-    atribut_classe = valor
-
-    def __init__(self, paràmetres):
-        self.atribut_instancia = valor
-
-    def metode(self):
-        pass</code></pre>
-
-  <h2> Membres d'una classe</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Tipus</th>
-        <th>Descripció</th>
-        <th>Exemple</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Atribut de classe</td>
-        <td>Compartit per tots els objectes</td>
-        <td><code>atribut_classe = 0</code></td>
-      </tr>
-      <tr>
-        <td>Atribut d’instància</td>
-        <td>Únic per a cada objecte</td>
-        <td><code>self.nom = "Anna"</code></td>
-      </tr>
-      <tr>
-        <td>Constructor</td>
-        <td>Inicialitza l’objecte</td>
-        <td><code>def __init__(self):</code></td>
-      </tr>
-      <tr>
-        <td>Mètode d’instància</td>
-        <td>Opera sobre l’objecte (usa <code>self</code>)</td>
-        <td><code>def parlar(self):</code></td>
-      </tr>
-      <tr>
-        <td>Mètode de classe</td>
-        <td>Opera sobre la classe (usa <code>@classmethod</code>)</td>
-        <td><code>def crear(cls):</code></td>
-      </tr>
-      <tr>
-        <td>Mètode estàtic</td>
-        <td>No depèn ni de la classe ni de l’objecte</td>
-        <td><code>def ajuda():</code></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h2> Exemple complet</h2>
-  <pre><code>class Persona:
-    especie = "Humà"  # Atribut de classe
-
-    def __init__(self, nom, edat):
-        self.nom = nom          # Atribut d’instància
-        self.edat = edat
-
-    def saludar(self):          # Mètode d’instància
-        print(f"Hola! Sóc {self.nom}.")
-
-    @classmethod
-    def info_especie(cls):      # Mètode de classe
-        print(f"Tots som {cls.especie}")
-
-    @staticmethod
-    def ajuda():                # Mètode estàtic
-        print("Usa __init__ per crear objectes.")</code></pre>
-
-  <h2> Resum ràpid</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Membre</th>
-        <th>Funció</th>
-        <th>Accés</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>atribut_classe</code></td>
-        <td>Valor comú a tots els objectes</td>
-        <td><code>Classe.nom</code></td>
-      </tr>
-      <tr>
-        <td><code>self.atribut</code></td>
-        <td>Valor específic de cada objecte</td>
-        <td>Només via instància</td>
-      </tr>
-      <tr>
-        <td><code>@classmethod</code></td>
-        <td>Treballa amb la classe (cls)</td>
-        <td><code>Classe.metode()</code></td>
-      </tr>
-      <tr>
-        <td><code>@staticmethod</code></td>
-        <td>No usa ni <code>self</code> ni <code>cls</code></td>
-        <td><code>Classe.metode()</code></td>
-      </tr>
-      <tr>
-        <td><code>__init__</code></td>
-        <td>Constructor de l'objecte</td>
-        <td>Executat automàticament</td>
-      </tr>
-    </tbody>
-  </table>
-
-</section>
-
-
-<section id="visibilitat">
-  <h1> Visibilitat en Classes en Python</h1>
-
-  <p>En Python, la visibilitat determina si un atribut o mètode d'una classe és accessible des de fora. Python no fa servir paraules clau com <code>public</code> o <code>private</code>, però utilitza convencions amb els noms.</p>
-
-  <h2> Tipus de visibilitat</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Tipus</th>
-        <th>Com s’escriu</th>
-        <th>Accessible des de fora?</th>
-        <th>Comentari</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Pública</td>
-        <td><code>self.nom</code></td>
-        <td>✅ Sí</td>
-        <td>Qualsevol pot accedir</td>
-      </tr>
-      <tr>
-        <td>Protegida</td>
-        <td><code>self._nom</code></td>
-        <td>⚠️ Sí (es desaconsella)</td>
-        <td>Convenció per indicar ús intern</td>
-      </tr>
-      <tr>
-        <td>Privada</td>
-        <td><code>self.__nom</code></td>
-        <td>🚫 No directament</td>
-        <td>Només accessible dins la classe</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h2>🔧 Exemple de codi</h2>
-  <pre><code>class Persona:
-    def __init__(self, nom, edat):
-        self.nom = nom           # Públic
-        self._edat = edat        # Protegit
-        self.__dni = "12345678Z" # Privat
-
-    def mostrar_info(self):
-        print(f"Nom: {self.nom}, Edat: {self._edat}")
-
-    def mostrar_dni(self):
-        print(f"DNI: {self.__dni}")
-
-p = Persona("Anna", 30)
-
-print(p.nom)        #  ✅ Públic   ->  mostra : Anna
-print(p._edat)      # ⚠️ Protegit  ->  mostra: 30
-# print(p.__dni)    # ❌ Error: No accessible directament  -> mostra error
-
-p.mostrar_dni()     # ✅ Accés a privat amb mètode  -> mostra:  DNI: 12345678Z
-</code></pre>
-
-  <h2>🔍 Name Mangling (accedir a atributs privats)</h2>
-  <p>Els atributs privats es poden accedir si coneixes el nom intern generat per Python:</p>
-  <pre><code>print(p._Persona__dni)  # ✅ Possible (però no recomanat)</code></pre>
-
-  <h2> Resum ràpid</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Notació</th>
-        <th>Tipus</th>
-        <th>Accés extern</th>
-        <th>Ús recomanat</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>atribut</code></td>
-        <td>Públic</td>
-        <td>✅ Sí</td>
-        <td>Per atributs oberts</td>
-      </tr>
-      <tr>
-        <td><code>_atribut</code></td>
-        <td>Protegit</td>
-        <td>⚠️ Sí</td>
-        <td>Ús intern o per subclasses</td>
-      </tr>
-      <tr>
-        <td><code>__atribut</code></td>
-        <td>Privat</td>
-        <td>🚫 No (excepte amb truc)</td>
-        <td>Per ocultar dades sensibles</td>
-      </tr>
-    </tbody>
-  </table>
-
-
-
-</section>
-
-<section id="metodes">
-   <h1>Mètodes especials</h1>
-   <h2> Mètodes màgics o “dunder”</h2>
-        <p>Els mètodes especials comencen i acaben amb dos guions baixos (<code>__</code>). Se'ls anomena sovint “dunder” (de l'anglés “<strong>Double UNDERscore</strong>”).</p>
-
+        <h3>Sintaxi de <code>print()</code></h3>
+        <pre><code>print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False)</code></pre>
+          
         <ul>
-            <li><code>__init__</code>: Inicialitza un objecte. Sempre s’executa quan es crea una nova instància.</li>
-            <li><code>__str__</code>: Retorna una representació en forma de cadena de text de l’objecte (útil per imprimir-lo).</li>
-            <li><code>__len__</code>: Permet definir la longitud de l’objecte (quan s’utilitza amb <code>len(obj)</code>).</li>
+            <li><strong>*objects:</strong>
+                <ul>
+                    <li>Pot ser un o diversos objectes que es volen imprimir (separats per comes <code>,</code>).</li>
+                    <li>Els valors es convertixen automàticament a cadenes (amb la funció <code>str()</code>).</li>
+                </ul>
+            </li>
+            <li><strong>sep</strong> (opcional):
+                <ul>
+                    <li>Defineix el separador entre els objectes.</li>
+                    <li>Per defecte és un espai <code>' '</code>.</li>
+                </ul>
+            </li>
+            <li><strong>end</strong> (opcional):
+                <ul>
+                    <li>Indica què s’imprimirà al final de l’eixida.</li>
+                    <li>Per defecte és un salt de línia <code>'\n'</code>.</li>
+                </ul>
+            </li>
+            <li><strong>file</strong> (opcional):
+                <ul>
+                    <li>Indica el flux on s'enviarà l’eixida.</li>
+                    <li>Per defecte és la consola (<code>sys.stdout</code>).</li>
+                    <li>També pots redirigir l’eixida a un fitxer:</li>
+                </ul>
+                <pre><code>with open("eixida.txt", "w") as fitxer:
+            print("Hola món", file=fitxer)</code></pre>
+            </li>
+            <li><strong>flush</strong> (opcional):
+                <ul>
+                    <li>Si es configura com a <code>True</code>, buida el buffer d’eixida immediatament.</li>
+                    <li>És útil en programes que requerixen imprimir dades en temps real.</li>
+                </ul>
+            </li>
         </ul>
-
-        <h3>Exemple amb __str__</h3>
-        <pre><code>class Persona:
-        def __init__(self, nom, edat):
-            self.nom = nom
-            self.edat = edat
-
-        def __str__(self):
-            return f"{self.nom}, {self.edat} anys"
-
-    persona = Persona("Anna", 30)
-    print(persona)  # Output: Anna, 30 anys
-        </code></pre>
-
-        <h3>Altres mètodes dunder habituals:</h3>
-        <ul>
-            <li><code>__add__</code>, <code>__sub__</code>: Per sumar o restar objectes.</li>
-            <li><code>__eq__</code>, <code>__lt__</code>, <code>__gt__</code>: Per comparar objectes (igual, menor, major).</li>
-            <li><code>__iter__</code>, <code>__next__</code>: Per fer iterables personalitzats (com en bucles <code>for</code>).</li>
-            <li><code>__getattr__</code>, <code>__setattr__</code>, <code>__delattr__</code>: Per controlar l’accés i modificació d’atributs.</li>
-        </ul>
-
-        <p>Per veure tots els mètodes i atributs disponibles d’un objecte pots utilitzar:</p>
-        <pre><code>print(dir(obj))</code></pre>
-                       
-
-
-</section>
-
-<section id="herencia">
-   <h1>Herència</h1>
-     <p>La <strong>herència</strong> permet a una classe (filla) adquirir els atributs i mètodes d’una altra classe (pare). És un dels pilars de la POO i facilita la reutilització de codi i l’organització jeràrquica.</p>
-
-  <h2> Estructura bàsica</h2>
-  <pre><code>class ClassePare:
-    # atributs i mètodes
-
-class ClasseFilla(ClassePare):
-    # hereta tot i pot afegir o modificar</code></pre>
-
-  <h2>🧪 Exemple bàsic</h2>
-  <pre><code>class Animal:
-    def parlar(self):
-        print("Fa algun so")
-
-class Gos(Animal):
-    def parlar(self):  # sobrescriu
-        print("Bup bup!")
-
-class Gat(Animal):
-    def parlar(self):
-        print("Miau!")
-
-a = Animal()
-a.parlar()   # Fa algun so
-
-g = Gos()
-g.parlar()   # Bup bup!
-
-cat = Gat()
-cat.parlar() # Miau!
-</code></pre>
-
-  <h2> Cridar el constructor del pare amb <code>super()</code></h2>
-  <pre><code>class Persona:
-    def __init__(self, nom):
-        self.nom = nom
-
-class Estudiant(Persona):
-    def __init__(self, nom, curs):
-        super().__init__(nom)
-        self.curs = curs</code></pre> 
-
-<h2>Notes:</h2>
-<ul>
-    <li><code>super()</code> s'utilitza per a cridar mètodes de la classe base.</li>
-    <li>Les subclasses poden sobrescriure mètodes de la classe base si necessiten comportament específic.</li>
-</ul>
-    
-<hr>
-<h1>Encapsulació</h1>
-
-<p>En Python, pots controlar l'accés als atributs mitjançant modificadors d'accés:</p>
-<ul>
-    <li><strong>Públic</strong> (<code>nom</code>): Es pot accedir des de qualsevol lloc.</li>
-    <li><strong>Protegit</strong> (<code>_nom</code>): Indica que és per a ús intern (per convenció).</li>
-    <li><strong>Privat</strong> (<code>__nom</code>): Només accessible dins de la classe.</li>
-</ul>
-
-<h2>Exemple:</h2>
-<pre><code>
-    class CompteBancari:
-        def __init__(self, titular, saldo):
-            self.titular = titular
-            self.__saldo = saldo  # Atribut privat
-    
-        def depositar(self, quantitat):
-            self.__saldo += quantitat
-    
-        def mostrar_saldo(self):
-            print(f"Saldo: {self.__saldo}")
-    
-    compte = CompteBancari("Carlos", 1000)
-    compte.depositar(500)
-    compte.mostrar_saldo()  # Output: Saldo: 1500
-        </code></pre>
-    
-        <p><strong>Nota:</strong> Encara que els atributs privats no es poden accedir directament, es poden consultar mitjançant mètodes públics. Python també permet accedir-hi usant el nom modificat (<code>_Classe__atribut</code>), però això no es recomana.</p>
-    
-        <hr>
-    
-        <h1>Polimorfisme</h1>
-        <p>El polimorfisme permet que diferents classes tinguen un mateix mètode però amb comportaments diferents.</p>
-    
-        <h2>Exemple:</h2>
-        <pre><code>
-    class Au:
-        def so(self):
-            print("Cant genèric")
-    
-    class Canari(Au):
-        def so(self):
-            print("Trinar")
-    
-    class Ànec(Au):
-        def so(self):
-            print("Quac quac")
-    
-    animals = [Canari(), Ànec(), Au()]
-    for animal in animals:
-        animal.so()
-        </code></pre>
-    
-        <p>En aquest exemple, encara que totes les classes comparteixen el mètode <code>so()</code>, cada una executa una acció diferent. Això és una aplicació del polimorfisme.</p>
         
+        <h3>Exemples:</h3>
+        <pre><code>txt = ['a', 'b', 'c']       # Açò és una llista (es veurà més endavant)
+        print(txt)                 # ['a', 'b', 'c']
+        print(*txt)                # a b c
+        print(*txt, sep=' --&gt; ')  # a --&gt; b --&gt; c
+        
+        import json
+        print(json.dumps(mi_diccionari, indent=4))
+        </code></pre>
+      
+    <h2>Literals numèrics</h2>
+
+        <p>Podem representar números enters en diferents bases:</p>
+        <ul>
+            <li><strong>Decimal:</strong> Representació habitual. Exemples: <code>345</code></li>
+            <li><strong>Binària:</strong> Anteposant <code>0b</code>. Exemples: <code>0b101001001</code></li>
+            <li><strong>Octal:</strong> Anteposant <code>0o</code>. Exemples: <code>0o546</code></li>
+            <li><strong>Hexadecimal:</strong> Anteposant <code>0x</code>. Exemples: <code>0xf9af9d</code></li>
+        </ul>
+        
+        <p>Els <strong>números reals</strong> (amb decimals) es representen separant la part entera de la decimal amb un punt <code>.</code>:</p>
+        <pre><code>123.50    0.56    .56    12.    12.00</code></pre>
+        <p>També poden usar notació científica:</p>
+        <pre><code>1.2e3     5e-2</code></pre>
+        
+        <p>Els <strong>números complexos</strong> (amb part real i imaginària) s'escriuen amb una <code>j</code> o <code>J</code> al final de la part imaginària:</p>
+        <pre><code>1+2j     8+15J</code></pre>
+        
+        <p>Es pot representar l'<strong>infinit</strong> amb:</p>
+        <pre><code>float("inf")     float("-inf")</code></pre>
+        
+        <h3>Tots són objectes</h3>
+        <p>En Python, tots els elements són objectes, fins i tot els literals. Quan utilitzem un literal, Python crea un objecte amb un identificador únic, un tipus i un valor.</p>
+        <p>Pots obtindre l'identificador d'un objecte amb la funció <code>id()</code>:</p>
+        <pre><code>x = 100
+print(id(x))</code></pre>
+
+    <h2>Literals Strings o Cadenes</h2>
+
+        <p>Els literals de tipus <strong>string</strong> van delimitats per cometes simples <code>'</code> o dobles <code>"</code>, o també per cometes triples (<code>'''</code> o <code>"""</code>).</p>
+        
+        <p>En Python, les cometes dobles i simples són equivalents, encara que en altres llenguatges de programació poden no ser-ho.</p>
+        
+        <pre><code>print("Això és una cadena")     # Correcte
+print('Això és una cadena')     # Correcte</code></pre>
+        
+        <p>Si utilitzem cometes simples, la cadena ha de començar i acabar amb cometes simples (no amb dobles), i viceversa:</p>
+        
+        <pre><code>print("Això és una cadena')     # Error de sintaxi
+print("Això "és una cadena")    # Error de sintaxi</code></pre>
+        
+        <h3>Cometes triples</h3>
+        <p>Les cometes triples permeten escriure cadenes que ocupen diverses línies, útil quan es vol superar el límit recomanat de 79 caràcters per línia:</p>
+        
+        <pre><code>print("""Això és una cadena
+que ocupa
+diverses línies""")</code></pre>
+        
+        <h3>També es pot fer amb el caràcter \</h3>
+        <p>El caràcter <code>\</code> permet continuar la cadena en una altra línia sense trencar-la:</p>
+        
+        <pre><code>print("Això és una cadena \
+que ocupa \
+diverses línies")</code></pre>
+        
+        <h3>Comportament de les línies amb <code>\</code></h3>
+        <p><strong>Nota:</strong> En aquests casos, el resultat és una cadena contínua, sense salts de línia. Si vols realment afegir salts, cal usar <code>\n</code>.</p>
+        
+        <h3>Inserir cometes del mateix tipus</h3>
+        <p>Si vols utilitzar cometes del mateix tipus que el delimitador dins de la cadena, cal escapar-les amb el caràcter de barra invertida <code>\</code>:</p>
+        
+        <pre><code>print("Això és una cadena amb cometes dobles: \"exemple\"") </code></pre>
+        
+        <h3>Caràcters especials dins de cadenes</h3>
+        <ul>
+          <li><code>\"</code>  cometa doble dins de cometes dobles</li>
+          <li><code>\'</code>  cometa simple dins de cometes simples</li>
+          <li><code>\n</code>  salt de línia</li>
+          <li><code>\t</code>  tabulació horitzontal</li>
+          <li><code>\v</code>  tabulació vertical</li>
+          <li><code>\\</code>  barra invertida literal</li>
+        </ul>
+        
+        <pre><code>
+        print("Hola\tmón")         # Hola    món
+        print("Línia 1\nLínia 2")   # Línia 1
+                                    # Línia 2
+        print("Ruta: C:\\fitxers\\usuari")   # Ruta: C:\fitxers\usuari </code></pre>
+        
+        <h3>Inserció de valors dins de cadenes</h3>
+        <p>Python ofereix diversos mecanismes per a inserir valors de variables dins de cadenes de text, com ara:</p>
+        <ul>
+          <li><strong>Format clàssic</strong>: <code>"Hola %s" % nom</code></li>
+          <li><strong>Mètode format()</strong>: <code>"Hola {}".format(nom)</code></li>
+          <li><strong>f-strings</strong> (des de Python 3.6): <code>f"Hola {nom}"</code></li>
+        </ul>
+
+        <h3>Formateig de cadenes (strings) en Python</h3>
+
+        <h4>1. Format antic amb % (estil C)</h4>
+        <p>Encara funcional, però menys recomanat. És semblant al format de llenguatges com C.</p>
+        <pre><code>brand = "HP"
+        exchangeRate = 1.334
+        message = 'El preu d’aquest portàtil %s és %d USD i el tipus de canvi és %4.2f USD per 1 EUR' % (brand, 1299, exchangeRate)
+        print(message)</code></pre>
+        
+        <h4>2. Format amb <code>.format()</code></h4>
+        <p>Permet especificar la posició dels valors i aplicar formatacions:</p>
+        <pre><code>
+        message = 'El preu d’aquest portàtil {0:s} és {1:d} USD i el tipus de canvi és {2:4.2f} USD per 1 EUR'.format('Apple', 1299, 1.235235245)
+        print(message)</code></pre>
+        <p><strong>Nota:</strong> <code>{0}</code> és el primer argument, <code>{1}</code> el segon, etc.</p>
+        
+        <h4>3. f-strings (des de Python 3.6)</h4>
+        <p>Forma moderna, clara i recomanada:</p>
+        <pre><code>
+        nom = "Joan"
+        edat = 25
+        a, b = 4, 5
+        pi = 3.141592
+        monto = 1234567.89
+        numero = -42
+        n = 42
+        
+        print(f"El meu nom és {nom} i tinc {edat} anys.")
+        print(f"La suma de {a} i {b} és {a + b}.")
+        print(f"{edat=}")                        # Depuració: edat=25
+        print(f"El valor de pi amb 3 decimals és {pi:.3f}.")
+        print(f"Percentatge: {0.25:.2%}")       # 25.00%</code></pre>
+        
+        <h4>4. Alineació i formats especials</h4>
+        <pre><code>
+        print(f"|{nom:<10}|")       # A l'esquerra
+        print(f"|{nom:>10}|")       # A la dreta
+        print(f"|{nom:_>10}|")      # A la dreta amb "_"
+        print(f"|{nom:^10}|")       # Centrat
+        print(f"|{nom:*^10}|")      # Centrat amb "*"
+        
+        print(f"Decimal: {n}, Binari: {n:b}, Hexadecimal: {n:x}, Octal: {n:o}")
+        print(f"Amb separador de milers: {monto:,.2f}")
+        print(f"Amb signe explícit: {numero:+d}")   # -42
+        print(f"Amb zeros a l'esquerra: {42:06d}")  # 000042</code></pre>
+
+        <h3>Prefixos especials en cadenes (strings) en Python</h3>
+        <p>En Python, una lletra que apareix abans d’una cadena (com <code>r</code>, <code>f</code>, <code>b</code> o <code>u</code>) indica que la cadena tindrà un comportament especial.</p>
+        
+        <h4><code>r</code> o <code>R</code> – Cadena crua (raw string)</h4>
+        <p>No interpreta caràcters d’escapament com <code>\n</code> o <code>\t</code>. Molt útil per a expressions regulars o rutes de fitxers en Windows.</p>
+        <pre><code>
+        raw_string = r"C:\Usuaris\Joan\Documents"
+        print(raw_string)  # C:\Usuaris\Joan\Documents</code></pre>
+        
+        <h4><code>f</code> o <code>F</code> – Cadena formatejada (f-string)</h4>
+        <p>Permet incrustar variables o expressions dins la cadena amb <code>{}</code>. Disponible des de Python 3.6.</p>
+        <pre><code>
+        nom = "Joan"
+        print(f"Hola, {nom}!")  # Hola, Joan!</code></pre>
+        
+        <h4><code>b</code> o <code>B</code> – Cadena de bytes (byte string)</h4>
+        <p>Representa una cadena de bytes (no Unicode). Es fa servir per treballar amb dades binàries.</p>
+        <pre><code>
+        byte_string = b"Hola"
+        print(byte_string)  # b'Hola'</code></pre>
+        
+        <h4><code>u</code> o <code>U</code> – Cadena Unicode</h4>
+        <p>Era necessari en Python 2 per indicar una cadena Unicode. En Python 3 totes les cadenes són Unicode per defecte, per tant, aquest prefix és <strong>redundant</strong>.</p>
+        
+        <h4>Prefixos combinats</h4>
+        <p>Pots combinar prefixos per combinar comportaments:</p>
+        <pre><code>
+        path = "Usuaris"
+        cad = rf"C:\{path}\Joan"
+        print(cad)  # C:\Usuaris\Joan</code></pre>
 
 
 </section>
 
-<section id="iterables">
-  <h1>Classes Iterables</h1>
+<section id="lectura">
+      <h1>Lectura de dades per teclat en Python (ENTRADA)</h1>
     
-        <p>Pots crear els teus propis <strong>iterables</strong> definint una classe que implemente els mètodes <code>__iter__()</code> i <code>__next__()</code>. Això et permet crear seqüències personalitzades que es poden recórrer amb bucles <code>for</code>.</p>
+      <p>         En qualsevol llenguatge de programació és essencial la <strong>entrada de dades</strong> a un programa perquè aquest puga reaccionar de diferents maneres. 
+        Aquestes dades poden servir com a base per a càlculs o per a prendre decisions, realitzant una acció o una altra segons el valor introduït.      </p>
     
-        <h2>Exemple d'un iterable personalitzat:</h2>
+      <h2>Ús de la funció <code>input()</code></h2>
+      <p>         En Python, utilitzem <code>input()</code> per demanar a l’usuari que introduïsca dades per teclat. Aquestes dades es poden usar posteriorment dins del programa.       </p>
     
-        <pre><code>class Comptador:
-        def __init__(self, inici, fi):
-            self.inici = inici
-            self.fi = fi
+      <pre><code>
+    numero1 = input("Digue'm el primer número: ")  # Aquí, numero1 serà una cadena (string)
+    # El programa es quedarà esperant que l'usuari escriga un valor i premeta intro.
+    # Aquesta entrada s'assignarà a la variable numero1 com a text.
+    numero1 = int(numero1)  # Cal convertir-la a enter si volem fer operacions numèriques.
+    print(numero1, "+", numero2, "=", numero1 + numero2)
+    print("{numero1} + {numero2} = ", numero1 + numero2)  # No fa interpolació real       </code></pre>
     
-        def __iter__(self):
-            self.numero = self.inici
-            return self
+      <h3>Exemple d’error comú</h3>
+      <pre><code>
+    n1 = input("Digue'm el primer número: ")
+    n2 = input("Digue'm el segon número: ")
+    print("La suma és", n1 + n2)  # Açò farà una concatenació de cadenes!
+    # Què ha passat???
+    print("La suma és", int(n1) + int(n2))  # Açò sí que suma nombres correctament       </code></pre>
     
-        def __next__(self):
-            if self.numero <= self.fi:
-                resultat = self.numero
-                self.numero += 1
-                return resultat
-            else:
-                raise StopIteration
+      <h2>Entrada de múltiples valors separats per comes</h2>
+      <p>         També podem demanar a l’usuari que introduïsca diversos valors separats per comes (o altres caràcters), i convertir-los a una llista de números:      </p>
     
-    comptador = Comptador(1, 5)
+      <pre><code>
+    entrada = input("Introdueix números separats per comes: ")
+    numeros = entrada.split(',')  # Separa cada valor utilitzant la coma com a separador
+    # Convertim cada valor a enter, eliminant espais en blanc
+    numeros = [int(num.strip()) for num in numeros]
+    print("Llista de números:", numeros)    </code></pre>
     
-    for numero in comptador:
-        print(numero)
-        </code></pre>
-    
-        <p>En aquest exemple, la classe <code>Comptador</code> és un iterable que genera nombres del 1 al 5. El bucle <code>for</code> recorre cada nombre generat per l'iterable i el mostra per consola.</p>
-        <hr>
+      <h2>Conclusió</h2>
+      <ul>
+        <li>La funció <code>input()</code> sempre retorna cadenes de text.</li>
+        <li>És necessari convertir aquestes cadenes a nombres si volem fer càlculs.</li>
+        <li>Podem usar <code>split()</code> i <code>strip()</code> per processar entrades múltiples.</li>
+      </ul>
+
+
+  <h2>Lectura de dades des de la crida al programa Python</h2>
+
+  <p>     Una altra manera d'entrar dades en un programa és utilitzar els mateixos paràmetres de la crida al programa a través de la línia de comandes. 
+    En Python, pots passar paràmetres a un programa des de la línia de comandes utilitzant els mòduls <code>sys</code> o <code>argparse</code>. Aquestes eines permeten que el teu programa reba arguments externs, cosa que és útil per personalitzar l'execució sense haver de modificar el codi del programa.   </p>
+
+  <h2>Passar paràmetres amb <code>sys</code></h2>
+  <p>     Un exemple bàsic utilitzant <code>sys.argv</code>:   </p>
+
+  <pre><code>
+# arxiu: programa.py
+import sys
+
+# Mostrar els arguments
+print("Arguments rebuts:", sys.argv)
+
+# Accedir als arguments individuals
+if len(sys.argv) > 1:
+    print("Primer argument:", sys.argv[1])
+else:
+    print("No s'han proporcionat arguments.")    </code></pre>
+
+  <h3>Execució en la terminal:</h3>
+  <pre><code>
+$ python3 programa.py hola mundo  # es passen dos arguments a programa.py
+  </code></pre>
+
+  <h2>Passar paràmetres amb <code>argparse</code></h2>
+  <p>     El mòdul <code>argparse</code> ofereix una forma més robusta i flexible per gestionar arguments. Permet definir opcions, descripcions, verificar tipus i gestionar errors automàticament.   </p>
+
+  <pre><code>
+# arxiu: programa.py
+import argparse
+
+# Crear un objecte ArgumentParser
+parser = argparse.ArgumentParser(description="Un programa d'exemple per rebre paràmetres.")
+
+# Definir els arguments que s'accepten
+parser.add_argument('nom', help="El teu nom")  # Argument posicional
+parser.add_argument('--edat', type=int, help="La teva edat (opcional)")  # Argument opcional
+
+# Parsejar els arguments
+args = parser.parse_args()
+
+# Utilitzar els arguments
+print(f"Hola, {args.nom}!")
+if args.edat:
+    print(f"Tens {args.edat} anys.")    </code></pre>
+
+  <h3>Execució en la terminal:</h3>
+  <pre><code>
+$ python3 programa.py Juan --edat 25
+  </code></pre>
+
+
+</section>
+
+
+<section id="fitxers">
+  <h1>Gestió de Fitxers en Python</h1>
+<h2>📂 Què és un fitxer en Python?</h2>
+
+<p>Un <strong>fitxer</strong> en Python és una entitat externa (com un arxiu de text, CSV, JSON, etc.) que el teu 
+  programa pot <strong>llegir, escriure o modificar</strong> per a emmagatzemar o recuperar informació de manera <strong> permanent</strong> .</p>
+
+  <h2>Persitència de dades</h2>
+<p>
+  La <strong>persistència de dades</strong> és la capacitat de <strong>guardar informació de manera permanent</strong>, de forma que <strong>no es perda quan s’apaga el programa o l’ordinador</strong>.
+</p>
+<p>
+  Dit d'una altra manera: són dades que <em>persistixen més enllà de la memòria RAM</em>, i que poden ser recuperades en futures execucions.
+</p>
+
+<h3> Mètodes per aconseguir persistència en Python</h3>
+
+<h4> Fitxers</h4>
+<ul>
+  <li>Fitxers de text (<code>.txt</code>)</li>
+  <li>Fitxers CSV</li>
+  <li>Fitxers JSON</li>
+  <li>Fitxers binaris (<code>.dat</code>)</li>
+</ul>
+
+<h4> Bases de dades</h4>
+<ul>
+  <li>SQLite (ja integrada en Python)</li>
+  <li>MySQL, PostgreSQL, etc. (amb connectors externs)</li>
+</ul>
+
+<h4> Serialització (guardar objectes)</h4>
+<ul>
+  <li>Amb el mòdul <code>pickle</code></li>
+  <li>Amb <code>json</code> per a estructures simples</li>
+</ul>
+
+<h2> Definició de fitxer</h2>
+<p>
+  En informàtica, un <strong>fitxer</strong> (o <em>arxiu</em>) és un conjunt de dades guardades al disc dur o a un altre dispositiu d’emmagatzematge. En Python, podem interactuar amb fitxers mitjançant la funció integrada <code>open()</code>.
+</p>
+
+<h2> Operacions bàsiques amb fitxers en Python</h2>
+<table border="1" cellpadding="6">
+  <tr>
+    <th>Operació</th>
+    <th>Mètode Python</th>
+  </tr>
+  <tr>
+    <td>Obrir un fitxer</td>
+    <td><code>open("nom_fitxer", "mode")</code></td>
+  </tr>
+  <tr>
+    <td>Llegir dades</td>
+    <td><code>read()</code>, <code>readline()</code>, <code>readlines()</code></td>
+  </tr>
+  <tr>
+    <td>Escriure dades</td>
+    <td><code>write()</code>, <code>writelines()</code></td>
+  </tr>
+  <tr>
+    <td>Tancar el fitxer</td>
+    <td><code>close()</code> (o <code>with</code> per tancar automàticament)</td>
+  </tr>
+</table>
+
+
+  <p>
+  La funció <code>open()</code> forma part de la biblioteca estàndard de Python, per la qual cosa es pot utilitzar sense necessitat d’importar res.
+  </p>
+  <h3>Obrir un fitxer</h3>
+  <p>
+  La funció <strong>open()</strong> accepta dos arguments principals:
+  </p>
+  <ol>
+    <li><strong>Nom del fitxer</strong>: El nom o camí del fitxer que vols obrir o crear.</li>
+    <li><strong>Mode d'obertura</strong>: Indica com vols accedir al fitxer (lectura, escriptura, etc.).</li>
+  </ol>
+  
+  <h4>Modes comuns d’obertura</h4>
+  <ul>
+    <li><code>"r"</code>: Lectura (per defecte). Dona error si el fitxer no existeix.</li>
+    <li><code>"w"</code>: Escriptura. Sobreescriu el fitxer si existeix o el crea si no.</li>
+    <li><code>"a"</code>: Afegir. Escriu al final del fitxer si existeix, o el crea si no.</li>
+    <li><code>"x"</code>: Crear. Crea un nou fitxer i dona error si ja existeix.</li>
+    <li><code>"b"</code>: Mode binari (es pot combinar amb altres, per exemple <code>"rb"</code>).</li>
+    <li><code>"t"</code>: Mode text (per defecte, combinable amb <code>"r"</code>, <code>"w"</code>, etc.).</li>
+  </ul>
+  
+  <h3>Lectura de fitxers</h3>
+  
+  <h4>Llegir tot el contingut</h4>
+  <pre>
+  with open("fitxer.txt", "r") as fitxer:
+      contingut = fitxer.read()
+      print(contingut)
+  </pre>
+  
+  <h4>Llegir línia per línia</h4>
+  <pre>
+  with open("fitxer.txt", "r") as fitxer:
+      for linia in fitxer:
+          print(linia.strip())  # Elimina els salts de línia
+  </pre>
+  
+  <h4>Llegir com a llista de línies</h4>
+  <pre>
+  with open("fitxer.txt", "r") as fitxer:
+      linies = fitxer.readlines()
+      print(linies)
+  </pre>
+  
+  <h3>Escriptura en fitxers</h3>
+  
+  <h4>Escriure una sola línia</h4>
+  <pre>
+  with open("fitxer.txt", "w") as fitxer:
+      fitxer.write("Hola, món\n")
+  </pre>
+  
+  <h4>Escriure múltiples línies</h4>
+  <pre>
+  linies = ["Primera línia\n", "Segona línia\n", "Tercera línia\n"]
+  with open("fitxer.txt", "w") as fitxer:
+      fitxer.writelines(linies)
+  </pre>
+  
+  <h4>Afegir contingut a un fitxer existent</h4>
+  <pre>
+  with open("fitxer.txt", "a") as fitxer:
+      fitxer.write("Nova línia afegida\n")
+  </pre>
+ <hr>
+ <h2>Consideracions importants sobre fitxers en Python</h2>
+
+<ol>
+  <li>
+    <strong>Ús de <code>with</code>:</strong> 
+    L’ús del bloc <code>with</code> assegura que el fitxer es tanque automàticament, encara que hi haja errors. És preferible a fer servir <code>open()</code> i <code>close()</code> manualment.
+  </li>
+  <li>
+    <strong>Gestió d’excepcions:</strong> 
+    És recomanable utilitzar blocs <code>try-except</code> per evitar errors si el fitxer no existeix o hi ha problemes d'accés.
+    <pre>
+try:
+    with open("fitxer_inexistent.txt", "r") as fitxer:
+        contingut = fitxer.read()
+except FileNotFoundError:
+    print("El fitxer no existeix.")
+    </pre>
+  </li>
+  <li>
+    <strong>Codificació:</strong> 
+    Si treballes amb caràcters especials (com accents o símbols), és important indicar la codificació:
+    <pre>
+with open("fitxer.txt", "r", encoding="utf-8") as fitxer:
+    contingut = fitxer.read()
+    </pre>
+  </li>
+</ol>
+
+<h2>Guardar objectes en fitxers amb <code>pickle</code></h2>
+
+<p>
+Per guardar i recuperar objectes complexos (com diccionaris, llistes, etc.) es pot usar el mòdul <code>pickle</code>, que permet <strong>serialitzar</strong> i <strong>deserialitzar</strong> objectes.
+</p>
+
+<h3>Serialitzar (guardar) un objecte</h3>
+<p>Converteix l’objecte a una seqüència de bytes i el guarda al fitxer.</p>
+<pre>
+import pickle
+
+dades = {"nom": "Joan", "edat": 25, "ciutat": "València"}
+
+with open("dades.pkl", "wb") as fitxer:
+    pickle.dump(dades, fitxer)
+</pre>
+
+<h3>Deserialitzar (recuperar) un objecte</h3>
+<p>Recupera l’objecte des del fitxer.</p>
+<pre>
+import pickle
+
+with open("dades.pkl", "rb") as fitxer:
+    dades_carregades = pickle.load(fitxer)
+
+print(dades_carregades)
+</pre>
+
+<p><strong>Nota:</strong> Quan es fa servir <code>pickle</code>, cal obrir els fitxers en mode binari (<code>"wb"</code> per escriure, <code>"rb"</code> per llegir).</p>
+
+<h2>Exemple pràctic: Guardar i recuperar objectes amb <code>pickle</code></h2>
+
+<h3>Guardar un objecte en un fitxer</h3>
+<pre>
+import pickle
+
+# Suposem que existeix una classe Persona
+persona = Persona("Ana", 25)
+
+# Guardar l’objecte en un fitxer
+with open("persona.pkl", "wb") as fitxer:  # 'wb' per a escriptura en mode binari
+    pickle.dump(persona, fitxer)
+
+print("Objecte guardat al fitxer 'persona.pkl'.")
+</pre>
+
+<h3>Recuperar un objecte des d’un fitxer</h3>
+<pre>
+import pickle
+
+# Llegir l’objecte des del fitxer
+with open("persona.pkl", "rb") as fitxer:  # 'rb' per a lectura en mode binari
+    persona_recuperada = pickle.load(fitxer)
+
+print("Objecte recuperat del fitxer:")
+print(persona_recuperada)  # Exemple de resultat: Ana, 25 anys
+</pre>
+
+<h3>Guardar i recuperar múltiples objectes</h3>
+<p>Pots guardar diversos objectes (per exemple, una llista de persones) i recuperar-los posteriorment.</p>
+
+<h4>Guardar diversos objectes</h4>
+<pre>
+import pickle
+
+persones = [
+    Persona("Ana", 25),
+    Persona("Lluís", 30),
+    Persona("Maria", 28)
+]
+
+# Guardar la llista d’objectes en un fitxer
+with open("persones.pkl", "wb") as fitxer:
+    pickle.dump(persones, fitxer)
+
+print("Llista d’objectes guardada al fitxer 'persones.pkl'.")
+</pre>
+
+<h4>Recuperar diversos objectes</h4>
+<pre>
+import pickle
+
+# Llegir la llista d’objectes des del fitxer
+with open("persones.pkl", "rb") as fitxer:
+    persones_recuperades = pickle.load(fitxer)
+
+print("Objectes recuperats:")
+for persona in persones_recuperades:
+    print(persona)
+</pre>
+
+<p><strong>Nota:</strong> Assegura’t que la definició de la classe <code>Persona</code> estiga disponible en el moment de deserialitzar l’objecte, ja que <code>pickle</code> necessita accedir a la classe original per reconstruir l’instància.</p>
+
+<h2>Consideracions importants</h2>
+<ol>
+    <li>
+        <strong>Mode binari:</strong>
+        <ul>
+            <li>Usa <code>"wb"</code> per a escriure en binari i <code>"rb"</code> per a llegir en binari.</li>
+        </ul>
+    </li>
+    <li>
+        <strong>Compatibilitat:</strong>
+        <ul>
+            <li>Els objectes serialitzats són específics de la versió de Python i de l’estructura de les classes. Canviar la classe després de guardar els objectes pot causar errors en recuperar-los.</li>
+        </ul>
+    </li>
+    <li>
+        <strong>Seguretat:</strong>
+        <ul>
+            <li>No carregues fitxers <code>pickle</code> de fonts no fiables, ja que podrien executar codi maliciós.</li>
+        </ul>
+    </li>
+    <li>
+        <strong>Serialització amb JSON:</strong>
+        <ul>
+            <li>Si els objectes són simples (com diccionaris o llistes), pots usar <code>json</code> en lloc de <code>pickle</code>. No obstant això, JSON no suporta objectes complexos directament.</li>
+            <li><code>import json</code>, <code>json.dump()</code>, etc. — <em>queda fora d’aquest curs</em>.</li>
+        </ul>
+    </li>
+</ol>
+      
+
+</section>
+
+<section id="GUI">
+    <h1>🖥️ GUI amb Tkinter en Python</h1>
+
+    <p>Una <strong>GUI</strong> (Interfície Gràfica d'Usuari) permet interactuar amb el programa mitjançant elements com botons, caixes de text, etiquetes, etc. <strong>Tkinter</strong> és la llibreria estàndard de Python per a fer-ho.</p>
+
+    <h2> Estructura bàsica</h2>
+    <pre><code>import tkinter as tk
+
+    finestra = tk.Tk()
+    finestra.title("La meua primera GUI")
+    finestra.mainloop()</code></pre>
+
+    <h2>🧩 Widgets comuns</h2>
+     <img src="imgs/exemplegui1.png" alt="gui1" class="imatge-dreta" width="45%">
+    <ul>
+      <li><code>Label</code> – Mostra text</li>
+      <li><code>Entry</code> – Entrada d’usuari</li>
+      <li><code>Button</code> – Executa accions</li>
+      <li><code>Text</code> – Caixa de text gran</li>
+      <li><code>Checkbutton</code> – Caixa de selecció</li>
+      <li><code>Radiobutton</code> – Opcions exclusives</li>
+      <li><code>Listbox</code> – Llista seleccionable</li>
+    </ul>
+
+    <h2>🧪 Exemple amb diversos widgets</h2>
+    <pre><code>import tkinter as tk
+
+    def mostrar_salutacio():
+        nom = entrada.get()
+        etiqueta_resultat.config(text=f"Hola, {nom}!")
+
+    finestra = tk.Tk()
+    finestra.title("Exemple complet")
+
+    etiqueta = tk.Label(finestra, text="Escriu el teu nom:")
+    etiqueta.pack()
+
+    entrada = tk.Entry(finestra)
+    entrada.pack()
+
+    boto = tk.Button(finestra, text="Saluda’m", command=mostrar_salutacio)
+    boto.pack()
+
+    etiqueta_resultat = tk.Label(finestra, text="")
+    etiqueta_resultat.pack()
+
+    finestra.mainloop()</code></pre>
+
+    <h2>📐 Sistemes de posicionament</h2>
+    <ul>
+      <li><code>pack()</code> – Organització vertical o horitzontal</li>
+      <li><code>grid()</code> – Organització en taula (files i columnes)</li>
+      <li><code>place()</code> – Ubicació exacta per coordenades</li>
+    </ul>
+
+</section>
+
+
+<section id="bbdd">
+<h1> Entrada i Eixida cap a BBDD</h1>
 
 
 </section>
@@ -532,6 +758,9 @@ class Estudiant(Persona):
   <h1>Exercicis</h1>
   <h3>Els exercicis i tests corresponents a esta unitat es troben en Aules</h3>
 </section>
+
+
+
 
 </main>
 

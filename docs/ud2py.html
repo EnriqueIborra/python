@@ -14,743 +14,824 @@
 
   <header>
     <a href="index.html"><img src="imgs/phyton2-rbg.png" alt="python"></a>
-    <h1>Unitat Didàctica 2: Entrada i Eixida en Python</h1>
+    <h1>Unitat Didàctica 2: Estructures de control</h1>
     <h1> </h1>
   </header>
 
 <nav>
   <h3>Índex</h3>
-  <a href="#escritura">Escritura / Eixida</a>
-  <a href="#lectura">Lectura / Entrada </a>
-  <a href="#fitxers">Entrada i Eixida en Fitxers</a>
-  <a href="#GUI">Entrada i Eixida en GUI</a>
-  <a href="#bbdd">Entrada i Eixida en BBDD</a>
+ 
+  <a href="#estructures">Estructures de control</a>
+  <a href="#salts">Salts en Python</a>
+  <a href="#excepcions">Excepcions</a>
+  <a href="#funcions">Funcions</a>
+  <a href="#moduls">Moduls i paquets</a>
+  <a href="#main">Ús de __main__ </a>
   <a href="#exercicis">Exercicis</a>
-   
+  
 </nav>
 
 <main>
 
+<section id="estructures">
 
-<section id="escritura">
-    <h1>Escritura de dades en Python (EIXIDA)</h1>
-    <h2>Funció <code>print()</code></h2>
-
-    <p>
-        La funció <code>print()</code> en Python és una de les més utilitzades i serveix per a mostrar missatges, dades o qualsevol eixida per pantalla a la consola. 
-        És molt versàtil i permet personalitzar què i com es mostra la informació.
-    </p>
-    
-    <p>
-        Per defecte, <code>print()</code> afegeix un salt de línia (<code>\n</code>) al final de cada línia impresa.
-    </p>
-    
-    <pre><code>
-    &gt;&gt;&gt; a = 3332 + 23223 * 23
-    &gt;&gt;&gt; print(a)
-    &gt;&gt;&gt; print(a + 23334)
-    &gt;&gt;&gt; print("Hola, món!")
-    </code></pre>
-    
-    <p>    La funció <code>print()</code> adquireix més sentit quan s’utilitza en un entorn no interactiu, com ara en programes amb extensió <code>.py</code> que s’executen directament des de la línia d’ordres del sistema operatiu.     </p>
-     <p class="tips"> <br>==>  A partir d'ací, utilitzem VSCode   <br><br>
-      Per utilitzar VSCode, s'ha de posar el codi en un fitxer, i el fitxer dins d'una carpeta <br>
-      Primer) Crear carpeta  <br>
-      Segon) Obrir el VSCode, i des del VSCode obrirem un projecte (carpeta) <br>
-       . ==>  Open Folder  <br>
-      Tercer) Crear fitxer  (new file) <br>
-      Quart)  Escriure codi  <br>
-      Cinqué) Executar codi  (click dret sobre el codi -> Run Python File in Terminal)<br>
-      . <br>
-      <a href="https://www.youtube.com/watch?v=LOGZAf08c6E"> Tutorial ràpid de VSCode-Python</a>
-     </p>   
-     
-    <h3>Personalització amb l'argument <code>end</code></h3>
-     <p>         Per defecte, <code>print()</code> imprimeix un salt de línia al final. Aquest comportament es pot modificar amb el paràmetre <code>end</code>.     </p>
-     <ul>
-        <li><strong>Imprimir en la mateixa línia:</strong></li>
-    </ul>
-    
-    <pre><code>
-    print("Hola", end=" ")
-    print("Món", end="!")       </code></pre>
-    <ul>
-        <li><strong>Sense salt de línia:</strong></li>
-    </ul>
-    <pre><code>
-    for i in range(5):
-        print(i, end="")  # No afegeix salt de línia       </code></pre>
-    <ul>
-        <li><strong>Insertar un salt de línia manualment amb <code>\n</code>:</strong></li>
-    </ul>
-    <pre><code>
-    print("Hola\nMón")      </code></pre>
-     <img src="imgs/provaVSCode1.png" alt="VSCode1"  width="45%"> 
-    <h2>Altres consideracions sobre <code>print()</code></h2>
-
-        <h3>Sintaxi de <code>print()</code></h3>
-        <pre><code>print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False)</code></pre>
-          
-        <ul>
-            <li><strong>*objects:</strong>
-                <ul>
-                    <li>Pot ser un o diversos objectes que es volen imprimir (separats per comes <code>,</code>).</li>
-                    <li>Els valors es convertixen automàticament a cadenes (amb la funció <code>str()</code>).</li>
-                </ul>
-            </li>
-            <li><strong>sep</strong> (opcional):
-                <ul>
-                    <li>Defineix el separador entre els objectes.</li>
-                    <li>Per defecte és un espai <code>' '</code>.</li>
-                </ul>
-            </li>
-            <li><strong>end</strong> (opcional):
-                <ul>
-                    <li>Indica què s’imprimirà al final de l’eixida.</li>
-                    <li>Per defecte és un salt de línia <code>'\n'</code>.</li>
-                </ul>
-            </li>
-            <li><strong>file</strong> (opcional):
-                <ul>
-                    <li>Indica el flux on s'enviarà l’eixida.</li>
-                    <li>Per defecte és la consola (<code>sys.stdout</code>).</li>
-                    <li>També pots redirigir l’eixida a un fitxer:</li>
-                </ul>
-                <pre><code>with open("eixida.txt", "w") as fitxer:
-            print("Hola món", file=fitxer)</code></pre>
-            </li>
-            <li><strong>flush</strong> (opcional):
-                <ul>
-                    <li>Si es configura com a <code>True</code>, buida el buffer d’eixida immediatament.</li>
-                    <li>És útil en programes que requerixen imprimir dades en temps real.</li>
-                </ul>
-            </li>
-        </ul>
+      <h1>Estructures de Control en Python</h1>
+        <h2>Execució Seqüencial</h2>
         
-        <h3>Exemples:</h3>
-        <pre><code>txt = ['a', 'b', 'c']       # Açò és una llista (es veurà més endavant)
-        print(txt)                 # ['a', 'b', 'c']
-        print(*txt)                # a b c
-        print(*txt, sep=' --&gt; ')  # a --&gt; b --&gt; c
-        
-        import json
-        print(json.dumps(mi_diccionari, indent=4))
+        <p>            L'execució seqüencial és el comportament per defecte en un programa Python, on les instruccions es processen en l'ordre en què apareixen al codi. 
+          En altres paraules, les línies de codi s'executen de dalt a baix, una per una, sense saltar-se cap instrucció.         </p>
+      
+        <h3>Exemple d'Execució Seqüencial</h3>
+        <p>           Quan s'executa un programa, el flux de control segueix una seqüència lineal. Aquí tens un exemple senzill:         </p>
+      
+        <pre><code>
+      # Programa d'exemple per a execució seqüencial
+      nombre = "Maria"
+      edat = 25
+      
+      print("Hola, el meu nom és", nombre)  <!-- Imprimeix el nom -->
+      print("Tinc", edat, "anys.")           <!-- Imprimeix l'edat -->
         </code></pre>
       
-    <h2>Literals numèrics</h2>
-
-        <p>Podem representar números enters en diferents bases:</p>
-        <ul>
-            <li><strong>Decimal:</strong> Representació habitual. Exemples: <code>345</code></li>
-            <li><strong>Binària:</strong> Anteposant <code>0b</code>. Exemples: <code>0b101001001</code></li>
-            <li><strong>Octal:</strong> Anteposant <code>0o</code>. Exemples: <code>0o546</code></li>
-            <li><strong>Hexadecimal:</strong> Anteposant <code>0x</code>. Exemples: <code>0xf9af9d</code></li>
-        </ul>
-        
-        <p>Els <strong>números reals</strong> (amb decimals) es representen separant la part entera de la decimal amb un punt <code>.</code>:</p>
-        <pre><code>123.50    0.56    .56    12.    12.00</code></pre>
-        <p>També poden usar notació científica:</p>
-        <pre><code>1.2e3     5e-2</code></pre>
-        
-        <p>Els <strong>números complexos</strong> (amb part real i imaginària) s'escriuen amb una <code>j</code> o <code>J</code> al final de la part imaginària:</p>
-        <pre><code>1+2j     8+15J</code></pre>
-        
-        <p>Es pot representar l'<strong>infinit</strong> amb:</p>
-        <pre><code>float("inf")     float("-inf")</code></pre>
-        
-        <h3>Tots són objectes</h3>
-        <p>En Python, tots els elements són objectes, fins i tot els literals. Quan utilitzem un literal, Python crea un objecte amb un identificador únic, un tipus i un valor.</p>
-        <p>Pots obtindre l'identificador d'un objecte amb la funció <code>id()</code>:</p>
-        <pre><code>x = 100
-print(id(x))</code></pre>
-
-    <h2>Literals Strings o Cadenes</h2>
-
-        <p>Els literals de tipus <strong>string</strong> van delimitats per cometes simples <code>'</code> o dobles <code>"</code>, o també per cometes triples (<code>'''</code> o <code>"""</code>).</p>
-        
-        <p>En Python, les cometes dobles i simples són equivalents, encara que en altres llenguatges de programació poden no ser-ho.</p>
-        
-        <pre><code>print("Això és una cadena")     # Correcte
-print('Això és una cadena')     # Correcte</code></pre>
-        
-        <p>Si utilitzem cometes simples, la cadena ha de començar i acabar amb cometes simples (no amb dobles), i viceversa:</p>
-        
-        <pre><code>print("Això és una cadena')     # Error de sintaxi
-print("Això "és una cadena")    # Error de sintaxi</code></pre>
-        
-        <h3>Cometes triples</h3>
-        <p>Les cometes triples permeten escriure cadenes que ocupen diverses línies, útil quan es vol superar el límit recomanat de 79 caràcters per línia:</p>
-        
-        <pre><code>print("""Això és una cadena
-que ocupa
-diverses línies""")</code></pre>
-        
-        <h3>També es pot fer amb el caràcter \</h3>
-        <p>El caràcter <code>\</code> permet continuar la cadena en una altra línia sense trencar-la:</p>
-        
-        <pre><code>print("Això és una cadena \
-que ocupa \
-diverses línies")</code></pre>
-        
-        <h3>Comportament de les línies amb <code>\</code></h3>
-        <p><strong>Nota:</strong> En aquests casos, el resultat és una cadena contínua, sense salts de línia. Si vols realment afegir salts, cal usar <code>\n</code>.</p>
-        
-        <h3>Inserir cometes del mateix tipus</h3>
-        <p>Si vols utilitzar cometes del mateix tipus que el delimitador dins de la cadena, cal escapar-les amb el caràcter de barra invertida <code>\</code>:</p>
-        
-        <pre><code>print("Això és una cadena amb cometes dobles: \"exemple\"") </code></pre>
-        
-        <h3>Caràcters especials dins de cadenes</h3>
-        <ul>
-          <li><code>\"</code>  cometa doble dins de cometes dobles</li>
-          <li><code>\'</code>  cometa simple dins de cometes simples</li>
-          <li><code>\n</code>  salt de línia</li>
-          <li><code>\t</code>  tabulació horitzontal</li>
-          <li><code>\v</code>  tabulació vertical</li>
-          <li><code>\\</code>  barra invertida literal</li>
-        </ul>
-        
-        <pre><code>
-        print("Hola\tmón")         # Hola    món
-        print("Línia 1\nLínia 2")   # Línia 1
-                                    # Línia 2
-        print("Ruta: C:\\fitxers\\usuari")   # Ruta: C:\fitxers\usuari </code></pre>
-        
-        <h3>Inserció de valors dins de cadenes</h3>
-        <p>Python ofereix diversos mecanismes per a inserir valors de variables dins de cadenes de text, com ara:</p>
-        <ul>
-          <li><strong>Format clàssic</strong>: <code>"Hola %s" % nom</code></li>
-          <li><strong>Mètode format()</strong>: <code>"Hola {}".format(nom)</code></li>
-          <li><strong>f-strings</strong> (des de Python 3.6): <code>f"Hola {nom}"</code></li>
-        </ul>
-
-        <h3>Formateig de cadenes (strings) en Python</h3>
-
-        <h4>1. Format antic amb % (estil C)</h4>
-        <p>Encara funcional, però menys recomanat. És semblant al format de llenguatges com C.</p>
-        <pre><code>brand = "HP"
-        exchangeRate = 1.334
-        message = 'El preu d’aquest portàtil %s és %d USD i el tipus de canvi és %4.2f USD per 1 EUR' % (brand, 1299, exchangeRate)
-        print(message)</code></pre>
-        
-        <h4>2. Format amb <code>.format()</code></h4>
-        <p>Permet especificar la posició dels valors i aplicar formatacions:</p>
-        <pre><code>
-        message = 'El preu d’aquest portàtil {0:s} és {1:d} USD i el tipus de canvi és {2:4.2f} USD per 1 EUR'.format('Apple', 1299, 1.235235245)
-        print(message)</code></pre>
-        <p><strong>Nota:</strong> <code>{0}</code> és el primer argument, <code>{1}</code> el segon, etc.</p>
-        
-        <h4>3. f-strings (des de Python 3.6)</h4>
-        <p>Forma moderna, clara i recomanada:</p>
-        <pre><code>
-        nom = "Joan"
-        edat = 25
-        a, b = 4, 5
-        pi = 3.141592
-        monto = 1234567.89
-        numero = -42
-        n = 42
-        
-        print(f"El meu nom és {nom} i tinc {edat} anys.")
-        print(f"La suma de {a} i {b} és {a + b}.")
-        print(f"{edat=}")                        # Depuració: edat=25
-        print(f"El valor de pi amb 3 decimals és {pi:.3f}.")
-        print(f"Percentatge: {0.25:.2%}")       # 25.00%</code></pre>
-        
-        <h4>4. Alineació i formats especials</h4>
-        <pre><code>
-        print(f"|{nom:<10}|")       # A l'esquerra
-        print(f"|{nom:>10}|")       # A la dreta
-        print(f"|{nom:_>10}|")      # A la dreta amb "_"
-        print(f"|{nom:^10}|")       # Centrat
-        print(f"|{nom:*^10}|")      # Centrat amb "*"
-        
-        print(f"Decimal: {n}, Binari: {n:b}, Hexadecimal: {n:x}, Octal: {n:o}")
-        print(f"Amb separador de milers: {monto:,.2f}")
-        print(f"Amb signe explícit: {numero:+d}")   # -42
-        print(f"Amb zeros a l'esquerra: {42:06d}")  # 000042</code></pre>
-
-        <h3>Prefixos especials en cadenes (strings) en Python</h3>
-        <p>En Python, una lletra que apareix abans d’una cadena (com <code>r</code>, <code>f</code>, <code>b</code> o <code>u</code>) indica que la cadena tindrà un comportament especial.</p>
-        
-        <h4><code>r</code> o <code>R</code> – Cadena crua (raw string)</h4>
-        <p>No interpreta caràcters d’escapament com <code>\n</code> o <code>\t</code>. Molt útil per a expressions regulars o rutes de fitxers en Windows.</p>
-        <pre><code>
-        raw_string = r"C:\Usuaris\Joan\Documents"
-        print(raw_string)  # C:\Usuaris\Joan\Documents</code></pre>
-        
-        <h4><code>f</code> o <code>F</code> – Cadena formatejada (f-string)</h4>
-        <p>Permet incrustar variables o expressions dins la cadena amb <code>{}</code>. Disponible des de Python 3.6.</p>
-        <pre><code>
-        nom = "Joan"
-        print(f"Hola, {nom}!")  # Hola, Joan!</code></pre>
-        
-        <h4><code>b</code> o <code>B</code> – Cadena de bytes (byte string)</h4>
-        <p>Representa una cadena de bytes (no Unicode). Es fa servir per treballar amb dades binàries.</p>
-        <pre><code>
-        byte_string = b"Hola"
-        print(byte_string)  # b'Hola'</code></pre>
-        
-        <h4><code>u</code> o <code>U</code> – Cadena Unicode</h4>
-        <p>Era necessari en Python 2 per indicar una cadena Unicode. En Python 3 totes les cadenes són Unicode per defecte, per tant, aquest prefix és <strong>redundant</strong>.</p>
-        
-        <h4>Prefixos combinats</h4>
-        <p>Pots combinar prefixos per combinar comportaments:</p>
-        <pre><code>
-        path = "Usuaris"
-        cad = rf"C:\{path}\Joan"
-        print(cad)  # C:\Usuaris\Joan</code></pre>
-
-
-</section>
-
-<section id="lectura">
-      <h1>Lectura de dades per teclat en Python (ENTRADA)</h1>
-    
-      <p>         En qualsevol llenguatge de programació és essencial la <strong>entrada de dades</strong> a un programa perquè aquest puga reaccionar de diferents maneres. 
-        Aquestes dades poden servir com a base per a càlculs o per a prendre decisions, realitzant una acció o una altra segons el valor introduït.      </p>
-    
-      <h2>Ús de la funció <code>input()</code></h2>
-      <p>         En Python, utilitzem <code>input()</code> per demanar a l’usuari que introduïsca dades per teclat. Aquestes dades es poden usar posteriorment dins del programa.       </p>
-    
-      <pre><code>
-    numero1 = input("Digue'm el primer número: ")  # Aquí, numero1 serà una cadena (string)
-    # El programa es quedarà esperant que l'usuari escriga un valor i premeta intro.
-    # Aquesta entrada s'assignarà a la variable numero1 com a text.
-    numero1 = int(numero1)  # Cal convertir-la a enter si volem fer operacions numèriques.
-    print(numero1, "+", numero2, "=", numero1 + numero2)
-    print("{numero1} + {numero2} = ", numero1 + numero2)  # No fa interpolació real       </code></pre>
-    
-      <h3>Exemple d’error comú</h3>
-      <pre><code>
-    n1 = input("Digue'm el primer número: ")
-    n2 = input("Digue'm el segon número: ")
-    print("La suma és", n1 + n2)  # Açò farà una concatenació de cadenes!
-    # Què ha passat???
-    print("La suma és", int(n1) + int(n2))  # Açò sí que suma nombres correctament       </code></pre>
-    
-      <h2>Entrada de múltiples valors separats per comes</h2>
-      <p>         També podem demanar a l’usuari que introduïsca diversos valors separats per comes (o altres caràcters), i convertir-los a una llista de números:      </p>
-    
-      <pre><code>
-    entrada = input("Introdueix números separats per comes: ")
-    numeros = entrada.split(',')  # Separa cada valor utilitzant la coma com a separador
-    # Convertim cada valor a enter, eliminant espais en blanc
-    numeros = [int(num.strip()) for num in numeros]
-    print("Llista de números:", numeros)    </code></pre>
-    
-      <h2>Conclusió</h2>
-      <ul>
-        <li>La funció <code>input()</code> sempre retorna cadenes de text.</li>
-        <li>És necessari convertir aquestes cadenes a nombres si volem fer càlculs.</li>
-        <li>Podem usar <code>split()</code> i <code>strip()</code> per processar entrades múltiples.</li>
-      </ul>
-
-
-  <h2>Lectura de dades des de la crida al programa Python</h2>
-
-  <p>     Una altra manera d'entrar dades en un programa és utilitzar els mateixos paràmetres de la crida al programa a través de la línia de comandes. 
-    En Python, pots passar paràmetres a un programa des de la línia de comandes utilitzant els mòduls <code>sys</code> o <code>argparse</code>. Aquestes eines permeten que el teu programa reba arguments externs, cosa que és útil per personalitzar l'execució sense haver de modificar el codi del programa.   </p>
-
-  <h2>Passar paràmetres amb <code>sys</code></h2>
-  <p>     Un exemple bàsic utilitzant <code>sys.argv</code>:   </p>
-
-  <pre><code>
-# arxiu: programa.py
-import sys
-
-# Mostrar els arguments
-print("Arguments rebuts:", sys.argv)
-
-# Accedir als arguments individuals
-if len(sys.argv) > 1:
-    print("Primer argument:", sys.argv[1])
-else:
-    print("No s'han proporcionat arguments.")    </code></pre>
-
-  <h3>Execució en la terminal:</h3>
-  <pre><code>
-$ python3 programa.py hola mundo  # es passen dos arguments a programa.py
-  </code></pre>
-
-  <h2>Passar paràmetres amb <code>argparse</code></h2>
-  <p>     El mòdul <code>argparse</code> ofereix una forma més robusta i flexible per gestionar arguments. Permet definir opcions, descripcions, verificar tipus i gestionar errors automàticament.   </p>
-
-  <pre><code>
-# arxiu: programa.py
-import argparse
-
-# Crear un objecte ArgumentParser
-parser = argparse.ArgumentParser(description="Un programa d'exemple per rebre paràmetres.")
-
-# Definir els arguments que s'accepten
-parser.add_argument('nom', help="El teu nom")  # Argument posicional
-parser.add_argument('--edat', type=int, help="La teva edat (opcional)")  # Argument opcional
-
-# Parsejar els arguments
-args = parser.parse_args()
-
-# Utilitzar els arguments
-print(f"Hola, {args.nom}!")
-if args.edat:
-    print(f"Tens {args.edat} anys.")    </code></pre>
-
-  <h3>Execució en la terminal:</h3>
-  <pre><code>
-$ python3 programa.py Juan --edat 25
-  </code></pre>
-
-
-</section>
-
-
-<section id="fitxers">
-  <h1>Gestió de Fitxers en Python</h1>
-<h2>📂 Què és un fitxer en Python?</h2>
-
-<p>Un <strong>fitxer</strong> en Python és una entitat externa (com un arxiu de text, CSV, JSON, etc.) que el teu 
-  programa pot <strong>llegir, escriure o modificar</strong> per a emmagatzemar o recuperar informació de manera <strong> permanent</strong> .</p>
-
-  <h2>Persitència de dades</h2>
-<p>
-  La <strong>persistència de dades</strong> és la capacitat de <strong>guardar informació de manera permanent</strong>, de forma que <strong>no es perda quan s’apaga el programa o l’ordinador</strong>.
-</p>
-<p>
-  Dit d'una altra manera: són dades que <em>persistixen més enllà de la memòria RAM</em>, i que poden ser recuperades en futures execucions.
-</p>
-
-<h3> Mètodes per aconseguir persistència en Python</h3>
-
-<h4> Fitxers</h4>
-<ul>
-  <li>Fitxers de text (<code>.txt</code>)</li>
-  <li>Fitxers CSV</li>
-  <li>Fitxers JSON</li>
-  <li>Fitxers binaris (<code>.dat</code>)</li>
-</ul>
-
-<h4> Bases de dades</h4>
-<ul>
-  <li>SQLite (ja integrada en Python)</li>
-  <li>MySQL, PostgreSQL, etc. (amb connectors externs)</li>
-</ul>
-
-<h4> Serialització (guardar objectes)</h4>
-<ul>
-  <li>Amb el mòdul <code>pickle</code></li>
-  <li>Amb <code>json</code> per a estructures simples</li>
-</ul>
-
-<h2> Definició de fitxer</h2>
-<p>
-  En informàtica, un <strong>fitxer</strong> (o <em>arxiu</em>) és un conjunt de dades guardades al disc dur o a un altre dispositiu d’emmagatzematge. En Python, podem interactuar amb fitxers mitjançant la funció integrada <code>open()</code>.
-</p>
-
-<h2> Operacions bàsiques amb fitxers en Python</h2>
-<table border="1" cellpadding="6">
-  <tr>
-    <th>Operació</th>
-    <th>Mètode Python</th>
-  </tr>
-  <tr>
-    <td>Obrir un fitxer</td>
-    <td><code>open("nom_fitxer", "mode")</code></td>
-  </tr>
-  <tr>
-    <td>Llegir dades</td>
-    <td><code>read()</code>, <code>readline()</code>, <code>readlines()</code></td>
-  </tr>
-  <tr>
-    <td>Escriure dades</td>
-    <td><code>write()</code>, <code>writelines()</code></td>
-  </tr>
-  <tr>
-    <td>Tancar el fitxer</td>
-    <td><code>close()</code> (o <code>with</code> per tancar automàticament)</td>
-  </tr>
-</table>
-
-
-  <p>
-  La funció <code>open()</code> forma part de la biblioteca estàndard de Python, per la qual cosa es pot utilitzar sense necessitat d’importar res.
-  </p>
-  <h3>Obrir un fitxer</h3>
-  <p>
-  La funció <strong>open()</strong> accepta dos arguments principals:
-  </p>
-  <ol>
-    <li><strong>Nom del fitxer</strong>: El nom o camí del fitxer que vols obrir o crear.</li>
-    <li><strong>Mode d'obertura</strong>: Indica com vols accedir al fitxer (lectura, escriptura, etc.).</li>
-  </ol>
-  
-  <h4>Modes comuns d’obertura</h4>
-  <ul>
-    <li><code>"r"</code>: Lectura (per defecte). Dona error si el fitxer no existeix.</li>
-    <li><code>"w"</code>: Escriptura. Sobreescriu el fitxer si existeix o el crea si no.</li>
-    <li><code>"a"</code>: Afegir. Escriu al final del fitxer si existeix, o el crea si no.</li>
-    <li><code>"x"</code>: Crear. Crea un nou fitxer i dona error si ja existeix.</li>
-    <li><code>"b"</code>: Mode binari (es pot combinar amb altres, per exemple <code>"rb"</code>).</li>
-    <li><code>"t"</code>: Mode text (per defecte, combinable amb <code>"r"</code>, <code>"w"</code>, etc.).</li>
-  </ul>
-  
-  <h3>Lectura de fitxers</h3>
-  
-  <h4>Llegir tot el contingut</h4>
-  <pre>
-  with open("fitxer.txt", "r") as fitxer:
-      contingut = fitxer.read()
-      print(contingut)
-  </pre>
-  
-  <h4>Llegir línia per línia</h4>
-  <pre>
-  with open("fitxer.txt", "r") as fitxer:
-      for linia in fitxer:
-          print(linia.strip())  # Elimina els salts de línia
-  </pre>
-  
-  <h4>Llegir com a llista de línies</h4>
-  <pre>
-  with open("fitxer.txt", "r") as fitxer:
-      linies = fitxer.readlines()
-      print(linies)
-  </pre>
-  
-  <h3>Escriptura en fitxers</h3>
-  
-  <h4>Escriure una sola línia</h4>
-  <pre>
-  with open("fitxer.txt", "w") as fitxer:
-      fitxer.write("Hola, món\n")
-  </pre>
-  
-  <h4>Escriure múltiples línies</h4>
-  <pre>
-  linies = ["Primera línia\n", "Segona línia\n", "Tercera línia\n"]
-  with open("fitxer.txt", "w") as fitxer:
-      fitxer.writelines(linies)
-  </pre>
-  
-  <h4>Afegir contingut a un fitxer existent</h4>
-  <pre>
-  with open("fitxer.txt", "a") as fitxer:
-      fitxer.write("Nova línia afegida\n")
-  </pre>
- <hr>
- <h2>Consideracions importants sobre fitxers en Python</h2>
-
-<ol>
-  <li>
-    <strong>Ús de <code>with</code>:</strong> 
-    L’ús del bloc <code>with</code> assegura que el fitxer es tanque automàticament, encara que hi haja errors. És preferible a fer servir <code>open()</code> i <code>close()</code> manualment.
-  </li>
-  <li>
-    <strong>Gestió d’excepcions:</strong> 
-    És recomanable utilitzar blocs <code>try-except</code> per evitar errors si el fitxer no existeix o hi ha problemes d'accés.
-    <pre>
-try:
-    with open("fitxer_inexistent.txt", "r") as fitxer:
-        contingut = fitxer.read()
-except FileNotFoundError:
-    print("El fitxer no existeix.")
-    </pre>
-  </li>
-  <li>
-    <strong>Codificació:</strong> 
-    Si treballes amb caràcters especials (com accents o símbols), és important indicar la codificació:
-    <pre>
-with open("fitxer.txt", "r", encoding="utf-8") as fitxer:
-    contingut = fitxer.read()
-    </pre>
-  </li>
-</ol>
-
-<h2>Guardar objectes en fitxers amb <code>pickle</code></h2>
-
-<p>
-Per guardar i recuperar objectes complexos (com diccionaris, llistes, etc.) es pot usar el mòdul <code>pickle</code>, que permet <strong>serialitzar</strong> i <strong>deserialitzar</strong> objectes.
-</p>
-
-<h3>Serialitzar (guardar) un objecte</h3>
-<p>Converteix l’objecte a una seqüència de bytes i el guarda al fitxer.</p>
-<pre>
-import pickle
-
-dades = {"nom": "Joan", "edat": 25, "ciutat": "València"}
-
-with open("dades.pkl", "wb") as fitxer:
-    pickle.dump(dades, fitxer)
-</pre>
-
-<h3>Deserialitzar (recuperar) un objecte</h3>
-<p>Recupera l’objecte des del fitxer.</p>
-<pre>
-import pickle
-
-with open("dades.pkl", "rb") as fitxer:
-    dades_carregades = pickle.load(fitxer)
-
-print(dades_carregades)
-</pre>
-
-<p><strong>Nota:</strong> Quan es fa servir <code>pickle</code>, cal obrir els fitxers en mode binari (<code>"wb"</code> per escriure, <code>"rb"</code> per llegir).</p>
-
-<h2>Exemple pràctic: Guardar i recuperar objectes amb <code>pickle</code></h2>
-
-<h3>Guardar un objecte en un fitxer</h3>
-<pre>
-import pickle
-
-# Suposem que existeix una classe Persona
-persona = Persona("Ana", 25)
-
-# Guardar l’objecte en un fitxer
-with open("persona.pkl", "wb") as fitxer:  # 'wb' per a escriptura en mode binari
-    pickle.dump(persona, fitxer)
-
-print("Objecte guardat al fitxer 'persona.pkl'.")
-</pre>
-
-<h3>Recuperar un objecte des d’un fitxer</h3>
-<pre>
-import pickle
-
-# Llegir l’objecte des del fitxer
-with open("persona.pkl", "rb") as fitxer:  # 'rb' per a lectura en mode binari
-    persona_recuperada = pickle.load(fitxer)
-
-print("Objecte recuperat del fitxer:")
-print(persona_recuperada)  # Exemple de resultat: Ana, 25 anys
-</pre>
-
-<h3>Guardar i recuperar múltiples objectes</h3>
-<p>Pots guardar diversos objectes (per exemple, una llista de persones) i recuperar-los posteriorment.</p>
-
-<h4>Guardar diversos objectes</h4>
-<pre>
-import pickle
-
-persones = [
-    Persona("Ana", 25),
-    Persona("Lluís", 30),
-    Persona("Maria", 28)
-]
-
-# Guardar la llista d’objectes en un fitxer
-with open("persones.pkl", "wb") as fitxer:
-    pickle.dump(persones, fitxer)
-
-print("Llista d’objectes guardada al fitxer 'persones.pkl'.")
-</pre>
-
-<h4>Recuperar diversos objectes</h4>
-<pre>
-import pickle
-
-# Llegir la llista d’objectes des del fitxer
-with open("persones.pkl", "rb") as fitxer:
-    persones_recuperades = pickle.load(fitxer)
-
-print("Objectes recuperats:")
-for persona in persones_recuperades:
-    print(persona)
-</pre>
-
-<p><strong>Nota:</strong> Assegura’t que la definició de la classe <code>Persona</code> estiga disponible en el moment de deserialitzar l’objecte, ja que <code>pickle</code> necessita accedir a la classe original per reconstruir l’instància.</p>
-
-<h2>Consideracions importants</h2>
-<ol>
-    <li>
-        <strong>Mode binari:</strong>
-        <ul>
-            <li>Usa <code>"wb"</code> per a escriure en binari i <code>"rb"</code> per a llegir en binari.</li>
-        </ul>
-    </li>
-    <li>
-        <strong>Compatibilitat:</strong>
-        <ul>
-            <li>Els objectes serialitzats són específics de la versió de Python i de l’estructura de les classes. Canviar la classe després de guardar els objectes pot causar errors en recuperar-los.</li>
-        </ul>
-    </li>
-    <li>
-        <strong>Seguretat:</strong>
-        <ul>
-            <li>No carregues fitxers <code>pickle</code> de fonts no fiables, ja que podrien executar codi maliciós.</li>
-        </ul>
-    </li>
-    <li>
-        <strong>Serialització amb JSON:</strong>
-        <ul>
-            <li>Si els objectes són simples (com diccionaris o llistes), pots usar <code>json</code> en lloc de <code>pickle</code>. No obstant això, JSON no suporta objectes complexos directament.</li>
-            <li><code>import json</code>, <code>json.dump()</code>, etc. — <em>queda fora d’aquest curs</em>.</li>
-        </ul>
-    </li>
-</ol>
+        <img src="imgs/sequencial.png" alt="sequencial" class="imatge-dreta" width="15%">
+        <p>           En aquest exemple, el programa executa primer la línia on es defineix el nom, després imprimeix el nom, i finalment imprimeix l'edat. 
+          No hi ha condicions ni bucles, per tant, cada instrucció es fa de manera seqüencial.         </p>
       
+        <h3>Fluxe de Control</h3>
+        
+        <p>      En l'execució seqüencial, el flux de control sempre segueix el codi de dalt a baix. No hi ha salts de línia ni condicions que puguin alterar aquest ordre.         </p>
+        <p>           Això és el que fa que el programa sigui molt senzill de comprendre i mantenir en comparació amb programes més complexos que utilitzen altres estructures de control com condicions, bucles o funcions.         </p>
+        <p>       L'execució seqüencial és la forma més bàsica d'execució en un programa. Cada línia s'executa una darrere de l'altra. Encara que aquest tipus d'execució és útil per a programes senzills, la majoria de programes utilitzen estructures de control com <code>if</code>, <code>for</code>, <code>while</code>, etc., per gestionar fluxos de control més complexos.         </p>
+      
+         <hr>
+        <img src="imgs/condicional.png" alt="condicional" class="imatge-dreta" width="35%">
+        <h2>Execució Condicional (if, elif, else)</h2>
+      <p>
+        Les estructures condicionals permeten executar blocs de codi segons les condicions que s'hi especifiquen. 
+        El operador <code>:</code> marca l'inici d'un bloc de codi estructurat i indentat, i és essencial perquè Python interpreti correctament la jerarquia del programa.
+      </p>
+      <p>
+        La indentació s'indica amb 4 espais (mínim) o un tabulador. Aquest principi és fonamental en Python, ja que defineix l'estructura del programa, a diferència d'altres llenguatges que utilitzen claus <code>{}</code>.
+      </p>
+    
+      <h3>Exemple d'ús del condicional if - else</h3>
+      <pre><code>
+    edad = 20
+    if edad >= 18:
+        print("Eres mayor de edad")  # aquesta ordre està indentada
+        print("==================")     # aquestes ordres formen un bloc
+    else:
+        print("Eres menor de edad")  # aquesta ordre també està indentada
+      </code></pre>
+
+  <h3>Exemple d'ús del condicional if amb elif i  else</h3>      
+      <pre><code>
+if n<=4:
+    print ("Suspes")
+elif n<=6:
+    print("Aprovat")
+elif n<=8:
+    print("Notable")
+else:
+    print("Excelent")         
+      </code></pre>            
+
+      
+      <h3>Condicional en una sola línia</h3>
+      <p>
+        Si la estructura només té una línia, no és necessari indentat, tot i que és habitual fer-ho així:
+      </p>
+      <pre><code>
+    if edad >= 18: print("Eres mayor de edad")
+      </code></pre>
+
+    <hr>
+      <h2>Guia de Estils de Python (PEP 8)</h2>
+      <p>
+        El moment de definir l'indentació és una bona ocasió per parlar de les guies d'estil oficials per al codi Python. 
+        El document <a href="https://recursospython.com/pep8es.pdf" target="_blank">PEP 8</a> (Python Enhancement Proposals) estableix les millors pràctiques per tal de fer el codi més llegible, consistent i mantenible.
+      </p>
+    
+      <h3>Principals Regles de PEP 8</h3>
+      <ul>
+        <li><strong>Indentació:</strong> Utilitzar 4 espais per nivell d'indentació (no tabulacions).</li>
+        <li><strong>Línies de codi:</strong> Màxim 79 caràcters per línia.</li>
+        <li><strong>Espais en blanc:</strong>
+          <ul>
+            <li>Un espai abans i després dels operadors (a = b + c).</li>
+            <li>No espais dins dels parèntesis (func(a, b)).</li>
+          </ul>
+        </li>
+        <li><strong>Noms de variables i funcions:</strong>
+          <ul>
+            <li>Variables i funcions: <em>snake_case</em> (exemple: mi_variable).</li>
+            <li>Classes: <em>camelCase</em> (exemple: miClasse).</li>
+          </ul>
+        </li>
+        <li><strong>Importacions:</strong>
+          <ul>
+            <li>Cada importació en una línia (import os).</li>
+            <li>Primer les llibreries estàndard, després les de tercers i al final les del projecte.</li>
+          </ul>
+        </li>
+        <li><strong>Comentaris:</strong> Han de ser clars i concisos, preferiblement en anglès.</li>
+      </ul>
+    
+
+      <h2>Condicional Ternari en Python</h2>
+      <p>El <strong>condicional ternari</strong> en Python és una manera simplificada d'escriure una estructura condicional <code>if-else</code> en una sola línia.</p>
+  
+      <h3>Sintaxi:</h3>
+      <pre><code>valor_si_veritable if condició else valor_si_fals</code></pre>
+  
+      <p>Aquesta estructura permet assignar un valor a una variable segons una condició en una sola línia de codi, evitant així la necessitat de tenir un bloc de codi amb múltiples línies.</p>
+  
+      <h3>Exemple:</h3>
+      <pre><code>
+  edad = 20  # Exemple d'edat
+  missatge = "Major d'edat" if edad >= 18 else "Menor d'edat"
+  print(missatge)  # Sortida: Major d'edat         </code></pre>
+  
+      <ul>
+          <li>Si l'edat (<code>edad</code>) és 18 o més, la variable <code>missatge</code> rep el valor <code>"Major d'edat"</code>.</li>
+          <li>Si l'edat és menor a 18, la variable <code>missatge</code> rep el valor <code>"Menor d'edat"</code>.</li>
+      </ul>
+      <h2>match-case</h2>
+      <p>Des de Python 3.10 està disponible la instrucció <code> match-case</code>, una estructura pareguda al <code>switch</code></p>
+      <pre><code>
+def switch_example(value):
+    match value:
+        case 1:
+            return "Uno"
+        case 2:
+            return "Dos"
+        case 3:
+            return "Tres"
+        case _:
+            return "Otro valor"
+      </code></pre>
+      <p>case _: funciona com <strong> default </strong></p>
+
+        <br><br><hr><hr>
+      <img src="imgs/bucle.png" alt="bucles" class="imatge-dreta" width="20%">
+      <h1>Bucles (for, while) en Python</h1>
+          <p>Els bucles són una estructura essencial en la programació que permet repetir un conjunt d'operacions múltiples vegades.</p>
+      
+          <h2>1. Bucles <code>for</code></h2>
+          <p>El bucle <code>for</code> itera sobre una secuencia (com una llista o un rang). Aquí tens alguns exemples:</p>
+          
+          <h3>Exemple 1: Iteració amb <code>range</code></h3>
+          <p>La funció <code>range</code> és una eina molt útil a Python per generar una seqüència d'elements. Aquesta seqüència es pot utilitzar en 
+            estructures de control de flux com el bucle <code>for</code> per realitzar iteracions de manera eficient.</p>
+          <pre><code>for i in range(5):  # Des de 0 fins a 4
+          print(i)</code></pre>
+      
+          <h3>Exemple 2: Iteració amb <code>range</code> amb límits específics</h3>
+          <pre><code>for i in range(2, 5):  # Des de 2 fins a 4
+          print(i)</code></pre>
+      
+          <h3>Exemple 3: Iteració amb un pas definit</h3>
+          <pre><code>for i in range(2, 10, 2):  # Des de 2 fins a 8 amb pas 2
+          print(i)</code></pre>
+      
+          <h3>Exemple 4: Iteració sobre una llista</h3>
+          <pre><code>frutas = ["poma", "plàtan", "taronja"]
+      for i in frutas:
+          print(i)</code></pre>
+      
+          <h3>Paraules clau dins d'un bucle <code>for</code>:</h3>
+          <ul>
+              <li><strong><code>break</code></strong>: surt del bucle prematurament.</li>
+              <li><strong><code>continue</code></strong>: salta la iteració actual i continua amb la següent.</li>
+              <li><strong><code>else</code></strong>: s'executa si el bucle no termina amb un <code>break</code>.</li>
+          </ul>
+      
+          <h2>2. Bucles <code>while</code></h2>
+          <p>El bucle <code>while</code> executa una acció mentre una condició siga veritable.</p>
+          
+          <h3>Exemple: Bucles <code>while</code></h3>
+          <pre><code>
+      contador = 0
+      while contador < 5:
+          print(f"Contador: {contador}")
+          contador += 1  # Augmenta el contador
+      else:
+          print("El bucle ha acabat amb contador >= 5")</code></pre>
+          <p>Els bucles <code>for</code> i <code>while</code> són molt útils per repetir accions múltiples vegades i controlar el flux de l'execució dels programes en funció de condicions específiques.</p>
+            
+            <hr>
+
+ <h1> Clàusula <code>else</code> en bucles en Python</h1>
+
+  <p>Aquesta tècnica de fer servir <code>else</code> després d’un bucle <code>while</code> o <code>for</code> en Python s’anomena:</p>
+
+  <h2><strong>▶️ Clàusula <code>else</code> en bucles</strong> <em>(Loop else clause)</em></h2>
+
+  <h2> Descripció:</h2>
+  <p>És una <strong>característica pròpia de Python</strong> (i poc comuna en altres llenguatges) que permet executar un bloc de codi <strong>quan el bucle s'acaba sense un <code>break</code></strong>.</p>
+
+  <h2> Es pot aplicar a:</h2>
+  <ul>
+    <li><code>while</code> + <code>else</code></li>
+    <li><code>for</code> + <code>else</code></li>
+  </ul>
+
+  <h2> Per què és útil?</h2>
+  <p>Permet distingir entre:</p>
+  <ul>
+    <li>Casos on <strong>s’ha recorregut tot el bucle</strong> sense trobar res especial</li>
+    <li>Casos on <strong>s’ha interromput amb <code>break</code></strong></li>
+  </ul>
+
+  <h2> Exemple típic:</h2>
+  <pre><code>for numero in [1, 3, 5, 7]:
+    if numero % 2 == 0:
+        print("Té un nombre parell")
+        break
+else:
+    print("Cap nombre parell trobat")</code></pre>
+
+  <p><strong>🔹 Resultat:</strong> Si no es troba cap parell, s’executa l’<code>else</code>.</p>
+
+          
+</section>
+
+<section id="salts">
+ <h1>Salts en Python</h1>
+
+  <p>En Python <strong>es poden fer salts en el flux d'execució</strong>, però <strong>d'una manera limitada i controlada</strong>. Python <strong>no té una instrucció <code>goto</code></strong>, com altres llenguatges antics (C, BASIC...), però pots modificar el flux amb altres estructures.</p>
+
+  <h2>🔀 Maneres de fer "salts" en Python</h2>
+
+  <h3>1. <code>break</code></h3>
+  <p>Surt d’un bucle (<code>for</code> o <code>while</code>) immediatament.</p>
+  <pre><code>for i in range(10):
+    if i == 5:
+        break
+    print(i)
+# Resultat: 0, 1, 2, 3, 4
+</code></pre>
+
+  <h3>2. <code>continue</code></h3>
+  <p>Salta a la <strong>següent iteració</strong> del bucle, sense executar la resta del codi de dins.</p>
+  <pre><code>for i in range(5):
+    if i == 2:
+        continue
+    print(i)
+# Resultat: 0, 1, 3, 4
+</code></pre>
+
+  <h3>3. <code>return</code></h3>
+  <p>Surt immediatament d’una funció i pot retornar un valor.</p>
+  <pre><code>def verifica(x):
+    if x &lt; 0:
+        return "Negatiu"
+    return "Positiu o zero"
+</code></pre>
+
+  <h3>4. <code>raise</code></h3>
+  <p>Fa un "salt" provocant una excepció: trenca l'execució normal.</p>
+  <pre><code>def dividir(x, y):
+    if y == 0:
+        raise ValueError("No es pot dividir per zero")
+    return x / y
+</code></pre>
+
+  <h2>🚫 No hi ha <code>goto</code> en Python</h2>
+  <p>Python <strong>no permet <code>goto</code></strong> perquè va en contra dels principis de llegibilitat i claredat que promou el llenguatge. En lloc d’això, es recomana:</p>
+  <ul>
+    <li>Fer servir <strong>funcions</strong> i <strong>estructures condicionals</strong></li>
+    <li>Organitzar el codi en <strong>blocs clars</strong></li>
+    <li>Evitar duplicació i repetició de lògica</li>
+  </ul>
+
+  <h2>✅ Alternatives recomanades</h2>
+  <ul>
+    <li>Usa <strong>funcions</strong> per evitar repetir codi</li>
+    <li>Usa <code>break</code>/<code>continue</code> només quan té sentit i millora la claredat</li>
+    <li>Escriu codi llegible, mantenible i estructurat</li>
+  </ul>
 
 </section>
 
-<section id="GUI">
-    <h1>🖥️ GUI amb Tkinter en Python</h1>
+<section id="excepcions">
+        <h1>Manejador de Errors / Excepcions en Python</h1>
+        <p>En Python, utilitzem les estructures <code>try</code> i <code>except</code> per capturar i gestionar els errors que poden sorgir durant l'execució d'un programa.</p>
 
-    <p>Una <strong>GUI</strong> (Interfície Gràfica d'Usuari) permet interactuar amb el programa mitjançant elements com botons, caixes de text, etiquetes, etc. <strong>Tkinter</strong> és la llibreria estàndard de Python per a fer-ho.</p>
+        <h2>Exemple de Manejador d'Errors</h2>
+        <pre><code>try:
+        resultado = 10 / 0
+    except ZeroDivisionError:
+        print("Error: No se puede dividir entre cero.")
+    else:
+        print("La operación ha sido correcta")
+    finally:
+        print("Esta parte se ejecuta siempre")</code></pre>
 
-    <h2> Estructura bàsica</h2>
-    <pre><code>import tkinter as tk
+        <ul>
+            <li><strong><code>try</code></strong>: S'intenta executar el codi dins d'aquesta secció.</li>
+            <li><strong><code>except</code></strong>: Si es produeix un error (en aquest cas, una divisió per zero), s'executa el codi dins d'aquesta secció.</li>
+            <li><strong><code>else</code></strong>: Si no es produeix cap error en el bloc <code>try</code>, s'executa el codi dins d'aquesta secció.</li>
+            <li><strong><code>finally</code></strong>: Aquesta secció s'executa sempre, independentment de si hi ha hagut un error o no.</li>
+        </ul>
 
-    finestra = tk.Tk()
-    finestra.title("La meua primera GUI")
-    finestra.mainloop()</code></pre>
+        <h2>Estructura de Control de Flux: <code>pass</code></h2>
+        <p>El <code>pass</code> és una instrucció que es pot utilitzar com a marcador de lloc. Serveix quan cal una sintaxi vàlida però no es vol que el codi faci res en una part específica.</p>
 
-    <h2>🧩 Widgets comuns</h2>
-     <img src="imgs/exemplegui1.png" alt="gui1" class="imatge-dreta" width="45%">
-    <ul>
-      <li><code>Label</code> – Mostra text</li>
-      <li><code>Entry</code> – Entrada d’usuari</li>
-      <li><code>Button</code> – Executa accions</li>
-      <li><code>Text</code> – Caixa de text gran</li>
-      <li><code>Checkbutton</code> – Caixa de selecció</li>
-      <li><code>Radiobutton</code> – Opcions exclusives</li>
-      <li><code>Listbox</code> – Llista seleccionable</li>
-    </ul>
+        <h3>Exemple d'ús de <code>pass</code></h3>
+        <pre><code>if condición:
+        pass  # No hace nada, pero se puede dejar como espacio para agregar código más tarde</code></pre>
 
-    <h2>🧪 Exemple amb diversos widgets</h2>
-    <pre><code>import tkinter as tk
-
-    def mostrar_salutacio():
-        nom = entrada.get()
-        etiqueta_resultat.config(text=f"Hola, {nom}!")
-
-    finestra = tk.Tk()
-    finestra.title("Exemple complet")
-
-    etiqueta = tk.Label(finestra, text="Escriu el teu nom:")
-    etiqueta.pack()
-
-    entrada = tk.Entry(finestra)
-    entrada.pack()
-
-    boto = tk.Button(finestra, text="Saluda’m", command=mostrar_salutacio)
-    boto.pack()
-
-    etiqueta_resultat = tk.Label(finestra, text="")
-    etiqueta_resultat.pack()
-
-    finestra.mainloop()</code></pre>
-
-    <h2>📐 Sistemes de posicionament</h2>
-    <ul>
-      <li><code>pack()</code> – Organització vertical o horitzontal</li>
-      <li><code>grid()</code> – Organització en taula (files i columnes)</li>
-      <li><code>place()</code> – Ubicació exacta per coordenades</li>
-    </ul>
+        <p>El manejador d'errors amb <code>try</code> i <code>except</code> és essencial per controlar excepcions i evitar que el programa es detingui en cas d'errors inesperats. El <code>pass</code> és útil quan necessites una sintaxi vàlida sense que el codi realitzi cap acció.</p>
 
 </section>
 
+<section id="funcions">
 
-<section id="bbdd">
-<h1> Entrada i Eixida cap a BBDD</h1>
+    <h1>Funcions en Python</h1>
+    <p>Les funcions en Python són blocs de codi que es poden reutilitzar per realitzar operacions específiques. Aquestes poden ser funcions incorporades (Built-In Functions) que Python proporciona per realitzar operacions comunes com càlculs matemàtics, conversiones de tipus de dades, obtenció d'informació del sistema, entre altres.</p>
 
+    <h2>Conversió de tipus</h2>
+    <p>Python inclou diverses funcions per convertir entre diferents tipus de dades:</p>
+    <ul>
+        <li><code>int()</code>: Converteix a un enter.</li>
+        <li><code>float()</code>: Converteix a un número decimal (float).</li>
+        <li><code>str()</code>: Converteix a una cadena de text.</li>
+        <li><code>bool()</code>: Converteix a un valor booleà (<code>True</code> o <code>False</code>).</li>
+        <li><code>bin()</code>: Converteix un enter a la seva representació binària com a cadena.</li>
+        <li><code>chr()</code>: Converteix un codi Unicode a un caràcter.</li>
+        <li><code>ord()</code>: Converteix un caràcter a un codi Unicode.</li>
+    </ul>
+
+    <h2>Funcions útils amb variables</h2>
+    <p>Algunes funcions que es poden utilitzar per obtenir informació sobre variables són:</p>
+    <ul>
+        <li><code>type(x)</code>: Retorna el tipus de la variable <code>x</code>.</li>
+        <li><code>id(x)</code>: Retorna l'identificador únic de l'objecte <code>x</code>.</li>
+        <li><code>isinstance(x, int)</code>: Retorna <code>True</code> si <code>x</code> és una instància de la classe especificada, en aquest cas, <code>int</code>.</li>
+        <li><code>globals()</code>: Retorna un diccionari amb totes les variables globals.</li>
+        <li><code>locals()</code>: Retorna un diccionari amb totes les variables locals.</li>
+        <li><code>callable(nomfunc)</code>: Retorna <code>True</code> si <code>nomfunc</code> és una funció o un objecte que es pot cridar.</li>
+    </ul>
+
+    <h2>Funcions matemàtiques</h2>
+    <p>Python també inclou diverses funcions per realitzar càlculs matemàtics:</p>
+    <ul>
+        <li><code>abs(x)</code>: Retorna el valor absolut de <code>x</code>.</li>
+        <li><code>round(x)</code>: Retorna el valor de <code>x</code> arrodonit a l'enter més proper.</li>
+        <li><code>max(numeros)</code>: Retorna el valor màxim de la llista de <code>numeros</code>.</li>
+        <li><code>min(numeros)</code>: Retorna el valor mínim de la llista de <code>numeros</code>.</li>
+        <li><code>sum(numeros)</code>: Retorna la suma de tots els elements de la llista de <code>numeros</code>.</li>
+        <li><code>divmod(a, b)</code>: Retorna una tupla amb el quocient i el residu de la divisió de <code>a</code> per <code>b</code>.</li>
+    </ul>
+
+    <h2>Enllaços d'interès</h2>
+    <p>Per a més funcions útils de Python, consulta la documentació oficial: <a href="https://docs.python.org/es/3.13/library/functions.html" target="_blank">Funcions Built-In en Python</a></p>
+
+
+    <h1>Funcions de Cadenes en Python</h1>
+    <p>Python proporciona diverses funcions incorporades (Built-In Functions) per treballar amb cadenes de text. Aquestes funcions permeten realitzar operacions comunes com modificar el format de la cadena, cercar subcadenes, o fins i tot combinar cadenes.</p>
+
+    <h2>Funcions comunes per treballar amb cadenes:</h2>
+    <p class="alert"> Us de funcions:   'pedro'.upper()  v.upper()  <strike>upper(v)</strike>   pero…  len('sdfs')  <strike>v.len()</strike> str(335)</p>
+    <ul>
+        <li><code>upper()</code>: Retorna la cadena en majúscules. <code>'pedro'.upper()</code> → <strong>'PEDRO'</strong></li>
+        <li><code>lower()</code>: Retorna la cadena en minúscules. <code>'PEDRO'.lower()</code> → <strong>'pedro'</strong></li>
+        <li><code>capitalize()</code>: Retorna la cadena amb la primera lletra en majúscula. <code>'pedro'.capitalize()</code> → <strong>'Pedro'</strong></li>
+        <li><code>title()</code>: Retorna la cadena amb la primera lletra de cada paraula en majúscula. <code>'pedro perez'.title()</code> → <strong>'Pedro Perez'</strong></li>
+        <li><code>strip()</code>: Elimina els espais en blanc al principi i final de la cadena. <code>'   hola   '.strip()</code> → <strong>'hola'</strong></li>
+        <li><code>replace(old, new)</code>: Substitueix totes les aparicions de la subcadena <code>old</code> per <code>new</code>. <code>'hola'.replace('o', 'a')</code> → <strong>'hala'</strong></li>
+        <li><code>split(separator)</code>: Divideix la cadena en una llista de subcadenes utilitzant el separador especificat. <code>'a,b,c'.split(',')</code> → <strong>['a', 'b', 'c']</strong></li>
+        <li><code>join(iterable)</code>: Combina els elements d'un iterable (com una llista) en una cadena, separats per la cadena actual. <code>','.join(['a', 'b', 'c'])</code> → <strong>'a,b,c'</strong></li>
+        <li><code>find(sub)</code>: Retorna l'índex de la primera aparició de la subcadena <code>sub</code>. Si no la troba, retorna -1. <code>'hola'.find('o')</code> → <strong>0</strong></li>
+        <li><code>index(sub)</code>: Similar a <code>find()</code>, però llança una excepció si no troba la subcadena. <code>'hola'.index('o')</code> → <strong>0</strong></li>
+        <li><code>startswith(prefix)</code>: Retorna <code>True</code> si la cadena comença amb el prefix especificat. <code>'hola'.startswith('ho')</code> → <strong>True</strong></li>
+        <li><code>endswith(suffix)</code>: Retorna <code>True</code> si la cadena acaba amb el sufix especificat. <code>'hola'.endswith('a')</code> → <strong>True</strong></li>
+        <li><code>isalpha()</code>: Retorna <code>True</code> si tots els caràcters de la cadena són lletres. <code>'hola'.isalpha()</code> → <strong>True</strong></li>
+        <li><code>isdigit()</code>: Retorna <code>True</code> si tots els caràcters de la cadena són dígits. <code>'1234'.isdigit()</code> → <strong>True</strong></li>
+        <li><code>isalnum()</code>: Retorna <code>True</code> si tots els caràcters de la cadena són lletres o dígits. <code>'abc123'.isalnum()</code> → <strong>True</strong></li>
+        <li><code>isspace()</code>: Retorna <code>True</code> si tots els caràcters de la cadena són espais en blanc. <code>'   '.isspace()</code> → <strong>True</strong></li>
+        <li><code>format()</code>: Permet formatejar cadenes de text. <code>'Hola {}'.format('món')</code> → <strong>'Hola món'</strong></li>
+        <li><code>count(sub)</code>: Retorna el nombre d'aparicions de la subcadena <code>sub</code> dins la cadena. <code>'hola'.count('o')</code> → <strong>1</strong></li>
+        <li><code>zfill(width)</code>: Omple la cadena amb zeros al principi fins a aconseguir la llargada especificada. <code>'42'.zfill(5)</code> → <strong>'00042'</strong></li>
+        <li><code>center(width)</code>: Centra la cadena en un camp de caràcters de llargada especificada. <code>'hola'.center(10)</code> → <strong>'  hola   '</strong></li>
+        <li><code>ljust(width)</code>: Justifica la cadena a l'esquerra en un camp de llargada especificada. <code>'hola'.ljust(10)</code> → <strong>'hola      '</strong></li>
+        <li><code>rjust(width)</code>: Justifica la cadena a la dreta en un camp de llargada especificada. <code>'hola'.rjust(10)</code> → <strong>'      hola'</strong></li>
+    </ul>
+
+    <h2>Funció <code>eval()</code></h2>
+    <p><code>eval()</code> és una funció que permet executar una cadena de text com a codi Python. Pot ser perillosa si s'utilitza amb dades no fiables, ja que pot executar qualsevol codi Python.</p>
+    <p>Exemple d'ús:</p>
+    <pre><code>eval('x+1')</code></pre>
+    <p>Aquesta funció interpreta i executa la cadena <code>'x+1'</code>, avaluant-la com a codi Python.</p>
+    <hr><hr>    
+        <h1>Funcions Definides per l'Usuari en Python</h1>
+        <p>A més de les funcions incorporades en el llenguatge, Python permet la definició de funcions noves, també conegudes com a funcions definides per l'usuari.</p>
+        <p>Les funcions definides per l'usuari són blocs de codi reutilitzables que realitzen una tasca específica. Aquestes funcions es creen utilitzant la paraula clau <code>def</code>, seguida del nom de la funció i parèntesis que poden incloure paràmetres. El cos de la funció està indentat i pot incloure declaracions, càlculs i una declaració <code>return</code> per retornar un valor.</p>
+    
+        <h2>Exemple de Funció Definida per l'Usuari</h2>
+        <pre><code>
+    def suma(a, b):
+        resultat = a + b
+        return resultat
+    
+    # Cridar la funció
+    resultat_suma = suma(3, 5)
+    print(resultat_suma)  # Sortida: 8
+        </code></pre>
+        <p>En aquest exemple, la funció <code>suma(a, b)</code> rep dos paràmetres, <code>a</code> i <code>b</code>, i retorna la seva suma.</p>
+    
+        <h3>Components d'una Funció Definida per l'Usuari:</h3>
+        <ul>
+            <li><strong>Paraula clau <code>def</code>:</strong> S'utilitza per definir la funció.</li>
+            <li><strong>Nom de la funció:</strong> Un nom descriptiu per a la funció, seguit de parèntesis.</li>
+            <li><strong>Paràmetres:</strong> Opcionalment, una funció pot rebre valors externs mitjançant paràmetres.</li>
+            <li>:  Els dos punts indiquen que comença el bloc de codi <strong>identat</strong></li>
+            <li><strong>Codi dins la funció:</strong> Blocs d'instruccions que realitzen l'operació desitjada. <strong>bloc identat</strong></li>
+            <li><strong>Declaració <code>return</code>:</strong> Opcional, però retorna un valor de la funció.</li>
+        </ul>
+        <p>La indentació fa referència a la tècnica d'afegir espais al principi de les línies de codi, el que ajuda a delimitar visualment els blocs i les estructures de control.</p>
+    
+        <p>En Python, l'indentació és molt important ja que és la manera que utilitza el llenguatge per definir l'estructura del codi, a diferència d'altres llenguatges que utilitzen claus (<code>{}</code>) per identificar els blocs. Un codi sense una correcta indentació pot generar errors d'execució o de lògica.</p>
+    
+
+        <h3>Funcions amb Paràmetres Opcionals</h3>
+        <pre><code>
+    def saludar(nom="Usuari"):
+        print(f"Hola, {nom}!")
+    
+    saludar("Joan")  # Sortida: Hola, Joan!
+    saludar()        # Sortida: Hola, Usuari!
+        </code></pre>
+        <p>Aquest exemple mostra com es poden definir paràmetres opcionals en una funció. Si no es passa cap valor a la funció, es fa servir el valor per defecte (en aquest cas, <code>"Usuari"</code>).</p>
+    
+        <h3>Funcions amb Valor de Retorn</h3>
+        <pre><code>
+    def multiplicar(a, b):
+        return a * b
+    
+    resultat_multiplicacio = multiplicar(4, 3)
+    print(resultat_multiplicacio)  # Sortida: 12
+        </code></pre>
+        <p>Les funcions també poden retornar un valor mitjançant la declaració <code>return</code>, com es veu en l'exemple de la funció <code>multiplicar</code>.</p>
+    
+
+          
+            <h3>Funcions amb Tipus de Dades (Type Hinting)</h3>
+            <p>En Python, es poden afegir indicadors de tipus (type hints) per especificar el tipus de les variables o els arguments d'una funció. Això millora la llegibilitat del codi i ajuda als editors a proporcionar suggeriments i detecció d'errors.</p>
+            <pre><code>
+        def dividir(a: float, b: float) -> float:   # Indicació de tipus per a arguments i valor de retorn
+            return a / b
+            </code></pre>
+        
+            <h3>Funcions amb múltiples arguments</h3>
+            <p>En Python, es poden definir funcions que accepten un nombre variable d'arguments usant els símbols <code>*</code> i <code>**</code>:</p>
+            
+            <h4>Arguments arbitrarios (Comas)</h4>
+            <pre><code>
+        def sumar_todos(*numeros):  # Diversos arguments passats amb comes
+            return sum(numeros)
+            </code></pre>
+            <p>En aquest exemple, la funció <code>sumar_todos</code> pot acceptar qualsevol nombre d'arguments, i els processa com una tupla.</p>
+        
+            <h4>Arguments amb clau i valor (Clave-Valor)</h4>
+            <pre><code>
+        def mostrar_info(**info):  # Diversos arguments passats com a clau-valor
+            for clau, valor in info.items():
+                print(f"{clau}: {valor}")
+            </code></pre>
+            <p>Aquesta funció accepta un nombre arbitrari de parells de clau-valor, com un diccionari.</p>
+        
+            <h3>Funcions Lambda</h3>
+            <p>Les funcions lambda són funcions anònimes que es poden definir en una sola línia. Són útils per a operacions simples i per passar com arguments a altres funcions.</p>
+            <pre><code>
+        multiplicar = lambda x, y: x * y  # Funció lambda per multiplicar dos valors
+        print(multiplicar(2, 3))  # Sortida: 6
+            </code></pre>
+        
+            <h3>Decoradors (Següent Tema)</h3>
+            <p>Els decoradors en Python són una forma de modificar o millorar el comportament d'una funció sense canviar-ne el codi. Són un tema avançat que tractarem més endavant.</p>
+            <hr>
+ 
+            
+                <h1>Ámbit o Scope en Python</h1>
+            
+                <p>En Python, l'àmbit d'una variable es refereix a la regió del codi on una variable és accessible. Python té regles específiques per determinar on una variable es pot utilitzar o modificar. Els àmbits més comuns són:</p>
+            
+                <h2>Ámbit Global</h2>
+                <p>Una variable definida fora de totes les funcions o blocs de codi té un àmbit global. Pot ser accedida des de qualsevol part del codi, incloent dins de les funcions.</p>
+                <p>Però, accedir no és el mateix que modificar.....</p>
+                <p>Si necessites modificar una variable global dins d'una funció, has d'utilitzar la paraula clau <code>global</code>.</p>
+            
+                <h3>Exemple de variable global</h3>
+                <pre><code>
+            x = 10  # Variable global
+            def mostrar_x():
+                print(x)  # Accés a la variable global
+            mostrar_x()  # Sortida: 10
+                </code></pre>
+            
+                <h3>Modificació d'una variable global dins d'una funció sense global</h3>
+                <pre><code>
+            x = 10
+            def modificar_x():
+                x = 20  # Crea una nova variable local, no modifica la global
+                print(x)  # Sortida: 20
+            modificar_x()
+            print(x)  # Sortida: 10 (la variable global no ha canviat)
+                </code></pre>
+            
+                <h3>Modificació d'una variable global dins d'una funció amb global</h3>
+                <pre><code>
+            x = 10
+            def modificar_x():
+                global x
+                x = 20  # Modifica la variable global
+                print(x)  # Sortida: 20
+            modificar_x()
+            print(x)  # Sortida: 20 (la variable global ha canviat)
+                </code></pre>
+            
+                <h2>Ámbit Local</h2>
+                <p>Una variable definida dins d'una funció té un àmbit local. Només pot ser accedida dins d'aquesta funció. Si intentes accedir a una variable local fora de la seva funció, obtindràs un error.</p>
+                <h3>Exemple d'àmbit local</h3>
+                <pre><code>
+            def funcion():
+                y = 5  # Variable local
+                print(y)  # Sortida: 5
+            funcion()
+            print(y)  # Error: NameError, 'y' no està definida en l'àmbit global
+                </code></pre>
+            
+                <h2>Ámbit No Local (Nonlocal)</h2>
+                <p>L'àmbit no local aplica a variables definides en una funció externa (però no global) i que es poden accedir des d'una funció interna (anidada). Per modificar una variable d'una funció externa dins d'una funció interna, es fa servir la paraula clau <code>nonlocal</code>.</p>
+            
+                <h3>Exemple de variable no local</h3>
+                <pre><code>
+            def funcion_externa():
+                z = 15  # Variable no local
+                def funcion_interna():
+                    nonlocal z
+                    z = 25  # Modifica la variable de la funció externa
+                    print(z)  # Sortida: 25
+                funcion_interna()
+                print(z)  # Sortida: 25 (la variable no local ha canviat)
+            funcion_externa()
+                </code></pre>
+            
+                <h2>Ámbit de Bucle o Bloc</h2>
+                <p>En Python, les variables definides dins d'un bucle (com <code>for</code> o <code>while</code>) o un bloc (com <code>if</code>) tenen un àmbit local al bloc o funció en què estan definides. No obstant això, a diferència d'altres llenguatges, en Python les variables definides en un bucle o bloc no estan limitades a aquell bloc i poden ser accedides fora d'ell.</p>
+                
+                <h3>Exemple d'àmbit de bucle</h3>
+                <pre><code>
+            for i in range(3):
+                print(i)  # Sortida: 0, 1, 2
+            print(i)  # Sortida: 2 (la variable 'i' segueix accessible fora del bucle)
+                </code></pre>
+                <p>Això pot resultar confús si vens d'altres llenguatges on les variables de bucle tenen un àmbit limitat al bloc.</p>
+          <hr>
+              <h2>Bones Pràctiques al Definir Funcions en Python</h2>
+          
+              <p>Quan es defineixen funcions en Python, hi ha algunes bones pràctiques que ajuden a millorar la llegibilitat, mantenibilitat i eficiència del codi:</p>
+          
+              <h3>1. Noms descriptius</h3>
+              <p>El nom de la funció ha de reflectir clarament el seu propòsit. Això facilita la comprensió del codi i la seva reutilització.</p>
+          
+              <h3>2. Comentaris i documentació (Docstrings)</h3>
+              <p>És important documentar les funcions per explicar què fan, quins són els paràmetres d'entrada i el valor de retorn. El millor mètode per documentar una funció és utilitzar <code>docstrings</code>, que es defineixen entre triple cometes (<code>""" ... """</code>).</p>
+              
+              <h4>Exemple de funció amb docstring</h4>
+              <pre><code>
+          def sumar(a, b):
+              """
+              Suma dos números y devuelve el resultado.
+              :param a: Primer número
+              :param b: Segundo número
+              :return: La suma de a y b
+              """
+              return a + b
+              </code></pre>
+              <p>A més a més, esta forma de documentar permet activar l'ajuda de la funció definida</p>
+              <pre>
+        help(sumar)
+
+        sumar(a, b)
+            Suma dos números y devuelve el resultado.
+            :param a: Primer número
+            :param b: Segundo número
+            :return: La suma de a y b
+              </pre>
+          
+              <h3>3. Evitar efectes secundaris</h3>
+              <p>Una funció hauria de fer només una cosa. No hauria de modificar variables globals o tindre efectes secundaris inesperats. Això ajuda a que el comportament de la funció sigui més previsible.</p>
+          
+              <h3>4. Mantingues les funcions curtes</h3>
+              <p>Les funcions han de ser petites i fàcils de llegir. Si una funció és massa llarga, es recomana dividir-la en funcions més petites per a fer-les més comprensibles i reutilitzables.</p>
+        <hr>
+ 
+            <h2>Ús del Guion Baix (<code>_</code>) en Python</h2>
+        
+            <p>El guion baix (<code>_</code>) en Python té diversos usos depenent del context en què es trobi. A continuació es mostren alguns dels usos més comuns:</p>
+        
+            <h3>1. Ignorar valors en assignacions</h3>
+            <p>Es fa servir com una variable "desechable" quan no necessites utilitzar un valor en una assignació. El valor es descarta utilitzant el guion baix.</p>
+            <pre><code>_, y, z = (1, 2, 3)
+        print(y, z)  # Sortida: 2 3</code></pre>
+        
+            <h3>2. Iteracions quan no es necessita el valor</h3>
+            <p>En els bucles, es fa servir <code>for _ in range(n)</code> quan no necessites utilitzar la variable del bucle.</p>
+            <pre><code>for _ in range(3):
+            print("Hola")  # Es imprimeix "Hola" tres vegades</code></pre>
+        
+            <h3>3. Últim resultat en la consola interactiva</h3>
+            <p>En la terminal de Python, <code>_</code> emmagatzema l'últim resultat calculat.</p>
+            <pre><code>>> 5 + 3
+8
+>>> _ * 2
+16</code></pre>
+        
+            <h3>4. Prefijo per a variables privades</h3>
+            <p>Es fa servir <code>_variable</code> per indicar que una variable és "privada" (això és una convenció, no una restricció real).</p>
+            <pre><code>class MiClasse:
+    def __init__(self):
+            self._secreta = 42  # Indica que és privada (però encara accessible)</code></pre>
+        
+            <h3>5. Doble guion baix per evitar col·lisions de noms (name mangling)</h3>
+            <p>Quan una variable comença amb <code>__</code>, Python canvia el seu nom internament per evitar col·lisions.</p>
+            <pre><code>class Exemple:
+    def __init__(self):
+        self.__privada = 99
+        
+e = Exemple()
+print(dir(e))  # Es converteix en _Exemple__privada</code></pre>
+        
+            <h3>6. Utilitzar <code>_</code> en noms de funcions i variables per evitar conflictes</h3>
+            <p>Es fa servir <code>_</code> en noms per evitar conflictes amb paraules clau de Python.</p>
+            <pre><code>def class_(nom):
+            return f"Classe: {nom}"</code></pre>
+       
+</section>
+
+<section id="moduls">
+
+        <h2>Mòduls i Paquets en Python</h2>
+    
+        <p>Un <strong> mòdul </strong> és simplement un fitxer de Python amb extensió <code>.py</code> que conté definicions de funcions, classes i variables. Pots reutilitzar el codi d'un mòdul important-lo en altres arxius o programes.</p>
+    
+        <h3>Crear un fitxer Python (mi_modulo.py)</h3>
+        <pre><code># mi_modulo.py
+    def saludar(nombre):
+        return f"Hola, {nombre}!"
+    PI = 3.14159</code></pre>
+    
+        <h3>Importar i utilitzar el mòdul en un altre arxiu</h3>
+        <pre><code># programa.py
+    import mi_modulo
+    print(mi_modulo.saludar("Juan"))  # Sortida: Hola, Juan!
+    print(mi_modulo.PI)               # Sortida: 3.14159</code></pre>
+    
+        <p>Quan hem importat un mòdul i volem utilitzar algun element del mateix, hem de fer servir el seu espai de noms seguit d'un punt i el nom de l'element que volem utilitzar. L'espai de noms no és més que el nom que hem indicat després del <code>import</code>.</p>
+    
+        <h3>Maneres d'importar mòduls:</h3>
+    
+        <h4>• Importar tot el mòdul:</h4>
+        <pre><code>import mi_modulo                # L'espai de noms és => mi_modulo
+    print(mi_modulo.saludar("Ana"))  # D'aquesta manera s'ha de fer servir l'espai de noms</code></pre>
+    
+        <h4>• Importar elements específics del mòdul: (sense espai de noms)</h4>
+        <pre><code>from mi_modulo import saludar
+    print(saludar("Carlos"))       # D'aquesta manera NO s'ha de fer servir l'espai de noms</code></pre>
+    
+        <h4>• Importar TOTS els elements del mòdul: (sense espai de noms)</h4>
+        <pre><code>from mi_modulo import *
+    print(saludar("Carlos"))       # D'aquesta manera NO s'ha de fer servir l'espai de noms</code></pre>
+    
+        <h4>• Renombrar un mòdul:</h4>
+        <pre><code>import mi_modulo as mm
+    print(mm.PI)                # D'aquesta manera s'ha de fer servir l'espai de noms</code></pre>
+            <hr>
+
+        <h3>Paquets en Python</h3>
+    
+        <p>Un paquet és una col·lecció de mòduls organitzats en un directori. Serveix per estructurar projectes grans en jerarquies de submòduls.</p>
+    
+        <h4>Com crear un paquet:</h4>
+        <ol>
+            <li>Crea una carpeta per al paquet (per exemple, <code>mi_paquete</code>).</li>
+            <li>Dins de la carpeta, afegeix un arxiu especial anomenat <code>__init__.py</code>. Aquest arxiu pot estar buit o contenir codi d'inicialització per al paquet.</li>
+        </ol>
+    
+        <h4>Estructura bàsica d'un paquet:</h4>
+        <pre><code>mi_paquete/
+        __init__.py
+        modulo1.py
+        modulo2.py</code></pre>
+    
+        <h4>Exemple de mòduls dins del paquet:</h4>
+        <h5>◦ <code>modulo1.py</code>:</h5>
+        <pre><code>def sumar(a, b):
+        return a + b</code></pre>
+    
+        <h5>◦ <code>modulo2.py</code>:</h5>
+        <pre><code>def restar(a, b):
+        return a - b</code></pre>
+    
+        <h3>Ús del paquet en un programa:</h3>
+        <pre><code># programa.py
+    from mi_paquete.modulo1 import sumar
+    from mi_paquete.modulo2 import restar
+    
+    print(sumar(5, 3))  # Sortida: 8
+    print(restar(5, 3)) # Sortida: 2</code></pre>
+    
+        <h3>Paquets anidats:</h3>
+        <p>Els paquets poden contenir subpaquets. Per exemple:</p>
+        <pre><code>mi_paquete/
+        __init__.py
+        utilidades/
+            __init__.py
+            herramientas.py</code></pre>
+    
+        <p>Pots importar submòduls així:</p>
+        <pre><code>from mi_paquete.utilidades.herramientas import alguna_funcion</code></pre>
+    <hr>
+        <h3>Mòduls i Paquets Estàndard de Python</h3>
+    
+        <p>Python inclou molts mòduls estàndard llestos per utilitzar. Alguns exemples comuns són:</p>
+    
+        <h4>Exemples de mòduls estàndard:</h4>
+    
+        <h5>• <code>math</code>: Funcions matemàtiques.</h5>
+        <pre><code>import math
+    print(math.sqrt(16))  # Sortida: 4.0</code></pre>
+    
+        <h5>• <code>os</code>: Operacions del sistema operatiu.</h5>
+        <pre><code>import os
+    print(os.getcwd())  # Obtén el directori actual.</code></pre>
+    
+        <h5>• <code>random</code>: Generació de números aleatoris.</h5>
+        <pre><code>import random
+    print(random.randint(1, 10))  # Número aleatori entre 1 i 10.</code></pre>
+    
+        <h4>Instal·lació de Paquets Externs</h4>
+        <p>Per utilitzar paquets desenvolupats per tercers, els pots instal·lar des del repositori PyPI utilitzant pip:</p>
+        <pre><code>pip3 install nom_del_paquet</code></pre>
+    
+        <h5>Exemple: Instal·lar <code>requests</code> per realitzar sol·licituds HTTP:</h5>
+        <pre><code>import requests
+    response = requests.get("https://example.com")
+    print(response.status_code)</code></pre>
+
+</section>
+
+<section id="main">
+    <h1>Ús de <code>__main__</code> en Python</h1>
+
+    <p>En Python, la construcció <code>if __name__ == "__main__":</code> és una forma estàndard d'assegurar-se que un bloc de codi només s'executi quan el fitxer s'executa directament, i no quan s'importa com un mòdul en un altre fitxer.</p>
+
+    <h2>Desglossament de la seva funció:</h2>
+    <ul>
+        <li><strong><code>__name__</code>:</strong> És una variable especial a Python que es defineix automàticament.
+            <ul>
+                <li>Si el fitxer s'executa directament, <code>__name__</code> pren el valor de <code>"__main__"</code>.</li>
+                <li>Si el fitxer s'importa com a mòdul, <code>__name__</code> pren el nom del fitxer (sense l'extensió .py).</li>
+            </ul>
+        </li>
+        <li><strong><code>if __name__ == "__main__":</code></strong>
+            <ul>
+                <li>Aquest condicional avalua si el script està sent executat directament (no importat).</li>
+                <li>Si la condició és verdadera, el codi dins del bloc s'executarà.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>Per què és útil?</h2>
+    <p>Això és especialment útil per:</p>
+    <ul>
+        <li>Separar el codi que ha d'executar-se només quan el fitxer és el "principal" del programa (com proves, lògica principal o execució directa).</li>
+        <li>Permetre que el fitxer sigui importat com a mòdul sense executar automàticament el seu codi principal.</li>
+    </ul>
+
+    <h2>Exemple pràctic:</h2>
+    <pre><code># Arxiu: mi_script.py
+def funcion_util():
+    print("Aquesta funció pot ser utilitzada en altres mòduls.")
+
+if __name__ == "__main__":
+    print("Aquest script s'està executant directament.")
+    funcion_util()</code></pre>
+
+    <h3>Si executem mi_script.py directament:</h3>
+    <pre><code>$ python mi_script.py
+Aquest script s'està executant directament.
+Aquesta funció pot ser utilitzada en altres mòduls.</code></pre>
+
+    <h3>Si importem mi_script des d'un altre fitxer:</h3>
+    <pre><code>import mi_script
+mi_script.funcion_util()
+Aquesta funció pot ser utilitzada en altres mòduls.</code></pre>
+
+    <p>El bloc dins de <code>if __name__ == "__main__":</code> no s'executarà perquè el fitxer no s'està executant directament.</p>
 
 </section>
 
@@ -758,8 +839,6 @@ for persona in persones_recuperades:
   <h1>Exercicis</h1>
   <h3>Els exercicis i tests corresponents a esta unitat es troben en Aules</h3>
 </section>
-
-
 
 
 </main>
@@ -784,6 +863,7 @@ for persona in persones_recuperades:
   });
 
 </script>
+
 
 </body>
 </html>
