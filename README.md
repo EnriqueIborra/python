@@ -2,7 +2,7 @@
 
 Visita pàgina principal de continguts en:  https://enriqueiborra.github.io/python/ 
 
-Fes servir ![traductor](docs/imgs/icono-trad-google.phg) per visualitzar en altres llengües.
+Fes servir ![traductor](docs/imgs/icono-trad-google.png) per visualitzar en altres llengües.
 
 Per al Mòdul: Introducció a la programació
 
