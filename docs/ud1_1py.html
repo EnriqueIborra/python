@@ -358,7 +358,7 @@ pipreqs /ruta/al/teu/projecte
  </section>
 
  <section id="depuracion">
-  <h2>8. Depuració</h2>
+  <h1>8. Depuració</h1>
   <p>La depuració és el procés de trobar i solucionar errors en el codi font de qualsevol programari.</p>
   <p>Per depurar el teu codi Python, pots utilitzar eines com <code>pdb</code>, que és el depurador integrat en Python. Només has d’incloure la línia:
     <code> import pdb; pdb.set_trace() </code> al teu codi per començar a depurar.</p>
@@ -530,27 +530,7 @@ ventana.mainloop()
   <pre>pip install numpy</pre>
   
   <h2>Altres biblioteques agrupades per tematica</h2>
- <h3>📊 Ciència de dades i anàlisi numèric</h3>
-    <ul>
-        <li>
-            <strong>NumPy</strong>: Tractament eficient de vectors, matrius i càlculs matemàtics.
-        </li>
-        <li>
-            <strong>Pandas</strong>: Manipulació i anàlisi de dades estructurades (taules, sèries, etc.).
-        </li>
-        <li>
-            <strong>Matplotlib</strong>: Creació de gràfics i visualitzacions 2D.
-        </li>
-        <li>
-            <strong>Seaborn</strong>: Visualitzacions estadístiques més elegants basades en Matplotlib.
-        </li>
-        <li>
-            <strong>SciPy</strong>: Funcions científiques avançades (àlgebra lineal, estadística, càlcul numèric).
-        </li>
-        <li>
-            <strong>Plotly</strong>: Gràfics interactius per a la web i anàlisi exploratòria.
-        </li>
-    </ul>
+
 
     <h3>🧰 Eines i utilitats generals</h3>
     <ul>
@@ -561,20 +541,12 @@ ventana.mainloop()
         <li><strong>pathlib</strong>: Manipulació de rutes de fitxers de forma moderna.</li>
     </ul>
 
-    <h3>🗃️ Bases de dades</h3>
+          <h3>🖥️ Interfícies gràfiques d'usuari (GUI)</h3>
     <ul>
-        <li><strong>SQLAlchemy</strong>: ORM per treballar amb bases de dades SQL.</li>
-        <li><strong>SQLite3</strong>: Inclòs amb Python, ideal per bases de dades lleugeres.</li>
-        <li><strong>Peewee</strong>: ORM senzill i lleuger.</li>
-        <li><strong>PyMongo</strong>: Connexió amb bases de dades MongoDB (NoSQL).</li>
-    </ul>
-
-     <h3>🧪 Ciència i enginyeria</h3>
-    <ul>
-        <li><strong>SymPy</strong>: Càlcul simbòlic (matemàtiques simbòliques).</li>
-        <li><strong>OpenCV</strong>: Tractament d’imatges i visió artificial.</li>
-        <li><strong>Biopython</strong>: Bioinformàtica i anàlisi de dades biològiques.</li>
-        <li><strong>Astropy</strong>: Astronomia i manipulació de dades astronòmiques.</li>
+        <li><strong>Tkinter</strong>: Biblioteca estàndard de Python per crear interfícies gràfiques de manera senzilla.</li>
+        <li><strong>PyQt / PySide</strong>: Interfícies modernes i potents basades en el framework Qt.</li>
+        <li><strong>Kivy</strong>: Dissenyat per crear aplicacions amb interfície tàctil, també útil per a mòbils.</li>
+        <li><strong>wxPython</strong>: GUI nativa multiplataforma amb controls avançats.</li>
     </ul>
 
     <h3>🌐 Web i APIs</h3>
@@ -586,14 +558,33 @@ ventana.mainloop()
         <li><strong>BeautifulSoup</strong>: Extracció de dades de pàgines web (web scraping).</li>
         <li><strong>Selenium</strong>: Automatització de navegadors web.</li>
     </ul>
-      <h3>🖥️ Interfícies gràfiques d'usuari (GUI)</h3>
+    
+    <h3>🗃️ Bases de dades</h3>
     <ul>
-        <li><strong>Tkinter</strong>: Biblioteca estàndard de Python per crear interfícies gràfiques de manera senzilla.</li>
-        <li><strong>PyQt / PySide</strong>: Interfícies modernes i potents basades en el framework Qt.</li>
-        <li><strong>Kivy</strong>: Dissenyat per crear aplicacions amb interfície tàctil, també útil per a mòbils.</li>
-        <li><strong>wxPython</strong>: GUI nativa multiplataforma amb controls avançats.</li>
+        <li><strong>SQLAlchemy</strong>: ORM per treballar amb bases de dades SQL.</li>
+        <li><strong>SQLite3</strong>: Inclòs amb Python, ideal per bases de dades lleugeres.</li>
+        <li><strong>Peewee</strong>: ORM senzill i lleuger.</li>
+        <li><strong>PyMongo</strong>: Connexió amb bases de dades MongoDB (NoSQL).</li>
     </ul>
- 
+
+    <h3>📊 Ciència de dades i anàlisi numèric</h3>
+    <ul>
+        <li>             <strong>NumPy</strong>: Tractament eficient de vectors, matrius i càlculs matemàtics.         </li>
+        <li>             <strong>Pandas</strong>: Manipulació i anàlisi de dades estructurades (taules, sèries, etc.).        </li>
+        <li>             <strong>Matplotlib</strong>: Creació de gràfics i visualitzacions 2D.        </li>
+        <li>             <strong>Seaborn</strong>: Visualitzacions estadístiques més elegants basades en Matplotlib.        </li>
+        <li>             <strong>SciPy</strong>: Funcions científiques avançades (àlgebra lineal, estadística, càlcul numèric).        </li>
+        <li>             <strong>Plotly</strong>: Gràfics interactius per a la web i anàlisi exploratòria.        </li>
+    </ul>
+
+
+     <h3>🧪 Ciència i enginyeria</h3>
+    <ul>
+        <li><strong>SymPy</strong>: Càlcul simbòlic (matemàtiques simbòliques).</li>
+        <li><strong>OpenCV</strong>: Tractament d’imatges i visió artificial.</li>
+        <li><strong>Biopython</strong>: Bioinformàtica i anàlisi de dades biològiques.</li>
+        <li><strong>Astropy</strong>: Astronomia i manipulació de dades astronòmiques.</li>
+    </ul>
   
  </section>
 
