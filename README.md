@@ -1,2 +1,4 @@
-Curso para aprender python y sus posibilidades en el uso de criptografia y esteganografia
+Curs del mòdul optatiu:
+Introducció a la Programació.
+Cicles de SMX i ASIX
 Visita:  https://enriqueiborra.github.io/python/ 
