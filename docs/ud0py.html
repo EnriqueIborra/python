@@ -147,6 +147,68 @@
   <p>
     L’elecció del llenguatge més adequat depén del projecte i dels objectius que es volen aconseguir. A mesura que la tecnologia evoluciona, apareixen nous llenguatges i es modernitzen els existents, cosa que amplia constantment les possibilitats per als programadors i assegura que la programació continue sent un camp dinàmic i en creixement continu.
   </p>
+
+  <h2>Tipus de llenguatges de programació</h2>
+  <h3>Segons nivell d'abstració</h3>
+  <ul>
+    <li>Baix nivell</li>
+    <li>Alt nivell</li>
+  </ul>
+  <h3>Segons el seu ús o aplicació</h3>
+  <ul>
+    <li>De propòsit general</li>
+    <li>Especifics</li>
+  </ul>
+  <h3>Segons paradigma de programació</h3>
+  <ul>
+    <li>Imperatius</li>  <p>S’especifica com s’ha de fer alguna cosa pas a pas</p>
+    <p>C, Python,Java</p>
+    <li>Orientats a objectes</li> <p>Es basen en la idea d’"objectes" que encapsulen dades i comportaments.</p>
+    <p>Java, C++, Python, Ruby</p>
+    <li>Declaratius</li> <p>Es descriu què s’ha de fer, no com fer-ho</p>
+    <p>SQL, HTML, CSS</p>
+    <li>Funcionals</li> <p>Es basen en funcions matemàtiques</p><p>Haskel, Lisp</p>
+    <li>Logics</li> <p>Utilitzen regles lògiques i inferència per a resoldre problemes</p> <p>Prolog</p>
+  </ul>
+  <h3>Segons la execució</h3>
+  <ul>
+    <li>Interpretats</li>
+    <p>Són executats línia per línia per un intèrpret, sense compilar a codi màquina directament.</p>
+    <li>Compilats (compilador)</li>
+    <p>Són traduïts a codi màquina abans d'executar-se</p>
+    <li>Bytecode (Semi-compilats)</li>
+    <p>Es compilen a un codi intermedi (anomenat bytecode) i després s’interpreten o s’executen en una màquina virtual</p>
+  </ul>
+  <table border="1" cellspacing="0" cellpadding="8">
+  <thead>
+    <tr>
+      <th>Tipus</th>
+      <th>Exemples</th>
+      <th>Execució</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Compilats</strong></td>
+      <td>C, C++, Rust, Go</td>
+      <td>Directe, ràpid</td>
+    </tr>
+    <tr>
+      <td><strong>Interpretats</strong></td>
+      <td>Python, JavaScript, Ruby</td>
+      <td>Intèrpret, flexible</td>
+    </tr>
+    <tr>
+      <td><strong>Semicompilats</strong></td>
+      <td>Java, C#, Kotlin</td>
+      <td>Bytecode + màquina virtual</td>
+    </tr>
+  </tbody>
+</table>
+<p>Java i Python semblen similars perquè tots dos compilen a bytecode i després s'executen 
+  dins d'una màquina virtual, però hi ha diferències importants en com funcionen i en la seva arquitectura</p>
+<p>Python compila a bytecode i s’executa amb una màquina virtual (PVM) que interpreta aquest bytecode. No fa JIT per defecte</p>
+<p>Java compila explícitament a bytecode i després la JVM fa JIT (compilació Just-In-Time), convertint el bytecode a codi màquina en temps d’execució → això fa que sigui més proper a un llenguatge compilat.</p>
 </section>
 
 <section id="pasos">

@@ -270,8 +270,9 @@ except ZeroDivisionError:
   <pre><code>import pdb
 pdb.set_trace()</code></pre>
 
-  <h4>4. IDEs amb depurador</h4>
+  <h4>4. Depurador integrat en IDE</h4>
   <p>Entorns com <strong>VS Code</strong>, <strong>PyCharm</strong> o <strong>Thonny</strong> ofereixen depuració gràfica amb punts de ruptura, seguiment pas a pas i visualització de variables.</p>
+   <li><a href="https://www.youtube.com/watch?v=VL5xJmdAHes">Video sobre com utilitzar la depuració (debugger) des de VSCode</a></li>
 
   <h4>5. Comprovacions amb <code>assert</code></h4>
   <pre><code>assert x > 0, "x hauria de ser positiu"</code></pre>
@@ -282,9 +283,64 @@ pdb.set_trace()</code></pre>
     <li>Que sigua estable en situacions imprevistes</li>
     <li>Que sigua fàcil de mantenir</li>
   </ul>
-  <br><hr>
-  <h2>Com utilitzar la depuració des de VSCode</h2>
-  <a href="https://www.youtube.com/watch?v=VL5xJmdAHes">Video sobre com utilitzar la depuració (debugger) des de VSCode</a>
+  <br><hr>  <br>
+  <h2>Tipus d'errors</h2>
+  <p>En Python, hi ha diversos tipus d’errors que poden aparèixer durant l'execució o la compilació d’un programa. 
+    Es poden classificar en dues grans categories: errors de sintaxi i errors en temps d’execució (exceptions).</p>
+   <strong><li>Errors de sintaxi (Syntax Errors)</li></strong>
+   <p>Són errors que es produeixen quan el codi no segueix les regles de la sintaxi del llenguatge.</p>
+   <strong><li>Errors en temps d'execució (Exceptions)</li></strong>
+   <p>Són errors que es produeixen mentre el programa s’està executant.</p> <p>Alguns tipus comuns</p>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Nom de l'error</th>
+      <th>Quan es produeix</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>NameError</code></td>
+      <td>Quan es fa referència a una variable que no existeix</td>
+    </tr>
+    <tr>
+      <td><code>TypeError</code></td>
+      <td>Quan es fa una operació amb tipus incompatibles</td>
+    </tr>
+    <tr>
+      <td><code>ValueError</code></td>
+      <td>Quan una funció rep un valor del tipus correcte però inadequat</td>
+    </tr>
+    <tr>
+      <td><code>IndexError</code></td>
+      <td>Quan es fa accés a una posició inexistent d'una llista o tupla</td>
+    </tr>
+    <tr>
+      <td><code>KeyError</code></td>
+      <td>Quan es fa accés a una clau que no existeix en un diccionari</td>
+    </tr>
+    <tr>
+      <td><code>AttributeError</code></td>
+      <td>Quan s'intenta accedir a un mètode o atribut inexistent</td>
+    </tr>
+    <tr>
+      <td><code>ZeroDivisionError</code></td>
+      <td>Quan es divideix per zero</td>
+    </tr>
+    <tr>
+      <td><code>ImportError</code> / <code>ModuleNotFoundError</code></td>
+      <td>Quan no es pot importar un mòdul</td>
+    </tr>
+    <tr>
+      <td><code>FileNotFoundError</code></td>
+      <td>Quan s'intenta obrir un fitxer que no existeix</td>
+    </tr>
+    <tr>
+      <td><code>IndentationError</code></td>
+      <td>Quan hi ha un problema amb la indentació</td>
+    </tr>
+  </tbody>
+</table>
 
 </section>
 
