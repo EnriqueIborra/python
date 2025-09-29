@@ -535,6 +535,18 @@ b = None     # Un valor nul     </pre>
     </code></pre>
     
     <p>    La funció <code>print()</code> adquireix més sentit quan s’utilitza en un entorn no interactiu, com ara en programes amb extensió <code>.py</code> que s’executen directament des de la línia d’ordres del sistema operatiu.     </p>
+    <p class="tips"> <br>==>  A partir d'ací, utilitzem VSCode   <br><br>
+      Per utilitzar VSCode, s'ha de posar el codi en un fitxer, i el fitxer dins d'una carpeta <br>
+      Primer) Crear carpeta  <br>
+      Segon) Obrir el VSCode, i des del VSCode obrirem un projecte (carpeta) <br>
+       . ==>  Open Folder  <br>
+      Tercer) Crear fitxer  (new file) <br>
+      Quart)  Escriure codi  <br>
+      Cinqué) Executar codi  (click dret sobre el codi -> Run Python File in Terminal)<br>
+      . <br>
+      <a href="https://www.youtube.com/watch?v=LOGZAf08c6E"> Tutorial ràpid de VSCode-Python</a>
+     </p>   
+     
     <h3>Personalització amb l'argument <code>end</code></h3>
      <p>         Per defecte, <code>print()</code> imprimeix un salt de línia al final. Aquest comportament es pot modificar amb el paràmetre <code>end</code>.     </p>
      <li><strong>Imprimir en la mateixa línia:</strong></li>  
@@ -548,6 +560,18 @@ b = None     # Un valor nul     </pre>
     <li><strong>Insertar un salt de línia manualment amb <code>\n</code>:</strong></li>
     <pre><code>
     print("Hola\nMón")      </code></pre>
+    <h3>Exemples</h3>
+    <img src="imgs/provaVSCode1.png" alt="VSCode1"  width="45%"> 
+    <h3>Personalització amb l'argument <code>sep</code></h3>
+     <p> L'argument <strong>sep</strong> és (opcional):
+                <ul>
+                    <li>Defineix el separador entre els objectes.</li>
+                    <li>Per defecte és un espai <code>' '</code>.</li>
+                </ul>
+    <pre><code>a = 3.14153345  
+print ( a, 234, 'pepe')
+print ( a, 234, 'pepe', sep='>>')</code></pre>
+
   </section>
 
 <section id="comentaris">
@@ -668,13 +692,47 @@ diverses línies")</code></pre>
           <li><code>\\</code>  barra invertida literal</li>
         </ul>
         
-        <pre><code>
-        print("Hola\tmón")         # Hola    món
-        print("Línia 1\nLínia 2")   # Línia 1
-                                    # Línia 2
-        print("Ruta: C:\\fitxers\\usuari")   # Ruta: C:\fitxers\usuari</code></pre>
+        <pre><code>print("Hola\tmón")         # Hola    món
+print("Línia 1\nLínia 2")   # Línia 1
+                            # Línia 2
+print("Ruta: C:\\fitxers\\usuari")   # Ruta: C:\fitxers\usuari</code></pre>
+        <h3>Inserció de valors dins de cadenes</h3>
+        <p>Python ofereix diversos mecanismes per a inserir valors de variables dins de cadenes de text, com ara:</p>
+        <ul>
+          <li><strong>Format clàssic</strong>: <code>"Hola %s" % nom</code></li>
+          <li><strong>Mètode format()</strong>: <code>"Hola {}".format(nom)</code></li>
+          <li><strong>f-strings</strong> (des de Python 3.6): <code>f"Hola {nom}"</code></li>
+        </ul>
+        <h4>3. f-strings (des de Python 3.6)</h4>
+        <p>-- Forma moderna, clara i recomanada --</p>
+        <pre><code>nom = "Joan"
+edat = 25
+a, b = 4, 5
+pi = 3.141592
+monto = 1234567.89
+numero = -42
+n = 42
 
-      <h1>Lectura de dades per teclat en Python</h1>
+print(f"El meu nom és {nom} i tinc {edat} anys.")
+print(f"La suma de {a} i {b} és {a + b}.")
+print(f"{edat=}")                        # Depuració: edat=25
+print(f"El valor de pi amb 3 decimals és {pi:.3f}.")
+print(f"Percentatge: {0.25:.2%}")       # 25.00%</code></pre>
+        
+        <h4>4. Alineació i formats especials</h4>
+        <pre><code>print(f"|{nom:<10}|")       # A l'esquerra
+print(f"|{nom:>10}|")       # A la dreta
+print(f"|{nom:_>10}|")      # A la dreta amb "_"
+print(f"|{nom:^10}|")       # Centrat
+print(f"|{nom:*^10}|")      # Centrat amb "*"
+
+print(f"Decimal: {n}, Binari: {n:b}, Hexadecimal: {n:x}, Octal: {n:o}")
+print(f"Amb separador de milers: {monto:,.2f}")
+print(f"Amb signe explícit: {numero:+d}")   # -42
+print(f"Amb zeros a l'esquerra: {42:06d}")  # 000042</code></pre>
+
+
+      <hr><h1>Lectura de dades per teclat en Python</h1>
     
       <p>         En qualsevol llenguatge de programació és essencial la <strong>entrada de dades</strong> a un programa perquè aquest puga reaccionar de diferents maneres. 
         Aquestes dades poden servir com a base per a càlculs o per a prendre decisions, realitzant una acció o una altra segons el valor introduït.      </p>
@@ -1014,7 +1072,7 @@ print(type(resultat))      # &lt;class 'float'&gt;</code></pre>
   </ul>
 
   <h2> Exemples:</h2>
-
+ 
   <h3> De cadena a nombre</h3>
   <pre><code>numero = int("10")         # ara és 10 (int)
 decimal = float("3.14")    # ara és 3.14 (float)</code></pre>
