@@ -45,13 +45,12 @@
         <h3>Exemple d'Execució Seqüencial</h3>
         <p>           Quan s'executa un programa, el flux de control segueix una seqüència lineal. Aquí tens un exemple senzill:         </p>
       
-        <pre><code>
-      # Programa d'exemple per a execució seqüencial
-      nombre = "Maria"
-      edat = 25
-      
-      print("Hola, el meu nom és", nombre)  <!-- Imprimeix el nom -->
-      print("Tinc", edat, "anys.")           <!-- Imprimeix l'edat -->
+        <pre><code># Programa d'exemple per a execució seqüencial
+nombre = "Maria"
+edat = 25
+
+print("Hola, el meu nom és", nombre)  <!-- Imprimeix el nom -->
+print("Tinc", edat, "anys.")           <!-- Imprimeix l'edat -->   
         </code></pre>
       
         <img src="imgs/sequencial.png" alt="sequencial" class="imatge-dreta" width="15%">
@@ -76,17 +75,15 @@
       </p>
     
       <h3>Exemple d'ús del condicional if - else</h3>
-      <pre><code>
-    edad = 20
-    if edad >= 18:
-        print("Eres mayor de edad")  # aquesta ordre està indentada
-        print("==================")     # aquestes ordres formen un bloc
-    else:
-        print("Eres menor de edad")  # aquesta ordre també està indentada
-      </code></pre>
+      <pre><code>edat = int(input('Quina edat tens ? '))
+if edat >= 18:
+    print("Eres major d'edat")     # aquesta ordre està indentada
+    print("==================")    # aquestes ordres formen un bloc
+else:
+    print("Eres menor d'edat")  # aquesta ordre també està indentada        </code></pre>
 
   <h3>Exemple d'ús del condicional if amb elif i  else</h3>      
-      <pre><code>
+      <pre><code>n = float(input("Quina nota has tret en l'examen?"))
 if n<=4:
     print ("Suspes")
 elif n<=6:
@@ -94,17 +91,14 @@ elif n<=6:
 elif n<=8:
     print("Notable")
 else:
-    print("Excelent")         
-      </code></pre>            
+    print("Excelent")          </code></pre>            
 
       
       <h3>Condicional en una sola línia</h3>
       <p>
         Si la estructura només té una línia, no és necessari indentat, tot i que és habitual fer-ho així:
       </p>
-      <pre><code>
-    if edad >= 18: print("Eres mayor de edad")
-      </code></pre>
+      <pre><code> if edat >= 18: print("Eres major d'edat")        </code></pre>
 
     <hr>
       <h2>Guia de Estils de Python (PEP 8)</h2>
@@ -211,16 +205,16 @@ def switch_example(value):
           <p>El bucle <code>while</code> executa una acció mentre una condició siga veritable.</p>
           
           <h3>Exemple: Bucles <code>while</code></h3>
-          <pre><code>
-      contador = 0
-      while contador < 5:
-          print(f"Contador: {contador}")
-          contador += 1  # Augmenta el contador
-      else:
-          print("El bucle ha acabat amb contador >= 5")</code></pre>
-          <p>Els bucles <code>for</code> i <code>while</code> són molt útils per repetir accions múltiples vegades i controlar el flux de l'execució dels programes en funció de condicions específiques.</p>
-            
-            <hr>
+          <pre><code>contador = 0
+while contador < 5:
+    print(f"Contador: {contador}")
+    contador += 1  # Augmenta el contador
+else:
+    print("El bucle ha acabat amb contador >= 5")</code></pre>
+
+    <p>Els bucles <code>for</code> i <code>while</code> són molt útils per repetir accions múltiples vegades i controlar el flux de l'execució dels programes en funció de condicions específiques.</p>
+    
+    <hr>
 
  <h1> Clàusula <code>else</code> en bucles en Python</h1>
 
@@ -321,13 +315,13 @@ else:
 
         <h2>Exemple de Manejador d'Errors</h2>
         <pre><code>try:
-        resultado = 10 / 0
-    except ZeroDivisionError:
-        print("Error: No se puede dividir entre cero.")
-    else:
-        print("La operación ha sido correcta")
-    finally:
-        print("Esta parte se ejecuta siempre")</code></pre>
+    resultado = 10 / 0
+except ZeroDivisionError:
+    print("Error: No se puede dividir entre cero.")
+else:
+    print("La operación ha sido correcta")
+finally:
+    print("Esta parte se ejecuta siempre")</code></pre>
 
         <ul>
             <li><strong><code>try</code></strong>: S'intenta executar el codi dins d'aquesta secció.</li>
@@ -463,203 +457,175 @@ else:
     
 
         <h3>Funcions amb Paràmetres Opcionals</h3>
-        <pre><code>
-    def saludar(nom="Usuari"):
-        print(f"Hola, {nom}!")
-    
-    saludar("Joan")  # Sortida: Hola, Joan!
-    saludar()        # Sortida: Hola, Usuari!
-        </code></pre>
-        <p>Aquest exemple mostra com es poden definir paràmetres opcionals en una funció. Si no es passa cap valor a la funció, es fa servir el valor per defecte (en aquest cas, <code>"Usuari"</code>).</p>
-    
-        <h3>Funcions amb Valor de Retorn</h3>
-        <pre><code>
-    def multiplicar(a, b):
-        return a * b
-    
-    resultat_multiplicacio = multiplicar(4, 3)
-    print(resultat_multiplicacio)  # Sortida: 12
-        </code></pre>
-        <p>Les funcions també poden retornar un valor mitjançant la declaració <code>return</code>, com es veu en l'exemple de la funció <code>multiplicar</code>.</p>
-    
+        <pre><code>def saludar(nom="Usuari"):
+    print(f"Hola, {nom}!")
 
-          
-            <h3>Funcions amb Tipus de Dades (Type Hinting)</h3>
-            <p>En Python, es poden afegir indicadors de tipus (type hints) per especificar el tipus de les variables o els arguments d'una funció. Això millora la llegibilitat del codi i ajuda als editors a proporcionar suggeriments i detecció d'errors.</p>
-            <pre><code>
-        def dividir(a: float, b: float) -> float:   # Indicació de tipus per a arguments i valor de retorn
-            return a / b
-            </code></pre>
-        
-            <h3>Funcions amb múltiples arguments</h3>
-            <p>En Python, es poden definir funcions que accepten un nombre variable d'arguments usant els símbols <code>*</code> i <code>**</code>:</p>
-            
-            <h4>Arguments arbitrarios (Comas)</h4>
-            <pre><code>
-        def sumar_todos(*numeros):  # Diversos arguments passats amb comes
-            return sum(numeros)
-            </code></pre>
-            <p>En aquest exemple, la funció <code>sumar_todos</code> pot acceptar qualsevol nombre d'arguments, i els processa com una tupla.</p>
-        
-            <h4>Arguments amb clau i valor (Clave-Valor)</h4>
-            <pre><code>
-        def mostrar_info(**info):  # Diversos arguments passats com a clau-valor
-            for clau, valor in info.items():
-                print(f"{clau}: {valor}")
-            </code></pre>
-            <p>Aquesta funció accepta un nombre arbitrari de parells de clau-valor, com un diccionari.</p>
-        
-            <h3>Funcions Lambda</h3>
-            <p>Les funcions lambda són funcions anònimes que es poden definir en una sola línia. Són útils per a operacions simples i per passar com arguments a altres funcions.</p>
-            <pre><code>
-        multiplicar = lambda x, y: x * y  # Funció lambda per multiplicar dos valors
-        print(multiplicar(2, 3))  # Sortida: 6
-            </code></pre>
-        
-            <h3>Decoradors (Següent Tema)</h3>
-            <p>Els decoradors en Python són una forma de modificar o millorar el comportament d'una funció sense canviar-ne el codi. Són un tema avançat que tractarem més endavant.</p>
-            <hr>
- 
-            
-                <h1>Ámbit o Scope en Python</h1>
-            
-                <p>En Python, l'àmbit d'una variable es refereix a la regió del codi on una variable és accessible. Python té regles específiques per determinar on una variable es pot utilitzar o modificar. Els àmbits més comuns són:</p>
-            
-                <h2>Ámbit Global</h2>
-                <p>Una variable definida fora de totes les funcions o blocs de codi té un àmbit global. Pot ser accedida des de qualsevol part del codi, incloent dins de les funcions.</p>
-                <p>Però, accedir no és el mateix que modificar.....</p>
-                <p>Si necessites modificar una variable global dins d'una funció, has d'utilitzar la paraula clau <code>global</code>.</p>
-            
-                <h3>Exemple de variable global</h3>
-                <pre><code>
-            x = 10  # Variable global
-            def mostrar_x():
-                print(x)  # Accés a la variable global
-            mostrar_x()  # Sortida: 10
-                </code></pre>
-            
-                <h3>Modificació d'una variable global dins d'una funció sense global</h3>
-                <pre><code>
-            x = 10
-            def modificar_x():
-                x = 20  # Crea una nova variable local, no modifica la global
-                print(x)  # Sortida: 20
-            modificar_x()
-            print(x)  # Sortida: 10 (la variable global no ha canviat)
-                </code></pre>
-            
-                <h3>Modificació d'una variable global dins d'una funció amb global</h3>
-                <pre><code>
-            x = 10
-            def modificar_x():
-                global x
-                x = 20  # Modifica la variable global
-                print(x)  # Sortida: 20
-            modificar_x()
-            print(x)  # Sortida: 20 (la variable global ha canviat)
-                </code></pre>
-            
-                <h2>Ámbit Local</h2>
-                <p>Una variable definida dins d'una funció té un àmbit local. Només pot ser accedida dins d'aquesta funció. Si intentes accedir a una variable local fora de la seva funció, obtindràs un error.</p>
-                <h3>Exemple d'àmbit local</h3>
-                <pre><code>
-            def funcion():
-                y = 5  # Variable local
-                print(y)  # Sortida: 5
-            funcion()
-            print(y)  # Error: NameError, 'y' no està definida en l'àmbit global
-                </code></pre>
-            
-                <h2>Ámbit No Local (Nonlocal)</h2>
-                <p>L'àmbit no local aplica a variables definides en una funció externa (però no global) i que es poden accedir des d'una funció interna (anidada). Per modificar una variable d'una funció externa dins d'una funció interna, es fa servir la paraula clau <code>nonlocal</code>.</p>
-            
-                <h3>Exemple de variable no local</h3>
-                <pre><code>
-            def funcion_externa():
-                z = 15  # Variable no local
-                def funcion_interna():
-                    nonlocal z
-                    z = 25  # Modifica la variable de la funció externa
-                    print(z)  # Sortida: 25
-                funcion_interna()
-                print(z)  # Sortida: 25 (la variable no local ha canviat)
-            funcion_externa()
-                </code></pre>
-            
-                <h2>Ámbit de Bucle o Bloc</h2>
-                <p>En Python, les variables definides dins d'un bucle (com <code>for</code> o <code>while</code>) o un bloc (com <code>if</code>) tenen un àmbit local al bloc o funció en què estan definides. No obstant això, a diferència d'altres llenguatges, en Python les variables definides en un bucle o bloc no estan limitades a aquell bloc i poden ser accedides fora d'ell.</p>
-                
-                <h3>Exemple d'àmbit de bucle</h3>
-                <pre><code>
-            for i in range(3):
-                print(i)  # Sortida: 0, 1, 2
-            print(i)  # Sortida: 2 (la variable 'i' segueix accessible fora del bucle)
-                </code></pre>
-                <p>Això pot resultar confús si vens d'altres llenguatges on les variables de bucle tenen un àmbit limitat al bloc.</p>
-          <hr>
-              <h2>Bones Pràctiques al Definir Funcions en Python</h2>
-          
-              <p>Quan es defineixen funcions en Python, hi ha algunes bones pràctiques que ajuden a millorar la llegibilitat, mantenibilitat i eficiència del codi:</p>
-          
-              <h3>1. Noms descriptius</h3>
-              <p>El nom de la funció ha de reflectir clarament el seu propòsit. Això facilita la comprensió del codi i la seva reutilització.</p>
-          
-              <h3>2. Comentaris i documentació (Docstrings)</h3>
-              <p>És important documentar les funcions per explicar què fan, quins són els paràmetres d'entrada i el valor de retorn. El millor mètode per documentar una funció és utilitzar <code>docstrings</code>, que es defineixen entre triple cometes (<code>""" ... """</code>).</p>
-              
-              <h4>Exemple de funció amb docstring</h4>
-              <pre><code>
-          def sumar(a, b):
-              """
-              Suma dos números y devuelve el resultado.
-              :param a: Primer número
-              :param b: Segundo número
-              :return: La suma de a y b
-              """
-              return a + b
-              </code></pre>
-              <p>A més a més, esta forma de documentar permet activar l'ajuda de la funció definida</p>
-              <pre>
-        help(sumar)
+saludar("Joan")  # Sortida: Hola, Joan!
+saludar()        # Sortida: Hola, Usuari!       </code></pre>
 
-        sumar(a, b)
-            Suma dos números y devuelve el resultado.
-            :param a: Primer número
-            :param b: Segundo número
-            :return: La suma de a y b
-              </pre>
+    <p>Aquest exemple mostra com es poden definir paràmetres opcionals en una funció. Si no es passa cap valor a la funció, es fa servir el valor per defecte (en aquest cas, <code>"Usuari"</code>).</p>
+
+    <h3>Funcions amb Valor de Retorn</h3>
+    <pre><code>def multiplicar(a, b):
+    return a * b
+
+resultat_multiplicacio = multiplicar(4, 3)
+print(resultat_multiplicacio)  # Sortida: 12           </code></pre>
+
+    <p>Les funcions també poden retornar un valor mitjançant la declaració <code>return</code>, com es veu en l'exemple de la funció <code>multiplicar</code>.</p>
+         
+    <h3>Funcions amb Tipus de Dades (Type Hinting)</h3>
+    <p>En Python, es poden afegir indicadors de tipus (type hints) per especificar el tipus de les variables o els arguments d'una funció. Això millora la llegibilitat del codi i ajuda als editors a proporcionar suggeriments i detecció d'errors.</p>
+    <pre><code>def dividir(a: float, b: float) -> float:   # Indicació de tipus per a arguments i valor de retorn
+    return a / b              </code></pre>
+        
+    <h3>Funcions amb múltiples arguments</h3>
+    <p>En Python, es poden definir funcions que accepten un nombre variable d'arguments usant els símbols <code>*</code> i <code>**</code>:</p>
+    
+    <h4>Arguments arbitrarios (Comas)</h4>
+    <pre><code>def sumar_todos(*numeros):  # Diversos arguments passats amb comes
+    return sum(numeros)              </code></pre>
+    <p>En aquest exemple, la funció <code>sumar_todos</code> pot acceptar qualsevol nombre d'arguments, i els processa com una tupla.</p>
+
+    <h4>Arguments amb clau i valor (Clave-Valor)</h4>
+    <pre><code>def mostrar_info(**info):  # Diversos arguments passats com a clau-valor
+    for clau, valor in info.items():
+        print(f"{clau}: {valor}")                </code></pre>
+    <p>Aquesta funció accepta un nombre arbitrari de parells de clau-valor, com un diccionari.</p>
+
+    <h3>Funcions Lambda</h3>
+    <p>Les funcions lambda són funcions anònimes que es poden definir en una sola línia. Són útils per a operacions simples i per passar com arguments a altres funcions.</p>
+    <pre><code>multiplicar = lambda x, y: x * y  # Funció lambda per multiplicar dos valors
+    print(multiplicar(2, 3))  # Sortida: 6                </code></pre>
+        
+    <h3>Decoradors (Següent Tema)</h3>
+    <p>Els decoradors en Python són una forma de modificar o millorar el comportament d'una funció sense canviar-ne el codi. Són un tema avançat que tractarem més endavant.</p>
+    <hr>
+            
+    <h1>Ámbit o Scope en Python</h1>
+
+    <p>En Python, l'àmbit d'una variable es refereix a la regió del codi on una variable és accessible. Python té regles específiques per determinar on una variable es pot utilitzar o modificar. Els àmbits més comuns són:</p>
+
+    <h2>Ámbit Global</h2>
+    <p>Una variable definida fora de totes les funcions o blocs de codi té un àmbit global. Pot ser accedida des de qualsevol part del codi, incloent dins de les funcions.</p>
+    <p>Però, accedir no és el mateix que modificar.....</p>
+    <p>Si necessites modificar una variable global dins d'una funció, has d'utilitzar la paraula clau <code>global</code>.</p>
+
+    <h3>Exemple de variable global</h3>
+    <pre><code>x = 10  # Variable global
+def mostrar_x():
+    print(x)  # Accés a la variable global
+mostrar_x()  # Sortida: 10                    </code></pre>
+            
+    <h3>Modificació d'una variable global dins d'una funció sense global</h3>
+    <pre><code>x = 10
+def modificar_x():
+    x = 20  # Crea una nova variable local, no modifica la global
+    print(x)  # Sortida: 20
+modificar_x()
+print(x)  # Sortida: 10 (la variable global no ha canviat)           </code></pre>
+            
+    <h3>Modificació d'una variable global dins d'una funció amb global</h3>
+    <pre><code>x = 10
+def modificar_x():
+    global x
+    x = 20  # Modifica la variable global
+    print(x)  # Sortida: 20
+modificar_x()
+print(x)  # Sortida: 20 (la variable global ha canviat)       </code></pre>
+            
+    <h2>Ámbit Local</h2>
+    <p>Una variable definida dins d'una funció té un àmbit local. Només pot ser accedida dins d'aquesta funció. Si intentes accedir a una variable local fora de la seva funció, obtindràs un error.</p>
+    <h3>Exemple d'àmbit local</h3>
+    <pre><code>def funcion():
+    y = 5  # Variable local
+    print(y)  # Sortida: 5
+funcion()
+print(y)  # Error: NameError, 'y' no està definida en l'àmbit global      </code></pre>
+            
+    <h2>Ámbit No Local (Nonlocal)</h2>
+    <p>L'àmbit no local aplica a variables definides en una funció externa (però no global) i que es poden accedir des d'una funció interna (anidada). Per modificar una variable d'una funció externa dins d'una funció interna, es fa servir la paraula clau <code>nonlocal</code>.</p>
+
+    <h3>Exemple de variable no local</h3>
+    <pre><code>def funcion_externa():
+    z = 15  # Variable no local
+    def funcion_interna():
+        nonlocal z
+        z = 25  # Modifica la variable de la funció externa
+        print(z)  # Sortida: 25
+    funcion_interna()
+    print(z)  # Sortida: 25 (la variable no local ha canviat)
+funcion_externa()
+        </code></pre>
+    
+        <h2>Ámbit de Bucle o Bloc</h2>
+        <p>En Python, les variables definides dins d'un bucle (com <code>for</code> o <code>while</code>) o un bloc (com <code>if</code>) tenen un àmbit local al bloc o funció en què estan definides. No obstant això, a diferència d'altres llenguatges, en Python les variables definides en un bucle o bloc no estan limitades a aquell bloc i poden ser accedides fora d'ell.</p>
+        
+        <h3>Exemple d'àmbit de bucle</h3>
+        <pre><code>for i in range(3):
+    print(i)  # Sortida: 0, 1, 2
+print(i)  # Sortida: 2 (la variable 'i' segueix accessible fora del bucle)        </code></pre>
+    <p>Això pot resultar confús si vens d'altres llenguatges on les variables de bucle tenen un àmbit limitat al bloc.</p>
+    <hr>
+    <h2>Bones Pràctiques al Definir Funcions en Python</h2>
+
+    <p>Quan es defineixen funcions en Python, hi ha algunes bones pràctiques que ajuden a millorar la llegibilitat, mantenibilitat i eficiència del codi:</p>
+
+    <h3>1. Noms descriptius</h3>
+    <p>El nom de la funció ha de reflectir clarament el seu propòsit. Això facilita la comprensió del codi i la seva reutilització.</p>
+
+    <h3>2. Comentaris i documentació (Docstrings)</h3>
+    <p>És important documentar les funcions per explicar què fan, quins són els paràmetres d'entrada i el valor de retorn. El millor mètode per documentar una funció és utilitzar <code>docstrings</code>, que es defineixen entre triple cometes (<code>""" ... """</code>).</p>
+    
+    <h4>Exemple de funció amb docstring</h4>
+    <pre><code>def sumar(a, b):
+    """
+    Suma dos números y devuelve el resultado.
+    :param a: Primer número
+    :param b: Segundo número
+    :return: La suma de a y b
+    """
+    return a + b       </code></pre>
+    <p>A més a més, esta forma de documentar permet activar l'ajuda de la funció definida</p>
+    <pre>help(sumar)
+
+sumar(a, b)
+    Suma dos números y devuelve el resultado.
+    :param a: Primer número
+    :param b: Segundo número
+    :return: La suma de a y b             </pre>
           
-              <h3>3. Evitar efectes secundaris</h3>
-              <p>Una funció hauria de fer només una cosa. No hauria de modificar variables globals o tindre efectes secundaris inesperats. Això ajuda a que el comportament de la funció sigui més previsible.</p>
-          
-              <h3>4. Mantingues les funcions curtes</h3>
-              <p>Les funcions han de ser petites i fàcils de llegir. Si una funció és massa llarga, es recomana dividir-la en funcions més petites per a fer-les més comprensibles i reutilitzables.</p>
-        <hr>
+    <h3>3. Evitar efectes secundaris</h3>
+    <p>Una funció hauria de fer només una cosa. No hauria de modificar variables globals o tindre efectes secundaris inesperats. Això ajuda a que el comportament de la funció sigui més previsible.</p>
+
+    <h3>4. Mantingues les funcions curtes</h3>
+    <p>Les funcions han de ser petites i fàcils de llegir. Si una funció és massa llarga, es recomana dividir-la en funcions més petites per a fer-les més comprensibles i reutilitzables.</p>
+    <hr>
  
-            <h2>Ús del Guion Baix (<code>_</code>) en Python</h2>
-        
-            <p>El guion baix (<code>_</code>) en Python té diversos usos depenent del context en què es trobi. A continuació es mostren alguns dels usos més comuns:</p>
-        
-            <h3>1. Ignorar valors en assignacions</h3>
-            <p>Es fa servir com una variable "desechable" quan no necessites utilitzar un valor en una assignació. El valor es descarta utilitzant el guion baix.</p>
+    <h2>Ús del Guion Baix (<code>_</code>) en Python</h2>
+
+    <p>El guion baix (<code>_</code>) en Python té diversos usos depenent del context en què es trobi. A continuació es mostren alguns dels usos més comuns:</p>
+
+    <h3>1. Ignorar valors en assignacions</h3>
+    <p>Es fa servir com una variable "desechable" quan no necessites utilitzar un valor en una assignació. El valor es descarta utilitzant el guion baix.</p>
             <pre><code>_, y, z = (1, 2, 3)
-        print(y, z)  # Sortida: 2 3</code></pre>
+print(y, z)  # Sortida: 2 3</code></pre>
         
-            <h3>2. Iteracions quan no es necessita el valor</h3>
-            <p>En els bucles, es fa servir <code>for _ in range(n)</code> quan no necessites utilitzar la variable del bucle.</p>
-            <pre><code>for _ in range(3):
-            print("Hola")  # Es imprimeix "Hola" tres vegades</code></pre>
-        
-            <h3>3. Últim resultat en la consola interactiva</h3>
-            <p>En la terminal de Python, <code>_</code> emmagatzema l'últim resultat calculat.</p>
-            <pre><code>>> 5 + 3
+    <h3>2. Iteracions quan no es necessita el valor</h3>
+    <p>En els bucles, es fa servir <code>for _ in range(n)</code> quan no necessites utilitzar la variable del bucle.</p>
+    <pre><code>for _ in range(3):
+    print("Hola")  # Es imprimeix "Hola" tres vegades</code></pre>
+
+    <h3>3. Últim resultat en la consola interactiva</h3>
+    <p>En la terminal de Python, <code>_</code> emmagatzema l'últim resultat calculat.</p>
+    <pre><code>>> 5 + 3
 8
 >>> _ * 2
 16</code></pre>
         
-            <h3>4. Prefijo per a variables privades</h3>
-            <p>Es fa servir <code>_variable</code> per indicar que una variable és "privada" (això és una convenció, no una restricció real).</p>
-            <pre><code>class MiClasse:
+    <h3>4. Prefijo per a variables privades</h3>
+    <p>Es fa servir <code>_variable</code> per indicar que una variable és "privada" (això és una convenció, no una restricció real).</p>
+    <pre><code>class MiClasse:
     def __init__(self):
             self._secreta = 42  # Indica que és privada (però encara accessible)</code></pre>
         
@@ -687,49 +653,48 @@ print(dir(e))  # Es converteix en _Exemple__privada</code></pre>
     
         <h3>Crear un fitxer Python (mi_modulo.py)</h3>
         <pre><code># mi_modulo.py
-    def saludar(nombre):
-        return f"Hola, {nombre}!"
-    PI = 3.14159</code></pre>
+def saludar(nombre):
+    return f"Hola, {nombre}!"
+PI = 3.14159</code></pre>
     
-        <h3>Importar i utilitzar el mòdul en un altre arxiu</h3>
-        <pre><code># programa.py
-    import mi_modulo
-    print(mi_modulo.saludar("Juan"))  # Sortida: Hola, Juan!
-    print(mi_modulo.PI)               # Sortida: 3.14159</code></pre>
+    <h3>Importar i utilitzar el mòdul en un altre arxiu</h3>
+    <pre><code># programa.py
+import mi_modulo
+print(mi_modulo.saludar("Juan"))  # Sortida: Hola, Juan!
+print(mi_modulo.PI)               # Sortida: 3.14159</code></pre>
     
-        <p>Quan hem importat un mòdul i volem utilitzar algun element del mateix, hem de fer servir el seu espai de noms seguit d'un punt i el nom de l'element que volem utilitzar. L'espai de noms no és més que el nom que hem indicat després del <code>import</code>.</p>
-    
-        <h3>Maneres d'importar mòduls:</h3>
-    
-        <h4>• Importar tot el mòdul:</h4>
-        <pre><code>import mi_modulo                # L'espai de noms és => mi_modulo
-    print(mi_modulo.saludar("Ana"))  # D'aquesta manera s'ha de fer servir l'espai de noms</code></pre>
-    
-        <h4>• Importar elements específics del mòdul: (sense espai de noms)</h4>
-        <pre><code>from mi_modulo import saludar
-    print(saludar("Carlos"))       # D'aquesta manera NO s'ha de fer servir l'espai de noms</code></pre>
-    
-        <h4>• Importar TOTS els elements del mòdul: (sense espai de noms)</h4>
-        <pre><code>from mi_modulo import *
-    print(saludar("Carlos"))       # D'aquesta manera NO s'ha de fer servir l'espai de noms</code></pre>
-    
-        <h4>• Renombrar un mòdul:</h4>
-        <pre><code>import mi_modulo as mm
-    print(mm.PI)                # D'aquesta manera s'ha de fer servir l'espai de noms</code></pre>
-            <hr>
+    <p>Quan hem importat un mòdul i volem utilitzar algun element del mateix, hem de fer servir el seu espai de noms seguit d'un punt i el nom de l'element que volem utilitzar. L'espai de noms no és més que el nom que hem indicat després del <code>import</code>.</p>
 
-        <h3>Paquets en Python</h3>
+    <h3>Maneres d'importar mòduls:</h3>
+
+    <h4>• Importar tot el mòdul:</h4>
+    <pre><code>import mi_modulo                # L'espai de noms és => mi_modulo
+print(mi_modulo.saludar("Ana"))  # D'aquesta manera s'ha de fer servir l'espai de noms</code></pre>
     
-        <p>Un paquet és una col·lecció de mòduls organitzats en un directori. Serveix per estructurar projectes grans en jerarquies de submòduls.</p>
+    <h4>• Importar elements específics del mòdul: (sense espai de noms)</h4>
+    <pre><code>from mi_modulo import saludar
+print(saludar("Carlos"))       # D'aquesta manera NO s'ha de fer servir l'espai de noms</code></pre>
     
-        <h4>Com crear un paquet:</h4>
-        <ol>
-            <li>Crea una carpeta per al paquet (per exemple, <code>mi_paquete</code>).</li>
-            <li>Dins de la carpeta, afegeix un arxiu especial anomenat <code>__init__.py</code>. Aquest arxiu pot estar buit o contenir codi d'inicialització per al paquet.</li>
-        </ol>
+    <h4>• Importar TOTS els elements del mòdul: (sense espai de noms)</h4>
+    <pre><code>from mi_modulo import *
+print(saludar("Carlos"))       # D'aquesta manera NO s'ha de fer servir l'espai de noms</code></pre>
     
-        <h4>Estructura bàsica d'un paquet:</h4>
-        <pre><code>mi_paquete/
+    <h4>• Renombrar un mòdul:</h4>
+    <pre><code>import mi_modulo as mm
+ print(mm.PI)                # D'aquesta manera s'ha de fer servir l'espai de noms</code></pre>
+     <hr>
+    <h3>Paquets en Python</h3>
+
+    <p>Un paquet és una col·lecció de mòduls organitzats en un directori. Serveix per estructurar projectes grans en jerarquies de submòduls.</p>
+
+    <h4>Com crear un paquet:</h4>
+    <ol>
+        <li>Crea una carpeta per al paquet (per exemple, <code>mi_paquete</code>).</li>
+        <li>Dins de la carpeta, afegeix un arxiu especial anomenat <code>__init__.py</code>. Aquest arxiu pot estar buit o contenir codi d'inicialització per al paquet.</li>
+    </ol>
+
+    <h4>Estructura bàsica d'un paquet:</h4>
+    <pre><code>mi_paquete/
         __init__.py
         modulo1.py
         modulo2.py</code></pre>
@@ -745,11 +710,11 @@ print(dir(e))  # Es converteix en _Exemple__privada</code></pre>
     
         <h3>Ús del paquet en un programa:</h3>
         <pre><code># programa.py
-    from mi_paquete.modulo1 import sumar
-    from mi_paquete.modulo2 import restar
-    
-    print(sumar(5, 3))  # Sortida: 8
-    print(restar(5, 3)) # Sortida: 2</code></pre>
+from mi_paquete.modulo1 import sumar
+from mi_paquete.modulo2 import restar
+
+print(sumar(5, 3))  # Sortida: 8
+print(restar(5, 3)) # Sortida: 2</code></pre>
     
         <h3>Paquets anidats:</h3>
         <p>Els paquets poden contenir subpaquets. Per exemple:</p>
