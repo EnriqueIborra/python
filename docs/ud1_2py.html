@@ -1008,14 +1008,15 @@ print("a" < "b")         # True (ordre alfabètic)  També es pot fer amb > o !=
 x = len(cadena)    
 print ( f"La cadena té una longitud de {x} caràcters ")   </code></pre>
 
+<img src="imgs/string-index.png" alt="acces per index" width="50%" class="imatge-dreta">
   <h2>Accés per Índex</h2>
-  <p>     Pots accedir als caràcters d'una cadena mitjançant el seu índex. Recorda que l'índex comença des de 0.   </p>
+  <p>     Pots accedir als caràcters d'una cadena mitjançant el seu índex. Recorda que l'índex comença des de 0. Però també es pot indicar el final amb un -1 (ùltim caràcter)  </p>
   <pre><code>texto = "Python"
 print(texto[0])  # P
 print(texto[-1])  # n (últim caràcter)   </code></pre>
 <pre><code>#  !!  Però no es pot !!
 texto[0]="p"  # Dona error </code></pre>
- <img src="imgs/slicing.png" alt="que es slicing" width="50%" class="imatge-dreta">
+ <img src="imgs/string-slicing.png" alt="acces per slicing" width="50%" class="imatge-dreta">
   <h2>Accés per Slicing (Rebanat)</h2>
   <p>      El slicing permet extreure subcadenes mitjançant un rang d'índexs.  </p>
   <pre><code>print(texto[0:4])  # Pyth (índexs de 0 a 3)
