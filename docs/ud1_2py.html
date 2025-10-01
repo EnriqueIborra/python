@@ -1021,10 +1021,22 @@ print(texto[:3])  # Hol (de l'índex 0 a l'índex 2)   </code></pre>
 
   <h2>Iteració sobre Strings</h2>
   <p>      Pots recórrer una cadena de text caràcter per caràcter mitjançant un bucle <code>for</code>.   </p>
-  <pre><code>
-texto = "Python"
+  <h4>Exemple simple</h4>
+  <pre><code>texto = "Python"
 for letra in texto:
     print(letra)    </code></pre>
+
+  <h4>Exemple animat</h4>  
+  <pre><code>import time
+
+def escriu_paraula(paraula, retard=0.3):
+    for lletra in paraula:
+        print(lletra, end="", flush=True)
+        time.sleep(retard)
+    print()  # Salt de línia al final
+
+# Exemple d'ús
+escriu_paraula("Hola mon, hui escriurem codi en Python", 0.1)    </code></pre> 
 
   <h2>Inmutabilitat de Strings</h2>
   <p>      Les cadenes de text en Python són immutables, això vol dir que no es poden modificar després de la seva creació.   </p>
