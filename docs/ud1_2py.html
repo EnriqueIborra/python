@@ -1002,10 +1002,15 @@ print("Hola" * 3)  # HolaHolaHola     </code></pre>
 print("Hola" == "hola")  # False (distinció de majúscules/minúscules)
 print("a" < "b")         # True (ordre alfabètic)  També es pot fer amb > o !=      </code></pre>
 
+  <h2>Longitud de Strings</h2>
+  <p>    Les cadenes tenen una longitud, i és molt útil saber-la.   </p>
+  <pre><code>cadena = 'Hola Python'
+x = len(cadena)    
+print ( f"La cadena té una longitud de {x} caràcters ")   </code></pre>
+
   <h2>Accés per Índex</h2>
   <p>     Pots accedir als caràcters d'una cadena mitjançant el seu índex. Recorda que l'índex comença des de 0.   </p>
-  <pre><code>
-texto = "Python"
+  <pre><code>texto = "Python"
 print(texto[0])  # P
 print(texto[-1])  # n (últim caràcter)   </code></pre>
 <pre><code>#  !!  Però no es pot !!
@@ -1013,8 +1018,7 @@ texto[0]="p"  # Dona error </code></pre>
  <img src="imgs/slicing.png" alt="que es slicing" width="50%" class="imatge-dreta">
   <h2>Accés per Slicing (Rebanat)</h2>
   <p>      El slicing permet extreure subcadenes mitjançant un rang d'índexs.  </p>
-  <pre><code>
-print(texto[0:4])  # Pyth (índexs de 0 a 3)
+  <pre><code>print(texto[0:4])  # Pyth (índexs de 0 a 3)
 print(texto[::2])  # Pto (caràcters del 0 al 5 de 2 en 2)
 print(texto[1:4:2])  # yh (caràcters 1 al 3 de 2 en 2)
 print(texto[:3])  # Hol (de l'índex 0 a l'índex 2)   </code></pre>
@@ -1040,8 +1044,7 @@ escriu_paraula("Hola mon, hui escriurem codi en Python", 0.1)    </code></pre>
 
   <h2>Inmutabilitat de Strings</h2>
   <p>      Les cadenes de text en Python són immutables, això vol dir que no es poden modificar després de la seva creació.   </p>
-  <pre><code>
->>>texto[0] = 'J'
+  <pre><code>>>>texto[0] = 'J'
 Traceback (most recent call last):
   File "<pyshell#2>", line 1, in <module>
     texto[0] = 'J'
@@ -1074,7 +1077,7 @@ print(type(resultat))      # &lt;class 'float'&gt;</code></pre>
 
   <h2> Conversió explícita</h2>
   <p>
-    La fas manualment amb funcions com:
+    Es fa manualment amb funcions com:
   </p>
   <ul>
     <li><code>int()</code> – converteix a enter</li>
@@ -1101,8 +1104,7 @@ print(bool(0.0))</code></pre>
   <pre><code>print(bool(""))            # False (cadena buida)
 print(bool("hola"))        # True</code></pre>
   <h3> Altres</h3>
-  <pre><code>
-print ( 5 + True )
+  <pre><code>print ( 5 + True )
 print ( True + True)
 print(int(True))   </code></pre>
 
