@@ -80,7 +80,7 @@ print("Hola, " + nom)</code></pre>
   <ul>
     <li><strong>Condicionals (if/else):</strong> permeten executar diferents blocs de codi segons una condició.</li>
   </ul>
-  <pre><code>edat = input("Quants anys tens ? ")
+  <pre><code>edat = int(input("Quants anys tens ? "))
 if edat &gt;= 18:
     print("Ets major d’edat")
 else:
@@ -180,8 +180,8 @@ if __name__ == "__main__":
 
   <h3>2. Des d’un entorn de desenvolupament (IDE)</h3>
   <ul>
-    <li>Obre el fitxer amb un editor com <strong>VS Code</strong>, <strong>PyCharm</strong> o <strong>Thonny</strong>.</li>
-    <li>Prem el botó de "Play" (▶️) o selecciona "Executar".</li>
+    <li>Obre el fitxer amb un editor com <strong>VS Code</strong>, <strong>VSCodium</strong>, <strong>Thonny</strong> o <strong>PyCharm</strong>(community o pro) .</li>
+    <li>Prem el botó de "Play" (▶️) o selecciona "Executar" (de vegades s'ha de desplegar i buscar l'opció "Run Python File").</li>
   </ul>
 
   <h3>3. Amb permisos d’execució (Linux/macOS)</h3>
@@ -965,16 +965,21 @@ result = (-3) ** 2         # (-3) ** 2 = 9
     
       <h2>Problemes de Precisió amb Nombres Decimals</h2>
       <p>          A causa de la representació interna dels nombres decimals, es poden obtenir resultats poc precisos en algunes operacions.       </p>
-      <pre><code>
-    a = 0.1
-    b = 0.2
-    a + b    # 0.30000000000000004        </code></pre>
-      <p>         Aquest problema no es produeix en totes les operacions, però és important tenir-ho en compte. Per a comparar aquests valors de manera precisa, es pot utilitzar <code>math.isclose()</code>.       </p>
-      <pre><code>
-    import math
-    math.isclose(0.1 + 0.2, 0.3)  # True        </code></pre>
-
-
+      <pre><code>a = 0.1
+b = 0.2
+a + b    # 0.30000000000000004        </code></pre>
+    <p>En general, qualsevol fracció que en base 10 és "neta" (com 0.1 o 0.2) pot ser problemàtica, perquè en base 2 són fraccions periòdiques infinites, i Python les talla a una aproximació.</p>
+    <p>Aquest problema no es produeix en totes les operacions, però és important tenir-ho en compte. Per a comparar aquests valors de manera precisa, es pot utilitzar <code>math.isclose()</code>.       </p>
+    <pre><code>import math
+math.isclose(0.1 + 0.2, 0.3)  # True        </code></pre>
+    <p>O intentar salvar el problema utilitzant  <code>round()</code></p>
+    <pre><code>print (round(0.1 + 0.2, 2) )</code></pre>
+  <!--  <p>Una altra forma d'evitar este problema es utilitzar Biblioteques específiques de Decimals o Fraccions</p>
+    <pre><code>from decimal import Decimal
+Decimal("0.1") + Decimal("0.2")   # Decimal('0.3')     </code></pre>
+   <pre><code>from fractions import Fraction
+Fraction(1, 10) + Fraction(2, 10)   # Fraction(3, 10)
+</code></pre>-->
     
   <h1>Operadors sobre Strings en Python</h1>
   <h2>Definir Strings</h2>
@@ -1019,10 +1024,13 @@ texto[0]="p"  # Dona error </code></pre>
  <img src="imgs/string-slicing3.png" alt="acces per slicing" width="50%" class="imatge-dreta">
   <h2>Accés per Slicing (Rebanat)</h2>
   <p>      El slicing permet extreure subcadenes mitjançant un rang d'índexs.  </p>
-  <pre><code>print(texto[0:4])  # Pyth (índexs de 0 a 3)
+  <code><pre>print(texto[0:4])  # Pyth (índexs de 0 a 3)
 print(texto[::2])  # Pto (caràcters del 0 al 5 de 2 en 2)
 print(texto[1:4:2])  # yh (caràcters 1 al 3 de 2 en 2)
-print(texto[:3])  # Hol (de l'índex 0 a l'índex 2)   </code></pre>
+print(texto[:3])  # Hol (des del principi fins a l'índex 2)   
+print(texto[2:])  # thon (de l'índex 2 fins al final)   
+print(texto[:-2])  # Pyth (des del principi fins al -3)
+print(texto[-3:])  # hon (del -3 fins al final)  </code></pre>
 
   <h2>Iteració sobre Strings</h2>
   <p>      Pots recórrer una cadena de text caràcter per caràcter mitjançant un bucle <code>for</code>.   </p>
@@ -1043,7 +1051,7 @@ def escriu_paraula(paraula, retard=0.3):
 # Exemple d'ús
 escriu_paraula("Hola mon, hui escriurem codi en Python", 0.1)    </code></pre> 
 
-  <h2>Inmutabilitat de Strings</h2>
+  <h2>Immutabilitat de Strings</h2>
   <p>      Les cadenes de text en Python són immutables, això vol dir que no es poden modificar després de la seva creació.   </p>
   <pre><code>>>>texto[0] = 'J'
 Traceback (most recent call last):
