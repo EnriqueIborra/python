@@ -712,12 +712,20 @@ pi = 3.141592
 monto = 1234567.89
 numero = -42
 n = 42
+percent = 1/4
 
 print(f"El meu nom és {nom} i tinc {edat} anys.")
 print(f"La suma de {a} i {b} és {a + b}.")
-print(f"{edat=}")                        # Depuració: edat=25
-print(f"El valor de pi amb 3 decimals és {pi:.3f}.")
-print(f"Percentatge: {0.25:.2%}")       # 25.00%</code></pre>
+print(f"Sencer |{n}|")
+print(f"Sencer |{n:9}|")   # Ocupant un espai fixe i alinea a la dreta
+print(f"Sencer |{n:09}|")   # Ocupant un espai fixe ,alinea a la dreta, i farcit de 0s
+
+print(f"El valor de pi és |{pi}|")     # ocupant sols l'espai necessari
+print(f"El valor de pi és |{pi:12}|")  # ocupant 12 posicions
+print(f"El valor de pi amb 3 decimals és |{pi:.3f}|")
+print(f"El valor de pi amb 3 decimals és |{pi:12.3f}|")  # ocupant 12 posicions i posant 3 decimals
+print(f"Percentatge: {percent:.2%}")       # 25.00%
+print(f"{edat=}")               # Per fer Depuració: edat=25</code></pre>
         
         <h4>4. Alineació i formats especials</h4>
         <pre><code>print(f"|{nom:<10}|")       # A l'esquerra
@@ -726,11 +734,9 @@ print(f"|{nom:_>10}|")      # A la dreta amb "_"
 print(f"|{nom:^10}|")       # Centrat
 print(f"|{nom:*^10}|")      # Centrat amb "*"
 
-print(f"Decimal: {n}, Binari: {n:b}, Hexadecimal: {n:x}, Octal: {n:o}")
-print(f"Amb separador de milers: {monto:,.2f}")
-print(f"Amb signe explícit: {numero:+d}")   # -42
-print(f"Amb zeros a l'esquerra: {42:06d}")  # 000042</code></pre>
-
+print(f"Decimal: {n}, Binari: {n:b}, Hexadecimal: {n:x}, Octal: {n:o}")   # conversio a una altra base
+print(f"Amb separador de milers: {monto:,.2f}")     # I dos decimals
+print(f"Amb signe explícit: {numero:+d}")   # -42  Siga positiu o negatiu </code></pre>
 
       <hr><h1>Lectura de dades per teclat en Python</h1>
     
