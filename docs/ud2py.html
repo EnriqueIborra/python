@@ -142,15 +142,17 @@ else:
       <p>Aquesta estructura permet assignar un valor a una variable segons una condició en una sola línia de codi, evitant així la necessitat de tenir un bloc de codi amb múltiples línies.</p>
   
       <h3>Exemple:</h3>
-      <pre><code>
-  edad = 20  # Exemple d'edat
-  missatge = "Major d'edat" if edad >= 18 else "Menor d'edat"
-  print(missatge)  # Sortida: Major d'edat         </code></pre>
+      <pre><code>edad = 20  # Exemple d'edat
+missatge = "Major d'edat" if edad >= 18 else "Menor d'edat"
+print(missatge)  # Sortida: Major d'edat         </code></pre>
   
       <ul>
           <li>Si l'edat (<code>edad</code>) és 18 o més, la variable <code>missatge</code> rep el valor <code>"Major d'edat"</code>.</li>
           <li>Si l'edat és menor a 18, la variable <code>missatge</code> rep el valor <code>"Menor d'edat"</code>.</li>
       </ul>
+      <p>També es pot posar dins del <code>print</code></p>
+      <pre><code>print ( "Major" if edat>18 else "Menor")</code></pre>
+
       <h2>match-case</h2>
       <p>Des de Python 3.10 està disponible la instrucció <code> match-case</code>, una estructura pareguda al <code>switch</code></p>
       <pre><code>
@@ -182,7 +184,7 @@ def switch_example(value):
           print(i)</code></pre>
       
           <h3>Exemple 2: Iteració amb <code>range</code> amb límits específics</h3>
-          <pre><code>for i in range(2, 5):  # Des de 2 fins a 4
+          <pre><code>for i in range(2, 5):  # Des de 2 fins a 4   🤔Recorda al rebanat !!
           print(i)</code></pre>
       
           <h3>Exemple 3: Iteració amb un pas definit</h3>
@@ -190,7 +192,7 @@ def switch_example(value):
           print(i)</code></pre>
       
           <h3>Exemple 4: Iteració sobre una llista</h3>
-          <pre><code>frutas = ["poma", "plàtan", "taronja"]
+          <pre><code>frutas = ["poma", "plàtan", "taronja"]    # Açò és una llista que es vorà més endavant
       for i in frutas:
           print(i)</code></pre>
       
