@@ -849,6 +849,9 @@ a * b - c</code></pre>
     exponent = 2 ** -3        # 0,125 (2 elevat a -3) float
     exponent = 2.2 ** 3       # 10.64800  float
     exponent = 64 ** 0.5      # 8.0   float  arrel quadrada        </code></pre>
+    <p class="alert">Important !!, L'operador / torna sempre un valor del tipus <code>float (decimal)</code> encara que els dos operandos siguen <code>sencers</code> <br>
+      i els operadors <code>// i  %</code> tornen valors de tipus <code>sencer (int)</code> si els dos operandos son <code>sencers</code> pero torna <code>float</code> si algun
+    operando es <code>float</code></p>
     <h3>Precedència</h3>
      <table border="1" cellpadding="8" cellspacing="0">
     <thead>
@@ -940,7 +943,23 @@ result = (-3) ** 2         # (-3) ** 2 = 9
       <li>and</li>
       <li>or</li>
     </ol>
-    
+    <p class="alert">La precedència de les comparacions està per baix dels operadors aritmètics (+, -, *, /, etc.) i per damunt dels operadors lògics (not, and, or). </p>
+    <p>Exemple</p>
+    <pre><code>x = 3
+print(x + 2 > 4 and x < 10)  </code></pre>
+    <pre>S’avalua així: 
+x + 2 → 5
+5 > 4 → True
+x < 10 → True
+True and True → True</pre>
+     <p>Python permet comparacions encadenades:</p>
+     <pre><code>x = 3
+print(1 < x < 5) 
+#  Això s’interpreta com: (1 < x) and (x < 5) </code></pre>
+     <p>I</p>
+     <pre><code>a < b <= c != d 
+#  Aquesta expressió equival a:  (a < b) and (b <= c) and (c != d) </code></pre>
+     
       <h2>Operadors d'Identitat</h2>
       <p>         Els operadors d'identitat comproven si dues variables referencien al mateix objecte de memòria.       </p>
       <pre><code>
@@ -952,7 +971,38 @@ result = (-3) ** 2         # (-3) ** 2 = 9
       <pre><code>
     'a' in 'hola'      # True
     'a' not in 'hola'  # False         </code></pre>
-    
+    <p class="alert">Totes les operacions de comparació (<, <=, >, >=, ==, !=, is, is not, in, not in) tenen la mateixa precedència entre elles.
+Això vol dir que es poden encadenar i Python les interpreta d’esquerra a dreta.</p>
+
+  <table border="1" cellpadding="6" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Tipus d'operador</th>
+      <th>Exemple</th>
+      <th>Precedència (resum)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Aritmètics</td>
+      <td><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code></td>
+      <td>Alta — s'avaluen abans que les comparacions</td>
+    </tr>
+    <tr>
+      <td>Comparació</td>
+      <td><code>&lt;</code>, <code>&lt;=</code>, <code>==</code>, <code>!=</code>, <code>is</code>, <code>in</code></td>
+      <td>Mateixa precedència entre elles; permeten encadenament (p. ex. <code>a &lt; b &lt;= c</code>)</td>
+    </tr>
+    <tr>
+      <td>Lògics</td>
+      <td><code>not</code>, <code>and</code>, <code>or</code></td>
+      <td>Baixa — s'apliquen després de les comparacions</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
       <h2>Operadors a Nivell de Bits (Bitwise)</h2>
       <p>         Els operadors bitwise operen sobre els bits individuals de les variables.       </p>
       <pre><code>
