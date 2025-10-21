@@ -156,18 +156,30 @@ print(missatge)  # Sortida: Major d'edat         </code></pre>
       <h2>match-case</h2>
       <p>Des de Python 3.10 està disponible la instrucció <code> match-case</code>, una estructura pareguda al <code>switch</code></p>
       <pre><code>
-def switch_example(value):
-    match value:
-        case 1:
-            return "Uno"
-        case 2:
-            return "Dos"
-        case 3:
-            return "Tres"
-        case _:
-            return "Otro valor"
+value = int(input("Dona'm un valor sencer: "))
+match value:
+    case 1:
+        print ( "Uno" )
+    case 2:
+        print ( "Dos" )
+    case 3:
+        print ( "Tres" )
+    case _:
+        print ( "Otro valor" )
       </code></pre>
-      <p>case _: funciona com <strong> default </strong></p>
+      <p>case _: funciona com <strong> default </strong></p> <br>
+      
+      <pre><code>
+value = int(input("Dona'm un valor sencer: "))
+match value:
+    case 1 | 2:
+        print ( "Uno o Dos" )
+    case 3:
+        print ( "Tres" )
+    case _:
+        print ( "Otro valor mayor que 3" )
+      </code></pre>
+      <p>En un <code>case</code> es poden posar més d'un valor, separant amb <code>|</code></p>
 
         <br><br><hr><hr>
       <img src="imgs/bucle.png" alt="bucles" class="imatge-dreta" width="20%">
@@ -449,8 +461,8 @@ finally:
             <li><strong>Paraula clau <code>def</code>:</strong> S'utilitza per definir la funció.</li>
             <li><strong>Nom de la funció:</strong> Un nom descriptiu per a la funció, seguit de parèntesis.</li>
             <li><strong>Paràmetres:</strong> Opcionalment, una funció pot rebre valors externs mitjançant paràmetres.</li>
-            <li>:  Els dos punts indiquen que comença el bloc de codi <strong>identat</strong></li>
-            <li><strong>Codi dins la funció:</strong> Blocs d'instruccions que realitzen l'operació desitjada. <strong>bloc identat</strong></li>
+            <li>:  Els dos punts indiquen que comença el bloc de codi <strong>indentat</strong></li>
+            <li><strong>Codi dins la funció:</strong> Blocs d'instruccions que realitzen l'operació desitjada. <strong>bloc indentat</strong></li>
             <li><strong>Declaració <code>return</code>:</strong> Opcional, però retorna un valor de la funció.</li>
         </ul>
         <p>La indentació fa referència a la tècnica d'afegir espais al principi de les línies de codi, el que ajuda a delimitar visualment els blocs i les estructures de control.</p>
