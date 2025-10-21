@@ -177,54 +177,52 @@ match value:
     case 3:
         print ( "Tres" )
     case _:
-        print ( "Otro valor mayor que 3" )
-      </code></pre>
-      <p>En un <code>case</code> es poden posar més d'un valor, separant amb <code>|</code></p>
+        print ( "Otro valor mayor que 3" )       </code></pre>
+<p>En un <code>case</code> es poden posar més d'un valor, separant amb <code>|</code></p>
 
-        <br><br><hr><hr>
-      <img src="imgs/bucle.png" alt="bucles" class="imatge-dreta" width="20%">
-      <h1>Bucles (for, while) en Python</h1>
-          <p>Els bucles són una estructura essencial en la programació que permet repetir un conjunt d'operacions múltiples vegades.</p>
-      
-          <h2>1. Bucles <code>for</code></h2>
-          <p>El bucle <code>for</code> itera sobre una secuencia (com una llista o un rang). Aquí tens alguns exemples:</p>
-          
-          <h3>Exemple 1: Iteració amb <code>range</code></h3>
-          <p>La funció <code>range</code> és una eina molt útil a Python per generar una seqüència d'elements. Aquesta seqüència es pot utilitzar en 
-            estructures de control de flux com el bucle <code>for</code> per realitzar iteracions de manera eficient.</p>
-          <pre><code>for i in range(5):  # Des de 0 fins a 4
-          print(i)</code></pre>
-      
-          <h3>Exemple 2: Iteració amb <code>range</code> amb límits específics</h3>
-          <pre><code>for i in range(2, 5):  # Des de 2 fins a 4   🤔Recorda al rebanat !!
-          print(i)</code></pre>
-      
-          <h3>Exemple 3: Iteració amb un pas definit</h3>
-          <pre><code>for i in range(2, 10, 2):  # Des de 2 fins a 8 amb pas 2
-          print(i)</code></pre>
-      
-          <h3>Exemple 4: Iteració sobre una llista</h3>
-          <pre><code>frutas = ["poma", "plàtan", "taronja"]    # Açò és una llista que es vorà més endavant
-      for i in frutas:
-          print(i)</code></pre>
-      
-          <h3>Paraules clau dins d'un bucle <code>for</code>:</h3>
-          <ul>
-              <li><strong><code>break</code></strong>: surt del bucle prematurament.</li>
-              <li><strong><code>continue</code></strong>: salta la iteració actual i continua amb la següent.</li>
-              <li><strong><code>else</code></strong>: s'executa si el bucle no termina amb un <code>break</code>.</li>
-          </ul>
-      
-          <h2>2. Bucles <code>while</code></h2>
-          <p>El bucle <code>while</code> executa una acció mentre una condició siga veritable.</p>
-          
-          <h3>Exemple: Bucles <code>while</code></h3>
-          <pre><code>contador = 0
+  <br><br><hr><hr>
+<img src="imgs/bucle.png" alt="bucles" class="imatge-dreta" width="20%">
+<h1>Bucles (for, while) en Python</h1>
+    <p>Els bucles són una estructura essencial en la programació que permet repetir un conjunt d'operacions múltiples vegades.</p>
+
+    <h2>1. Bucles <code>for</code></h2>
+    <p>El bucle <code>for</code> itera sobre una secuencia (com una llista o un rang). Aquí tens alguns exemples:</p>
+    
+    <h3>Exemple 1: Iteració amb <code>range</code></h3>
+    <p>La funció <code>range</code> és una eina molt útil a Python per generar una seqüència d'elements. Aquesta seqüència es pot utilitzar en 
+      estructures de control de flux com el bucle <code>for</code> per realitzar iteracions de manera eficient.</p>
+<pre><code>for i in range(5):  # Des de 0 fins a 4
+    print(i)</code></pre>
+
+    <h3>Exemple 2: Iteració amb <code>range</code> amb límits específics</h3>
+<pre><code>for i in range(2, 5):  # Des de 2 fins a 4   🤔Recorda al rebanat !!
+    print(i)</code></pre>
+
+    <h3>Exemple 3: Iteració amb un pas definit</h3>
+<pre><code>for i in range(2, 10, 2):  # Des de 2 fins a 8 amb pas 2
+    print(i)</code></pre>
+
+    <h3>Exemple 4: Iteració sobre una llista</h3>
+<pre><code>colla = ["Pikachu", "Charizard", "Bulbasaur"]    # Açò és una llista, que es vorà més endavant
+for i in colla:
+    print(i)</code></pre>
+
+    <h3>Paraules clau dins d'un bucle <code>for</code>:</h3>
+    <ul>
+        <li><strong><code>break</code></strong>: surt del bucle prematurament.</li>
+        <li><strong><code>continue</code></strong>: salta la iteració actual i continua amb la següent.</li>
+        <li><strong><code>else</code></strong>: s'executa si el bucle no termina amb un <code>break</code>.</li>
+    </ul>
+
+    <h2>2. Bucles <code>while</code></h2>
+    <p>El bucle <code>while</code> executa una acció mentre una condició siga veritable.</p>
+    
+    <h3>Exemple: Bucles <code>while</code></h3>
+    <pre><code>contador = 0
 while contador < 5:
     print(f"Contador: {contador}")
     contador += 1  # Augmenta el contador
-else:
-    print("El bucle ha acabat amb contador >= 5")</code></pre>
+print(f"El contador després d'acabar el while val: {contador}")  </code></pre>    
 
     <p>Els bucles <code>for</code> i <code>while</code> són molt útils per repetir accions múltiples vegades i controlar el flux de l'execució dels programes en funció de condicions específiques.</p>
     
