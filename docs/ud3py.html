@@ -44,7 +44,7 @@
   
       <p>Els objectes immutables no poden canviar el seu contingut després de ser creats. Qualsevol “modificació” realment crea un nou objecte en memòria.</p>
   
-      <p><strong>Exemples de dades immutables:</strong></p>
+      <p><strong>En Python, els tipus de dades immutables:</strong></p>
       <ul>
           <li>Nombres (int, float, complex)</li>
           <li>Cadenes de text (str)</li>
@@ -52,10 +52,10 @@
           <li>Conjunts immutables (frozenset)</li>
           <li>Booleans (bool)</li>
       </ul>
-  
+      <hr>
       <p>Els objectes mutables poden canviar el seu contingut sense canviar la seua identitat en memòria.</p>
   
-      <p><strong>Exemples de dades mutables:</strong></p>
+      <p><strong>En Python, els tipus de dades mutables:</strong></p>
       <ul>
           <li>Llistes (list)</li>
           <li>Diccionaris (dict)</li>
@@ -235,7 +235,15 @@
       <h2>Tuples ()</h2>
       <img src="imgs/tupla.png" alt="tupla" width="40%" class="imatge-dreta">
       <p>Les tuples són com les llistes però, una vegada declarades, <strong>no es poden modificar</strong> (són immutables).</p>
-  
+      <ul>
+          <li>Són ordenades. Suporten indexació i slicing.</li>
+          <li>Són Immutables: No es poden modificar després de ser creades.</li>
+          <li>No Es poden afegir o eliminar elements.</li>
+          <li>Els elements poden ser mutables o immutables.(per exemple, una llista dins d’una tupla <b>Sí</b> que pot canviar).</li>
+          <li>Es poden niar.(una tupla pot contenir altres tuples).</li>
+      </ul>  
+
+
       <pre>
   mesosAny = ("Gen", "Feb", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Oct", "Nov", "Des")
   mesosAny[1]           # accés al segon element
@@ -679,11 +687,19 @@ for numero in comptador(1, 5):
 <section id="arrays">
 
     <h1>Treballar amb Arrays en Python</h1>
-    <img src="imgs/numpy.png" alt="numpy" class="imatge-dreta" width="40%">
+    <p><b>Què és un array:</b> També se sol dir <code>vector</code> i és un tipus de dades estructurades, relacionat i homogèni, 
+    es a dir, totes les dades del vector seran del mateix tipus</p>
+    <img src="imgs/vector2.png" alt="vector" width="45%">
+    <img src="imgs/matriz1.png" alt="matriu" class="imatge-dreta" width="30%">
+    <p>Si els elemnts d'un vector, son vectors, estem parlant d'un vector bidimensional, o <code>matriu</code></p>
+    
+    <p>De igual manera es pot definir un cub, com a un vector de 3 dimensions, o un tesseracte o hipercub com un vector de 4 dimensions   </p>
+
 
     <p>En Python, es poden gestionar arrays mitjançant <strong>llistes</strong> o utilitzant el mòdul <strong>NumPy</strong>. Aquesta és una biblioteca externa que proporciona funcionalitats específiques per a computació numèrica.</p>
 
-    <h2>Què és NumPy?</h2>
+    <h2>Què és NumPy?</h2> 
+    <img src="imgs/numpy.png" alt="numpy" class="imatge-dreta" width="40%">
     <p><strong>NumPy</strong> (Numerical Python) és una de les biblioteques més fonamentals i populars de Python per treballar amb computació científica i manipulació de dades numèriques.</p>
     <p>És àmpliament utilitzada en àrees com:</p>
     <ul>
