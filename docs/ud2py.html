@@ -332,6 +332,27 @@ else:
 
 <section id="excepcions">
         <h1>Manejador de Errors / Excepcions en Python</h1>
+        <p>En el següent programa, poden donar-se dos errors</p>
+        <pre><code>a=int(input('Dame un numero:  '))
+print(f'La inversa de {a} es { 1/(a) }')
+print(' ===  Fi del programa  ===')
+</code></pre>
+        <p>Si posem una lletra</p>
+<pre><code>Dame un numero:  t
+Traceback (most recent call last):
+  File "c:\Users\enrique\OneDrive - Conselleria d'Educació\_PYTHON\proves\_prova.py", line 2, in <module>
+    a=int(input('Dame un numero:  '))
+ValueError: invalid literal for int() with base 10: 't'</code></pre>
+        <strong> ==>  I el programa es para....</strong>
+        <p>L'última línea no s'executa si es produeix un error. Cap línia després de l'error s'executarà</p> <hr>
+        <p>Si posem un 0</p>
+<pre><code>Traceback (most recent call last):
+  File "c:\Users\enrique\OneDrive - Conselleria d'Educació\_PYTHON\proves\_prova.py", line 5, in <module>
+    print(f'La operacion resulta  {1/(a)}')
+                                   ~^^~~
+ZeroDivisionError: division by zero</code></pre>
+<strong> ==>  I el programa es para....</strong> <hr>
+
         <p>En Python, utilitzem les estructures <code>try</code> i <code>except</code> per capturar i gestionar els errors que poden sorgir durant l'execució d'un programa.</p>
 
         <h2>Exemple de Manejador d'Errors</h2>
@@ -350,6 +371,17 @@ finally:
             <li><strong><code>else</code></strong>: Si no es produeix cap error en el bloc <code>try</code>, s'executa el codi dins d'aquesta secció.</li>
             <li><strong><code>finally</code></strong>: Aquesta secció s'executa sempre, independentment de si hi ha hagut un error o no.</li>
         </ul>
+      <h4>Millora al codi incial</h4>
+<pre><code>try:
+    a=int(input('Dame un numero: '))
+    print(f'La inversa de {a} es {1/(a) }')
+except ValueError:
+    print('Introduce un numero, no una letra')
+except ZeroDivisionError:
+    print('division por 0....')
+
+print('=====  Fi del programa  ======')</code></pre>
+   
 
         <h2>Estructura de Control de Flux: <code>pass</code></h2>
         <p>El <code>pass</code> és una instrucció que es pot utilitzar com a marcador de lloc. Serveix quan cal una sintaxi vàlida però no es vol que el codi faci res en una part específica.</p>
