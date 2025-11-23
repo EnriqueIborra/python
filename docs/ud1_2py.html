@@ -952,7 +952,23 @@ x + 2 → 5
 5 > 4 → True
 x < 10 → True
 True and True → True</pre>
-     <p>Python permet comparacions encadenades:</p>
+
+      <h4>Short Circuit en Python</h4>
+      <p>Tambe es pot dir camí curt, o drecera</p>
+      <p> En una operació lògica, quan s'estiga segur del resultat, es deixa d'avaluar i es retorna el resultat.</p>
+      <p>Exemple de drecera de l'operador <strong>or</strong></p>
+      <pre><code>a,b,c= 20,40,50
+<b>c>b or </b> a>b or b>c or b>a  
+# En esta expresió, con c>b és True i tot el que ve darrere son <b>or</b>, 
+# ja no cal avaluar més, perquè el resultat serà True, passe el que passe darrere</code></pre>
+<p>En els <strong>and </strong> passa algo paregut també</p>
+<pre><code><b> c&lt;b and </b> a>b or b>c or b>a  
+# En esta expresió, con c&lt;b és False i tot el que ve darrere son <b>and</b>, 
+# ja no cal avaluar més, perquè el resultat serà False, passe el que passe darrere</code></pre>
+
+
+
+     <h4>Python permet comparacions encadenades:</h4>
      <pre><code>x = 3
 print(1 < x < 5) 
 #  Això s’interpreta com: (1 < x) and (x < 5) </code></pre>
