@@ -145,36 +145,36 @@
           <li>Es poden niar.</li>
       </ul>
   <h4>Vegem com manipular llistes amb exemples..</h4>
-      <pre>
-  fruites = ["poma", "plàtan", "cirera"]
-  llista = list("1234")
-  llista = [1, "Hola", 3.67, [1, 2, 3]]
-  print(fruites[0])
+      <pre>  llista=[]     # declara llista buida
+  fruites = ["poma", "plàtan", "cirera"]   # declara llista amb 3 elements
+  llista = list("1234")                    # fa una llista a partir dels caracters d'un string
+  llista = [1, "Hola", 3.67, [1, 2, 3]]    # pot barrejar tipus diferents
+  print(fruites[0])                        # Impremeix el primer element
   fruites[0] = "pera"
-  del fruites[1]
-  fruites.append("taronja")
+  del fruites[1]                           # Esborra el segon element de la llista
+  fruites.append("taronja")                # afegeix un element 
   print(fruites)    print(*fruites)    print(*fruites, sep=' -> ')
-  len(fruites)
+  len(fruites)                             # Torna "quants" elements té la llista
   max(fruites)   min(fruites)
-  sum(mevallista)
+  sum(mevallista)  
   mevallista = []
   mevallista[0] = 24   mevallista[1] = 46
   mevallista[-1] = 33  mevallista[-2] = 57
   nouafruita = fruites[2:4]
   nouafruita2 = fruites[:4]   nouafruita3 = fruites[2:]
   llista2 = [1, 4, 7, "plàtan"]
-  mevallista.insert(1, 15)
-  mevallista.extend([7, 8, 9])
-  mevallista.remove(15)
-  mevallista.clear()
+  mevallista.insert(1, 15)       # Inserta en la posició 1, el element 15
+  mevallista.extend([7, 8, 9])   # Afegix els elements de la lista , u per u
+  mevallista.remove(15)          # Esborra l'element 15, si hi ha més d'u, sols esborra el primer.
+  mevallista.clear()             
   ultim = mevallista.pop()
-  altre = mevallista.pop(2)
-  print(10 in mevallista)
-  index = mevallista.index("plàtan")
-  mevallista.sort()
-  llista_ordenada = sorted(mevallista)
-  mevallista.reverse()
-  print(mevallista.count("pera"))
+  altre = mevallista.pop(2)      # posició 2  ( la primera pos es la 0, l'ultima la -1)
+  print(10 in mevallista)        # True o False
+  index = mevallista.index("plàtan")     # posició del primer element 'plàtan' ( si hi ha més d'u)
+  mevallista.sort()                      # ordena la llista , modificant-la !!
+  llista_ordenada = sorted(mevallista)   # Torna llista ordenada, pero no modifica la principal
+  mevallista.reverse()                   #  modifica...
+  print(mevallista.count("pera"))    
   copia_llista = mevallista.copy()
   copia_llista = mevallista[:]
   llista_niada = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
@@ -190,6 +190,20 @@
   type(llista1) is list
   isinstance(llista1, list)
       </pre>
+      <p>Algunes conversions útils</p>
+      <pre># De string fer una llista
+string1='Python'
+l=list(string1)
+print(l)     # l conté una llista  ['P','y','t','h','o','n']
+ 
+# Per tornar a convertir una llista a string s'utilitzarà  <strong>join</strong>
+# <strong>str</strong> no fa la conversió molt bé...
+string2=''.join(a)
+print(string2)          #  Python
+
+# O es pot "unir" amb qualsevol lletra
+string3=','.join(a)
+print(string3)          #  P,y,t,h,o,n     </pre>
   
       <h3>Python List comprehension o Comprensió de llistes en Python</h3>
       <p>La comprensió de llistes en Python és una manera concisa i eficient de crear llistes a partir d'iterables com llistes, tuples, rangs, etc.</p>

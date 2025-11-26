@@ -338,15 +338,15 @@ print(f'La inversa de {a} es { 1/(a) }')
 print(' ===  Fi del programa  ===')
 </code></pre>
         <p>Si posem una lletra</p>
-<pre><code>Dame un numero:  t
-Traceback (most recent call last):
+        <pre><code>Dame un numero:  t</code></pre>
+<pre><code style="color: darkred;">Traceback (most recent call last):
   File "c:\Users\enrique\OneDrive - Conselleria d'Educació\_PYTHON\proves\_prova.py", line 2, in <module>
     a=int(input('Dame un numero:  '))
 ValueError: invalid literal for int() with base 10: 't'</code></pre>
         <strong> ==>  I el programa es para....</strong>
         <p>L'última línea no s'executa si es produeix un error. Cap línia després de l'error s'executarà</p> <hr>
         <p>Si posem un 0</p>
-<pre><code>Traceback (most recent call last):
+<pre><code style="color: darkred;">Traceback (most recent call last):
   File "c:\Users\enrique\OneDrive - Conselleria d'Educació\_PYTHON\proves\_prova.py", line 5, in <module>
     print(f'La operacion resulta  {1/(a)}')
                                    ~^^~~
@@ -363,7 +363,8 @@ except ZeroDivisionError:
 else:
     print("La operación ha sido correcta")
 finally:
-    print("Esta parte se ejecuta siempre")</code></pre>
+    print("Esta parte se ejecuta siempre")
+print("Y por supuesto el programa continua después del try")</code></pre>
 
         <ul>
             <li><strong><code>try</code></strong>: S'intenta executar el codi dins d'aquesta secció.</li>
