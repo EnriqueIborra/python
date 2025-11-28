@@ -171,7 +171,11 @@
   altre = mevallista.pop(2)      # posició 2  ( la primera pos es la 0, l'ultima la -1)
   print(10 in mevallista)        # True o False
   index = mevallista.index("plàtan")     # posició del primer element 'plàtan' ( si hi ha més d'u)
+  
   mevallista.sort()                      # ordena la llista , modificant-la !!
+      # Si els elements d'una llista no son del mateix tipus, no es podran ordenar
+      # I si s'intenta, donarà un Error =>  TypeError
+
   llista_ordenada = sorted(mevallista)   # Torna llista ordenada, pero no modifica la principal
   mevallista.reverse()                   #  modifica...
   print(mevallista.count("pera"))    
@@ -183,14 +187,20 @@
   x, y, z = llista
   llista_sense_duplicats = list(set(mevallista))
   resultat = all(x % 2 == 0 for x in mevallista)
-  resultat = any(x % 2 == 0 for x in mevallista)
-  
-  for e in llista: print(e)
-  for index, l in enumerate(llista): print(index, l)
-  type(llista1) is list
-  isinstance(llista1, list)
+  resultat = any(x % 2 == 0 for x in mevallista)       </pre>
+     <h4>Com recorrer una llista</h4>
+      <pre>
+for e in llista: print(e)    # e serà un element de la llista en cada iteració
+                             # e pot ser de qualsevol tipus, inclòs llista (llista niada)
+for i in range(len(llista)):
+        print(llista(i))     #  i serà un numero de 0 a len(llista)  , llista(i) serà l'element
+for index, l in enumerate(llista): print(index, l)   
+
+#  dins dels bucles ens pot ser molt útil saber el tipus de cada element
+type(llista1) is list
+isinstance(llista1, list)
       </pre>
-      <p>Algunes conversions útils</p>
+      <h4>Algunes conversions útils</h4>
       <pre># De string fer una llista
 string1='Python'
 l=list(string1)
@@ -289,6 +299,11 @@ print(string3)          #  P,y,t,h,o,n     </pre>
   for t in tupla: print(t)     # recorregut de la tupla
   type(tupla2) is tuple        # comprova si és una tupla
       </pre>
+      <pre># Una tupla no es pot re-ordenar, perquè és inmutable, 
+# però es pot crear una altra tupla ordenada
+t=(4,7,1,9,2,2)
+t2=tuple(sorted(t))    # sorted(t) crea una llista ordenada a partir de t, 
+                       # i tuple converteix una llista en una tupla   </pre>
   
       <h3>Quan usar tuples en lloc de llistes?</h3>
       <ul>
@@ -332,6 +347,16 @@ print(string3)          #  P,y,t,h,o,n     </pre>
           <li><strong>Mutables</strong>: Es poden afegir o eliminar elements.</li>
           <li><strong>Els elements han de ser immutables</strong>: podem afegir o llevar, però no modificar un element concret.</li>
       </ol>
+      <p><strong>Ordenats o No ordenats</strong>: en Python els conjunts (sets) no són ordenats.
+Això vol dir que els elements d'un conjunt no tenen una posició específica o un ordre fixe. 
+Quan s'imprimeix un conjunt o s'itera sobre ell, l'ordre dels elements pot ser diferent 
+del que es va utilitzar per crear-lo i, de fet, pot canviar entre diferents execucions 
+del programa o amb el temps.</p>
+
+     <strong>🔢 Què passa amb els Nombres? </strong>
+     <p>Quan Python mostra un conjunt de nombres, pot semblar que està ordenat de vegades,
+         però això és una coincidència a causa de com es calcula el hash i com s'organitzen 
+         els nombres a la memòria, no és una propietat garantida del tipus de dades set</p>
   
       <h3>Exemples d’ús</h3>
       <pre>
