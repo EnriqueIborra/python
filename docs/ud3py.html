@@ -144,6 +144,18 @@
           <li>Els elements poden ser mutables o immutables.</li>
           <li>Es poden niar.</li>
       </ul>
+      <br><p>Dir que les llistes de Python són ordenades significa que mantenen l'ordre d'inserció dels seus elements.
+        (Una altra cosa és dir que els elements estan ordenats).
+      </p>
+
+      <ol> <strong>Això implica</strong>
+        <li>Ordre d'Inserció Fixe: L'ordre en què afegiu els elements a una llista és l'ordre en què es guarden. 
+            Aquest ordre és estable i previsible i només canviarà si feu una operació específica per reordenar-la (com ara .sort() o .reverse()).</li>
+        <li>Indexació: Podeu accedir a qualsevol element de la llista utilitzant el seu índex numèric (posició), 
+            començant per 0. Això és possible precisament perquè la posició de cada element no varia.</li>
+        <li>Iteració Previsible: Quan recorreu la llista (amb un bucle for, per exemple), els elements 
+            sempre eixiran en la seqüència exacta en què varen ser introduïts</li>
+      </ol>
   <h4>Vegem com manipular llistes amb exemples..</h4>
       <pre>  llista=[]     # declara llista buida
   fruites = ["poma", "plàtan", "cirera"]   # declara llista amb 3 elements
@@ -172,11 +184,11 @@
   print(10 in mevallista)        # True o False
   index = mevallista.index("plàtan")     # posició del primer element 'plàtan' ( si hi ha més d'u)
   
-  mevallista.sort()                      # ordena la llista , modificant-la !!
+  mevallista.sort()                      # ordena els elements de la llista , modificant-la !!
       # Si els elements d'una llista no son del mateix tipus, no es podran ordenar
       # I si s'intenta, donarà un Error =>  TypeError
 
-  llista_ordenada = sorted(mevallista)   # Torna llista ordenada, pero no modifica la principal
+  llista_ordenada = sorted(mevallista)   # Torna una llista nova ordenada, pero no modifica la principal
   mevallista.reverse()                   #  modifica...
   print(mevallista.count("pera"))    
   copia_llista = mevallista.copy()
@@ -364,10 +376,10 @@ del programa o amb el temps.</p>
   conjunt = {1, 2, 2, 3}
   print(conjunt)               # Eixida: {1, 2, 3}
   conjunt = set([1, 2, 3, 3])  # convertir una llista en conjunt
-  conjunt.add(3)               # afegir un element
-  conjunt.remove(2)            # elimina 2, dona error si no existeix
-  conjunt.discard(4)           # elimina 4, no dona error si no existeix
-  conjunt.pop()                # elimina i retorna un element aleatori
+  conjunt.add(3)               # afegir un element ( el nombre 3)
+  conjunt.remove(2)            # elimina el nombre 2, dona error si no existeix
+  conjunt.discard(4)           # elimina el nombre 4, no dona error si no existeix
+  conjunt.pop()                # elimina i retorna un element aleatori. Si c es buit dona Error
   conjunt.clear()              # buida el conjunt
   
   len(conjunt)                 # número d’elements
@@ -387,10 +399,12 @@ del programa o amb el temps.</p>
   print(a.issuperset(b))       # a conté tots els elements de b
   print(a.isdisjoint(b))       # a i b no tenen cap element en comú
  
-  # Unió
-  print(s1 | s2)
-  print(s1.union(s2))
   <img src="imgs/conjunts_ops.png" alt="opseracions conjunts" width="40%" class="imatge-dreta">
+  # Unió
+  print(s1 | s2)       
+  print(s1.union(s2))
+  # No es modifica el conjunt original
+  
   # Intersecció
   print(s1 & s2)
   print(s1.intersection(s2))
@@ -406,7 +420,8 @@ del programa o amb el temps.</p>
   
       <h4>Mètodes destructius (modifiquen el conjunt original):</h4>
       <pre>
-  conjunt.update(iterable)
+  conjunt.update(iterable)                 # Afegix elements de l'iterable al conjunt
+                            # Equival a  conjunt |= set(iterable)
   conjunt.intersection_update(iterable)
   conjunt.difference_update(iterable)
   conjunt.symmetric_difference_update(iterable)
