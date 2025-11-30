@@ -186,7 +186,7 @@ match value:
     <p>Els bucles són una estructura essencial en la programació que permet repetir un conjunt d'operacions múltiples vegades.</p>
 
     <h2>1. Bucles <code>for</code></h2>
-    <p>El bucle <code>for</code> itera sobre una secuencia (com una llista o un rang). Aquí tens alguns exemples:</p>
+    <p>El bucle <code>for</code> <strong>itera</strong> sobre una secuència (com una llista o un rang). Aquí tens alguns exemples:</p>
     
     <h3>Exemple 1: Iteració amb <code>range</code></h3>
     <p>La funció <code>range</code> és una eina molt útil a Python per generar una seqüència d'elements. Aquesta seqüència es pot utilitzar en 
@@ -224,7 +224,17 @@ for i in colla:
     </ul>
 
     <h2>2. Bucles <code>while</code></h2>
-    <p>El bucle <code>while</code> executa una acció mentre una condició siga veritable.</p>
+    <p>El bucle <code>while</code> executa una acció (bloc de codi) mentre una condició siga certa (True).</p>
+    <pre>while condicio:
+    # codi que es repeteix
+    # poden ser una o més línies
+    # No pot quedarse buit (sense codi)
+    </pre>
+    <ul>Com funciona
+    <li>S'evalua la condició: una expressió que retorna True o False</li>
+    <li>Si és True, el codi del bucle s’executa</li>
+    <li>Quan s'acaba el codi del bucle, es torna a comprovar la condició (salt al while)</li>
+    </ul>
     
     <h3>Exemple: Bucles <code>while</code></h3>
     <pre><code>contador = 0
@@ -232,9 +242,12 @@ while contador < 5:
     print(f"Contador: {contador}")
     contador += 1  # Augmenta el contador
 print(f"El contador després d'acabar el while val: {contador}")  </code></pre>    
-
+    <ol> Resum:
+    <li><code>while</code> repeteix codi metre la <code>condicio</code> siga <code>True</code></li>
+    <li>S'ha de vigilar de no crear bucles infinits (incrementar comptador, introduir valors nous cada iteració, etc...)</li>
+    <li>És útil quan no se sap quantes repeticions faran falta (a diferència de <code>for</code> ) </li>
+    </ol>
     <p>Els bucles <code>for</code> i <code>while</code> són molt útils per repetir accions múltiples vegades i controlar el flux de l'execució dels programes en funció de condicions específiques.</p>
-    
     <hr>
 
  <h1> Clàusula <code>else</code> en bucles en Python</h1>
