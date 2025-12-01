@@ -372,10 +372,12 @@ del programa o amb el temps.</p>
   
       <h3>Exemples d’ús</h3>
       <pre>
-  conjunt_buit = set()
+  conjunt_buit={}        # No es construeix així un conjunt
+  conjunt_buit = set()   #Així SI
   conjunt = {1, 2, 2, 3}
   print(conjunt)               # Eixida: {1, 2, 3}
   conjunt = set([1, 2, 3, 3])  # convertir una llista en conjunt
+  conjunt = set( (1, 2, 3, 3) ) # convertir una tupla en conjunt
   conjunt.add(3)               # afegir un element ( el nombre 3)
   conjunt.remove(2)            # elimina el nombre 2, dona error si no existeix
   conjunt.discard(4)           # elimina el nombre 4, no dona error si no existeix
@@ -456,8 +458,8 @@ del programa o amb el temps.</p>
   persona = {"nom": "Carlos", "edat": 30, "ciutat": "Madrid"}
   print(persona["nom"])  # Accedeix al valor d’una clau. Imprimeix 'Carlos'
   
-  dic["nova_clau"] = "nou_valor"   # Afegir una nova clau
-  dic["clau1"] = "valor_actualitzat"  # Modificar una clau existent
+  dic["nova_clau"] = "nou_valor"      # Afegir una nova clau
+  dic["clau1"] = "valor_actualitzat"  # Modificar el valor d'una clau existent
   valor = dic["clau1"]  # Accedir a un valor (error si no existeix)
   valor = dic.get("clau1", "per defecte")  # Evita errors si no existeix
   
@@ -488,9 +490,15 @@ del programa o amb el temps.</p>
   items = dic.items()    # objecte dict_items
   
   type(dic) is dict  # Comprova si és un diccionari
+
+  dict.update(dict2)   # Fundeix dos diccionaris. Modifica dict. Retorna None
+  d.update(y=2, z=3)  # Passant més d'un parell, com arguments
+  d.update([("y", 2), ("z", 3)])  # Passant tuples, com arguments
   
-  dic1 | dic2   # (Python 3.9+) Fundeix dos diccionaris. Prioritza dic2
-  dic1 |= dic2  # Fusiona i actualitza dic1
+  dic1 | dic2   # (Python 3.9+) Fundeix dos diccionaris. Prioritza dic2. Retorna diccionari. 
+                # No modifica ni dict1 ni dict2
+
+  dic1 |= dic2  # Fusiona i actualitza dic1. Equival a dic1 = dic1 | dic2
       </pre>
   
       <h3>Claus i valors mutables</h3>
@@ -786,9 +794,14 @@ for numero in comptador(1, 5):
 # Crear un array unidimensional
 arreglo = np.array([1, 2, 3, 4])
 print("Array:", arreglo)
+print(arreglo[2])    # Un element
+arreglo[2]=8         # Modificar un element
 
 # Crear un array bidimensional (matriu)
-matriu = np.array([[1, 2, 3], [4, 5, 6]])
+matriu = np.array([[1, 2, 3], [4, 5, 6]])   # Dos files , tres columnes. files 0,1  columnes 0,1,2
+print("Matriu:\n", matriu)
+print("Element 1,2: ", matriu[1,2]) # ==> 6
+matriu[1,2]=99                      # Canviar un element 
 print("Matriu:\n", matriu)</code></pre>
 
     <p><strong>Explicació dels exemples:</strong></p>
