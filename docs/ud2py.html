@@ -144,7 +144,7 @@ else:
       <h3>Exemple:</h3>
       <pre><code>edad = 20  # Exemple d'edat
 missatge = "Major d'edat" if edad >= 18 else "Menor d'edat"
-print(missatge)  # Sortida: Major d'edat         </code></pre>
+print(missatge)  # Eixida: Major d'edat         </code></pre>
   
       <ul>
           <li>Si l'edat (<code>edad</code>) és 18 o més, la variable <code>missatge</code> rep el valor <code>"Major d'edat"</code>.</li>
@@ -382,8 +382,9 @@ print("Y por supuesto el programa continua después del try")</code></pre>
         <ul>
             <li><strong><code>try</code></strong>: S'intenta executar el codi dins d'aquesta secció.</li>
             <li><strong><code>except</code></strong>: Si es produeix un error (en aquest cas, una divisió per zero), s'executa el codi dins d'aquesta secció.</li>
-            <li><strong><code>else</code></strong>: Si no es produeix cap error en el bloc <code>try</code>, s'executa el codi dins d'aquesta secció.</li>
+            <li><strong><code>else</code></strong>: Sols si no es produeix cap error en el bloc <code>try</code>, s'executa el codi dins d'aquesta secció.</li>
             <li><strong><code>finally</code></strong>: Aquesta secció s'executa sempre, independentment de si hi ha hagut un error o no.</li>
+            <!--<li>El finally s’executa SEMPRE, fins i tot si el try no acaba normalment(return, break, exepció no capturada)</li> -->
         </ul>
       <h4>Millora al codi incial</h4>
 <pre><code>try:
@@ -393,18 +394,21 @@ except ValueError:
     print('Introduce un numero, no una letra')
 except ZeroDivisionError:
     print('division por 0....')
+except Exception
+    print('Otro error no previsto.')
 
-print('=====  Fi del programa  ======')</code></pre>
+print('=====  Fin del programa  ======')</code></pre>
    
 
-        <h2>Estructura de Control de Flux: <code>pass</code></h2>
-        <p>El <code>pass</code> és una instrucció que es pot utilitzar com a marcador de lloc. Serveix quan cal una sintaxi vàlida però no es vol que el codi faci res en una part específica.</p>
+    <h2>Estructura de Control de Flux: <code>pass</code></h2>
+    <p>El <code>pass</code> és una instrucció que es pot utilitzar com a marcador de lloc. Serveix quan cal una sintaxi vàlida però no es vol que el codi faci res en una part específica.</p>
 
-        <h3>Exemple d'ús de <code>pass</code></h3>
-        <pre><code>if condición:
-        pass  # No hace nada, pero se puede dejar como espacio para agregar código más tarde</code></pre>
+    <h3>Exemple d'ús de <code>pass</code></h3>
+    <pre><code>if condición:
+    pass  # No hace nada, pero se puede dejar como espacio para agregar código más tarde</code></pre>
 
-        <p>El manejador d'errors amb <code>try</code> i <code>except</code> és essencial per controlar excepcions i evitar que el programa es detingui en cas d'errors inesperats. El <code>pass</code> és útil quan necessites una sintaxi vàlida sense que el codi realitzi cap acció.</p>
+    <p>El manejador d'errors amb <code>try</code> i <code>except</code> és essencial per controlar excepcions i evitar que el programa es pare en cas d'errors inesperats. 
+        El <code>pass</code> és útil quan necessites una sintaxi vàlida sense que el codi realitzi cap acció.</p>
 
 </section>
 
@@ -462,22 +466,22 @@ print('=====  Fi del programa  ======')</code></pre>
     <ul>
         <li><code>upper()</code>: Retorna la cadena en majúscules. <code>'pedro'.upper()</code> → <strong>'PEDRO'</strong></li>
         <li><code>lower()</code>: Retorna la cadena en minúscules. <code>'PEDRO'.lower()</code> → <strong>'pedro'</strong></li>
-        <li><code>capitalize()</code>: Retorna la cadena amb la primera lletra en majúscula. <code>'pedro'.capitalize()</code> → <strong>'Pedro'</strong></li>
+        <li><code>capitalize()</code>: Retorna la cadena amb la primera lletra en majúscula. <code>'pedro perez'.capitalize()</code> → <strong>'Pedro perez'</strong></li>
         <li><code>title()</code>: Retorna la cadena amb la primera lletra de cada paraula en majúscula. <code>'pedro perez'.title()</code> → <strong>'Pedro Perez'</strong></li>
         <li><code>strip()</code>: Elimina els espais en blanc al principi i final de la cadena. <code>'   hola   '.strip()</code> → <strong>'hola'</strong></li>
         <li><code>replace(old, new)</code>: Substitueix totes les aparicions de la subcadena <code>old</code> per <code>new</code>. <code>'hola'.replace('o', 'a')</code> → <strong>'hala'</strong></li>
         <li><code>split(separator)</code>: Divideix la cadena en una llista de subcadenes utilitzant el separador especificat. <code>'a,b,c'.split(',')</code> → <strong>['a', 'b', 'c']</strong></li>
         <li><code>join(iterable)</code>: Combina els elements d'un iterable (com una llista) en una cadena, separats per la cadena actual. <code>','.join(['a', 'b', 'c'])</code> → <strong>'a,b,c'</strong></li>
-        <li><code>find(sub)</code>: Retorna l'índex de la primera aparició de la subcadena <code>sub</code>. Si no la troba, retorna -1. <code>'hola'.find('o')</code> → <strong>0</strong></li>
-        <li><code>index(sub)</code>: Similar a <code>find()</code>, però llança una excepció si no troba la subcadena. <code>'hola'.index('o')</code> → <strong>0</strong></li>
+        <li><code>find(sub)</code>: Retorna l'índex de la primera aparició de la subcadena <code>sub</code>. Si no la troba, retorna -1. <code>'hola'.find('o')</code> → <strong>1</strong></li>
+        <li><code>index(sub)</code>: Similar a <code>find()</code>, però llança una excepció si no troba la subcadena. <code>'hola'.index('o')</code> → <strong>1</strong></li>
         <li><code>startswith(prefix)</code>: Retorna <code>True</code> si la cadena comença amb el prefix especificat. <code>'hola'.startswith('ho')</code> → <strong>True</strong></li>
         <li><code>endswith(suffix)</code>: Retorna <code>True</code> si la cadena acaba amb el sufix especificat. <code>'hola'.endswith('a')</code> → <strong>True</strong></li>
         <li><code>isalpha()</code>: Retorna <code>True</code> si tots els caràcters de la cadena són lletres. <code>'hola'.isalpha()</code> → <strong>True</strong></li>
         <li><code>isdigit()</code>: Retorna <code>True</code> si tots els caràcters de la cadena són dígits. <code>'1234'.isdigit()</code> → <strong>True</strong></li>
         <li><code>isalnum()</code>: Retorna <code>True</code> si tots els caràcters de la cadena són lletres o dígits. <code>'abc123'.isalnum()</code> → <strong>True</strong></li>
         <li><code>isspace()</code>: Retorna <code>True</code> si tots els caràcters de la cadena són espais en blanc. <code>'   '.isspace()</code> → <strong>True</strong></li>
-        <li><code>format()</code>: Permet formatejar cadenes de text. <code>'Hola {}'.format('món')</code> → <strong>'Hola món'</strong></li>
-        <li><code>count(sub)</code>: Retorna el nombre d'aparicions de la subcadena <code>sub</code> dins la cadena. <code>'hola'.count('o')</code> → <strong>1</strong></li>
+        <li><code>format()</code>: Permet formatejar cadenes de text. <code>'Hola {}'.format('món')</code> → <strong>'Hola món'</strong> (similar als f-strings)</li>
+        <li><code>count(sub)</code>: Retorna el nombre d'aparicions de la subcadena <code>sub</code> dins la cadena. <code>'hola mon'.count('o')</code> → <strong>2</strong></li>
         <li><code>zfill(width)</code>: Omple la cadena amb zeros al principi fins a aconseguir la llargada especificada. <code>'42'.zfill(5)</code> → <strong>'00042'</strong></li>
         <li><code>center(width)</code>: Centra la cadena en un camp de caràcters de llargada especificada. <code>'hola'.center(10)</code> → <strong>'  hola   '</strong></li>
         <li><code>ljust(width)</code>: Justifica la cadena a l'esquerra en un camp de llargada especificada. <code>'hola'.ljust(10)</code> → <strong>'hola      '</strong></li>
@@ -498,14 +502,22 @@ print('=====  Fi del programa  ======')</code></pre>
         <p>Les funcions definides per l'usuari són blocs de codi reutilitzables que realitzen una tasca específica. Aquestes funcions es creen utilitzant la paraula clau <code>def</code>, seguida del nom de la funció i parèntesis que poden incloure paràmetres. El cos de la funció està indentat i pot incloure declaracions, càlculs i una declaració <code>return</code> per retornar un valor.</p>
     
         <h2>Exemple de Funció Definida per l'Usuari</h2>
-        <pre><code>
-    def suma(a, b):
-        resultat = a + b
-        return resultat
+        <pre><code># Definir funció
+def saluda():
+    print("Hola mon")
+    print("Soc Python !!")
     
-    # Cridar la funció
-    resultat_suma = suma(3, 5)
-    print(resultat_suma)  # Sortida: 8
+# Cridar la funció
+saluda()      # Esta funció no retorna cap valor, sols imprimeix
+   </code> </pre>
+        <pre><code>def suma(a, b):
+    resultat = a + b
+    return resultat
+
+# Cridar la funció
+resultat_suma = suma(3, 5)    # Esta funció no imprimeix res, pero torna un valor
+print(resultat_suma)      # Eixida: 8
+print ( suma (243,521) )  # Eixida 764
         </code></pre>
         <p>En aquest exemple, la funció <code>suma(a, b)</code> rep dos paràmetres, <code>a</code> i <code>b</code>, i retorna la seva suma.</p>
     
@@ -527,8 +539,8 @@ print('=====  Fi del programa  ======')</code></pre>
         <pre><code>def saludar(nom="Usuari"):
     print(f"Hola, {nom}!")
 
-saludar("Joan")  # Sortida: Hola, Joan!
-saludar()        # Sortida: Hola, Usuari!       </code></pre>
+saludar("Joan")  # Eixida: Hola, Joan!
+saludar()        # Eixida: Hola, Usuari!       </code></pre>
 
     <p>Aquest exemple mostra com es poden definir paràmetres opcionals en una funció. Si no es passa cap valor a la funció, es fa servir el valor per defecte (en aquest cas, <code>"Usuari"</code>).</p>
 
@@ -537,9 +549,10 @@ saludar()        # Sortida: Hola, Usuari!       </code></pre>
     return a * b
 
 resultat_multiplicacio = multiplicar(4, 3)
-print(resultat_multiplicacio)  # Sortida: 12           </code></pre>
+print(resultat_multiplicacio)  # Eixida: 12           </code></pre>
 
     <p>Les funcions també poden retornar un valor mitjançant la declaració <code>return</code>, com es veu en l'exemple de la funció <code>multiplicar</code>.</p>
+    <p>Una funcio pot tindre més d'una intrucció <code>return</code> , però sols s'executarà una, que eixirà de la funció</p>
          
     <h3>Funcions amb Tipus de Dades (Type Hinting)</h3>
     <p>En Python, es poden afegir indicadors de tipus (type hints) per especificar el tipus de les variables o els arguments d'una funció. Això millora la llegibilitat del codi i ajuda als editors a proporcionar suggeriments i detecció d'errors.</p>
@@ -560,10 +573,22 @@ print(resultat_multiplicacio)  # Sortida: 12           </code></pre>
         print(f"{clau}: {valor}")                </code></pre>
     <p>Aquesta funció accepta un nombre arbitrari de parells de clau-valor, com un diccionari.</p>
 
+    <h3>Funcions que retornen més d'un valor</h3>
+    <pre><code>def operacions(a, b):
+    suma = a + b
+    resta = a - b
+    producte = a * b
+    return suma, resta, producte
+
+x,y,z = operacions(10,5)
+resultat = operacions(10, 5)
+print(resultat)        # (15, 5, 50)
+</code></pre>
+
     <h3>Funcions Lambda</h3>
     <p>Les funcions lambda són funcions anònimes que es poden definir en una sola línia. Són útils per a operacions simples i per passar com arguments a altres funcions.</p>
     <pre><code>multiplicar = lambda x, y: x * y  # Funció lambda per multiplicar dos valors
-    print(multiplicar(2, 3))  # Sortida: 6                </code></pre>
+    print(multiplicar(2, 3))  # Eixida: 6                </code></pre>
         
     <h3>Decoradors (Següent Tema)</h3>
     <p>Els decoradors en Python són una forma de modificar o millorar el comportament d'una funció sense canviar-ne el codi. Són un tema avançat que tractarem més endavant.</p>
@@ -582,31 +607,31 @@ print(resultat_multiplicacio)  # Sortida: 12           </code></pre>
     <pre><code>x = 10  # Variable global
 def mostrar_x():
     print(x)  # Accés a la variable global
-mostrar_x()  # Sortida: 10                    </code></pre>
+mostrar_x()  # Eixida: 10                    </code></pre>
             
     <h3>Modificació d'una variable global dins d'una funció sense global</h3>
     <pre><code>x = 10
 def modificar_x():
     x = 20  # Crea una nova variable local, no modifica la global
-    print(x)  # Sortida: 20
+    print(x)  # Eixida: 20
 modificar_x()
-print(x)  # Sortida: 10 (la variable global no ha canviat)           </code></pre>
+print(x)  # Eixida: 10 (la variable global no ha canviat)           </code></pre>
             
     <h3>Modificació d'una variable global dins d'una funció amb global</h3>
     <pre><code>x = 10
 def modificar_x():
     global x
     x = 20  # Modifica la variable global
-    print(x)  # Sortida: 20
+    print(x)  # Eixida: 20
 modificar_x()
-print(x)  # Sortida: 20 (la variable global ha canviat)       </code></pre>
+print(x)  # Eixida: 20 (la variable global ha canviat)       </code></pre>
             
     <h2>Ámbit Local</h2>
     <p>Una variable definida dins d'una funció té un àmbit local. Només pot ser accedida dins d'aquesta funció. Si intentes accedir a una variable local fora de la seva funció, obtindràs un error.</p>
     <h3>Exemple d'àmbit local</h3>
     <pre><code>def funcion():
     y = 5  # Variable local
-    print(y)  # Sortida: 5
+    print(y)  # Eixida: 5
 funcion()
 print(y)  # Error: NameError, 'y' no està definida en l'àmbit global      </code></pre>
             
@@ -619,9 +644,9 @@ print(y)  # Error: NameError, 'y' no està definida en l'àmbit global      </co
     def funcion_interna():
         nonlocal z
         z = 25  # Modifica la variable de la funció externa
-        print(z)  # Sortida: 25
+        print(z)  # Eixida: 25
     funcion_interna()
-    print(z)  # Sortida: 25 (la variable no local ha canviat)
+    print(z)  # Eixida: 25 (la variable no local ha canviat)
 funcion_externa()
         </code></pre>
     
@@ -630,8 +655,8 @@ funcion_externa()
         
         <h3>Exemple d'àmbit de bucle</h3>
         <pre><code>for i in range(3):
-    print(i)  # Sortida: 0, 1, 2
-print(i)  # Sortida: 2 (la variable 'i' segueix accessible fora del bucle)        </code></pre>
+    print(i)  # Eixida: 0, 1, 2
+print(i)  # Eixida: 2 (la variable 'i' segueix accessible fora del bucle)        </code></pre>
     <p>Això pot resultar confús si vens d'altres llenguatges on les variables de bucle tenen un àmbit limitat al bloc.</p>
     <hr>
     <h2>Bones Pràctiques al Definir Funcions en Python</h2>
@@ -676,7 +701,7 @@ sumar(a, b)
     <h3>1. Ignorar valors en assignacions</h3>
     <p>Es fa servir com una variable "desechable" quan no necessites utilitzar un valor en una assignació. El valor es descarta utilitzant el guion baix.</p>
             <pre><code>_, y, z = (1, 2, 3)
-print(y, z)  # Sortida: 2 3</code></pre>
+print(y, z)  # Eixida: 2 3</code></pre>
         
     <h3>2. Iteracions quan no es necessita el valor</h3>
     <p>En els bucles, es fa servir <code>for _ in range(n)</code> quan no necessites utilitzar la variable del bucle.</p>
@@ -709,8 +734,10 @@ print(dir(e))  # Es converteix en _Exemple__privada</code></pre>
             <p>Es fa servir <code>_</code> en noms per evitar conflictes amb paraules clau de Python.</p>
             <pre><code>def class_(nom):
             return f"Classe: {nom}"</code></pre>
-       
+      <hr><p class="alert">En Python no hi ha pas per referència, sinó pas de referències a objectes.
+         Només els objectes mutables poden ser modificats dins d’una funció</p> 
 </section>
+
 
 <section id="moduls">
 
@@ -727,8 +754,8 @@ PI = 3.14159</code></pre>
     <h3>Importar i utilitzar el mòdul en un altre arxiu</h3>
     <pre><code># programa.py
 import mi_modulo
-print(mi_modulo.saludar("Juan"))  # Sortida: Hola, Juan!
-print(mi_modulo.PI)               # Sortida: 3.14159</code></pre>
+print(mi_modulo.saludar("Juan"))  # Eixida: Hola, Juan!
+print(mi_modulo.PI)               # Eixida: 3.14159</code></pre>
     
     <p>Quan hem importat un mòdul i volem utilitzar algun element del mateix, hem de fer servir el seu espai de noms seguit d'un punt i el nom de l'element que volem utilitzar. L'espai de noms no és més que el nom que hem indicat després del <code>import</code>.</p>
 
@@ -780,8 +807,8 @@ print(saludar("Carlos"))       # D'aquesta manera NO s'ha de fer servir l'espai 
 from mi_paquete.modulo1 import sumar
 from mi_paquete.modulo2 import restar
 
-print(sumar(5, 3))  # Sortida: 8
-print(restar(5, 3)) # Sortida: 2</code></pre>
+print(sumar(5, 3))  # Eixida: 8
+print(restar(5, 3)) # Eixida: 2</code></pre>
     
         <h3>Paquets anidats:</h3>
         <p>Els paquets poden contenir subpaquets. Per exemple:</p>
@@ -802,7 +829,7 @@ print(restar(5, 3)) # Sortida: 2</code></pre>
     
         <h5>• <code>math</code>: Funcions matemàtiques.</h5>
         <pre><code>import math
-    print(math.sqrt(16))  # Sortida: 4.0</code></pre>
+    print(math.sqrt(16))  # Eixida: 4.0</code></pre>
     
         <h5>• <code>os</code>: Operacions del sistema operatiu.</h5>
         <pre><code>import os
