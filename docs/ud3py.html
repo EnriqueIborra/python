@@ -37,7 +37,7 @@
 <main>
 
 <section id="estruc">
-
+ 
       <h1>Estructures avançades en Python</h1>
   
       <p>En Python, les dades es divideixen en mutables i immutables, depenent de si el seu contingut pot canviar després de la seua creació.</p>
@@ -63,7 +63,7 @@
           <li>Objectes definits per l'usuari (classes)</li>
       </ul>
   
-      <h2>Objectes immutables (int, str, bool...)</h2>
+      <hr><h2>Objectes immutables (int, str, bool...)</h2>
       <p>a = 3 &nbsp; &nbsp;# Es crea el literal 3 en memòria i s'assigna el seu “identificador” a la variable a</p>
       <p>b = 3 &nbsp; &nbsp;# Com que el literal 3 ja existeix, se li assigna el seu “identificador” a la variable b</p>
       <p>a = 5 &nbsp; &nbsp;# Es crea el literal 5 en memòria i s'assigna el seu “identificador” a la variable a</p>
@@ -84,52 +84,31 @@
       </pre>
   
       <p>En Python es produeix <strong>aliasing</strong>, és a dir, els objectes tenen individualitat, i múltiples noms poden referir-se al mateix objecte.</p>
+      <pre>a=56
+b=56
+print(a is b)
+True</pre>    
+
       <hr>
       <h2>Objectes mutables (llistes, diccionaris, conjunts, definits per l'usuari...)</h2>
       <p>En Python, les variables són referències a objectes en memòria, no contenidors de dades directament. Quan fas una assignació com:</p>
-      <p><code>a = [1, 2, 3]</code> &nbsp; &nbsp;# a és una llista, per tant mutable</p>
-      <p><code>b = a</code></p>
+      <pre>
+      a = [1, 2, 3]</code> &nbsp; &nbsp;# a és una llista, per tant mutable
+      b = a        </pre>
+      <img src="imgs/mutables.png" alt="mutables" width="50%" class="imatge-dreta">
       <p>Tant <code>a</code> com <code>b</code> apunten al mateix objecte (una llista en aquest cas). No es crea una còpia de la llista; simplement, ambdues variables fan referència al mateix objecte. Si modifiques la llista a través de <code>b</code>:</p>
       <p><code>b.append(4)</code> &nbsp; &nbsp;# això afegeix un element al final de la llista</p>
       <p>La llista a la qual <code>a</code> apunta també es veu modificada, ja que <code>a</code> i <code>b</code> fan referència al mateix objecte en memòria.</p>
   
       <h3>Referències i aliasing</h3>
-      <img src="imgs/mutables.png" alt="mutables" width="60%">
-  
       <p>La diferència amb els objectes immutables és que quan modifiquem un objecte mutable, no es crea un de nou (si no existeix), com passa amb els immutables. Es modifica l’objecte i es mantenen les referències.</p>
-  
-    
       <p>Una altra diferència amb els immutables és que quan assignem una llista a una variable, ES CREA una nova llista (encara que ja n’existisca una amb els mateixos elements).</p>
       <img src="imgs/mutables2.png" alt="mutables2" width="30%" class="imatge-dreta">
       <p><code>a = [1, 2, 3]</code></p>
       <p><code>b = [1, 2, 3]</code></p>
-      
+      <p><code> print(a is b) <br> False       </code></p>
       <p>Això no pot passar amb els objectes immutables. En el cas de dos objectes immutables iguals, s’apunta al mateix.</p>
-  
-          <h2>Objectes mutables (llistes, diccionaris, conjunts, definits per l'usuari...)</h2>
-      
-          <p>En Python, les variables són referències a objectes en memòria, no contenidors de dades directament. Quan fas una assignació com:</p>
-      
-          <pre>a = [1, 2, 3]     # a és una llista, per tant mutable  
-      b = a</pre>
-      
-          <p>Tant <code>a</code> com <code>b</code> apunten al mateix objecte (una llista en aquest cas). No es crea una còpia de la llista; simplement, ambdues variables fan referència al mateix objecte. Si modifiques la llista a través de <code>b</code>:</p>
-      
-          <pre>b.append(4)   # això afegeix un element al final de la llista</pre>
-      
-          <p>La llista a la qual <code>a</code> apunta també es veu modificada, ja que <code>a</code> i <code>b</code> fan referència al mateix objecte en memòria.</p>
-      
-          <h3>Referències i aliasing</h3>
-      
-          <p>La diferència amb els objectes immutables és que quan modifiquem un objecte mutable, no es crea un de nou (si no existeix), com passa amb els immutables. Es modifica l’objecte i es mantenen les referències.</p>
-      
-          <p>Una altra diferència amb els immutables és que quan assignem una llista a una variable, ES CREA una nova llista (encara que ja n’existisca una amb els mateixos elements).</p>
-      
-          <pre>a = [1, 2, 3]
-      b = [1, 2, 3]</pre>
-      
-          <p>Això no pot passar amb els objectes immutables. En el cas de dos objectes immutables iguals, s’apunta al mateix.</p>
-   
+
 
 </section>
 
@@ -156,62 +135,64 @@
         <li>Iteració Previsible: Quan recorreu la llista (amb un bucle for, per exemple), els elements 
             sempre eixiran en la seqüència exacta en què varen ser introduïts</li>
       </ol>
-  <h4>Vegem com manipular llistes amb exemples..</h4>
-      <pre>  llista=[]     # declara llista buida
+  
+<h4>Vegem com manipular llistes amb exemples..</h4>
+      <pre>  llista1=[]     # declara llista buida
   fruites = ["poma", "plàtan", "cirera"]   # declara llista amb 3 elements
-  llista = list("1234")                    # fa una llista a partir dels caracters d'un string
-  llista = [1, "Hola", 3.67, [1, 2, 3]]    # pot barrejar tipus diferents
+  llista1 = list("1234")                    # fa una llista a partir dels caracters d'un string
+  llista2 = [1, "Hola", 3.67, [1, 2, 3], None]   # pot barrejar tipus diferents
   print(fruites[0])                        # Impremeix el primer element
-  fruites[0] = "pera"
+  fruites[0] = "pera"                      # Canvia el valor del primer element de la llista
   del fruites[1]                           # Esborra el segon element de la llista
   fruites.append("taronja")                # afegeix un element 
+  llista1.insert(1, 15)       # Inserta en la posició 1, el element 15
+  llista1.extend([7, 8, 9])   # Afegix els elements de la lista , u per u
+  llista1.remove(15)          # Esborra l'element amb valor 15, si hi ha més d'u, sols esborra el primer.
+  llista1.clear()             # equivalent a    llista1=[]
   print(fruites)    print(*fruites)    print(*fruites, sep=' -> ')
-  len(fruites)                             # Torna "quants" elements té la llista
-  max(fruites)   min(fruites)
-  sum(mevallista)  
-  mevallista = []
-  mevallista[0] = 24   mevallista[1] = 46
-  mevallista[-1] = 33  mevallista[-2] = 57
-  nouafruita = fruites[2:4]
-  nouafruita2 = fruites[:4]   nouafruita3 = fruites[2:]
-  llista2 = [1, 4, 7, "plàtan"]
-  mevallista.insert(1, 15)       # Inserta en la posició 1, el element 15
-  mevallista.extend([7, 8, 9])   # Afegix els elements de la lista , u per u
-  mevallista.remove(15)          # Esborra l'element 15, si hi ha més d'u, sols esborra el primer.
-  mevallista.clear()             
-  ultim = mevallista.pop()
-  altre = mevallista.pop(2)      # posició 2  ( la primera pos es la 0, l'ultima la -1)
-  print(10 in mevallista)        # True o False
-  index = mevallista.index("plàtan")     # posició del primer element 'plàtan' ( si hi ha més d'u)
+  len(fruites)                        # Torna "quants" elements té la llista
+  max(fruites)   min(fruites)   # sols si els elements son comparables entre ells
+  sum(llista1)                  # Sols si els elements son numeros
+  llista1[0] = 24    llista1[1] = 46   llista1[-1] = 33    llista1[-2] = 57
+  novafruita1 = fruites[2:4]     novafruita2 = fruites[:4]     novafruita3 = fruites[2:]
+  ultim = llista1.pop()
+  altre = llista1.pop(2)      # posició 2  ( la primera pos es la 0, l'ultima la -1)
+  print(10 in llista1)        # True o False
+  vposic = fruites.index("plàtan")     # posició del primer element 'plàtan' ( si hi ha més d'u)
   
-  mevallista.sort()                      # ordena els elements de la llista , modificant-la !!
+  llista1.sort()                      # ordena els elements de la llista , modificant-la !!
       # Si els elements d'una llista no son del mateix tipus, no es podran ordenar
       # I si s'intenta, donarà un Error =>  TypeError
 
-  llista_ordenada = sorted(mevallista)   # Torna una llista nova ordenada, pero no modifica la principal
-  mevallista.reverse()                   #  modifica...
-  print(mevallista.count("pera"))    
-  copia_llista = mevallista.copy()
-  copia_llista = mevallista[:]
+  llista_ordenada = sorted(llista1)   # Torna una llista nova ordenada, pero no modifica la principal
+  llista1.reverse()                   #  modifica...
+  print(fruites.count("pera"))    
+  copia_llista = llista1.copy()       # equivalent:   copia_llista = llista1[:]
   llista_niada = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-  llista3 = llista1 + llista2
-  llista_repetida = llista1 * 3
-  x, y, z = llista
+  llista3 = llista1 + llista2        # crea nova llista amb els elements de llista1 i de llista2
+  llista_repetida = llista1 * 3     # crea nova llista amb els elements de llista1 tres vegades
+  x, y, z = llista                  # list unpacking
+  a, *resta = [1, 2, 3, 4]          # list unpacking, amb -resta-  serà una llista
   llista_sense_duplicats = list(set(mevallista))
-  resultat = all(x % 2 == 0 for x in mevallista)
-  resultat = any(x % 2 == 0 for x in mevallista)       </pre>
+  resultat = all( llista2)   # comprova si tots els elements son True  (no son False)
+  resultat = any( llista2)   # comprova si algun element es True  (no  False)    </pre>
      <h4>Com recorrer una llista</h4>
       <pre>
 for e in llista: print(e)    # e serà un element de la llista en cada iteració
                              # e pot ser de qualsevol tipus, inclòs llista (llista niada)
+
 for i in range(len(llista)):
-        print(llista(i))     #  i serà un numero de 0 a len(llista)  , llista(i) serà l'element
+        print(llista[i])     #  i serà un numero de 0 a len(llista)  , llista(i) serà l'element
+        llista[i]=None       #  A més a més, d'esta forma es pot modificar el valor d'un element !!!
+
 for index, l in enumerate(llista): print(index, l)   
 
 #  dins dels bucles ens pot ser molt útil saber el tipus de cada element
-type(llista1) is list
+type(llista1)
+&lt;class 'list'>
 isinstance(llista1, list)
-      </pre>
+True        </pre>
+
       <h4>Algunes conversions útils</h4>
       <pre># De string fer una llista
 string1='Python'
@@ -226,7 +207,19 @@ print(string2)          #  Python
 # O es pot "unir" amb qualsevol lletra
 string3=','.join(a)
 print(string3)          #  P,y,t,h,o,n     </pre>
-  
+
+        <h3>Aliasing versus Shallow Copy</h3>
+        <pre>  # Aliasing: a i b fan referència al mateix objecte
+a = [1,2]
+b = a 
+b.append(3)
+print(a,b)   #  [1, 2, 3] [1, 2, 3]
+
+  # Shallow copy: a i c seran objectes diferents
+a = [1,2] 
+c=a.copy()   # també  c = list(a)     # també   c = a[:]
+c.append(3)    
+print(a,c)    # [1, 2] [1, 2, 3]    </pre>      
  
        
 </section>
