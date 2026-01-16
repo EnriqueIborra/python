@@ -511,16 +511,20 @@ def saluda():
 # Cridar la funció
 saluda()      # Esta funció no retorna cap valor, sols imprimeix
    </code> </pre>
-        <pre><code>def suma(a, b):
-    resultat = a + b
-    return resultat
+        <pre><code>def sumaEsp(a, b):
+    if a > b :        
+       resultat = a + b + b + 1
+    else:
+       resultat = a + a + b + 2
+    <strong>return</strong> resultat
 
 # Cridar la funció
-resultat_suma = suma(3, 5)    # Esta funció no imprimeix res, pero torna un valor
-print(resultat_suma)      # Eixida: 8
-print ( suma (243,521) )  # Eixida 764
+resultat_suma = sumaEsp(3, 5)    # Esta funció no imprimeix res, pero torna un valor
+print(resultat_suma)      # Eixida: 13
+print ( sumaEsp ( 243, 521) )  # Eixida 1009
         </code></pre>
-        <p>En aquest exemple, la funció <code>suma(a, b)</code> rep dos paràmetres, <code>a</code> i <code>b</code>, i retorna la seva suma.</p>
+        <p>En aquest exemple, la funció <code>sumaEsp(a, b)</code> rep dos paràmetres, <code>a</code> i <code>b</code>,
+             i retorna la seva suma "especial".</p>
     
         <h3>Components d'una Funció Definida per l'Usuari:</h3>
         <ul>
@@ -534,16 +538,6 @@ print ( suma (243,521) )  # Eixida 764
         <p>La indentació fa referència a la tècnica d'afegir espais al principi de les línies de codi, el que ajuda a delimitar visualment els blocs i les estructures de control.</p>
     
         <p>En Python, l'indentació és molt important ja que és la manera que utilitza el llenguatge per definir l'estructura del codi, a diferència d'altres llenguatges que utilitzen claus (<code>{}</code>) per identificar els blocs. Un codi sense una correcta indentació pot generar errors d'execució o de lògica.</p>
-    
-
-        <h3>Funcions amb Paràmetres Opcionals</h3>
-        <pre><code>def saludar(nom="Usuari"):
-    print(f"Hola, {nom}!")
-
-saludar("Joan")  # Eixida: Hola, Joan!
-saludar()        # Eixida: Hola, Usuari!       </code></pre>
-
-    <p>Aquest exemple mostra com es poden definir paràmetres opcionals en una funció. Si no es passa cap valor a la funció, es fa servir el valor per defecte (en aquest cas, <code>"Usuari"</code>).</p>
 
     <h3>Funcions amb Valor de Retorn</h3>
     <pre><code>def multiplicar(a, b):
@@ -554,7 +548,26 @@ print(resultat_multiplicacio)  # Eixida: 12           </code></pre>
 
     <p>Les funcions també poden retornar un valor mitjançant la declaració <code>return</code>, com es veu en l'exemple de la funció <code>multiplicar</code>.</p>
     <p>Una funcio pot tindre més d'una intrucció <code>return</code> , però sols s'executarà una, que eixirà de la funció</p>
-         
+                 
+
+    <h3>Funcions amb Paràmetres Opcionals</h3>
+    <pre><code>def saludar(nom="Usuari"):
+    print(f"Hola, {nom}!")
+
+saludar("Joan")  # Eixida: Hola, Joan!
+saludar()        # Eixida: Hola, Usuari!       </code></pre>
+
+    <p>Aquest exemple mostra com es poden definir paràmetres opcionals en una funció. Si no es passa cap valor a la funció, es fa servir el valor per defecte (en aquest cas, <code>"Usuari"</code>).</p>
+    <pre><code>def multiplicar(a=0, b=1):
+    return a * b
+
+resultat_multiplicacio = multiplicar(4, 3)
+print(resultat_multiplicacio)  # Eixida: 12
+print( multiplicar(4))  # Eixida: 4 
+print( multiplicar())  # Eixida:  0           </code></pre>
+        <p>Aquest exemple mostra com es poden definir paràmetres opcionals en una funció. 
+            Si no es passa cap valor a la funció, tornarà un 0, i si es passa sols un, tornarà el mateix valor.</p>
+
     <h3>Funcions amb Tipus de Dades (Type Hinting)</h3>
     <p>En Python, es poden afegir indicadors de tipus (type hints) per especificar el tipus de les variables o els arguments d'una funció. Això millora la llegibilitat del codi i ajuda als editors a proporcionar suggeriments i detecció d'errors.</p>
     <pre><code>def dividir(a: float, b: float) -> float:   # Indicació de tipus per a arguments i valor de retorn
@@ -564,6 +577,7 @@ print(resultat_multiplicacio)  # Eixida: 12           </code></pre>
     <p>En Python, es poden definir funcions que accepten un nombre variable d'arguments usant els símbols <code>*</code> i <code>**</code>:</p>
     
     <h4>Arguments arbitraris (Amb Comes)</h4>
+    <p>A priori, no se sap quants arguments es passaran. Seran diversos arguments passats amb comes.</p>
     <pre><code>def sumar_todos(*numeros):  # Diversos arguments passats amb comes
     return sum(numeros)              </code></pre>
     <p>En aquest exemple, la funció <code>sumar_todos</code> pot acceptar qualsevol nombre d'arguments, i els processa com una tupla.</p>
@@ -601,7 +615,7 @@ print(resultat)        # (15, 5, 50)
     <h3>Funcions Lambda</h3>
     <p>Les funcions lambda són funcions anònimes que es poden definir en una sola línia. Són útils per a operacions simples i per passar com arguments a altres funcions.</p>
     <pre><code>multiplicar = lambda x, y: x * y  # Funció lambda per multiplicar dos valors
-    print(multiplicar(2, 3))  # Eixida: 6                </code></pre>
+print(multiplicar(2, 3))  # Eixida: 6                </code></pre>
         
     <h3>Decoradors (Següent Tema)</h3>
     <p>Els decoradors en Python són una forma de modificar o millorar el comportament d'una funció sense canviar-ne el codi. Són un tema avançat que tractarem més endavant.</p>
@@ -653,7 +667,18 @@ def modificar_x():
     print(x)  # Eixida: 20
 modificar_x()
 print(x)  # Eixida: 20 (la variable global ha canviat)       </code></pre>
-            
+       
+        <h2>Ámbit de Bucle o Bloc</h2>
+        <p>En Python, els blocs (if, for, while) NO creen un nou àmbit (scope). Només les funcions, classes i mòduls creen àmbits nous.
+        A diferència d'altres llenguatges, en Python les variables definides en un bucle o bloc no estan limitades a aquell bloc i poden ser accedides fora d'ell.</p>
+        
+        <h3>Exemple d'àmbit de bucle</h3>
+        <pre><code>for i in range(3):
+    print(i)  # Eixida: 0, 1, 2
+    x=10
+print(i)  # Eixida: 2 (la variable 'i' segueix accessible fora del bucle)
+print(x)  # Eixida: 10        </code></pre>
+    <p>Això pot resultar confús si vens d'altres llenguatges on les variables de bucle tenen un àmbit limitat al bloc.</p>
             
     <h2>Ámbit No Local (Nonlocal)</h2>
     <p>En python es poden definir funcions , dins d'altres funcions.</p>
@@ -671,17 +696,7 @@ print(x)  # Eixida: 20 (la variable global ha canviat)       </code></pre>
 funcion_externa()
         </code></pre>
     
-        <h2>Ámbit de Bucle o Bloc</h2>
-        <p>En Python, els blocs (if, for, while) NO creen un nou àmbit (scope). Només les funcions, classes i mòduls creen àmbits nous.
-        A diferència d'altres llenguatges, en Python les variables definides en un bucle o bloc no estan limitades a aquell bloc i poden ser accedides fora d'ell.</p>
-        
-        <h3>Exemple d'àmbit de bucle</h3>
-        <pre><code>for i in range(3):
-    print(i)  # Eixida: 0, 1, 2
-    x=10
-print(i)  # Eixida: 2 (la variable 'i' segueix accessible fora del bucle)
-print(x)  # Eixida: 10        </code></pre>
-    <p>Això pot resultar confús si vens d'altres llenguatges on les variables de bucle tenen un àmbit limitat al bloc.</p>
+
     <hr>
     <h2>Bones Pràctiques al Definir Funcions en Python</h2>
 
@@ -718,9 +733,9 @@ sumar(a, b)
     <p>Les funcions han de ser petites i fàcils de llegir. Si una funció és massa llarga, es recomana dividir-la en funcions més petites per a fer-les més comprensibles i reutilitzables.</p>
     <hr>
  
-    <h2>Ús del Guion Baix (<code>_</code>) en Python</h2>
+    <h2>Ús del Guió Baix (<code>_</code>) en Python</h2>
 
-    <p>El guion baix (<code>_</code>) en Python té diversos usos depenent del context en què es trobi. A continuació es mostren alguns dels usos més comuns:</p>
+    <p>El guió baix (<code>_</code>) en Python té diversos usos depenent del context en què es trobe. A continuació es mostren alguns dels usos més comuns:</p>
 
     <h3>1. Ignorar valors en assignacions</h3>
     <p>Es fa servir com una variable "desechable" quan no necessites utilitzar un valor en una assignació. El valor es descarta utilitzant el guion baix.</p>
@@ -801,7 +816,7 @@ print(saludar("Carlos"))       # D'aquesta manera NO s'ha de fer servir l'espai 
     
     <h4>Renombrar un mòdul:</h4>
     <pre><code>import mi_modulo as mm
- print(mm.PI)                # D'aquesta manera s'ha de fer servir l'espai de noms</code></pre>
+print(mm.PI)                # D'aquesta manera s'ha de fer servir l'espai de noms</code></pre>
      <hr>
     <h3>Paquets en Python</h3>
 
@@ -864,6 +879,17 @@ print(restar(5, 3)) # Eixida: 2</code></pre>
         <h5>• <code>random</code>: Generació de números aleatoris.</h5>
         <pre><code>import random
     print(random.randint(1, 10))  # Número aleatori entre 1 i 10.</code></pre>
+      <h5>• <code>datetime</code>: Tractament de dates (i hores) en python.</h5>
+        <pre><code>from datetime import datetime, date
+
+avui = date.today()
+ara = datetime.now()
+
+print(avui)  # data actual
+print(avui.year)
+print(avui.month)
+
+print(ara)   # data i hora actual           </code></pre> 
     
         <h4>Instal·lació de Paquets Externs</h4>
         <p>Per utilitzar paquets desenvolupats per tercers, els pots instal·lar des del repositori PyPI utilitzant pip:</p>
