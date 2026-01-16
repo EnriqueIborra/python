@@ -113,7 +113,7 @@ True</pre>
 </section>
 
 <section id="llistes">
-      <h2>Llistes []</h2>
+      <h1>Llistes []</h1>
       <img src="imgs/llista.png" alt="llista" width="40%" class="imatge-dreta">
       <p>Les llistes són estructures de dades que poden emmagatzemar diversos elements.</p>
       <ul>
@@ -137,28 +137,28 @@ True</pre>
       </ol>
   
 <h4>Vegem com manipular llistes amb exemples..</h4>
-      <pre>  llista1=[]     # declara llista buida
-  fruites = ["poma", "plàtan", "cirera"]   # declara llista amb 3 elements
-  llista1 = list("1234")                    # fa una llista a partir dels caracters d'un string
+      <pre>  llista1=[]                                     # declara llista buida
+  fruites = ["poma", "plàtan", "cirera"]         # declara llista amb 3 elements
+  llista1 = list("1234")                         # fa una llista a partir dels caracters d'un string
   llista2 = [1, "Hola", 3.67, [1, 2, 3], None]   # pot barrejar tipus diferents
-  print(fruites[0])                        # Impremeix el primer element
-  fruites[0] = "pera"                      # Canvia el valor del primer element de la llista
-  del fruites[1]                           # Esborra el segon element de la llista
-  fruites.append("taronja")                # afegeix un element 
-  llista1.insert(1, 15)       # Inserta en la posició 1, el element 15
+  print(fruites[0])           # Impremeix el primer element
+  fruites[0] = "pera"         # Canvia el valor del primer element de la llista
+  del fruites[1]              # Esborra el segon element de la llista  (es reorganitza la llista)
+  fruites.append("taronja")   # afegeix un element    
+  llista1.insert(1, 15)       # Inserta en la posició 1, el element 15   (es reorganitza la llista)
   llista1.extend([7, 8, 9])   # Afegix els elements de la lista , u per u
-  llista1.remove(15)          # Esborra l'element amb valor 15, si hi ha més d'u, sols esborra el primer.
+  fruites.remove("cirera")    # Esborra l'element amb valor "cirera", si hi ha més d'u, sols esborra el primer.
   llista1.clear()             # equivalent a    llista1=[]
-  print(fruites)    print(*fruites)    print(*fruites, sep=' -> ')
-  len(fruites)                        # Torna "quants" elements té la llista
-  max(fruites)   min(fruites)   # sols si els elements son comparables entre ells
-  sum(llista1)                  # Sols si els elements son numeros
-  llista1[0] = 24    llista1[1] = 46   llista1[-1] = 33    llista1[-2] = 57
-  novafruita1 = fruites[2:4]     novafruita2 = fruites[:4]     novafruita3 = fruites[2:]
-  ultim = llista1.pop()
+  print(fruites)    print(*fruites)    print(*fruites, sep=' -> ')   # Tres formes d'imprimir una llista
+  len(fruites)                # Torna "quants" elements té la llista
+  max(fruites)   min(fruites) # sols si els elements son comparables entre ells
+  sum(llista1)                # Sols si els elements son numeros
+  llista1[0] = 24    llista1[1] = 46   llista1[-1] = 33    llista1[-2] = 57    # Modificació de valors d'una llista 
+  novafruita1 = fruites[2:4]     novafruita2 = fruites[:4]     novafruita3 = fruites[2:]    # Crea sub-llistes a partir d'una
+  ultim = llista1.pop()       # Extrau l'últim element  
   altre = llista1.pop(2)      # posició 2  ( la primera pos es la 0, l'ultima la -1)
   print(10 in llista1)        # True o False
-  vposic = fruites.index("plàtan")     # posició del primer element 'plàtan' ( si hi ha més d'u)
+  vposic = fruites.index("plàtan")    # posició del primer element 'plàtan' ( si hi ha més d'u)
   
   llista1.sort()                      # ordena els elements de la llista , modificant-la !!
       # Si els elements d'una llista no son del mateix tipus, no es podran ordenar
@@ -169,15 +169,15 @@ True</pre>
   print(fruites.count("pera"))    
   copia_llista = llista1.copy()       # equivalent:   copia_llista = llista1[:]
   llista_niada = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-  llista3 = llista1 + llista2        # crea nova llista amb els elements de llista1 i de llista2
-  llista_repetida = llista1 * 3     # crea nova llista amb els elements de llista1 tres vegades
-  x, y, z = llista                  # list unpacking
-  a, *resta = [1, 2, 3, 4]          # list unpacking, amb -resta-  serà una llista
+  llista3 = llista1 + llista2         # crea nova llista amb els elements de llista1 i de llista2
+  llista_repetida = llista1 * 3       # crea nova llista amb els elements de llista1 tres vegades
+  x, y, z = llista                    # list unpacking
+  a, *resta = [1, 2, 3, 4]            # list unpacking, amb -resta-  serà una llista
   llista_sense_duplicats = list(set(mevallista))
   resultat = all( llista2)   # comprova si tots els elements son True  (no son False)
   resultat = any( llista2)   # comprova si algun element es True  (no  False)    </pre>
      <h4>Com recorrer una llista</h4>
-      <pre>
+      <pre> 
 for e in llista: print(e)    # e serà un element de la llista en cada iteració
                              # e pot ser de qualsevol tipus, inclòs llista (llista niada)
 

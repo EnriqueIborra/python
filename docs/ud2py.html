@@ -417,7 +417,8 @@ print('=====  Fin del programa  ======')</code></pre>
     <h1>Funcions en Python</h1>
     <p>Les funcions en Python són blocs de codi que es poden reutilitzar per realitzar operacions específiques.
          Aquestes poden ser :</p>
-        <li><strong>Funcions incorporades</strong> (Built-In Functions) que Python proporciona per realitzar operacions comunes com càlculs matemàtics, conversiones de tipus de dades, obtenció d'informació del sistema, entre altres.</li>
+        <li><strong>Funcions incorporades</strong> (Built-In Functions) que Python proporciona per realitzar 
+            operacions comunes com càlculs matemàtics, conversions de tipus de dades, obtenció d'informació del sistema, entre altres.</li>
         <li><strong>Funcions personalitzades</strong> Funcions definides per l'usuari</li>
     <h1>Funcions incorporades</h1>
     <h2>Conversió de tipus</h2>
@@ -483,9 +484,9 @@ print('=====  Fin del programa  ======')</code></pre>
         <li><code>format()</code>: Permet formatejar cadenes de text. <code>'Hola {}'.format('món')</code> → <strong>'Hola món'</strong> (similar als f-strings)</li>
         <li><code>count(sub)</code>: Retorna el nombre d'aparicions de la subcadena <code>sub</code> dins la cadena. <code>'hola mon'.count('o')</code> → <strong>2</strong></li>
         <li><code>zfill(width)</code>: Omple la cadena amb zeros al principi fins a aconseguir la llargada especificada. <code>'42'.zfill(5)</code> → <strong>'00042'</strong></li>
-        <li><code>center(width)</code>: Centra la cadena en un camp de caràcters de llargada especificada. <code>'hola'.center(10)</code> → <strong>'  hola   '</strong></li>
-        <li><code>ljust(width)</code>: Justifica la cadena a l'esquerra en un camp de llargada especificada. <code>'hola'.ljust(10)</code> → <strong>'hola      '</strong></li>
-        <li><code>rjust(width)</code>: Justifica la cadena a la dreta en un camp de llargada especificada. <code>'hola'.rjust(10)</code> → <strong>'      hola'</strong></li>
+        <li><code>center(width)</code>: Centra la cadena en un camp de caràcters de llargada especificada. <code>'hola'.center(8)</code> → <strong>'&nbsp;&nbsp;hola&nbsp;&nbsp; '</strong></li>
+        <li><code>ljust(width)</code>: Justifica la cadena a l'esquerra en un camp de llargada especificada. <code>'hola'.ljust(8)</code> → <strong>'hola&nbsp;&nbsp;&nbsp;&nbsp; '</strong></li>
+        <li><code>rjust(width)</code>: Justifica la cadena a la dreta en un camp de llargada especificada. <code>'hola'.rjust(8)</code> → <strong>'&nbsp;&nbsp;&nbsp;&nbsp;hola'</strong></li>
     </ul>
 
     <h2>Funció <code>eval()</code></h2>
@@ -562,16 +563,28 @@ print(resultat_multiplicacio)  # Eixida: 12           </code></pre>
     <h3>Funcions amb múltiples arguments</h3>
     <p>En Python, es poden definir funcions que accepten un nombre variable d'arguments usant els símbols <code>*</code> i <code>**</code>:</p>
     
-    <h4>Arguments arbitrarios (Comas)</h4>
+    <h4>Arguments arbitraris (Amb Comes)</h4>
     <pre><code>def sumar_todos(*numeros):  # Diversos arguments passats amb comes
     return sum(numeros)              </code></pre>
     <p>En aquest exemple, la funció <code>sumar_todos</code> pot acceptar qualsevol nombre d'arguments, i els processa com una tupla.</p>
+     <pre># Exemple de com usar la funció
+resultat = sumar_todos(1, 2, 3, 4)
+print(resultat)   # Output: 10 
+
+llista = [5, 6, 7]
+resultat = sumar_todos(*llista)
+print(resultat)   # Output: 18  </pre>
 
     <h4>Arguments amb clau i valor (Clave-Valor)</h4>
     <pre><code>def mostrar_info(**info):  # Diversos arguments passats com a clau-valor
     for clau, valor in info.items():
         print(f"{clau}: {valor}")                </code></pre>
     <p>Aquesta funció accepta un nombre arbitrari de parells de clau-valor, com un diccionari.</p>
+    <pre># Exemple d'us
+mostrar_info(nom="Anna", edat=25, ciutat="Barcelona")
+
+dades = {"nom": "Marc", "edat": 30}
+mostrar_info(**dades)      </pre>
 
     <h3>Funcions que retornen més d'un valor</h3>
     <pre><code>def operacions(a, b):
@@ -598,6 +611,15 @@ print(resultat)        # (15, 5, 50)
 
     <p>En Python, l'àmbit d'una variable es refereix a la regió del codi on una variable és accessible. Python té regles específiques per determinar on una variable es pot utilitzar o modificar. Els àmbits més comuns són:</p>
 
+    <h2>Ámbit Local</h2>
+    <p>Una variable definida dins d'una funció té un àmbit local. Només pot ser accedida dins d'aquesta funció. Si intentes accedir a una variable local fora de la seva funció, obtindràs un error.</p>
+    <h3>Exemple d'àmbit local</h3>
+    <pre><code>def funcion():
+    y = 5  # Variable local
+    print(y)  # Eixida: 5
+funcion()
+print(y)  # Error: NameError, 'y' no està definida en l'àmbit global      </code></pre>
+
     <h2>Ámbit Global</h2>
     <p>Una variable definida fora de totes les funcions o blocs de codi té un àmbit global. Pot ser accedida des de qualsevol part del codi, incloent dins de les funcions.</p>
     <p>Però, accedir no és el mateix que modificar.....</p>
@@ -608,8 +630,14 @@ print(resultat)        # (15, 5, 50)
 def mostrar_x():
     print(x)  # Accés a la variable global
 mostrar_x()  # Eixida: 10                    </code></pre>
-            
-    <h3>Modificació d'una variable global dins d'una funció sense global</h3>
+
+    <pre><code>def mostrar_x():
+    print(x)  # Accés a la variable global
+
+x = 10  # Variable global. No hi ha problema perquè es defineix abans de cridar a la funció    
+mostrar_x()  # Eixida: 10                    </code></pre>
+
+    <h3>Modificació d'una variable global dins d'una funció sense global (no es pot)</h3>
     <pre><code>x = 10
 def modificar_x():
     x = 20  # Crea una nova variable local, no modifica la global
@@ -626,16 +654,9 @@ def modificar_x():
 modificar_x()
 print(x)  # Eixida: 20 (la variable global ha canviat)       </code></pre>
             
-    <h2>Ámbit Local</h2>
-    <p>Una variable definida dins d'una funció té un àmbit local. Només pot ser accedida dins d'aquesta funció. Si intentes accedir a una variable local fora de la seva funció, obtindràs un error.</p>
-    <h3>Exemple d'àmbit local</h3>
-    <pre><code>def funcion():
-    y = 5  # Variable local
-    print(y)  # Eixida: 5
-funcion()
-print(y)  # Error: NameError, 'y' no està definida en l'àmbit global      </code></pre>
             
     <h2>Ámbit No Local (Nonlocal)</h2>
+    <p>En python es poden definir funcions , dins d'altres funcions.</p>
     <p>L'àmbit no local aplica a variables definides en una funció externa (però no global) i que es poden accedir des d'una funció interna (anidada). Per modificar una variable d'una funció externa dins d'una funció interna, es fa servir la paraula clau <code>nonlocal</code>.</p>
 
     <h3>Exemple de variable no local</h3>
@@ -651,12 +672,15 @@ funcion_externa()
         </code></pre>
     
         <h2>Ámbit de Bucle o Bloc</h2>
-        <p>En Python, les variables definides dins d'un bucle (com <code>for</code> o <code>while</code>) o un bloc (com <code>if</code>) tenen un àmbit local al bloc o funció en què estan definides. No obstant això, a diferència d'altres llenguatges, en Python les variables definides en un bucle o bloc no estan limitades a aquell bloc i poden ser accedides fora d'ell.</p>
+        <p>En Python, els blocs (if, for, while) NO creen un nou àmbit (scope). Només les funcions, classes i mòduls creen àmbits nous.
+        A diferència d'altres llenguatges, en Python les variables definides en un bucle o bloc no estan limitades a aquell bloc i poden ser accedides fora d'ell.</p>
         
         <h3>Exemple d'àmbit de bucle</h3>
         <pre><code>for i in range(3):
     print(i)  # Eixida: 0, 1, 2
-print(i)  # Eixida: 2 (la variable 'i' segueix accessible fora del bucle)        </code></pre>
+    x=10
+print(i)  # Eixida: 2 (la variable 'i' segueix accessible fora del bucle)
+print(x)  # Eixida: 10        </code></pre>
     <p>Això pot resultar confús si vens d'altres llenguatges on les variables de bucle tenen un àmbit limitat al bloc.</p>
     <hr>
     <h2>Bones Pràctiques al Definir Funcions en Python</h2>
@@ -690,7 +714,7 @@ sumar(a, b)
     <h3>3. Evitar efectes secundaris</h3>
     <p>Una funció hauria de fer només una cosa. No hauria de modificar variables globals o tindre efectes secundaris inesperats. Això ajuda a que el comportament de la funció sigui més previsible.</p>
 
-    <h3>4. Mantingues les funcions curtes</h3>
+    <h3>4. Mantindre les funcions curtes</h3>
     <p>Les funcions han de ser petites i fàcils de llegir. Si una funció és massa llarga, es recomana dividir-la en funcions més petites per a fer-les més comprensibles i reutilitzables.</p>
     <hr>
  
@@ -715,27 +739,29 @@ print(y, z)  # Eixida: 2 3</code></pre>
 >>> _ * 2
 16</code></pre>
         
-    <h3>4. Prefijo per a variables privades</h3>
+    <h3>4. Prefixe per a variables privades</h3>
     <p>Es fa servir <code>_variable</code> per indicar que una variable és "privada" (això és una convenció, no una restricció real).</p>
     <pre><code>class MiClasse:
     def __init__(self):
             self._secreta = 42  # Indica que és privada (però encara accessible)</code></pre>
         
-            <h3>5. Doble guion baix per evitar col·lisions de noms (name mangling)</h3>
-            <p>Quan una variable comença amb <code>__</code>, Python canvia el seu nom internament per evitar col·lisions.</p>
-            <pre><code>class Exemple:
-    def __init__(self):
-        self.__privada = 99
+    <h3>5. Doble guió baix per evitar col·lisions de noms (name mangling)</h3>
+<p>Quan una variable comença amb <code>__</code>, Python canvia el seu nom internament per evitar col·lisions.</p>
+<pre><code>class Exemple:
+def __init__(self):
+    self.__privada = 99
         
 e = Exemple()
 print(dir(e))  # Es converteix en _Exemple__privada</code></pre>
         
-            <h3>6. Utilitzar <code>_</code> en noms de funcions i variables per evitar conflictes</h3>
-            <p>Es fa servir <code>_</code> en noms per evitar conflictes amb paraules clau de Python.</p>
-            <pre><code>def class_(nom):
-            return f"Classe: {nom}"</code></pre>
+    <h3>6. Utilitzar <code>_</code> en noms de funcions i variables per evitar conflictes</h3>
+    <p>Es fa servir <code>_</code> en noms per evitar conflictes amb paraules clau de Python.</p>
+    <pre><code>def class_(nom):
+    return f"Classe: {nom}"</code></pre>
       <hr><p class="alert">En Python no hi ha pas per referència, sinó pas de referències a objectes.
-         Només els objectes mutables poden ser modificats dins d’una funció</p> 
+      Només els objectes mutables poden ser modificats dins d’una funció</p> 
+     <hr><p class="alert">En Python una funció es pot cridar des de dins d'una altra funció</p>     
+      <hr><p class="alert">En Python una funció es pot cridar a si mateix ( <strong>recursivitat</strong> ) i possible DoS si no es fa bé</p>  
 </section>
 
 
@@ -761,19 +787,19 @@ print(mi_modulo.PI)               # Eixida: 3.14159</code></pre>
 
     <h3>Maneres d'importar mòduls:</h3>
 
-    <h4>• Importar tot el mòdul:</h4>
+    <h4>Importar tot el mòdul:</h4>
     <pre><code>import mi_modulo                # L'espai de noms és => mi_modulo
 print(mi_modulo.saludar("Ana"))  # D'aquesta manera s'ha de fer servir l'espai de noms</code></pre>
     
-    <h4>• Importar elements específics del mòdul: (sense espai de noms)</h4>
+    <h4>Importar elements específics del mòdul: (sense espai de noms)</h4>
     <pre><code>from mi_modulo import saludar
 print(saludar("Carlos"))       # D'aquesta manera NO s'ha de fer servir l'espai de noms</code></pre>
     
-    <h4>• Importar TOTS els elements del mòdul: (sense espai de noms)</h4>
+    <h4>Importar TOTS els elements del mòdul: (sense espai de noms)</h4>
     <pre><code>from mi_modulo import *
 print(saludar("Carlos"))       # D'aquesta manera NO s'ha de fer servir l'espai de noms</code></pre>
     
-    <h4>• Renombrar un mòdul:</h4>
+    <h4>Renombrar un mòdul:</h4>
     <pre><code>import mi_modulo as mm
  print(mm.PI)                # D'aquesta manera s'ha de fer servir l'espai de noms</code></pre>
      <hr>
