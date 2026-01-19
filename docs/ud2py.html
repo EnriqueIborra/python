@@ -428,7 +428,7 @@ print('=====  Fin del programa  ======')</code></pre>
         <li><code>float()</code>: Converteix a un número decimal (float).</li>
         <li><code>str()</code>: Converteix a una cadena de text.</li>
         <li><code>bool()</code>: Converteix a un valor booleà (<code>True</code> o <code>False</code>).</li>
-        <li><code>bin()</code>: Converteix un enter a la seva representació binària com a cadena.</li>
+        <li><code>bin()</code>: Converteix un enter a la seua representació binària com a cadena.</li>
         <li><code>chr()</code>: Converteix un codi Unicode a un caràcter.</li>
         <li><code>ord()</code>: Converteix un caràcter a un codi Unicode.</li>
     </ul>
@@ -467,22 +467,23 @@ print('=====  Fin del programa  ======')</code></pre>
     <ul>
         <li><code>upper()</code>: Retorna la cadena en majúscules. <code>'pedro'.upper()</code> → <strong>'PEDRO'</strong></li>
         <li><code>lower()</code>: Retorna la cadena en minúscules. <code>'PEDRO'.lower()</code> → <strong>'pedro'</strong></li>
-        <li><code>capitalize()</code>: Retorna la cadena amb la primera lletra en majúscula. <code>'pedro perez'.capitalize()</code> → <strong>'Pedro perez'</strong></li>
-        <li><code>title()</code>: Retorna la cadena amb la primera lletra de cada paraula en majúscula. <code>'pedro perez'.title()</code> → <strong>'Pedro Perez'</strong></li>
         <li><code>strip()</code>: Elimina els espais en blanc al principi i final de la cadena. <code>'   hola   '.strip()</code> → <strong>'hola'</strong></li>
-        <li><code>replace(old, new)</code>: Substitueix totes les aparicions de la subcadena <code>old</code> per <code>new</code>. <code>'hola'.replace('o', 'a')</code> → <strong>'hala'</strong></li>
-        <li><code>split(separator)</code>: Divideix la cadena en una llista de subcadenes utilitzant el separador especificat. <code>'a,b,c'.split(',')</code> → <strong>['a', 'b', 'c']</strong></li>
-        <li><code>join(iterable)</code>: Combina els elements d'un iterable (com una llista) en una cadena, separats per la cadena actual. <code>','.join(['a', 'b', 'c'])</code> → <strong>'a,b,c'</strong></li>
-        <li><code>find(sub)</code>: Retorna l'índex de la primera aparició de la subcadena <code>sub</code>. Si no la troba, retorna -1. <code>'hola'.find('o')</code> → <strong>1</strong></li>
-        <li><code>index(sub)</code>: Similar a <code>find()</code>, però llança una excepció si no troba la subcadena. <code>'hola'.index('o')</code> → <strong>1</strong></li>
-        <li><code>startswith(prefix)</code>: Retorna <code>True</code> si la cadena comença amb el prefix especificat. <code>'hola'.startswith('ho')</code> → <strong>True</strong></li>
-        <li><code>endswith(suffix)</code>: Retorna <code>True</code> si la cadena acaba amb el sufix especificat. <code>'hola'.endswith('a')</code> → <strong>True</strong></li>
+        <li><code>capitalize()</code>: Retorna la cadena amb la primera lletra en majúscula. <code>'pedro perez'.capitalize()</code> → <strong>'Pedro perez'</strong></li>
+        <li><code>capitalize()</code>: i les altres TOTES en minúscules. <code>'pEdRo pERez'.capitalize()</code> → <strong>'Pedro perez'</strong></li>
+        <li><code>title()</code>: Retorna la cadena amb la primera lletra de cada paraula en majúscula. <code>'pedro perez'.title()</code> → <strong>'Pedro Perez'</strong></li>
         <li><code>isalpha()</code>: Retorna <code>True</code> si tots els caràcters de la cadena són lletres. <code>'hola'.isalpha()</code> → <strong>True</strong></li>
         <li><code>isdigit()</code>: Retorna <code>True</code> si tots els caràcters de la cadena són dígits. <code>'1234'.isdigit()</code> → <strong>True</strong></li>
         <li><code>isalnum()</code>: Retorna <code>True</code> si tots els caràcters de la cadena són lletres o dígits. <code>'abc123'.isalnum()</code> → <strong>True</strong></li>
         <li><code>isspace()</code>: Retorna <code>True</code> si tots els caràcters de la cadena són espais en blanc. <code>'   '.isspace()</code> → <strong>True</strong></li>
-        <li><code>format()</code>: Permet formatejar cadenes de text. <code>'Hola {}'.format('món')</code> → <strong>'Hola món'</strong> (similar als f-strings)</li>
+        <li><code>find(sub)</code>: Retorna l'índex de la primera aparició de la subcadena <code>sub</code>. Si no la troba, retorna -1. <code>'hola'.find('o')</code> → <strong>1</strong></li>
+        <li><code>index(sub)</code>: Similar a <code>find()</code>, però llança una excepció si no troba la subcadena. <code>'hola'.index('o')</code> → <strong>1</strong></li>
         <li><code>count(sub)</code>: Retorna el nombre d'aparicions de la subcadena <code>sub</code> dins la cadena. <code>'hola mon'.count('o')</code> → <strong>2</strong></li>
+        <li><code>replace(old, new)</code>: Substitueix totes les aparicions de la subcadena <code>old</code> per <code>new</code>. <code>'hola'.replace('o', 'a')</code> → <strong>'hala'</strong></li>
+        <li><code>split(separator)</code>: Divideix la cadena en una llista de subcadenes utilitzant el separador especificat. <code>'a,b,c'.split(',')</code> → <strong>['a', 'b', 'c']</strong></li>
+        <li><code>join(iterable)</code>: Combina els elements d'un iterable (com una llista) en una cadena, separats per la cadena actual. <code>','.join(['a', 'b', 'c'])</code> → <strong>'a,b,c'</strong></li>
+        <li><code>startswith(prefix)</code>: Retorna <code>True</code> si la cadena comença amb el prefix especificat. <code>'hola'.startswith('ho')</code> → <strong>True</strong></li>
+        <li><code>endswith(suffix)</code>: Retorna <code>True</code> si la cadena acaba amb el sufix especificat. <code>'hola'.endswith('a')</code> → <strong>True</strong></li>
+        <li><code>format()</code>: Permet formatejar cadenes de text. <code>'Hola {}'.format('món')</code> → <strong>'Hola món'</strong> (similar als f-strings)</li>
         <li><code>zfill(width)</code>: Omple la cadena amb zeros al principi fins a aconseguir la llargada especificada. <code>'42'.zfill(5)</code> → <strong>'00042'</strong></li>
         <li><code>center(width)</code>: Centra la cadena en un camp de caràcters de llargada especificada. <code>'hola'.center(8)</code> → <strong>'&nbsp;&nbsp;hola&nbsp;&nbsp; '</strong></li>
         <li><code>ljust(width)</code>: Justifica la cadena a l'esquerra en un camp de llargada especificada. <code>'hola'.ljust(8)</code> → <strong>'hola&nbsp;&nbsp;&nbsp;&nbsp; '</strong></li>
@@ -524,7 +525,7 @@ print(resultat_suma)      # Eixida: 13
 print ( sumaEsp ( 243, 521) )  # Eixida 1009
         </code></pre>
         <p>En aquest exemple, la funció <code>sumaEsp(a, b)</code> rep dos paràmetres, <code>a</code> i <code>b</code>,
-             i retorna la seva suma "especial".</p>
+             i retorna la seua suma "especial".</p>
     
         <h3>Components d'una Funció Definida per l'Usuari:</h3>
         <ul>
@@ -626,7 +627,7 @@ print(multiplicar(2, 3))  # Eixida: 6                </code></pre>
     <p>En Python, l'àmbit d'una variable es refereix a la regió del codi on una variable és accessible. Python té regles específiques per determinar on una variable es pot utilitzar o modificar. Els àmbits més comuns són:</p>
 
     <h2>Ámbit Local</h2>
-    <p>Una variable definida dins d'una funció té un àmbit local. Només pot ser accedida dins d'aquesta funció. Si intentes accedir a una variable local fora de la seva funció, obtindràs un error.</p>
+    <p>Una variable definida dins d'una funció té un àmbit local. Només pot ser accedida dins d'aquesta funció. Si intentes accedir a una variable local fora de la seua funció, obtindràs un error.</p>
     <h3>Exemple d'àmbit local</h3>
     <pre><code>def funcion():
     y = 5  # Variable local
@@ -636,8 +637,8 @@ print(y)  # Error: NameError, 'y' no està definida en l'àmbit global      </co
 
     <h2>Ámbit Global</h2>
     <p>Una variable definida fora de totes les funcions o blocs de codi té un àmbit global. Pot ser accedida des de qualsevol part del codi, incloent dins de les funcions.</p>
-    <p>Però, accedir no és el mateix que modificar.....</p>
-    <p>Si necessites modificar una variable global dins d'una funció, has d'utilitzar la paraula clau <code>global</code>.</p>
+    <p class="alert">Però, <strong>accedir</strong> no és el mateix que <strong>modificar</strong>.....</p>
+    <p>Si es necessita modificar una variable global dins d'una funció, s'ha d'utilitzar la paraula clau <code>global</code>.</p>
 
     <h3>Exemple de variable global</h3>
     <pre><code>x = 10  # Variable global
@@ -651,7 +652,7 @@ mostrar_x()  # Eixida: 10                    </code></pre>
 x = 10  # Variable global. No hi ha problema perquè es defineix abans de cridar a la funció    
 mostrar_x()  # Eixida: 10                    </code></pre>
 
-    <h3>Modificació d'una variable global dins d'una funció sense global (no es pot)</h3>
+    <h3>Modificació d'una variable global dins d'una funció sense <code><strong>global</strong></code> (no es pot)</h3>
     <pre><code>x = 10
 def modificar_x():
     x = 20  # Crea una nova variable local, no modifica la global
@@ -659,7 +660,7 @@ def modificar_x():
 modificar_x()
 print(x)  # Eixida: 10 (la variable global no ha canviat)           </code></pre>
             
-    <h3>Modificació d'una variable global dins d'una funció amb global</h3>
+    <h3>Modificació d'una variable global dins d'una funció amb <code><strong>global</strong></code></h3>
     <pre><code>x = 10
 def modificar_x():
     global x
@@ -703,7 +704,7 @@ funcion_externa()
     <p>Quan es defineixen funcions en Python, hi ha algunes bones pràctiques que ajuden a millorar la llegibilitat, mantenibilitat i eficiència del codi:</p>
 
     <h3>1. Noms descriptius</h3>
-    <p>El nom de la funció ha de reflectir clarament el seu propòsit. Això facilita la comprensió del codi i la seva reutilització.</p>
+    <p>El nom de la funció ha de reflectir clarament el seu propòsit. Això facilita la comprensió del codi i la seua reutilització.</p>
 
     <h3>2. Comentaris i documentació (Docstrings)</h3>
     <p>És important documentar les funcions per explicar què fan, quins són els paràmetres d'entrada i el valor de retorn. El millor mètode per documentar una funció és utilitzar <code>docstrings</code>, que es defineixen entre triple cometes (<code>""" ... """</code>).</p>
@@ -907,7 +908,7 @@ print(ara)   # data i hora actual           </code></pre>
 
     <p>En Python, la construcció <code>if __name__ == "__main__":</code> és una forma estàndard d'assegurar-se que un bloc de codi només s'executi quan el fitxer s'executa directament, i no quan s'importa com un mòdul en un altre fitxer.</p>
 
-    <h2>Desglossament de la seva funció:</h2>
+    <h2>Desglossament de la seua funció:</h2>
     <ul>
         <li><strong><code>__name__</code>:</strong> És una variable especial a Python que es defineix automàticament.
             <ul>
