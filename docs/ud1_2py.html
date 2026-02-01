@@ -40,11 +40,10 @@
   A continuació tens una explicació clara i estructurada dels principals elements d’un programa informàtic:</p>
 <h2>1. Instruccions</h2>
   <p>Les instruccions són les ordres que el programa dóna a l’ordinador perquè faci una acció concreta, com per exemple mostrar un missatge o un càlcul per pantalla.</p>
-  <pre><code>
-  print("Hola, món!")
-  >>> Hola, món!
-  print( 223 + 665 * 67)  
-  >>> 59496  </code></pre>
+  <pre><code>print("Hola, món!")
+>>> Hola, món!
+print( 223 + 665 * 67)  
+>>> 59496  </code></pre>
 
   <h2>2. Variables</h2>
   <p>Les variables serveixen per <strong>emmagatzemar dades</strong> que poden canviar durant l’execució del programa.</p>
@@ -118,10 +117,8 @@ print(math.sqrt(25))  # Arrel quadrada de 25</code></pre>
   <h1>Estructura i blocs fonamentals</h1>
   <h2>Instruccions soltes</h2>
   <p>Per començar es poden fer servir instruccions senzilles de manera aillada</p>
-  <pre><code>
-  print("Hola mon")
-  print(34456 + 23345 )
-  </code></pre>
+  <pre><code>print("Hola mon")
+print(34456 + 23345 )   </code></pre>
   <p>Esta sera la forma en que treballarem en esta unitat</p>
   <h2>Estructura d'un programa</h2>
   <p>Encara que en Python, un programa pot ser una sola instrucció, sense encapçalament, ni res més, 
@@ -499,7 +496,7 @@ not        with       async      elif       if        or          yield       </
     <ul>
         <li><strong>True</strong> (cert)</li>
         <li><strong>False</strong> (fals)</li>
-    </ul>
+    </ul> &nbsp;&nbsp;👀 <code>True</code> no és igual que <code>TRUE</code> , ni <code>true</code> 👀
 
     <h3>Valor nul:</h3>
     <p>         El valor nul en Python és <code>None</code>, el qual s'utilitza per representar l'absència de valor.      </p>
@@ -629,7 +626,7 @@ print ( a, 234, 'pepe', sep='>>')</code></pre>
             <li><strong>Hexadecimal:</strong> Anteposant <code>0x</code>. Exemples: <code>0xf9af9d</code></li>
         </ul>
         
-        <p>Els <strong>números reals</strong> (amb decimals) es representen separant la part entera de la decimal amb un punt <code>.</code>:</p>
+        <p>Els <strong>números reals</strong> (amb decimals), en python <strong>float</strong>, es representen separant la part entera de la decimal amb un punt <code>.</code>:</p>
         <pre><code>123.50    0.56    .56    12.    12.00</code></pre>
         <p>També poden usar notació científica:</p>
         <pre><code>1.2e3     5e-2</code></pre>
@@ -644,7 +641,7 @@ print ( a, 234, 'pepe', sep='>>')</code></pre>
         <p>En Python, tots els elements són objectes, fins i tot els literals. Quan utilitzem un literal, Python crea un objecte amb un identificador únic, un tipus i un valor.</p>
         <p>Pots obtindre l'identificador d'un objecte amb la funció <code>id()</code>:</p>
         <pre><code>x = 100
-print(id(x))</code></pre>
+print(id(x))  => 140729130946568</code></pre>
 
     <h2>Literals Strings o Cadenes</h2>
 
@@ -838,17 +835,16 @@ a * b - c</code></pre>
 
        <h2>Operadors Aritmètics</h2>
       <p>         Els operadors aritmètics permeten realitzar operacions matemàtiques bàsiques.       </p>
-      <pre><code>
-    suma = 10 + 5              # 15
-    resta = 10 - 5             # 5
-    multiplicació = 10 * 5    # 50
-    divisió = 10 / 5          # 2.0  NO ENTERO, decimal o float
-    divisió_entera = 10 // 3  # 3 (enter)
-    mòdul = 10 % 3           # 1 (resto)
-    exponent = 2 ** 3         # 8 (2 elevat a 3) enter
-    exponent = 2 ** -3        # 0,125 (2 elevat a -3) float
-    exponent = 2.2 ** 3       # 10.64800  float
-    exponent = 64 ** 0.5      # 8.0   float  arrel quadrada        </code></pre>
+      <pre><code>suma = 10 + 5              # 15
+resta = 10 - 5             # 5
+multiplicació = 10 * 5    # 50
+divisió = 10 / 5          # 2.0  NO ENTERO, decimal o float
+divisió_entera = 10 // 3  # 3 (enter)
+mòdul = 10 % 3           # 1 (resto)
+exponent = 2 ** 3         # 8 (2 elevat a 3) enter
+exponent = 2 ** -3        # 0,125 (2 elevat a -3) float
+exponent = 2.2 ** 3       # 10.64800  float
+exponent = 64 ** 0.5      # 8.0   float  arrel quadrada        </code></pre>
     <p class="alert">Important !!, L'operador / torna sempre un valor del tipus <code>float (decimal)</code> encara que els dos operandos siguen <code>sencers</code> <br>
       i els operadors <code>// i  %</code> tornen valors de tipus <code>sencer (int)</code> si els dos operandos son <code>sencers</code> pero torna <code>float</code> si algun
     operando es <code>float</code></p>
@@ -896,47 +892,42 @@ a * b - c</code></pre>
     </tbody>
   </table>
   <h3> Exemples</h3>
-  <pre><code>
-result = 3 + 4 * 2         #  11
+  <pre><code>result = 3 + 4 * 2         #  11
 result = (3 + 4) * 2       #  14
 result = 2 ** 3 ** 2       #  512
 result = (2 ** 3) ** 2     #  64
 result = -3 ** 2           # -(3 ** 2) = -9
-result = (-3) ** 2         # (-3) ** 2 = 9
-  </code></pre>
+result = (-3) ** 2         # (-3) ** 2 = 9    </code></pre>
     
       <h2>Operadors d'Assignació</h2>
       <p>         Els operadors d'assignació permeten modificar el valor d'una variable de manera concisa.       </p>
-      <pre><code>
-    =    # Assignació
-    +=   # x += 1 equivaleix a x = x + 1
-    -=   # x -= 1 equival a x = x - 1
-    *=   # x *= 1 equival a x = x * 1
-    /=   # x /= 1 equival a x = x / 1
-    //=  # x //= 1 equival a x = x // 1
-    %=   # x %= 1 equival a x = x % 1
-    **=  # x **= 1 equival a x = x ** 1         </code></pre>
+      <pre><code>=    # Assignació
++=   # x += 1 equivaleix a x = x + 1
+-=   # x -= 1 equival a x = x - 1
+*=   # x *= 1 equival a x = x * 1
+/=   # x /= 1 equival a x = x / 1
+//=  # x //= 1 equival a x = x // 1
+%=   # x %= 1 equival a x = x % 1
+**=  # x **= 1 equival a x = x ** 1         </code></pre>
     <p>Python no té els operadors <code> ++ </code> ni <code>--</code>  com en C/C++ o Java. Si escrius <code>i++</code> o <code>i--</code>, obtindràs un error de sintaxi</p>
     <p>Aquest disseny és coherent amb la immutabilitat dels ints a Python i evita confusions sobre l’ordre d’avaluació</p>
     
       <h2>Operadors de Comparació</h2>
       <p>         Els operadors de comparació s'utilitzen per comparar dos valors.       </p>
-      <pre><code>
-    5 == 5    # True (igual)     ¡¡  el == no és el mateix que el = !!
-    5 != 3    # True (diferent)
-    5 < 10    # True (menor que)
-    5 > 10    # False (major que)
-    5 <= 10   # True (menor o igual que)
-    5 >= 10   # False (major o igual que)       </code></pre>
-    <p>En Python, l’operador <> era usat com a operador de desigualtat (com !=) en versions antigues de Python (com Python 2)</p>
-    <p>L’ús de <> ja no és vàlid i donarà un error de sintaxi. Per comparar desigualtats, s’utilitza només !=</p>
+      <pre><code>5 == 5    # True (igual)     ¡¡  el == no és el mateix que el = !!
+5 != 3    # True (diferent)
+5 < 10    # True (menor que)
+5 > 10    # False (major que)
+5 <= 10   # True (menor o igual que)
+5 >= 10   # False (major o igual que)       </code></pre>
+    <p class="alert">En Python, l’operador <> era usat com a operador de desigualtat (com !=) en versions antigues de Python (com Python 2).
+    L’ús de <> ja no és vàlid i donarà un error de sintaxi. Per comparar desigualtats, s’utilitza només <code>!=</code></p>
     
       <h2>Operadors Lògics</h2>
       <p>         Els operadors lògics s'utilitzen per combinar expressions booleanes.       </p>
-      <pre><code>
-    True and False   # False
-    True or False    # True
-    not True         # False        </code></pre>
+      <pre><code>True and False   # False
+True or False    # True
+not True         # False        </code></pre>
     <p>Precedència</p>
     <ol>
       <li>not</li>
@@ -962,7 +953,7 @@ True and True → True</pre>
 # En esta expresió, con c>b és True i tot el que ve darrere son <b>or</b>, 
 # ja no cal avaluar més, perquè el resultat serà True, passe el que passe darrere</code></pre>
 <p>En els <strong>and </strong> passa algo paregut també</p>
-<pre><code><b> c&lt;b and </b> a>b or b>c or b>a  
+<pre><code><b>c&lt;b and </b> a>b or b>c or b>a  
 # En esta expresió, con c&lt;b és False i tot el que ve darrere son <b>and</b>, 
 # ja no cal avaluar més, perquè el resultat serà False, passe el que passe darrere</code></pre>
 
@@ -977,16 +968,14 @@ print(1 < x < 5)
 #  Aquesta expressió equival a:  (a < b) and (b <= c) and (c != d) </code></pre>
      
       <h2>Operadors d'Identitat</h2>
-      <p>         Els operadors d'identitat comproven si dues variables referencien al mateix objecte de memòria.       </p>
-      <pre><code>
-    a is b
-    a is not b         </code></pre>
+      <p>Els operadors d'identitat comproven si dues variables referencien al mateix objecte de memòria.       </p>
+      <pre><code>a is b
+a is not b         </code></pre>
     
       <h2>Operadors de Pertenència o Membresia</h2>
       <p>         Els operadors de membresia s'utilitzen per comprovar si un element està present en una col·lecció com una cadena, llista, etc.       </p>
-      <pre><code>
-    'a' in 'hola'      # True
-    'a' not in 'hola'  # False         </code></pre>
+      <pre><code>'a' in 'hola'      # True
+'a' not in 'hola'  # False         </code></pre>
     <p class="alert">Totes les operacions de comparació (<, <=, >, >=, ==, !=, is, is not, in, not in) tenen la mateixa precedència entre elles.
 Això vol dir que es poden encadenar i Python les interpreta d’esquerra a dreta.</p>
 
@@ -1021,13 +1010,12 @@ Això vol dir que es poden encadenar i Python les interpreta d’esquerra a dret
 
       <h2>Operadors a Nivell de Bits (Bitwise)</h2>
       <p>         Els operadors bitwise operen sobre els bits individuals de les variables.       </p>
-      <pre><code>
-    5  &  3   # AND bit a bit
-    5 | 3     # OR bit a bit
-    5 ~ 3     # NOT bit a bit
-    5 ^ 3     # XOR bit a bit
-    5 << 3    # desplaçament a l'esquerra bit a bit
-    5 >> 3    # desplaçament a la dreta bit a bit         </code></pre> 
+      <pre><code>5  &  3   # AND bit a bit
+5 | 3     # OR bit a bit
+5 ~ 3     # NOT bit a bit
+5 ^ 3     # XOR bit a bit
+5 << 3    # desplaçament a l'esquerra bit a bit
+5 >> 3    # desplaçament a la dreta bit a bit         </code></pre> 
     <h3>Exemple</h3>
     <pre><code>   0101  (5)
 &  0011  (3)
@@ -1059,13 +1047,11 @@ Fraction(1, 10) + Fraction(2, 10)   # Fraction(3, 10)
   <pre><code>s = 'Hola'
 s2 = "Mon"
 s3 = ''' Hola mon, amb 
-més d'una linea '''
-  </code></pre>
+més d'una linea '''    </code></pre>
 
   <h2>Concatenació de Strings</h2>
   <p>     La concatenació permet unir dues o més cadenes de text.   </p>
-  <pre><code>
-saludo = "Hola" + " " + "mundo"
+  <pre><code>saludo = "Hola" + " " + "mundo"
 print(saludo)  # Hola mundo     </code></pre>
 
   <h2>Repetició de Strings</h2>
@@ -1075,8 +1061,7 @@ print("Hola" * 3)  # HolaHolaHola     </code></pre>
 
   <h2>Comparació de Strings</h2>
   <p>    Les cadenes es poden comparar utilitzant els operadors de comparació. Es distingeixen les majúscules de les minúscules.   </p>
-  <pre><code>
-print("Hola" == "hola")  # False (distinció de majúscules/minúscules)
+  <pre><code>print("Hola" == "hola")  # False (distinció de majúscules/minúscules)
 print("a" < "b")         # True (ordre alfabètic)  També es pot fer amb > o !=      </code></pre>
 
   <h2>Longitud de Strings</h2>

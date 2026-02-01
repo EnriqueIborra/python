@@ -28,6 +28,7 @@
   <a href="#funcionsp">Funcions personalitzades</a>
   <a href="#moduls">Moduls i paquets</a>
   <a href="#main">Ús de __main__ </a>
+  <a href="#ascii">ASCII / Unicode </a>
   <a href="#exercicis">Exercicis</a>
   
 </nav>
@@ -66,13 +67,12 @@ print("Tinc", edat, "anys.")           <!-- Imprimeix l'edat -->
          <hr>
         <img src="imgs/condicional.png" alt="condicional" class="imatge-dreta" width="35%">
         <h2>Execució Condicional (if, elif, else)</h2>
-      <p>
-        Les estructures condicionals permeten executar blocs de codi segons les condicions que s'hi especifiquen. 
-        El operador <code>:</code> marca l'inici d'un bloc de codi estructurat i indentat, i és essencial perquè Python interpreti correctament la jerarquia del programa.
-      </p>
-      <p>
-        La indentació s'indica amb 4 espais (mínim) o un tabulador. Aquest principi és fonamental en Python, ja que defineix l'estructura del programa, a diferència d'altres llenguatges que utilitzen claus <code>{}</code>.
-      </p>
+      <p> Les estructures condicionals permeten executar blocs de codi segons les condicions que s'hi especifiquen. 
+        El operador <code>:</code> marca l'inici d'un bloc de codi estructurat i indentat, i és essencial perquè Python interprete correctament la jerarquia del programa.       </p>
+      <p> La indentació s'indica amb 4 espais (mínim) o un tabulador. Aquest principi és fonamental en Python, ja que defineix l'estructura del programa, a diferència d'altres llenguatges que utilitzen claus <code>{}</code>.       </p>
+      <p>A Python la indentació no és només estètica, és part de la sintaxi, i sense ella el codi simplement no funciona.</p>
+      La indentació no només s’usa en un if, sinó en tots els blocs de codi on cal indicar jerarquia o dependència. És una part fonamental de la sintaxi. 
+      S'usa també en: Bucles for i while, Funcions (def), Excepcions (try, except, finally), match-case, Classes (class), Blocs with 
     
       <h3>Exemple d'ús del condicional if - else</h3>
       <pre><code>edat = int(input('Quina edat tens ? '))
@@ -99,6 +99,50 @@ else:
         Si la estructura només té una línia, no és necessari indentar, tot i que és habitual fer-ho així:
       </p>
       <pre><code> if edat >= 18: print("Eres major d'edat")        </code></pre>
+
+  
+
+      <h2>Condicional Ternari en Python</h2>
+      <p>Aquesta estructura permet assignar un valor a una variable segons una condició en una sola línia de codi, evitant així la necessitat de tenir un bloc de codi amb múltiples línies.</p>   
+  
+      <h3>Sintaxi:</h3>
+      <pre><code>valor_si_veritable if condició else valor_si_fals</code></pre>
+    
+      <h3>Exemple:</h3>
+      <pre><code>edad = 20  # Exemple d'edat, o edad=input('Dis-me edad:')
+missatge = "Major d'edat" if edad >= 18 else "Menor d'edat"
+print(missatge)  # Eixida: Major d'edat         </code></pre>
+  
+      <ul>
+          <li>Si l'edat (<code>edad</code>) és 18 o més, la variable <code>missatge</code> rep el valor <code>"Major d'edat"</code>.</li>
+          <li>Si l'edat és menor a 18, la variable <code>missatge</code> rep el valor <code>"Menor d'edat"</code>.</li>
+      </ul>
+      <p>També es pot posar dins del <code>print</code></p>
+      <pre><code>print ( "Major" if edat>18 else "Menor")</code></pre>
+
+      <hr><h2>match-case</h2>
+      <p>Des de Python 3.10 està disponible la instrucció <code> match-case</code>, una estructura pareguda al <code>switch</code> (d'altres llenguatges)</p>
+      <pre><code>value = int(input("Dona'm un valor sencer: "))
+match value:
+    case 1:
+        print ( "Uno" )
+    case 2:
+        print ( "Dos" )
+    case 3:
+        print ( "Tres" )
+    case _:
+        print ( "Otro valor" )        </code></pre>
+    <p>case _: funciona com <strong> default </strong></p> <br>
+      
+      <pre><code>value = int(input("Dona'm un valor sencer: "))
+match value:
+    case 1 | 2:
+        print ( "Uno o Dos" )
+    case 3:
+        print ( "Tres" )
+    case _:
+        print ( "Otro valor mayor que 3" )       </code></pre>
+<p>En un <code>case</code> es poden posar més d'un valor, separant amb <code>|</code></p>
 
     <hr>
       <h2>Guia de Estils de Python (PEP 8)</h2>
@@ -131,54 +175,6 @@ else:
         </li>
         <li><strong>Comentaris:</strong> Han de ser clars i concisos, preferiblement en anglès.</li>
       </ul>
-    
-
-      <h2>Condicional Ternari en Python</h2>
-      <p>El <strong>condicional ternari</strong> en Python és una manera simplificada d'escriure una estructura condicional <code>if-else</code> en una sola línia.</p>
-  
-      <h3>Sintaxi:</h3>
-      <pre><code>valor_si_veritable if condició else valor_si_fals</code></pre>
-  
-      <p>Aquesta estructura permet assignar un valor a una variable segons una condició en una sola línia de codi, evitant així la necessitat de tenir un bloc de codi amb múltiples línies.</p>
-  
-      <h3>Exemple:</h3>
-      <pre><code>edad = 20  # Exemple d'edat
-missatge = "Major d'edat" if edad >= 18 else "Menor d'edat"
-print(missatge)  # Eixida: Major d'edat         </code></pre>
-  
-      <ul>
-          <li>Si l'edat (<code>edad</code>) és 18 o més, la variable <code>missatge</code> rep el valor <code>"Major d'edat"</code>.</li>
-          <li>Si l'edat és menor a 18, la variable <code>missatge</code> rep el valor <code>"Menor d'edat"</code>.</li>
-      </ul>
-      <p>També es pot posar dins del <code>print</code></p>
-      <pre><code>print ( "Major" if edat>18 else "Menor")</code></pre>
-
-      <h2>match-case</h2>
-      <p>Des de Python 3.10 està disponible la instrucció <code> match-case</code>, una estructura pareguda al <code>switch</code></p>
-      <pre><code>
-value = int(input("Dona'm un valor sencer: "))
-match value:
-    case 1:
-        print ( "Uno" )
-    case 2:
-        print ( "Dos" )
-    case 3:
-        print ( "Tres" )
-    case _:
-        print ( "Otro valor" )
-      </code></pre>
-      <p>case _: funciona com <strong> default </strong></p> <br>
-      
-      <pre><code>
-value = int(input("Dona'm un valor sencer: "))
-match value:
-    case 1 | 2:
-        print ( "Uno o Dos" )
-    case 3:
-        print ( "Tres" )
-    case _:
-        print ( "Otro valor mayor que 3" )       </code></pre>
-<p>En un <code>case</code> es poden posar més d'un valor, separant amb <code>|</code></p>
 
   <br><br><hr><hr>
 <img src="imgs/bucle.png" alt="bucles" class="imatge-dreta" width="20%">
@@ -282,13 +278,22 @@ else:
 
   <p><strong>🔹 Resultat:</strong> Si no es troba cap parell, s’executa l’<code>else</code>.</p>
 
+<hr><h2>Estructura de Control de Flux: <code>pass</code></h2>
+<p>El <code>pass</code> és una instrucció que es pot utilitzar com a marcador de lloc. Serveix quan cal una sintaxi vàlida però no es vol que el codi faci res en una part específica.</p>
+
+<h3>Exemple d'ús de <code>pass</code></h3>
+<pre><code>if condición:
+    pass  # No hace nada, pero se puede dejar como espacio para agregar código más tarde</code></pre>
+<p>El <code>pass</code> és útil quan necessites una sintaxi vàlida sense que el codi realitzi cap acció.</p>
+
           
 </section>
 
 <section id="salts">
  <h1>Salts en Python</h1>
 
-  <p>En Python <strong>es poden fer salts en el flux d'execució</strong>, però <strong>d'una manera limitada i controlada</strong>. Python <strong>no té una instrucció <code>goto</code></strong>, com altres llenguatges antics (C, BASIC...), però pots modificar el flux amb altres estructures.</p>
+  <p>En Python <strong>es poden fer salts en el flux d'execució</strong>, però <strong>d'una manera limitada i controlada</strong>. <br>
+    Python <strong>no té una instrucció <code> 🚫goto🚫 </code></strong>, com altres llenguatges antics (C, BASIC...), però pots modificar el flux amb altres estructures.</p>
 
   <h2>🔀 Maneres de fer "salts" en Python</h2>
 
@@ -399,16 +404,8 @@ except Exception
 
 print('=====  Fin del programa  ======')</code></pre>
    
-
-    <h2>Estructura de Control de Flux: <code>pass</code></h2>
-    <p>El <code>pass</code> és una instrucció que es pot utilitzar com a marcador de lloc. Serveix quan cal una sintaxi vàlida però no es vol que el codi faci res en una part específica.</p>
-
-    <h3>Exemple d'ús de <code>pass</code></h3>
-    <pre><code>if condición:
-    pass  # No hace nada, pero se puede dejar como espacio para agregar código más tarde</code></pre>
-
-    <p>El manejador d'errors amb <code>try</code> i <code>except</code> és essencial per controlar excepcions i evitar que el programa es pare en cas d'errors inesperats. 
-        El <code>pass</code> és útil quan necessites una sintaxi vàlida sense que el codi realitzi cap acció.</p>
+<p>El manejador d'errors amb <code>try</code> i <code>except</code> és essencial per controlar excepcions i evitar que el programa es pare en cas d'errors inesperats. </p>
+    
 
 </section>
 
@@ -424,14 +421,23 @@ print('=====  Fin del programa  ======')</code></pre>
     <h2>Conversió de tipus</h2>
     <p>Python inclou diverses funcions per convertir entre diferents tipus de dades:</p>
     <ul>
-        <li><code>int()</code>: Converteix a un enter.</li>
-        <li><code>float()</code>: Converteix a un número decimal (float).</li>
+        <li><code>int()</code>: Converteix a un enter. <br>
+        &nbsp;&nbsp;(string, float, bool, → a int) </li>
+        <li><code>float()</code>: Converteix a un número decimal (float). <br>
+        &nbsp;&nbsp;(string, int, bool, → a float) </li></li>
         <li><code>str()</code>: Converteix a una cadena de text.</li>
         <li><code>bool()</code>: Converteix a un valor booleà (<code>True</code> o <code>False</code>).</li>
         <li><code>bin()</code>: Converteix un enter a la seua representació binària com a cadena.</li>
-        <li><code>chr()</code>: Converteix un codi Unicode a un caràcter.</li>
-        <li><code>ord()</code>: Converteix un caràcter a un codi Unicode.</li>
+        <li><code>chr()</code>: Converteix un codi Unicode a <strong>un</strong> caràcter.</li>
+        <li><code>ord()</code>: Converteix <strong>un</strong> caràcter a un codi Unicode.</li>
     </ul>
+    <p> <strong>ASCII i Unicode </strong>Al final de la unitat hi ha una ampliació d'este punt d'ASCII i Unicode</p>
+    <pre><code>Exemples:  int("123") # 123 ,  int("-45") # -45 ,  int("1010", 2)  # 10 (binari)   , int("FF", 16) # 255 (hexadecimal) 
+int(3.9)  # 3 (Trunca la part decimal (no arrodonix))    int(-3.9)  # -3  ,   int(True)  # 1   int(False)  # 0 
+bool() → False  per als valors: False, 0, 0.0, "" (cadena buida), [], (), {}, set() (estructures buides),  None 
+A estos valors se'ls anomena <strong>(valors falsy)</strong>, a la resta, <strong>(valors truthy)</strong>
+La resta (valors truthy) → True. 📌 Detall important: bool() no mira el contingut, només si el valor és “buit” o “zero”. 
+bool("False")  # True 😅 </code></pre>
 
     <h2>Funcions útils amb variables</h2>
     <p>Algunes funcions que es poden utilitzar per obtenir informació sobre variables són:</p>
@@ -448,7 +454,9 @@ print('=====  Fin del programa  ======')</code></pre>
     <p>Python també inclou diverses funcions per realitzar càlculs matemàtics:</p>
     <ul>
         <li><code>abs(x)</code>: Retorna el valor absolut de <code>x</code>.</li>
-        <li><code>round(x)</code>: Retorna el valor de <code>x</code> arrodonit a l'enter més proper.</li>
+        <li><code>round(x) </code>: Retorna el valor de <code>x</code> arrodonit a l'enter més proper. <br>
+            (Python usa <strong>round half to even</strong> (arrodoniment bancari))</li>
+        <li><code> round(x,d) </code>: Retorna el valor de <code>x</code> arrodonit al float amb <code>d</code> decimals més proper. <br></li>
         <li><code>max(numeros)</code>: Retorna el valor màxim de la llista de <code>numeros</code>.</li>
         <li><code>min(numeros)</code>: Retorna el valor mínim de la llista de <code>numeros</code>.</li>
         <li><code>sum(numeros)</code>: Retorna la suma de tots els elements de la llista de <code>numeros</code>.</li>
@@ -457,7 +465,6 @@ print('=====  Fin del programa  ======')</code></pre>
 
     <h2>Enllaços d'interès</h2>
     <p>Per a més funcions útils de Python, consulta la documentació oficial: <a href="https://docs.python.org/es/3.13/library/functions.html" target="_blank">Funcions Built-In en Python</a></p>
-
 
     <h1>Funcions de Cadenes en Python</h1>
     <p>Python proporciona diverses funcions incorporades (Built-In Functions) per treballar amb cadenes de text. Aquestes funcions permeten realitzar operacions comunes com modificar el format de la cadena, cercar subcadenes, o fins i tot combinar cadenes.</p>
@@ -511,7 +518,7 @@ def saluda():
     
 # Cridar la funció
 saluda()      # Esta funció no retorna cap valor, sols imprimeix
-   </code> </pre>
+              # En realitat torna el valor   None   </code> </pre>
         <pre><code>def sumaEsp(a, b):
     if a > b :        
        resultat = a + b + b + 1
@@ -534,12 +541,24 @@ print ( sumaEsp ( 243, 521) )  # Eixida 1009
             <li><strong>Paràmetres:</strong> Opcionalment, una funció pot rebre valors externs mitjançant paràmetres.</li>
             <li>:  Els dos punts indiquen que comença el bloc de codi <strong>indentat</strong></li>
             <li><strong>Codi dins la funció:</strong> Blocs d'instruccions que realitzen l'operació desitjada. <strong>bloc indentat</strong></li>
-            <li><strong>Declaració <code>return</code>:</strong> Opcional, però retorna un valor de la funció.</li>
+            <li><strong>Declaració <code>return</code>:</strong> Opcional, retorna un valor de la funció.</li>
+            Si una funció acaba i no executa l'ordre <code>return</code>, el valor de retorn es <code>None</code>
         </ul>
         <p>La indentació fa referència a la tècnica d'afegir espais al principi de les línies de codi, el que ajuda a delimitar visualment els blocs i les estructures de control.</p>
     
         <p>En Python, la indentació és molt important ja que és la manera que utilitza el llenguatge per definir l'estructura del codi, a diferència d'altres llenguatges que utilitzen claus (<code>{}</code>) per identificar els blocs. Un codi sense una correcta indentació pot generar errors d'execució o de lògica.</p>
 
+    <h3>On / Quan definir les funcions</h3>    
+    <p>S'ha de tindre en compte que, fins que no s'ha definit una funció, no es pot fer servir. 
+        Python llegirà el codi de dalt a baix, i si encara no coneix la funció… => ❌ Error: <code>NameError</code>
+    </p>
+    <pre><code>resultat = suma(3, 5)   # ❌ ací encara no existeix
+    
+def suma(a, b):
+    return a + b    </code></pre>
+<pre><code>NameError: name 'suma' is not defined </code></pre>
+
+    <p>Així que, quan abans, millor. Si pot ser, al principi del codi.</p>
     <h3>Funcions amb Valor de Retorn</h3>
     <pre><code>def multiplicar(a, b):
     return a * b
@@ -568,6 +587,24 @@ print( multiplicar(4))  # Eixida: 4
 print( multiplicar())  # Eixida:  0           </code></pre>
         <p>Aquest exemple mostra com es poden definir paràmetres opcionals en una funció. 
             Si no es passa cap valor a la funció, tornarà un 0, i si es passa sols un, tornarà el mateix valor.</p>
+   <p class="alert">si hi han alguns opcionals i altres obligatòris , els paràmetres opcionals no poden estar els primers, sempre els ultims !! </p>
+    <p>Regla important: Els paràmetres opcionals SEMPRE van després dels obligatoris</p>
+    <pre><code>def exemple(a=1, b):   # ❌ Incorrecte:
+    pass       </code></pre>
+
+    <pre><code>def rectangle(ample, alt=10):    #  ✅ Correcte:
+    return ample * alt
+
+print(rectangle(5))
+print(rectangle(5, alt=3))   # en la cridada a la funció es pot especificar el nom del paràmetre !!</code></pre>
+   
+    <h3>Assignar funcions a variables</h3>
+    <p>Això permet passar-les com a paràmetres, guardar-les en estructures, etc.</p>
+    <pre><code>def saludar():
+    print("Hola!")
+
+f = saludar      # En esta instrucció NO es crida la funció (no porta parèntesis)
+f()              # Executa saludar()       </code></pre>
 
     <h3>Funcions amb Tipus de Dades (Type Hinting)</h3>
     <p>En Python, es poden afegir indicadors de tipus (type hints) per especificar el tipus de les variables o els arguments d'una funció. Això millora la llegibilitat del codi i ajuda als editors a proporcionar suggeriments i detecció d'errors.</p>
@@ -731,7 +768,7 @@ sumar(a, b)
     <p>Una funció hauria de fer només una cosa. No hauria de modificar variables globals o tindre efectes secundaris inesperats. Això ajuda a que el comportament de la funció siga més previsible.</p>
 
     <h3>4. Mantindre les funcions curtes</h3>
-    <p>Les funcions han de ser petites i fàcils de llegir. Si una funció és massa llarga, es recomana dividir-la en funcions més petites per a fer-les més comprensibles i reutilitzables.</p>
+    <p>Les funcions han de ser curtes i fàcils de llegir. Si una funció és massa llarga, es recomana dividir-la en funcions més petites per a fer-les més comprensibles i reutilitzables.</p>
     <hr>
  
     <h2>Ús del Guió Baix (<code>_</code>) en Python</h2>
@@ -852,7 +889,7 @@ from mi_paquete.modulo2 import restar
 print(sumar(5, 3))  # Eixida: 8
 print(restar(5, 3)) # Eixida: 2</code></pre>
     
-        <h3>Paquets anidats:</h3>
+        <h3>Paquets niats:</h3>
         <p>Els paquets poden contenir subpaquets. Per exemple:</p>
         <pre><code>mi_paquete/
         __init__.py
@@ -871,16 +908,33 @@ print(restar(5, 3)) # Eixida: 2</code></pre>
     
         <h5>• <code>math</code>: Funcions matemàtiques.</h5>
         <pre><code>import math
-    print(math.sqrt(16))  # Eixida: 4.0</code></pre>
+    print(math.sqrt(16))  # arrel quadrada → 4.0
+    print(math.pi)        # π
+    # altres funcions com:   sin, cos, tan, e, log, pow, factorial...  </code></pre>
     
         <h5>• <code>os</code>: Operacions del sistema operatiu.</h5>
         <pre><code>import os
-    print(os.getcwd())  # Obtén el directori actual.</code></pre>
+    print(os.getcwd())  # Obtén el directori actual.
+    # altres funcions: chdir('..')  listdir() mkdir() ....   </code></pre>
     
         <h5>• <code>random</code>: Generació de números aleatoris.</h5>
         <pre><code>import random
-    print(random.randint(1, 10))  # Número aleatori entre 1 i 10.</code></pre>
-      <h5>• <code>datetime</code>: Tractament de dates (i hores) en python.</h5>
+print(random.randint(1, 10))  # Número aleatori entre 1 i 10.
+random.uniform(1, 10)  # float entre 1 i 10
+random.random()        # float entre 0.0 i 1.0
+
+llista = [1, 2, 3, 4, 5]
+random.choice(llista)        # element aleatori
+random.choices(llista, k=3)  # diversos elements (pot repetir)
+random.sample(llista, 3)     # elements únics
+random.shuffle(llista)       # Barrejar llista
+
+# Exemples per a Jocs i simulacions
+dau = random.randint(1, 6)
+moneda = random.choice(["cara", "creu"])  
+</code></pre>
+      
+    <h5>• <code>datetime</code>: Tractament de dates (i hores) en python.</h5>
         <pre><code>from datetime import datetime, date
 
 avui = date.today()
@@ -900,6 +954,43 @@ print(ara)   # data i hora actual           </code></pre>
         <pre><code>import requests
     response = requests.get("https://example.com")
     print(response.status_code)</code></pre>
+
+    <h2>Altres biblioteques en Python</h2>
+
+    <h3>Incloses en la biblioteca estàndard</h3>
+    <ul>
+        <li><strong>os:</strong> Per a interactuar amb el sistema operatiu (crear carpetes, llegir fitxers, etc.).</li>
+        <li><strong>sys:</strong> Per accedir a informació del sistema i dels arguments passats al programa.</li>
+        <li><strong>json:</strong> Per llegir i escriure dades en format JSON.</li>
+        <li><strong>datetime:</strong> Per gestionar dates i hores.</li>
+        <li><strong>math:</strong> Proporciona funcions matemàtiques avançades com arrels quadrades, trigonometria, etc.</li>
+        <li><strong>decimal:</strong> Per a càlculs de precisió elevada, útil en contextos financers.</li>
+        <li><strong>random:</strong> Per generar nombres aleatoris.</li>
+        <li><strong>re:</strong> Per treballar amb expressions regulars (regex).</li>
+        <li><strong>collections:</strong> Ofereix estructures de dades avançades com <code>Counter</code>, <code>deque</code>, <code>defaultdict</code>, etc.</li>
+        <li><strong>itertools:</strong> Funcions per manipular iteradors de forma eficient.</li>
+        <li><strong>sqlite3:</strong> Per gestionar bases de dades SQLite de forma directa en Python.</li>
+    </ul>
+    <p>Pots veure tots els mòduls disponibles amb <code>help()</code> dins de l’intèrpret de Python, i després escriure <code>modules</code>.</p>
+
+    <h3>Biblioteques externes populars</h3>
+    <ul>
+        <li><strong>NumPy:</strong> Per a càlculs numèrics ràpids i eficients.</li>
+        <li><strong>Pandas:</strong> Per al tractament de dades tabulars (com taules, fulls de càlcul, etc.).</li>
+        <li><strong>Matplotlib:</strong> Per crear gràfics i visualitzacions bàsiques.</li>
+        <li><strong>Seaborn:</strong> Basada en Matplotlib, permet crear gràfics estadístics atractius i senzills.</li>
+        <li><strong>Scikit-learn:</strong> Llibreria per a aprenentatge automàtic (machine learning).</li>
+        <li><strong>Flask</strong> i <strong>Django:</strong> Frameworks per a desenvolupament web amb Python.</li>
+        <li><strong>Requests:</strong> Per fer peticions HTTP com GET, POST, etc.</li>
+        <li><strong>BeautifulSoup:</strong> Per fer <em>web scraping</em> (extracció d’informació de pàgines web).</li>
+        <li><strong>TensorFlow</strong> i <strong>PyTorch:</strong> Llibreries potents per a intel·ligència artificial i <em>deep learning</em>.</li>
+        <li><strong>Typer:</strong> Per crear interfícies de línia de comandes (CLI) de forma ràpida i elegant.</li>
+        <li><strong>OpenCV:</strong> Per a processament d’imatges i visió artificial.</li>
+        <li><strong>Pillow:</strong> Per a manipulació d’imatges (redimensionar, retallar, etc.).</li>
+        <li>...i moltes més.</li>
+    </ul>
+
+    <p><strong>Nota:</strong> Les biblioteques externes s’instal·len normalment amb <code>pip</code>, per exemple: <code>pip install numpy</code>.</p>
 
 </section>
 
@@ -953,6 +1044,96 @@ Aquesta funció pot ser utilitzada en altres mòduls.</code></pre>
     <p>El bloc dins de <code>if __name__ == "__main__":</code> no s'executarà perquè el fitxer no s'està executant directament.</p>
 
 </section>
+
+<section id="ascii">
+  <h1>ASCII / UNICODE</h1>
+      <p><strong>ASCII</strong> (American Standard Code for Information Interchange) és un codi que assigna números
+         als caràcters perquè els ordinadors els puguen entendre.</p>
+
+    <ul>
+        <li>Cada caràcter (lletres, números, signes de puntuació) té un valor numèric entre 0 i 127.</li>
+         * Exemple: '0' = 48 , 'A' = 65, 'B' = 66, 'a' = 97 
+        <li>És molt simple i només cobreix l’alfabet anglès i alguns símbols.</li>
+        <li>Els accents, la ñ, o caràcters especials no estan inclosos en ASCII original, per això hi ha codificacions ASCII estés, i més modernes com UTF-8.</li>
+    </ul>
+    <h3>ASCII Estés (extended ASCII)</h3>
+    <p>L’ASCII estès és una ampliació no oficial de l’ASCII original. <br>
+    L’ASCII original només usa 7 bits → valors del 0 al 127 <br>
+    L’ASCII estès usa 8 bits → valors del 0 al 255 <br>
+    Això permet afegir 128 caràcters més (del 128 al 255), com: lletres amb accents (á, é, ñ), símbols (ç, £, ©) ,caràcters gràfics</p>
+    Exemple i breu història de  <a href="https://elcodigoascii.com.ar/">Taula ASCII</a>
+    <h3>UNICODE</h3>
+    <p><strong>Unicode</strong> és un estàndard que assigna un número únic a cada caràcter de tots els idiomes i símbols del món,
+         perquè els ordinadors puguen representar qualsevol text de manera consistent.</p>
+    <ul>
+        <li>Cobreix milers de caràcters: lletres amb accents, emojis, símbols matemàtics, caràcters xinesos, etc.</li>
+        <li>Cada caràcter té un codi únic, anomenat code point, per exemple:</li>
+        'A' = U+0041,  'é' = U+00E9,  '😊' = U+1F60A
+        <li>Funciona amb diferents codificacions com UTF-8 o UTF-16, que són com “formats” per guardar els caràcters en bytes.</li>
+    </ul>
+    <p>En resum: Unicode és l’evolució de l’ASCII, permetent que qualsevol text del món siga representat sense problemes.</p>
+
+    <h3>Caracters compostos</h3>
+    <pre><code>En python.. 
+a = "é"
+b = "é"  # e + ◌́ (e + ACUTE COMBINING)
+print(a == b)  # ❌ False
+</code></pre>
+    <p>Tot i que visualment semblen iguals (“é”), internament són diferents:</p>
+    <ul>
+        <li>a = "é" → U+00E9 → LATIN SMALL LETTER E WITH ACUTE (un sol caràcter)</li>
+        <li>b = "é" → U+0065 + U+0301 → LATIN SMALL LETTER E + COMBINING ACUTE ACCENT (dos caràcters)</li>
+    </ul>
+    <p>Python compara els codis Unicode, no com es veuen en pantalla. Per això a != b.</p>
+    <pre><code>Com comprovar-ho 
+for c in a:
+    print(hex(ord(c)))
+
+for c in b:
+    print(hex(ord(c)))      </code></pre>
+    <pre><code> Eixida 
+# a
+0xe9
+
+# b
+0x65
+0x301      </code></pre>
+    <p>Això mostra clarament que un és un únic caràcter i l’altre són dos.</p>
+    <pre><code> Solució: Normalització Unicode 
+import unicodedata
+
+a = "é"
+b = "é"
+
+# Normalitzar a la forma composta NFC
+a_norm = unicodedata.normalize("NFC", a)
+b_norm = unicodedata.normalize("NFC", b)
+
+print(a_norm == b_norm)  # ✅ True       </code></pre>
+
+    <ul> 📌 Tipus de normalització:
+        <li>NFC → forma composta (uneix caràcters i accents en un de sol)</li>
+        <li>NFD → forma descomposta (separa caràcters i accents)</li>
+        <li>NFKC, NFKD → versions “compatibles” que també transformen ligadures i símbols</li>
+    </ul>
+    <ul> ✅ Resum
+        <li>"é" i "é" es veuen igual, però són diferents internament.</li>
+        <li>Python compara codis Unicode, no aparença.</li>
+        <li>La solució és normalitzar abans de comparar strings amb accents o caràcters especials.</li>
+    </ul>
+   <p>En el exemple <code>◌́ (e + ACUTE COMBINING)</code> és un caràcter "marca combinant". <br>
+   Les <strong>marques combinants</strong> són caràcters Unicode dissenyats per modificar visualment un caràcter base anterior, com accents o punts, sense ocupar espai propi
+    i tenen una marca amb categoria “combining mark” (Mn, Mc) .   </p>
+   <ul>
+    <li>Mn (Non-Spacing Mark): Marques que no ocupen espai horitzontal.</li>
+    <li>Mc (Spacing Combining Mark): Marques que ocupen espai horitzontal però segueixen combinant-se (Menys habituals en alfabet llatí)</li>
+    <li>Me → Enclosing Mark: Es dibuixa al voltant del caràcter base</li>
+   </ul>
+   
+   
+</section>
+
+
 
 <section id="exercicis">
   <h1>Exercicis</h1>
