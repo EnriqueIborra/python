@@ -497,13 +497,56 @@ bool("False")  # True 😅 </code></pre>
         <li><code>rjust(width)</code>: Justifica la cadena a la dreta en un camp de llargada especificada. <code>'hola'.rjust(8)</code> → <strong>'&nbsp;&nbsp;&nbsp;&nbsp;hola'</strong></li>
     </ul>
 
-    <h2>Funció <code>eval()</code></h2>
+    <h2>Nombres aleatoris</h2>
+    <p>Els nombres aleatoris són nombres que es generen a l’atzar, és a dir, sense seguir cap patró previsible. 
+        Cada nombre té la mateixa probabilitat de sortir, i no es pot saber quin serà el següent.</p>
+    <ul> Exemples
+        <li>Llançar un dau: pot sortir 1, 2, 3, 4, 5 o 6 de manera aleatòria.</li>
+        <li>Traure una carta d’una baralla barrejada.</li>
+        <li>Un número que genera un ordinador “a l’atzar” entre 1 i 100.</li>
+    </ul>
+
+    <ul> Per a què serveixen ?
+        <li>Jocs (daus, cartes, videojocs)</li>
+        <li>Estadística (mostres aleatòries)</li>
+        <li>Simulacions (predir el temps, experiments científics)</li>
+        <li>Informàtica i seguretat (contrasenyes, criptografia)</li>
+    </ul>
+    <p>Els ordinadors, en realitat, solen generar nombres pseudoaleatoris: semblen aleatoris, però provenen de càlculs matemàtics.</p>
+    <pre># En python : exemple
+from random import randrange
+x=randrange(1,21)   
+   # genera un nombre aleatori entre 1 i 20 (inclosos)        </pre>
+
+    <h2>Dates</h2>
+    <p>Per poder treballar amb dates en python es necessita importar funcions específiques. La primera que usarem per obtenir
+        la data actual serà <code><strong>date</strong></code> i es pot vore un exemple de com utilitzar-la    </p>
+    <pre>from datetime import date
+
+avui = date.today()
+print(avui)        # 2026-02-10 (per exemple)
+print(avui.year)   # any
+print(avui.month)  # mes
+print(avui.day)    # dia    </pre>
+<p>I per saber l'hora (minut, segon ) s'usarà <code><strong>datetime</strong></code></p>
+    <pre>from datetime import datetime
+        
+ara= datetime.now()
+print(ara)
+print(ara.hour)
+print(ara.minute)
+print(ara.second)  </pre>
+
+<!--   <h2>Funció <code>eval()</code></h2>
     <p><code>eval()</code> és una funció que permet executar una cadena de text com a codi Python. Pot ser perillosa si s'utilitza amb dades no fiables, ja que pot executar qualsevol codi Python.</p>
     <p>Exemple d'ús:</p>
     <pre><code>eval('x+1')</code></pre>
-    <p>Aquesta funció interpreta i executa la cadena <code>'x+1'</code>, avaluant-la com a codi Python.</p>
-    
+    <p>Aquesta funció interpreta i executa la cadena <code>'x+1'</code>, avaluant-la com a codi Python.</p> -->
+
 </section>
+
+
+
 <section id="funcionsp">
 
         <h1>Funcions Definides per l'Usuari en Python</h1>
