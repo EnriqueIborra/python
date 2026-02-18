@@ -705,7 +705,8 @@ print("Ruta: C:\\fitxers\\usuari")   # Ruta: C:\fitxers\usuari</code></pre>
         <pre><code>nom = "Joan"
 edat = 25
 a, b = 4, 5
-pi = 3.141592
+pi= 3.1415926535897932
+frac = 13/7
 monto = 1234567.89
 numero = -42
 n = 42
@@ -713,14 +714,15 @@ percent = 1/4
 
 print(f"El meu nom és {nom} i tinc {edat} anys.")
 print(f"La suma de {a} i {b} és {a + b}.")
-print(f"Sencer |{n}|")
-print(f"Sencer |{n:9}|")   # Ocupant un espai fixe i alinea a la dreta
+print(f"Sencer |{n}|")     # n es un nombre sencer
+print(f"Sencer |{n:9}|")   # Ocupant un espai fixe i alinea a la dreta (nombre sencer)
 print(f"Sencer |{n:09}|")   # Ocupant un espai fixe ,alinea a la dreta, i farcit de 0s
 
-print(f"El valor de pi és |{pi}|")     # ocupant sols l'espai necessari
-print(f"El valor de pi és |{pi:12}|")  # ocupant 12 posicions
-print(f"El valor de pi amb 3 decimals és |{pi:.3f}|")
-print(f"El valor de pi amb 3 decimals és |{pi:12.3f}|")  # ocupant 12 posicions i posant 3 decimals
+print(f"El valor de pi és |{pi}|")     # com pi té decimals....
+print(f"El valor de pi és |{pi:12}|")  # ocupant 12 posicions?  !LA PART sencera!!
+print(f"El valor de pi amb 3 decimals és |{pi:.3f}|")    # Ara si, sols 3 decimals
+print(f"El valor de pi amb 3 decimals és |{pi:10.3f}|")  # ocupant 10 posicions i posant 3 decimals
+                                                         # El . decimal ocupa una posició !!
 print(f"Percentatge: {percent:.2%}")       # 25.00%
 print(f"{edat=}")               # Per fer Depuració: edat=25</code></pre>
         
@@ -730,6 +732,7 @@ print(f"|{nom:>10}|")       # A la dreta
 print(f"|{nom:_>10}|")      # A la dreta amb "_"
 print(f"|{nom:^10}|")       # Centrat
 print(f"|{nom:*^10}|")      # Centrat amb "*"
+<p>**L'alineació també funciona amb strings i floats</p>
 
 print(f"Decimal: {n}, Binari: {n:b}, Hexadecimal: {n:x}, Octal: {n:o}")   # conversio a una altra base
 print(f"Amb separador de milers: {monto:,.2f}")     # I dos decimals
@@ -781,7 +784,7 @@ print(f"Amb signe explícit: {numero:+d}")   # -42  Siga positiu o negatiu </cod
 
 <section id="constants">
   <h1>Constants en Python</h1>
-  <p>En Python, no hi ha suport natiu per constants, però es poden definir per <strong>convenció</strong> amb noms en majúscules:</p>
+  <p>En Python, <strong>NO</strong> hi ha suport natiu per constants, però es poden definir per <strong>convenció</strong> amb noms en majúscules:</p>
 
   <pre><code>PI = 3.14159
 VELOCITAT_DE_LLUM = 299_792_458
@@ -1201,6 +1204,24 @@ print (y)     # 0.33    </code></pre>
     <li><a href="https://www.interviewbit.com/">interviewbit.com/</a></li>
     <li><a href="https://leetcode.com/">leetcode.com/</a></li>
   </ul>
+  <hr><p>Encara que no s'ha vist la utilització de funcions externes, es pot avançar alguna concreta per enriquir els exercicis proposats.</p>
+  <pre># Neteja de pantalla / consola
+import os
+os.system('clear')  # en Linux     </pre>
+  <pre># Generar un nombre aleatori
+from random import randrange
+numaleatori = randrange(1,21)   # Per exemple, entre 1 i 21     </pre>
+<pre># Neteja consola millorat
+import os
+def neteja():
+    if os.name=='nt':   # En windows 'nt'
+        os.system('cls')
+    else:               # En linux y macOS  'posix'
+        os.system('clear')
+
+# En el cos del programa
+neteja()   </pre>
+
 </section>
 
 </main>
