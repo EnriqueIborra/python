@@ -47,16 +47,25 @@
         <p>           Quan s'executa un programa, el flux de control segueix una seqüència lineal. Aquí tens un exemple senzill:         </p>
       
         <pre><code># Programa d'exemple per a execució seqüencial
-nombre = "Maria"
-edat = 25
-
-print("Hola, el meu nom és", nombre)  <!-- Imprimeix el nom -->
-print("Tinc", edat, "anys.")           <!-- Imprimeix l'edat -->   
-        </code></pre>
+nom = input("Escriu el teu nom: ")
+edat = int(input("Escriu la teva edat: "))
+anys_per_100 = 100 - edat
+edat_mes_10 = edat + 10
+edat_doble = edat * 2
+nom_majuscules = nom.upper()
+nom_minuscules = nom.lower()
+llargada_nom = len(nom)
+inicial = nom[0]
+print("Hola", nom_majuscules)
+print("El teu nom té", llargada_nom, "lletres")
+print("La inicial del teu nom és:", inicial)
+print("D'aquí", anys_per_100, "anys tindràs 100 anys")
+print("D'aquí 10 anys tindràs", edat_mes_10)
+print("El doble de la teva edat és", edat_doble)               </code></pre>
       
         <img src="imgs/sequencial.png" alt="sequencial" class="imatge-dreta" width="15%">
-        <p>           En aquest exemple, el programa executa primer la línia on es defineix el nom, després imprimeix el nom, i finalment imprimeix l'edat. 
-          No hi ha condicions ni bucles, per tant, cada instrucció es fa de manera seqüencial.         </p>
+        <p>           En este exemple, el programa executa primer les peticions de dades amb <code>input</code>, després
+            realitza uns càlculs i per fi imprimeix els resultats. No hi ha condicions ni bucles ni salts, per tant, cada instrucció es fa de manera seqüencial.         </p>
       
         <h3>Fluxe de Control</h3>
         
@@ -98,7 +107,7 @@ else:
       <p>
         Si la estructura només té una línia, no és necessari indentar, tot i que és habitual fer-ho així:
       </p>
-      <pre><code> if edat >= 18: print("Eres major d'edat")        </code></pre>
+      <pre><code>if edat >= 18: print("Eres major d'edat")        </code></pre>
 
   
 
@@ -1090,6 +1099,7 @@ Aquesta funció pot ser utilitzada en altres mòduls.</code></pre>
 
 <section id="ascii">
   <h1>ASCII / UNICODE</h1>
+     <img src="imgs/tabla-ascii-1.png" alt="ascii" width="40%" class="imatge-dreta">
       <p><strong>ASCII</strong> (American Standard Code for Information Interchange) és un codi que assigna números
          als caràcters perquè els ordinadors els puguen entendre.</p>
 
@@ -1181,6 +1191,41 @@ print(a_norm == b_norm)  # ✅ True       </code></pre>
 <section id="exercicis">
   <h1>Exercicis</h1>
   <h3>Els exercicis i tests corresponents a esta unitat es troben en Aules</h3>
+   <hr><p>Encara que no s'ha vist la utilització de llistes, es pot avançar alguna funció concreta per enriquir els exercicis proposats.</p>
+<pre># convertir un String a llista (símbol a símbol / lletra a lletra)
+s2 = 'Hola mon 1234'
+l2 = list(s1)
+print(l2)
+['H', 'o', 'l', 'a', ' ', 'm', 'o', 'n', ' ', '1', '2', '3', '4']
+
+#Recorrer una llista
+for ind in range(len(l2)):
+    if l2[ind]=' ':
+        l2[ind] = '_'
+
+#convertir una llista a String
+s2=''.join(l2)
+print(s2)
+Hola_mon_1234   
+
+# Compte amb els números
+s3='1234'   # Un string que conté un número
+l3=list(s3)
+print(s3)
+['1', '2', '3', '4' ]   # son caràcters
+</pre>
+
+<pre># Convertir un string de paraules separades per espais 
+    #en una llista de paraules
+s4 = 'Hola ke ase, como estas? 123'
+l4 = s4.split()
+print(l4)
+['Hola', 'ke', 'ase,', 'como', 'estas?', '123']
+   # Compte!, és una llista de strings, el '123' es un string
+
+
+</pre>
+
 </section>
 
 
