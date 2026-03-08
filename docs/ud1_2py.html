@@ -168,23 +168,28 @@ if __name__ == "__main__":
   <p>Totes les instruccions d'un programa s'han de guardar en un fitxer amb nom i amb extensió  .py </p>
  
   <h2>Execució del fitxer</h2>
-  <p>Per executar un programa Python, s'ha de cridar al binari python, amb un espai i el nom del fitxer que conté el programa python a executar</p>
+  <p>Per executar un programa Python, s'ha de cridar al binari python, amb un espai i el nom del fitxer que conté el programa escrit en llenguatge python a executar</p>
  <h3>1. Des del terminal o línia de comandes</h3>
   <p>Obre el terminal i escriu:</p>
-  <pre><code>python programa.py</code></pre>
-  <p>O si tens <code>python3</code> instal·lat:</p>
-  <pre><code>python3 programa.py</code></pre>
+  <pre><code>python programa.py
+    # Esta sol ser la forma de cridar a python en un sistema Windows
+  </code></pre>
+  <p>O si tens Linux</p>
+  <pre><code>python3 programa.py
+    # Esta sol ser la forma de cridar a python en un sistema Linux
+  </code></pre>
+
 
   <h3>2. Des d’un entorn de desenvolupament (IDE)</h3>
   <ul>
-    <li>Obre el fitxer amb un editor com <strong>VS Code</strong>, <strong>VSCodium</strong>, <strong>Thonny</strong> o <strong>PyCharm</strong>(community o pro) .</li>
+    <li>Obre el fitxer <code>.py</code> amb un editor com <strong>VS Code</strong>, <strong>VSCodium</strong>, <strong>Thonny</strong> o <strong>PyCharm</strong>(community o pro) .</li>
     <li>Prem el botó de "Play" (▶️) o selecciona "Executar" (de vegades s'ha de desplegar i buscar l'opció "Run Python File").</li>
   </ul>
 
   <h3>3. Amb permisos d’execució (Linux/macOS)</h3>
   <p>Fes que el fitxer sigui executable:</p>
   <pre><code>chmod +x programa.py</code></pre>
-  <p>Afegeix la línia següent al principi del fitxer:</p>
+  <p>Afegeix la línia següent al principi del fitxer <code>.py</code></p>
   <pre><code>#!/usr/bin/env python3</code></pre>
   <p>I després l’executes així:</p>
   <pre><code>./programa.py</code></pre>
@@ -393,8 +398,7 @@ Type "help", "copyright", "credits" or "license" for more information.
    <p>o s'executa la utilitat IDLE </p>
    <img src="imgs/idle.png" alt="eina idle"  width="90%">
 
-   <pre>
-   
+   <pre>   
 x = 10             # Número enter (integer)
 nombre = "Ana"     # Cadena de text (String)
 nombre2 = 'Pedro'  # String amb cometes simples
@@ -403,18 +407,19 @@ es_activo = True   # Booleà (True o False)
 b = None           # Valor nul, absència de valor
 a = b = c = 100    # Assignació múltiple, un sol valor
 userAge, userName = 30, 'Pedro'   # Assignació múltiple, múltiples valors
-a, b = 23, 67      # Assignació múltiple
-a, b = b, a        # Intercanvi de valors (sense utilitzar variable temporal !!)      </pre>
-
-    <p>         S'evita l'ús d'una variable temporal per realitzar l'intercanvi:
-    </p>
-
-    <pre># intercanvi típic de dos variables 
+a, b = 23, 67      # Assignació múltiple   </pre>
+<pre>a = b  
+b = a 
+💥 No funciona, es perd un valor !!</pre>
+ <pre># intercanvi típic de dos variables 
 temp = a
 a = b
 b = temp      </pre>
-    <p>    Per saber quin tipus de dada té una variable, podem utilitzar la funció <code>type()</code>:
-    </p>
+<pre>a, b = b, a        # En Python es pot fer intercanvi de valors   
+                        # (sense utilitzar variable temporal !!)   </pre>
+
+<hr>
+    <p>    Per saber quin tipus de dada té una variable, podem utilitzar la funció <code>type()</code>:     </p>
     <pre>
 type(x)             # Ens diu el tipus actual de la variable
 del v   o  del(v)   # Deixa la variable lliure, sense tipus ni valor      </pre>
@@ -427,8 +432,12 @@ $ python3
    10
 >>> type(x)
    <class 'int'>      </pre>
+<hr>
+    <p>  Amb <code>del(a)</code> es deixa de fer servir (d'existir en memòria) una variable (també amb <code>del a</code>).     </p>
+    <pre>del(a)
+del a       </pre>
 
-    <p>  Amb <code>del(a)</code> es deixa de fer servir una variable (també amb <code>del a</code>).     </p>
+
     <h2>Regles per als Noms de Variables (Identificadors)</h2>
     <p>     <strong>Els noms de variables (o identificadors) són sensibles a majúscules i minúscules.</strong>
         És a dir, <code>username</code> no és el mateix que <code>userName</code>.     </p>
