@@ -187,7 +187,7 @@ if __name__ == "__main__":
   </ul>
 
   <h3>3. Amb permisos d’execució (Linux/macOS)</h3>
-  <p>Fes que el fitxer sigui executable:</p>
+  <p>Fes que el fitxer siga executable:</p>
   <pre><code>chmod +x programa.py</code></pre>
   <p>Afegeix la línia següent al principi del fitxer <code>.py</code></p>
   <pre><code>#!/usr/bin/env python3</code></pre>
@@ -429,9 +429,9 @@ del v   o  del(v)   # Deixa la variable lliure, sense tipus ni valor      </pre>
 $ python3
 >>> x = 10
 >>> x
-   10
+10
 >>> type(x)
-   <class 'int'>      </pre>
+&lt;class 'int'>      </pre>
 <hr>
     <p>  Amb <code>del(a)</code> es deixa de fer servir (d'existir en memòria) una variable (també amb <code>del a</code>).     </p>
     <pre>del(a)
@@ -569,14 +569,16 @@ b = None     # Un valor nul     </pre>
     <h3>Exemples</h3>
     <img src="imgs/provaVSCode1.png" alt="VSCode1"  width="45%"> 
     <h3>Personalització amb l'argument <code>sep</code></h3>
-     <p> L'argument <strong>sep</strong> és (opcional):
+     <p> L'argument <strong>sep</strong> és opcional:
                 <ul>
                     <li>Defineix el separador entre els objectes.</li>
                     <li>Per defecte és un espai <code>' '</code>.</li>
                 </ul>
     <pre><code>a = 3.14153345  
 print ( a, 234, 'pepe')
-print ( a, 234, 'pepe', sep='>>')</code></pre>
+3.14153345 234 pepe
+print ( a, 234, 'pepe', sep='>>')
+3.14153345>>234>>pepe</code></pre>
 
   </section>
 
@@ -584,7 +586,7 @@ print ( a, 234, 'pepe', sep='>>')</code></pre>
     <h1>Comentaris en el Codi de Python</h1>
 
     <p>     Els <strong>comentaris</strong> en Python serveixen per afegir notes o explicacions al codi que no són executades pel intèrpret de Python. 
-        Són útils per fer que el codi sigui més comprensible tant per a tu com per a altres persones que el llegeixin. </p>
+        Són útils per fer que el codi siga més comprensible tant per a tu com per a altres persones que el llegeixin. </p>
 
     <h3>Formes de fer comentaris</h3>
     <p>     Hi ha dues formes de posar comentaris en Python: 
@@ -755,31 +757,28 @@ print(f"Amb signe explícit: {numero:+d}")   # -42  Siga positiu o negatiu </cod
       <h2>Ús de la funció <code>input()</code></h2>
       <p>         En Python, utilitzem <code>input()</code> per demanar a l’usuari que introduïsca dades per teclat. Aquestes dades es poden usar posteriorment dins del programa.       </p>
     
-      <pre><code>
-    numero1 = input("Digue'm el primer número: ")  # Aquí, numero1 serà una cadena (string)
-    # El programa es quedarà esperant que l'usuari escriga un valor i premeta intro.
-    # Aquesta entrada s'assignarà a la variable numero1 com a text.
-    numero1 = int(numero1)  # Cal convertir-la a enter si volem fer operacions numèriques.
-    print(numero1, "+", numero2, "=", numero1 + numero2)
-    print("{numero1} + {numero2} = ", numero1 + numero2)  # No fa interpolació real       </code></pre>
+      <pre><code>numero1 = input("Digue'm el primer número: ")  # Aquí, numero1 serà una cadena (string)
+# El programa es quedarà esperant que l'usuari escriga un valor i premeta intro.
+# Aquesta entrada s'assignarà a la variable numero1 com a text.
+numero1 = int(numero1)  # Cal convertir-la a enter si volem fer operacions numèriques.
+print(numero1, "+", numero2, "=", numero1 + numero2)
+print("{numero1} + {numero2} = ", numero1 + numero2)  # No fa interpolació real       </code></pre>
     
       <h3>Exemple d’error comú</h3>
-      <pre><code>
-    n1 = input("Digue'm el primer número: ")
-    n2 = input("Digue'm el segon número: ")
-    print("La suma és", n1 + n2)  # Açò farà una concatenació de cadenes!
-    # Què ha passat???
-    print("La suma és", int(n1) + int(n2))  # Açò sí que suma nombres correctament       </code></pre>
+      <pre><code>n1 = input("Digue'm el primer número: ")
+n2 = input("Digue'm el segon número: ")
+print("La suma és", n1 + n2)  # Açò farà una concatenació de cadenes!
+# Què ha passat???
+print("La suma és", int(n1) + int(n2))  # Açò sí que suma nombres correctament       </code></pre>
     
       <h2>Entrada de múltiples valors separats per comes</h2>
       <p>         També podem demanar a l’usuari que introduïsca diversos valors separats per comes (o altres caràcters), i convertir-los a una llista de números:      </p>
     
-      <pre><code>
-    entrada = input("Introdueix números separats per comes: ")
-    numeros = entrada.split(',')  # Separa cada valor utilitzant la coma com a separador
-    # Convertim cada valor a enter, eliminant espais en blanc
-    numeros = [int(num.strip()) for num in numeros]
-    print("Llista de números:", numeros)    </code></pre>
+      <pre><code>entrada = input("Introdueix números separats per comes: ")
+numeros = entrada.split(',')  # Separa cada valor utilitzant la coma com a separador
+# Convertim cada valor a enter, eliminant espais en blanc
+numeros = [int(num.strip()) for num in numeros]
+print("Llista de números:", numeros)    </code></pre>
     
       <h2>Conclusió</h2>
       <ul>
@@ -1085,6 +1084,7 @@ print ( f"La cadena té una longitud de {x} caràcters ")   </code></pre>
 <img src="imgs/string-index.png" alt="acces per index" width="50%" class="imatge-dreta">
   <h2>Accés per Índex</h2>
   <p>     Pots accedir als caràcters d'una cadena mitjançant el seu índex. Recorda que l'índex comença des de 0. Però també es pot indicar el final amb un -1 (ùltim caràcter)  </p>
+  <p class="alert">La primera posició en un <strong>string</strong> és la posició 'zero' , 0 </p>
   <pre><code>texto = "Python"
 print(texto[0])  # P
 print(texto[-1])  # n (últim caràcter)   </code></pre>
@@ -1105,8 +1105,11 @@ print(texto[-3:])  # hon (del -3 fins al final)  </code></pre>
   <p>      Pots recórrer una cadena de text caràcter per caràcter mitjançant un bucle <code>for</code>.   </p>
   <h4>Exemple simple</h4>
   <pre><code>texto = "Python"
-for letra in texto:
-    print(letra)    </code></pre>
+for lletra in texto:
+    print(lletra)    </code></pre>
+  <pre><code>texto = "Python"
+for x in range( len(texto) ):    # x va de 0 a long_text-1
+    print( texto[x] )    </code></pre>
 
   <h4>Exemple animat</h4>  
   <pre><code>import time
