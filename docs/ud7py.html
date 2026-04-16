@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ca-ES">  
+  <!--  al ponerlo en catalan, fuerzo al navegador a poner el traductor-->
+  <!-- es-ES  lenguaje - ubicacion    -->
+<head>
+  <meta charset="UTF-8">
+  <link rel="alternate" hreflang="ca-ES">
+  <link rel="icon" href="https://www.python.org/favicon.ico"> 
+  <title> Introducció a la programació</title>
+  <link rel="stylesheet" href="estilsunitatspy.css">
+  <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
+</head>
+<body>
+
+  <header>
+    <a href="index.html"><img src="imgs/phyton2-rbg.png" alt="python"></a>
+    <h1>Unitat Didàctica 7: TADs</h1>
+    <h1> </h1>
+  </header>
+
+<nav>
+  <h3>Índex</h3>
+  <a href="#tad">TADs</a>
+  <a href="#pila">Pila (Stack)</a>
+  <a href="#cua">Cua (queue)</a>
+  <a href="#llista">Llista, Conjunt, Diccionari</a>
+  <a href="#arbre">Arbre (tree)</a>
+  <a href="#grafs">Grafs</a>
+  <a href="#exercicis">Exercicis</a>
+   
+</nav>
+
+<main>
+
+<section id="tad">
+  <h1>TAD (Tipus Abstracte de Dades)</h1>
+  <h2>TADs en Python</h2>
+ <p>En Python, els TADs (Tipus Abstractes de Dades) no existeixen com una paraula clau formal del llenguatge, però sí que s’implementen perfectament utilitzant classes, mòduls i estructures de dades.
+Un TAD descriu quines operacions es poden fer sobre un tipus de dada, no com s’implementen internament.</p>
+
+<ul> <strong>Un Tipus Abstracte de Dades defineix:</strong>
+  <li>✅ Les dades que gestiona</li>
+  <li>✅ Les operacions permeses</li>
+  <li>❌ No defineix la implementació interna</li>
+</ul>
+Exemple conceptual:
+<pre>Una pila permet apilar, desapilar i consultar el cim, 
+  però no diu si es fa amb llistes o arrays.</pre>
+
+  <h2>Com es representen els TADs en Python</h2>
+  
+<ul> <strong>En Python solen implementar-se amb</strong>
+  <li>Classes</li>
+  <li>Mètodes públics</li>
+  <li>Encapsulació</li>
+</ul>
+
+</section>
+
+
+
+
+<section id="pila">
+    <img src="./imgs/pila.png" alt="pila" width="35%" class="imatge-dreta">
+    <h1>Pila (Stack)</h1>
+    <h2>Especificació del TAD</h2>
+
+<ul>Operacions:
+  <li>push(x)</li>
+  <li>pop()</li>
+  <li>top()</li>
+  <li>is_empty()</li>
+</ul>
+
+Implementació en Python (usant una llista)
+<pre>
+class Pila:
+    def __init__(self):
+        self._dades = []
+
+    def push(self, element):
+        self._dades.append(element)
+
+    def pop(self):
+        if self.is_empty():
+            raise IndexError("Pila buida")
+        return self._dades.pop()
+
+    def top(self):
+        if self.is_empty():
+            raise IndexError("Pila buida")
+        return self._dades[-1]
+
+    def is_empty(self):
+        return len(self._dades) == 0  
+</pre>
+
+<h3>Ús d'una pila</h3>
+<pre>
+p = Pila()
+p.push(10)
+p.push(15)
+p.push(20)
+print(p.pop())  # 20
+</pre>
+
+
+</section>
+
+
+<section id="cua">
+     <img src="./imgs/cola.png" alt="pila" width="35%" class="imatge-dreta">
+    <h1>Cua (queue)</h1>
+    <h2>Especificació del TAD</h2>
+
+Implementació en Python (usant una <code>deque</code>)
+<pre>
+from collections import deque
+
+class Cua:
+    def __init__(self):
+        self._dades = deque()
+
+    def enqueue(self, element):
+        self._dades.append(element)
+
+    def dequeue(self):
+        if self.is_empty():
+            raise IndexError("Cua buida")
+        return self._dades.popleft()
+
+    def is_empty(self):
+        return not self._dades  
+</pre>
+<p>Per implementar una cua, usarem una estructura implementada en python: <code><strong>deque</strong></code></p>
+<p>deque (double-ended queue) és una estructura de dades implementada per Python dins del mòdul estàndard collections.
+  Forma part de la biblioteca estàndard, no l’has d’instal·lar ni programar tu. S'utilitza perquè és molt eficient per a operacions als extrems.
+</p>
+
+<ul> <strong>Operacions que fa en O(1):</strong>
+  <li>append() → afegir al final</li>
+  <li>appendleft() → afegir al principi</li>
+  <li>pop() → llevar del final</li>
+  <li>popleft() → llevar del principi</li>
+</ul>
+
+<li>Amb una list, pop(0) és O(n) ❌</li>
+<li>Amb deque, popleft() és O(1) ✅</li>
+
+<h3>Ús de cua</h3>
+<pre>
+from collections import deque
+
+cua = deque()
+cua.append(1)
+cua.append(2)
+cua.popleft()  # Ràpid
+</pre>
+
+<p> <code><strong>deque</strong></code> pot implementar:  TAD Cua,  TAD Pila,  TAD Cua doble. 
+Tot depén de quines operacions exposes en la teua classe.</p>
+ 
+
+</section>
+
+
+<section id="llista">
+<h2>Llista, Conjunt, Diccionari</h2>
+<p>Encara que es pot realitzar una implementació d'estos TADs, python ja els porta nadius.</p>
+</section>
+
+<section id="arbre">
+     <img src="./imgs/arbol.png " alt="pila" width="35%" class="imatge-dreta">
+   <h1>Arbre (tree)</h1>
+    <h2>Especificació del TAD</h2>
+
+    <p>Què és un arbre?</p>
+    <p>Un arbre és una estructura de dades jeràrquica formada per nodes connectats entre si.</p>
+<ul>
+  <li>Té un node arrel (el primer)</li>
+  <li>Cada node pot tindre fills</li>
+  <li>No hi ha cicles</li>
+  <li>Cada node (excepte l’arrel) té un únic pare</li>
+</ul>
+
+<h2>Definició com a TAD </h2>
+<p>Com a TAD, l’arbre defineix: </p>
+<li>✅ Quines operacions es poden fer</li>
+<li>❌ No defineix com s’emmagatzemen els nodes internament</li>
+<p>És a dir, descriu què és un arbre i què es pot fer amb ell, però no si està fet amb classes, llistes, punters, etc.</p>
+
+
+
+<ul>Components d’un arbre
+  <li>Node: element que conté una dada</li>
+  <li>Arrel: node principal</li>
+  <li>Fill: node que depén d’un altre</li>
+  <li>Pare: node superior</li>
+  <li>Fulla: node sense fills</li>
+  <li>Subarbre: arbre dins d’un altre arbre</li>
+  <li>Altura: longitud del camí més llarg des de l’arrel fins a una fulla</li>
+</ul>
+
+<h3>Operacions típiques del TAD Arbre</h3>
+Depenent del tipus d’arbre, les operacions més habituals són:
+<pre>
+crear_arbre()
+arrel()
+fills(node)
+afegir_fill(node, element)
+eliminar(node)
+es_buit()
+recorrer() (recórrer l’arbre)  </pre>
+
+<h3>Tipus d’arbres més comuns</h3>
+<ul>
+  <li>Arbre General</li>
+  <li>Arbre binari</li>
+  <li>Arbre binari de cerca (ABB / BST)</li>
+</ul>
+
+<h3>Recorreguts de l’arbre</h3>
+
+<ul>En arbres binaris:
+  <li>Preordre : Arrel → Esquerra → Dreta</li>
+  <li>Inordre : Esquerra → Arrel → Dreta</li>
+  <li>Postordre : Esquerra → Dreta → Arrel</li>
+</ul>
+
+<p>Exemple conceptual</p>
+<pre>
+      A
+     / \
+    B   C
+   /
+  D
+</pre>
+<ul>
+  <li>Arrel: A</li>
+  <li>Fills d’A: B, C</li>
+  <li>Fulles: C, D</li>
+  <li>Subarbre amb arrel B: B → D</li>
+</ul>
+
+<h3>Implementació vs TAD</h3>
+<p>És molt important distingir: <br>
+✅ TAD Arbre → teoria, operacions, definició  <br>
+✅ Implementació → com es programa (Python, C, Java…) <br> </p>
+
+Altre exemple d'arbre binari
+<pre>
+        A
+       / \
+      B   C
+     / \   \
+    D   E   F
+</pre>
+
+<h3>Exemple d'Implementació d'un arbre en Python</h3>
+<p>Cada node: guarda una dada, té una llista de fills</p>
+<pre>
+class Node:
+    def __init__(self, dada):
+        self.dada = dada
+        self.fills = []
+
+    def afegir_fill(self, node_fill):
+        self.fills.append(node_fill)
+</pre>
+<h3>Crear arbre</h3>
+<p>Primer es creen els nodes, després es connecten els nodes</p>
+<pre>
+arrel = Node("A")
+b = Node("B")
+c = Node("C")
+d = Node("D")
+</pre>
+
+<pre>
+arrel.afegir_fill(b)
+arrel.afegir_fill(c)
+b.afegir_fill(d)
+</pre>
+
+<h3>Recórrer l’arbre (recorregut)</h3>
+<pre>
+def recorregut_preordre(node):
+    print(node.dada)
+    for fill in node.fills:
+        recorregut_preordre(fill)
+</pre>
+
+<h3>Executar recorregut_preordre</h3>
+<pre>
+recorregut_preordre(arrel)
+</pre>
+
+
+</section>
+
+
+<section id="grafs">
+       <img src="./imgs/grafos.png" alt="pila" width="45%" class="imatge-dreta">
+  <h1>Grafs </h1>
+    <h2>Especificació del TAD</h2>
+
+    <h3>Què és un graf?</h3>
+  <p>Un graf és una estructura de dades (i un objecte matemàtic) que serveix per a representar
+     relacions entre parells d'objectes. Bàsicament, és un conjunt de punts connectats entre si.</p>
+<ul>Es compon de dos elements clau:
+  <li>Vèrtexs (o Nodes): Són els elements o punts del graf (com ara ciutats, persones o ordinadors).</li>
+  <li>Arrestes (o Arcs): Són les línies que uneixen els vèrtexs i representen la relació que hi ha entre ells (com una carretera, una amistat o un cable de xarxa).</li>
+</ul>
+
+<h3>Tipus principals de grafs </h3>
+<p>Segons com siguen les seues connexions, els podem classificar en</p>
+<ul>
+  <li>Grafs no dirigits: Les relacions són recíproques. Si el node A està connectat amb el B, la connexió funciona en els dos sentits (com una carretera de doble sentit).</li>
+  <li>Grafs dirigits: Les connexions tenen un sentit definit (es representen amb una fletxa). La relació va de A cap a B, però no necessàriament a l'inrevés (com un carrer d'un sol sentit).</li>
+  <li>Grafs ponderats (o pesats): Cada arresta té un valor o "pes" (per exemple, els quilòmetres entre dues ciutats).</li>
+</ul>
+
+
+
+</section>
+
+<section id="exercicis">
+  <h1>Exercicis</h1>
+  <h3>Els exercicis i tests corresponents a esta unitat es troben en Aules</h3>
+</section>
+
+
+
+
+</main>
+
+<script>
+
+  // Per poder copiar codi en el porta-retalls. S'ha de posar un botó en cada <pre>
+      //  <div class="pre-container">
+      //    <button class="copy-button">Copia Codi !</button>
+  document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.copy-button');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', function () {
+        const code = this.nextElementSibling.innerText;
+        navigator.clipboard.writeText(code).then(() => {
+          this.innerText = ' ✔ Copiat!';
+          setTimeout(() => this.innerText = 'Copia Codi !', 3000);
+        });
+      });
+    });
+  });
+
+</script>
+
+</body>
+</html>

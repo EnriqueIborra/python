@@ -867,6 +867,26 @@ print(dir(e))  # Es converteix en _Exemple__privada</code></pre>
       Només els objectes mutables poden ser modificats dins d’una funció</p> 
      <hr><p class="alert">En Python una funció es pot cridar des de dins d'una altra funció</p>     
       <hr><p class="alert">En Python una funció es pot cridar a si mateix ( <strong>recursivitat</strong> ) i possible DoS si no es fa bé</p>  
+
+    <pre>Exemple recursivitat:
+def factorial(n):
+    # Si el nombre és negatiu, llançem una excepció
+    # Programació defensiva !!
+        if n < 0:
+            raise ValueError("El factorial no està definit per a nombres negatius.")
+    # 1. Cas base: Atura la recursivitat
+    if n == 1 or n == 0:
+        return 1
+    # 2. Cas recursiu: La funció es crida a si mateixa
+    else:
+        return n * factorial(n - 1)
+
+# Prova de la funció
+print(factorial(5))  # Resultat: 120
+    </pre>
+    <p>Elements imprescindibles d'una funció recursiva: <br>
+Cas base: És la condició d'eixida. Sense ell, la funció es cridaria infinitament i donaria un error de tipus RecursionError. <br>
+Cas recursiu: On la funció s'apropa progressivament al cas base. <br> </p>
 </section>
 
 
