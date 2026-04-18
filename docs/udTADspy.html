@@ -22,10 +22,10 @@
   <h3>Índex</h3>
   <a href="#tad">TADs</a>
   <a href="#pila">Pila (Stack)</a>
-  <a href="#cua">Cua (queue)</a>
+  <a href="#cua">Cua (Queue)</a>
   <a href="#llista">Llista, Conjunt, Diccionari</a>
-  <a href="#arbre">Arbre (tree)</a>
-  <a href="#grafs">Grafs</a>
+  <a href="#arbre">Arbre (Tree)</a>
+  <a href="#grafs">Grafs (Graphs)</a>
   <a href="#exercicis">Exercicis</a>
    
 </nav>
@@ -34,18 +34,33 @@
 
 <section id="tad">
   <h1>TAD (Tipus Abstracte de Dades)</h1>
-  <h2>TADs en Python</h2>
- <p>En Python, els TADs (Tipus Abstractes de Dades) no existeixen com una paraula clau formal del llenguatge, però sí que s’implementen perfectament utilitzant classes, mòduls i estructures de dades.
-Un TAD descriu quines operacions es poden fer sobre un tipus de dada, no com s’implementen internament.</p>
+  <p>En el món de la informàtica, un TAD (Tipus Abstracte de Dades) és un model que defineix un conjunt de valors i les operacions 
+    que es poden aplicar sobre ells, desinteressant-se completament de com estan implementats internament. 
+    En essència, separes el què fa (la interfície) del com ho fa (la implementació).</p>
 
-<ul> <strong>Un Tipus Abstracte de Dades defineix:</strong>
-  <li>✅ Les dades que gestiona</li>
-  <li>✅ Les operacions permeses</li>
+  <ul> <strong>Un Tipus Abstracte de Dades defineix:</strong>
+  <li>✅ Les dades que gestiona. El model de dades: La naturalesa dels elements que emmagatzema.</li>
+  <li>✅ Les operacions permeses. (ex: afegir(), eliminar(), està_buit())</li>
+  <li>✅ Els axiomes: Les regles que regeixen aquestes operacions (ex: "si afegeixes un element i després l'elimines, l'estructura es queda igual").</li>
   <li>❌ No defineix la implementació interna</li>
 </ul>
 Exemple conceptual:
 <pre>Una pila permet apilar, desapilar i consultar el cim, 
   però no diu si es fa amb llistes o arrays.</pre>
+
+ <h2>Avantatges d'utilitzar TADs</h2> 
+<ul>
+  <li>Simplicitat: Permet gestionar la complexitat del programari ocultant detalls innecessaris.</li>
+  <li>Manteniment: Si decideixes canviar la manera d'emmagatzemar les dades (per exemple, de fer servir una llista a fer servir un arbre) per a guanyar velocitat, la resta del programa no s'ha de modificar perquè els "botons" (la interfície) segueixen sent els mateixos.</li>
+  <li>Robustesa: Evita que altres parts del programa modifiquen les dades internes de manera incorrecta, ja que només es pot accedir a elles mitjançant les operacions permeses.</li>
+</ul>
+<p>Mentre que el <strong>TAD</strong> és el concepte teòric, l'<strong>Estructura de Dades</strong> és la implementació física i concreta d'eixe TAD en un llenguatge de programació.</p>
+
+  <h2>TADs en Python</h2>
+ <p>En Python, els TADs (Tipus Abstractes de Dades) no existeixen com una paraula clau formal del llenguatge, però sí que s’implementen perfectament utilitzant classes, mòduls i estructures de dades.
+Un TAD descriu quines operacions es poden fer sobre un tipus de dada, no com s’implementen internament.</p>
+<p>En python hi ha TADs que ja estan implementats, com  <code> LLISTES, CONJUNTS, DICCIONARIS, TUPLES</code>, i altres TADs que no ho estan, 
+com <code>PILES, CUES, ARBRES, GRAFS</code>, etc..</p>
 
   <h2>Com es representen els TADs en Python</h2>
   
@@ -56,6 +71,7 @@ Exemple conceptual:
 </ul>
 
 </section>
+
 
 
 
@@ -113,13 +129,21 @@ p.push(20)
 print(p.pop())  # 20
 </pre>
 
+<h3>Exemples de piles</h3>
+<ul>
+  <li>Pila de plats en un restaurant</li>
+  <li>Botó 'enrrere' d'un navegador</li>
+  <li>CTRL-Z (funció desfer) en un editor de textos</li>
+  <li>Tub de pilotes de tenis</li>
+  <li>etc...</li>
+</ul>
 
 </section>
 
 
 <section id="cua">
      <img src="./imgs/cola.png" alt="pila" width="35%" class="imatge-dreta">
-    <h1>Cua (queue)</h1>
+    <h1>Cua (Queue)</h1>
     <p>Direm que una «cua» consisteix en una estructura en la qual les dades que la componen es van afegint per un
        extrem de la cua, per a després ser retornades per l'altre extrem d'aquesta, fent-la avançar
         (ens pot servir com a exemple de la vida real el de la cua de clients d'un centre comercial).
@@ -187,17 +211,27 @@ cua.popleft()  # Ràpid
 Tot depén de quines operacions exposes en la teua classe.</p>
  
 
+<h3>Exemples de cues</h3>
+<ul>
+  <li>La cua del forn o farmàcia</li>
+  <li>Peatge de cotxes</li>
+  <li>Tunels de rentat</li>
+  <li>Tub de pilotes de tenis</li>
+  <li>Atenció al client per telèfon</li>
+</ul>
+
 </section>
 
 
 <section id="llista">
 <h2>Llista, Conjunt, Diccionari</h2>
+<h3>List, Set, Dictionary</h3>
 <p>Encara que es pot realitzar una implementació d'estos TADs, python ja els porta nadius.</p>
 </section>
 
 <section id="arbre">
      <img src="./imgs/arbol.png " alt="pila" width="35%" class="imatge-dreta">
-   <h1>Arbre (tree)</h1>
+   <h1>Arbre (Tree)</h1>
     <h2>Especificació del TAD</h2>
 
     <p>Què és un arbre?</p>
@@ -321,13 +355,21 @@ def recorregut_preordre(node):
 recorregut_preordre(arrel)
 </pre>
 
+<h3>Exemples d'arbres (tads)</h3>
+<ul>
+  <li>Organigrama d'una empresa</li>
+  <li>Sistema de fitxers d l'ordinador</li>
+  <li>Arbres genealògics</li>
+  <li>Classificació biològica</li>
+  <li>Tornejos de tennis</li>
+</ul>
 
 </section>
 
 
 <section id="grafs">
        <img src="./imgs/grafos.png" alt="pila" width="45%" class="imatge-dreta">
-  <h1>Grafs </h1>
+  <h1>Grafs (Graphs) </h1>
     <h2>Especificació del TAD</h2>
 
     <h3>Què és un graf?</h3>
@@ -346,6 +388,74 @@ recorregut_preordre(arrel)
   <li>Grafs ponderats (o pesats): Cada arresta té un valor o "pes" (per exemple, els quilòmetres entre dues ciutats).</li>
 </ul>
 
+<p>Per representar grafs en python es poden usar dos opcions</p>
+<ol>
+  <li>Nodes, Classes</li>
+  <li>Diccionaris</li>
+</ol>
+
+<h3>Amb diccionaris de python:</h3>
+<p>Pots representar un graf on la clau és el node i el valor és una llista dels seus veïns.</p>
+<pre>
+graph = {
+    'A': ['B', 'C'],
+    'B': ['D'],
+    'C': ['D'],
+    'D': []
+}
+</pre>
+<p>I per un graf amb pesos...</p>
+<pre>
+# 'Node': {'Veí': Pes}
+weighted_graph = {
+    'A': {'B': 5, 'C': 2},
+    'B': {'D': 4},
+    'C': {'D': 9},
+    'D': {}
+}
+
+# Per accedir al pes entre A i B:
+pes = weighted_graph['A']['B']  # Retorna 5
+</pre>
+
+<h3>Com recòrrer un graf</h3>
+<p>Depenent de què busques, faràs servir un algorisme o un altre. Els dos més famosos són:</p>
+<ul>
+  <li><strong>BFS (Breadth-First Search)</strong>: Explora primer els veïns més propers.
+     S'usa una Queue (<code>collections.deque</code>). Ideal per trobar el camí més curt en grafs sense pesos.</li>
+  <li><strong>DFS (Depth-First Search)</strong>: Arriba fins al fons d'una branca abans de tornar enrere. S'usa una Stack (o recursivitat).</li>
+</ul>
+
+<h3>Exemple ràpid de BFS (Cerca en amplada):</h3>
+<pre>
+from collections import deque
+
+def bfs(graph, start_node):
+    visited = set()
+    queue = deque([start_node])
+    visited.add(start_node)
+
+    while queue:
+        vertex = queue.popleft()
+        print(vertex, end=" ")
+
+        for neighbor in graph[vertex]:
+            if neighbor not in visited:
+                visited.add(neighbor)
+                queue.append(neighbor)
+
+bfs(graph, 'A') # Sortida: A B C D
+</pre>
+
+<h3>Exemples de grafs</h3>
+<ul>
+  <li>Xarxes socials</li>
+  <li>Sistemes de navegació</li>
+  <li>Internet</li>
+  <li>Xarxes elèctriques</li>
+  <li>Xarxes de neurones o IA</li>
+  <li>Sistemes d'aigua potable o gas</li>
+</ul>
 
 
 </section>
