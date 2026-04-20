@@ -108,7 +108,8 @@ def suma(a, b):
 
   <h2>8. Mòduls i llibreries</h2>
   <p>Codi ja preparat que es pot reutilitzar per fer tasques més complexes sense haver de programar-les des de zero.</p>
-  <pre><code>import math
+  <pre><code> # Este programa calcula i imprimeix l'arrel quadrada ==   <math>  <msqrt>    <mn>25</mn>  </msqrt></math>
+import math
 print(math.sqrt(25))  # Arrel quadrada de 25</code></pre>
 
 </section>
@@ -172,11 +173,11 @@ if __name__ == "__main__":
  <h3>1. Des del terminal o línia de comandes</h3>
   <p>Obre el terminal i escriu:</p>
   <pre><code>python programa.py
-    # Esta sol ser la forma de cridar a python en un sistema Windows
+# Esta sol ser la forma de cridar a python en un sistema Windows
   </code></pre>
   <p>O si tens Linux</p>
   <pre><code>python3 programa.py
-    # Esta sol ser la forma de cridar a python en un sistema Linux
+# Esta sol ser la forma de cridar a python en un sistema Linux
   </code></pre>
 
 
@@ -388,17 +389,15 @@ pdb.set_trace()</code></pre>
     <p>  <strong>En Python</strong>, no és necessari declarar el tipus d'una variable. Python el dedueix automàticament. Les variables es creen quan es realitza la seva primera assignació.   </p>
      <p class="tips">—Entra a Python i practica—</p>   
   <p>Utilitza python des d'una terminal/cmd, o IDLE</p>   
-   <pre><code>
-          -- Exemple des de cmd, s'obri un cmd i s'executa l'ordre  python
+   <pre><code>==> Exemple des de cmd, s'obri un cmd i s'executa l'ordre  python
 C:\Users\enrique>python
 Python 3.13.1 (tags/v3.13.1:0671451, Dec  3 2024, 19:06:28) [MSC v.1942 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
->>>
-   </code></pre>
+>>>    </code></pre>
    <p>o s'executa la utilitat IDLE </p>
    <img src="imgs/idle.png" alt="eina idle"  width="90%">
 
-   <pre>   
+   <pre>
 x = 10             # Número enter (integer)
 nombre = "Ana"     # Cadena de text (String)
 nombre2 = 'Pedro'  # String amb cometes simples
@@ -415,8 +414,9 @@ b = a
 temp = a
 a = b
 b = temp      </pre>
-<pre>a, b = b, a        # En Python es pot fer intercanvi de valors   
-                        # (sense utilitzar variable temporal !!)   </pre>
+<pre>
+a, b = b, a     # En Python es pot fer intercanvi de valors   
+                # (sense utilitzar variable temporal !!)   </pre>
 
 <hr>
     <p>    Per saber quin tipus de dada té una variable, podem utilitzar la funció <code>type()</code>:     </p>
@@ -452,8 +452,7 @@ del a       </pre>
 SyntaxError: invalid syntax
 
 >>> 5var = 67
-SyntaxError: invalid syntax
-    </pre>
+SyntaxError: invalid syntax      </pre>
     <h2>Paraules Reservades de Python</h2>
 
     <p>
@@ -466,8 +465,7 @@ SyntaxError: invalid syntax
 
     <pre>
 import keyword
-print(keyword.kwlist)
-    </pre>
+print(keyword.kwlist)      </pre>
 
     <p>         Algunes de les paraules reservades de Python inclouen:     </p>
 
@@ -534,11 +532,10 @@ b = None     # Un valor nul     </pre>
     </p>
     
     <pre><code>
-    &gt;&gt;&gt; a = 3332 + 23223 * 23
-    &gt;&gt;&gt; print(a)
-    &gt;&gt;&gt; print(a + 23334)
-    &gt;&gt;&gt; print("Hola, món!")
-    </code></pre>
+&gt;&gt;&gt; a = 3332 + 23223 * 23
+&gt;&gt;&gt; print(a)
+&gt;&gt;&gt; print(a + 23334)
+&gt;&gt;&gt; print("Hola, món!")       </code></pre>
     
     <p>    La funció <code>print()</code> adquireix més sentit quan s’utilitza en un entorn no interactiu, com ara en programes amb extensió <code>.py</code> que s’executen directament des de la línia d’ordres del sistema operatiu.     </p>
     <p class="tips"> <br>==>  A partir d'ací, utilitzem VSCode   <br><br>
@@ -559,13 +556,11 @@ b = None     # Un valor nul     </pre>
      <pre><code>print("Hola ", 33, " mon !")</code></pre>  
 
       <li><strong>Sense salt de línia:</strong></li>   
-    <pre><code>
-    print("Hola", end=" ")
-    print("Món", end="!")       </code></pre>
+    <pre><code>print("Hola", end=" ")
+print("Món", end="!")       </code></pre>
 
     <li><strong>Insertar un salt de línia manualment amb <code>\n</code>:</strong></li>
-    <pre><code>
-    print("Hola\nMón")      </code></pre>
+    <pre><code>print("Hola\nMón")      </code></pre>
     <h3>Exemples</h3>
     <img src="imgs/provaVSCode1.png" alt="VSCode1"  width="45%"> 
     <h3>Personalització amb l'argument <code>sep</code></h3>
@@ -599,17 +594,16 @@ print ( a, 234, 'pepe', sep='>>')
 
     <h3>Exemples de Comentaris:</h3>
 
-    <pre>
-    # Això és un comentari d'una línia, pot anar també darrere de codi
-    x = 10  # Assignació d'un valor a x
+    <pre># Això és un comentari d'una línia, pot anar també darrere de codi
+x = 10  # Assignació d'un valor a x
 
-    """ Això és un comentari 
-    de diverses línies: Comentari Multilinia """
-    y = 20  # Assignació d'un valor a y
+""" Això és un comentari 
+de diverses línies: Comentari Multilinia """
+y = 20  # Assignació d'un valor a y
 
-    ''' Amb tres cometes simples
-    també es poden crear comentaris de diverses línies '''
-    z = 30  # Assignació d'un valor a z  </pre>
+''' Amb tres cometes simples
+també es poden crear comentaris de diverses línies '''
+z = 30  # Assignació d'un valor a z  </pre>
 
     <h3>Alguns usos dels comentaris són:</h3>
     <ul>
@@ -833,14 +827,15 @@ print(constants.PI)</code></pre>
 "Hola"
 3.14
 True
-[1, 2, 3]</code></pre>
+[12, 27, 35]</code></pre>
 
   <h2> Què és una expressió?</h2>
   <p>Una <strong>expressió</strong> és qualsevol combinació de literals, variables i <strong>operadors</strong> que retorna un valor:</p>
   <pre><code>5 + 3
 nom + " és aquí"
-len([1, 2, 3])
-a * b - c</code></pre>
+len([12, 27, 35])
+a * b - c
+len("_Hola _")</code></pre>
 
   
 
@@ -848,14 +843,14 @@ a * b - c</code></pre>
       <p>         Els operadors aritmètics permeten realitzar operacions matemàtiques bàsiques.       </p>
       <pre><code>suma = 10 + 5              # 15
 resta = 10 - 5             # 5
-multiplicació = 10 * 5    # 50
-divisió = 10 / 5          # 2.0  NO ENTERO, decimal o float
-divisió_entera = 10 // 3  # 3 (enter)
-mòdul = 10 % 3           # 1 (resto)
-exponent = 2 ** 3         # 8 (2 elevat a 3) enter
-exponent = 2 ** -3        # 0,125 (2 elevat a -3) float
-exponent = 2.2 ** 3       # 10.64800  float
-exponent = 64 ** 0.5      # 8.0   float  arrel quadrada        </code></pre>
+multiplicació = 10 * 5     # 50
+divisió = 10 / 5           # 2.0  NO ENTERO, decimal o float
+divisió_entera = 10 // 3   # 3 (enter)
+mòdul = 10 % 3             # 1 (resto)
+exponent = 2 ** 3          # 8 (2 elevat a 3) enter
+exponent = 2 ** -3         # 0,125 (2 elevat a -3) float
+exponent = 2.2 ** 3        # 10.64800  float
+exponent = 64 ** 0.5       # 8.0   float  arrel quadrada        </code></pre>
     <p class="alert">Important !!, L'operador / torna sempre un valor del tipus <code>float (decimal)</code> encara que els dos operandos siguen <code>sencers</code> <br>
       i els operadors <code>// i  %</code> tornen valors de tipus <code>sencer (int)</code> si els dos operandos son <code>sencers</code> pero torna <code>float</code> si algun
     operando es <code>float</code></p>
