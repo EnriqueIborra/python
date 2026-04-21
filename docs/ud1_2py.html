@@ -51,9 +51,8 @@ print( 223 + 665 * 67)
 edat = 20</code></pre>
 <img src="imgs/variable1.png" alt="definicio de variable" width="50%" >
 <p>I en les instruccions, es pot posar una variable, però en execució se sustituirà per el seu valor en eixe moment</p>
-<pre><code>
-  print (nom)
-  >>> Anna
+<pre><code>print (nom)
+>>> Anna
 </code></pre>
 
 <h2>3. Entrada i Sortida (Input/Output)</h2>
@@ -108,7 +107,7 @@ def suma(a, b):
 
   <h2>8. Mòduls i llibreries</h2>
   <p>Codi ja preparat que es pot reutilitzar per fer tasques més complexes sense haver de programar-les des de zero.</p>
-  <pre><code> # Este programa calcula i imprimeix l'arrel quadrada ==   <math>  <msqrt>    <mn>25</mn>  </msqrt></math>
+  <pre><code># Este programa calcula i imprimeix l'arrel quadrada ==>   <math>  <msqrt>    <mn>25</mn>  </msqrt></math>
 import math
 print(math.sqrt(25))  # Arrel quadrada de 25</code></pre>
 
@@ -397,7 +396,7 @@ Type "help", "copyright", "credits" or "license" for more information.
    <p>o s'executa la utilitat IDLE </p>
    <img src="imgs/idle.png" alt="eina idle"  width="90%">
 
-   <pre>
+   <pre>   
 x = 10             # Número enter (integer)
 nombre = "Ana"     # Cadena de text (String)
 nombre2 = 'Pedro'  # String amb cometes simples
@@ -416,7 +415,7 @@ a = b
 b = temp      </pre>
 <pre>
 a, b = b, a     # En Python es pot fer intercanvi de valors   
-                # (sense utilitzar variable temporal !!)   </pre>
+                        # (sense utilitzar variable temporal !!)   </pre>
 
 <hr>
     <p>    Per saber quin tipus de dada té una variable, podem utilitzar la funció <code>type()</code>:     </p>
@@ -455,20 +454,14 @@ SyntaxError: invalid syntax
 SyntaxError: invalid syntax      </pre>
     <h2>Paraules Reservades de Python</h2>
 
-    <p>
-        Python té un conjunt de paraules reservades que no poden ser utilitzades com a noms de variables, funcions o qualsevol altre identificador. Aquestes paraules tenen un significat especial dins del llenguatge i són part del seu sistema de sintaxi.
-    </p>
-
-    <p>
-        Per a veure quines són les paraules reservades de Python, podem utilitzar el mòdul <code>keyword</code>:
-    </p>
+    <p>         Python té un conjunt de paraules reservades que no poden ser utilitzades com a noms de variables, funcions o qualsevol altre identificador. Aquestes paraules tenen un significat especial dins del llenguatge i són part del seu sistema de sintaxi.     </p>
+    <p>         Per a veure quines són les paraules reservades de Python, podem utilitzar el mòdul <code>keyword</code>:      </p>
 
     <pre>
 import keyword
 print(keyword.kwlist)      </pre>
 
-    <p>         Algunes de les paraules reservades de Python inclouen:     </p>
-
+    <p>Les paraules reservades de Python són:     </p>
     <pre>
 False      await      else       import     pass      None        break
 except     in         raise      True       class     finally     is
@@ -485,9 +478,7 @@ not        with       async      elif       if        or          yield       </
     <p>         Els <strong>literals</strong> són les dades simples que Python és capaç de gestionar:     números o cadenes de text.   </p>
 
     <h3>Números:</h3>
-    <p>
-        Python pot manejar diversos tipus de números:
-    </p>
+    <p>         Python pot manejar diversos tipus de números:     </p>
     <ul>
         <li><strong>Enters</strong> (són números sencers, com 10, -5, 0)</li>
         <li><strong>Decimals</strong> (números amb punt decimal, com 3.14, -0.5, 0.0)</li>
@@ -531,8 +522,7 @@ b = None     # Un valor nul     </pre>
         Per defecte, <code>print()</code> afegeix un salt de línia (<code>\n</code>) al final de cada línia impresa.
     </p>
     
-    <pre><code>
-&gt;&gt;&gt; a = 3332 + 23223 * 23
+    <pre><code>&gt;&gt;&gt; a = 3332 + 23223 * 23
 &gt;&gt;&gt; print(a)
 &gt;&gt;&gt; print(a + 23334)
 &gt;&gt;&gt; print("Hola, món!")       </code></pre>
@@ -841,10 +831,10 @@ len("_Hola _")</code></pre>
 
        <h2>Operadors Aritmètics</h2>
       <p>         Els operadors aritmètics permeten realitzar operacions matemàtiques bàsiques.       </p>
-      <pre><code>suma = 10 + 5              # 15
+      <pre><code>suma = 10 + 5              # La variable suma val 15
 resta = 10 - 5             # 5
 multiplicació = 10 * 5     # 50
-divisió = 10 / 5           # 2.0  NO ENTERO, decimal o float
+divisió = 10 / 5           # 2.0  !!  NO ENTER, SEMPRE DECIMAL (el tipus del resultat)
 divisió_entera = 10 // 3   # 3 (enter)
 mòdul = 10 % 3             # 1 (resto)
 exponent = 2 ** 3          # 8 (2 elevat a 3) enter
@@ -907,14 +897,15 @@ result = (-3) ** 2         # (-3) ** 2 = 9    </code></pre>
     
       <h2>Operadors d'Assignació</h2>
       <p>         Els operadors d'assignació permeten modificar el valor d'una variable de manera concisa.       </p>
-      <pre><code>=    # Assignació
-+=   # x += 1 equivaleix a x = x + 1
--=   # x -= 1 equival a x = x - 1
-*=   # x *= 1 equival a x = x * 1
-/=   # x /= 1 equival a x = x / 1
-//=  # x //= 1 equival a x = x // 1
-%=   # x %= 1 equival a x = x % 1
-**=  # x **= 1 equival a x = x ** 1         </code></pre>
+
+      <pre><code>=    # Assignació  x = 10            Ara x val 10
++=   # x += 8 equival a x = x + 8    Ara x val 18
+-=   # x -= 7 equival a x = x - 7    Ara x val 11
+*=   # x *= 3 equival a x = x * 3    Ara x val 33
+/=   # x /= 3 equival a x = x / 3    Ara x val 11.0
+//=  # x //= 2 equival a x = x // 2  Ara x val 5.0
+%=   # x %= 2 equival a x = x % 2    Ara x val 2.0
+**=  # x **= 3 equival a x = x ** 3  Ara x val 8.0         </code></pre>
     <p>Python no té els operadors <code> ++ </code> ni <code>--</code>  com en C/C++ o Java. Si escrius <code>i++</code> o <code>i--</code>, obtindràs un error de sintaxi</p>
     <p>Aquest disseny és coherent amb la immutabilitat dels ints a Python i evita confusions sobre l’ordre d’avaluació</p>
     
@@ -934,6 +925,30 @@ result = (-3) ** 2         # (-3) ** 2 = 9    </code></pre>
       <pre><code>True and False   # False
 True or False    # True
 not True         # False        </code></pre>
+<p>Les taules de veritat de les operacions booleanes de python són:</p>
+<pre>
+  AND             OR             NOT
+┌───┬───┬───┐  ┌───┬───┬───┐  ┌───┬─────┐
+│ A │ B │AND│  │ A │ B │ OR│  │ A │ NOT │
+├───┼───┼───┤  ├───┼───┼───┤  ├───┼─────┤
+│ 0 │ 0 │ 0 │  │ 0 │ 0 │ 0 │  │ 0 │  1  │
+│ 0 │ 1 │ 0 │  │ 0 │ 1 │ 1 │  │ 1 │  0  │
+│ 1 │ 0 │ 0 │  │ 1 │ 0 │ 1 │  └───┴─────┘
+│ 1 │ 1 │ 1 │  │ 1 │ 1 │ 1 │
+└───┴───┴───┘  └───┴───┴───┘
+</pre>
+
+<!--
+<p>En Python, and i or no sempre retornen True/False, sinó valors:</p>
+<pre>
+0 and 5     # 0
+5 and 10    # 10
+
+0 or 5      # 5    
+</pre>
+<p>Això és diferent d’altres llenguatges.</p>
+-->
+
     <p>Precedència</p>
     <ol>
       <li>not</li>
@@ -956,14 +971,12 @@ True and True → True</pre>
       <p>Exemple de drecera de l'operador <strong>or</strong></p>
       <pre><code>a,b,c= 20,40,50
 <b>c>b or </b> a>b or b>c or b>a  
-# En esta expresió, con c>b és True i tot el que ve darrere son <b>or</b>, 
+# En esta expresió, con c>b és True i el que ve darrere és un  <b>or</b>, 
 # ja no cal avaluar més, perquè el resultat serà True, passe el que passe darrere</code></pre>
 <p>En els <strong>and </strong> passa algo paregut també</p>
 <pre><code><b>c&lt;b and </b> a>b or b>c or b>a  
-# En esta expresió, con c&lt;b és False i tot el que ve darrere son <b>and</b>, 
+# En esta expresió, com c&lt;b és False i el que ve darrere és un <b>and</b>, 
 # ja no cal avaluar més, perquè el resultat serà False, passe el que passe darrere</code></pre>
-
-
 
      <h4>Python permet comparacions encadenades:</h4>
      <pre><code>x = 3
@@ -1062,8 +1075,7 @@ print(saludo)  # Hola mundo     </code></pre>
 
   <h2>Repetició de Strings</h2>
   <p>     La repetició d'una cadena es pot aconseguir mitjançant l'operador de multiplicació.  </p>
-  <pre><code>
-print("Hola" * 3)  # HolaHolaHola     </code></pre>
+  <pre><code>print("Hola" * 3)  # HolaHolaHola     </code></pre>
 
   <h2>Comparació de Strings</h2>
   <p>    Les cadenes es poden comparar utilitzant els operadors de comparació. Es distingeixen les majúscules de les minúscules.   </p>
@@ -1083,15 +1095,15 @@ print ( f"La cadena té una longitud de {x} caràcters ")   </code></pre>
   <pre><code>texto = "Python"
 print(texto[0])  # P
 print(texto[-1])  # n (últim caràcter)   </code></pre>
-<pre><code>#  !!  Però no es pot !!
-texto[0]="p"  # Dona error </code></pre>
+<pre><code>#  !!  Però no es pot fer una assignació a una posició !!
+texto[0]="p"  # 💥 Dona error </code></pre>
  <img src="imgs/string-slicing3.png" alt="acces per slicing" width="50%" class="imatge-dreta">
   <h2>Accés per Slicing (Rebanat)</h2>
   <p>      El slicing permet extreure subcadenes mitjançant un rang d'índexs.  </p>
   <code><pre>print(texto[0:4])  # Pyth (índexs de 0 a 3)
 print(texto[::2])  # Pto (caràcters del 0 al 5 de 2 en 2)
 print(texto[1:4:2])  # yh (caràcters 1 al 3 de 2 en 2)
-print(texto[:3])  # Hol (des del principi fins a l'índex 2)   
+print(texto[:3])  # Pyt (des del principi fins a l'índex 2)   
 print(texto[2:])  # thon (de l'índex 2 fins al final)   
 print(texto[:-2])  # Pyth (des del principi fins al -3)
 print(texto[-3:])  # hon (del -3 fins al final)  </code></pre>
