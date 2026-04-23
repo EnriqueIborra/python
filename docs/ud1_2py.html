@@ -38,8 +38,9 @@
 <h1>Identificació dels elements d'un programa informàtic</h1>
 <p> Identificar els elements d'un programa informàtic és fonamental per entendre com es construeixen i com funcionen. 
   A continuació tens una explicació clara i estructurada dels principals elements d'un programa informàtic:</p>
+
 <h2>1. Instruccions</h2>
-  <p>Les instruccions són les ordres que el programa dóna a l'ordinador perquè faci una acció concreta, com per exemple mostrar un missatge o un càlcul per pantalla.</p>
+  <p>Les instruccions són les ordres que el programa dóna a l'ordinador perquè execute una acció concreta, com per exemple mostrar un missatge o un càlcul per pantalla.</p>
   <pre><code>print("Hola, món!")
 >>> Hola, món!
 print( 223 + 665 * 67)  
@@ -50,12 +51,21 @@ print( 223 + 665 * 67)
   <pre><code>nom = "Anna"
 edat = 20</code></pre>
 <img src="imgs/variable1.png" alt="definicio de variable" width="50%" >
-<p>I en les instruccions, es pot posar una variable, però en execució se sustituirà per el seu valor en eixe moment</p>
+<p>En les instruccions, es pot posar una variable, però en execució se sustituirà per el seu valor en eixe moment</p>
 <pre><code>print (nom)
 >>> Anna
 </code></pre>
 
-<h2>3. Entrada i Sortida (Input/Output)</h2>
+  <h2>3. Tipus de dades</h2>
+  <p>Dades que pot gestionar un programa:</p>
+  <ul>
+    <li>Números: <code>int</code>, <code>float</code></li>
+    <li>Text: <code>str</code></li>
+    <li>Valors booleans: <code>True</code> / <code>False</code></li>
+    <li>Llistes, diccionaris, conjunts, etc. (estructures més avançades)</li>
+  </ul>
+
+<h2>4. Entrada i Sortida (Input/Output)</h2>
   <ul>
     <li><strong>Entrada:</strong> Permet rebre dades de l'usuari.</li>
     <li><strong>Sortida:</strong> Mostra resultats per pantalla.</li>
@@ -63,16 +73,15 @@ edat = 20</code></pre>
   <pre><code>nom = input("Com et dius? ")
 print("Hola, " + nom)</code></pre>
 
-  <h2>4. Tipus de dades</h2>
-  <p>Dades que pot gestionar un programa:</p>
-  <ul>
-    <li>Números: <code>int</code>, <code>float</code></li>
-    <li>Text: <code>str</code></li>
-    <li>Booleans: <code>True</code> / <code>False</code></li>
-    <li>Llistes, diccionaris, conjunts, etc. (estructures més avançades)</li>
-  </ul>
+  <h2>5. Comentaris</h2>
+  <p>O Documentació del codi</p>
+  <p>Text que s'inclou al codi per explicar què fa, però <strong>no s'executa</strong>.</p>
+  <pre><code># Aquesta funció suma dos nombres
+def suma(a, b):
+    return a + b</code></pre>
 
-  <h2>5. Estructures de control</h2>
+
+  <h2>6. Estructures de control</h2>
   <p>Permeten <strong>controlar el flux d'execució</strong> del programa:</p>
   <p>Hi ha part del codi que s'executa i part que no</p>
   <ul>
@@ -89,7 +98,7 @@ else:
   <pre><code>for i in range(5):
     print(i)</code></pre>
 
-  <h2>6. Funcions</h2>
+  <h2>7. Funcions</h2>
   <p>Les funcions són blocs de codi reutilitzables que realitzen una tasca concreta.</p>
   <pre><code>def saludar(nom):
     print("Hola, " + nom + "!  Soc el teu programa de python. Que passes un bon dia !!")
@@ -98,13 +107,6 @@ saludar("Pau")
 saludar("Miguel")
 saludar("Sandra")</code></pre>
  
-  <h2>7. Comentaris</h2>
-  <p>O Documentació del codi</p>
-  <p>Text que s'inclou al codi per explicar què fa, però <strong>no s'executa</strong>.</p>
-  <pre><code># Aquesta funció suma dos nombres
-def suma(a, b):
-    return a + b</code></pre>
-
   <h2>8. Mòduls i llibreries</h2>
   <p>Codi ja preparat que es pot reutilitzar per fer tasques més complexes sense haver de programar-les des de zero.</p>
   <pre><code># Este programa calcula i imprimeix l'arrel quadrada ==>   <math>  <msqrt>    <mn>25</mn>  </msqrt></math>
@@ -122,7 +124,7 @@ print(34456 + 23345 )   </code></pre>
   <p>Esta sera la forma en que treballarem en esta unitat</p>
   <h2>Estructura d'un programa</h2>
   <p>Encara que en Python, un programa pot ser una sola instrucció, sense encapçalament, ni res més, 
-    l'estructura bàsica d'un programa en Python sol seguir un esquema senzill i clar. A continuació et presento una estructura 
+    l'estructura bàsica d'un programa en Python sol seguir un esquema senzill i clar. A continuació es presenta una estructura 
     típica d'un programa Python ben organitzat</p>
     <p class="alert">Important !!, no deixar espais en blanc al principi de les instruccions (si no son indentacions)</p>
     <pre><code>
@@ -257,7 +259,7 @@ python hello.py → quan l'executes, el sistema crea un procés
 
 
   <h2>Depuració de programes</h2>
-  <p>La depuració (o debugging) d'un programa en Python consisteix en el procés de localitzar i corregir errors (bugs) en el codi perquè funcioni correctament.</p>
+  <p>La depuració (o debugging) d'un programa en Python consisteix en el procés de localitzar i corregir errors (bugs) en el codi perquè funcione correctament.</p>
   <h3> Eines i tècniques de depuració</h3>
 
   <h4>1. Impressions (<code>print</code>)</h4>
@@ -282,7 +284,7 @@ pdb.set_trace()</code></pre>
 
   <h3> Objectiu de la depuració</h3>
   <ul>
-    <li>Que el programa funcioni correctament</li>
+    <li>Que el programa funcione correctament</li>
     <li>Que sigua estable en situacions imprevistes</li>
     <li>Que sigua fàcil de mantenir</li>
   </ul>
@@ -405,7 +407,8 @@ b = None           # Valor nul, absència de valor
 a = b = c = 100    # Assignació múltiple, un sol valor
 userAge, userName = 30, 'Pedro'   # Assignació múltiple, múltiples valors
 a, b = 23, 67      # Assignació múltiple   </pre>
-<pre>a = b  
+<pre># Intercanvi de valors entre dos variables
+a = b  
 b = a 
 💥 No funciona, es perd un valor !!</pre>
  <pre># intercanvi típic de dos variables 
@@ -419,10 +422,9 @@ a, b = b, a     # En Python es pot fer intercanvi de valors
 <hr>
     <p>    Per saber quin tipus de dada té una variable, podem utilitzar la funció <code>type()</code>:     </p>
     <pre>
-type(x)             # Ens diu el tipus actual de la variable
-del v   o  del(v)   # Deixa la variable lliure, sense tipus ni valor      </pre>
-    <p>         Exemple en Python:
-    </p>
+type(x)             # Ens diu el tipus actual de la variable   </pre>
+
+    <p>      Exemple en Python:     </p>
     <pre>
 $ python3
 >>> x = 10
@@ -432,8 +434,9 @@ $ python3
 &lt;class 'int'>      </pre>
 <hr>
     <p>  Amb <code>del(a)</code> es deixa de fer servir (d'existir en memòria) una variable (també amb <code>del a</code>).     </p>
-    <pre>del(a)
-del a       </pre>
+    <pre>del(a)          
+del a           </pre>
+
 
 
     <h2>Regles per als Noms de Variables (Identificadors)</h2>
@@ -469,7 +472,7 @@ def        from       nonlocal   while      assert    del         global
 not        with       async      elif       if        or          yield       </pre>
 
     <p> Aquestes paraules no poden ser utilitzades com a noms de variables, ja que tenen un significat especial en Python.     </p>
-    <p>⚠️ Compte: or ≠ OR  , False ≠ FALSE , etc....</p>
+    <p>⚠️ Compte ⚠️: or ≠ OR  , False ≠ FALSE , etc....</p>
     
     <h2>Assignació de Variables i Literals en Python</h2>
 
@@ -851,7 +854,27 @@ exponent = 64 ** 0.5       # 8.0   float  arrel quadrada        </code></pre>
     <p class="alert">Important !!, L'operador / torna sempre un valor del tipus <code>float (decimal)</code> encara que els dos operandos siguen <code>sencers</code> <br>
       i els operadors <code>// i  %</code> tornen valors de tipus <code>sencer (int)</code> si els dos operandos son <code>sencers</code> pero torna <code>float</code> si algun
     operando es <code>float</code></p>
-    <h3>Precedència</h3>
+
+      <h3>Problemes de Precisió amb Nombres Decimals (float)</h3>
+      <p>          A causa de la representació interna dels nombres decimals, es poden obtenir resultats poc precisos en algunes operacions.       </p>
+      <pre><code>a = 0.1
+b = 0.2
+a + b    # 0.30000000000000004        </code></pre>
+    <p>En general, qualsevol fracció que en base 10 és "neta" (com 0.1 o 0.2) pot ser problemàtica, perquè en base 2 són fraccions periòdiques infinites, i Python les talla a una aproximació.</p>
+    <p>Aquest problema no es produeix en totes les operacions, però és important tenir-ho en compte. Per a comparar aquests valors de manera precisa, es pot utilitzar <code>math.isclose()</code>.       </p>
+    <pre><code>import math
+math.isclose(0.1 + 0.2, 0.3)  # True        </code></pre>
+    <p>O intentar salvar el problema utilitzant  <code>round()</code></p>
+    <pre><code>print (round(0.1 + 0.2, 2) )</code></pre>
+  <!--  <p>Una altra forma d'evitar este problema es utilitzar Biblioteques específiques de Decimals o Fraccions</p>
+    <pre><code>from decimal import Decimal
+Decimal("0.1") + Decimal("0.2")   # Decimal('0.3')     </code></pre>
+   <pre><code>from fractions import Fraction
+Fraction(1, 10) + Fraction(2, 10)   # Fraction(3, 10)
+</code></pre>--> 
+
+
+   <hr> <h2>Precedència</h2>
      <table border="1" cellpadding="8" cellspacing="0">
     <thead>
       <tr>
@@ -919,7 +942,7 @@ del(x) # La variable <code>x</code> ja no existeix en memòria    </code></pre>
     <p>Aquest disseny és coherent amb la immutabilitat dels ints a Python i evita confusions sobre l'ordre d'avaluació</p>
     
       <h2>Operadors de Comparació</h2>
-      <p>         Els operadors de comparació s'utilitzen per comparar dos valors.       </p>
+      <p> Els operadors de comparació s'utilitzen per comparar dos valors. El resultat és o be <code>True</code> o <code>False</code>   </p>
       <pre><code>5 == 5    # True (igual)     ¡¡  el == no és el mateix que el = !!
 5 != 3    # True (diferent)
 5 < 10    # True (menor que)
@@ -928,24 +951,7 @@ del(x) # La variable <code>x</code> ja no existeix en memòria    </code></pre>
 5 >= 10   # False (major o igual que)       </code></pre>
     <p class="alert">En Python, l'operador <> era usat com a operador de desigualtat (com !=) en versions antigues de Python (com Python 2).
     L'ús de <> ja no és vàlid i donarà un error de sintaxi. Per comparar desigualtats, s'utilitza només <code>!=</code></p>
-   <p>--</p>
-         <h2>Problemes de Precisió amb Nombres Decimals</h2>
-      <p>          A causa de la representació interna dels nombres decimals, es poden obtenir resultats poc precisos en algunes operacions.       </p>
-      <pre><code>a = 0.1
-b = 0.2
-a + b    # 0.30000000000000004        </code></pre>
-    <p>En general, qualsevol fracció que en base 10 és "neta" (com 0.1 o 0.2) pot ser problemàtica, perquè en base 2 són fraccions periòdiques infinites, i Python les talla a una aproximació.</p>
-    <p>Aquest problema no es produeix en totes les operacions, però és important tenir-ho en compte. Per a comparar aquests valors de manera precisa, es pot utilitzar <code>math.isclose()</code>.       </p>
-    <pre><code>import math
-math.isclose(0.1 + 0.2, 0.3)  # True        </code></pre>
-    <p>O intentar salvar el problema utilitzant  <code>round()</code></p>
-    <pre><code>print (round(0.1 + 0.2, 2) )</code></pre>
-  <!--  <p>Una altra forma d'evitar este problema es utilitzar Biblioteques específiques de Decimals o Fraccions</p>
-    <pre><code>from decimal import Decimal
-Decimal("0.1") + Decimal("0.2")   # Decimal('0.3')     </code></pre>
-   <pre><code>from fractions import Fraction
-Fraction(1, 10) + Fraction(2, 10)   # Fraction(3, 10)
-</code></pre>--> 
+  
 
     <hr><img src="imgs/boolean-gates.png" alt="portes-logiques" width="40%" class="imatge-dreta">
       <h1>Operadors Lògics</h1>
@@ -990,16 +996,18 @@ not True         # False        </code></pre>
 
 -->
 
-    <p>Precedència</p>
+    <p>Precedència dels operadors lògics</p>
     <ol>
       <li>not</li>
       <li>and</li>
       <li>or</li>
     </ol>
-    <p class="alert">La precedència de les comparacions està per baix dels operadors aritmètics (+, -, *, /, etc.) i per damunt dels operadors lògics (not, and, or). </p>
+    <p class="alert">Precedència entre tipus d'operadors: 1. Operadors aritmètics. 2 Operadors de comparació. 3. Operadors lògics.    </p>
     <p>Exemple</p>
     <pre><code>x = 3
-print(x + 2 > 4 and x < 10)  </code></pre>
+print(x + 2 > 4 and x < 10) 
+#    No és habitual imprimir el resultat d'una operació lògica o de comparació
+#    És més normal usar-la en un if o en un while (pròxima unitat) </code></pre>
     <pre>S'avalua així: 
 x + 2 → 5
 5 > 4 → True
