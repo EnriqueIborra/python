@@ -248,3 +248,17 @@ body.dark-mode .tips {
   background: #84b196;
   border-left: 6px solid #27ae60;
 }
+
+details[open] {
+  background-color: #adf5a2;
+  margin-bottom: 8px;
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+summary {
+  background-color: #adf5a2;
+  cursor: pointer;
+  font-weight: bold;
+}

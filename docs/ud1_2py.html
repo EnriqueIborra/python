@@ -624,12 +624,16 @@ z = 30  # Assignació d'un valor a z  </pre>
             <li><strong>Octal:</strong> Anteposant <code>0o</code>. Exemples: <code>0o546</code></li>
             <li><strong>Hexadecimal:</strong> Anteposant <code>0x</code>. Exemples: <code>0xf9af9d</code></li>
         </ul>
-        <!--En Python es poden usar nombres enters mooooolt llargs , sense perdre cap xifra significativa
-        a = 993847633984736625241320373654847362451325364875858574636325444313245252555524442
-        b = 233458467452542536453542415384969685746465787688868857646456353444232312313323233 
-        c = a + b   d = a * b -->
+
+        <details>
+          <summary>Ampliació</summary>
+          <p>En Python es poden usar nombres enters mooooolt llargs , sense perdre cap xifra significativa</p>
+          <pre>a = 993847633984736625241320373654847362451325364875858574636325444313245252555524442
+b = 233458467452542536453542415384969685746465787688868857646456353444232312313323233 
+c = a + b   d = a * b</pre>
+        </details>        
         
-        <p>Els <strong>números reals</strong> (amb decimals), en python <strong>float</strong>, es representen separant la part entera de la decimal amb un punt <code>.</code>:</p>
+        <p>Els <strong>números reals</strong> (amb decimals), en python <strong>float</strong>, es representen separant la part sencera de la decimal amb un punt <code>.</code> </p>
         <pre><code>123.50    0.56    .56    12.    12.00</code></pre>
         <p>També poden usar notació científica:</p>
         <pre><code>1.2e3     5e-2</code></pre>
@@ -870,18 +874,26 @@ a + b    # 0.30000000000000004        </code></pre>
 math.isclose(0.1 + 0.2, 0.3)  # True        </code></pre>
     <p>O intentar salvar el problema utilitzant  <code>round()</code></p>
     <pre><code>print (round(0.1 + 0.2, 2) )</code></pre>
-  <!--  <p>Una altra forma d'evitar este problema es utilitzar Biblioteques específiques de Decimals o Fraccions</p>
 
-    <pre><code>from decimal import Decimal
+    <details>
+      <summary>Ampliació</summary>
+ <p>Una altra forma d'evitar este problema es utilitzar Biblioteques específiques de Decimals o Fraccions</p>
+
+<pre><code>from decimal import Decimal
 Decimal("0.1") + Decimal("0.2")   # Decimal('0.3')     </code></pre>
    <pre><code>from fractions import Fraction
 Fraction(1, 10) + Fraction(2, 10)   # Fraction(3, 10)
 </code></pre>
 
+<pre>
 from decimal import Decimal, getcontext  
-getcontext().prec = 50    # La precisió per defecte és 28, però es pot ampliar....
+getcontext().prec = 50  # La precisió per defecte és 28, però es pot ampliar.... 
+                      # La precisió abarca les dos parts del punt decimal (sencera+decimal) </pre>
 
+    </details>
+  <!-- 
 --> 
+
 
 
    <hr> <h2>Precedència</h2>
@@ -982,19 +994,11 @@ not True         # False        </code></pre>
 └───┴───┴───┘  └───┴───┴───┘
 </code></pre>
 
-<!--
-<p>En Python, and i or no sempre retornen True/False, sinó valors:</p>
-<pre>
-0 and 5     # 0
-5 and 10    # 10
-
-0 or 5      # 5    
-</pre>
-<p>Això és diferent d'altres llenguatges.</p>
--->
-
-<!-- Altres taules de veritat (truth tables) son la XOR , i les taules universals NAND i NOR 
- XOR           
+<details>
+  <summary>Ampliació</summary>
+ <p>Altres taules de veritat (truth tables) son la XOR , i les taules universals NAND i NOR </p> 
+<pre><code>
+XOR           
 ┌───┬───┬───┐  
 │ A │ B │XOR│  
 ├───┼───┼───┤  
@@ -1003,8 +1007,21 @@ not True         # False        </code></pre>
 │ 1 │ 0 │ 1 │  
 │ 1 │ 1 │ 0 │  
 └───┴───┴───┘ 
+</code></pre>
+ 
+</details>
 
--->
+<details>
+  <summary>Ampliació  </summary>
+ <p>En Python, and i or no sempre retornen True/False, sinó valors:</p>
+<pre>
+0 and 5     # 0
+5 and 10    # 10
+
+0 or 5      # 5    
+</pre>  
+<p>Això és diferent d'altres llenguatges.</p>
+</details>
 
     <p>Precedència dels operadors lògics</p>
     <ol>
@@ -1226,30 +1243,31 @@ print(type(resultat))      # &lt;class 'float'&gt;</code></pre>
     <li><code>str()</code> - converteix a cadena de text</li>
     <li><code>bool()</code> - converteix a booleà (<code>True</code> o <code>False</code>)</li>
   </ul>
-  <!-- octal binari i hexadecimal
-      bin(n)  oct(n)   hex(n)  converteixen a string  posant 0x 0b 0o  
-      
-      també en format()
-      binari = format(n, 'b')
-      octal = format(n, 'o')
-      hexadecimal = format(n, 'x')
 
-      i amb f-strings
-      print(f"{n:b}")  # binari
-      print(f"{n:o}")  # octal
-      print(f"{n:x}")  # hexadecimal
+  <details>
+<summary>Ampliació</summary>
+<p>octal binari i hexadecimal</p> 
+<pre><code>bin(n)  oct(n)   hex(n)  converteixen a string  posant 0x 0b 0o  </code></pre>
 
-   Per convertir de binari, octal o hexadecimal a enter (int) en Python, 
-   s’utilitza la funció integrada int() amb dos arguments:   
+<p>també en format() , indicant la base</p>
+<pre><code>binari = format(n, 'b')
+octal = format(n, 'o')
+hexadecimal = format(n, 'x') </code></pre>
 
-   int(string, base)
-   funciona tant en "101010" com en "0b101010", i en octal i hexadecimal també
--->
+<p>i amb f-strings</p>
+<pre><code>print(f"{n:b}")  # binari
+print(f"{n:o}")  # octal
+print(f"{n:x}")  # hexadecimal
+</code></pre>
 
+   <p>      Per convertir de binari, octal o hexadecimal a enter (int) en Python,      s’utilitza la funció integrada int() amb dos arguments:    </p>
 
+   <pre><code>int(string, base)
+funciona tant en "101010" com en "0b101010", i en octal i hexadecimal també     </code></pre>
+  </details>
+  
   <h2> Exemples:</h2>
- 
-  <h3> De cadena a nombre</h3>
+   <h3> De cadena a nombre</h3>
   <pre><code>numero = int("10")         # ara és 10 (int)
 decimal = float("3.14")    # ara és 3.14 (float)</code></pre>
 
