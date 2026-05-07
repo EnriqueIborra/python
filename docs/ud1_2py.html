@@ -631,12 +631,18 @@ z = 30  # Assignació d'un valor a z  </pre>
           <pre>a = 993847633984736625241320373654847362451325364875858574636325444313245252555524442
 b = 233458467452542536453542415384969685746465787688868857646456353444232312313323233 
 c = a + b   d = a * b</pre>
+            <p>Python utilitza una implementació d’enters de mida variable. Els nombres creixen dinàmicament segons calga.
+L’únic límit real és: la memòria disponible del sistema i el temps de càlcul</p>
         </details>        
         
-        <p>Els <strong>números reals</strong> (amb decimals), en python <strong>float</strong>, es representen separant la part sencera de la decimal amb un punt <code>.</code> </p>
+        <p>Els <strong>números reals</strong> (amb decimals), en python, <strong>float</strong>, es representen separant la part sencera de la decimal amb un punt <code>.</code> </p>
         <pre><code>123.50    0.56    .56    12.    12.00</code></pre>
         <p>També poden usar notació científica:</p>
         <pre><code>1.2e3     5e-2</code></pre>
+        <details>
+          <summary>Ampliació</summary>
+          <p>❗ Diferència important: <strong>float</strong> té precisió limitada (~15-17 dígits)</p>
+        </details>
         
         <p>Els <strong>números complexos</strong> (amb part real i imaginària) s'escriuen amb una <code>j</code> o <code>J</code> al final de la part imaginària:</p>
         <pre><code>1+2j     8+15J</code></pre>
@@ -1321,11 +1327,15 @@ import os   # Esta instrucció sols es posa una vegada al principi del programa
 os.system('clear')  # Esta instrucció es posarà 
                     # cada vegada que necessitem "netejar" la pantalla      </pre>
   <pre># Generar un nombre aleatori
-from random import randrange  # Esta instrucció sols es posa una vegada  al principi del programa
+import random    # Esta instrucció sols es posa una vegada  al principi del programa
 
-numaleatori = randrange(1,21)  # Esta instrucció es posarà 
-                          # cada vegada que necessitem generar un nombre aleatori 
-          # Esta, per exemple, genera un nombre entre 1 i 21     </pre>
+num2 = random.randint(1,3)  # cada vegada que necessitem generar un nombre aleatori 
+                    # Esta, per exemple, genera un nombre entre 1 i 3
+ 
+num3 = random.choice([1, 2, 3])  # Esta escull un valor de entre molts  </pre>
+
+<details>
+  <summary>Avançat</summary>
 <pre># Neteja consola millorat
 import os  # Esta instrucció sols es posa una vegada al principi del programa
 def neteja():  # Esta instrucció sols es posa una vegada al principi del programa
@@ -1337,6 +1347,10 @@ def neteja():  # Esta instrucció sols es posa una vegada al principi del progra
 # En el cos del programa
 neteja()   # Esta instrucció es posarà 
            # cada vegada que necessitem "netejar" la pantalla    </pre>
+
+
+</details>
+
 
 </section>
 
