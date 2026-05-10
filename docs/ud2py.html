@@ -425,9 +425,12 @@ print('=====  Fin del programa  ======')</code></pre>
          Aquestes poden ser :</p>
         <li><strong>Funcions incorporades</strong> (Built-In Functions) que Python proporciona per realitzar 
             operacions comunes com càlculs matemàtics, conversions de tipus de dades, obtenció d'informació del sistema, entre altres.</li>
-        <li><strong>Funcions personalitzades</strong> Funcions definides per l'usuari</li>
-    <h1>Funcions incorporades</h1>
-    <h2>Conversió de tipus</h2>
+        <li>Funcions de la biblioteca standard de Python : <strong><code>import</code></strong></li>
+        <li>Funcions de paquets de tercers (“third-party packages”) : <strong><code> pip install  +  import</code></strong></li>
+        <li><strong>Funcions personalitzades</strong> Funcions definides per l'usuari : <strong><code>def</code></strong></li>
+    <h1>Funcions incorporades (built-in)</h1>
+    <p>En Python, un built-in és un element que està disponible automàticament quan arranca l’intèrpret</p>
+    <h2>Funcions de Conversió de tipus</h2>
     <p>Python inclou diverses funcions per convertir entre diferents tipus de dades:</p>
     <ul>
         <li><code>int()</code>: Converteix a un enter. <br>
@@ -506,6 +509,11 @@ bool("False")  # True 😅 </code></pre>
         <li><code>rjust(width)</code>: Justifica la cadena a la dreta en un camp de llargada especificada. <code>'hola'.rjust(8)</code> → <strong>'&nbsp;&nbsp;&nbsp;&nbsp;hola'</strong></li>
     </ul>
 
+  <hr><hr>  <h1>Funcions de la biblioteca standard de Python</h1>
+    <p>La biblioteca estàndard és el conjunt de mòduls i paquets que venen inclosos oficialment amb Python, però no es poden usar
+        directament (com les funcions "buit-in"). Primer s'ha d'importar el mòdul amb la instrucció <code>import</code>        </p>
+    <pre>#Exemple
+import os      </pre>
     <h2>Nombres aleatoris</h2>
     <p>Els nombres aleatoris són nombres que es generen a l’atzar, és a dir, sense seguir cap patró previsible. 
         Cada nombre té la mateixa probabilitat de sortir, i no es pot saber quin serà el següent.</p>
@@ -523,9 +531,9 @@ bool("False")  # True 😅 </code></pre>
     </ul>
     <p>Els ordinadors, en realitat, solen generar nombres pseudoaleatoris: semblen aleatoris, però provenen de càlculs matemàtics.</p>
     <pre># En python : exemple
-from random import randrange
-x=randrange(1,21)   
-   # genera un nombre aleatori entre 1 i 20 (inclosos)        </pre>
+import random
+x=random.randint(1,21)   
+   # genera un nombre aleatori entre 1 i 21 (inclosos)        </pre>
 
     <h2>Dates</h2>
     <p>Per poder treballar amb dates en python es necessita importar funcions específiques. La primera que usarem per obtenir
@@ -551,6 +559,153 @@ print(ara.second)  </pre>
     <p>Exemple d'ús:</p>
     <pre><code>eval('x+1')</code></pre>
     <p>Aquesta funció interpreta i executa la cadena <code>'x+1'</code>, avaluant-la com a codi Python.</p> -->
+
+        <h5>• <code>math</code>: Funcions matemàtiques.</h5>
+        <pre><code>import math
+    print(math.sqrt(16))  # arrel quadrada → 4.0
+    print(math.pi)        # π
+    # altres funcions com:   sin, cos, tan, e, log, pow, factorial...  </code></pre>
+    
+        <h5>• <code>os</code>: Operacions del sistema operatiu.</h5>
+        <pre><code>import os
+    print(os.getcwd())  # Obtén el directori actual.
+    # altres funcions: chdir('..')  listdir() mkdir() ....   </code></pre>
+    
+        <h5>• <code>random</code>: Generació de números aleatoris.</h5>
+        <pre><code>import random
+print(random.randint(1, 10))  # Número aleatori entre 1 i 10.
+random.uniform(1, 10)  # float entre 1 i 10
+random.random()        # float entre 0.0 i 1.0
+
+llista = [1, 2, 3, 4, 5]
+random.choice(llista)        # element aleatori
+random.choices(llista, k=3)  # diversos elements (pot repetir)
+random.sample(llista, 3)     # elements únics
+random.shuffle(llista)       # Barrejar llista
+
+# Exemples per a Jocs i simulacions
+dau = random.randint(1, 6)
+moneda = random.choice(["cara", "creu"])  
+</code></pre>
+      
+    <h5>• <code>datetime</code>: Tractament de dates (i hores) en python.</h5>
+        <pre><code>from datetime import datetime, date
+
+avui = date.today()
+ara = datetime.now()
+
+print(avui)  # data actual
+print(avui.year)
+print(avui.month)
+
+print(ara)   # data i hora actual           </code></pre> 
+
+  <h5>• <code>time</code>: Tractament de temps.</h5>
+  <p>El mòdul time és un dels mòduls més bàsics i importants de la biblioteca estàndard de Python. 
+    Permet treballar amb: temps actual, pauses, rellotges del sistema, mesura de temps, timestamps Unix i conversions de dates/hores bàsiques.   </p>
+  <code><pre># Entre altres funcions té la funcio "sleep" 
+    #que permet fer una espera de temps abans d'executar la següent instrucció
+import time 
+
+time.sleep(4)  # 4 segons
+time.sleep(0.25)  # Espera un quart de segon      </pre></code>
+<p>S’utilitza molt per: temporitzadors, jocs, animacions, benchmarks, esperes i automatització.</p>
+
+
+<h3>(Alguns) Mòduls inclosos en la biblioteca estàndard</h3>
+    <ul>
+        <li><strong>os:</strong> Per a interactuar amb el sistema operatiu (crear carpetes, llegir fitxers, etc.).</li>
+        <li><strong>random:</strong> Per generar nombres aleatoris.</li>
+        <li><strong>math:</strong> Proporciona funcions matemàtiques avançades com arrels quadrades, trigonometria, etc.</li>
+        <li><strong>datetime:</strong> Per gestionar dates i hores.</li>
+        <li><strong>time:</strong> Per gestionar esperes, mesura del temps....</li>
+        <li><strong>decimal:</strong> Per a càlculs de precisió elevada, útil en contextos financers.</li>
+        <li><strong>json:</strong> Per llegir i escriure dades en format JSON.</li>
+        <li><strong>re:</strong> Per treballar amb expressions regulars (regex).</li>        
+        <li><strong>sys:</strong> Per accedir a informació del sistema i dels arguments passats al programa.</li>
+        <li><strong>collections:</strong> Ofereix estructures de dades avançades com <code>Counter</code>, <code>deque</code>, <code>defaultdict</code>, etc.</li>
+        <li><strong>itertools:</strong> Funcions per manipular iteradors de forma eficient.</li>
+        <li><strong>sqlite3:</strong> Per gestionar bases de dades SQLite de forma directa en Python.</li>
+    </ul>
+    <p>==> Es poden veure tots els mòduls disponibles amb <code>help()</code> dins de l’intèrpret de Python, i després escriure <code>modules</code>.</p>
+
+
+   <hr><hr> <h1>Funcions de mòduls de Paquets Externs</h1>
+    <p>Els paquets de tercers (“third-party packages”) són llibreries creades per altres desenvolupadors fora del nucli oficial de Python.</p>
+    <p>Normalment: NO venen incloses amb Python, s’instal·len amb pip, amplien les capacitats del llenguatge.</p>
+
+    <h3>Instal·lació de Paquets Externs</h3>
+    <p>Per utilitzar paquets desenvolupats per tercers, es poden instal·lar des del repositori PyPI utilitzant pip:</p>
+    <pre><code>pip3 install nom_del_paquet</code></pre>
+    
+    <h5>Exemple: Instal·lar <code>requests</code> per realitzar sol·licituds HTTP:</h5>
+    <p><code>requests</code> és una de les llibreries més populars de Python per fer peticions HTTP de manera simple. ==><a href="https://pypi.org/project/requests">documentació oficial en PyPI</a></p>
+    <pre><code>import requests
+    response = requests.get("https://example.com")
+    print(response.status_code)</code></pre>
+
+    <h5>Exemple: keyboard</h5>
+     <p> <code>keyboard</code>  és una llibreria de tercers per a Python que permet detectar tecles, crear hotkeys, interceptar el teclat, 
+        simular pulsacions, escoltar esdeveniments globals del teclat.  ==> <a href="https://pypi.org/project/keyboard/">documentació oficial de keyboard</a></p>
+     <code><pre>import keyboard
+
+keyboard.wait("esc")   # El procés espera fins que es polsa la tecla
+
+print("ESC premuda")</pre></code>
+<code><pre>import keyboard
+
+while True:
+    if keyboard.is_pressed("q"):      # En este cas no espera !!
+        print("Q detectada")
+        break</pre></code>
+
+    <h5>Exemple: curses</h5>
+    <p>curses permet controlar completament el terminal: moure el cursor, dibuixar text en qualsevol posició, usar colors,
+crear finestres, llegir tecles especials, actualitzar pantalla sense parpelleig. ==> <a href="https://docs.python.org/3/library/curses.html">documentació oficial curses</a></p>
+<pre><code># En Windows
+pip install windows-curses
+# En linux
+pip install curses
+
+# En el codi python
+import curses
+
+def main(stdscr):
+    stdscr.addstr(0, 0, "Hola món!")
+    stdscr.refresh()
+    stdscr.getch()
+curses.wrapper(main)  </code></pre>
+<!--Alternatives modernes a curses:  textual , rich	, prompt_toolkit , urwid  -->
+
+<h5>Exemple: pygame</h5>
+<p> <code>pygame</code> és una llibreria de tercers per a Python orientada principalment al desenvolupament de:
+videojocs 2D, multimèdia, gràfics interactius, animacions, entrada de teclat/ratolí, so.  == <a href="https://www.pygame.org/docs/">documentació oficial pygame</a></p>
+
+
+
+
+    <h3>Altres biblioteques en Python</h3>
+    
+    <h3>Biblioteques externes populars</h3>
+    <ul>
+        <li><strong>NumPy:</strong> Per a càlculs numèrics ràpids i eficients.</li>
+        <li><strong>Pandas:</strong> Per al tractament de dades tabulars (com taules, fulls de càlcul, etc.).</li>
+        <li><strong>Matplotlib:</strong> Per crear gràfics i visualitzacions bàsiques.</li>
+        <li><strong>Seaborn:</strong> Basada en Matplotlib, permet crear gràfics estadístics atractius i senzills.</li>
+        <li><strong>Scikit-learn:</strong> Llibreria per a aprenentatge automàtic (machine learning).</li>
+        <li><strong>Flask</strong> i <strong>Django:</strong> Frameworks per a desenvolupament web amb Python.</li>
+        <li><strong>Requests:</strong> Per fer peticions HTTP com GET, POST, etc.</li>
+        <li><strong>BeautifulSoup:</strong> Per fer <em>web scraping</em> (extracció d’informació de pàgines web).</li>
+        <li><strong>TensorFlow</strong> i <strong>PyTorch:</strong> Llibreries potents per a intel·ligència artificial i <em>deep learning</em>.</li>
+        <li><strong>Typer:</strong> Per crear interfícies de línia de comandes (CLI) de forma ràpida i elegant.</li>
+        <li><strong>OpenCV:</strong> Per a processament d’imatges i visió artificial.</li>
+        <li><strong>Pillow:</strong> Per a manipulació d’imatges (redimensionar, retallar, etc.).</li>
+        <li>...i moltes més.</li>
+    </ul>
+
+    <p><strong>Nota:</strong> Les biblioteques externes s’instal·len normalment amb <code>pip</code>, per exemple: <code>pip install numpy</code>.</p>
+
+
 
 </section>
 
@@ -972,97 +1127,7 @@ print(restar(5, 3)) # Eixida: 2</code></pre>
         <p>Pots importar submòduls així:</p>
         <pre><code>from mi_paquete.utilidades.herramientas import alguna_funcion</code></pre>
     <hr>
-        <h3>Mòduls i Paquets Estàndard de Python</h3>
-    
-        <p>Python inclou molts mòduls estàndard llestos per utilitzar. Alguns exemples comuns són:</p>
-    
-        <h4>Exemples de mòduls estàndard:</h4>
-    
-        <h5>• <code>math</code>: Funcions matemàtiques.</h5>
-        <pre><code>import math
-    print(math.sqrt(16))  # arrel quadrada → 4.0
-    print(math.pi)        # π
-    # altres funcions com:   sin, cos, tan, e, log, pow, factorial...  </code></pre>
-    
-        <h5>• <code>os</code>: Operacions del sistema operatiu.</h5>
-        <pre><code>import os
-    print(os.getcwd())  # Obtén el directori actual.
-    # altres funcions: chdir('..')  listdir() mkdir() ....   </code></pre>
-    
-        <h5>• <code>random</code>: Generació de números aleatoris.</h5>
-        <pre><code>import random
-print(random.randint(1, 10))  # Número aleatori entre 1 i 10.
-random.uniform(1, 10)  # float entre 1 i 10
-random.random()        # float entre 0.0 i 1.0
 
-llista = [1, 2, 3, 4, 5]
-random.choice(llista)        # element aleatori
-random.choices(llista, k=3)  # diversos elements (pot repetir)
-random.sample(llista, 3)     # elements únics
-random.shuffle(llista)       # Barrejar llista
-
-# Exemples per a Jocs i simulacions
-dau = random.randint(1, 6)
-moneda = random.choice(["cara", "creu"])  
-</code></pre>
-      
-    <h5>• <code>datetime</code>: Tractament de dates (i hores) en python.</h5>
-        <pre><code>from datetime import datetime, date
-
-avui = date.today()
-ara = datetime.now()
-
-print(avui)  # data actual
-print(avui.year)
-print(avui.month)
-
-print(ara)   # data i hora actual           </code></pre> 
-    
-        <h4>Instal·lació de Paquets Externs</h4>
-        <p>Per utilitzar paquets desenvolupats per tercers, els pots instal·lar des del repositori PyPI utilitzant pip:</p>
-        <pre><code>pip3 install nom_del_paquet</code></pre>
-    
-        <h5>Exemple: Instal·lar <code>requests</code> per realitzar sol·licituds HTTP:</h5>
-        <pre><code>import requests
-    response = requests.get("https://example.com")
-    print(response.status_code)</code></pre>
-
-    <h2>Altres biblioteques en Python</h2>
-
-    <h3>Incloses en la biblioteca estàndard</h3>
-    <ul>
-        <li><strong>os:</strong> Per a interactuar amb el sistema operatiu (crear carpetes, llegir fitxers, etc.).</li>
-        <li><strong>sys:</strong> Per accedir a informació del sistema i dels arguments passats al programa.</li>
-        <li><strong>json:</strong> Per llegir i escriure dades en format JSON.</li>
-        <li><strong>datetime:</strong> Per gestionar dates i hores.</li>
-        <li><strong>math:</strong> Proporciona funcions matemàtiques avançades com arrels quadrades, trigonometria, etc.</li>
-        <li><strong>decimal:</strong> Per a càlculs de precisió elevada, útil en contextos financers.</li>
-        <li><strong>random:</strong> Per generar nombres aleatoris.</li>
-        <li><strong>re:</strong> Per treballar amb expressions regulars (regex).</li>
-        <li><strong>collections:</strong> Ofereix estructures de dades avançades com <code>Counter</code>, <code>deque</code>, <code>defaultdict</code>, etc.</li>
-        <li><strong>itertools:</strong> Funcions per manipular iteradors de forma eficient.</li>
-        <li><strong>sqlite3:</strong> Per gestionar bases de dades SQLite de forma directa en Python.</li>
-    </ul>
-    <p>Pots veure tots els mòduls disponibles amb <code>help()</code> dins de l’intèrpret de Python, i després escriure <code>modules</code>.</p>
-
-    <h3>Biblioteques externes populars</h3>
-    <ul>
-        <li><strong>NumPy:</strong> Per a càlculs numèrics ràpids i eficients.</li>
-        <li><strong>Pandas:</strong> Per al tractament de dades tabulars (com taules, fulls de càlcul, etc.).</li>
-        <li><strong>Matplotlib:</strong> Per crear gràfics i visualitzacions bàsiques.</li>
-        <li><strong>Seaborn:</strong> Basada en Matplotlib, permet crear gràfics estadístics atractius i senzills.</li>
-        <li><strong>Scikit-learn:</strong> Llibreria per a aprenentatge automàtic (machine learning).</li>
-        <li><strong>Flask</strong> i <strong>Django:</strong> Frameworks per a desenvolupament web amb Python.</li>
-        <li><strong>Requests:</strong> Per fer peticions HTTP com GET, POST, etc.</li>
-        <li><strong>BeautifulSoup:</strong> Per fer <em>web scraping</em> (extracció d’informació de pàgines web).</li>
-        <li><strong>TensorFlow</strong> i <strong>PyTorch:</strong> Llibreries potents per a intel·ligència artificial i <em>deep learning</em>.</li>
-        <li><strong>Typer:</strong> Per crear interfícies de línia de comandes (CLI) de forma ràpida i elegant.</li>
-        <li><strong>OpenCV:</strong> Per a processament d’imatges i visió artificial.</li>
-        <li><strong>Pillow:</strong> Per a manipulació d’imatges (redimensionar, retallar, etc.).</li>
-        <li>...i moltes més.</li>
-    </ul>
-
-    <p><strong>Nota:</strong> Les biblioteques externes s’instal·len normalment amb <code>pip</code>, per exemple: <code>pip install numpy</code>.</p>
 
 </section>
 
