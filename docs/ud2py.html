@@ -187,10 +187,48 @@ match value:
 
   <br><br><hr><hr>
 <img src="imgs/bucle.png" alt="bucles" class="imatge-dreta" width="20%">
-<h1>Bucles (for, while) en Python</h1>
+<h1>Bucles en Python</h1>
     <p>Els bucles són una estructura essencial en la programació que permet repetir un conjunt d'operacions múltiples vegades.</p>
+    <p>Hi ha dos tipus principals de bucles</p>
+    <ul>
+        <li>Bucles WHILE</li>
+        <li>Bubles FOR</li>
+    </ul>
 
-    <h2>1. Bucles <code>for</code></h2>
+
+    <h2>1. Bucles <code>while</code></h2>
+    <p>El bucle <code>while</code> executa una acció (bloc de codi) mentre una condició siga certa (True).</p>
+    <p>El bucle while executa un bloc d’instruccions mentre es compleix una condició determinada. 
+     Abans de cada repetició del bloc, el programa comprova si la condició és certa. Si, en este moment, deixa de complir-se, el bucle finalitza,
+     sino, comença a executar el bloc altra vegada. </p>
+     <p> És especialment útil quan no sabem exactament quantes vegades s’haurà de repetir una acció.</p>
+
+    <pre>while condicio:
+    # codi que es repeteix
+    # poden ser una o més línies
+    # No pot quedarse buit (sense codi)
+    </pre>
+    <ul>Com funciona
+    <li>S'evalua la condició: una expressió que retorna True o False</li>
+    <li>Si és True, el codi del bucle s’executa</li>
+    <li>Quan s'acaba el codi del bucle, es torna a comprovar la condició (salt al while)</li>
+    </ul>
+    
+    <h3>Exemple: Bucles <code>while</code></h3>
+    <pre><code>contador = 0
+while contador < 5:
+    print(f"Contador: {contador}")
+    contador += 1  # Augmenta el contador
+print(f"El contador després d'acabar el while val: {contador}") # Esta instrucció està fora del bucle </code></pre>    
+    <ol> Resum:
+    <li><code>while</code> repeteix codi metre la <code>condicio</code> siga <code>True</code></li>
+    <li>S'ha de vigilar de no crear bucles infinits (incrementar comptador, introduir valors nous cada iteració, etc...)</li>
+    <li>És útil quan no se sap quantes repeticions faran falta (a diferència de <code>for</code> ) </li>
+    </ol>
+    <p>Els bucles <code>for</code> i <code>while</code> són molt útils per repetir accions múltiples vegades i controlar el flux de l'execució dels programes en funció de condicions específiques.</p>
+    <hr>
+
+    <h2>2. Bucles <code>for</code></h2>
     <p>El bucle <code>for</code> <strong>itera</strong> sobre una secuència (com una llista o un rang). Aquí tens alguns exemples:</p>
     
     <h3>Exemple 1: Iteració amb <code>range</code></h3>
@@ -228,34 +266,8 @@ for i in colla:
         <li><strong><code>else</code></strong>: s'executa si el bucle no termina amb un <code>break</code>.</li>
     </ul>
 
-    <h2>2. Bucles <code>while</code></h2>
-    <p>El bucle <code>while</code> executa una acció (bloc de codi) mentre una condició siga certa (True).</p>
-    <pre>while condicio:
-    # codi que es repeteix
-    # poden ser una o més línies
-    # No pot quedarse buit (sense codi)
-    </pre>
-    <ul>Com funciona
-    <li>S'evalua la condició: una expressió que retorna True o False</li>
-    <li>Si és True, el codi del bucle s’executa</li>
-    <li>Quan s'acaba el codi del bucle, es torna a comprovar la condició (salt al while)</li>
-    </ul>
-    
-    <h3>Exemple: Bucles <code>while</code></h3>
-    <pre><code>contador = 0
-while contador < 5:
-    print(f"Contador: {contador}")
-    contador += 1  # Augmenta el contador
-print(f"El contador després d'acabar el while val: {contador}")  </code></pre>    
-    <ol> Resum:
-    <li><code>while</code> repeteix codi metre la <code>condicio</code> siga <code>True</code></li>
-    <li>S'ha de vigilar de no crear bucles infinits (incrementar comptador, introduir valors nous cada iteració, etc...)</li>
-    <li>És útil quan no se sap quantes repeticions faran falta (a diferència de <code>for</code> ) </li>
-    </ol>
-    <p>Els bucles <code>for</code> i <code>while</code> són molt útils per repetir accions múltiples vegades i controlar el flux de l'execució dels programes en funció de condicions específiques.</p>
-    <hr>
 
- <h1> Clàusula <code>else</code> en bucles en Python</h1>
+ <hr> <h1> Clàusula <code>else</code> en bucles en Python</h1>
 
   <p>Aquesta tècnica de fer servir <code>else</code> després d’un bucle <code>while</code> o <code>for</code> en Python s’anomena:</p>
 
@@ -510,10 +522,10 @@ bool("False")  # True 😅 </code></pre>
     </ul>
 
   <hr><hr>  <h1>Funcions de la biblioteca standard de Python</h1>
-    <p>La biblioteca estàndard és el conjunt de mòduls i paquets que venen inclosos oficialment amb Python, però no es poden usar
+    <p>La biblioteca estàndard de Python és el conjunt de mòduls i paquets que venen inclosos oficialment amb Python, però no es poden usar
         directament (com les funcions "buit-in"). Primer s'ha d'importar el mòdul amb la instrucció <code>import</code>        </p>
     <pre>#Exemple
-import os      </pre>
+import os     # Esta instrucció sols es posa una vegada i al principi del codi </pre>
     <h2>Nombres aleatoris</h2>
     <p>Els nombres aleatoris són nombres que es generen a l’atzar, és a dir, sense seguir cap patró previsible. 
         Cada nombre té la mateixa probabilitat de sortir, i no es pot saber quin serà el següent.</p>
@@ -530,13 +542,15 @@ import os      </pre>
         <li>Informàtica i seguretat (contrasenyes, criptografia)</li>
     </ul>
     <p>Els ordinadors, en realitat, solen generar nombres pseudoaleatoris: semblen aleatoris, però provenen de càlculs matemàtics.</p>
-    <pre># En python : exemple
-import random
-x=random.randint(1,21)   
-   # genera un nombre aleatori entre 1 i 21 (inclosos)        </pre>
+    <p>Python porta la biblioteca standard <code><strong>random</strong></code>, on es poden importar funcions per a tractar nombres aleatoris</p>
+    <pre># Exemple
+import random   # Al principi del codi
+
+# Més endavant, en qualsevol lloc del codi, i les vegades que siga necessari..
+x=random.randint(1,21)  # genera un nombre aleatori entre 1 i 21 (inclosos)        </pre>
 
     <h2>Dates</h2>
-    <p>Per poder treballar amb dates en python es necessita importar funcions específiques. La primera que usarem per obtenir
+    <p>Per poder treballar amb dates en python es necessita importar funcions específiques de la biblioteca standard <code><strong>datetime</strong></code>. La primera que usarem per obtenir
         la data actual serà <code><strong>date</strong></code> i es pot vore un exemple de com utilitzar-la    </p>
     <pre>from datetime import date
 
@@ -632,11 +646,11 @@ time.sleep(0.25)  # Espera un quart de segon      </pre></code>
 
    <hr><hr> <h1>Funcions de mòduls de Paquets Externs</h1>
     <p>Els paquets de tercers (“third-party packages”) són llibreries creades per altres desenvolupadors fora del nucli oficial de Python.</p>
-    <p>Normalment: NO venen incloses amb Python, s’instal·len amb pip, amplien les capacitats del llenguatge.</p>
+    <p>Normalment: NO venen incloses amb Python, i abans de poder ser importades i usades, s'han d'instal·lar amb pip.</p>
 
     <h3>Instal·lació de Paquets Externs</h3>
     <p>Per utilitzar paquets desenvolupats per tercers, es poden instal·lar des del repositori PyPI utilitzant pip:</p>
-    <pre><code>pip3 install nom_del_paquet</code></pre>
+    <pre><code>pip3 install nom_del_paquet  o  pip install nom_del_paquet</code></pre>
     
     <h5>Exemple: Instal·lar <code>requests</code> per realitzar sol·licituds HTTP:</h5>
     <p><code>requests</code> és una de les llibreries més populars de Python per fer peticions HTTP de manera simple. ==><a href="https://pypi.org/project/requests">documentació oficial en PyPI</a></p>
@@ -644,7 +658,7 @@ time.sleep(0.25)  # Espera un quart de segon      </pre></code>
     response = requests.get("https://example.com")
     print(response.status_code)</code></pre>
 
-    <h5>Exemple: keyboard</h5>
+<!--   <h5>Exemple: keyboard</h5>
      <p> <code>keyboard</code>  és una llibreria de tercers per a Python que permet detectar tecles, crear hotkeys, interceptar el teclat, 
         simular pulsacions, escoltar esdeveniments globals del teclat.  ==> <a href="https://pypi.org/project/keyboard/">documentació oficial de keyboard</a></p>
      <code><pre>import keyboard
@@ -657,7 +671,9 @@ print("ESC premuda")</pre></code>
 while True:
     if keyboard.is_pressed("q"):      # En este cas no espera !!
         print("Q detectada")
-        break</pre></code>
+        break</pre></code>  
+    # Esta llibreria està marcada com a perillosa, perquè pot injectar codi, i robar polsacions  => keylogger    
+    -->
 
     <h5>Exemple: curses</h5>
     <p>curses permet controlar completament el terminal: moure el cursor, dibuixar text en qualsevol posició, usar colors,
@@ -665,7 +681,7 @@ crear finestres, llegir tecles especials, actualitzar pantalla sense parpelleig.
 <pre><code># En Windows
 pip install windows-curses
 # En linux
-pip install curses
+pip3 install curses
 
 # En el codi python
 import curses
