@@ -92,7 +92,8 @@ else:
     print("Eres menor d'edat")  # aquesta ordre també està indentada        </code></pre>
 
   <h3>Exemple d'ús del condicional if amb elif i  else</h3>      
-      <pre><code>n = float(input("Quina nota has tret en l'examen?"))
+<pre><img src="imgs/if-elif.png" alt="if" class="imatge-dreta" width="30%">
+<code>n = float(input("Quina nota has tret en l'examen?"))
 if n<=4:
     print ("Suspes")
 elif n<=6:
@@ -100,22 +101,22 @@ elif n<=6:
 elif n<=8:
     print("Notable")
 else:
-    print("Excelent")          </code></pre>            
+    print("Excelent")          </code>   </pre>            
 
       
+   
       <h3>Condicional en una sola línia</h3>
-      <p>
-        Si la estructura només té una línia, no és necessari indentar, tot i que és habitual fer-ho així:
-      </p>
-      <pre><code>if edat >= 18: print("Eres major d'edat")        </code></pre>
 
-  
+      <p> Si la estructura no té la part del <code><strong>else</strong></code> i només té una línia, no és necessari indentar, tot i que és habitual fer-ho així:   </p>
+      
+      <pre><img src="imgs/if.png" alt="if" class="imatge-dreta" width="20%"><code># Exemple
+if edat >= 18: print("Eres major d'edat")</code>  </pre>
 
       <h2>Condicional Ternari en Python</h2>
       <p>Aquesta estructura permet assignar un valor a una variable segons una condició en una sola línia de codi, evitant així la necessitat de tenir un bloc de codi amb múltiples línies.</p>   
   
       <h3>Sintaxi:</h3>
-      <pre><code>valor_si_veritable if condició else valor_si_fals</code></pre>
+      <pre><code>variable = valor_si_veritable <strong>if</strong>  condició <strong>else</strong> valor_si_fals</code></pre>
     
       <h3>Exemple:</h3>
       <pre><code>edad = 20  # Exemple d'edat, o edad=input('Dis-me edad:')
@@ -229,12 +230,15 @@ print(f"El contador després d'acabar el while val: {contador}") # Esta instrucc
     <hr>
 
     <h2>2. Bucles <code>for</code></h2>
-    <p>El bucle <code>for</code> <strong>itera</strong> sobre una secuència (com una llista o un rang). Aquí tens alguns exemples:</p>
+    <p>El bucle <code>for</code> <strong>itera</strong> sobre una secuència (com una llista o un rang). Ací tens alguns exemples:</p>
     
     <h3>Exemple 1: Iteració amb <code>range</code></h3>
     <p>La funció <code>range</code> és una eina molt útil a Python per generar una seqüència d'elements. Aquesta seqüència es pot utilitzar en 
       estructures de control de flux com el bucle <code>for</code> per realitzar iteracions de manera eficient.</p>
-<pre><code>for i in range(5):  # Des de 0 fins a 4
+<pre><code>for i in range(5):  
+    print('Hola mon')
+
+for i in range(5):  # Des de 0 fins a 4
     print(i)</code></pre>
 
     <h3>Exemple 2: Iteració amb <code>range</code> amb límits específics</h3>
@@ -252,12 +256,22 @@ print(f"El contador després d'acabar el while val: {contador}") # Esta instrucc
     <h3>Exemple 5: Iteració sobre una cadena (string)</h3>
 <pre><code>for lletra in "Python":
     print(lletra)
+
+# També es pot fer...
+cad = "Python" 
+for pos in range(len(cad)):
+    print(cad[pos])    
 </code></pre>
 
     <h3>Exemple 6: Iteració sobre una llista</h3>
 <pre><code>colla = ["Pikachu", "Charizard", "Bulbasaur"]    # Açò és una llista, que es vorà més endavant
 for i in colla:
-    print(i)</code></pre>
+    print(i)
+
+# També es pot fer...  
+for pos in range(len(colla)):
+    print(colla[pos])
+</code></pre>
 
     <h3>Paraules clau dins d'un bucle <code>for</code>:</h3>
     <ul>
