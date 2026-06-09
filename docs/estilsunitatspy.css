@@ -262,3 +262,13 @@ summary {
   cursor: pointer;
   font-weight: bold;
 }
+
+/* Per a RA*/
+  .ras { 
+     font-size: 1rem;
+       color: #007BFF;
+     float: right;
+     text-align: right  ;
+    margin-right: 15px;
+    margin-left: 30%;
+    margin-bottom: 10px;}
