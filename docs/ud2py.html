@@ -36,6 +36,7 @@
 <main>
 
 <section id="estructures">
+    <div class="ras">   RA3. Escriu i depura codi, analitzant i utilitzant les estructures de control del llenguatge.</div>
 
       <h1>Estructures de Control en Python</h1>
         <h2>Execució Seqüencial</h2>
@@ -77,7 +78,7 @@ print("El doble de la teva edat és", edat_doble)               </code></pre>
         <img src="imgs/condicional.png" alt="condicional" class="imatge-dreta" width="35%">
         <h2>Execució Condicional (if, elif, else)</h2>
       <p> Les estructures condicionals permeten executar blocs de codi segons les condicions que s'hi especifiquen. 
-        El operador <code>:</code> marca l'inici d'un bloc de codi estructurat i indentat, i és essencial perquè Python interprete correctament la jerarquia del programa.       </p>
+        L'operador <code>:</code> marca l'inici d'un bloc de codi estructurat i indentat, i és essencial perquè Python interprete correctament la jerarquia del programa.       </p>
       <p> La indentació s'indica amb 4 espais (mínim) o un tabulador. Aquest principi és fonamental en Python, ja que defineix l'estructura del programa, a diferència d'altres llenguatges que utilitzen claus <code>{}</code>.       </p>
       <p>A Python la indentació no és només estètica, és part de la sintaxi, i sense ella el codi simplement no funciona.</p>
       La indentació no només s’usa en un if, sinó en tots els blocs de codi on cal indicar jerarquia o dependència. És una part fonamental de la sintaxi. 
@@ -384,7 +385,7 @@ else:
 </section>
 
 <section id="excepcions">
-        <h1>Manejador de Errors / Excepcions en Python</h1>
+        <h1>Manejador d'Errors / Excepcions en Python</h1>
         <p>En el següent programa, poden donar-se dos errors</p>
         <pre><code>a=int(input('Dame un numero:  '))
 print(f'La inversa de {a} es { 1/(a) }')
@@ -393,14 +394,14 @@ print(' ===  Fi del programa  ===')
         <p>Si posem una lletra</p>
         <pre><code>Dame un numero:  t</code></pre>
 <pre><code style="color: darkred;">Traceback (most recent call last):
-  File "c:\Users\enrique\OneDrive - Conselleria d'Educació\_PYTHON\proves\_prova.py", line 2, in <module>
+  File "c:\Users\enrique\OneDrive - Conselleria d'Educació\_PYTHON\proves\_prova.py", line 2, in &lt;module>
     a=int(input('Dame un numero:  '))
 ValueError: invalid literal for int() with base 10: 't'</code></pre>
         <strong> ==>  I el programa es para....</strong>
         <p>L'última línea no s'executa si es produeix un error. Cap línia després de l'error s'executarà</p> <hr>
         <p>Si posem un 0</p>
 <pre><code style="color: darkred;">Traceback (most recent call last):
-  File "c:\Users\enrique\OneDrive - Conselleria d'Educació\_PYTHON\proves\_prova.py", line 5, in <module>
+  File "c:\Users\enrique\OneDrive - Conselleria d'Educació\_PYTHON\proves\_prova.py", line 5, in &lt;module>
     print(f'La operacion resulta  {1/(a)}')
                                    ~^^~~
 ZeroDivisionError: division by zero</code></pre>
@@ -508,7 +509,7 @@ bool("False")  # True 😅 </code></pre>
     <p>Python proporciona diverses funcions incorporades (Built-In Functions) per treballar amb cadenes de text. Aquestes funcions permeten realitzar operacions comunes com modificar el format de la cadena, cercar subcadenes, o fins i tot combinar cadenes.</p>
 
     <h2>Funcions comunes per treballar amb cadenes:</h2>
-    <p class="alert"> Us de funcions:   'pedro'.upper()  v.upper()  <strike>upper(v)</strike>   pero…  len('sdfs')  <strike>v.len()</strike> str(335)</p>
+    <p class="alert"> Us de funcions:   'pedro'.upper()  v.upper()  <s>upper(v)</s>   pero…  len('sdfs')  <s>v.len()</s> str(335)</p>
     <ul>
         <li><code>upper()</code>: Retorna la cadena en majúscules. <code>'pedro'.upper()</code> → <strong>'PEDRO'</strong></li>
         <li><code>lower()</code>: Retorna la cadena en minúscules. <code>'PEDRO'.lower()</code> → <strong>'pedro'</strong></li>
@@ -536,8 +537,8 @@ bool("False")  # True 😅 </code></pre>
     </ul>
 
   <hr><hr>  <h1>Funcions de la biblioteca standard de Python</h1>
-    <p>La biblioteca estàndard de Python és el conjunt de mòduls i paquets que venen inclosos oficialment amb Python, però no es poden usar
-        directament (com les funcions "buit-in"). Primer s'ha d'importar el mòdul amb la instrucció <code>import</code>        </p>
+    <p>La biblioteca estàndard de Python és el conjunt de mòduls i paquets que venen inclosos oficialment amb Python, però <strong>no es poden usar
+        directament</strong> (com les funcions "buit-in"). Primer s'ha d'importar el mòdul amb la instrucció <code>import</code>        </p>
     <pre>#Exemple
 import os     # Esta instrucció sols es posa una vegada i al principi del codi </pre>
     <h2>Nombres aleatoris</h2>
@@ -669,10 +670,14 @@ time.sleep(0.25)  # Espera un quart de segon      </pre></code>
     <h5>Exemple: Instal·lar <code>requests</code> per realitzar sol·licituds HTTP:</h5>
     <p><code>requests</code> és una de les llibreries més populars de Python per fer peticions HTTP de manera simple. ==><a href="https://pypi.org/project/requests">documentació oficial en PyPI</a></p>
     <pre><code>import requests
-    response = requests.get("https://example.com")
-    print(response.status_code)</code></pre>
+response = requests.get("https://example.com")
+print(response.status_code)</code></pre>
 
 <!--   <h5>Exemple: keyboard</h5>
+ # Esta llibreria està marcada com a perillosa, perquè pot injectar codi, i robar polsacions  => keylogger    
+ #  En alguns linux necessita de permisos de root, el que dificulta la seua utilització.
+ # I per estes raons la pose en comentaris
+
      <p> <code>keyboard</code>  és una llibreria de tercers per a Python que permet detectar tecles, crear hotkeys, interceptar el teclat, 
         simular pulsacions, escoltar esdeveniments globals del teclat.  ==> <a href="https://pypi.org/project/keyboard/">documentació oficial de keyboard</a></p>
      <code><pre>import keyboard
@@ -686,7 +691,7 @@ while True:
     if keyboard.is_pressed("q"):      # En este cas no espera !!
         print("Q detectada")
         break</pre></code>  
-    # Esta llibreria està marcada com a perillosa, perquè pot injectar codi, i robar polsacions  => keylogger    
+   
     -->
 
     <h5>Exemple: curses</h5>
@@ -704,6 +709,7 @@ def main(stdscr):
     stdscr.addstr(0, 0, "Hola món!")
     stdscr.refresh()
     stdscr.getch()
+    
 curses.wrapper(main)  </code></pre>
 <!--Alternatives modernes a curses:  textual , rich	, prompt_toolkit , urwid  -->
 
