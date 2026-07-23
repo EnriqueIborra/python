@@ -1311,7 +1311,148 @@ print(a_norm == b_norm)  # ✅ True       </code></pre>
 
 <section id="exercicis">
   <h1>Exercicis</h1>
-  <h3>Els exercicis i tests corresponents a esta unitat es troben en Aules</h3>
+
+  <div class="tips">
+  <h2>📝 Abans de començar...</h2>
+
+  <p>Per a realitzar i aprofitar al màxim aquests exercicis, segueix aquestes normes:</p>
+
+  <ol>
+    <li><strong>Resol primer l'exercici en paper.</strong> Analitza el problema, pensa la solució i escriu el programa abans d'utilitzar l'ordinador.</li>
+    <li><strong>Utilitza l'ordinador només per comprovar el resultat.</strong> No programes "a base de provar"; primer pensa, després executa.</li>
+    <li><strong>No utilitzes eines d'intel·ligència artificial</strong> (ChatGPT, Copilot, Gemini o similars) per resoldre els exercicis.</li>
+    <li><strong>Consulta únicament els apunts, els exemples de classe i el material proporcionat pel professor.</strong></li>
+    <li><strong>Utilitza només les instruccions, estructures i funcions que ja s'han explicat en classe o apareixen als apunts.</strong> No utilitzes funcions o tècniques més avançades, encara que les conegues.</li>
+    <li><strong>Assegura't d'entendre tot el codi que escrius.</strong> Has de ser capaç d'explicar què fa cada instrucció.</li>
+  </ol>
+
+  <blockquote>
+    <strong>Recorda:</strong> l'objectiu no és només que el programa funcione, sinó aprendre a pensar i a resoldre problemes com un programador.
+  </blockquote>
+
+  <h2>Consells per programar:</h2>
+
+  <ol>
+    <li><strong>No escrigues codi sense haver llegit tot l'enunciat.</strong> </li>
+    <li><strong>Utilitza noms de variables significatius.</strong> Millor <code>edat, preu, altura, imc </code> que <code>a, b, x, z</code></li>
+    <li><strong>Escriu el programa pas a pas</strong> No intentes escriure tot el programa d'una vegada.</li>
+    <li><strong>Si apareix un error, no el corregisques a l'atzar.</strong>En lloc de canviar coses fins que "funcione", segueix aquest procés:</li>
+    <pre>    1. Llig el missatge d'error. 
+    2. Localitza la línia indicada. 
+    3. Intenta entendre què significa. 
+    4. Modifica només allò que cregues que és la causa. </pre>
+    <li><strong>No copies programes que no entens.</strong> </li>
+    <li><strong>Cuida la presentació del codi.</strong>.</li>
+        <pre>    • Indentació correcta. 
+    • Espais al voltant dels operadors. 
+    • Variables ben escrites. 
+    • Comentaris només quan siguen necessaris. </pre>
+
+    <li><strong>Prova casos diferents.</strong> No n'hi ha prou amb provar un únic exemple.</li>
+    <pre>Per exemple:
+    • un valor normal; 
+    • un valor zero (si és possible); 
+    • un valor gran; 
+    • un valor negatiu (si té sentit). </pre>
+
+    <li><strong>    Programa amb paciència. </strong> La programació no és una carrera de velocitat.
+        Pensar cinc minuts abans d'escriure una línia de codi sol estalviar-ne trenta de depuració.</li>    
+
+  </ol>
+</div>
+
+  <div class="activitat">
+  <strong>Activitat 1</strong>
+  <p>Realitza un programa en Python que demane una hora per teclat i que mostre el missatge 
+    “¡Bon dia!”, “¡Bona vesprada!” o “¡Bona nit!” segons l’hora.
+    <br>S’utilitzaran els trams de 6 a 12, de 13 a 20 i de 21 a 5, respectivament.</p>
+  <p>NOTA: Sols es tenen en compte les hores; els minuts no s’han d’introduir per teclat.</p>
+  Entrada:  Un enter ( que indica un hora  0-23) <br>
+  Procés: Decidir en quin tram horari està l'hora <br>
+  Eixida: Dir per pantalla, “¡Bon dia!”, “¡Bona vesprada!” o “¡Bona nit!” segons l’hora.
+</div>
+
+  <div class="activitat">
+  <strong>Activitat 2</strong>
+  <p>Realitza un programa en Python que demane a l’usuari el seu pes (en kg) i la seua estatura (en metres).
+    Calcule l’índex de massa corporal, l’emmagatzeme en una variable i mostre per pantalla la frase “El teu índex de massa 
+    corporal és &lt;imc>”, on &lt;imc> és : baix pes, normal, sobrepes, obesitat I, obesitat II, obesitat III, segons la taula següent : </p>
+    <table>
+        <tr><td> imc&lt;18,5</td><td>Baix pes</td></tr>
+        <tr><td> 18,5&lt;imc&lt;24,9</td><td>Normal</td></tr>
+        <tr><td> 24,9&lt;imc&lt;29,9</td><td>Sobrepes</td></tr>
+        <tr><td> 29,9&lt;imc&lt;<34,9</td><td>Obesitat I</td></tr>
+        <tr><td> 34,9&lt;imc&lt;39,9</td><td>Obesitat II</td></tr>
+        <tr><td> 40&lt;imc </td><td>Obesitat III</td></tr>
+    </table>
+    
+<p>Entrada: Dos nombres enters</p>
+<p>Procés: Càlcul d'IMC</p>
+<math display="block">
+  <mrow>
+    <mi>IMC</mi>
+    <mo>=</mo>
+    <mfrac>
+      <mi>pes</mi>
+      <msup>
+        <mi>altura</mi>
+        <mn>2</mn>
+      </msup>
+    </mfrac>
+  </mrow>
+</math>
+<p>Eixida: El IMC es mostrarà amb: </p>
+<pre>Exemple:
+El teu índex de massa corporal és: normal
+</pre>
+</div>
+
+  <div class="activitat">
+  <strong>Activitat 3</strong>
+  <p>Realitza un programa en Python que demane per teclat un dia de la setmana i que diga 
+    quina assignatura toca a primera hora eixe dia.</p>
+    <p>NOTA: S'accepta: dilluns, dimarts, dimecres, dijous, divendres, dissabte, diumenge.</p>
+El cap de setmana no hi ha classe !!  <br>
+# No oblides documentar el programa fent servir comentaris de python <br>
+
+  Entrada:  Una paraula ( que indica el dia de la setmana) <br>
+  Procés: Decidir mòduls depenent del dia   <br>
+  Eixida: Dir per pantalla el mòdul que toca a primera hora.
+</div>
+
+  <div class="activitat">
+  <strong>Activitat 4</strong>
+  <p>Realitza un programa en Python que demane a l’usuari una contrasenya, 
+    i si coincideix en 'python1234' diga per pantalla, 'pots entrar al programa' 
+    i en cas contrari 'Contrasenya incorrecta, es notificarà l'incident'.      </p>
+Documenta el programa fent servir comentaris de python. <br>
+
+  Entrada:  Una paraula  <br>
+  Procés: Decidir si coincideix  <br>
+  Eixida: Dir per pantalla la decisió.
+</div>
+
+  <div class="activitat">
+  <strong>Activitat 5</strong>
+  Realitza un programa en Python que demane a l’usuari una contrasenya, i comprove <br>
+    <ul>
+        <li>Conté almenys 8 caràcters</li>
+        <li>Conté almenys un número</li>
+        <li>Conté almenys una lletra majúscula</li>
+    </ul>
+<p>Mostra exactament quin requisit falla (un o més) i utilitza sols condicionals (No bucles)</p>
+<p># documenta el programa fent servir comentaris de python.</p>
+<pre>
+Exemple 1 :
+Introdueix la contrasenya : python1234
+Contrasenya feble, no conté majúscules
+Exemple 2 :
+Introdueix la contrasenya : Python
+Contrasenya feble, no conté nombres, no conté almenys 8 caràcters     </pre>
+</div>
+
+
+
    <hr><p>Encara que no s'ha vist la utilització de llistes, es pot avançar alguna funció concreta per enriquir els exercicis proposats.</p>
 <pre># convertir un String a llista (símbol a símbol / lletra a lletra)
 s2 = 'Hola mon 1234'
@@ -1346,6 +1487,7 @@ print(l4)
 
 
 </pre>
+
 
 </section>
 

@@ -628,7 +628,8 @@ z = 30  # Assignació d'un valor a z  </pre>
 
         <details>
           <summary>Ampliació</summary>
-          <p>En Python es poden usar nombres enters mooooolt llargs , sense perdre cap xifra significativa</p>
+          <p>En Python es poden usar nombres <strong>"enters"</strong> mooooolt llargs , sense perdre cap xifra significativa
+          <br>En Python, un "enter" tè precisió arbitraria o ilimitada</p>
           <pre>a = 993847633984736625241320373654847362451325364875858574636325444313245252555524442
 b = 233458467452542536453542415384969685746465787688868857646456353444232312313323233 
 c = a + b   d = a * b</pre>
@@ -655,7 +656,9 @@ L’únic límit real és: la memòria disponible del sistema i el temps de càl
         <p>En Python, tots els elements són objectes, fins i tot els literals. Quan utilitzem un literal, Python crea un objecte amb un identificador únic, un tipus i un valor.</p>
         <p>Pots obtindre l'identificador d'un objecte amb la funció <code>id()</code>:</p>
         <pre><code>x = 100
-print(id(x))  => 140729130946568</code></pre>
+print(id(x))  => 140729130946568  => identificador
+print(type(x))  => &lt;class 'int'>  =>  tipus
+print(x)  => 100 => valor</code></pre>
 
     <h2>Literals Strings o Cadenes</h2>
 
@@ -695,7 +698,7 @@ diverses línies")</code></pre>
 print('Això és una cadena amb cometes dobles: "exemple" ')             </code></pre>
 
         <h3>Inserir/imprimir cometes del mateix tipus que els delimitadors</h3>
-        <p>Si vols imprimir cometes del mateix tipus que el delimitador dins de la cadena, cal escapar-les amb el caràcter de barra invertida <code>\</code>:</p>
+        <p>Si vols imprimir cometes del mateix tipus que el delimitador dins de la cadena, cal escapar-les amb el caràcter de barra invertida <strong><code>\</code></strong></p>
         
         <pre><code>print("Això és una cadena amb cometes dobles: \"exemple\"") </code></pre>
         
@@ -779,7 +782,9 @@ n2 = input("Digue'm el segon número: ")
 print("La suma és", n1 + n2)  # Açò no dorarà error i farà una concatenació de cadenes!
 # Què ha passat???
 print("La suma és", int(n1) + int(n2))  # Açò sí que suma nombres correctament       </code></pre>
-    
+
+        <details>
+          <summary>Ampliació</summary>
       <h2>Entrada de múltiples valors separats per comes</h2>
       <p>També podem demanar a l'usuari que introduïsca diversos valors separats per comes (o altres caràcters), i convertir-los a una llista de números:      </p>
     
@@ -788,7 +793,12 @@ numeros = entrada.split(',')  # Separa cada valor utilitzant la coma com a separ
 # Convertim cada valor a enter, eliminant espais en blanc
 numeros = [int(num.strip()) for num in numeros]
 print("Llista de números:", numeros)    </code></pre>
-    
+          
+        </details>
+
+
+
+
       <h2>Conclusió</h2>
       <ul>
         <li>La funció <code>input()</code> sempre retorna cadenes de text.</li>
@@ -1311,7 +1321,83 @@ print (y)     # 0.33    </code></pre>
 
 <section id="exercicis">
   <h1>Exercicis</h1>
-  <h3>Els exercicis i tests corresponents a esta unitat es troben en Aules</h3>
+   <div class="tips">
+  <h2>📝 Abans de començar...</h2>
+
+  <p>Per a realitzar i aprofitar al màxim aquests exercicis, segueix aquestes normes:</p>
+
+  <ol>
+    <li><strong>Resol primer l'exercici en paper.</strong> Analitza el problema, pensa la solució i escriu el programa abans d'utilitzar l'ordinador.</li>
+    <li><strong>Utilitza l'ordinador només per comprovar el resultat.</strong> No programes "a base de provar"; primer pensa, després executa.</li>
+    <li><strong>No utilitzes eines d'intel·ligència artificial</strong> (ChatGPT, Copilot, Gemini o similars) per resoldre els exercicis.</li>
+    <li><strong>Consulta únicament els apunts, els exemples de classe i el material proporcionat pel professor.</strong></li>
+    <li><strong>Utilitza només les instruccions, estructures i funcions que ja s'han explicat en classe o apareixen als apunts.</strong> No utilitzes funcions o tècniques més avançades, encara que les conegues.</li>
+    <li><strong>Assegura't d'entendre tot el codi que escrius.</strong> Has de ser capaç d'explicar què fa cada instrucció.</li>
+  </ol>
+
+  <blockquote>
+    <strong>Recorda:</strong> l'objectiu no és només que el programa funcione, sinó aprendre a pensar i a resoldre problemes com un programador.
+  </blockquote>
+   </div>
+
+  <div class="activitat">
+    <strong>Activitat 1</strong> <br>
+Realitza un programa en Python que mostre la divisió de dos variables de tipus int  el valor de les quals es llegirà cada vegada  <br>
+Entrada: L’entrada serà dos nombres.  <br>
+Procés: Fer la divisió. <br>
+Eixida: Mostrar el resultat de les següents formes  (per exemple, si els nombres són 8 i 3, respectivament...)  <br>
+<pre>
+2.6666666666666667
+2,67
+x2,67  on cada x és un espai en blanc
+xx2,667  on cada x és un espai en blanc
+002,667
+xxxx2,6667 on cada x és un espai en blanc
+2,667
+xxx2,66667  on cada x és un espai en blanc
+0000000003  </pre>
+</div>
+
+<div class="activitat">
+  <strong>Activitat 2</strong>
+  <p>Realitza un programa en Python que demane a l’usuari el seu pes (en kg) i la seua estatura (en metres).
+    Calcule l’índex de massa corporal, l’emmagatzeme en una variable i mostre per pantalla la frase “El teu índex de massa corporal és &lt;imc>”, on &lt;imc> és l’índex de massa corporal calculat amb dos decimals.   </p>
+<p>Entrada: Dos nombres enters</p>
+<p>Procés: Càlcul d'IMC</p>
+<math display="block">
+  <mrow>
+    <mi>IMC</mi>
+    <mo>=</mo>
+    <mfrac>
+      <mi>pes</mi>
+      <msup>
+        <mi>altura</mi>
+        <mn>2</mn>
+      </msup>
+    </mfrac>
+  </mrow>
+</math>
+<p>Eixida: El IMC es mostrarà amb:  3 num sencers amb farciment de 0s + punt +  2 decimals</p>
+<pre>Exemple:
+El teu índex de massa corporal és: 023,67
+</pre>
+</div>
+
+<div class="activitat">
+<strong>Activitat 3</strong>
+<p>Realitza un programa en Python que sume, reste, multiplique, dividisca, realitze la divisió sencera 
+  i el residu de la divisió sencera de dos nombres enters introduïts per teclat.</p>
+<p>Entrada: Dos nombres enters</p>
+<p>Procés: Càlcul</p>
+<p>Eixida: Mostrar resultats amb format:</p>
+<pre>
+  SUMA   RESTA   PRODUCTE   DIVISIÓ   QUOCIENT   RESIDU
+-------------------------------------------------------
+    11       5         24      2.67          2        2  
+</pre>
+</div>
+
+
   <p>Hi ha plataformes web per practicar i aprendre codi. A continuació s'indiquen algunes per ampliar els recursos a l'abast dels estudiants</p>
   <ul>
     <li><a href="https://jo-el.es/">JO-EL</a></li> 
