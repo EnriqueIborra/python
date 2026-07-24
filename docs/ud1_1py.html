@@ -95,7 +95,7 @@ Python 3.13.1 (tags/v3.13.1:0671451, Dec  3 2024, 19:06:28) [MSC v.1942 64 bit (
 Type "help", "copyright", "credits" or "license" for more information.
 >>>    
 
-Per eixir, polsa   Ctrl-D</pre>
+Per eixir, polsa   Ctrl-D  o tecleja  exit()  o  quit() i prem ENTER</pre>
 
 
     <h2>2. Instal·lar Python</h2>
@@ -148,7 +148,7 @@ sudo pacman -S python </code></pre>
 <pre><code>OpenSUSE
 sudo zypper refresh
 sudo zypper install python3 </code></pre>
-    
+
  </section>
 
  <section id="pip">
@@ -663,8 +663,13 @@ ventana.mainloop()     </pre>
 
   <h2>Python Shell (Intèrpret Interactiu)</h2>
   <p>El Python Shell és el mode interactiu bàsic de Python. Quan instal·les Python, aquest ve amb un entorn de consola interactiva que et permet executar codi Python línia a línia i obtindre resultats immediats.</p>
-    
-  <h3>Com utilitzar el Python Shell:</h3>
+  <p>També conegut com a REPL. són les sigles de:</p>
+<pre>Read (llig el que escrius)
+Evaluate (ho interpreta i ho executa)
+Print (mostra el resultat)
+Loop (torna a esperar una nova ordre)</pre>
+  
+  <h3>Com utilitzar el Python Shell (o REPL):</h3>
 
   <ul>
       <li><strong>Obrir el Shell:</strong><br>
@@ -682,8 +687,9 @@ ventana.mainloop()     </pre>
 [GCC x.x.x ...] on linux
 Type "help", "copyright", "credits" or "license" for more information.
 >>>                  </pre>
+<p>El símbol &gt;&gt;&gt; és el prompt de Python. Indica que l'intèrpret està esperant que introduïsques una instrucció.</p>
     En este prompt (<code>&gt;&gt;&gt;</code>), pots començar a escriure codi Python directament. Per exemple:
-   <pre>&gt;&gt;&gt; 2 + 3      # Açò ho escrius tu 
+   <pre>&gt;&gt;&gt; 2 + 3      # Açò ho escrius tu , i després polses la tecla INTRO
 5              #  Açò ho mostra Python 
 &gt;&gt;&gt; print("Hola, món!")     # Açò ho escrius tu 
 Hola, món!     #  Resultat en la consola                    </pre>
@@ -707,12 +713,33 @@ SyntaxError: unexpected indent                  </pre>
 
         <li><strong>Eixir del Shell:</strong><br>
             <ul>
-                <li>Escriu <code>exit()</code></li>
+                <li>Escriu <code>exit()</code> o <code>quit()</code></li>
                 <li>O prem <kbd>Ctrl</kbd>+<kbd>D</kbd> (en macOS/Linux)</li>
                 <li>O prem <kbd>Ctrl</kbd>+<kbd>Z</kbd> i després <kbd>Intro</kbd> (en Windows)</li>
             </ul>
         </li>
     </ul>
+
+  <h4>I, Per a què serveix?</h4>  
+    L'intèrpret interactiu (REPL) és molt útil per: <br>
+    <ul>
+      <li>provar instruccions ràpidament;</li>
+      <li>fer càlculs;</li>
+      <li>comprovar com funciona una funció;</li>
+      <li>experimentar amb el llenguatge;</li>
+      <li>practicar sense haver de crear un fitxer.</li>
+    </ul>
+    <pre>Per exemple, si vols saber què retorna una expressió:
+<code>
+>>> 17 // 5
+3
+
+>>> 17 % 5
+2
+
+>>> 17 / 5
+3.4  </code>      </pre>
+
     <h2>IDLE, entorn de desenvolupament de Python</h2>
 
     <p><strong>IDLE</strong> (Entorn de Desenvolupament Integrat per a Python) és un entorn gràfic de desenvolupament elemental que permet editar i executar programes en Python.
