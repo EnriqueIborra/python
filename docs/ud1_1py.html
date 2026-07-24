@@ -88,7 +88,16 @@
         Si veus un missatge d'error o diu que no es reconeix l'ordre, aleshores necessites instal·lar Python.
       </li>
     </ol>
-    
+    <h3>Altra manera de verificar si <strong><code>python</code></strong> està instal·lat</h3>
+    <p>En un "cmd" o en una terminal escriu <code>python</code> (en windows) o <code>python3</code> (en linux) , i si s'obri l'interpret, => python està instal·lat</p>
+    <pre>C:\Users\enrique\prueba>python
+Python 3.13.1 (tags/v3.13.1:0671451, Dec  3 2024, 19:06:28) [MSC v.1942 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>>    
+
+Per eixir, polsa   Ctrl-D</pre>
+
+
     <h2>2. Instal·lar Python</h2>
     
     <p>Si no tens Python instal·lat o necessites actualitzar-lo, pots seguir els passos adequats segons el teu sistema operatiu:</p>
@@ -146,7 +155,9 @@ sudo zypper install python3 </code></pre>
 
   <h1>3. Instal·lar pip</h1>
 
-  <p><strong>pip</strong> és una eina que permet instal·lar paquets i biblioteques addicionals en Python. Normalment, s’instal·la automàticament junt amb Python. Ací aprendràs com verificar si ja està instal·lat i com instal·lar-lo en cas que no ho estiga.</p>
+  <p><strong>pip</strong> és una eina que permet instal·lar paquets i biblioteques addicionals en Python. 
+    Normalment, s’instal·la automàticament junt amb Python. Ací aprendràs com verificar si ja està 
+    instal·lat i com instal·lar-lo en cas que no ho estiga.</p>
   
   <h2>3.1 Verificar si pip està instal·lat</h2>
   <ol>
@@ -161,7 +172,7 @@ sudo zypper install python3 </code></pre>
   </ol>
   
   <h2>3.2 Instal·lar pip (si és necessari)</h2>
-  <h4> (⚠️ De moment, no utilitzes l’instal·lador PIP!! Espera al següent punt)</h4>
+  <h4> (⚠️ De moment, instal·la <strong>PIP</strong> però  no l'utilitzes, espera al següent punt)</h4>
   
   <h3>En Windows o macOS (si no s’instal·là amb Python)</h3>
   <ol>
@@ -183,7 +194,7 @@ sudo apt install python3-pip</code></pre>
   
   <p>Una vegada instal·lat pip, podràs usar-lo per a instal·lar paquets de Python, com per exemple:</p>
   <pre><code>pip install nom_del_paquet</code></pre>
-  <h4 class="alert"> ⚠️ De moment, no utilitzes l’instal·lador PIP!! Espera al següent punt.</h4>
+  <h4 class="alert"> ⚠️ De moment, no utilitzes PIP!! Espera al següent punt.</h4>
   
 
  </section>
@@ -199,6 +210,7 @@ sudo apt install python3-pip</code></pre>
 
 <h2>Instal·lar l’eina per a crear entorns virtuals - VENV</h2>
 <pre>$ sudo apt install python3-venv</pre>
+<p>Ja tens l'eina per crear entorns virtuals, però encara no tens cap entorn creat.</p>
 
 <h3>4.1 Crear un entorn virtual</h3>
 <ol>
