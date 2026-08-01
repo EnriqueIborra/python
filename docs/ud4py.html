@@ -54,6 +54,10 @@
     <li>Accions: <code>escriure()</code>, <code>dibuixar()</code>, <code>ferpunta()</code></li>
   </ul>
 
+  <p>A les dades, o informació, en POO s'anomenen <strong>atributs</strong>  <br>
+   A les funcions o Accions, en POO s'anomenen  <strong>mètodes</strong></p>
+
+  <hr>
   <p>En Python, això es pot representar així:</p>
   <pre><code>llapis1 = {
     "color": "roig",
@@ -64,9 +68,10 @@
 print(llapis1["color"])      # Mostra 'roig'
 llapis1["escriure"]()        # Crida l'acció: Estic escrivint...
 </code></pre>
+<p> <code>color</code> i <code>llargaria</code> serien <strong>atributs</strong>, i <code>escriure</code>  seria un <strong>mètode</strong></p>
 
   <h2> En resum:</h2>
-  <p>Un <strong>objecte</strong> és com una <strong>combinació de dades i comportament</strong>.</p>
+  <p>Un <strong>objecte</strong> és com una <strong>combinació de dades (atributs) i comportament (mètodes)</strong>.</p>
   <p>Et permet <em>organitzar la informació</em> i <em>treballar amb ella</em> d’una manera més clara i potent.</p>
   <p><strong>No cal saber com s’ha creat</strong>, només com utilitzar-lo.</p>
 
@@ -78,6 +83,15 @@ llapis1["escriure"]()        # Crida l'acció: Estic escrivint...
   <p>Una classe és com un motle per a fer objectes. En la classe es definirà que dades (atributs) i que métodes tindran els 
     objectes que es contruixquen amb eixa classe.    </p>
 
+  <p>Tot açò permetrà definir </p>
+  <h2>Els quatre pilars o principis fonamentals de la Programació Orientada a Objectes (POO) </h2>  
+
+  <ul>
+    <li>Encapsulament</li>
+    <li>Herència</li>
+    <li>Polimorfisme</li>
+    <li>Abstracció</li>
+  </ul>
         
     <h1>...  en Python</h1>
     <p>En Python, un objecte és una entitat que conté dades (atributs) i comportaments (mètodes). 
@@ -116,6 +130,7 @@ cad1 = cad1.upper();   #  Executar mètode  <code>upper()</code> ==>  ()
         <h2>Crear una classe</h2>
         <p>Per crear una classe en Python, utilitzes la paraula clau <code> class </code>. Ací tens un exemple bàsic:</p>
         <p>En el següent exemple, la classe <code>Cotxe</code> servirà per a definir objectes (cotxes) amb tres atributs (dades) i un mètode</p>
+        <p>En Python...</p>
         <pre><code>class Cotxe:
     def __init__(self, marca, model, color):
         self.marca = marca   # Atribut marca
@@ -125,6 +140,8 @@ cad1 = cad1.upper();   #  Executar mètode  <code>upper()</code> ==>  ()
     def descriure(self):     # Mètode per descriure el cotxe
         print(f"Aquest cotxe és un {self.color} {self.marca} {self.model}.")          </code></pre>
         <p>En aquest exemple, hem creat una classe <code>Cotxe</code> amb tres atributs: <code>marca</code>, <code>model</code> i <code>color</code>. També hem definit un mètode <code>descriure()</code> per imprimir una descripció del cotxe.</p>
+        <p>En aquest exemple, <strong>NO</strong> hem creat cap objecte !! </p>
+
  </section>
 
 <section id="instanciacio">        
