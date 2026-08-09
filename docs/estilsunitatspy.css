@@ -309,3 +309,66 @@ summary {
     margin-right: 15px;
     margin-left: 30%;
     margin-bottom: 10px;}
+
+
+    /* test final unitat*/
+.quiz-container {
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+button {
+    padding: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: background 0.3s;
+}
+button:hover {
+    background-color: #e2e2e2;
+}
+#feedback {
+    margin-top: 10px;
+    font-weight: bold;
+    min-height: 24px;
+}
+.correct { color: #2ecc71; }
+.incorrect { color: #e74c3c; }
+
+ body.dark-mode .quiz-container  {
+            background: rgb(51, 41, 80); }
+ body.dark-mode button  {
+            background: rgb(122, 130, 167); }
+
+#progress-container {
+    width: 100%;
+    background: #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+#progress-bar {
+    height: 20px;
+    width: 0%;
+    background: #007bff;   /*#007bff;*/
+    transition: width 0.3s ease;
+}
+
+body.dark-mode #progress-container { background: #17283b;}
+
+ /* fi  test final unitat*/
+
+ 

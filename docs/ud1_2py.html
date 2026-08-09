@@ -184,8 +184,11 @@ if __name__ == "__main__":
 
   <h3>2. Des d'un entorn de desenvolupament (IDE)</h3>
   <ul>
-    <li>Obre el fitxer <code>.py</code> amb un editor com <strong>VS Code</strong>, <strong>VSCodium</strong>, <strong>Thonny</strong> o <strong>PyCharm</strong>(community o pro) .</li>
+    <li>Obri l' IDE (VS Code, VSCodium, ...)</li>
+    <li>Obri <strong>LA CARPETA</strong> on esta el fitxer/s de codi (.py)</li>
+    <li>Obri el fitxer <code>.py</code> on està el codi que es vol executar </li>
     <li>Prem el botó de "Play" (▶️) o selecciona "Executar" (de vegades s'ha de desplegar i buscar l'opció "Run Python File").</li>
+    <li>En una terminal (apart d'on està el codi) es vora el resultat</li>
   </ul>
 
   <h3>3. Amb permisos d'execució (Linux/macOS)</h3>
@@ -365,8 +368,10 @@ pdb.set_trace()</code></pre>
 
 <h4> Què és una variable en informàtica</h4>
 
-<p>   En informàtica, una <strong>variable</strong> és un espai d'emmagatzematge en la memòria d'un programa que s'utilitza per a guardar un valor que pot canviar durant l'execució del programa.
-</p>
+<p>   En informàtica, una <strong>variable</strong> és un espai d'emmagatzematge en la memòria d'un programa que s'utilitza per a 
+  guardar un valor que pot canviar durant l'execució del programa. </p>
+<p>Es podria fer una analogia amb una caixa que guarda un valor. La caixa té un nom per a referis-se al valor. El nom serà el mateix
+  però el valor pot anar canviant durant la execució del programa (o procés) </p>  
 
 <h4> Característiques clau d'una variable:</h4>
 <ul>
@@ -397,8 +402,18 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>>    </code></pre>
    <p>o s'executa la utilitat IDLE </p>
    <img src="imgs/idle.png" alt="eina idle"  width="90%">
+<pre>>>> X=10     #assigna el valor numèric 10 a la variable X
+>>> X          # evalua i imprimeix el valor de X per pantalla
+>>> print(X)     # El mateix que la linia anterior
+>>> x
+Traceback (most recent call last):
+  File "<python-input-1>", line 1, in <module>
+    x
+NameError: name 'x' is not defined
+!! Alerta spoiler, en python  x i X  no són la mateixa varialble !!
+</pre>
 
-   <pre>
+   <pre># Practica !!
 x = 10             # Número enter (integer)
 nombre = "Ana"     # Cadena de text (String)
 nombre2 = 'Pedro'  # String amb cometes simples
@@ -811,21 +826,24 @@ print("Llista de números:", numeros)    </code></pre>
 
 <section id="constants">
   <h1>Constants en Python</h1>
+  <p>En un llenguatge de programació, una constant és un valor associat a un nom que, una vegada definit, no hauria de canviar durant l’execució del programa.</p>
+  <pre>Per exemple:  PI = 3.1415926535</pre>
   <p>En Python, <strong>NO</strong> hi ha suport natiu per constants, però es poden definir per <strong>convenció</strong> amb noms en majúscules:</p>
 
-  <pre><code>PI = 3.14159
+  <pre><code>PI = 3.1415926535
 VELOCITAT_DE_LLUM = 299_792_458
 MAX_INTENTS = 5</code></pre>
 
   <p>⚠️ Python <strong>no impedeix</strong> modificar aquestes constants:</p>
 
-  <pre><code>PI = 3  # Això està permès, però no recomanat</code></pre>
+  <pre><code># Més avant, dins del codi es pot fer:
+PI = 3  # Això està permès, però no recomanat</code></pre>
 
   <p>També pots posar-les en un mòdul separat anomenat <code>constants.py</code>:</p>
 
   <pre><code># constants.py
-PI = 3.14159
-G = 9.81</code></pre>
+PI = 3.1415926535
+G = 9.80665</code></pre>
 
   <p>I importar-les des del fitxer principal:</p>
 
@@ -847,15 +865,21 @@ print(constants.PI)</code></pre>
   <h2>Expressions vs Literals en Python</h2>
 
   <h2> Què és un literal?</h2>
-  <p>Un <strong>literal</strong> és un valor escrit directament al codi. Exemples:</p>
+  <p>Un <strong>literal</strong> és un <strong>valor</strong> escrit directament al codi. Exemples:</p>
   <pre><code>42
 "Hola"
+'Hello'
+73
 3.14
+5e-2
+299_792_458
+0b101001001
+0xf9af9d
 True
 [12, 27, 35]</code></pre>
 
   <h2> Què és una expressió?</h2>
-  <p>Una <strong>expressió</strong> és qualsevol combinació de literals, variables i <strong>operadors</strong> que retorna un valor:</p>
+  <p>Una <strong>expressió</strong> és qualsevol combinació de literals, variables i <strong>operadors</strong> que retorna un <strong>valor</strong>:</p>
   <pre><code>5 + 3
 nom + " és aquí"
 len([12, 27, 35])

@@ -37,7 +37,28 @@
 <section id="objecte">
 <div class="ras">RA2. Escriu i prova programes senzills, reconeixent i aplicant els fonaments de la programació orientada a objectes.</div>
 
-  <h1>Què és un objecte?</h1>
+  <h1>Què és un objecte?</h1> 
+  <p>La POO és un paradigma de programació que organitza els programes al voltant d'objectes, 
+    els quals representen entitats del món real o conceptes del problema que es vol resoldre.
+     Cada objecte combina dades (atributs) i operacions (mètodes) relacionades amb aquestes dades.</p>
+     <p>Alguns conceptes fonamentals en POO són:</p>
+
+<ul>
+  <li> <b>Classe</b>, com a plantilla o model que defineix les característiques i el comportament dels objectes.</li>
+  <li><b>Objecte</b>, com a instància d'una classe amb un estat i un comportament propis.</li>
+  <li><b>Atribut</b>, que representa les dades o propietats d'un objecte.</li>
+  <li><b>Mètode</b>, que defineix les operacions que pot realitzar un objecte.</li>
+  <li><b>Instanciació</b>, procés de crear objectes a partir d'una classe.</li>
+</ul>
+<u>.. I els pilars fonamentals de la POO  </u>
+<ul>
+  <li><b>Encapsulament</b>, que agrupa dades i operacions dins d'una mateixa classe i en controla l'accés mitjançant convencions pròpies de Python.</li>
+  <li><b>Herència</b>, que permet crear noves classes reutilitzant i ampliant les característiques d'altres.</li>
+  <li><b>Polimorfisme</b> , que possibilita que diferents objectes responguen de manera diferent a una mateixa operació.</li>
+  <li><b>Abstracció</b>, que consisteix a representar únicament les característiques essencials d'un objecte, ocultant els detalls interns d'implementació.</li>
+</ul>
+<u>(que es voran més a fons en el tema següent)</u>
+
 <img src="imgs/objecte1.png" alt="desc-objecte" width="30%" class="imatge-dreta">
   <p>Un <strong>objecte</strong> és una <strong>estructura que conté informació</strong> i <strong>accions que es poden fer amb eixa informació</strong>.</p>
 
@@ -47,6 +68,11 @@
     <li> <strong>Funcions</strong> (accions que pots fer amb eixes dades)</li>
   </ul>
 
+   <p>Un <strong>objecte</strong> és com una <strong>combinació de dades (atributs) i comportament (mètodes)</strong>.</p>
+  <p>Et permet <em>organitzar la informació</em> i <em>treballar amb ella</em> d’una manera més clara i potent.</p>
+  <p><strong>No cal saber com s’ha creat</strong>, només com utilitzar-lo.</p>
+
+  <hr>
   <h2> Exemple senzill:</h2>
   <p>Imagina un <strong>llapis</strong> com un objecte del món real:</p>
   <ul>
@@ -57,23 +83,8 @@
   <p>A les dades, o informació, en POO s'anomenen <strong>atributs</strong>  <br>
    A les funcions o Accions, en POO s'anomenen  <strong>mètodes</strong></p>
 
-  <hr>
-  <p>En Python, això es pot representar així:</p>
-  <pre><code>llapis1 = {
-    "color": "roig",
-    "llargaria": 10,
-    "escriure": lambda: print("Estic escrivint..."),
-}
-
-print(llapis1["color"])      # Mostra 'roig'
-llapis1["escriure"]()        # Crida l'acció: Estic escrivint...
-</code></pre>
-<p> <code>color</code> i <code>llargaria</code> serien <strong>atributs</strong>, i <code>escriure</code>  seria un <strong>mètode</strong></p>
-
-  <h2> En resum:</h2>
-  <p>Un <strong>objecte</strong> és com una <strong>combinació de dades (atributs) i comportament (mètodes)</strong>.</p>
-  <p>Et permet <em>organitzar la informació</em> i <em>treballar amb ella</em> d’una manera més clara i potent.</p>
-  <p><strong>No cal saber com s’ha creat</strong>, només com utilitzar-lo.</p>
+<p> <code>color</code> i <code>llargaria</code> serien <strong>atributs</strong>, 
+  i <code>escriure</code>, <code>dibuixar</code>, <code>ferpunta</code>  serien <strong>mètodes</strong></p>
 
   <hr>
   <p>Es poden crear diversos objectes iguals, però amb dades diferents: Cada objecte tindrà un nom diferent per a poder referir-se a ell.
@@ -82,50 +93,45 @@ llapis1["escriure"]()        # Crida l'acció: Estic escrivint...
   <p>I tots son llapis, de la classe Llapis</p>
   <p>Una classe és com un motle per a fer objectes. En la classe es definirà que dades (atributs) i que métodes tindran els 
     objectes que es contruixquen amb eixa classe.    </p>
-
-  <p>Tot açò permetrà definir </p>
-  <h2>Els quatre pilars o principis fonamentals de la Programació Orientada a Objectes (POO) </h2>  
-
-  <ul>
-    <li>Encapsulament</li>
-    <li>Herència</li>
-    <li>Polimorfisme</li>
-    <li>Abstracció</li>
-  </ul>
-        
+         
     <h1>...  en Python</h1>
     <p>En Python, un objecte és una entitat que conté dades (atributs) i comportaments (mètodes). 
         Tot en Python és un objecte: nombres, cadenes, llistes, funcions, etc.</p>
-    <pre>
-x = 5
-print(type(x))  # < class 'int'>
-    </pre>
-    <p>Ací, <code>x</code> és un objecte de la classe <code>int</code>.</p>
-    <pre>
-Classe: És un motle que permet crear un objecte. 
-   Una classe és capaç de definir un objecte juntament amb les seues propietats (atributs) 
-   i les seues modificacions (mètodes)
-Objecte: És la instància d'una classe i consta de:
-Estat. Representat pels atributs de l'objecte, que reflecteixen les seues propietats
-Comportament. Representat pels mètodes de l'objecte, que reflecteixen la seua resposta a altres objectes            
-        </pre>
-        <p>Un <strong>objecte</strong> en Python és una instància d’una <strong>classe</strong> i pot tindre:</p>
-        <ul>
-            <li><strong>Atributs:</strong> Dades que descriuen les propietats de l’objecte.</li>
-            <li><strong>Mètodes:</strong> Funcions que defineixen el comportament de l’objecte.</li>
-        </ul>
+    <p>Un <strong>objecte</strong> en Python és una instància d’una <strong>classe</strong> </p>
     
-        <p><strong>Exemple bàsic:</strong></p>
-        <pre><code>
-cad1 = "Frase curta"    # Crear objecte 'cad1'  ==> instanciar objecte. La classe la detecta Python ( string )
+        <pre># Exemple : Ací, "cad1" és un objecte de la classe "string"
+cad1 = "Frase curta"    # Crear objecte 'cad1'  ==> instanciar objecte.
+                     #  La classe la detecta Python ( string ) a través del literal
 print(cad1)           # Accedir al valor,  <strong>atribut</strong>
 cad1 = cad1.upper();   #  Executar mètode  <code>upper()</code> ==>  ()
-        </code></pre>
+        </pre>
+      
+    <pre># Exemple
+nombres = [10, 20, 30]       * nombres és una objecte / instància de la classe "llista"
+print(type(nombres))
+nombres.append(40)     # mètode  append
+nombres.sort()
+nombres.reverse()
+print(nombres)      </pre>
+<p>En estos exemples, Python "detecta" la clase ( el tipus ), per la forma de la expressió</p>
+
+<pre># Exemple
+from datetime import datetime
+ara = datetime.now()     # ara és una instància de la clase datetime.
+                         # La classe es explicita amb la paraula "datetime"
+print(type(ara))
+print(ara)
+aniversari = datetime(2005, 4, 15, 10, 30)    # aniversari és una instància de la clase datetime
+print(aniversari)  </pre>
+<p>En este exemple, es crida a un mètode de la classe per "crear" el objecte, acompanyant al nom de la "classe"</p>
+
     
  
         <h1>Creació de Classes </h1>
     <img src="imgs/classe1.jpg" alt="desc-objecte" width="30%" class="imatge-dreta">
         <p>Una <strong>classe</strong> és la plantilla o motle, o model que defineix com es creen els objectes d'exia classe.</p>
+        <p>Si es vol crear objectes "diferents" a les classes ja existents en el llenguatge, 
+          es necessari definir una <strong>classe</strong> nova.         </p>
     
         <h2>Crear una classe</h2>
         <p>Per crear una classe en Python, utilitzes la paraula clau <code> class </code>. Ací tens un exemple bàsic:</p>

@@ -32,6 +32,7 @@
   <a href="#bibliotecas">Biblioteques</a>
   <a href="#entorn">L'entorn de programació</a>
   <a href="#exercicis">Exercicis</a>
+  <a href="#altres-recursos">Altres Recursos</a>
   
 </nav>
 
@@ -1009,9 +1010,33 @@ Instal·la IDLE per a Linux
   
 </section>
 
+<section id="altres-recursos">
+      <hr><h2>Comprova el teu progrés...</h2>
+    <div id="progress-container">
+    <div id="progress-bar"></div>  </div>
+    <!-- <div id="percentatge-text">0%</div>  -->
+
+    <div class="quiz-container">
+        <h4 id="pregunta-text"></h4>
+        <div id="options-container" class="options">
+        </div>
+
+        <p id="feedback"></p>
+        <button onclick="mostrarPista()">🕵️‍♂️ Vols una pista?</button>
+        <button id="btn-seguent" onclick="seguentPregunta()">      ➕ Següent pregunta </button>
+        <button onclick="carregarPreguntes('RA1__1')">🔁 Reiniciar</button>
+        <p id="pista"></p>
+         
+   </section>
+
 </main>
 
+<script src="scriptsunitats.js"></script>
+
 <script>
+  // Executar en carregar la pàgina
+  window.onload = carregarPreguntes('RA1_2');
+
 
   // Per poder copiar codi en el porta-retalls. S'ha de posar un botó en cada <pre>
       //  <div class="pre-container">
