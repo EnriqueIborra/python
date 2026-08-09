@@ -1,0 +1,666 @@
+
+[
+  {
+    "CE": "1b-1",
+    "titol": "Quina característica de Python explica millor que siga adequat per a un curs d'introducció a la programació?",
+    "pista": "Pensa en què permet que l'estudiant se centre en la lògica de programació sense haver d'afrontar una sintaxi excessivament complexa.",
+    "opcions": [
+      {
+        "text": "La seua sintaxi clara i relativament curta permet centrar-se en conceptes com variables, condicions i bucles.",
+        "correcte": true,
+        "feedback": "Correcte. La sintaxi de Python és clara i concisa, cosa que facilita que els principiants es concentren en els conceptes fonamentals de la programació."
+      },
+      {
+        "text": "El fet que Python siga multiplataforma fa que els conceptes bàsics de programació no necessiten ser estudiats amb altres llenguatges.",
+        "correcte": false,
+        "feedback": "Que siga multiplataforma facilita utilitzar Python en diferents sistemes operatius, però això no és el que simplifica principalment l'aprenentatge dels conceptes bàsics."
+      },
+      {
+        "text": "La gran quantitat de biblioteques disponibles permet que els programes funcionen sense necessitat d'entendre variables, condicions o bucles.",
+        "correcte": false,
+        "feedback": "Les biblioteques poden facilitar el desenvolupament, però aprendre programació requereix comprendre conceptes fonamentals com variables, condicions i bucles."
+      },
+      {
+        "text": "El seu ús professional fa que Python siga especialment adequat perquè els estudiants poden començar directament amb projectes empresarials complexos.",
+        "correcte": false,
+        "feedback": "L'ús professional és un avantatge important, però no és la raó principal per la qual Python resulta accessible als principiants. La sintaxi clara permet començar amb conceptes senzills."
+      }
+    ]
+  },
+  {
+    "CE": "1b-1",
+    "titol": "Un estudiant vol comprovar des de la línia d'ordres si Python està instal·lat en el seu ordinador. Quina acció és adequada?",
+    "pista": "Cal consultar la versió de Python des de la terminal o consola.",
+    "opcions": [
+      {
+        "text": "Executar `python --version` en Windows o `python3 --version` en Linux o macOS.",
+        "correcte": true,
+        "feedback": "Correcte. Aquestes ordres permeten consultar la versió instal·lada de Python. Si l'ordre no és reconeguda, caldrà revisar la instal·lació o la configuració de l'entorn."
+      },
+      {
+        "text": "Executar `python install` perquè Python comprovarà si ja està instal·lat abans d'iniciar una nova instal·lació.",
+        "correcte": false,
+        "feedback": "Aquesta no és l'ordre indicada per comprovar la instal·lació. `python --version` o `python3 --version` mostren la versió de Python disponible."
+      },
+      {
+        "text": "Executar `pip --version`, ja que si pip està disponible significa necessàriament que Python està correctament instal·lat i accessible.",
+        "correcte": false,
+        "feedback": "pip està relacionat amb la gestió de paquets de Python, però la comprovació directa indicada en el text és executar Python amb l'opció `--version`."
+      },
+      {
+        "text": "Obrir un editor de text i crear un fitxer `.py`; si el sistema permet guardar-lo, Python està instal·lat.",
+        "correcte": false,
+        "feedback": "Crear o guardar un fitxer de text no comprova que l'intèrpret de Python estiga instal·lat. La comprovació es pot fer directament des de la terminal amb `python --version` o `python3 --version`."
+      }
+    ]
+  },
+  {
+    "CE": "1b-1",
+    "titol": "Un alumne escriu `python` en la consola i apareix una pantalla amb informació sobre la versió de Python i un indicador que permet introduir instruccions. Què indica aquesta situació?",
+    "pista": "No només s'ha consultat la versió: s'ha iniciat un component que permet executar instruccions de Python.",
+    "opcions": [
+      {
+        "text": "Que s'ha iniciat l'intèrpret interactiu de Python i que es poden executar instruccions directament.",
+        "correcte": true,
+        "feedback": "Correcte. Quan s'executa `python` i apareix l'intèrpret interactiu amb informació de la versió, Python està disponible i es poden introduir instruccions directament."
+      },
+      {
+        "text": "Que Python ha compilat automàticament tots els programes `.py` de l'ordinador i els ha deixat preparats per executar.",
+        "correcte": false,
+        "feedback": "Obrir l'intèrpret no implica compilar els programes de l'ordinador. L'intèrpret interactiu permet introduir i executar instruccions de Python directament."
+      },
+      {
+        "text": "Que s'ha obert un IDE complet amb editor, depurador i gestor de projectes.",
+        "correcte": false,
+        "feedback": "L'intèrpret interactiu i un IDE són eines diferents. L'intèrpret permet executar instruccions de Python, mentre que un IDE integra diverses eines de desenvolupament."
+      },
+      {
+        "text": "Que només està instal·lada la documentació de Python, però no l'intèrpret necessari per executar programes.",
+        "correcte": false,
+        "feedback": "Si apareix l'intèrpret interactiu i permet introduir instruccions, significa que l'intèrpret de Python està disponible. La documentació no proporciona aquesta funcionalitat."
+      }
+    ]
+  },
+  {
+    "CE": "1b-1",
+    "titol": "Una persona vol instal·lar Python en Windows i després poder executar l'ordre `python` des de la consola. Quina opció de l'instal·lador és especialment important segons el procediment explicat?",
+    "pista": "Aquesta opció facilita que el sistema puga trobar l'executable de Python des de la línia d'ordres.",
+    "opcions": [
+      {
+        "text": "Activar `Add Python to PATH` abans de començar la instal·lació.",
+        "correcte": true,
+        "feedback": "Correcte. Afegir Python al PATH permet que el sistema puga localitzar l'executable de Python des de la línia d'ordres, facilitant l'ús de l'ordre `python`."
+      },
+      {
+        "text": "Activar únicament l'opció de crear dreceres, perquè les ordres de Python es registren automàticament a partir de les dreceres.",
+        "correcte": false,
+        "feedback": "Les dreceres faciliten l'accés a aplicacions, però no són el mecanisme que permet localitzar `python` des de la consola. Per a això és important la configuració del PATH."
+      },
+      {
+        "text": "Instal·lar primer pip i afegir-lo al PATH, ja que pip és el component que permet executar l'intèrpret de Python.",
+        "correcte": false,
+        "feedback": "pip serveix principalment per gestionar paquets de Python. No és l'intèrpret de Python ni substitueix la configuració del PATH per localitzar l'ordre `python`."
+      },
+      {
+        "text": "Seleccionar una versió concreta de Python i deixar que Windows configure automàticament qualsevol ordre relacionada amb Python.",
+        "correcte": false,
+        "feedback": "Seleccionar una versió és necessari, però no garanteix per si mateix que `python` estiga disponible des de qualsevol consola. El procediment indicat destaca específicament l'opció `Add Python to PATH`."
+      }
+    ]
+  },
+
+
+  
+  {
+    "CE": "1b-2",
+    "titol": "Un estudiant executa `pip --version` i la terminal mostra una versió de pip. Quina conclusió és la més adequada?",
+    "pista": "La mateixa eina es pot comprovar des de la terminal abans d'utilitzar-la per gestionar paquets.",
+    "opcions": [
+      {
+        "text": "pip està disponible en l'entorn des del qual s'ha executat l'ordre.",
+        "correcte": true,
+        "feedback": "Correcte. Si `pip --version` mostra una versió, pip està instal·lat i accessible des de la terminal. En alguns sistemes pot ser necessari utilitzar `pip3`."
+      },
+      {
+        "text": "Python està instal·lat, però encara no es pot determinar si pip està disponible.",
+        "correcte": false,
+        "feedback": "La mateixa ordre `pip --version` serveix precisament per comprovar si pip està disponible. Si retorna una versió, la comprovació és positiva."
+      },
+      {
+        "text": "pip només està disponible per instal·lar paquets en l'entorn global del sistema.",
+        "correcte": false,
+        "feedback": "pip també pot gestionar paquets dins d'un entorn virtual. De fet, és recomanable instal·lar les dependències del projecte dins del seu entorn virtual."
+      },
+      {
+        "text": "pip està disponible, però és necessari instal·lar-lo de nou abans de poder instal·lar qualsevol paquet.",
+        "correcte": false,
+        "feedback": "No cal reinstal·lar pip si la comprovació mostra correctament la seua versió. En aquest cas ja es pot utilitzar per gestionar paquets."
+      }
+    ]
+  },
+  {
+    "CE": "1b-2",
+    "titol": "Per què és recomanable utilitzar un entorn virtual en un projecte Python?",
+    "pista": "Pensa què ocorre quan dos projectes necessiten versions diferents d'una mateixa biblioteca.",
+    "opcions": [
+      {
+        "text": "Perquè permet que cada projecte tinga les seues pròpies dependències sense interferir amb les d'altres projectes.",
+        "correcte": true,
+        "feedback": "Correcte. Un entorn virtual crea un espai aïllat on es poden instal·lar les dependències específiques d'un projecte, reduint conflictes entre versions i projectes."
+      },
+      {
+        "text": "Perquè evita haver d'instal·lar Python en l'ordinador i executa tots els programes directament des de pip.",
+        "correcte": false,
+        "feedback": "Un entorn virtual no substitueix Python. Utilitza una instal·lació de Python per crear un entorn aïllat amb les seues pròpies eines i paquets."
+      },
+      {
+        "text": "Perquè permet que tots els projectes compartisquen obligatòriament les mateixes versions de les biblioteques instal·lades.",
+        "correcte": false,
+        "feedback": "L'objectiu és precisament el contrari: cada entorn pot tindre les versions de paquets que necessita el seu projecte, sense haver de compartir-les amb altres projectes."
+      },
+      {
+        "text": "Perquè impedeix que els paquets de Python s'instal·len i obliga a executar-los sempre des de l'entorn global.",
+        "correcte": false,
+        "feedback": "L'entorn virtual permet instal·lar paquets específics dins de l'entorn. Això ajuda a evitar modificar innecessàriament la configuració global del sistema."
+      }
+    ]
+  },
+  {
+    "CE": "1b-2",
+    "titol": "Un projecte necessita la biblioteca `requests` i l'entorn virtual ja està activat. Quina ordre permet instal·lar-la en aquest entorn?",
+    "pista": "La instal·lació de paquets es fa amb pip i segueix una estructura molt concreta.",
+    "opcions": [
+      {
+        "text": "`pip install requests`",
+        "correcte": true,
+        "feedback": "Correcte. Amb l'entorn virtual activat, `pip install requests` instal·la el paquet `requests` en l'entorn actual."
+      },
+      {
+        "text": "`pip add requests`",
+        "correcte": false,
+        "feedback": "`add` no és l'ordre indicada per pip per instal·lar un paquet. La sintaxi correcta és `pip install nom_del_paquet`."
+      },
+      {
+        "text": "`python install requests`",
+        "correcte": false,
+        "feedback": "La instal·lació de paquets no es fa amb `python install`. En aquest cas s'utilitza pip, amb l'ordre `pip install requests`."
+      },
+      {
+        "text": "`pip get requests`",
+        "correcte": false,
+        "feedback": "`get` no és l'ordre de pip destinada a instal·lar paquets. Per instal·lar una biblioteca s'utilitza `pip install`."
+      }
+    ]
+  },
+  {
+    "CE": "1b-2",
+    "titol": "Un desenvolupador vol que una altra persona puga preparar el seu entorn amb les mateixes dependències i versions del projecte. Quina pràctica és la més adequada?",
+    "pista": "Cal disposar d'un fitxer que descriga les dependències que necessita el projecte.",
+    "opcions": [
+      {
+        "text": "Crear un `requirements.txt` amb les dependències del projecte i utilitzar-lo posteriorment amb `pip install -r requirements.txt`.",
+        "correcte": true,
+        "feedback": "Correcte. `requirements.txt` permet descriure les dependències del projecte, habitualment amb les seues versions, i instal·lar-les de manera reproduïble amb pip."
+      },
+      {
+        "text": "Copiar la carpeta completa de l'entorn virtual i utilitzar-la com a instal·lació estàndard en qualsevol altre ordinador.",
+        "correcte": false,
+        "feedback": "Un entorn virtual no és la forma habitual de distribuir les dependències d'un projecte. `requirements.txt` permet descriure-les i recrear l'entorn en un altre equip."
+      },
+      {
+        "text": "Executar `pip list` en l'ordinador de destinació, ja que aquesta ordre instal·la automàticament els mateixos paquets.",
+        "correcte": false,
+        "feedback": "`pip list` només mostra els paquets instal·lats en l'entorn actual; no els instal·la. Per instal·lar les dependències descrites en un fitxer s'utilitza `pip install -r requirements.txt`."
+      },
+      {
+        "text": "Utilitzar únicament `pip freeze` en l'ordinador de destinació, perquè aquesta ordre descarrega automàticament les versions necessàries.",
+        "correcte": false,
+        "feedback": "`pip freeze` mostra les dependències instal·lades i es pot redirigir a un `requirements.txt`, però no instal·la aquestes dependències en un altre ordinador."
+      }
+    ]
+  },
+
+
+
+  {
+    "CE": "1c-1",
+    "titol": "Un estudiant vol desenvolupar projectes Python amb una eina que permeta editar codi, executar-lo, depurar-lo i gestionar entorns virtuals. Quina opció s'ajusta millor al text?",
+    "pista": "Busca una eina que, amb l'extensió adequada, integre diverses funcionalitats de desenvolupament en un mateix entorn.",
+    "opcions": [
+      {
+        "text": "Visual Studio Code amb l'extensió oficial de Python de Microsoft.",
+        "correcte": true,
+        "feedback": "Correcte. VS Code, juntament amb l'extensió oficial de Python, permet executar scripts, depurar, treballar amb entorns virtuals i disposar d'altres eines de desenvolupament."
+      },
+      {
+        "text": "Sublime Text, perquè incorpora de manera nativa la depuració i la gestió d'entorns virtuals de Python.",
+        "correcte": false,
+        "feedback": "Sublime Text és un editor ràpid i personalitzable, però el text no indica que incorpore de manera nativa totes aquestes funcionalitats específiques de Python."
+      },
+      {
+        "text": "Jupyter Notebook, perquè està orientat principalment a substituir un IDE generalista en qualsevol tipus de projecte Python.",
+        "correcte": false,
+        "feedback": "Jupyter Notebook és especialment adequat per a ciència de dades i treball interactiu, però el text no el presenta com l'opció generalista recomanada per a qualsevol projecte Python."
+      },
+      {
+        "text": "VSCodium, perquè no necessita cap extensió ni eina addicional per proporcionar totes les funcionalitats específiques de Python.",
+        "correcte": false,
+        "feedback": "VSCodium és semblant a VS Code, però les funcionalitats específiques de Python depenen de les eines i extensions que s'hi integren. No s'han de confondre l'editor i les eines del llenguatge."
+      }
+    ]
+  },
+  {
+    "CE": "1c-1",
+    "titol": "Un estudiant instal·la VS Code i vol disposar de les funcionalitats específiques per desenvolupar en Python. Quina actuació ha de realitzar segons el text?",
+    "pista": "L'editor per si mateix no proporciona totes les funcionalitats específiques del llenguatge.",
+    "opcions": [
+      {
+        "text": "Instal·lar l'extensió oficial de Python de Microsoft des del gestor d'extensions de VS Code.",
+        "correcte": true,
+        "feedback": "Correcte. L'extensió oficial de Python proporciona la integració necessària per treballar amb Python, incloent-hi execució, depuració i gestió d'entorns."
+      },
+      {
+        "text": "Instal·lar únicament Flake8, ja que aquesta eina proporciona a VS Code totes les funcionalitats necessàries per desenvolupar en Python.",
+        "correcte": false,
+        "feedback": "Flake8 és un linter que analitza el codi, però no substitueix la integració de Python en VS Code ni proporciona totes les funcionalitats de desenvolupament."
+      },
+      {
+        "text": "Instal·lar Black, perquè el formatejador també incorpora l'intèrpret i el depurador de Python.",
+        "correcte": false,
+        "feedback": "Black és un formatejador: modifica el format del codi segons unes regles d'estil. No és l'intèrpret ni el depurador de Python."
+      },
+      {
+        "text": "Instal·lar l'extensió de Git, perquè el control de versions és el component que permet executar i depurar Python.",
+        "correcte": false,
+        "feedback": "Git és útil per al control de versions, però no és responsable d'executar o depurar Python. Aquestes funcionalitats provenen de la integració específica de Python."
+      }
+    ]
+  },
+  {
+    "CE": "1c-1",
+    "titol": "Quina diferència descriu correctament la funció d'un linter i la d'un formatejador en un projecte Python?",
+    "pista": "Una eina analitza el codi i assenyala problemes; l'altra modifica el seu format.",
+    "opcions": [
+      {
+        "text": "Flake8 analitza el codi per detectar errors, advertiments o males pràctiques, mentre que Black aplica automàticament un format consistent.",
+        "correcte": true,
+        "feedback": "Correcte. Flake8 és un linter i serveix per analitzar el codi; Black és un formatejador i modifica automàticament l'estil del codi segons les seues regles."
+      },
+      {
+        "text": "Black detecta els errors de lògica i Flake8 modifica automàticament el codi perquè complisca les regles d'estil.",
+        "correcte": false,
+        "feedback": "Les funcions estan intercanviades. Black s'encarrega del format, mentre que Flake8 analitza el codi i informa de problemes d'errors o d'estil."
+      },
+      {
+        "text": "Flake8 i Black fan essencialment la mateixa funció, però Black només s'utilitza quan el projecte té moltes línies de codi.",
+        "correcte": false,
+        "feedback": "No tenen exactament la mateixa funció. Flake8 analitza el codi i Black el reformata. Les dues eines poden ser útils independentment de la grandària del projecte."
+      },
+      {
+        "text": "Flake8 i Black són extensions pròpies de VS Code que no es poden executar fora de l'editor.",
+        "correcte": false,
+        "feedback": "Flake8 i Black són eines de Python, no extensions de VS Code. Es poden instal·lar en l'entorn Python i també executar directament des de la terminal."
+      }
+    ]
+  },
+  {
+    "CE": "1c-1",
+    "titol": "Un projecte Python utilitza Flake8, Black i isort. On és recomanable instal·lar aquestes eines segons les bones pràctiques indicades en el text?",
+    "pista": "Pensa en l'objectiu dels entorns virtuals: mantenir separades les dependències de cada projecte.",
+    "opcions": [
+      {
+        "text": "Dins de l'entorn virtual del projecte, utilitzant pip amb l'entorn activat.",
+        "correcte": true,
+        "feedback": "Correcte. Instal·lar Flake8, Black i isort dins del venv del projecte manté les eines i les seues versions associades a aquest projecte i evita contaminar l'entorn global."
+      },
+      {
+        "text": "Sempre globalment, perquè les eines de qualitat de codi han de ser compartides obligatòriament per tots els projectes Python.",
+        "correcte": false,
+        "feedback": "No és necessari instal·lar-les globalment. El text recomana instal·lar-les dins del venv del projecte per mantindre aïllades les dependències."
+      },
+      {
+        "text": "Directament dins de VS Code, perquè aquestes eines formen part del nucli de l'editor quan es treballa amb Python.",
+        "correcte": false,
+        "feedback": "Flake8, Black i isort no formen part del nucli de VS Code ni són extensions de Python de VS Code. Són eines de Python que l'editor pot utilitzar."
+      },
+      {
+        "text": "Exclusivament dins del directori del projecte, sense instal·lar-les en cap entorn Python.",
+        "correcte": false,
+        "feedback": "Les eines s'han d'instal·lar en un entorn Python. La recomanació és que aquest entorn siga el venv del projecte, no simplement una carpeta del projecte."
+      }
+    ]
+  },
+
+
+
+  {
+    "CE": "1c-2",
+    "titol": "Quin és l'objectiu principal de la depuració (debugging) en un programa Python?",
+    "pista": "No es tracta de crear noves funcionalitats, sinó de millorar el funcionament del codi existent.",
+    "opcions": [
+      {
+        "text": "Optimitzar automàticament el rendiment del programa sense analitzar-ne el comportament.",
+        "correcte": false,
+        "feedback": "Algunes eines poden ajudar a optimitzar el rendiment, però la depuració se centra principalment a localitzar i corregir errors."
+      },
+      {
+        "text": "Trobar i corregir errors en el codi perquè el programa funcione com s'espera.",
+        "correcte": true,
+        "feedback": "Correcte. La depuració consisteix a identificar les causes dels errors i corregir-les per aconseguir el comportament desitjat del programa."
+      },
+      {
+        "text": "Convertir el codi Python en codi màquina de forma automàtica.",
+        "correcte": false,
+        "feedback": "Aquesta funció està relacionada amb compiladors o intèrprets, no amb la depuració."
+      },
+      {
+        "text": "Documentar el programa perquè altres desenvolupadors entenguen millor el codi.",
+        "correcte": false,
+        "feedback": "La documentació és una pràctica important, però no forma part de l'objectiu principal de la depuració."
+      }
+    ]
+  },
+  {
+    "CE": "1c-2",
+    "titol": "Quina és la funció principal d'un sistema de control de versions com Git?",
+    "pista": "Pensa en què permet fer amb els canvis realitzats en un projecte al llarg del temps.",
+    "opcions": [
+      {
+        "text": "Executar programes Python en diferents sistemes operatius sense modificacions.",
+        "correcte": false,
+        "feedback": "La portabilitat depén principalment del llenguatge i de l'entorn d'execució, no del control de versions."
+      },
+      {
+        "text": "Instal·lar biblioteques i dependències de manera automàtica.",
+        "correcte": false,
+        "feedback": "Aquesta és una funció pròpia de gestors de paquets com pip, no de Git."
+      },
+      {
+        "text": "Gestionar els canvis del codi, mantindre un historial i facilitar la col·laboració.",
+        "correcte": true,
+        "feedback": "Correcte. Git permet registrar canvis, recuperar versions anteriors i coordinar el treball entre diverses persones."
+      },
+      {
+        "text": "Analitzar el codi per detectar errors d'estil i de sintaxi.",
+        "correcte": false,
+        "feedback": "Aquesta tasca correspon a eines com Flake8 o altres linters."
+      }
+    ]
+  },
+  {
+    "CE": "1c-2",
+    "titol": "Quina comanda de Git s'utilitza per guardar definitivament en l'historial els canvis que ja estan preparats?",
+    "pista": "Abans d'aquesta acció, els fitxers solen haver passat per l'àrea de preparació (staging area).",
+    "opcions": [
+      {
+        "text": "git log",
+        "correcte": false,
+        "feedback": "git log serveix per consultar l'historial de commits, no per crear-ne un de nou."
+      },
+      {
+        "text": "git status",
+        "correcte": false,
+        "feedback": "git status mostra l'estat actual del repositori, però no guarda canvis."
+      },
+      {
+        "text": "git add .",
+        "correcte": false,
+        "feedback": "git add prepara els fitxers per al següent commit, però encara no els desa a l'historial."
+      },
+      {
+        "text": "git commit -m \"Missatge descriptiu del canvi\"",
+        "correcte": true,
+        "feedback": "Correcte. Un commit crea un nou registre en l'historial del repositori amb els canvis preparats."
+      }
+    ]
+  },
+  {
+    "CE": "1c-2",
+    "titol": "Per a què serveix principalment un arxiu .gitignore dins d'un projecte?",
+    "pista": "No tots els fitxers generats durant el desenvolupament han de formar part del repositori.",
+    "opcions": [
+      {
+        "text": "Per indicar a Git quins fitxers o carpetes ha d'ignorar i no incloure en el control de versions.",
+        "correcte": true,
+        "feedback": "Correcte. .gitignore evita que Git controle fitxers temporals, entorns virtuals, arxius generats automàticament o informació sensible."
+      },
+      {
+        "text": "Per emmagatzemar l'historial complet dels commits del projecte.",
+        "correcte": false,
+        "feedback": "L'historial es guarda internament dins del repositori Git, no en el fitxer .gitignore."
+      },
+      {
+        "text": "Per definir els missatges predeterminats que utilitzarà git commit.",
+        "correcte": false,
+        "feedback": ".gitignore no gestiona missatges de commit; només especifica fitxers o carpetes que Git ha d'ignorar."
+      },
+      {
+        "text": "Per configurar les dades de l'usuari, com el nom i el correu electrònic de Git.",
+        "correcte": false,
+        "feedback": "Aquestes dades es configuren habitualment amb ordres com git config, no dins de .gitignore."
+      }
+    ]
+  },
+
+
+
+  {
+    "CE": "1c-3",
+    "titol": "Un projecte Python necessita utilitzar una clau secreta per accedir a una API. Quina opció segueix millor les bones pràctiques de seguretat descrites?",
+    "pista": "La clau no hauria de formar part directament del codi font ni acabar en un repositori.",
+    "opcions": [
+      {
+        "text": "Guardar la clau en un fitxer .env i excloure aquest fitxer amb .gitignore.",
+        "correcte": true,
+        "feedback": "Correcte. Les variables d'entorn permeten separar informació sensible del codi font i .gitignore ajuda a evitar que el fitxer .env es publique accidentalment."
+      },
+      {
+        "text": "Guardar la clau en una constant del programa i afegir el fitxer Python a .gitignore.",
+        "correcte": false,
+        "feedback": "Això evita publicar el fitxer concret, però la credencial continua formant part del codi font. Separar les dades sensibles del codi és una pràctica més adequada."
+      },
+      {
+        "text": "Guardar la clau en requirements.txt perquè quede associada a les dependències del projecte.",
+        "correcte": false,
+        "feedback": "requirements.txt està pensat per descriure dependències de Python i les seues versions, no per emmagatzemar credencials."
+      },
+      {
+        "text": "Guardar la clau en un comentari del programa i protegir el repositori amb una contrasenya.",
+        "correcte": false,
+        "feedback": "Un comentari continua formant part del codi font i pot acabar exposat en còpies o repositoris. Les credencials s'han de gestionar fora del codi."
+      }
+    ]
+  },
+  {
+    "CE": "1c-3",
+    "titol": "Un estudiant crea dos projectes Python que necessiten versions diferents d'una mateixa biblioteca. Quina solució permet aïllar correctament les dependències de cada projecte?",
+    "pista": "L'objectiu és evitar que les dependències d'un projecte interferisquen amb les de l'altre.",
+    "opcions": [
+      {
+        "text": "Instal·lar sempre les biblioteques globalment i actualitzar-les abans d'executar cada projecte.",
+        "correcte": false,
+        "feedback": "Aquesta pràctica pot provocar conflictes entre projectes quan necessiten versions diferents. L'aïllament és precisament una de les raons per utilitzar entorns virtuals."
+      },
+      {
+        "text": "Crear un entorn virtual independent per a cada projecte i instal·lar-hi les dependències necessàries.",
+        "correcte": true,
+        "feedback": "Correcte. Un entorn virtual aïlla les dependències de cada projecte i evita que les versions instal·lades en un projecte afecten els altres."
+      },
+      {
+        "text": "Utilitzar sempre l'última versió disponible de cada biblioteca en tots els projectes.",
+        "correcte": false,
+        "feedback": "Utilitzar sempre l'última versió no garanteix compatibilitat. Els entorns virtuals i la fixació de versions ajuden a reproduir un entorn concret."
+      },
+      {
+        "text": "Copiar manualment les biblioteques dins de la carpeta de cada projecte sense crear cap entorn virtual.",
+        "correcte": false,
+        "feedback": "Copiar fitxers manualment no proporciona la gestió d'un entorn Python aïllat ni resol adequadament la gestió de dependències."
+      }
+    ]
+  },
+  {
+    "CE": "1c-3",
+    "titol": "Un projecte utilitza diverses biblioteques i es vol facilitar que un altre desenvolupador puga recrear el mateix entorn amb les versions utilitzades. Quina pràctica és la més adequada?",
+    "pista": "Pensa en el fitxer que descriu les dependències necessàries del projecte.",
+    "opcions": [
+      {
+        "text": "Crear un fitxer requirements.txt amb les dependències i les versions corresponents.",
+        "correcte": true,
+        "feedback": "Correcte. requirements.txt permet especificar les dependències del projecte i les versions perquè altres desenvolupadors puguen preparar un entorn equivalent."
+      },
+      {
+        "text": "Incloure totes les biblioteques instal·lades dins del fitxer .gitignore.",
+        "correcte": false,
+        "feedback": ".gitignore serveix per indicar què no s'ha de versionar. No és el mecanisme per descriure les dependències necessàries del projecte."
+      },
+      {
+        "text": "Executar pip install sense indicar versions i confiar que les biblioteques siguen compatibles.",
+        "correcte": false,
+        "feedback": "Això pot instal·lar versions diferents en moments diferents i provocar incompatibilitats. Especificar les dependències i versions millora la reproduïbilitat."
+      },
+      {
+        "text": "Copiar la carpeta del projecte complet amb totes les biblioteques instal·lades i executar-la en l'altre ordinador.",
+        "correcte": false,
+        "feedback": "Copiar l'entorn complet no és una manera adequada i reproduïble de gestionar dependències. Un fitxer de requisits permet instal·lar-les de manera controlada."
+      }
+    ]
+  },
+  {
+    "CE": "1c-3",
+    "titol": "Una aplicació Python necessita analitzar grans quantitats de dades numèriques mitjançant vectors i matrius. Quina biblioteca de les següents és la més adequada segons el text?",
+    "pista": "És una biblioteca especialment orientada al càlcul numèric eficient amb vectors i matrius.",
+    "opcions": [
+      {
+        "text": "Requests",
+        "correcte": false,
+        "feedback": "Requests està orientada a realitzar peticions HTTP i comunicar-se amb serveis web, no al càlcul numèric amb vectors i matrius."
+      },
+      {
+        "text": "Tkinter",
+        "correcte": false,
+        "feedback": "Tkinter s'utilitza principalment per crear interfícies gràfiques d'usuari, no per al tractament numèric de vectors i matrius."
+      },
+      {
+        "text": "NumPy",
+        "correcte": true,
+        "feedback": "Correcte. NumPy proporciona estructures i operacions eficients per treballar amb vectors, matrius i càlculs matemàtics."
+      },
+      {
+        "text": "BeautifulSoup",
+        "correcte": false,
+        "feedback": "BeautifulSoup s'utilitza principalment per analitzar i extreure informació de documents HTML o XML, habitualment en tasques de web scraping."
+      }
+    ]
+  },
+
+
+
+  {
+    "CE": "1c-4",
+    "titol": "Un estudiant vol provar ràpidament una expressió Python i veure'n el resultat sense crear cap fitxer .py. Quina opció és la més adequada?",
+    "pista": "Busca l'entorn interactiu que executa les instruccions línia per línia.",
+    "opcions": [
+      {
+        "text": "Crear un fitxer .py i executar-lo des de la terminal.",
+        "correcte": false,
+        "feedback": "Aquesta opció és adequada per executar un programa guardat en un fitxer, però no és la forma més directa de fer proves ràpides i interactives."
+      },
+      {
+        "text": "Utilitzar el gestor de projectes d'un IDE per organitzar el programa.",
+        "correcte": false,
+        "feedback": "El gestor de projectes serveix principalment per organitzar fitxers i recursos. No és l'eina específica per executar expressions de manera interactiva."
+      },
+      {
+        "text": "Obrir el Python Shell o REPL i introduir l'expressió després del prompt >>>.",
+        "correcte": true,
+        "feedback": "Correcte. El Python Shell és un REPL que permet escriure instruccions, executar-les immediatament i veure'n el resultat, cosa molt útil per experimentar i fer proves ràpides."
+      },
+      {
+        "text": "Obrir un Jupyter Notebook i crear un projecte abans d'executar qualsevol expressió.",
+        "correcte": false,
+        "feedback": "Jupyter també permet executar codi de manera interactiva, però per a una prova puntual d'una expressió el Python Shell és una opció més directa i senzilla."
+      }
+    ]
+  },
+  {
+    "CE": "1c-4",
+    "titol": "Quina afirmació descriu millor la diferència entre executar Python mitjançant el REPL i executar un script .py?",
+    "pista": "Compara una sessió interactiva amb l'execució d'un programa emmagatzemat en un fitxer.",
+    "opcions": [
+      {
+        "text": "En el REPL les instruccions s'executen de manera interactiva, mentre que un script conté el codi en un fitxer que es pot executar com un programa.",
+        "correcte": true,
+        "feedback": "Correcte. El REPL permet introduir i executar instruccions immediatament, mentre que un script .py conté el programa en un fitxer que podem executar posteriorment."
+      },
+      {
+        "text": "El REPL només permet executar expressions numèriques, mentre que els scripts permeten utilitzar qualsevol instrucció Python.",
+        "correcte": false,
+        "feedback": "El REPL permet executar instruccions Python molt diverses, no només expressions numèriques. La diferència principal és la forma d'interacció i d'emmagatzemar el codi."
+      },
+      {
+        "text": "Un script .py sempre necessita un IDE, mentre que el REPL només funciona des de sistemes Linux.",
+        "correcte": false,
+        "feedback": "Un script es pot executar directament des de la terminal sense necessitat d'un IDE, i el REPL de Python està disponible en diferents sistemes operatius."
+      },
+      {
+        "text": "El REPL compila tot el programa abans d'executar-lo, mentre que un script executa obligatòriament cada instrucció de manera independent.",
+        "correcte": false,
+        "feedback": "Aquesta no és la diferència fonamental. El REPL està orientat a la interacció immediata, mentre que el script permet executar el codi contingut en un fitxer."
+      }
+    ]
+  },
+  {
+    "CE": "1c-4",
+    "titol": "Un estudiant vol treballar en un document on puga combinar codi Python, explicacions en Markdown, equacions i gràfics, executant el codi per cel·les. Quina eina del text s'ajusta millor a aquesta necessitat?",
+    "pista": "És una eina web interactiva especialment útil per a exploració de dades i documentació.",
+    "opcions": [
+      {
+        "text": "IDLE",
+        "correcte": false,
+        "feedback": "IDLE és un entorn gràfic senzill per editar i executar Python, però no està orientat a combinar codi, Markdown i resultats en un quadern per cel·les."
+      },
+      {
+        "text": "Jupyter Notebook",
+        "correcte": true,
+        "feedback": "Correcte. Jupyter permet combinar codi, text i equacions en un mateix document i executar el codi per cel·les, mostrant també resultats i gràfics."
+      },
+      {
+        "text": "Python Shell",
+        "correcte": false,
+        "feedback": "El Python Shell és molt útil per experimentar amb instruccions de manera interactiva, però no proporciona l'estructura de quadern amb cel·les, Markdown i visualitzacions pròpia de Jupyter."
+      },
+      {
+        "text": "Git Bash",
+        "correcte": false,
+        "feedback": "Git Bash proporciona una terminal per treballar amb Git i altres ordres, però no és una eina orientada a crear quaderns interactius amb codi i documentació."
+      }
+    ]
+  },
+  {
+    "CE": "1c-4",
+    "titol": "Quan apareix el prompt `>>>` en iniciar Python des de la terminal, què indica aquest símbol?",
+    "pista": "Relaciona el prompt amb el funcionament del REPL.",
+    "opcions": [
+      {
+        "text": "Que Python ha detectat un error de sintaxi i espera que el programador el corregisca.",
+        "correcte": false,
+        "feedback": "Un error de sintaxi es mostra amb un missatge com `SyntaxError`. El prompt `>>>` indica simplement que l'intèrpret està preparat per rebre una nova instrucció."
+      },
+      {
+        "text": "Que Python està esperant que finalitze la compilació del programa abans de continuar.",
+        "correcte": false,
+        "feedback": "En el REPL no apareix `>>>` per indicar una compilació pendent. El prompt indica que la consola interactiva està preparada per rebre una ordre."
+      },
+      {
+        "text": "Que Python està executant en segon pla l'última instrucció introduïda.",
+        "correcte": false,
+        "feedback": "Quan apareix `>>>`, Python està esperant una nova instrucció. El resultat de l'ordre anterior ja s'ha mostrat, si corresponia."
+      },
+      {
+        "text": "Que l'intèrpret està preparat per rebre una nova instrucció Python.",
+        "correcte": true,
+        "feedback": "Correcte. En el REPL, `>>>` és el prompt que indica que l'intèrpret està esperant una nova ordre que l'usuari pot introduir i executar."
+      }
+    ]
+  }
+]

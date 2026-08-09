@@ -1,0 +1,543 @@
+
+[
+  {
+    "CE": "1a",
+    "titol": "Quina afirmació descriu millor què significa programar en informàtica?",
+    "pista": "No es tracta només d'escriure codi, sinó de definir què ha de fer l'ordinador.",
+    "opcions": [
+      {
+        "text": "Dissenyar una solució i expressar-la mitjançant instruccions que l'ordinador puga executar.",
+        "correcte": true,
+        "feedback": "Correcte. Programar implica entendre un problema, dissenyar una solució i expressar-la mitjançant instruccions que l'ordinador puga executar."
+      },
+      {
+        "text": "Seleccionar les instruccions més adequades d'un llenguatge perquè l'ordinador puga decidir com resoldre el problema.",
+        "correcte": false,
+        "feedback": "L'ordinador no decideix com resoldre el problema a partir de les nostres intencions. El programador ha de definir explícitament els passos que s'han de seguir."
+      },
+      {
+        "text": "Convertir qualsevol problema en un conjunt d'ordres d'un llenguatge de programació, independentment de l'anàlisi prèvia.",
+        "correcte": false,
+        "feedback": "L'anàlisi prèvia és fonamental. El text destaca que programar no consisteix simplement a començar a escriure codi, sinó que primer cal entendre el problema i trobar una solució."
+      },
+      {
+        "text": "Utilitzar un llenguatge de programació per descriure principalment les dades que necessita un ordinador.",
+        "correcte": false,
+        "feedback": "Les dades són una part important d'un problema, però un programa també ha de definir les operacions i els passos necessaris per obtenir el resultat desitjat."
+      }
+    ]
+  },
+  {
+    "CE": "1a",
+    "titol": "Un estudiant vol crear un programa per calcular la nota mitjana d'una sèrie d'exàmens. Abans d'escriure codi, determina quines dades necessita, quin resultat espera i quins passos ha de seguir. Què està construint?",
+    "pista": "És la descripció ordenada de la solució abans d'implementar-la amb un llenguatge.",
+    "opcions": [
+      {
+        "text": "Una especificació de la sintaxi que haurà d'utilitzar posteriorment.",
+        "correcte": false,
+        "feedback": "La sintaxi concreta del llenguatge encara no és el més important en aquesta fase. Primer s'està definint com resoldre el problema."
+      },
+      {
+        "text": "Un algorisme que descriu els passos necessaris per resoldre el problema.",
+        "correcte": true,
+        "feedback": "Correcte. L'algorisme és una seqüència ordenada de passos que descriu com resoldre un problema abans de convertir aquesta solució en codi."
+      },
+      {
+        "text": "Un programa executable independentment del llenguatge que utilitzarà.",
+        "correcte": false,
+        "feedback": "Encara no és un programa executable. L'estudiant ha definit la solució; posteriorment haurà de traduir-la a un llenguatge de programació."
+      },
+      {
+        "text": "Una prova del programa que permet comprovar si el resultat final és correcte.",
+        "correcte": false,
+        "feedback": "Una prova serveix per verificar el comportament d'una solució ja implementada. En aquest cas encara s'està definint la solució."
+      }
+    ]
+  },
+  {
+    "CE": "1a",
+    "titol": "Per què el text proposa treballar els algorismes en paper abans d'utilitzar Python?",
+    "pista": "L'objectiu és separar la resolució del problema de les dificultats pròpies de la sintaxi.",
+    "opcions": [
+      {
+        "text": "Perquè així l'alumnat pot aprendre a programar sense necessitat d'aprendre cap llenguatge de programació.",
+        "correcte": false,
+        "feedback": "L'objectiu no és prescindir dels llenguatges de programació, sinó treballar primer la capacitat de resoldre problemes abans d'introduir la sintaxi de Python."
+      },
+      {
+        "text": "Perquè un algorisme escrit en paper és més eficient que un programa executat en un ordinador.",
+        "correcte": false,
+        "feedback": "L'algorisme en paper no s'executa ni es pot considerar més eficient que el programa. El seu objectiu és ajudar a dissenyar i analitzar la solució."
+      },
+      {
+        "text": "Perquè permet centrar-se en l'anàlisi del problema i en la solució abans de preocupar-se per la sintaxi.",
+        "correcte": true,
+        "feedback": "Correcte. Treballar en paper permet practicar l'anàlisi, l'organització dels passos i la construcció de solucions sense que la sintaxi del llenguatge distraiga d'aquests conceptes."
+      },
+      {
+        "text": "Perquè Python només és útil quan l'algorisme ha sigut escrit prèviament en paper.",
+        "correcte": false,
+        "feedback": "Python pot utilitzar-se sense haver escrit l'algorisme en paper. Treballar-lo en paper és una estratègia didàctica per desenvolupar el pensament algorítmic."
+      }
+    ]
+  },
+  {
+    "CE": "1a",
+    "titol": "Quina situació representa millor el pensament computacional descrit en el text?",
+    "pista": "Busca una situació en què el problema es transforma en una solució ordenada i verificable.",
+    "opcions": [
+      {
+        "text": "Aprendre de memòria les instruccions més utilitzades d'un llenguatge per poder escriure codi més ràpidament.",
+        "correcte": false,
+        "feedback": "Memoritzar instruccions pot facilitar l'escriptura de codi, però el text relaciona el pensament computacional amb analitzar problemes, dividir-los, trobar solucions i comprovar-les."
+      },
+      {
+        "text": "Dividir un problema complex en parts més senzilles, definir una solució ordenada i comprovar que funciona.",
+        "correcte": true,
+        "feedback": "Correcte. Aquest procés recull diverses habilitats que el text associa al pensament computacional: analitzar, dividir el problema, trobar una solució i comprovar-ne el funcionament."
+      },
+      {
+        "text": "Triar el llenguatge de programació més conegut abans de determinar quins passos necessita la solució.",
+        "correcte": false,
+        "feedback": "El text presenta el llenguatge com una eina. Primer cal entendre el problema i dissenyar la solució; després es pot expressar amb el llenguatge adequat."
+      },
+      {
+        "text": "Escriure una primera versió del programa i modificar-la fins que produïsca un resultat acceptable.",
+        "correcte": false,
+        "feedback": "Provar i modificar programes pot formar part del desenvolupament, però aquesta opció no recull per si mateixa les habilitats de pensament computacional destacades en el text."
+      }
+    ]
+  },
+  {
+    "CE": "1a-1",
+    "titol": "Quina diferència descriu millor la relació entre una instrucció i un algorisme?",
+    "pista": "Pensa en les instruccions com les peces que formen una solució més completa.",
+    "opcions": [
+      {
+        "text": "Una instrucció defineix el problema que cal resoldre, mentre que l'algorisme determina el llenguatge que s'ha d'utilitzar.",
+        "correcte": false,
+        "feedback": "No és correcte. Una instrucció representa una acció o ordre concreta, mentre que un algorisme organitza diverses instruccions per resoldre un problema o realitzar una tasca."
+      },
+      {
+        "text": "Un algorisme és una instrucció especialment complexa que pot incloure diverses accions dins d'una mateixa ordre.",
+        "correcte": false,
+        "feedback": "No exactament. Un algorisme no és simplement una instrucció complexa, sinó una seqüència ordenada d'instruccions que, en conjunt, permet aconseguir un objectiu."
+      },
+      {
+        "text": "Les instruccions són accions bàsiques i ordenades que, combinades, permeten construir un algorisme.",
+        "correcte": true,
+        "feedback": "Correcte. Una instrucció representa una acció o ordre concreta. Els algorismes es construeixen combinant i organitzant instruccions, que poden incloure decisions i repeticions."
+      },
+      {
+        "text": "Les instruccions només s'utilitzen després d'haver escrit l'algorisme, ja que no formen part de la seua estructura.",
+        "correcte": false,
+        "feedback": "Incorrecte. Les instruccions són precisament les peces bàsiques amb què es construeixen els algorismes."
+      }
+    ]
+  },
+  {
+    "CE": "1a-1",
+    "titol": "Un algorisme necessita decidir entre dues accions segons el valor d'una dada i, posteriorment, repetir una d'elles diverses vegades. Quines estructures pot utilitzar per descriure aquesta solució?",
+    "pista": "Relaciona cada necessitat amb una de les estructures bàsiques que pot contenir un algorisme.",
+    "opcions": [
+      {
+        "text": "Una condició per prendre la decisió i un bucle per repetir l'acció.",
+        "correcte": true,
+        "feedback": "Correcte. Els algorismes poden combinar condicions, que permeten decidir què fer segons una situació, i bucles, que permeten repetir una acció o conjunt d'accions."
+      },
+      {
+        "text": "Un compilador per prendre la decisió i un intèrpret per controlar les repeticions.",
+        "correcte": false,
+        "feedback": "Incorrecte. Compiladors i intèrprets estan relacionats amb l'execució dels programes, no són estructures algorítmiques per representar decisions o repeticions."
+      },
+      {
+        "text": "Una funció per prendre la decisió i un llenguatge de baix nivell per controlar les repeticions.",
+        "correcte": false,
+        "feedback": "No és correcte. Una funció pot ajudar a organitzar un programa, però el text identifica específicament les condicions i els bucles com a elements que poden formar part d'un algorisme."
+      },
+      {
+        "text": "Una instrucció declarativa per prendre la decisió i una instrucció compilada per controlar les repeticions.",
+        "correcte": false,
+        "feedback": "Incorrecte. Declaratiu i compilat són classificacions relacionades amb aspectes diferents dels llenguatges de programació. Les decisions i repeticions es representen mitjançant estructures de control."
+      }
+    ]
+  },
+  {
+    "CE": "1a-1",
+    "titol": "Un programador coneix Python i C++, però ha de començar un projecte nou. Segons el text, quin criteri és més adequat per decidir quin llenguatge utilitzar?",
+    "pista": "El llenguatge no és un fi en si mateix: depén del que es vol aconseguir.",
+    "opcions": [
+      {
+        "text": "Utilitzar sempre el llenguatge amb una sintaxi més senzilla, independentment de les característiques del projecte.",
+        "correcte": false,
+        "feedback": "La simplicitat pot ser un factor important, però el text indica que l'elecció depén del projecte i dels objectius que es volen aconseguir."
+      },
+      {
+        "text": "Triar el llenguatge que permeta expressar l'algorisme amb menys instruccions, encara que no siga adequat per a l'aplicació.",
+        "correcte": false,
+        "feedback": "No és suficient que el codi siga més curt. Cal considerar les necessitats i els objectius del projecte i les característiques del llenguatge."
+      },
+      {
+        "text": "Escollir el llenguatge en funció del projecte, els seus objectius i les característiques que ofereix cada llenguatge.",
+        "correcte": true,
+        "feedback": "Correcte. No existeix un únic llenguatge adequat per a tots els problemes. L'elecció depén del projecte, dels objectius i de les característiques del llenguatge."
+      },
+      {
+        "text": "Utilitzar el llenguatge de més alt nivell possible, perquè els llenguatges de baix nivell no permeten resoldre problemes complexos.",
+        "correcte": false,
+        "feedback": "Incorrecte. El nivell d'abstracció és una forma de classificar els llenguatges, però no implica que els llenguatges de baix nivell no puguen resoldre problemes complexos."
+      }
+    ]
+  },
+  {
+    "CE": "1a-1",
+    "titol": "Quina afirmació diferencia millor un llenguatge compilat d'un llenguatge que utilitza un intèrpret?",
+    "pista": "Fixa't en quan es realitza la traducció del programa respecte del moment de l'execució.",
+    "opcions": [
+      {
+        "text": "En un llenguatge compilat, el programa es tradueix a codi màquina abans de l'execució; en un llenguatge interpretat, l'execució es realitza mitjançant un intèrpret.",
+        "correcte": true,
+        "feedback": "Correcte. La diferència fonamental indicada en el text és el moment i la forma en què es tradueix i executa el programa. En els compilats, la traducció a codi màquina es fa abans de l'execució; en els interpretats intervé un intèrpret durant l'execució."
+      },
+      {
+        "text": "Un llenguatge compilat sempre utilitza més memòria que un llenguatge interpretat perquè necessita conservar el codi font complet.",
+        "correcte": false,
+        "feedback": "Incorrecte. El model de compilació o interpretació no es pot determinar simplement comparant la memòria utilitzada. La diferència principal és el procés de traducció i execució."
+      },
+      {
+        "text": "En un llenguatge interpretat no existeix cap traducció del programa, mentre que en un compilat el codi font es converteix directament en bytecode.",
+        "correcte": false,
+        "feedback": "Incorrecte. Un intèrpret també ha de processar el programa per poder executar-lo. A més, el text diferencia el bytecode com una forma de codi intermedi utilitzada en models semicompilats."
+      },
+      {
+        "text": "La diferència principal és que els llenguatges compilats són sempre de baix nivell i els interpretats sempre són d'alt nivell.",
+        "correcte": false,
+        "feedback": "Incorrecte. Nivell d'abstracció i model d'execució són criteris de classificació diferents. Un llenguatge no es classifica com a compilat o interpretat simplement pel seu nivell d'abstracció."
+      }
+    ]
+  },
+  {
+    "CE": "1a-2",
+    "titol": "En quin moment del procés de programació s'hauria de concretar principalment què ha de fer el programa i quin problema ha de resoldre?",
+    "pista": "És el punt de partida abans de decidir com implementar la solució.",
+    "opcions": [
+      {
+        "text": "Durant la depuració, quan es comprova si el comportament del programa coincideix amb el que s'esperava.",
+        "correcte": false,
+        "feedback": "La depuració serveix per detectar i corregir errors del codi. El problema i l'objectiu s'han de definir abans de començar la implementació."
+      },
+      {
+        "text": "En la fase de disseny de l'algorisme, perquè és quan es decideixen els passos concrets de la solució.",
+        "correcte": false,
+        "feedback": "El disseny de l'algorisme concreta com resoldre el problema, però abans cal haver definit quin problema es vol resoldre i quin objectiu es pretén aconseguir."
+      },
+      {
+        "text": "En la definició del problema, que és el primer pas abans de dissenyar la solució.",
+        "correcte": true,
+        "feedback": "Correcte. Abans de decidir el llenguatge o escriure l'algorisme, cal identificar clarament el problema que es vol resoldre i l'objectiu del programa."
+      },
+      {
+        "text": "Durant les proves, perquè els resultats obtinguts permeten determinar retrospectivament quin problema resol el programa.",
+        "correcte": false,
+        "feedback": "Les proves serveixen per comprovar si el programa compleix els objectius definits. No haurien de ser el moment en què es decideix quin problema es vol resoldre."
+      }
+    ]
+  },
+  {
+    "CE": "1a-2",
+    "titol": "Un programador ja ha definit el problema i ha dissenyat correctament l'algorisme. Quina és la tasca principal que correspon a la fase d'escriptura del codi?",
+    "pista": "En aquesta fase la solució ja està pensada; ara cal expressar-la en un llenguatge concret.",
+    "opcions": [
+      {
+        "text": "Determinar per primera vegada quins passos són necessaris per resoldre el problema.",
+        "correcte": false,
+        "feedback": "Aquesta tasca correspon principalment al disseny de l'algorisme. En escriure el codi, la solució ja hauria d'estar definida."
+      },
+      {
+        "text": "Traduir l'algorisme al llenguatge escollit respectant les regles sintàctiques d'aquest llenguatge.",
+        "correcte": true,
+        "feedback": "Correcte. Escriure el codi consisteix a transformar la solució definida en l'algorisme en instruccions del llenguatge de programació seleccionat."
+      },
+      {
+        "text": "Comprovar exhaustivament que el programa funciona en totes les situacions possibles.",
+        "correcte": false,
+        "feedback": "Aquesta és una tasca pròpia de la fase de proves. En escriure el codi es materialitza la solució, però després cal comprovar-ne el funcionament."
+      },
+      {
+        "text": "Escollir el llenguatge que millor s'adapta al projecte en funció dels requisits de rendiment.",
+        "correcte": false,
+        "feedback": "La selecció del llenguatge és un pas anterior a l'escriptura del codi. Una vegada seleccionat, l'algorisme es tradueix a aquest llenguatge."
+      }
+    ]
+  },
+  {
+    "CE": "1a-2",
+    "titol": "Un programa no produeix el resultat esperat perquè una part del codi conté un error. Quina fase del procés té com a objectiu principal localitzar i corregir aquest tipus de problema?",
+    "pista": "No és el mateix descobrir si el programa funciona com s'espera que localitzar i corregir els errors del codi.",
+    "opcions": [
+      {
+        "text": "Depuració.",
+        "correcte": true,
+        "feedback": "Correcte. La depuració consisteix a detectar i corregir errors del codi que impedeixen o alteren el funcionament correcte del programa."
+      },
+      {
+        "text": "Disseny de l'algorisme.",
+        "correcte": false,
+        "feedback": "El disseny de l'algorisme serveix per definir els passos de la solució abans d'escriure el codi. Una vegada existeix el programa, els errors del codi es tracten durant la depuració."
+      },
+      {
+        "text": "Selecció del llenguatge.",
+        "correcte": false,
+        "feedback": "Seleccionar el llenguatge consisteix a escollir l'eina més adequada per al projecte. No és la fase destinada a localitzar i corregir errors concrets del codi."
+      },
+      {
+        "text": "Manteniment.",
+        "correcte": false,
+        "feedback": "El manteniment inclou les tasques necessàries per conservar i adaptar el programa al llarg del temps. En el procés descrit, la detecció i correcció d'errors del codi correspon específicament a la depuració."
+      }
+    ]
+  },
+  {
+    "CE": "1a-2",
+    "titol": "Quina afirmació descriu millor la funció d'un IDE en el desenvolupament d'un programa?",
+    "pista": "La característica principal d'un IDE és integrar diverses eines de desenvolupament en un mateix entorn.",
+    "opcions": [
+      {
+        "text": "És un compilador especialitzat que transforma qualsevol llenguatge de programació directament en codi màquina.",
+        "correcte": false,
+        "feedback": "Un IDE pot integrar un compilador o un intèrpret, però no és simplement un compilador ni tots els IDE utilitzen el mateix mecanisme d'execució."
+      },
+      {
+        "text": "És un entorn que integra eines com l'edició, l'execució, la depuració i la gestió del projecte en un mateix programa.",
+        "correcte": true,
+        "feedback": "Correcte. Un IDE, o Entorn de Desenvolupament Integrat, reuneix diverses eines que faciliten diferents tasques del desenvolupament de programari."
+      },
+      {
+        "text": "És una eina destinada principalment a organitzar fitxers, mentre que l'escriptura i depuració del codi es realitzen amb aplicacions independents.",
+        "correcte": false,
+        "feedback": "La gestió del projecte pot formar part d'un IDE, però precisament una de les seues característiques és integrar també l'edició, la depuració i altres eines de desenvolupament."
+      },
+      {
+        "text": "És un sistema que substitueix l'algorisme perquè pot detectar automàticament la millor solució per a qualsevol problema.",
+        "correcte": false,
+        "feedback": "Un IDE facilita el desenvolupament, però no substitueix el treball de dissenyar la solució. El programador continua sent responsable d'analitzar el problema i elaborar l'algorisme."
+      }
+    ]
+  },
+  {
+    "CE": "1a-3",
+    "titol": "Un problema és massa gran i complex per abordar-lo directament. Un programador el divideix en diverses tasques més senzilles i treballa cada una per separat. Quin element del pensament algorítmic està aplicant?",
+    "pista": "Consisteix a transformar un problema complex en parts més fàcils d'entendre i resoldre.",
+    "opcions": [
+      {
+        "text": "Abstracció.",
+        "correcte": false,
+        "feedback": "L'abstracció consisteix a ocultar els detalls que no són necessaris i centrar-se en els aspectes essencials. Dividir un problema en parts és descomposició."
+      },
+      {
+        "text": "Reconeixement de patrons.",
+        "correcte": false,
+        "feedback": "El reconeixement de patrons consisteix a detectar similituds o estructures que es repeteixen. En aquest cas, el problema s'està dividint en parts més xicotetes."
+      },
+      {
+        "text": "Descomposició.",
+        "correcte": true,
+        "feedback": "Correcte. La descomposició consisteix a dividir un problema complex en parts més petites i manejables, que poden analitzar-se i resoldre's individualment."
+      },
+      {
+        "text": "Disseny d'algorismes.",
+        "correcte": false,
+        "feedback": "El disseny d'algorismes consisteix a definir els passos ordenats per arribar a una solució. La tècnica concreta d'aquest exemple és la descomposició."
+      }
+    ]
+  },
+  {
+    "CE": "1a-3",
+    "titol": "Una persona utilitza una funció que ordena una llista sense necessitat de conéixer l'algorisme intern que utilitza. Quin concepte del pensament computacional està aplicant principalment?",
+    "pista": "La clau està en utilitzar una funcionalitat sense haver de conéixer els seus detalls interns.",
+    "opcions": [
+      {
+        "text": "Descomposició, perquè la funció divideix automàticament el problema en diverses operacions.",
+        "correcte": false,
+        "feedback": "La descomposició consisteix a dividir un problema en parts més petites. En aquest cas, el concepte destacat és poder utilitzar una funcionalitat sense conéixer la seua implementació interna."
+      },
+      {
+        "text": "Reconeixement de patrons, perquè ordenar una llista implica identificar elements que es repeteixen.",
+        "correcte": false,
+        "feedback": "El reconeixement de patrons busca similituds o estructures que es repeteixen. Utilitzar una funció sense conéixer com està implementada és un exemple d'abstracció."
+      },
+      {
+        "text": "Abstracció, perquè només necessita conéixer què fa la funció i no els detalls de com ho aconsegueix.",
+        "correcte": true,
+        "feedback": "Correcte. L'abstracció permet utilitzar un component coneixent la seua funcionalitat sense haver de comprendre tots els detalls interns de la seua implementació."
+      },
+      {
+        "text": "Disseny d'algorismes, perquè qualsevol funció representa necessàriament una seqüència que l'usuari ha de definir abans d'utilitzar-la.",
+        "correcte": false,
+        "feedback": "Una funció pot implementar un algorisme, però l'exemple se centra en una altra idea: l'usuari pot utilitzar-la sense conéixer els detalls interns. Això és abstracció."
+      }
+    ]
+  },
+  {
+    "CE": "1a-3",
+    "titol": "Observa la seqüència 5, 10, 15, 20, 25, ... Un estudiant identifica la regularitat i l'utilitza per predir el nombre següent. Quina habilitat està aplicant?",
+    "pista": "Busca una característica que es repeteix i permet predir què passarà després.",
+    "opcions": [
+      {
+        "text": "Descomposició, perquè separa la seqüència en nombres individuals per poder analitzar-la.",
+        "correcte": false,
+        "feedback": "Separar els elements no és l'objectiu principal de l'exemple. La capacitat destacada és detectar la regularitat que relaciona els diferents nombres."
+      },
+      {
+        "text": "Abstracció, perquè ignora els valors dels nombres i només considera la seua posició.",
+        "correcte": false,
+        "feedback": "L'abstracció consisteix a centrar-se en la informació essencial i ocultar detalls innecessaris. En aquest cas, el que es fa és identificar una regularitat entre els valors."
+      },
+      {
+        "text": "Disseny d'algorismes, perquè calcular el següent nombre sempre implica definir una seqüència d'instruccions.",
+        "correcte": false,
+        "feedback": "Es podria dissenyar un algorisme per generar la seqüència, però la capacitat que es posa en pràctica en l'exemple és detectar la regularitat que es repeteix."
+      },
+      {
+        "text": "Reconeixement de patrons, perquè identifica que entre els nombres existeix una regularitat que es repeteix.",
+        "correcte": true,
+        "feedback": "Correcte. El reconeixement de patrons consisteix a detectar estructures o característiques comunes que es repeteixen i que poden ajudar a predir o resoldre situacions semblants."
+      }
+    ]
+  },
+  {
+    "CE": "1a-3",
+    "titol": "Per a preparar un cafè, una persona estableix els passos: posar l'aigua, col·locar el filtre, afegir el cafè, encendre la cafetera, esperar i servir. Quina característica fa que aquesta seqüència siga un exemple de pensament algorítmic?",
+    "pista": "No és suficient indicar les accions: cal que estiguen organitzades per aconseguir un resultat.",
+    "opcions": [
+      {
+        "text": "La seqüència és algorítmica perquè utilitza exclusivament accions que poden ser automatitzades per un ordinador.",
+        "correcte": false,
+        "feedback": "El pensament algorítmic també es pot aplicar a situacions de la vida quotidiana. L'exemple del cafè mostra precisament que no és necessari estar davant d'un ordinador."
+      },
+      {
+        "text": "Cada acció pot executar-se en qualsevol ordre perquè totes formen part del mateix procés.",
+        "correcte": false,
+        "feedback": "L'ordre és important en un algorisme. Algunes accions depenen de les anteriors, per exemple, no té sentit encendre la cafetera abans de preparar els elements necessaris."
+      },      
+      {
+        "text": "Les accions estan organitzades en una seqüència clara i ordenada que condueix al resultat desitjat.",
+        "correcte": true,
+        "feedback": "Correcte. El pensament algorítmic implica planificar passos clars, lògics i ordenats que permeten arribar a una solució o resultat concret."
+      },
+      {
+        "text": "El principal element algorítmic és que cada pas representa una operació independent, sense necessitat de relacionar-lo amb els altres.",
+        "correcte": false,
+        "feedback": "Els passos d'un algorisme estan relacionats i formen una seqüència orientada a un objectiu. La seua organització i ordre són essencials."
+      }
+    ]
+  },
+  {
+    "CE": "1a-4",
+    "titol": "Un estudiant vol representar de manera visual els passos d'un algorisme i mostrar clarament quins camins segueix el procés segons diferents decisions. Quina representació és la més adequada?",
+    "pista": "Busca la representació que utilitza símbols geomètrics i fletxes per mostrar el flux del procés.",
+    "opcions": [
+      {
+        "text": "Pseudocodi, perquè permet descriure les decisions i els passos mitjançant instruccions informals.",
+        "correcte": false,
+        "feedback": "El pseudocodi és útil per descriure textualment un algorisme de manera informal, però no representa visualment els diferents camins mitjançant símbols i fletxes."
+      },
+      {
+        "text": "Diagrama de flux, perquè utilitza símbols normalitzats i fletxes per representar activitats, decisions i el recorregut del procés.",
+        "correcte": true,
+        "feedback": "Correcte. El diagrama de flux permet visualitzar el procés mitjançant figures geomètriques i fletxes. El rombe representa decisions i les fletxes indiquen el sentit del flux."
+      },
+      {
+        "text": "Programació visual, perquè els blocs gràfics permeten representar qualsevol algorisme sense necessitat d'escriure instruccions.",
+        "correcte": false,
+        "feedback": "La programació visual també utilitza elements gràfics, però té com a objectiu construir programes mitjançant blocs. Per representar un algorisme com un flux de decisions i processos, el diagrama de flux és la representació específica."
+      },
+      {
+        "text": "Codi font, perquè és la representació més precisa de les instruccions que executarà l'ordinador.",
+        "correcte": false,
+        "feedback": "El codi font és necessari per implementar el programa en un llenguatge concret, però no és la representació gràfica específica dels camins i decisions d'un algorisme."
+      }
+    ]
+  },
+  {
+    "CE": "1a-4",
+    "titol": "En un diagrama de flux, el programa ha de comprovar si una persona és major d'edat i seguir un camí diferent segons el resultat. Quin símbol s'hauria d'utilitzar per representar aquesta situació?",
+    "pista": "Pensa en el símbol que representa una pregunta o una decisió amb dues possibles respostes.",
+    "opcions": [
+      {
+        "text": "Un rectangle, perquè qualsevol acció que realitze el programa s'ha de representar com una activitat.",
+        "correcte": false,
+        "feedback": "El rectangle representa una activitat, operació o tasca. Una comprovació que determina quin camí seguir és una decisió i es representa amb un rombe."
+      },
+      {
+        "text": "Una fletxa, perquè indica que el programa ha de seguir un camí diferent segons el resultat de la comprovació.",
+        "correcte": false,
+        "feedback": "La fletxa indica la direcció del flux, però no representa la pregunta o condició en si mateixa. La decisió es representa mitjançant un rombe."
+      },
+      {
+        "text": "Un rombe, perquè representa una condició o decisió que determina quin camí seguir.",
+        "correcte": true,
+        "feedback": "Correcte. En un diagrama de flux, el rombe representa una condició o decisió. Habitualment es planteja amb una resposta com Sí/No, i cada resultat pot conduir a un camí diferent."
+      },
+      {
+        "text": "Una caixa de text, perquè permet descriure amb paraules les dues possibles accions que es poden executar.",
+        "correcte": false,
+        "feedback": "El text pot aparéixer dins dels símbols del diagrama, però una decisió té un símbol específic: el rombe. Les possibles respostes determinen després el camí que segueix el flux."
+      }
+    ]
+  },
+  {
+    "CE": "1a-4",
+    "titol": "Un alumne ha escrit en pseudocodi els passos per fer una trucada, però encara no ha triat cap llenguatge de programació. Quina afirmació descriu millor el pseudocodi?",
+    "pista": "El pseudocodi se situa entre la idea de l'algorisme i la implementació concreta en un llenguatge.",
+    "opcions": [
+      {
+        "text": "És una versió informal i resumida de l'algorisme que permet descriure les instruccions sense estar lligat a la sintaxi estricta d'un llenguatge.",
+        "correcte": true,
+        "feedback": "Correcte. El pseudocodi permet descriure de manera informal i resumida els passos d'un algorisme sense haver d'utilitzar encara la sintaxi concreta de Python, Java, C++ o un altre llenguatge."
+      },
+      {
+        "text": "És codi font executable que pot ser interpretat directament per qualsevol ordinador.",
+        "correcte": false,
+        "feedback": "El pseudocodi no és un llenguatge de programació executable. Serveix per expressar la lògica de la solució abans d'implementar-la en un llenguatge concret."
+      },
+      {
+        "text": "És un diagrama de flux escrit amb text, en què cada línia representa obligatòriament una instrucció que el processador executarà.",
+        "correcte": false,
+        "feedback": "El pseudocodi és una descripció textual informal de l'algorisme, però les seues línies no són necessàriament instruccions executables ni equivalen directament a instruccions del processador."
+      },
+      {
+        "text": "És una forma simplificada de programació visual en què cada ordre textual equival a un bloc gràfic.",
+        "correcte": false,
+        "feedback": "La programació visual utilitza elements gràfics o blocs. El pseudocodi, en canvi, és una descripció textual i informal de les instruccions d'un algorisme."
+      }
+    ]
+  },
+  {
+    "CE": "1a-4",
+    "titol": "Quina diferència descriu millor la programació imperativa i la programació declarativa?",
+    "pista": "La diferència fonamental està en si especifiquem els passos per aconseguir el resultat o descrivim principalment el resultat que volem.",
+    "opcions": [
+      {
+        "text": "La programació imperativa descriu què es vol obtenir, mentre que la declarativa obliga a indicar detalladament cada operació que s'ha d'executar.",
+        "correcte": false,
+        "feedback": "La descripció està invertida. La programació imperativa se centra en el 'com', mentre que la declarativa se centra principalment en el 'què' es vol aconseguir."
+      },
+      {
+        "text": "La programació imperativa i la declarativa són dues formes diferents d'escriure exactament el mateix tipus de codi, sense diferències en l'enfocament.",
+        "correcte": false,
+        "feedback": "Encara que poden aconseguir resultats semblants, tenen enfocaments diferents. La imperativa especifica els passos i el control del flux, mentre que la declarativa descriu el resultat desitjat."
+      },
+      {
+        "text": "La programació imperativa especifica pas a pas com aconseguir un resultat, mentre que la declarativa se centra en descriure què es vol aconseguir.",
+        "correcte": true,
+        "feedback": "Correcte. La programació imperativa posa l'accent en el 'com', controlant explícitament el flux amb instruccions, condicions i bucles. La declarativa posa l'accent en el 'què' es vol obtenir."
+      },
+      {
+        "text": "La programació declarativa només es pot utilitzar en SQL i la imperativa només en Python, ja que cada llenguatge pertany exclusivament a un únic estil.",
+        "correcte": false,
+        "feedback": "Incorrecte. Els estils no estan necessàriament lligats de manera exclusiva a un llenguatge. Python, per exemple, permet utilitzar tant enfocaments imperatius com declaratius."
+      }
+    ]
+  }
+]
