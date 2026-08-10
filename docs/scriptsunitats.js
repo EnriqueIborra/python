@@ -71,7 +71,11 @@ function mostrarPregunta() {
     const container = document.getElementById('options-container');
     container.innerHTML = "";
 
-    pregunta.opcions.forEach(opcio => {
+    //pregunta.opcions.forEach(opcio => {
+    const opcionsBarrejades = [...pregunta.opcions];
+    barrejar(opcionsBarrejades);
+
+    opcionsBarrejades.forEach(opcio => {        
         const btn = document.createElement('button');
         btn.innerText = opcio.text;
         btn.onclick = () => comprovaResposta(opcio.correcte, btn, opcio.feedback);
