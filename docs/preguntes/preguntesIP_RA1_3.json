@@ -144,22 +144,22 @@
     "pista": "Les cadenes de text es delimiten amb cometes.",
     "opcions": [
       {
-        "text": "`nom = Hola`",
+        "text": "nom = Hola",
         "correcte": false,
         "feedback": "No. Sense cometes, `Hola` seria interpretat com un identificador, no com una cadena de text."
       },
       {
-        "text": "`nom = \"Hola\"`",
+        "text": "nom = \"Hola\"",
         "correcte": true,
         "feedback": "Correcte. En Python, les cadenes de text es poden delimitar amb cometes dobles. També es podrien utilitzar cometes simples: `nom = 'Hola'`."
       },
       {
-        "text": "`nom = (Hola)`",
+        "text": "nom = (Hola)",
         "correcte": false,
         "feedback": "Els parèntesis no converteixen `Hola` en una cadena. Per representar text cal utilitzar cometes simples o dobles."
       },
       {
-        "text": "`nom = <Hola>`",
+        "text": "nom = <Hola>",
         "correcte": false,
         "feedback": "Els símbols `<` i `>` no són delimitadors de cadenes en Python. Les cadenes es representen habitualment entre cometes simples o dobles."
       }
@@ -739,7 +739,7 @@
       },
       {
         "text": "Es produeix un ValueError perquè \"hola\" no representa un nombre enter vàlid.",
-        "correcto": true,
+        "correcte": true,
         "feedback": "Correcte. int() pot convertir cadenes que representen enters, com \"10\", però \"hola\" no té una representació numèrica vàlida i provoca ValueError."
       },
       {

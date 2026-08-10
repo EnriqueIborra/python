@@ -110,6 +110,7 @@
   },
 
 
+
   
   {
     "CE": "1b-2",
@@ -219,6 +220,7 @@
       }
     ]
   },
+
 
 
 
@@ -333,6 +335,7 @@
 
 
 
+
   {
     "CE": "1c-2",
     "titol": "Quin és l'objectiu principal de la depuració (debugging) en un programa Python?",
@@ -441,6 +444,7 @@
       }
     ]
   },
+
 
 
 
@@ -555,6 +559,7 @@
 
 
 
+
   {
     "CE": "1c-4",
     "titol": "Un estudiant vol provar ràpidament una expressió Python i veure'n el resultat sense crear cap fitxer .py. Quina opció és la més adequada?",
@@ -664,3 +669,4 @@
     ]
   }
 ]
+
