@@ -22,8 +22,8 @@
   <h3>Índex</h3>
  
   <a href="#estructures">Estructures de control</a>
-  <a href="#seleccio"> *** Selecció</a>
-  <a href="#repeticio"> *** Repetició (bucles)</a>  
+  <a href="#seleccio"> ━▶ Selecció</a>
+  <a href="#repeticio"> ━▶ Repetició (bucles)</a>  
   <a href="#salts">Salts en Python</a>
   <a href="#excepcions">Excepcions</a>
   <a href="#funcionsi">Funcions incorporades</a>
@@ -398,12 +398,13 @@ else:
 
 <section id="excepcions">
         <h1>Manejador d'Errors / Excepcions en Python</h1>
-        <p>En el següent programa, poden donar-se dos errors</p>
+        <p>En la <strong>execució</strong> del següent programa ... </p>
         <pre><code>a=int(input('Dame un numero:  '))
 print(f'La inversa de {a} es { 1/(a) }')
 print(' ===  Fi del programa  ===')
 </code></pre>
-        <p>Si posem una lletra</p>
+<h3>... poden produir-se dos errors:</h3>
+        <p>Si quan s'executa, l'usuari li posa una lletra ...</p>
         <pre><code>Dame un numero:  t</code></pre>
 <pre><code style="color: darkred;">Traceback (most recent call last):
   File "c:\Users\enrique\OneDrive - Conselleria d'Educació\_PYTHON\proves\_prova.py", line 2, in &lt;module>
@@ -411,7 +412,8 @@ print(' ===  Fi del programa  ===')
 ValueError: invalid literal for int() with base 10: 't'</code></pre>
         <strong> ==>  I el programa es para....</strong>
         <p>L'última línea no s'executa si es produeix un error. Cap línia després de l'error s'executarà</p> <hr>
-        <p>Si posem un 0</p>
+        <p>Si l'usuari li posa un 0</p>
+         <pre><code>Dame un numero:  0</code></pre>
 <pre><code style="color: darkred;">Traceback (most recent call last):
   File "c:\Users\enrique\OneDrive - Conselleria d'Educació\_PYTHON\proves\_prova.py", line 5, in &lt;module>
     print(f'La operacion resulta  {1/(a)}')
@@ -450,7 +452,7 @@ except ZeroDivisionError:
 except Exception
     print('Otro error no previsto.')
 
-print('=====  Fin del programa  ======')</code></pre>
+print('=====  Fin del programa  =====')</code></pre>
    
 <p>El manejador d'errors amb <code>try</code> i <code>except</code> és essencial per controlar excepcions i evitar que el programa es pare en cas d'errors inesperats. </p>
     
@@ -1182,7 +1184,7 @@ print(restar(5, 3)) # Eixida: 2</code></pre>
 <section id="main">
     <h1>Ús de <code>__main__</code> en Python</h1>
 
-    <p>En Python, la construcció <code>if __name__ == "__main__":</code> és una forma estàndard d'assegurar-se que un bloc de codi només s'executi quan el fitxer s'executa directament, i no quan s'importa com un mòdul en un altre fitxer.</p>
+    <p>En Python, la construcció <code>if __name__ == "__main__":</code> és una forma estàndard d'assegurar-se que un bloc de codi només s'execute quan el fitxer s'executa directament, i no quan s'importa com un mòdul en un altre fitxer.</p>
 
     <h2>Desglossament de la seua funció:</h2>
     <ul>
