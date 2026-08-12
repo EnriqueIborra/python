@@ -1,0 +1,1041 @@
+
+[
+  {
+    "CE": "3a",
+    "titol": "Quina funció té principalment la indentació en Python dins d'una estructura com un if?",
+    "pista": "En Python, els espais al principi de les línies no són només una qüestió d'estil.",
+    "opcions": [
+      {
+        "text": "Indicar quines instruccions formen part del bloc de codi.",
+        "correcte": true,
+        "feedback": "Correcte. La indentació indica quines instruccions pertanyen al bloc de l'if. En Python forma part de la sintaxi i defineix la jerarquia del programa."
+      },
+      {
+        "text": "Indicar quina condició té prioritat sobre les altres.",
+        "correcte": false,
+        "feedback": "La indentació no determina la prioritat de les condicions. En estructures if-elif, l'ordre en què apareixen les condicions determina quina es comprova primer."
+      },
+      {
+        "text": "Separar les diferents expressions que formen la condició.",
+        "correcte": false,
+        "feedback": "Les expressions d'una condició es combinen amb operadors com and, or o not. La indentació s'utilitza per delimitar el bloc d'instruccions."
+      },
+      {
+        "text": "Indicar a Python que la condició és de tipus booleà.",
+        "correcte": false,
+        "feedback": "El resultat d'una condició és un booleà, però la indentació no indica el seu tipus. La seua funció és delimitar el bloc de codi associat."
+      }
+    ]
+  },
+  {
+    "CE": "3a",
+    "titol": "Què ocorre amb el següent codi si edat val 20? <pre>if edat >= 18: \n  ...\nelse:\n  ... </pre>",
+    "pista": "Recorda quan s'executa el bloc associat a else.",
+    "opcions": [
+      {
+        "text": "S'executen els dos blocs perquè edat compleix la condició de l'if.",
+        "correcte": false,
+        "feedback": "No. En una estructura if-else només s'executa un dels dos blocs: l'if si la condició és certa o l'else si és falsa."
+      },
+      {
+        "text": "No s'executa cap bloc perquè else no té una condició pròpia.",
+        "correcte": false,
+        "feedback": "Que else no tinga una condició pròpia no impedeix la seua execució. Actua com a alternativa quan la condició de l'if és falsa."
+      },
+      {
+        "text": "S'executa el bloc de l'if perquè 20 >= 18 és True.",
+        "correcte": true,
+        "feedback": "Correcte. La condició 20 >= 18 és certa, per tant s'executa el bloc de l'if i el bloc de l'else no s'executa."
+      },
+      {
+        "text": "S'executa el bloc de l'else perquè 20 no és igual a 18.",
+        "correcte": false,
+        "feedback": "La condició no comprova si edat és exactament 18, sinó si és major o igual que 18. Per tant, amb 20 la condició és certa."
+      }
+    ]
+  },
+  {
+    "CE": "3a",
+    "titol": "En una estructura if-elif-else, Python troba que la primera condició de l'if és certa. Què fa a continuació?",
+    "pista": "Les condicions es comproven en un ordre determinat i no totes les branques s'executen.",
+    "opcions": [
+      {
+        "text": "Executa el bloc de l'if i continua comprovant tots els elif per si també són certs.",
+        "correcte": false,
+        "feedback": "Quan Python troba la primera condició certa, no continua comprovant els elif següents. Només s'executa el primer bloc que compleix la condició."
+      },
+      {
+        "text": "Executa el bloc de l'if i ignora els elif i l'else posteriors.",
+        "correcte": true,
+        "feedback": "Correcte. Python comprova les condicions de dalt cap avall i, quan troba la primera que és certa, executa el seu bloc i deixa de comprovar les alternatives següents."
+      },
+      {
+        "text": "Executa primer l'else i després comprova si alguna condició de l'if era certa.",
+        "correcte": false,
+        "feedback": "L'else només s'executa si cap de les condicions anteriors és certa. No es comprova abans que les condicions de l'if i els elif."
+      },
+      {
+        "text": "Executa tots els blocs que tinguen una condició certa.",
+        "correcte": false,
+        "feedback": "En una mateixa estructura if-elif-else només s'executa el primer bloc que compleix la seua condició. Els blocs posteriors no es comproven."
+      }
+    ]
+  },
+  {
+    "CE": "3a",
+    "titol": "Quin valor tindrà la variable missatge després d'executar\n <pre>missatge = \"Major\" if edat >= 18 else \"Menor\" </pre> quan edat val 16? ",
+    "pista": "En el condicional ternari, hi ha un valor per a la condició certa i un altre per a la condició falsa.",
+    "opcions": [
+      {
+        "text": "\"Major\"",
+        "correcte": false,
+        "feedback": "No. Amb edat = 16, la condició 16 >= 18 és falsa, per tant es selecciona el segon valor del condicional ternari."
+      },
+      {
+        "text": "False",
+        "correcte": false,
+        "feedback": "La condició és falsa, però el condicional ternari no assigna el booleà False a missatge. Assigna el valor indicat després d'else."
+      },
+      {
+        "text": "\"Menor\"",
+        "correcte": true,
+        "feedback": "Correcte. Com que 16 >= 18 és fals, Python selecciona el valor que apareix després d'else: \"Menor\"."
+      },
+      {
+        "text": "None",
+        "correcte": false,
+        "feedback": "None només apareixeria si s'haguera indicat explícitament com un dels valors. En aquest cas, el valor alternatiu és la cadena \"Menor\"."
+      }
+    ]
+  },
+  {
+    "CE": "3a",
+    "titol": "En el següent codi, què farà `case _`? <pre>match valor:\n  case 1: \n    ... \n  case 2: \n    ... \n  case _: \n    ...`  </pre>",
+    "pista": "Pensa en què ocorre quan cap dels patrons anteriors coincideix amb el valor.",
+    "opcions": [
+      {
+        "text": "Executarà sempre el seu bloc abans de comprovar els altres casos.",
+        "correcte": false,
+        "feedback": "`case _` no s'executa abans dels casos anteriors. Actua com a cas per defecte quan no hi ha coincidència amb els patrons anteriors."
+      },
+      {
+        "text": "Només s'executarà quan el valor siga exactament igual a `_`.",
+        "correcte": false,
+        "feedback": "El guió baix no representa en aquest context un valor que s'haja de comparar literalment. `case _` funciona com un patró comodí que coincideix amb qualsevol valor no coincident."
+      },
+      {
+        "text": "Executarà el seu bloc si el valor coincideix amb qualsevol dels casos anteriors.",
+        "correcte": false,
+        "feedback": "Quan ja hi ha una coincidència amb un cas anterior, no cal arribar al `case _`. Aquest funciona com a alternativa quan cap cas anterior coincideix."
+      },
+      {
+        "text": "Actua com un cas per defecte i coincideix quan cap dels casos anteriors ho ha fet.",
+        "correcte": true,
+        "feedback": "Correcte. `case _` funciona de manera semblant a `default` en altres llenguatges: captura els valors que no han coincidit amb cap dels casos anteriors."
+      }
+    ]
+  },
+  
+
+
+{
+"CE": "3b",
+"titol": "Quina és la principal diferència entre els bucles while i for en Python?",
+"pista": "Pensa en com decideix cada tipus de bucle quan ha de continuar repetint-se.",
+"opcions": [
+{
+"text": "El while repeteix mentre una condició siga certa, mentre que el for recorre els elements d'un iterable.",
+"correcte": true,
+"feedback": "Correcte. while comprova una condició abans de cada iteració, mentre que for itera sobre un iterable, com una llista, una cadena o un range."
+},
+{
+"text": "El for s'utilitza quan no sabem quantes iteracions hi haurà, mentre que while sempre té un nombre fix d'iteracions.",
+"correcte": false,
+"feedback": "No és correcte. És habitual utilitzar while quan no sabem d'entrada quantes repeticions necessitarem, mentre que for és especialment útil per recórrer iterables."
+},
+{
+"text": "El while només pot treballar amb nombres i el for només amb cadenes de text.",
+"correcte": false,
+"feedback": "No. Tots dos poden treballar amb diferents tipus de dades; per exemple, for pot recórrer tant una cadena com una llista."
+},
+{
+"text": "El for comprova una condició booleana abans de cada iteració, mentre que while recorre automàticament una seqüència.",
+"correcte": false,
+"feedback": "Has intercanviat els conceptes. El while depén d'una condició, mentre que el for recorre els elements d'un iterable."
+}
+]
+},
+{
+"CE": "3b",
+"titol": "Quin serà el resultat d'executar el codi següent? <pre>ncontador = 0 \nwhile contador <3: \n  print(contador) \n  contador += 1 </pre>",
+"pista": "Observa el valor del comptador abans de cada comprovació de la condició.",
+"opcions": [
+{
+"text": "0, 1 i 2",
+"correcte": true,
+"feedback": "Correcte. El bucle s'executa amb contador igual a 0, 1 i 2. Quan passa a valer 3, la condició contador < 3 deixa de ser certa."
+},
+{
+"text": "1, 2 i 3",
+"correcte": false,
+"feedback": "No. El comptador comença en 0 i aquest valor es mostra abans d'incrementar-lo. Quan arriba a 3, el bucle ja finalitza."
+},
+{
+"text": "0, 1, 2 i 3",
+"correcte": false,
+"feedback": "No. Quan contador val 3, la condició contador < 3 és falsa, de manera que el 3 no s'imprimeix."
+},
+{
+"text": "0, 1 i 2, i després el bucle continua indefinidament",
+"correcte": false,
+"feedback": "No. El contador += 1 fa avançar el comptador i permet que finalment la condició siga falsa, evitant el bucle infinit."
+}
+]
+},
+{
+"CE": "3b",
+"titol": "Quins valors imprimeix el següent bucle? <pre>for i in range(2, 8, 2):\n  print(i)\n </pre>",
+"pista": "En range(inici, final, pas), el valor final no forma part de la seqüència.",
+"opcions": [
+{
+"text": "2, 4 i 6",
+"correcte": true,
+"feedback": "Correcte. range(2, 8, 2) comença en 2, avança de 2 en 2 i s'atura abans d'arribar a 8."
+},
+{
+"text": "2, 4, 6 i 8",
+"correcte": false,
+"feedback": "No. El límit final de range és excloent. Per això el 8 no forma part de la seqüència."
+},
+{
+"text": "0, 2, 4 i 6",
+"correcte": false,
+"feedback": "No. Quan s'indica l'inici 2, la seqüència comença en 2, no en 0."
+},
+{
+"text": "2, 3, 4, 5, 6 i 7",
+"correcte": false,
+"feedback": "No. El tercer argument de range és el pas. En aquest cas és 2, per tant només es generen valors separats per 2."
+}
+]
+},
+{
+"CE": "3b",
+"titol": "Quina afirmació descriu correctament el funcionament de break i continue dins d'un bucle?",
+"pista": "Una de les instruccions acaba el bucle i l'altra només afecta la iteració actual.",
+"opcions": [
+{
+"text": "break finalitza el bucle i continue salta la iteració actual i passa a la següent.",
+"correcte": true,
+"feedback": "Correcte. break interromp completament el bucle, mentre que continue no l'acaba: simplement omet la resta de la iteració actual."
+},
+{
+"text": "break salta la iteració actual i continue finalitza completament el bucle.",
+"correcte": false,
+"feedback": "Estan intercanviats. break acaba el bucle; continue només fa que es passe a la següent iteració."
+},
+{
+"text": "Tant break com continue finalitzen immediatament el bucle.",
+"correcte": false,
+"feedback": "No. Només break finalitza el bucle. continue permet que el bucle continue amb la següent iteració."
+},
+{
+"text": "break reinicia el bucle i continue torna a comprovar la primera condició.",
+"correcte": false,
+"feedback": "No. break ix del bucle i continue omet la resta del bloc de la iteració actual per continuar amb la següent."
+}
+]
+},
+{
+"CE": "3b",
+"titol": "Quan s'executa el bloc else associat a un bucle for o while en Python?",
+"pista": "La clau està en si el bucle ha acabat normalment o ha sigut interromput.",
+"opcions": [
+{
+"text": "Quan el bucle finalitza sense haver sigut interromput amb break.",
+"correcte": true,
+"feedback": "Correcte. En Python, l'else d'un bucle s'executa quan el bucle acaba normalment, és a dir, sense executar un break."
+},
+{
+"text": "Sempre que el bucle haja executat almenys una iteració.",
+"correcte": false,
+"feedback": "No. El nombre d'iteracions no determina l'execució de l'else. El que importa és si el bucle ha acabat sense un break."
+},
+{
+"text": "Només quan la condició del while siga falsa en la primera comprovació.",
+"correcte": false,
+"feedback": "No. L'else també pot executar-se després de moltes iteracions. La condició important és que el bucle no haja acabat mitjançant break."
+},
+{
+"text": "Quan s'executa un break, perquè l'else indica que el bucle ha acabat.",
+"correcte": false,
+"feedback": "És just al contrari. Si el bucle acaba per break, el seu else no s'executa. L'else s'executa quan no hi ha hagut break."
+}
+]
+},
+{
+"CE": "3b",
+"titol": "Per a què serveix principalment la instrucció pass en Python?",
+"pista": "Pensa en què ocorre quan Python necessita una instrucció dins d'un bloc però encara no volem implementar cap acció.",
+"opcions": [
+{
+"text": "Per deixar un bloc amb una sintaxi vàlida sense executar cap acció.",
+"correcte": true,
+"feedback": "Correcte. pass no realitza cap operació. És útil com a marcador de lloc quan Python exigeix un bloc d'instruccions i encara no volem afegir-hi funcionalitat."
+},
+{
+"text": "Per saltar directament a la següent iteració d'un bucle.",
+"correcte": false,
+"feedback": "No. Aquesta funció correspon a continue. pass simplement no fa res quan s'executa."
+},
+{
+"text": "Per finalitzar immediatament un bucle abans que s'acabe la seqüència.",
+"correcte": false,
+"feedback": "No. Per finalitzar un bucle prematurament s'utilitza break. pass no modifica el flux del bucle."
+},
+{
+"text": "Per repetir automàticament el bloc de codi fins que una condició siga falsa.",
+"correcte": false,
+"feedback": "No. La repetició condicionada correspon al while. pass només proporciona una instrucció que no executa cap acció."
+}
+]
+},
+
+
+
+
+
+  {
+    "CE": "3c",
+    "titol": "Quina instrucció permet eixir immediatament d'un bucle `for` o `while` en Python?",
+    "pista": "Aquesta instrucció interromp completament el bucle en el moment que s'executa.",
+    "opcions": [
+      {
+        "text": "`break`",
+        "correcte": true,
+        "feedback": "Correcte. `break` interromp immediatament el bucle i l'execució continua amb la primera instrucció que hi ha després del bucle."
+      },
+      {
+        "text": "`continue`",
+        "correcte": false,
+        "feedback": "No. `continue` no acaba el bucle; simplement omet la resta de la iteració actual i passa a la següent."
+      },
+      {
+        "text": "`return`",
+        "correcte": false,
+        "feedback": "No en aquest cas. `return` abandona una funció sencera, mentre que `break` és la instrucció específica per eixir d'un bucle."
+      },
+      {
+        "text": "`raise`",
+        "correcte": false,
+        "feedback": "No. `raise` provoca una excepció i altera el flux normal d'execució, però no és la instrucció destinada a finalitzar normalment un bucle."
+      }
+    ]
+  },
+  {
+    "CE": "3c",
+    "titol": "Quins valors imprimeix el següent codi? <pre> for i in range(5):\n    if i == 2:\n        continue\n    print(i) </pre>",
+    "pista": "Quan `i` val 2, observa què fa `continue` amb la resta del codi de la iteració.",
+    "opcions": [
+      {
+        "text": "0, 1, 3 i 4",
+        "correcte": true,
+        "feedback": "Correcte. Quan `i` val 2 s'executa `continue`, que salta el `print(i)` d'aquella iteració. El bucle continua després amb 3 i 4."
+      },
+      {
+        "text": "0, 1 i 2",
+        "correcte": false,
+        "feedback": "No. `continue` no imprimeix el 2 perquè salta la resta de la iteració quan `i == 2`. A més, el bucle continua després amb els valors 3 i 4."
+      },
+      {
+        "text": "0, 1 i 3",
+        "correcte": false,
+        "feedback": "Quasi, però falta el 4. `range(5)` genera els valors 0, 1, 2, 3 i 4; només s'omet la impressió del 2."
+      },
+      {
+        "text": "0, 1 i el bucle finalitza",
+        "correcte": false,
+        "feedback": "No. `continue` no finalitza el bucle. Només salta la resta de l'iteració actual i permet continuar amb les següents."
+      }
+    ]
+  },
+  {
+    "CE": "3c",
+    "titol": "Quina afirmació descriu correctament el comportament de `return` dins d'una funció?",
+    "pista": "Pensa què passa amb l'execució de la funció quan Python arriba a una instrucció `return`.",
+    "opcions": [
+      {
+        "text": "Finalitza immediatament l'execució de la funció i pot retornar un valor.",
+        "correcte": true,
+        "feedback": "Correcte. `return` fa que la funció finalitze immediatament i, si s'indica un valor, aquest valor es retorna al lloc des d'on s'ha cridat la funció."
+      },
+      {
+        "text": "Salta només la iteració actual d'un bucle i continua amb la següent.",
+        "correcte": false,
+        "feedback": "No. Aquesta és la funció de `continue`. `return` abandona la funció en què s'executa."
+      },
+      {
+        "text": "Finalitza qualsevol bucle que estiga actiu, però manté l'execució de la funció.",
+        "correcte": false,
+        "feedback": "No. `return` no està limitat als bucles: quan s'executa dins d'una funció, abandona la funció sencera, encara que hi haja un bucle en execució."
+      },
+      {
+        "text": "Provoca una excepció perquè l'execució normal del programa es trenque.",
+        "correcte": false,
+        "feedback": "No. Aquesta funció correspon a `raise`. `return` finalitza normalment una funció i pot proporcionar un valor com a resultat."
+      }
+    ]
+  },
+  {
+    "CE": "3c",
+    "titol": "Quina és una de les raons principals per les quals Python no disposa de la instrucció `goto`?",
+    "pista": "Relaciona aquesta decisió amb els principis de disseny i manteniment del codi en Python.",
+    "opcions": [
+      {
+        "text": "Per afavorir un codi més llegible, clar, estructurat i mantenible.",
+        "correcte": true,
+        "feedback": "Correcte. Python prioritza estructures de control clares, funcions i blocs ben organitzats en lloc de salts arbitraris que poden dificultar la comprensió i el manteniment del programa."
+      },
+      {
+        "text": "Perquè Python només permet executar instruccions de manera seqüencial.",
+        "correcte": false,
+        "feedback": "No. Python permet modificar el flux d'execució mitjançant condicionals, bucles, funcions, `break`, `continue`, `return` i excepcions."
+      },
+      {
+        "text": "Perquè els salts de flux només són possibles quan s'utilitza un bucle `while`.",
+        "correcte": false,
+        "feedback": "No. Python disposa de diferents mecanismes per modificar el flux i alguns, com `return` o `raise`, no depenen d'un bucle `while`."
+      },
+      {
+        "text": "Perquè Python substitueix `goto` exclusivament per `break` i `continue`.",
+        "correcte": false,
+        "feedback": "No. `break` i `continue` són només dues de les alternatives. Python també utilitza funcions, condicionals, `return` i `raise` per controlar el flux segons la situació."
+      }
+    ]
+  },
+
+
+
+
+  {
+    "CE": "3d",
+    "titol": "Què ocorre amb l'execució d'un programa Python quan es produeix una excepció i no hi ha cap manejador que la capture?",
+    "pista": "Pensa en què passa amb les instruccions que apareixen després de la línia que provoca l'error.",
+    "opcions": [
+      {
+        "text": "L'execució s'atura en la instrucció que provoca l'excepció i les instruccions posteriors no s'executen.",
+        "correcte": true,
+        "feedback": "Correcte. Si l'excepció no és capturada, Python interromp l'execució normal del programa en el punt on es produeix l'error."
+      },
+      {
+        "text": "Python ignora l'excepció i continua executant les instruccions següents.",
+        "correcte": false,
+        "feedback": "No. Una excepció no gestionada interromp l'execució del programa. Per continuar de manera controlada cal capturar-la amb estructures com try i except."
+      },
+      {
+        "text": "Python torna a executar automàticament la instrucció que ha provocat l'error.",
+        "correcte": false,
+        "feedback": "No. Python no repeteix automàticament la instrucció que ha fallat. Si no es captura l'excepció, l'execució finalitza."
+      },
+      {
+        "text": "Només s'atura el bloc on s'ha produït l'error, però la resta del programa continua executant-se.",
+        "correcte": false,
+        "feedback": "No. Sense un mecanisme de gestió d'excepcions, l'error interromp l'execució del programa i les instruccions posteriors no s'executen."
+      }
+    ]
+  },
+  {
+    "CE": "3d",
+    "titol": "Quina excepció es produeix quan s'intenta executar `int(\"hola\")` en Python?",
+    "pista": "La cadena no representa un nombre enter que Python puga convertir.",
+    "opcions": [
+      {
+        "text": "ValueError",
+        "correcte": true,
+        "feedback": "Correcte. `ValueError` es produeix quan el tipus de dada és adequat per a l'operació, però el valor proporcionat no és vàlid. En aquest cas, \"hola\" no es pot convertir en un enter."
+      },
+      {
+        "text": "TypeError",
+        "correcte": false,
+        "feedback": "No. `TypeError` s'utilitza quan una operació rep un tipus de dada inadequat. En aquest cas, `int()` pot rebre una cadena, però el seu contingut no representa un enter vàlid."
+      },
+      {
+        "text": "ZeroDivisionError",
+        "correcte": false,
+        "feedback": "No. Aquesta excepció es produeix quan s'intenta dividir per zero. En `int(\"hola\")` no hi ha cap operació de divisió."
+      },
+      {
+        "text": "SyntaxError",
+        "correcte": false,
+        "feedback": "No. El codi `int(\"hola\")` té una sintaxi correcta. L'error es produeix durant l'execució perquè el valor de la cadena no es pot convertir en enter."
+      }
+    ]
+  },
+  {
+    "CE": "3d",
+    "titol": "Quina és la funció de les clàusules `else` i `finally` en una estructura `try-except`?",
+    "pista": "Una depén de si hi ha hagut una excepció i l'altra s'executa independentment del resultat.",
+    "opcions": [
+      {
+        "text": "`else` s'executa si no hi ha hagut cap excepció en `try`, mentre que `finally` s'executa sempre.",
+        "correcte": true,
+        "feedback": "Correcte. `else` només s'executa quan el bloc `try` acaba sense excepcions. `finally`, en canvi, s'executa tant si hi ha hagut una excepció com si no."
+      },
+      {
+        "text": "`else` s'executa quan es produeix una excepció i `finally` només quan no n'hi ha cap.",
+        "correcte": false,
+        "feedback": "No. És al contrari respecte d'`else`: aquesta clàusula només s'executa si `try` acaba correctament. `finally` s'executa en tots dos casos."
+      },
+      {
+        "text": "Tant `else` com `finally` només s'executen quan un `except` captura una excepció.",
+        "correcte": false,
+        "feedback": "No. `else` s'executa precisament quan no es produeix una excepció en `try`, i `finally` s'executa independentment que hi haja hagut error o no."
+      },
+      {
+        "text": "`else` i `finally` són dues formes alternatives de capturar una excepció produïda dins de `try`.",
+        "correcte": false,
+        "feedback": "No. La captura de les excepcions correspon a `except`. `else` permet executar codi quan no hi ha hagut error i `finally` permet executar codi sempre."
+      }
+    ]
+  },
+  {
+    "CE": "3d",
+    "titol": "Quin manejador `except` permet capturar específicament l'error produït en intentar dividir un nombre entre zero?",
+    "pista": "Python utilitza un tipus d'excepció específic per a les divisions per zero.",
+    "opcions": [
+      {
+        "text": "except ZeroDivisionError:",
+        "correcte": true,
+        "feedback": "Correcte. `ZeroDivisionError` és l'excepció específica que Python genera quan s'intenta dividir entre zero. Capturar-la permet gestionar aquest cas de manera controlada."
+      },
+      {
+        "text": "except ValueError:",
+        "correcte": false,
+        "feedback": "No. `ValueError` pot aparéixer quan un valor no és vàlid per a una operació, com en `int(\"hola\")`. La divisió per zero genera específicament `ZeroDivisionError`."
+      },
+      {
+        "text": "except ArithmeticError:",
+        "correcte": false,
+        "feedback": "No és la resposta més específica. `ArithmeticError` és una classe base que engloba determinats errors aritmètics, però `ZeroDivisionError` identifica concretament la divisió per zero."
+      },
+      {
+        "text": "except ExceptionError:",
+        "correcte": false,
+        "feedback": "No. `ExceptionError` no és el nom d'una excepció estàndard de Python. Per a una divisió per zero s'utilitza `ZeroDivisionError`."
+      }
+    ]
+  },
+  
+
+
+
+
+
+
+  {
+    "CE": "3e",
+    "titol": "Quina diferència hi ha entre una funció incorporada (built-in) i una funció definida per l'usuari en Python?",
+    "pista": "Pensa en qui proporciona la funció i com es crea.",
+    "opcions": [
+      {
+        "text": "Les funcions incorporades formen part de Python i estan disponibles directament, mentre que les funcions de l'usuari es creen amb `def`.",
+        "correcte": true,
+        "feedback": "Correcte. Python proporciona funcions incorporades com `len()`, `int()` o `abs()`, mentre que el programador pot crear les seues pròpies funcions mitjançant `def`."
+      },
+      {
+        "text": "Les funcions incorporades s'han d'instal·lar amb `pip`, mentre que les funcions de l'usuari s'importen automàticament.",
+        "correcte": false,
+        "feedback": "No és correcte. Les funcions incorporades ja formen part de Python. Les funcions definides per l'usuari s'han de crear explícitament amb `def` abans de poder utilitzar-les."
+      },
+      {
+        "text": "Les funcions incorporades només poden treballar amb números, mentre que les definides per l'usuari només poden treballar amb cadenes.",
+        "correcte": false,
+        "feedback": "No. Tant les funcions incorporades com les definides per l'usuari poden treballar amb diferents tipus de dades, segons l'operació que realitzen."
+      },
+      {
+        "text": "Les funcions incorporades sempre necessiten `import`, mentre que les funcions definides per l'usuari no poden rebre paràmetres.",
+        "correcte": false,
+        "feedback": "No. Les funcions built-in, com `int()` o `len()`, estan disponibles sense `import`. A més, les funcions definides per l'usuari poden rebre paràmetres."
+      }
+    ]
+  },
+  {
+    "CE": "3e",
+    "titol": "Quin serà el resultat d'executar el codi següent? <pre>valor = int(3.9)\nprint(valor)</pre>",
+    "pista": "Recorda què fa `int()` quan rep un nombre decimal.",
+    "opcions": [
+      {
+        "text": "3",
+        "correcte": true,
+        "feedback": "Correcte. Quan `int()` rep un `float`, elimina la part decimal. No arrodoneix el nombre: `int(3.9)` dona `3`."
+      },
+      {
+        "text": "4",
+        "correcte": false,
+        "feedback": "No. `int()` no arrodoneix. Per arrodonir s'utilitza `round()`. En aquest cas, `int(3.9)` elimina la part decimal i retorna `3`."
+      },
+      {
+        "text": "3.9",
+        "correcte": false,
+        "feedback": "No. El resultat continua sent un enter perquè `int()` converteix el valor a tipus `int`, eliminant la part decimal."
+      },
+      {
+        "text": "Es produeix un `ValueError` perquè 3.9 no és un enter.",
+        "correcte": false,
+        "feedback": "No. `int()` pot convertir un valor `float` a enter. En aquest cas no hi ha error: `int(3.9)` retorna `3`."
+      }
+    ]
+  },
+  {
+    "CE": "3e",
+    "titol": "Quina afirmació és correcta sobre les funcions de la biblioteca estàndard de Python?",
+    "pista": "Compara una funció built-in amb un mòdul com `random` o `datetime`.",
+    "opcions": [
+      {
+        "text": "Els mòduls de la biblioteca estàndard venen amb Python, però normalment cal importar-los abans d'utilitzar-los.",
+        "correcte": true,
+        "feedback": "Correcte. La biblioteca estàndard forma part de Python, però els seus mòduls, com `random`, `math` o `datetime`, s'han d'importar per poder utilitzar-los."
+      },
+      {
+        "text": "Tots els mòduls de la biblioteca estàndard s'han d'instal·lar amb `pip` abans de poder importar-los.",
+        "correcte": false,
+        "feedback": "No. La biblioteca estàndard ja ve inclosa amb Python. `pip` s'utilitza habitualment per instal·lar paquets de tercers que no formen part de la biblioteca estàndard."
+      },
+      {
+        "text": "Els mòduls de la biblioteca estàndard funcionen igual que les funcions built-in i no necessiten `import`.",
+        "correcte": false,
+        "feedback": "No. Aquesta és una diferència important: les funcions built-in estan disponibles directament, mentre que els mòduls de la biblioteca estàndard normalment s'han d'importar."
+      },
+      {
+        "text": "La biblioteca estàndard només conté mòduls relacionats amb les matemàtiques i les dates.",
+        "correcte": false,
+        "feedback": "No. La biblioteca estàndard és molt més àmplia i inclou mòduls com `os`, `random`, `json`, `re`, `sqlite3`, `collections` i molts altres."
+      }
+    ]
+  },
+  {
+    "CE": "3e",
+    "titol": "Quin valor retorna la funció `sumaEsp(3, 5)` en el codi següent? <pre>def sumaEsp(a, b):\n    if a > b:\n        resultat = a + b + b + 1\n    else:\n        resultat = a + a + b + 2\n    return resultat</pre>",
+    "pista": "Compara primer els valors de `a` i `b` per saber quin bloc s'executa.",
+    "opcions": [
+      {
+        "text": "13",
+        "correcte": true,
+        "feedback": "Correcte. Com que `3 > 5` és fals, s'executa l'`else`: `3 + 3 + 5 + 2 = 13`. El `return` fa que aquest valor siga retornat per la funció."
+      },
+      {
+        "text": "14",
+        "correcte": false,
+        "feedback": "No. El càlcul de l'`else` és `a + a + b + 2`, és a dir, `3 + 3 + 5 + 2 = 13`."
+      },
+      {
+        "text": "19",
+        "correcte": false,
+        "feedback": "No. Aquest resultat correspondria al càlcul de l'altra branca (`3 + 5 + 5 + 1`), però aquesta branca només s'executaria si `a > b` fora certa."
+      },
+      {
+        "text": "8",
+        "correcte": false,
+        "feedback": "No. La funció no retorna simplement `a + b`. Quan `a` no és major que `b`, executa `a + a + b + 2`, que en aquest cas dona `13`."
+      }
+    ]
+  },
+  {
+    "CE": "3e",
+    "titol": "Què ocorre quan una funció en Python arriba al final sense executar cap instrucció `return`?",
+    "pista": "Pensa en el valor que Python utilitza quan una funció no retorna explícitament cap resultat.",
+    "opcions": [
+      {
+        "text": "La funció retorna `None`.",
+        "correcte": true,
+        "feedback": "Correcte. Si una funció acaba sense executar `return`, Python retorna implícitament `None`. Per exemple, una funció que només fa `print()` no retorna el text imprés."
+      },
+      {
+        "text": "La funció retorna automàticament `0`.",
+        "correcte": false,
+        "feedback": "No. Python no assigna automàticament el valor `0` a una funció sense `return`. El valor de retorn implícit és `None`."
+      },
+      {
+        "text": "La funció provoca un `ValueError` perquè sempre ha de tindre un `return`.",
+        "correcte": false,
+        "feedback": "No. `return` és opcional. Una funció pot executar-se perfectament sense `return`; en aquest cas, el valor retornat implícitament és `None`."
+      },
+      {
+        "text": "La funció retorna l'última expressió que haja calculat.",
+        "correcte": false,
+        "feedback": "No. Python no retorna automàticament l'última expressió d'una funció. Cal utilitzar `return` per indicar explícitament quin valor es vol retornar."
+      }
+    ]
+  },
+  {
+    "CE": "3e",
+    "titol": "Què ocorre en executar el codi següent? <pre>def modificar_x():\n    x = 20\n\nx = 10\nmodificar_x()\nprint(x)</pre>",
+    "pista": "Fixa't en l'àmbit de la variable `x` creada dins de la funció.",
+    "opcions": [
+      {
+        "text": "S'imprimeix `10`, perquè la `x` de dins de la funció és una variable local.",
+        "correcte": true,
+        "feedback": "Correcte. L'assignació `x = 20` dins de la funció crea una variable local. No modifica la variable global `x`, que continua valent `10`."
+      },
+      {
+        "text": "S'imprimeix `20`, perquè una variable creada dins d'una funció modifica la variable global amb el mateix nom.",
+        "correcte": false,
+        "feedback": "No. Una assignació dins d'una funció crea una variable local si no s'utilitza `global`. Per tant, la `x` global continua valent `10`."
+      },
+      {
+        "text": "Es produeix un `NameError` perquè no es pot utilitzar una variable amb el mateix nom dins i fora d'una funció.",
+        "correcte": false,
+        "feedback": "No. És perfectament possible tindre variables locals i globals amb el mateix nom. En aquest cas són variables diferents."
+      },
+      {
+        "text": "S'imprimeixen els dos valors, `10` i `20`, perquè Python mostra automàticament les variables locals.",
+        "correcte": false,
+        "feedback": "No. La funció no conté cap `print()`, només assigna `20` a la seua variable local. L'únic `print()` és posterior a la crida i mostra la `x` global, que val `10`."
+      }
+    ]
+  },
+
+
+
+
+
+
+  {
+    "CE": "3f",
+    "titol": "Què és un mòdul en Python?",
+    "pista": "Pensa en la unitat bàsica que permet organitzar i reutilitzar codi Python.",
+    "opcions": [
+      {
+        "text": "Un fitxer amb extensió `.py` que pot contindre funcions, classes i variables reutilitzables.",
+        "correcte": true,
+        "feedback": "Correcte. Un mòdul és un fitxer Python que pot contindre funcions, classes i variables, i el seu codi es pot reutilitzar important-lo des d'altres programes."
+      },
+      {
+        "text": "Una carpeta que conté diversos fitxers Python relacionats entre si.",
+        "correcte": false,
+        "feedback": "Aquesta definició correspon més bé a un paquet. Un mòdul és un únic fitxer Python, mentre que un paquet és una col·lecció de mòduls organitzats en un directori."
+      },
+      {
+        "text": "Una funció especial que s'executa automàticament quan comença qualsevol programa Python.",
+        "correcte": false,
+        "feedback": "No. Un mòdul és un fitxer que conté codi reutilitzable. En importar-lo, es pot accedir a les funcions, variables o classes que conté."
+      },
+      {
+        "text": "Un fitxer que només pot contindre funcions i que no permet definir variables ni classes.",
+        "correcte": false,
+        "feedback": "No. Un mòdul pot contindre diferents elements de Python, entre ells funcions, classes i variables, com mostra l'exemple amb `saludar()` i `PI`."
+      }
+    ]
+  },
+  {
+    "CE": "3f",
+    "titol": "Després d'executar `import mi_modulo`, com s'ha d'utilitzar la funció `saludar()` que està definida dins del mòdul?",
+    "pista": "Quan s'importa tot el mòdul, el seu nom passa a formar part de l'espai de noms utilitzat per accedir als seus elements.",
+    "opcions": [
+      {
+        "text": "`mi_modulo.saludar(\"Ana\")`",
+        "correcte": true,
+        "feedback": "Correcte. Quan s'utilitza `import mi_modulo`, cal indicar l'espai de noms del mòdul, seguit d'un punt i del nom de l'element: `mi_modulo.saludar()`."
+      },
+      {
+        "text": "`saludar(\"Ana\")`, perquè les funcions del mòdul passen automàticament a l'espai de noms global.",
+        "correcte": false,
+        "feedback": "No. Amb `import mi_modulo`, la funció continua dins de l'espai de noms del mòdul. Per això cal escriure `mi_modulo.saludar()`."
+      },
+      {
+        "text": "`mi_modulo::saludar(\"Ana\")`, perquè els elements dels mòduls s'accedeixen mitjançant dos punts.",
+        "correcte": false,
+        "feedback": "No. En Python s'utilitza un punt (`.`) per accedir a un element d'un espai de noms. La sintaxi correcta és `mi_modulo.saludar()`."
+      },
+      {
+        "text": "`import mi_modulo.saludar(\"Ana\")`, perquè cal tornar a importar la funció cada vegada que s'utilitza.",
+        "correcte": false,
+        "feedback": "No. El mòdul només s'importa amb `import mi_modulo`. Després, els seus elements es poden utilitzar mitjançant l'espai de noms `mi_modulo`."
+      }
+    ]
+  },
+  {
+    "CE": "3f",
+    "titol": "Quina diferència hi ha entre `import mi_modulo` i `from mi_modulo import saludar`?",
+    "pista": "Fixa't en si necessites escriure el nom del mòdul abans de la funció.",
+    "opcions": [
+      {
+        "text": "Amb `import mi_modulo` s'utilitza `mi_modulo.saludar()`, mentre que amb `from mi_modulo import saludar` es pot utilitzar directament `saludar()`.",
+        "correcte": true,
+        "feedback": "Correcte. `import mi_modulo` importa el mòdul i conserva `mi_modulo` com a espai de noms. En canvi, `from mi_modulo import saludar` importa directament la funció, que es pot cridar sense el prefix del mòdul."
+      },
+      {
+        "text": "Les dues formes són equivalents i sempre obliguen a escriure `mi_modulo.saludar()`.",
+        "correcte": false,
+        "feedback": "No. Amb `from mi_modulo import saludar`, la funció s'importa directament i es pot cridar com `saludar()`, sense utilitzar `mi_modulo.`."
+      },
+      {
+        "text": "Amb `import mi_modulo` només es poden importar variables, mentre que `from mi_modulo import saludar` permet importar funcions.",
+        "correcte": false,
+        "feedback": "No. `import mi_modulo` importa el mòdul complet, que pot contindre funcions, variables i classes. L'altra sintaxi permet seleccionar elements concrets."
+      },
+      {
+        "text": "Amb `from mi_modulo import saludar` s'importa tot el mòdul, mentre que `import mi_modulo` importa només la funció indicada.",
+        "correcte": false,
+        "feedback": "És al contrari. `import mi_modulo` importa el mòdul, mentre que `from mi_modulo import saludar` importa específicament l'element `saludar`."
+      }
+    ]
+  },
+  {
+    "CE": "3f",
+    "titol": "Quina afirmació descriu correctament la relació entre un paquet i els seus mòduls en Python?",
+    "pista": "Pensa en com s'organitzen diversos fitxers `.py` dins d'una estructura de projecte.",
+    "opcions": [
+      {
+        "text": "Un paquet és una col·lecció de mòduls organitzats en un directori i pot contindre també subpaquets.",
+        "correcte": true,
+        "feedback": "Correcte. Els paquets permeten organitzar mòduls en una estructura jeràrquica. A més, un paquet pot contindre subpaquets, facilitant l'organització de projectes grans."
+      },
+      {
+        "text": "Un paquet és simplement un mòdul amb moltes funcions, i no pot contindre altres mòduls.",
+        "correcte": false,
+        "feedback": "No. Un mòdul és un fitxer `.py`, mentre que un paquet serveix per agrupar i organitzar diversos mòduls dins d'un directori."
+      },
+      {
+        "text": "Un paquet només pot contindre un mòdul principal i no pot organitzar-se en diversos nivells.",
+        "correcte": false,
+        "feedback": "No. Els paquets poden contindre diversos mòduls i també subpaquets. Això permet crear estructures jeràrquiques com `mi_paquete.utilidades.herramientas`."
+      },
+      {
+        "text": "Un paquet és un conjunt de funcions que sempre s'ha d'instal·lar amb `pip` abans de poder-lo utilitzar.",
+        "correcte": false,
+        "feedback": "No necessàriament. El text descriu els paquets com una forma d'organitzar mòduls en un directori. Els paquets de tercers poden instal·lar-se amb `pip`, però això no defineix què és un paquet."
+      }
+    ]
+  },
+
+  
+
+
+
+
+
+  {
+    "CE": "3g",
+    "titol": "Quina és la finalitat principal de la construcció `if __name__ == \"__main__\":` en un programa Python?",
+    "pista": "Pensa què ha de passar quan el fitxer s'executa directament i què ha de passar quan s'importa.",
+    "opcions": [
+      {
+        "text": "Fer que un bloc de codi només s'execute quan el fitxer es posa en marxa directament.",
+        "correcte": true,
+        "feedback": "Correcte. La construcció permet diferenciar entre executar el fitxer directament i importar-lo com a mòdul. El bloc només s'executa en el primer cas."
+      },
+      {
+        "text": "Fer que totes les funcions del fitxer s'executen automàticament quan el mòdul és importat.",
+        "correcte": false,
+        "feedback": "No. Precisament serveix per evitar que el codi principal del bloc s'execute quan el fitxer és importat com a mòdul."
+      },
+      {
+        "text": "Indicar a Python quin és el nom de la primera funció que ha d'executar del fitxer.",
+        "correcte": false,
+        "feedback": "No. `__main__` no identifica una funció. El seu objectiu és comprovar si el fitxer s'està executant directament."
+      },
+      {
+        "text": "Impedir que el fitxer puga ser importat des d'un altre programa Python.",
+        "correcte": false,
+        "feedback": "No. El fitxer continua podent importar-se. El que s'evita és que el codi situat dins del bloc `if` s'execute automàticament durant la importació."
+      }
+    ]
+  },
+  {
+    "CE": "3g",
+    "titol": "Quin valor té `__name__` quan un fitxer Python s'executa directament?",
+    "pista": "Compara el valor de `__name__` quan el fitxer és el programa principal amb el valor que té quan s'importa.",
+    "opcions": [
+      {
+        "text": "`\"__main__\"`",
+        "correcte": true,
+        "feedback": "Correcte. Quan Python executa el fitxer directament, la variable especial `__name__` pren el valor `\"__main__\"`. Per això la condició `if __name__ == \"__main__\":` resulta verdadera."
+      },
+      {
+        "text": "El nom del fitxer incloent l'extensió `.py`.",
+        "correcte": false,
+        "feedback": "No. Quan el fitxer s'executa directament, `__name__` pren el valor `\"__main__\"`. En el cas de la importació, el text indica que pren el nom del fitxer sense `.py`."
+      },
+      {
+        "text": "`\"main.py\"`",
+        "correcte": false,
+        "feedback": "No. `__main__` és un valor especial que Python assigna a `__name__` quan el fitxer s'executa directament; no és el nom del fitxer."
+      },
+      {
+        "text": "El nom del mòdul que ha importat el fitxer.",
+        "correcte": false,
+        "feedback": "No. Quan el fitxer és el programa principal, `__name__` val `\"__main__\"`. Quan s'importa, pren el nom del fitxer segons el text."
+      }
+    ]
+  },
+  {
+    "CE": "3g",
+    "titol": "Què ocorre quan un altre programa fa `import mi_script` si `mi_script.py` conté un bloc `if __name__ == \"__main__\":`?",
+    "pista": "En una importació, `__name__` no té el valor `\"__main__\"`.",
+    "opcions": [
+      {
+        "text": "El contingut del bloc `if __name__ == \"__main__\":` no s'executa, però les funcions del mòdul poden ser utilitzades.",
+        "correcte": true,
+        "feedback": "Correcte. En importar el mòdul, `__name__` no és `\"__main__\"`, de manera que el bloc no s'executa. Les funcions definides al mòdul, però, poden utilitzar-se, com `mi_script.funcion_util()`."
+      },
+      {
+        "text": "No s'executa cap codi del mòdul i tampoc es poden utilitzar les seues funcions.",
+        "correcte": false,
+        "feedback": "No. El mòdul sí que es pot utilitzar després de ser importat. En l'exemple, `mi_script.funcion_util()` s'executa correctament."
+      },
+      {
+        "text": "S'executa sempre el bloc `if`, perquè importar un mòdul equival a executar-lo directament.",
+        "correcte": false,
+        "feedback": "No. Importar un mòdul i executar-lo directament són situacions diferents. Precisament la construcció `if __name__ == \"__main__\":` permet distingir-les."
+      },
+      {
+        "text": "Python elimina les funcions del mòdul quan detecta que ha sigut importat.",
+        "correcte": false,
+        "feedback": "No. Les funcions continuen disponibles dins del mòdul. El que no s'executa és el codi que està dins del bloc condicionat."
+      }
+    ]
+  },
+  {
+    "CE": "3g",
+    "titol": "Observa el codi següent. Què ocorrerà si s'executa directament `mi_script.py`?\n\n`def funcion_util():\n    print(\"Funció util\")\n\nif __name__ == \"__main__\":\n    print(\"Programa principal\")\n    funcion_util()`",
+    "pista": "Quan el fitxer s'executa directament, la condició compara `__name__` amb `\"__main__\"`.",
+    "opcions": [
+      {
+        "text": "S'imprimeixen `Programa principal` i després `Funció util`.",
+        "correcte": true,
+        "feedback": "Correcte. En executar directament el fitxer, `__name__` val `\"__main__\"`. Per tant, s'executa el bloc i, dins d'aquest, primer es mostra `Programa principal` i després es crida `funcion_util()`."
+      },
+      {
+        "text": "Només s'imprimeix `Funció util`, perquè el bloc `if` només serveix per definir funcions.",
+        "correcte": false,
+        "feedback": "No. El bloc `if __name__ == \"__main__\":` no defineix funcions: conté codi que s'executarà quan el fitxer es pose en marxa directament."
+      },
+      {
+        "text": "No s'imprimeix res, perquè `__name__` mai pot tindre el valor `\"__main__\"`.",
+        "correcte": false,
+        "feedback": "No. Quan un fitxer Python s'executa directament, `__name__` pren precisament el valor `\"__main__\"`, per la qual cosa la condició és verdadera."
+      },
+      {
+        "text": "S'imprimeix només `Programa principal`, perquè una funció definida abans del bloc `if` no pot ser cridada des d'aquest.",
+        "correcte": false,
+        "feedback": "No. Una funció definida abans del bloc pot ser cridada perfectament des de dins d'aquest. En aquest cas s'executen les dues instruccions."
+      }
+    ]
+  },
+
+
+
+  
+  
+
+  
+  {
+    "CE": "3h",
+    "titol": "Quina és la principal diferència entre l'ASCII original i Unicode?",
+    "pista": "Pensa en la quantitat i varietat de caràcters que pot representar cada estàndard.",
+    "opcions": [
+      {
+        "text": "ASCII original utilitza 7 bits i representa 128 caràcters, mentre que Unicode permet representar caràcters de molts idiomes, símbols i emojis.",
+        "correcte": true,
+        "feedback": "Correcte. ASCII original utilitza valors del 0 al 127 i està limitat principalment a l'alfabet anglès i alguns símbols. Unicode amplia enormement el conjunt de caràcters representables."
+      },
+      {
+        "text": "ASCII utilitza 8 bits i Unicode només 7 bits, però Unicode inclou els mateixos caràcters que ASCII.",
+        "correcte": false,
+        "feedback": "No. ASCII original utilitza 7 bits, mentre que Unicode no està limitat a 7 bits. Unicode defineix un conjunt molt més ampli de caràcters i pot utilitzar codificacions com UTF-8 i UTF-16."
+      },
+      {
+        "text": "ASCII i Unicode representen exactament els mateixos caràcters, però Unicode utilitza números diferents per a cada caràcter.",
+        "correcte": false,
+        "feedback": "No. Unicode comparteix els primers caràcters amb ASCII, però també inclou molts més caràcters, com lletres d'altres idiomes, símbols matemàtics i emojis."
+      },
+      {
+        "text": "ASCII només serveix per a números, mentre que Unicode és el que permet representar lletres i símbols.",
+        "correcte": false,
+        "feedback": "No. ASCII també representa lletres, signes de puntuació i altres símbols. La diferència principal és que el conjunt original d'ASCII és molt més limitat que Unicode."
+      }
+    ]
+  },
+  {
+    "CE": "3h",
+    "titol": "Quin valor Unicode correspon al caràcter `A` segons el text?",
+    "pista": "Recorda que Unicode identifica cada caràcter mitjançant un codi anomenat code point.",
+    "opcions": [
+      {
+        "text": "U+0041",
+        "correcte": true,
+        "feedback": "Correcte. El caràcter `A` té el code point Unicode U+0041. El prefix U+ indica que es tracta d'un valor Unicode."
+      },
+      {
+        "text": "U+0061",
+        "correcte": false,
+        "feedback": "No. U+0061 correspon al caràcter `a` minúscul. Unicode diferencia entre majúscules i minúscules."
+      },
+      {
+        "text": "U+0030",
+        "correcte": false,
+        "feedback": "No. U+0030 correspon al caràcter `0`, no a la lletra `A`."
+      },
+      {
+        "text": "U+00E9",
+        "correcte": false,
+        "feedback": "No. U+00E9 correspon al caràcter `é`. El code point de `A` és U+0041."
+      }
+    ]
+  },
+  {
+    "CE": "3h",
+    "titol": "Per què `\"é\" == \"é\"` pot donar `False` en Python encara que les dues cadenes es mostren visualment iguals?",
+    "pista": "Compara la representació interna dels dos textos, no la seua aparença.",
+    "opcions": [
+      {
+        "text": "Perquè `\"é\"` és un únic caràcter U+00E9, mentre que `\"é\"` està format per U+0065 i U+0301.",
+        "correcte": true,
+        "feedback": "Correcte. Les dues cadenes tenen una representació Unicode diferent: una utilitza un caràcter compost i l'altra una `e` seguida d'una marca combinant d'accent."
+      },
+      {
+        "text": "Perquè Python considera que els accents sempre fan que dues cadenes siguen diferents.",
+        "correcte": false,
+        "feedback": "No. El problema no és simplement que hi haja un accent. El que importa és que les dues cadenes utilitzen seqüències diferents de codis Unicode."
+      },
+      {
+        "text": "Perquè Unicode no permet representar un accent combinant amb una lletra.",
+        "correcte": false,
+        "feedback": "No. Unicode permet precisament utilitzar marques combinants. En aquest cas, U+0301 és una marca d'accent agut combinant amb la lletra anterior."
+      },
+      {
+        "text": "Perquè Python compara les cadenes segons la manera com apareixen en pantalla i detecta que tenen una codificació diferent.",
+        "correcte": false,
+        "feedback": "No. Python no basa aquesta comparació en l'aparença visual. Compara les seqüències de caràcters Unicode que formen les cadenes."
+      }
+    ]
+  },
+  {
+    "CE": "3h",
+    "titol": "Quina és la finalitat principal de normalitzar cadenes Unicode amb `unicodedata.normalize(\"NFC\", text)`?",
+    "pista": "Pensa en el problema que apareix quan dos textos es veuen igual però tenen representacions Unicode diferents.",
+    "opcions": [
+      {
+        "text": "Convertir diferents representacions Unicode equivalents en una forma normalitzada, facilitant comparacions coherents entre cadenes.",
+        "correcte": true,
+        "feedback": "Correcte. La normalització NFC pot convertir una seqüència com `e` + accent combinant en la forma composta `é`, de manera que representacions visualment equivalents puguen coincidir en la comparació."
+      },
+      {
+        "text": "Convertir qualsevol cadena Unicode a ASCII per eliminar els caràcters que no formen part de l'alfabet anglès.",
+        "correcte": false,
+        "feedback": "No. La normalització Unicode no converteix les cadenes a ASCII. El seu objectiu és unificar representacions Unicode equivalents segons una forma de normalització."
+      },
+      {
+        "text": "Transformar sempre cada caràcter compost en dos caràcters independents per facilitar-ne el processament.",
+        "correcte": false,
+        "feedback": "No. Això descriu més aviat una forma descomposta com NFD. NFC busca la forma composta quan és possible."
+      },
+      {
+        "text": "Eliminar les marques combinants de totes les cadenes perquè els accents no afecten mai les comparacions.",
+        "correcte": false,
+        "feedback": "No. La normalització no consisteix a eliminar els accents. En NFC, per exemple, una lletra base i una marca combinant poden convertir-se en un únic caràcter compost."
+      }
+    ]
+  }
+]
