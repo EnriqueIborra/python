@@ -82,23 +82,84 @@ print("El doble de la teva edat és", edat_doble)               </code></pre>
 
   <section id="seleccio">
         <img src="imgs/condicional.png" alt="condicional" class="imatge-dreta" width="35%">
-        <h2>Execució Condicional (if, elif, else)</h2>
-      <p> Les estructures condicionals permeten executar blocs de codi segons les condicions que s'hi especifiquen. 
-        L'operador <code>:</code> marca l'inici d'un bloc de codi estructurat i indentat, i és essencial perquè Python interprete correctament la jerarquia del programa.       </p>
-      <p> La indentació s'indica amb 4 espais (mínim) o un tabulador. Aquest principi és fonamental en Python, ja que defineix l'estructura del programa, a diferència d'altres llenguatges que utilitzen claus <code>{}</code>.       </p>
-      <p>A Python la indentació no és només estètica, és part de la sintaxi, i sense ella el codi simplement no funciona.</p>
-      La indentació no només s’usa en un if, sinó en tots els blocs de codi on cal indicar jerarquia o dependència. És una part fonamental de la sintaxi. 
-      S'usa també en: Bucles for i while, Funcions (def), Excepcions (try, except, finally), match-case, Classes (class), Blocs with 
+        <h2>Execució condicional en Python</h2>
+        <p>Quan programem, sovint necessitem que el programa prenga decisions.</p>
+        <ul> Per exemple:
+            <li>Si l'usuari és major d'edat, mostrar un missatge.</li>
+            <li>Si la nota és superior o igual a 5, indicar que ha aprovat.</li>
+            <li>Si una contrasenya és correcta, permetre l'accés.</li>
+        </ul>
+        <p>Per prendre aquestes decisions utilitzem les estructures condicionals.</p>
+
+        <h2>La instrucció <code>if</code></h2>
+        <p>La instrucció if permet executar un bloc de codi només quan es compleix una determinada condició.</p>
+        <p>La sintaxi bàsica és:</p>
+        <pre>if condició:
+    instrucció 
+
+if condició:
+    instrucció
+    altra_instrucció
+    altra_instrucció          </pre>
+
+        <p>Qu és pot llegir com:</p>
+        <pre>Si la condició és certa, executa les instruccions del bloc.</pre>
+    <ul>Es  poden distingir els següents elements
+        <li>La instrucció  <code>if</code></li>
+        <li>La condició</li>
+        <li>El operador d'inici de bloc indentat " <strong>:</strong> "</li>
+        <li>La instrucció o bloc d'instruccions <b>indentades</b></li>
+    </ul>
+
+    <h2>La indentació</h2>
+    <p> Les estructures condicionals permeten executar blocs de codi segons les condicions que s'hi especifiquen. 
+    L'operador <code>:</code> marca l'inici d'un bloc de codi estructurat i indentat, i és essencial perquè Python interprete correctament la jerarquia del programa.       </p>
+    <p>La indentació s'utilitza per indicar quines instruccions pertanyen a un bloc de codi.        </p>
+    <p> La indentació s'indica amb espais davant de la instrucció. Totes les instruccions d'un bloc han de tindre el mateix nombre d'espais. 
+    En Python es recomana utilitzar 4 espais per cada nivell d'indentació.       </p>
+    <p> Aquest principi és fonamental en Python, ja que defineix l'estructura del programa, a diferència d'altres llenguatges que utilitzen claus <code>{}</code>.       </p>
+    <p>A Python la indentació no és només estètica, és part de la sintaxi, i sense ella el codi simplement no funciona.</p>
+    La indentació no només s’usa en un if, sinó en tots els blocs de codi on cal indicar jerarquia o dependència.    És una part fonamental de la sintaxi. 
+    S'usa també en: Bucles (for) i (while), Funcions (def), Excepcions (try, except, finally), match-case, Classes (class), Blocs (with)
     
-      <h3>Exemple d'ús del condicional if - else</h3>
+    <h2>La condició</h2>
+    <p>El resultat d'una condició és sempre un valor booleà</p>
+    <p>Una condició pot fer sevir <strong>Operadors de comparació</strong> i <strong>Operadors lògics</strong></p>
+    <pre>Operadors de comparació:  ==  !=  &lt;  > &lt;=  >= 
+Operadors lògics:         and   or   not
+Altres operadors (identitat, pentenència):       <a href="./ud1_2py.html#oplogics">Repàs de secció en ud1</a>   </pre>
+        <pre>edat = 20
+print ( edat >= 18)
+Resultat :  True           </pre>
+<p>Es poden combinar diverses condicions utilitzant els operadors lògics:</p>
+<ul>
+    <li>and → les dues condicions han de ser certes.</li>
+    <li>or → almenys una de les condicions ha de ser certa.</li>
+    <li>not → resulta el contrari del resultat de la condició. Inverteix el valor booleà</li>
+</ul>
+<pre>edat = 20 
+te_entrada = True 
+if edat >= 18 and te_entrada: 
+    print("Pots entrar")</pre>
+<pre>dia = "dissabte" 
+if dia == "dissabte" or dia == "diumenge": 
+    print("És cap de setmana")</pre>
+<pre>plou = False 
+if not plou: 
+    print("No cal portar paraigua")</pre>
+
+      <h2>Exemple d'ús del condicional amb <code>if - else</code> </h2>
+      <p>De vegades volem executar unes instruccions si la condició és certa i unes altres si és falsa.</p>
       <pre><code>edat = int(input('Quina edat tens ? '))
 if edat >= 18:
     print("Eres major d'edat")     # aquesta ordre està indentada
     print("==================")    # aquestes ordres formen un bloc
 else:
     print("Eres menor d'edat")  # aquesta ordre també està indentada        </code></pre>
+    <p> ==> L'else no porta una condició. S'executa quan la condició de l'if és falsa (no es compleix).</p>
 
-  <h3>Exemple d'ús del condicional if amb elif i  else</h3>      
+  <h2>Exemple d'ús del condicional <code>if</code> amb <code>elif</code> i  <code>else</code></h2>      
+  <p>Quan tenim més de dues possibilitats, podem utilitzar <code>elif</code>.</p>
 <pre><img src="imgs/if-elif.png" alt="if" class="imatge-dreta" width="30%">
 <code>n = float(input("Quina nota has tret en l'examen?"))
 if n<=4:
@@ -108,22 +169,42 @@ elif n<=6:
 elif n<=8:
     print("Notable")
 else:
-    print("Excelent")          </code>   </pre>            
-
-      
-   
-      <h3>Condicional en una sola línia</h3>
-
-      <p> Si la estructura no té la part del <code><strong>else</strong></code> i només té una línia, no és necessari indentar, tot i que és habitual fer-ho així:   </p>
+    print("Excelent")          </code>   </pre>    
+    
+    <p>Python comprova les condicions de dalt cap avall. 
+        Quan troba una condició certa, executa el seu bloc i ja no comprova els elif següents.</p>    
+    <p>Per tant, l'ordre de les condicions és important. </p>
+    <pre><code>if 
+↓
+elif
+↓
+elif
+↓
+else    </code></pre>
+<p> .. i executa només el <strong>primer bloc</strong> que compleix la seua condició.</p>
+ <p> ==> L'else no porta una condició. S'executa quan <strong>cap</strong> condició dels if-elif es compleix.</p>
+ <p> ==> En Python pots tenir <code>if</code> seguit de diversos <code>elif</code> sense <code>else</code>. 
+    Si cap condició és certa, simplement no s'executa cap bloc.</p>
+<p> ==> <code>if</code> és obligatori, <code>elif i else</code> són opcionals.</p>    
+<p> ==> Podem tenir tants <code>elif</code> com necessitem, però només un <code>else</code>, i sempre és l'última alternativa.</p>
+ 
+    <hr>  <h2>Condicional en una sola línia</h2>
+      <p> Si la estructura no té la part del <code><strong>else</strong></code> i només té una línia, 
+        no és necessari indentar, tot i que és habitual fer-ho així:   </p>
       
       <pre><img src="imgs/if.png" alt="if" class="imatge-dreta" width="20%"><code># Exemple
 if edat >= 18: print("Eres major d'edat")</code>  </pre>
 
-      <h2>Condicional Ternari en Python</h2>
+   <hr>   <h2>Condicional Ternari en Python</h2>
       <p>Aquesta estructura permet assignar un valor a una variable segons una condició en una sola línia de codi, evitant així la necessitat de tenir un bloc de codi amb múltiples línies.</p>   
   
       <h3>Sintaxi:</h3>
       <pre><code>variable = valor_si_veritable <strong>if</strong>  condició <strong>else</strong> valor_si_fals</code></pre>
+      <p>Esta linia de codi seria equivalent a:</p>
+      <pre><code>if condició:
+    variable = valor_si_veritable
+else
+    variable = valor_si_fals       </code></pre>
     
       <h3>Exemple:</h3>
       <pre><code>edad = 20  # Exemple d'edat, o edad=input('Dis-me edad:')
@@ -137,8 +218,11 @@ print(missatge)  # Eixida: Major d'edat         </code></pre>
       <p>També es pot posar dins del <code>print</code></p>
       <pre><code>print ( "Major" if edat>18 else "Menor")</code></pre>
 
+
       <hr><h2>match-case</h2>
       <p>Des de Python 3.10 està disponible la instrucció <code> match-case</code>, una estructura pareguda al <code>switch</code> (d'altres llenguatges)</p>
+      <p>És una estructura que permet comparar un valor amb diferents patrons. Pot recordar al <code>switch</code> d'altres llenguatges, 
+        però <code>match-case</code> ofereix possibilitats que van més enllà d'una simple comparació de valors.</p>
       <pre><code>value = int(input("Dona'm un valor sencer: "))
 match value:
     case 1:
@@ -149,7 +233,8 @@ match value:
         print ( "Tres" )
     case _:
         print ( "Otro valor" )        </code></pre>
-    <p>case _: funciona com <strong> default </strong></p> <br>
+    <p>case _: funciona com <strong> default </strong>. Actua com un cas per defecte: coincideix 
+        amb qualsevol valor que no haja coincidit amb els casos anteriors</p> <br>
       
       <pre><code>value = int(input("Dona'm un valor sencer: "))
 match value:
@@ -158,8 +243,19 @@ match value:
     case 3:
         print ( "Tres" )
     case _:
-        print ( "Otro valor mayor que 3" )       </code></pre>
+        print ( "Otro valor" )       </code></pre>
 <p>En un <code>case</code> es poden posar més d'un valor, separant amb <code>|</code></p>
+ <hr>
+ <h2>Idea fonamental dels condicionals</h2>
+ <p>Els condicionals permeten que un programa no execute sempre les mateixes instruccions, sinó que puga prendre decisions en funció de les dades.</p>
+ <pre>      DADES
+        ↓ 
+    CONDICIÓ
+       ↙ ↘ 
+   CERT    FALS 
+     ↓       ↓ 
+  ACCIÓ 1   ACCIÓ 2       </pre>
+ <p>Aquesta capacitat de prendre decisions és un dels elements fonamentals de qualsevol programa</p>
 
     <hr>
       <h2>Guia de Estils de Python (PEP 8)</h2>
@@ -193,6 +289,15 @@ match value:
         <li><strong>Comentaris:</strong> Han de ser clars i concisos. Que ajuden al teu "jo" del futur o a altre programador o programadora que haja de fer el manteniment del codi.</li>
       </ul>
 
+      <hr>
+      <h2>Errors típics que cal evitar</h2>
+      <ul>
+        <li>= vs ==</li>
+        <li>indentació</li>
+        <li>ordre dels ELIF</li>
+        <li>ordre dels AND, OR</li>
+      </ul>
+
   </section>
 
 
@@ -206,7 +311,7 @@ match value:
     <p>En Python hi ha dos tipus principals de bucles</p>
     <ul>
         <li>Bucles WHILE</li>
-        <li>Bubles FOR</li>
+        <li>Bucles FOR</li>
     </ul>
 
 
@@ -214,7 +319,7 @@ match value:
     <p>El bucle <code>while</code> executa una acció (bloc de codi) mentre una condició siga certa (True).</p>
     <p>El bucle while executa un bloc d’instruccions mentre es compleix una condició determinada. 
      Abans de cada repetició del bloc, el programa comprova si la condició és certa. Si, en este moment, deixa de complir-se, el bucle finalitza,
-     sino, comença a executar el bloc altra vegada. </p>
+     si no, comença a executar el bloc altra vegada. </p>
      <p> És especialment útil quan no sabem exactament quantes vegades s’haurà de repetir una acció.</p>
 
     <pre>while condicio:
@@ -235,7 +340,7 @@ while contador < 5:
     contador += 1  # Augmenta el contador
 print(f"El contador després d'acabar el while val: {contador}") # Esta instrucció està fora del bucle </code></pre>    
     <ol> Resum:
-    <li><code>while</code> repeteix codi metre la <code>condicio</code> siga <code>True</code></li>
+    <li><code>while</code> repeteix codi mentre la <code>condicio</code> siga <code>True</code></li>
     <li>S'ha de vigilar de no crear bucles infinits (incrementar comptador, introduir valors nous cada iteració, etc...)</li>
     <li>És útil quan no se sap quantes repeticions faran falta (a diferència de <code>for</code> ) </li>
     </ol>
@@ -243,11 +348,11 @@ print(f"El contador després d'acabar el while val: {contador}") # Esta instrucc
     <hr>
 
     <h2>2. Bucles <code>for</code></h2>
-    <p>El bucle <code>for</code> <strong>itera</strong> sobre una secuència (com una llista o un rang). Ací tens alguns exemples:</p>
+    <p>El bucle <code>for</code> <strong>itera</strong> sobre una secuència iterable (com una llista o un rang). Ací tens alguns exemples:</p>
     
     <h3>Exemple 1: Iteració amb <code>range</code></h3>
-    <p>La funció <code>range</code> és una eina molt útil a Python per generar una seqüència d'elements. Aquesta seqüència es pot utilitzar en 
-      estructures de control de flux com el bucle <code>for</code> per realitzar iteracions de manera eficient.</p>
+    <p>La funció <code>range</code> és una eina molt útil a Python per generar una seqüència d'elements (objecte iterable). 
+    Aquesta seqüència es pot utilitzar en estructures de control de flux com el bucle <code>for</code> per realitzar iteracions de manera eficient.</p>
 <pre><code>for i in range(5):  
     print('Hola mon')
 
