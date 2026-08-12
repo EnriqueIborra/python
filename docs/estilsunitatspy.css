@@ -339,6 +339,9 @@ button {
 button:hover {
     background-color: #e2e2e2;
 }
+.quiz-container #pregunta-text pre { text-align:left ; }
+
+#pista{  opacity: 0.5; }
 #feedback {
     margin-top: 10px;
     font-weight: bold;

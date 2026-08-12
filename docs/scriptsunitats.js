@@ -66,7 +66,8 @@ function mostrarPregunta() {
 
     const pregunta = preguntesBarrejades[indexPreguntaActual];
 
-    document.getElementById('pregunta-text').innerText = pregunta.titol;
+    // document.getElementById('pregunta-text').innerText = pregunta.titol;
+    document.getElementById('pregunta-text').innerHTML = pregunta.titol;
 
     const container = document.getElementById('options-container');
     container.innerHTML = "";
@@ -90,7 +91,7 @@ function mostrarPregunta() {
 }
 
 function mostrarPista(){
-      document.getElementById('pista').textContent = preguntesBarrejades[indexPreguntaActual].pista;
+      document.getElementById('pista').textContent = '🕵️‍♂️Pista: '+preguntesBarrejades[indexPreguntaActual].pista;
     }
 
 

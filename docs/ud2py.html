@@ -32,6 +32,7 @@
   <a href="#main">Ús de __main__ </a>
   <a href="#ascii">ASCII / Unicode </a>
   <a href="#exercicis">Exercicis</a>
+  <a href="#altres-recursos">Altres Recursos</a>  
   
 </nav>
 
@@ -72,7 +73,7 @@ print("El doble de la teva edat és", edat_doble)               </code></pre>
       
         <h3>Fluxe de Control</h3>
         
-        <p>      En l'execució seqüencial, el flux de control sempre segueix el codi de dalt a baix. No hi ha salts de línia ni condicions que puguin alterar aquest ordre.         </p>
+        <p>      En l'execució seqüencial, el flux de control sempre segueix el codi de dalt a baix. No hi ha salts de línia ni condicions que puguen alterar aquest ordre.         </p>
         <p>           Això és el que fa que el programa siga molt senzill de comprendre i mantenir en comparació amb programes més complexos que utilitzen altres estructures de control com condicions, bucles o funcions.         </p>
         <p>       L'execució seqüencial és la forma més bàsica d'execució en un programa. Cada línia s'executa una darrere de l'altra. Encara que aquest tipus d'execució és útil per a programes senzills, la majoria de programes utilitzen estructures de control com <code>if</code>, <code>for</code>, <code>while</code>, etc., per gestionar fluxos de control més complexos.         </p>
       
@@ -1673,13 +1674,38 @@ print(l4)
 
 </pre>
 
-
 </section>
 
 
+
+<section id="altres-recursos">
+      <hr><h2>Comprova el teu progrés...</h2>
+    <div id="progress-container">
+    <div id="progress-bar"></div>  </div>
+    <!-- <div id="percentatge-text">0%</div>  -->
+
+    <div class="quiz-container">
+        <strong><div id="pregunta-text"></div> </strong>
+        <div id="options-container" class="options">
+        </div>
+
+        <p id="feedback"></p>
+        <button onclick="mostrarPista()">🕵️‍♂️ Vols una pista?</button>
+        <button id="btn-seguent" onclick="seguentPregunta()">      ➕ Següent pregunta </button>
+        <button onclick="carregarPreguntes('RA3')">🔁 Reiniciar</button>
+        <p id="pista"></p>
+         
+   </section>
+
 </main>
 
+<script src="scriptsunitats.js"></script>
+
 <script>
+  // Executar en carregar la pàgina
+  window.onload = carregarPreguntes('RA3');
+
+
 
   // Per poder copiar codi en el porta-retalls. S'ha de posar un botó en cada <pre>
       //  <div class="pre-container">
