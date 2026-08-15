@@ -22,6 +22,7 @@
   <h3>Índex</h3>
   <a href="#estruc">Estructures avançades</a>
   <a href="#llistes">Llistes</a>
+  <a href="#opagregades">Operacions Agregades</a>  
   <a href="#tuples">Tuples</a>
   <a href="#conjunts">Conjunts</a>
   <a href="#diccionaris">Diccionaris</a>
@@ -29,10 +30,11 @@
   <a href="#dates">Dates</a>
   <a href="#funcionsav">Funcions avançades en Python</a>
   <a href="#gc">El Garbage Collector</a>
+  <a href="#er">Expressions regulars (regex)</a>
+  <a href="#intercanvidades">Llenguatges d’intercanvi de dades</a>
   <a href="#tads">TADs</a>
   <a href="#exercicis">Exercicis</a>
 </nav>
-
 
 <main>
 
@@ -123,12 +125,11 @@ b = a        </pre>
           <li>Són Mutables: Es poden modificar després de ser creades.</li>
           <li>Es poden afegir o eliminar elements amb mètodes com <code>append()</code>, <code>remove()</code>, <code>pop()</code>, etc.</li>
           <li>Els elements poden ser mutables o immutables.</li>
-          <li>Es poden niar.</li>
+          <li>Es poden niar. (un element de la llista, pot ser una altra llista)</li>
       </ul>
-      <br><p>Dir que les llistes de Python són ordenades significa que mantenen l'ordre d'inserció dels seus elements.
-        (Una altra cosa és dir que els elements estan ordenats).
-      </p>
-
+      <div class="activitat"> Dir que les llistes de Python són ordenades significa que mantenen l'ordre d'inserció dels seus elements.
+        (Una altra cosa és dir que els elements estan ordenats (segons algun criteri, com p.e. alfabeticament, o numericament...).       </div>
+      
       <ol> <strong>Això implica</strong>
         <li>Ordre d'Inserció Fixe: L'ordre en què afegiu els elements a una llista és l'ordre en què es guarden. 
             Aquest ordre és estable i previsible i només canviarà si feu una operació específica per reordenar-la (com ara .sort() o .reverse()).</li>
@@ -142,41 +143,37 @@ b = a        </pre>
   fruites = ["poma", "plàtan", "cirera"]         # declara llista amb 3 elements
   llista1 = list("1234")                         # fa una llista a partir dels caracters d'un string
   llista2 = [1, "Hola", 3.67, [1, 2, 3], None]   # pot barrejar tipus diferents
+  print(fruites)              # Imprimeix la llista sencera
   print(fruites[0])           # Impremeix el primer element
   fruites[0] = "pera"         # Canvia el valor del primer element de la llista
   del fruites[1]              # Esborra el segon element de la llista  (es reorganitza la llista)
-  fruites.append("taronja")   # afegeix un element    
+  fruites.append("taronja")   # afegeix un element (al final de la llista)   
   llista1.insert(1, 15)       # Inserta en la posició 1, el element 15   (es reorganitza la llista)
   llista1.extend([7, 8, 9])   # Afegix els elements de la lista , u per u
   fruites.remove("cirera")    # Esborra l'element amb valor "cirera", si hi ha més d'u, sols esborra el primer.
+                              # Si no hi cap element, tornarà error =>  ValueError: 
   llista1.clear()             # equivalent a    llista1=[]
   print(fruites)    print(*fruites)    print(*fruites, sep=' -> ')   # Tres formes d'imprimir una llista
-  len(fruites)                # Torna "quants" elements té la llista
-  max(fruites)   min(fruites) # sols si els elements son comparables entre ells
-  sum(llista1)                # Sols si els elements son numeros
-  llista1[0] = 24    llista1[1] = 46   llista1[-1] = 33    llista1[-2] = 57    # Modificació de valors d'una llista 
-  novafruita1 = fruites[2:4]     novafruita2 = fruites[:4]     novafruita3 = fruites[2:]    # Crea sub-llistes a partir d'una
+  llista1[0] = 24    llista1[1] = 46   
+  llista1[-1] = 33    llista1[-2] = 57    # Modificació de valors d'una llista 
+  novafruita1 = fruites[2:4]     novafruita2 = fruites[:4]
+  novafruita3 = fruites[2:]   # Crea sub-llistes a partir d'una
   ultim = llista1.pop()       # Extrau l'últim element  
   altre = llista1.pop(2)      # posició 2  ( la primera pos es la 0, l'ultima la -1)
-  print(10 in llista1)        # True o False
-  vposic = fruites.index("plàtan")    # posició del primer element 'plàtan' ( si hi ha més d'u)
-  
-  llista1.sort()                      # ordena els elements de la llista , modificant-la !!
-      # Si els elements d'una llista no son del mateix tipus, no es podran ordenar
-      # I si s'intenta, donarà un Error =>  TypeError
-
-  llista_ordenada = sorted(llista1)   # Torna una llista nova ordenada, pero no modifica la principal
-  llista1.reverse()                   #  modifica...
-  print(fruites.count("pera"))    
-  copia_llista = llista1.copy()       # equivalent:   copia_llista = llista1[:]
-  llista_niada = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+  llista_niada = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]      #  També coneguda com "matriu"
   llista3 = llista1 + llista2         # crea nova llista amb els elements de llista1 i de llista2
   llista_repetida = llista1 * 3       # crea nova llista amb els elements de llista1 tres vegades
   x, y, z = llista                    # list unpacking
   a, *resta = [1, 2, 3, 4]            # list unpacking, amb -resta-  serà una llista
   llista_sense_duplicats = list(set(mevallista))
-  resultat = all( llista2)   # comprova si tots els elements son True  (no son False)
-  resultat = any( llista2)   # comprova si algun element es True  (no  False)    </pre>
+  resultat = all( llista2)    # comprova si tots els elements son True  (no son False)
+  resultat = any( llista2)    # comprova si algun element es True  (no  False)    </pre>
+  <div class="activitat">
+    llista1 = [1,2]  <br>
+     llista1.extend([7, 8, 9])  <strong>NO ES IGUAL a</strong>   llista1.append([7, 8, 9])
+       <br> => Explora la diferència ....
+  </div>
+
      <h4>Com recorrer una llista</h4>
       <pre>
 for e in llista: print(e)    # e serà un element de la llista en cada iteració
@@ -202,11 +199,11 @@ print(l)     # l conté una llista  ['P','y','t','h','o','n']
  
 # Per tornar a convertir una llista a string s'utilitzarà  <strong>join</strong>
 # <strong>str</strong> no fa la conversió molt bé...
-string2=''.join(a)
+string2=''.join(l)
 print(string2)          #  Python
 
 # O es pot "unir" amb qualsevol lletra
-string3=','.join(a)
+string3=','.join(l)
 print(string3)          #  P,y,t,h,o,n     </pre>
 
         <h3>Aliasing versus Shallow Copy</h3>
@@ -298,6 +295,118 @@ new_list       ->  [[1, 2], [4, 6]]
        
 </section>
 
+
+
+
+
+<section id="opagregades">
+  <h1>Operacions agregades en Python</h1>
+  <h2>Operacions agregades i de tractament de col·leccions</h2>
+  <p>Quan treballem amb una col·lecció de dades, com una llista de Python, normalment no volem treballar només amb un element. 
+    Sovint necessitem analitzar, buscar, ordenar, filtrar o transformar molts elements alhora.</p>
+<p>Per exemple, imaginem que tenim les notes d'un grup d'alumnes:</p>
+<pre>notes = [7, 4, 9, 6, 4, 8, 5, 10, 3, 4]</pre>
+<p>Python ens proporciona diferents operacions per treballar amb aquesta col·lecció.</p>
+
+<h2>1. Agregar: obtenir informació resumida</h2>
+<p>Les operacions agregades recorren una col·lecció i obtenen un resultat que resumeix les dades.</p>
+<pre>print(sum(notes))  # sols si els elements son numeros
+print(max(notes))       # els elements deuen ser comparables entre ells
+print(min(notes))
+print(len(notes))   #Quants elements té la llista</pre>
+<p><code>max, min, sum i len </code> també es poden aplicar a tuples, sets i dicts</p>
+
+<h2>2. Buscar</h2>
+<p>Podem comprovar si un element existeix en una col·lecció: (amb <code>in</code> )</p>
+<pre>if 10 in notes:
+    print("La nota 10 existeix")
+else:
+    print("La nota 10 NO existeix")</pre>
+<p><p><code>in</code> també es pot aplicar a tuples, sets i dicts</p></p>
+<p>També podem buscar un element concret: amb <code>index(element)</code></p>
+<pre>posicio = notes.index(9)
+print(posicio)</pre>
+<p><strong> ==> Important</strong>: si l'element no existeix, index() provoca un error ValueError:</p>
+<p><strong> ==> Important</strong>: si l'element està més d'una vegada, index() tornarà la posició del <strong>primer element</strong></p>
+<p>I pot ser que un element estiga més d'una vegada en la llista, i per saber quantes vegades està (amb <code>count(element)</code>  )...</p>
+<pre>quantitat = notes.count(4)   #  Quantes aparicions té l'element "4"
+print(quantitat)</pre>
+<p>També es pot fer servir  .index() amb un paràmetre que indique, a partir de quin element buscar..</p>
+<pre>posicio2 = notes.index(4,2)</pre>
+
+<h2>3. Ordenar</h2>
+<p>Podem ordenar els elements (els elements han de ser comparables entre si) amb:</p>
+<p></p>
+<pre>notes.sort()
+print(notes)</pre>
+<p> <strong>Compte !! </strong>Esta funció modifica la llista</p>
+<pre># També podem ordenar de major a menor:
+notes.sort(reverse=True)</pre>
+<p> Si els elements d'una llista no son del mateix tipus, no es podran ordenar, i si s'intenta, donarà un Error =>  TypeError</p>
+<p>Una altra possibilitat és fer servir la funció <code>sorted()</code>, que crea una nova llista ordenada:</p>
+<pre>notes_ordenades = sorted(notes)</pre>
+<p>Esta funció NO modifica la llista, la deixa intacta i crea una altra ordenada</p>
+<hr><p>Un tipus d'ordenació sense comparar elements és <code>reverse()</code></p>
+<pre># reverse() modifica la llista, posa l'ultim el primer, el penultim el segon, etc.....
+llista1.reverse() </pre>
+<p>Igual que en sort(), en reverse() existeix en Python reversed(), però no torna una llista, torna un iterador, i no es modifica la llista original</p>
+
+<h2>4. Filtrar</h2>
+<p>Filtrar significa seleccionar només els elements que compleixen una determinada condició.</p>
+<pre>aprovats = [nota for nota in notes if nota >= 5]
+print(aprovats)</pre>
+
+<h2>5. Transformar</h2>
+<p>Transformar significa aplicar una operació a cada element per obtenir una nova col·lecció.</p>
+<pre># Per exemple, podem augmentar totes les notes un punt:
+noves_notes = [nota + 1 for nota in notes]
+print(noves_notes)</pre>
+
+<h2>6. Agrupar</h2>
+<p>Agrupar significa reunir elements segons alguna característica comuna.</p>
+<pre># Per exemple, tenim alumnes amb el seu curs:
+alumnes = [
+    ("Anna", "DAW"),
+    ("Joan", "ASIX"),
+    ("Pere", "DAW"),
+    ("Maria", "ASIX")
+]  </pre>
+<p>Podríem voler obtenir els alumnes de cada cicle:</p>
+<pre><code>DAW  → Anna, Pere
+ASIX → Joan, Maria</code></pre>
+<pre># Utilitzant un diccionari
+grups = {}
+for nom, curs in alumnes:
+    if curs not in grups:
+        grups[curs] = []
+
+    grups[curs].append(nom)
+
+print(grups)     </pre>
+<pre>{
+    "DAW": ["Anna", "Pere"],
+    "ASIX": ["Joan", "Maria"]
+}</pre>
+<hr> <p>Quan treballem amb col·leccions, podem buscar, ordenar, filtrar, transformar, agrupar i agregar les dades per obtenir la informació que necessitem.</p>
+
+<!--  Altra ferramenta per agrupar
+  from itertools import groupby
+  for k,g in groupby("aaabbb"):
+      print(k,len(list(g)))
+
+  nums=[1,1,2,2,3]    
+  for k,g in groupby(nums):
+      print(k,list(g) )
+ 
+      #pero no m'agrada com agrupa, necessita que estiga ordenat (i que tots els elements siguen iguals...)
+
+-->
+
+</section>
+
+
+
+
 <section id="tuples">
 
       <h1>Tuples ()</h1>
@@ -317,22 +426,15 @@ new_list       ->  [[1, 2], [4, 6]]
   mesosAny[1]           # accés al segon element
   mesosAny[-1]          # accés a l'últim element
   mesosAny[:2]          # slicing
-  mesosAny[0] = 8       # ERROR, no podem modificar
+  mesosAny[0] = 8       # ERROR, no podem modificar. Tuples son immutables !
   tupla1 = ()           # tupla buida
   tupla2 = (6,)         # tupla d'un sol element, cal posar la coma!
   tupla1 + tupla2       # concatenar tuples
   tupla2 * 3            # repetir la tupla 3 vegades
-  "Mai" in mesosAny     # retorna True
-  len(tupla2)           # nombre d'elements
-  max, min, sum         # si els valors són compatibles
-  tupla1.count(23)      # comptar ocurrències
-  tupla1.index(23)      # posició d'un valor
-  tupla1.index(23, 3)   # a partir de la posició 3
   tupla = tuple(llista) # convertir una llista en tupla
-  sorted(tupla)         # retorna una llista ordenada
   nova_llista = list(tupla)  # convertir una tupla en llista
   tupla = (1, 2, 3)
-  a, b, c = tupla       # desempaquetat
+  a, b, c = tupla       # desempaquetat, unpacking
   tupla = (1, 2, 3, 4, 5)
   TUPLA2 = 1, 2, 3, 4    # altra forma de definir
   a, *b, c = tupla       # a=1, b=[2,3,4], c=5
@@ -341,8 +443,9 @@ new_list       ->  [[1, 2], [4, 6]]
   y = (1,)              # SÍ és una tupla
   tupla = 1, 2, ('a', 'b'), 3   # tupla amb elements niats
   for t in tupla: print(t)     # recorregut de la tupla
-  type(tupla2) is tuple        # comprova si és una tupla
-      </pre>
+  type(tupla2) is tuple        # comprova si és una tupla    
+        </pre>
+
       <pre># Una tupla no es pot re-ordenar, perquè és inmutable, 
 # però es pot crear una altra tupla ordenada
 t=(4,7,1,9,2,2)
@@ -360,15 +463,13 @@ t2=tuple(sorted(t))    # sorted(t) crea una llista ordenada a partir de t,
       <p>En Python <strong>no existeix</strong> la "tuple comprehension" com a tal.</p>
       <p>Si usem parèntesis (<code>()</code>) per intentar fer una comprensió, Python ho interpreta com un <strong>generator expression</strong>:</p>
       <pre>
-  tupla = (x**2 for x in range(5))
-  print(tupla)
-  # Resultat: &lt;generator object at 0x...&gt;
-      </pre>
+tupla = (x**2 for x in range(5))
+print(tupla)
+# Resultat: &lt;generator object at 0x...&gt;         </pre>
       <p>Açò <strong>no</strong> crea una tupla, sinó un objecte generador. Per convertir-lo en tupla:</p>
       <pre>
-  tupla = tuple(x**2 for x in range(5))
-  print(tupla)
-      </pre>
+tupla = tuple(x**2 for x in range(5))
+print(tupla)        </pre>
   
       <h4>Avantatges d’un generador:</h4>
       <ol>
@@ -377,6 +478,11 @@ t2=tuple(sorted(t))    # sorted(t) crea una llista ordenada a partir de t,
           <li><strong>Simplicitat</strong>: codi més net que una funció generadora.</li>
       </ol>
 
+    <h3>Operacions agregades en tuples</h3>
+    <pre>  # Operacions agregades: in, len, max, min, sum ,count, index  # Igual que en llistes    
+  sorted(tupla)         # retorna una llista ordenada
+  aprovats = tuple (nota for nota in notes if nota >= 5 )     # Filtrar  
+  tupla = tuple(x**2 for x in range(5))    # Transformar   </pre>
 
 </section>
 
@@ -404,29 +510,38 @@ del programa o amb el temps.</p>
   
       <h3>Exemples d’ús</h3>
       <pre>
-  conjunt_buit={}        # No es construeix així un conjunt
-  conjunt_buit = set()   #Així SI
-  conjunt = {1, 2, 2, 3}
-  print(conjunt)               # Eixida: {1, 2, 3}
-  conjunt = set([1, 2, 3, 3])  # convertir una llista en conjunt
+  conjunt_buit={}        # No es construeix així un conjunt. Açò crea un dict
+  conjunt_buit = set()   # Així SI
+  conjunt = {1, 2, 2, 3} # Així també
+  print(conjunt)               # Eixida: {1, 2, 3}   (elimina duplicats)
+  conjunt = set([1, 2, 3, 3])  # convertir una llista en conjunt 
+                               # (elimina duplicats)  ->  {1, 2, 3}
   conjunt = set( (1, 2, 3, 3) ) # convertir una tupla en conjunt
-  conjunt.add(3)               # afegir un element ( el nombre 3)
+  conjunt.add(4)               # afegir un element ( el nombre 4)
+  conjunt.add( [5, 6])         # afegir UN element ( la llista [5, 6] ) ->  {1,2,3,4, [5,6] }
+  conjunt.update([3,6,7,8])    # afegir elements d'una llista (u per u) 
+                               #  ( el nombre 3 no s'afegix perque ja existeix en el conjunt)
   conjunt.remove(2)            # elimina el nombre 2, dona error si no existeix
   conjunt.discard(4)           # elimina el nombre 4, no dona error si no existeix
   conjunt.pop()                # elimina i retorna un element aleatori. Si c es buit dona Error
   conjunt.clear()              # buida el conjunt
   
-  len(conjunt)                 # número d’elements
-  print(5 in conjunt)          # pertinença: True si 5 està en el conjunt
-  type(conjunt) is set         # comprova si és un conjunt
+  type(conjunt) is set         # comprova si és un conjunt (identitat)
   
   a = frozenset([1, 2, 3])     # conjunt immutable
   conjunt = {1, 2.5, "hola", (1, 2), frozenset([3, 4])}
   
+  # Recorrer un conjunt
   for element in conjunt:
       print(element)
       </pre>
-  
+
+<p>update() també funciona amb altres col·leccions (elements de les col·leccions)</p>
+<pre>conjunt.update((60, 70))       # tupla
+conjunt.update({80, 90})       # conjunt
+conjunt.update("abc")          # cadena</pre>
+<p>En el cas d'una string, s'afegeixen els caràcters individualment.</p>
+
       <h3>Operacions entre conjunts</h3>
       <pre>
   print(a.issubset(b))         # a està contingut en b
@@ -468,8 +583,17 @@ del programa o amb el temps.</p>
   # Exemple:
   parells = {x for x in range(10) if x % 2 == 0}
       </pre>
-  
+
+   <h3>Operacions agregades en conjunts</h3>
+    <pre>  # Operacions agregades: in, len, max, min, sum ,  # Igual que en llistes    
+  Les funcions  count() , index()  no tenen sentit en conjunts      
+  No es poden ordenar conjunts ( no ordenació )
+  c1 = { nota for nota in notes if nota >= 5 }     # Filtrar  
+  c2 = { x**2 for x in range(5) }    # Transformar   </pre>      
 </section>
+
+
+
 
 <section id="diccionaris">
       <h1>Diccionaris { , }</h1>
@@ -548,31 +672,50 @@ del programa o amb el temps.</p>
   print(quadrats)  # {1: 1, 2: 4, 3: 9, 4: 16}
       </pre>
 
-      <h2>Funcions <code>lambda</code> (funcions anònimes)</h2>
+  <h3>Operacions agregades en diccionaris</h3>
+    <pre># Operacions agregades: in, len, max, min, sum   
+# En diccionaris cal tenir en compte que moltes d'aquestes operacions 
+    #  treballen per defecte sobre les claus. (max, min, sum)
+# Si el que vols és treballar amb els valors, has d'utilitzar .values()
 
-      <p>Una expressió <code>lambda</code> en Python permet crear funcions petites i anònimes (sense nom). Són útils per definir comportaments ràpids o temporals, especialment dins d’estructures com diccionaris, funcions d’ordre superior (<code>map</code>, <code>filter</code>, <code>sorted</code>, etc.) o comprensions.</p>
+edats = {"Anna": 20,     "Pere": 25,     "Joan": 18   }
+print(max(edats))            # "Pere"
+print(max(edats.values()))   # 25
+print(min(edats.values()))   # 18
+print(sum(edats.values()))   # 63  
+"Pere" in edats          # True → busca entre les claus
+25 in edats              # False → NO busca entre els valors
+25 in edats.values()     # True → busca entre els valors      
+
+
+  Les funcions  count() , index()  no son mètodes de diccionaris
+# Ordenar. No es pot ordenar un diccionari, pero si els valors o les claus.
+# Filtrar  per valor 
+    aprovats = {  nom: nota   for nom, nota in notes.items()   if nota >= 5 }   
+# Filtrar per clau  
+    resultat = {     nom: nota     for nom, nota in notes.items()     if nom.startswith("A") }    
+#  Amb dict comprehension ==>    # Transformar   </pre> 
+
+
+    <hr> <h2>Funcions <code>lambda</code> (funcions anònimes)</h2>
+
+    <p>Una expressió <code>lambda</code> en Python permet crear funcions petites i anònimes (sense nom). Són útils per definir comportaments ràpids o temporals, especialment dins d’estructures com diccionaris, funcions d’ordre superior (<code>map</code>, <code>filter</code>, <code>sorted</code>, etc.) o comprensions.</p>
+    
+    <h3>Sintaxi</h3>
+    <pre>lambda arguments: expressió       </pre>
+    <p>Exemple bàsic:</p>
+    <pre>f = lambda x: x * 2
+print(f(4))   # Imprimeix 8       </pre>
       
-      <h3>Sintaxi</h3>
-      <pre>
-      lambda arguments: expressió
-      </pre>
-      <p>Exemple bàsic:</p>
-      <pre>
-      f = lambda x: x * 2
-      print(f(4))   # Imprimeix 8
-      </pre>
+    <h3>Exemple amb diccionari de funcions</h3>
+    <pre>operacions = {
+    "suma": lambda x, y: x + y,
+    "resta": lambda x, y: x - y
+}
+print(operacions["suma"](10, 5))  # Imprimeix 15
+print(operacions["resta"](10, 5))  # Imprimeix 5        </pre>
       
-      <h3>Exemple amb diccionari de funcions</h3>
-      <pre>
-      operacions = {
-          "suma": lambda x, y: x + y,
-          "resta": lambda x, y: x - y
-      }
-      print(operacions["suma"](10, 5))  # Imprimeix 15
-      print(operacions["resta"](10, 5))  # Imprimeix 5
-      </pre>
-      
-      <p>En este cas, <code>operacions</code> és un diccionari que guarda funcions lambda com a valors. Cada clau representa una operació aritmètica, i pots executar la funció cridant-la amb els arguments corresponents.</p>
+    <p>En este cas, <code>operacions</code> és un diccionari que guarda funcions lambda com a valors. Cada clau representa una operació aritmètica, i pots executar la funció cridant-la amb els arguments corresponents.</p>
 
 </section>
 
@@ -1160,6 +1303,573 @@ for numero in comptador(1, 5):
   </pre>
 
 </section>
+
+
+<section id="er">
+<h1>Expressions regulars</h1>
+<p>Les <strong>expressions regulars</strong> (també conegudes com a <strong>regex</strong>) són patrons que permeten buscar, comprovar i manipular text seguint unes regles determinades.</p>
+<p>Per exemple, podem utilitzar una expressió regular per comprovar si una cadena té el format d'un correu electrònic, per trobar tots els números que apareixen en un text o per substituir determinats fragments.</p>
+<p>En Python, les expressions regulars es treballen principalment mitjançant el mòdul <code>re</code>.</p>
+<pre>import re</pre>
+
+<hr>
+<h2>Patrons i coincidències</h2>
+<p>Una expressió regular està formada per un <strong>patró</strong>. El patró descriu què volem buscar dins d'un text.</p>
+<p>Per exemple, el patró <code>gat</code> busca exactament la seqüència de caràcters <code>gat</code>.</p>
+<pre>import re
+text = "El gat està dormint."
+resultat = re.search("gat", text)
+print(resultat)
+&lt;re.Match object; span=(3, 6), match='gat'>&lt;/re.Match></pre>
+
+<p>Si el patró es troba dins del text, <code>re.search()</code> retorna un objecte de tipus <code>Match</code>. Si no el troba, retorna <code>None</code>.</p>
+
+<pre>import re
+text = "El gat està dormint."
+resultat = re.search("gos", text)
+print(resultat)
+# None</pre>
+<hr>
+<h2>El mètode <code>search()</code></h2>
+<p><code>re.search()</code> busca el patró en qualsevol posició de la cadena i retorna la <strong>primera coincidència</strong> que troba.</p>
+<pre>import re
+text = "Python és un llenguatge de programació."
+resultat = re.search("Python", text)
+if resultat:
+   print("S'ha trobat el text")
+else:
+   print("No s'ha trobat")</pre>
+<p>Podem obtindre el text que ha coincidit mitjançant el mètode <code>group()</code>.</p>
+<pre>import re
+text = "El meu número és 12345."
+resultat = re.search(r"\d+", text)
+if resultat:
+   print(resultat.group())
+   # 12345</pre>
+
+<p>La <code>r</code> davant de la cadena indica que estem utilitzant una <strong>raw string</strong>. És una forma habitual d'escriure patrons d'expressions regulars, especialment quan contenen la barra invertida <code>\</code>.</p>
+<hr>
+<h2>Classes de caràcters</h2>
+<p>Les expressions regulars disposen de símbols especials per representar diferents tipus de caràcters.</p>
+<table>
+    <thead>
+        <tr>            <th>Patró</th>             <th>Significat</th>             <th>Exemple</th>        </tr>
+    </thead>
+    <tbody>
+        <tr>            <td><code>\d</code></td>             <td>Qualsevol dígit</td>             <td><code>0, 1, 2, ...</code></td>         </tr>
+        <tr>            <td><code>\D</code></td>              <td>Qualsevol caràcter que no siga un dígit</td>             <td><code>a, X, !, ...</code></td>        </tr>
+        <tr>            <td><code>\w</code></td>             <td>Caràcter de paraula</td>             <td><code>a, B, 7, _</code></td>        </tr>
+        <tr>            <td><code>\W</code></td>             <td>Caràcter que no siga de paraula</td>             <td><code>!, ?, espai...</code></td>        </tr>
+        <tr>            <td><code>\s</code></td>             <td>Espai en blanc</td>             <td>espai, tabulador, salt de línia...</td>        </tr>
+        <tr>            <td><code>\S</code></td>             <td>Caràcter que no siga un espai en blanc</td>             <td><code>a, 7, !...</code></td>        </tr>
+    </tbody>
+</table>
+
+<h3>Exemple amb dígits</h3>
+<p>El patró <code>\d</code> permet trobar un dígit. Si volem trobar un o més dígits consecutius, podem utilitzar <code>\d+</code>.</p>
+<pre>
+import re
+text = "L'edat de Joan és 25 anys."
+resultat = re.search(r"\d+", text)
+print(resultat.group())
+# 25</pre>
+
+<hr>
+<h2>Quantificadors</h2>
+<p>Els quantificadors indiquen <strong>quantes vegades</strong> pot aparéixer un element del patró.</p>
+<table>
+    <thead>
+        <tr>              <th>Quantificador</th>             <th>Significat</th>         </tr>
+    </thead>
+    <tbody>
+        <tr>             <td><code>*</code></td>             <td>Zero o més vegades</td>         </tr>
+        <tr>             <td><code>+</code></td>             <td>Una o més vegades</td>         </tr>
+        <tr>             <td><code>?</code></td>             <td>Zero o una vegada</td>         </tr>
+        <tr>             <td><code>{n}</code></td>             <td>Exactament n vegades</td>         </tr>
+        <tr>             <td><code>{n,m}</code></td>             <td>Entre n i m vegades</td>         </tr>
+    </tbody>
+</table>
+
+<h3>Exemple</h3>
+<p>El patró <code>\d{3}</code> busca exactament tres dígits consecutius.</p>
+<pre>import re
+text = "Codi: 123"
+resultat = re.search(r"\d{3}", text)
+print(resultat.group())
+# 123</pre>
+<p>En canvi, <code>\d+</code> busca una seqüència formada per un o més dígits.</p>
+<pre>import re
+text = "Productes: 12, 35 i 108"
+resultats = re.findall(r"\d+", text)
+print(resultats)
+# ['12', '35', '108']</pre>
+
+<hr>
+<h2>El mètode <code>findall()</code></h2>
+<p>Quan volem trobar <strong>totes les coincidències</strong> d'un patró, podem utilitzar <code>re.findall()</code>.</p>
+<pre>import re
+text = "Els números són 12, 25 i 48."
+numeros = re.findall(r"\d+", text)
+print(numeros)
+# ['12', '25', '48']</pre>
+
+<p>La diferència principal amb <code>search()</code> és:</p>
+<ul>
+    <li><code>search()</code> busca la primera coincidència.</li>
+    <li><code>findall()</code> retorna totes les coincidències.</li>
+</ul>
+
+<hr>
+<h2>Conjunts de caràcters</h2>
+<p>Amb els claudàtors <code>[]</code> podem indicar un conjunt de caràcters.</p>
+<pre>
+import re
+text = "gat gos git"
+resultats = re.findall(r"g[aeiou]t", text)
+print(resultats)
+# ['gat', 'git']</pre>
+
+<p>El patró <code>[aeiou]</code> indica que en aquesta posició pot aparéixer qualsevol de les cinc vocals.</p>
+<p>També podem utilitzar un rang de caràcters:</p>
+<pre>[0-9]       # qualsevol dígit
+[a-z]       # qualsevol lletra minúscula
+[A-Z]       # qualsevol lletra majúscula</pre>
+
+<hr>
+<h2>Inici i final d'una cadena</h2>
+<p>Alguns símbols permeten indicar la posició dins de la cadena.</p>
+<table>
+    <thead>
+        <tr>             <th>Símbol</th>             <th>Significat</th>         </tr>
+    </thead>
+    <tbody>
+        <tr>             <td><code>^</code></td>             <td>Inici de la cadena</td>         </tr>
+        <tr>             <td><code>$</code></td>             <td>Final de la cadena</td>         </tr>
+    </tbody>
+</table>
+
+<p>Per exemple, el patró següent comprova que la cadena comence per <code>Python</code>:</p>
+
+<pre>import re
+text = "Python és fàcil d'aprendre."
+if re.search(r"^Python", text):
+   print("La cadena comença per Python")</pre>
+
+<hr>
+<h2>El mètode <code>match()</code></h2>
+<p><code>re.match()</code> comprova la coincidència <strong>des de l'inici de la cadena</strong>.</p>
+<pre>import re
+text = "Python és un llenguatge."
+resultat = re.match(r"Python", text)
+if resultat:
+   print("Coincideix")
+else:
+   print("No coincideix")</pre>
+
+<p>Per això, <code>match()</code> i <code>search()</code> no són exactament iguals:</p>
+<ul>
+    <li><code>match()</code> només comprova des del principi.</li>
+    <li><code>search()</code> pot trobar la coincidència en qualsevol posició.</li>
+</ul>
+
+<hr>
+<h2>El mètode <code>fullmatch()</code></h2>
+<p>Quan volem comprovar que <strong>tota la cadena</strong> compleix un patró, podem utilitzar <code>re.fullmatch()</code>.</p>
+<p>Per exemple, per comprovar que una cadena conté exactament quatre dígits:</p>
+<pre>import re
+text = "1234"
+resultat = re.fullmatch(r"\d{4}", text)
+if resultat:
+   print("Format correcte")
+else:
+   print("Format incorrecte")</pre>
+
+<p>A diferència de <code>search()</code>, no n'hi ha prou que una part de la cadena coincidisca. <strong>Ha de coincidir tota la cadena.</strong></p>
+<hr>
+<h2>Substituir text amb <code>sub()</code></h2>
+<p>Les expressions regulars també permeten substituir fragments de text.</p>
+<pre>import re
+text = "El meu telèfon és 612345678."
+nou_text = re.sub(r"\d+", "XXXXXXXXX", text)
+print(nou_text)
+# El meu telèfon és XXXXXXXXX.</pre>
+
+<p><code>re.sub()</code> rep principalment tres elements:</p>
+<ol>
+    <li>El patró que volem buscar.</li>
+    <li>El text de substitució.</li>
+    <li>El text original.</li>
+</ol>
+
+<hr>
+<h2>Grups</h2>
+<p>Els parèntesis <code>()</code> permeten crear <strong>grups</strong> dins d'una expressió regular.</p>
+<p>Per exemple, podem separar el nom d'usuari i el domini d'un correu electrònic:</p>
+<pre>import re
+text = "[usuari@example.com](mailto:usuari@example.com)"
+resultat = re.search(r"(\w+)@(\w+.\w+)", text)
+if resultat:
+  print(resultat.group(1))
+  print(resultat.group(2))
+
+# usuari
+# example.com</pre>
+
+<p>Els grups són especialment útils quan, a més de trobar una coincidència, volem <strong>extraure diferents parts de la informació</strong>.</p>
+<hr>
+<h2>Exemple pràctic: comprovar un DNI</h2>
+<p>Podem utilitzar una expressió regular per comprovar el <strong>format</strong> d'un DNI espanyol: huit dígits seguits d'una lletra.</p>
+<pre>import re
+dni = "12345678Z"
+patro = r"\d{8}[A-Za-z]"
+if re.fullmatch(patro, dni):
+   print("Format de DNI correcte")
+else:
+   print("Format de DNI incorrecte")</pre>
+
+<p><strong>Important:</strong> aquesta expressió regular només comprova el <strong>format</strong>. No comprova que la lletra siga la que correspon matemàticament als huit dígits del DNI.</p>
+<hr>
+<h2>Expressions regulars: resum</h2>
+
+<table>
+    <thead>
+        <tr>             <th>Element</th>             <th>Funció</th>         </tr>
+    </thead>
+    <tbody>
+        <tr>             <td><code>\d</code></td>             <td>Un dígit</td>         </tr>
+        <tr>             <td><code>\w</code></td>             <td>Caràcter de paraula</td>         </tr>
+        <tr>             <td><code>\s</code></td>             <td>Espai en blanc</td>         </tr>
+        <tr>             <td><code>+</code></td>             <td>Una o més vegades</td>         </tr>
+        <tr>             <td><code>*</code></td>             <td>Zero o més vegades</td>         </tr>
+        <tr>             <td><code>?</code></td>            <td>Zero o una vegada</td>         </tr>
+        <tr>            <td><code>{n}</code></td>            <td>Exactament n vegades</td>        </tr>
+        <tr>            <td><code>[]</code></td>            <td>Conjunt de caràcters</td>        </tr>
+        <tr>            <td><code>^</code></td>            <td>Inici de la cadena</td>        </tr>
+        <tr>            <td><code>$</code></td>            <td>Final de la cadena</td>        </tr>
+        <tr>            <td><code>()</code></td>            <td>Grup</td>        </tr>
+    </tbody>
+</table>
+
+<p>Una <strong>expressió regular</strong>  és un patró que descriu una determinada forma de text. En Python, el mòdul <code>re</code> ens permet buscar, comprovar, extraure i substituir informació utilitzant aquests patrons.</p>
+<hr><p>Es poden fer comprovacions de patrons senzills sense <code>re</code> , utilitzant els mètodes normals de les cadenes.</p>
+<pre>if text.isdigit():
+if text.isalpha():    
+if text.isalnum():
+text.startswith("http")
+text.endswith(".com")
+text.lower()
+text.upper()
+text.find("Python")
+text.replace("gat", "gos")
+</pre>
+<p>==>Però això no són expressions regulars ....</p>
+
+<p>Per exemple, imagina que volem comprovar que una cadena té aquest format:</p>
+<pre>AB-1234-CD</pre>
+Sense re ho podríem fer, però necessitaríem bastant codi:
+<pre>text = "AB-1234-CD"
+correcte = (
+    len(text) == 10 and
+    text[0:2].isalpha() and
+    text[2] == "-" and
+    text[3:7].isdigit() and
+    text[7] == "-" and
+    text[8:10].isalpha()
+)
+
+print(correcte)  </pre>
+
+Amb una expressió regular:
+
+<pre>import re
+
+text = "AB-1234-CD"
+
+if re.fullmatch(r"[A-Za-z]{2}-\d{4}-[A-Za-z]{2}", text):
+    print("Format correcte")</pre>
+
+
+</section>
+
+
+
+    
+<section id="intercanvidades">
+   <h1>Llenguatges d’intercanvi de dades</h1>
+    <p>El format de dades (llenguatge d’intercanvi de dades) i el llenguatge de programació són coses diferents. 
+        Python no "és" un llenguatge JSON o CSV; Python disposa de biblioteques que permeten llegir,
+         crear, modificar i convertir dades en aquests formats.</p>
+    <p>Python pot manejar molts altres formats d'intercanvi de dades, a més de JSON i CSV</p>
+    <p>Els més habituals...</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Format</th>
+            <th>Extensió</th>
+            <th>Ús habitual</th>
+            <th>Python (llibreria)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>JSON</strong></td>
+            <td><code>.json</code></td>
+            <td>APIs, configuracions, intercanvi de dades</td>
+            <td><code>json</code></td>
+        </tr>
+        <tr>
+            <td><strong>CSV</strong></td>
+            <td><code>.csv</code></td>
+            <td>Dades tabulars</td>
+            <td><code>csv</code></td>
+        </tr>
+        <tr>
+            <td><strong>XML</strong></td>
+            <td><code>.xml</code></td>
+            <td>APIs, documents estructurats, sistemes antics</td>
+            <td><code>xml.etree.ElementTree</code></td>
+        </tr>
+        <tr>
+            <td><strong>YAML</strong></td>
+            <td><code>.yaml</code>, <code>.yml</code></td>
+            <td>Configuració, DevOps, Kubernetes</td>
+            <td><code>PyYAML</code></td>
+        </tr>
+        <tr>
+            <td><strong>TOML</strong></td>
+            <td><code>.toml</code></td>
+            <td>Configuració de projectes Python</td>
+            <td><code>tomllib</code></td>
+        </tr>
+        <tr>
+            <td><strong>INI</strong></td>
+            <td><code>.ini</code></td>
+            <td>Fitxers de configuració</td>
+            <td><code>configparser</code></td>
+        </tr>
+        <tr>
+            <td><strong>Excel</strong></td>
+            <td><code>.xlsx</code></td>
+            <td>Fulls de càlcul i dades tabulars</td>
+            <td><code>openpyxl</code>, <code>pandas</code></td>
+        </tr>
+        <tr>
+            <td><strong>HTML</strong></td>
+            <td><code>.html</code></td>
+            <td>Documents web</td>
+            <td><code>html</code>, <code>BeautifulSoup</code></td>
+        </tr>
+        <tr>
+            <td><strong>SQLite</strong></td>
+            <td><code>.db</code>, <code>.sqlite</code></td>
+            <td>Bases de dades locals</td>
+            <td><code>sqlite3</code></td>
+        </tr>
+        <tr>
+            <td><strong>Pickle</strong></td>
+            <td><code>.pkl</code></td>
+            <td>Serialització d'objectes Python</td>
+            <td><code>pickle</code></td>
+        </tr>
+    </tbody>
+</table>    
+
+
+</section>
+
+<section id="json">
+  <h1>Format JSON</h1>
+<p><strong>JSON</strong> (<em>JavaScript Object Notation</em>) és un format de text utilitzat per <strong>representar i intercanviar dades estructurades</strong>. És molt habitual en APIs, aplicacions web i fitxers de configuració.</p>
+
+<h2>Estructura bàsica</h2>
+
+<p>Un objecte JSON utilitza <code>{}</code> i conté parelles <strong>clau: valor</strong>. Les claus s'escriuen entre cometes dobles.</p>
+
+<pre>{
+"nom": "Anna",
+"edat": 20,
+"actiu": true
+}</pre>
+<p>(Açò recorda MOLT a un diccionari de Python !! ) 👀</p>
+
+<p>Pot contindre arrays ...</p>
+<pre>{ 
+"nom": "Anna", 
+"edat":20,
+"aficions": ["música", "cinema", "esport"] } </pre>
+<p>Pot contindre altres objectes (json)</p>
+<pre>{
+"nom": "Anna", 
+"edat": 20, 
+"adreça": { "carrer": "Major", 
+            "numero": 25,
+            "ciutat": "València" } 
+} </pre>
+<p>Pot contindre arrays d'objectes...</p>
+<pre> { "alumnes": [ { "nom": "Anna", "edat": 20 }, { "nom": "Joan", "edat": 21 } ] } </pre>
+<p> I podem fer recursivament, combinacions de : objectes, llistes i tipus de valors </p>
+
+<h2>Tipus de dades</h2>
+<table>
+    <thead>
+        <tr>            <th>JSON</th>            <th>Python</th>        </tr>
+    </thead>
+    <tbody>
+        <tr>            <td><code>"Anna"</code></td>            <td><code>str</code></td>        </tr>
+        <tr>            <td><code>20</code></td>            <td><code>int</code></td>        </tr>
+        <tr>            <td><code>true / false</code></td>            <td><code>True / False</code></td>        </tr>
+        <tr>            <td><code>null</code></td>            <td><code>None</code></td>        </tr>
+        <tr>            <td><code>{ }</code></td>            <td><code>dict</code></td>        </tr>
+        <tr>            <td><code>[ ]</code></td>            <td><code>list</code></td>        </tr>
+    </tbody>
+</table>
+
+<h2>JSON i Python</h2>
+
+<p>Python proporciona el mòdul <code>json</code> per convertir dades entre Python i JSON.</p>
+
+<pre>import json
+
+dades = {
+"nom": "Anna",
+"edat": 20
+}
+
+Python → cadena JSON
+text = json.dumps(dades)
+cadena JSON → Python
+dades2 = json.loads(text)</pre>
+
+<h2>Treballar amb fitxers</h2>
+
+<pre>Guardar en un fitxer
+
+with open("dades.json", "w", encoding="utf-8") as f:
+json.dump(dades, f, indent=4)
+
+Llegir un fitxer
+
+with open("dades.json", "r", encoding="utf-8") as f:
+dades = json.load(f)</pre>
+
+<h2>Funcions principals</h2>
+
+<table>
+    <thead>
+        <tr>            <th>Funció</th>            <th>Conversió</th>        </tr>
+    </thead>
+    <tbody>
+        <tr>            <td><code>json.dumps()</code></td>            <td>Python → cadena JSON</td>        </tr>
+        <tr>            <td><code>json.loads()</code></td>            <td>cadena JSON → Python</td>        </tr>
+        <tr>            <td><code>json.dump()</code></td>            <td>Python → fitxer JSON</td>        </tr>
+        <tr>            <td><code>json.load()</code></td>            <td>fitxer JSON → Python</td>        </tr>
+    </tbody>
+</table>
+
+<p><strong>JSON</strong> és un <strong>format de dades</strong>, no un diccionari Python. 
+    El mòdul <code>json</code> permet convertir entre les estructures de Python i aquest format.</p>
+    
+</section>
+
+
+
+
+
+<section id="csv">
+  <h1>Format CSV</h1>
+<p><strong>CSV</strong> (<em>Comma-Separated Values</em>) és un format de text utilitzat per <strong>emmagatzemar i intercanviar dades tabulars</strong>, és a dir, dades organitzades en files i columnes.</p>
+<p>Cada línia representa una <strong>fila</strong> i els diferents camps estan separats habitualment per comes.</p>
+
+<h2>Exemple</h2>
+<pre>nom,edat,curs
+Anna,20,DAW
+Joan,21,ASIX
+Maria,19,SMX</pre>
+
+<p>La primera fila s'utilitza habitualment com a <strong>capçalera</strong> i indica el nom de cada columna.</p>
+
+<h2>CSV i Python</h2>
+<p>Python proporciona el mòdul <code>csv</code> per treballar amb fitxers CSV.</p>
+
+<pre>import csv</pre>
+
+<h2>Llegir un fitxer CSV</h2>
+<pre>import csv
+
+with open("alumnes.csv", "r", encoding="utf-8", newline="") as f:
+lector = csv.DictReader(f)
+
+for fila in lector:
+    print(fila["nom"], fila["edat"])</pre>
+
+<p><code>DictReader</code> permet accedir als camps utilitzant el nom de la columna.</p>
+
+<h2>Escriure un fitxer CSV</h2>
+<pre>import csv
+
+alumnes = [
+["Anna", 20, "DAW"],
+["Joan", 21, "ASIX"],
+["Maria", 19, "SMX"]
+]
+
+with open("alumnes.csv", "w", encoding="utf-8", newline="") as f:
+escriptor = csv.writer(f)
+
+escriptor.writerow(["nom", "edat", "curs"])
+
+escriptor.writerows(alumnes)</pre>
+
+<h2>CSV amb diccionaris</h2>
+<p>També podem treballar directament amb diccionaris utilitzant <code>DictWriter</code>.</p>
+
+<pre>import csv
+
+alumne = {
+"nom": "Anna",
+"edat": 20,
+"curs": "DAW"
+}
+
+with open("alumne.csv", "w", encoding="utf-8", newline="") as f:
+camps = ["nom", "edat", "curs"]
+
+escriptor = csv.DictWriter(f, fieldnames=camps)
+
+escriptor.writeheader()
+escriptor.writerow(alumne)</pre>
+
+<h2>El separador</h2>
+<p>Encara que CSV significa <em>Comma-Separated Values</em>, el separador no ha de ser necessàriament una coma. En alguns països i aplicacions s'utilitza el <strong>punt i coma (<code>;</code>)</strong>.</p>
+<pre>nom;edat;curs
+Anna;20;DAW
+Joan;21;ASIX</pre>
+
+<p>Podem indicar el separador en Python:</p>
+<pre>lector = csv.DictReader(f, delimiter=";")</pre>
+
+<h2>CSV vs JSON</h2>
+<table>
+    <thead>
+        <tr>            <th>CSV</th>            <th>JSON</th>        </tr>
+    </thead>
+    <tbody>
+        <tr>            <td>Ideal per a dades tabulars</td>            <td>Ideal per a dades estructurades</td>        </tr>
+        <tr>            <td>Files i columnes</td>            <td>Objectes i arrays</td>        </tr>
+        <tr>            <td>Format molt senzill</td>            <td>Permet estructures més complexes</td>        </tr>
+        <tr>            <td>Molt utilitzat amb fulls de càlcul</td>            <td>Molt utilitzat en APIs</td>        </tr>
+    </tbody>
+</table>
+
+<p><strong>CSV</strong> és un format de text senzill i adequat per representar <strong>dades organitzades
+     en files i columnes</strong>. En Python, el mòdul <code>csv</code> permet llegir i escriure aquestes dades fàcilment.</p>
+  
+</section>
+
+
+
+
 
 
 
