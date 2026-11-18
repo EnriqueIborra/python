@@ -2,6 +2,7 @@
   {
     "CE": "1d-1",
     "titol": "En Python, què ocorre quan fem una primera assignació com `edat = 25`?",
+    "titol-curt": "Primera assignació d'una variable",
     "pista": "Pensa en què necessita Python per començar a treballar amb una variable.",
     "opcions": [
       {
@@ -29,6 +30,7 @@
   {
     "CE": "1d-1",
     "titol": "Observa el següent codi: `X = 10` i després `print(x)`. Què ocorre en Python?",
+    "titol-curt": "Majúscules i minúscules",
     "pista": "Fixa't en la diferència entre `X` i `x`.",
     "opcions": [
       {
@@ -54,120 +56,9 @@
     ]
   },
   {
-    "CE": "1d-1",
-    "titol": "Quina de les següents assignacions permet intercanviar correctament els valors de les variables `a` i `b` en Python?",
-    "pista": "Busca la forma que evita perdre el valor original d'una de les variables.",
-    "opcions": [
-      {
-        "text": "`a = b` i després `b = a`.",
-        "correcte": false,
-        "feedback": "Aquesta seqüència no fa un intercanvi correcte. Després de `a = b`, el valor original d'`a` es perd i les dues variables acaben amb el valor que tenia `b`."
-      },
-      {
-        "text": "`a, b = b, a`.",
-        "correcte": true,
-        "feedback": "Correcte. Python permet intercanviar els valors directament amb una assignació múltiple, sense necessitat d'una variable temporal."
-      },
-      {
-        "text": "`a = a + b` i després `b = a`.",
-        "correcte": false,
-        "feedback": "Aquesta operació modifica els valors però no realitza un intercanvi directe. A més, el valor original d'`a` ja no es conserva."
-      },
-      {
-        "text": "`b = a` i després `a = b`.",
-        "correcte": false,
-        "feedback": "Tampoc funciona com a intercanvi: primer copies el valor d'`a` en `b` i després tornes a copiar aquest mateix valor en `a`."
-      }
-    ]
-  },
-  {
-    "CE": "1d-1",
-    "titol": "Quin dels següents noms es pot utilitzar com a identificador de variable en Python?",
-    "pista": "Recorda que un identificador no pot començar amb un número ni ser una paraula reservada.",
-    "opcions": [
-      {
-        "text": "`2noms`",
-        "correcte": false,
-        "feedback": "No és vàlid perquè un identificador de Python no pot començar amb un dígit."
-      },
-      {
-        "text": "`class`",
-        "correcte": false,
-        "feedback": "No és vàlid perquè `class` és una paraula reservada de Python i té un significat especial en el llenguatge."
-      },
-      {
-        "text": "`nom-usuari`",
-        "correcte": false,
-        "feedback": "No és vàlid com a identificador perquè el guionet `-` no forma part dels caràcters permesos en un nom de variable."
-      },
-      {
-        "text": "`nom_usuari2`",
-        "correcte": true,
-        "feedback": "Correcte. Pot contenir lletres, dígits i subratllats, i en aquest cas no comença per un número ni és una paraula reservada."
-      }
-    ]
-  },
-
-
-
-  
-  {
-    "CE": "1e",
-    "titol": "En l'assignació `edat = 25`, què representa el valor `25`?",
-    "pista": "En una assignació, el costat dret conté el valor que es vol associar a la variable.",
-    "opcions": [
-      {
-        "text": "Un identificador que Python utilitza per localitzar la variable.",
-        "correcte": false,
-        "feedback": "No. `edat` és l'identificador o nom de la variable. `25` és el valor que s'assigna."
-      },
-      {
-        "text": "Un literal enter que Python interpreta com el valor de la variable.",
-        "correcte": true,
-        "feedback": "Correcte. `25` és un literal enter i, en aquesta assignació, és el valor que queda associat a la variable `edat`."
-      },
-      {
-        "text": "Un valor nul que indica que `edat` encara no té cap valor.",
-        "correcte": false,
-        "feedback": "No. El valor nul en Python es representa amb `None`. En aquest cas, `edat` rep el valor enter `25`."
-      },
-      {
-        "text": "Una cadena de text perquè qualsevol valor escrit després de `=` es considera text.",
-        "correcte": false,
-        "feedback": "No. Python determina el tipus a partir de la forma del literal. `25` és un enter, mentre que `'25'` o `\"25\"` serien cadenes de text."
-      }
-    ]
-  },
-  {
-    "CE": "1e",
-    "titol": "Quina de les següents expressions representa correctament una cadena de text en Python?",
-    "pista": "Les cadenes de text es delimiten amb cometes.",
-    "opcions": [
-      {
-        "text": "nom = Hola",
-        "correcte": false,
-        "feedback": "No. Sense cometes, `Hola` seria interpretat com un identificador, no com una cadena de text."
-      },
-      {
-        "text": "nom = \"Hola\"",
-        "correcte": true,
-        "feedback": "Correcte. En Python, les cadenes de text es poden delimitar amb cometes dobles. També es podrien utilitzar cometes simples: `nom = 'Hola'`."
-      },
-      {
-        "text": "nom = (Hola)",
-        "correcte": false,
-        "feedback": "Els parèntesis no converteixen `Hola` en una cadena. Per representar text cal utilitzar cometes simples o dobles."
-      },
-      {
-        "text": "nom = <Hola>",
-        "correcte": false,
-        "feedback": "Els símbols `<` i `>` no són delimitadors de cadenes en Python. Les cadenes es representen habitualment entre cometes simples o dobles."
-      }
-    ]
-  },
-  {
     "CE": "1e",
     "titol": "Quina afirmació és correcta sobre els valors lògics i el valor nul en Python?",
+    "titol-curt": "Valors booleans i None",
     "pista": "Para atenció a les majúscules i als noms exactes que utilitza Python.",
     "opcions": [
       {
@@ -194,38 +85,36 @@
   },
   {
     "CE": "1e",
-    "titol": "Quin valor correspon a un nombre hexadecimal en Python?",
-    "pista": "Recorda el prefix que Python utilitza per indicar que un nombre està escrit en hexadecimal.",
+    "titol": "Quina de les següents expressions representa correctament una cadena de text en Python?",
+    "titol-curt": "Cadenes de text",
+    "pista": "Les cadenes de text es delimiten amb cometes.",
     "opcions": [
       {
-        "text": "`0oFF`",
+        "text": "nom = Hola",
         "correcte": false,
-        "feedback": "No. El prefix `0o` indica una representació octal. Per a hexadecimal s'utilitza el prefix `0x`."
+        "feedback": "No. Sense cometes, `Hola` seria interpretat com un identificador, no com una cadena de text."
       },
       {
-        "text": "`FF0x`",
-        "correcte": false,
-        "feedback": "No. El prefix s'escriu abans del nombre hexadecimal, no després."
-      },
-      {
-        "text": "`hex(FF)`",
-        "correcte": false,
-        "feedback": "No. `hex()` és una funció que permet convertir un nombre a una representació hexadecimal; no és la sintaxi per escriure directament un literal hexadecimal."
-      },
-      {
-        "text": "`0xFF`",
+        "text": "nom = \"Hola\"",
         "correcte": true,
-        "feedback": "Correcte. En Python, els literals hexadecimals utilitzen el prefix `0x`. Per exemple, `0xFF` representa el valor decimal 255."
+        "feedback": "Correcte. En Python, les cadenes de text es poden delimitar amb cometes dobles. També es podrien utilitzar cometes simples: `nom = 'Hola'`."
+      },
+      {
+        "text": "nom = (Hola)",
+        "correcte": false,
+        "feedback": "Els parèntesis no converteixen `Hola` en una cadena. Per representar text cal utilitzar cometes simples o dobles."
+      },
+      {
+        "text": "nom = <Hola>",
+        "correcte": false,
+        "feedback": "Els símbols `<` i `>` no són delimitadors de cadenes en Python. Les cadenes es representen habitualment entre cometes simples o dobles."
       }
     ]
   },
-  
-
-
-
   {
     "CE": "1f-1",
     "titol": "Quina de les opcions següents representa un literal hexadecimal vàlid en Python?",
+    "titol-curt": "Sintaxi hexadecimal en Python",
     "pista": "Recorda quin prefix utilitza Python per indicar que un nombre està escrit en base 16.",
     "opcions": [
       {
@@ -252,34 +141,8 @@
   },
   {
     "CE": "1f-1",
-    "titol": "Quina afirmació descriu millor què és un literal en Python?",
-    "pista": "Pensa en un valor que apareix directament escrit en el codi, sense haver de calcular-lo a partir d'una altra expressió.",
-    "opcions": [
-      {
-        "text": "Un nom que identifica sempre una variable del programa.",
-        "correcte": false,
-        "feedback": "No és correcte. Un identificador pot ser el nom d'una variable, però un literal és directament una representació d'un valor, com 25, 3.14 o \"Hola\"."
-      },
-      {
-        "text": "Una funció que converteix qualsevol valor en una cadena de text.",
-        "correcte": false,
-        "feedback": "No és correcte. Les funcions transformen o processen valors, mentre que un literal és un valor escrit directament en el codi."
-      },
-      {
-        "text": "Un valor fix escrit directament en el codi, com 25, 3.14 o \"Hola\".",
-        "correcte": true,
-        "feedback": "Correcte. Un literal és una representació directa d'un valor en el codi. Pot ser, per exemple, un nombre, una cadena de text o altres tipus de dades."
-      },
-      {
-        "text": "Un valor que necessàriament ha d'estar emmagatzemat prèviament en una variable.",
-        "correcte": false,
-        "feedback": "No és correcte. Un literal pot aparéixer directament en una expressió sense estar assignat prèviament a una variable."
-      }
-    ]
-  },
-  {
-    "CE": "1f-1",
     "titol": "Quina de les expressions següents permet inserir correctament el valor d'una variable dins d'una cadena utilitzant una f-string?",
+    "titol-curt": "Interpolació amb f-strings",
     "pista": "En una f-string, la cadena comença amb la lletra f i les expressions es poden escriure entre claus.",
     "opcions": [
       {
@@ -305,40 +168,9 @@
     ]
   },
   {
-    "CE": "1f-1",
-    "titol": "Quin resultat produeix l'expressió `print(f\"{25:.2f}\")` en Python?",
-    "pista": "El format .2f indica que el nombre decimal s'ha de mostrar amb exactament dues xifres després del punt.",
-    "opcions": [
-      {
-        "text": "25.00",
-        "correcte": true,
-        "feedback": "Correcte. El format :.2f indica que el valor s'ha de representar com un nombre decimal amb dues xifres després del punt."
-      },
-      {
-        "text": "25.2",
-        "correcte": false,
-        "feedback": "No és correcte. .2f no significa una única xifra decimal: indica exactament dues xifres després del punt."
-      },
-      {
-        "text": "25",
-        "correcte": false,
-        "feedback": "No és correcte. El format f força la representació decimal i .2 indica que s'han de mostrar dues xifres decimals."
-      },
-      {
-        "text": "25.000",
-        "correcte": false,
-        "feedback": "No és correcte. .2f especifica dues xifres decimals, no tres. Per obtenir tres decimals s'utilitzaria .3f."
-      }
-    ]
-  },
-
-
-
-  
-
-  {
     "CE": "1f-2",
     "titol": "Què és una constant en un llenguatge de programació?",
+    "titol-curt": "Concepte de constant",
     "pista": "Pensa en un valor que rep un nom i que, per convenció, es manté sense canvis durant l'execució del programa.",
     "opcions": [
       {
@@ -365,61 +197,8 @@
   },
   {
     "CE": "1f-2",
-    "titol": "Com es defineixen habitualment les constants en Python?",
-    "pista": "Python no disposa d'una paraula clau específica per declarar constants. Cal seguir una convenció de nomenclatura.",
-    "opcions": [
-      {
-        "text": "Utilitzant la paraula clau constant abans del nom.",
-        "correcte": false,
-        "feedback": "No és correcte. Python no té una paraula clau constant per declarar constants."
-      },
-      {
-        "text": "Declarant-les amb noms en minúscules i utilitzant el prefix const_.",
-        "correcte": false,
-        "feedback": "No és la convenció habitual de Python. La pràctica estàndard és escriure els noms de les constants en majúscules, com PI o MAX_INTENTS."
-      },
-      {
-        "text": "Utilitzant noms en majúscules, com PI o MAX_INTENTS.",
-        "correcte": true,
-        "feedback": "Correcte. En Python, les constants es defineixen per convenció utilitzant noms en majúscules. Aquesta convenció indica als programadors que el valor no hauria de modificar-se."
-      },
-      {
-        "text": "Utilitzant obligatòriament la funció constant() per crear el valor.",
-        "correcte": false,
-        "feedback": "No existeix una funció constant() pròpia de Python per crear constants. Es tracta d'una convenció basada principalment en els noms en majúscules."
-      }
-    ]
-  },
-  {
-    "CE": "1f-2",
-    "titol": "Què ocorre si en Python escrivim `PI = 3.14159` i posteriorment fem `PI = 3`?",
-    "pista": "Recorda si Python impedeix realment modificar un nom escrit en majúscules.",
-    "opcions": [
-      {
-        "text": "Python genera sempre un error perquè PI és una constant.",
-        "correcte": false,
-        "feedback": "No és correcte. Python no impedeix modificar un nom que, per convenció, s'utilitza com a constant."
-      },
-      {
-        "text": "Python permet l'assignació, però modificar una constant per convenció no és recomanable.",
-        "correcte": true,
-        "feedback": "Correcte. Python no té suport natiu per impedir que es modifique una constant. Les majúscules són una convenció que indica als programadors que el valor no s'hauria de canviar."
-      },
-      {
-        "text": "Python converteix automàticament PI en un objecte immutable.",
-        "correcte": false,
-        "feedback": "No és correcte. La convenció de les constants no converteix automàticament l'objecte en immutable. Constant i immutabilitat són conceptes diferents."
-      },
-      {
-        "text": "Python conserva el primer valor i ignora qualsevol assignació posterior.",
-        "correcte": false,
-        "feedback": "No és correcte. Una nova assignació a PI substitueix la referència anterior, perquè Python no protegeix automàticament els noms utilitzats com a constants."
-      }
-    ]
-  },
-  {
-    "CE": "1f-2",
     "titol": "Quina diferència fonamental hi ha entre una constant i un objecte immutable en Python?",
+    "titol-curt": "Constants i objectes immutables",
     "pista": "Una idea depén d'una convenció sobre com utilitzem un nom; l'altra descriu una propietat de l'objecte.",
     "opcions": [
       {
@@ -444,13 +223,10 @@
       }
     ]
   },
-
-
-
-
   {
     "CE": "1g",
     "titol": "Quina diferència hi ha entre un literal i una expressió en Python?",
+    "titol-curt": "Diferència entre literal i expressió",
     "pista": "Pensa si el codi representa directament un valor o si combina elements per obtindre'l.",
     "opcions": [
       {
@@ -477,88 +253,8 @@
   },
   {
     "CE": "1g",
-    "titol": "Quin resultat i tipus de dada produeix l'expressió 10 / 5 en Python?",
-    "pista": "Recorda la diferència entre / i // en Python.",
-    "opcions": [
-      {
-        "text": "Produeix 2 i és de tipus int.",
-        "correcte": false,
-        "feedback": "No. Encara que matemàticament 10 dividit entre 5 és 2, l'operador / en Python sempre retorna un valor de tipus float."
-      },
-      {
-        "text": "Produeix 2.0 i és de tipus float.",
-        "correcte": true,
-        "feedback": "Correcte. L'operador / realitza una divisió ordinària i retorna sempre un float, encara que els dos operands siguen enters."
-      },
-      {
-        "text": "Produeix 2.0 i és de tipus int perquè la divisió és exacta.",
-        "correcte": false,
-        "feedback": "No. Que la divisió siga exacta no canvia el tipus del resultat. L'operador / sempre retorna float."
-      },
-      {
-        "text": "Produeix 0 i és de tipus int perquè no queda cap residu.",
-        "correcte": false,
-        "feedback": "No. El resultat de la divisió no és el residu. El residu s'obté amb l'operador %, mentre que / retorna 2.0."
-      }
-    ]
-  },
-  {
-    "CE": "1g",
-    "titol": "Quin serà el valor de resultat després d'executar `resultat = 3 + 4 * 2`?",
-    "pista": "Aplica les regles de precedència dels operadors.",
-    "opcions": [
-      {
-        "text": "14, perquè primer es fa la suma dins de l'expressió.",
-        "correcte": false,
-        "feedback": "No. La multiplicació té una precedència superior a la suma. Primer es calcula 4 * 2 i després s'afegeix 3."
-      },
-      {
-        "text": "10, perquè Python avalua sempre les operacions d'esquerra a dreta.",
-        "correcte": false,
-        "feedback": "No. Encara que alguns operadors s'avaluen d'esquerra a dreta, la precedència determina quina operació es fa abans. En aquest cas, la multiplicació precedeix la suma."
-      },
-      {
-        "text": "11, perquè primer es calcula 4 * 2 i després se suma 3.",
-        "correcte": true,
-        "feedback": "Correcte. Primer 4 * 2 = 8 i després 3 + 8 = 11. Els parèntesis permetrien modificar aquest ordre."
-      },
-      {
-        "text": "24, perquè Python interpreta l'expressió com `(3 + 4) * 2`.",
-        "correcte": false,
-        "feedback": "No. Python no interpreta automàticament la suma abans de la multiplicació. Per obtindre 14 caldria escriure `(3 + 4) * 2`."
-      }
-    ]
-  },
-  {
-    "CE": "1g",
-    "titol": "Quina afirmació descriu correctament l'ús de `==` i `=` en Python?",
-    "pista": "Un operador serveix per assignar i l'altre per comparar.",
-    "opcions": [
-      {
-        "text": "`=` compara dos valors i `==` assigna un valor a una variable.",
-        "correcte": false,
-        "feedback": "És al revés. `=` és l'operador d'assignació, mentre que `==` comprova si dos valors són iguals i retorna True o False."
-      },
-      {
-        "text": "`=` i `==` són equivalents, però `==` és una forma més explícita d'escriure una assignació.",
-        "correcte": false,
-        "feedback": "No. Tenen funcions diferents: `=` assigna un valor i `==` compara dos valors."
-      },
-      {
-        "text": "`==` només es pot utilitzar amb números, mentre que `=` es pot utilitzar amb qualsevol tipus de dada.",
-        "correcte": false,
-        "feedback": "No. `==` també permet comparar cadenes, booleans i altres valors. La seua funció és comprovar la igualtat."
-      },
-      {
-        "text": "`=` assigna un valor i `==` comprova si dos valors són iguals.",
-        "correcte": true,
-        "feedback": "Correcte. Per exemple, `x = 5` assigna 5 a x, mentre que `x == 5` comprova si x té el valor 5 i retorna True o False."
-      }
-    ]
-  },
-  {
-    "CE": "1g",
     "titol": "Quin resultat produeix l'expressió `True and False or True` tenint en compte la precedència dels operadors lògics?",
+    "titol-curt": "Precedència dels operadors lògics",
     "pista": "Recorda l'ordre de precedència: `not`, després `and` i finalment `or`.",
     "opcions": [
       {
@@ -584,39 +280,9 @@
     ]
   },
   {
-    "CE": "1g",
-    "titol": "Si `texto = \"Python\"`, què retorna l'expressió `texto[0:4]`?",
-    "pista": "En un slicing, l'índex inicial s'inclou i l'índex final no.",
-    "opcions": [
-      {
-        "text": "\"Pyth\"",
-        "correcte": true,
-        "feedback": "Correcte. El slicing `texto[0:4]` agafa els índexs 0, 1, 2 i 3: `P`, `y`, `t` i `h`. L'índex 4 no s'inclou."
-      },
-      {
-        "text": "\"Pytho\"",
-        "correcte": false,
-        "feedback": "No. L'índex final del slicing no s'inclou. Per obtindre `Pytho` caldria utilitzar `texto[0:5]`."
-      },
-      {
-        "text": "\"ytho\"",
-        "correcte": false,
-        "feedback": "No. El slicing comença en l'índex 0, que correspon a `P`. Per començar en `y` caldria utilitzar `texto[1:5]`."
-      },
-      {
-        "text": "\"Python\"",
-        "correcte": false,
-        "feedback": "No. `texto[0:4]` no inclou tota la cadena: només selecciona els caràcters des de l'índex 0 fins abans de l'índex 4."
-      }
-    ]
-  },
-
-
-
-
-  {
     "CE": "1h",
     "titol": "Què és la conversió implícita de tipus en Python?",
+    "titol-curt": "Conversió implícita de tipus",
     "pista": "En aquest cas, és Python qui realitza la conversió automàticament durant l'avaluació d'una expressió.",
     "opcions": [
       {
@@ -643,34 +309,8 @@
   },
   {
     "CE": "1h",
-    "titol": "Quin tipus tindrà el resultat de l'expressió següent? 5 + 2.5",
-    "pista": "Pensa què ocorre quan Python combina un enter amb un nombre decimal.",
-    "opcions": [
-      {
-        "text": "int",
-        "correcte": false,
-        "feedback": "No és correcte. En combinar un int amb un float, Python promociona l'enter a float abans de fer l'operació."
-      },
-      {
-        "text": "complex",
-        "correcte": false,
-        "feedback": "No és necessari arribar a complex en aquesta operació. La combinació d'int i float dona com a resultat un float."
-      },
-      {
-        "text": "float",
-        "correcte": true,
-        "feedback": "Correcte. Python converteix implícitament el 5 en 5.0 i calcula 5.0 + 2.5, obtenint 7.5, que és de tipus float."
-      },
-      {
-        "text": "str",
-        "correcte": false,
-        "feedback": "El resultat no és una cadena. Els dos operands són numèrics i Python realitza una operació aritmètica entre ells."
-      }
-    ]
-  },
-  {
-    "CE": "1h",
     "titol": "Quina instrucció realitza una conversió explícita d'una cadena de text a un nombre enter?",
+    "titol-curt": "Conversió explícita amb int()",
     "pista": "Busca la funció de Python que transforma un valor en un enter.",
     "opcions": [
       {
@@ -696,147 +336,9 @@
     ]
   },
   {
-    "CE": "1h",
-    "titol": "Quin resultat produeix l'expressió bool(0) en Python?",
-    "pista": "Recorda com interpreta Python els valors numèrics quan els converteix a booleans.",
-    "opcions": [
-      {
-        "text": "False",
-        "correcte": true,
-        "feedback": "Correcte. En convertir el número 0 a bool, Python obté False. Els valors numèrics diferents de zero es consideren True."
-      },
-      {
-        "text": "0",
-        "correcte": false,
-        "feedback": "El resultat no és el número 0, sinó el booleà False. La funció bool() realitza una conversió al tipus booleà."
-      },
-      {
-        "text": "None",
-        "correcte": false,
-        "feedback": "None representa l'absència de valor, però no és el resultat de convertir 0 amb bool()."
-      },
-      {
-        "text": "True",
-        "correcte": false,
-        "feedback": "0 és un dels valors que Python considera falsos en una conversió booleana. Un exemple que produiria True seria bool(5)."
-      }
-    ]
-  },
-  {
-    "CE": "1h",
-    "titol": "Què ocorre quan s'executa int(\"hola\")?",
-    "pista": "La funció int() necessita que la cadena represente un valor que puga interpretar-se com un enter.",
-    "opcions": [
-      {
-        "text": "Es converteix automàticament en 0 perquè \"hola\" no representa cap número.",
-        "correcte": false,
-        "feedback": "Python no converteix automàticament una cadena no numèrica en 0. La conversió no és possible i es produeix un error."
-      },
-      {
-        "text": "Es converteix en True perquè la cadena no està buida.",
-        "correcte": false,
-        "feedback": "Aquesta seria una conversió amb bool(), no amb int(). En aquest cas, int() intenta interpretar \"hola\" com un nombre enter."
-      },
-      {
-        "text": "Es produeix un ValueError perquè \"hola\" no representa un nombre enter vàlid.",
-        "correcte": true,
-        "feedback": "Correcte. int() pot convertir cadenes que representen enters, com \"10\", però \"hola\" no té una representació numèrica vàlida i provoca ValueError."
-      },
-      {
-        "text": "Es produeix una conversió implícita i el resultat és un float.",
-        "correcte": false,
-        "feedback": "No és una conversió implícita ni el resultat és float. int() és una conversió explícita i, en aquest cas, falla perquè la cadena no representa un enter."
-      }
-    ]
-  },
-  {
-    "CE": "1h",
-    "titol": "Quina afirmació descriu correctament la funció round() segons el text?",
-    "pista": "El text diferencia round() d'una conversió de tipus pròpiament dita.",
-    "opcions": [
-      {
-        "text": "Converteix sempre un float en un int eliminant-ne la part decimal.",
-        "correcte": false,
-        "feedback": "No és exactament així. round() serveix per arrodonir un nombre i permet indicar quants decimals volem conservar."
-      },
-      {
-        "text": "És una funció de conversió que transforma qualsevol nombre en una cadena.",
-        "correcte": false,
-        "feedback": "La conversió a cadena es realitza amb str(). round() treballa amb valors numèrics i serveix per arrodonir-los."
-      },
-      {
-        "text": "Converteix automàticament qualsevol cadena que continga decimals en un float.",
-        "correcte": false,
-        "feedback": "La conversió d'una cadena a float es fa amb float(). round() no converteix una cadena; arrodoneix un valor numèric."
-      },
-      {
-        "text": "Permet arrodonir un nombre i indicar, opcionalment, quants decimals volem conservar.",
-        "correcte": true,
-        "feedback": "Correcte. Per exemple, round(1/3, 2) produeix 0.33. El text destaca que round() és útil per reduir decimals no desitjats, però no és pròpiament una conversió de tipus."
-      }
-    ]
-  },
-
-
-
-  
-  {
-    "CE": "1i",
-    "titol": "Quin símbol s'utilitza en Python per indicar que la resta de la línia és un comentari?",
-    "pista": "El símbol fa que l'intèrpret ignore el text que apareix a continuació en aquella línia.",
-    "opcions": [
-      {
-        "text": "//",
-        "correcte": false,
-        "feedback": "En Python, // és l'operador de divisió entera. No s'utilitza per iniciar comentaris."
-      },
-      {
-        "text": "#",
-        "correcte": true,
-        "feedback": "Correcte. En Python, el símbol # inicia un comentari d'una línia i l'intèrpret ignora el text que apareix després."
-      },
-      {
-        "text": "--",
-        "correcte": false,
-        "feedback": "Python no utilitza -- per iniciar comentaris. Aquest símbol pot tenir altres significats en altres llenguatges o contextos."
-      },
-      {
-        "text": ";",
-        "correcte": false,
-        "feedback": "El punt i coma pot separar diverses instruccions en una mateixa línia, però no converteix el text posterior en un comentari."
-      }
-    ]
-  },
-  {
-    "CE": "1i",
-    "titol": "Quina és una utilitat adequada dels comentaris dins d'un programa Python?",
-    "pista": "Pensa en com poden ajudar una altra persona, o tu mateix en el futur, a entendre i mantenir el codi.",
-    "opcions": [
-      {
-        "text": "Fer que Python execute una instrucció amb una prioritat més alta.",
-        "correcte": false,
-        "feedback": "Els comentaris no modifiquen l'execució ni la prioritat de les instruccions. Són ignorats per l'intèrpret."
-      },
-      {
-        "text": "Augmentar automàticament la velocitat d'execució del programa.",
-        "correcte": false,
-        "feedback": "Els comentaris no tenen aquesta funció. Serveixen principalment per explicar, documentar o facilitar el manteniment del codi."
-      },
-      {
-        "text": "Explicar el propòsit del codi i facilitar-ne la comprensió i el manteniment.",
-        "correcte": true,
-        "feedback": "Correcte. Un comentari clar i concís pot ajudar a entendre què fa una part del programa i facilitar-ne el manteniment posterior."
-      },
-      {
-        "text": "Definir el tipus de les variables perquè Python puga executar-les correctament.",
-        "correcte": false,
-        "feedback": "Els comentaris no defineixen tipus de dades. Python interpreta les instruccions del programa independentment dels comentaris."
-      }
-    ]
-  },
-  {
     "CE": "1i",
     "titol": "Quina de les opcions següents permet escriure un comentari de diverses línies segons el text?",
+    "titol-curt": "Comentaris de diverses línies",
     "pista": "En aquest cas no s'utilitza el símbol # davant de cada línia.",
     "opcions": [
       {
@@ -864,6 +366,7 @@
   {
     "CE": "1i",
     "titol": "Observa el codi: x = 10  # Assignació d'un valor a x. Quina part serà ignorada per l'intèrpret de Python?",
+    "titol-curt": "Comentaris al final d'una instrucció",
     "pista": "Localitza el símbol que indica l'inici del comentari.",
     "opcions": [
       {
