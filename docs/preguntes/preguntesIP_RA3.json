@@ -251,199 +251,116 @@
       }
     ]
   },
+
   {
-    "CE": "3e",
-    "titol": "Quin valor retorna la funció `sumaEsp(3, 5)` en el codi següent? <pre>def sumaEsp(a, b):\n    if a > b:\n        resultat = a + b + b + 1\n    else:\n        resultat = a + a + b + 2\n    return resultat</pre>",
-    "titol-curt": "Retorn d'una funció amb condicions",
-    "pista": "Compara primer els valors de `a` i `b` per saber quin bloc s'executa.",
+    "CE": "3e1",
+    "titol": "Quin resultat retorna bool(\"False\") en Python i per què?",
+    "titol-curt": "Conversió a booleà",
+    "pista": "La funció bool() no interpreta el significat del text, sinó que comprova si el valor està buit o és zero.",
     "opcions": [
       {
-        "text": "13",
+        "text": "Retorna True perquè la cadena conté caràcters.",
         "correcte": true,
-        "feedback": "Correcte. Com que `3 > 5` és fals, s'executa l'`else`: `3 + 3 + 5 + 2 = 13`. El `return` fa que aquest valor siga retornat per la funció."
+        "feedback": "Correcte. Qualsevol cadena no buida és un valor truthy. Python no interpreta que el text \"False\" represente el booleà False."
       },
       {
-        "text": "14",
+        "text": "Retorna False perquè el text indica un valor fals.",
         "correcte": false,
-        "feedback": "No. El càlcul de l'`else` és `a + a + b + 2`, és a dir, `3 + 3 + 5 + 2 = 13`."
+        "feedback": "Incorrecte. bool() no interpreta el significat del contingut de la cadena. Només comprova si està buida o no."
       },
       {
-        "text": "19",
+        "text": "Retorna None perquè no reconeix el text com a booleà.",
         "correcte": false,
-        "feedback": "No. Aquest resultat correspondria al càlcul de l'altra branca (`3 + 5 + 5 + 1`), però aquesta branca només s'executaria si `a > b` fora certa."
+        "feedback": "Incorrecte. bool() sempre retorna un valor booleà, True o False, segons si el valor d'entrada és truthy o falsy."
       },
       {
-        "text": "8",
+        "text": "Provoca un error perquè espera un booleà real.",
         "correcte": false,
-        "feedback": "No. La funció no retorna simplement `a + b`. Quan `a` no és major que `b`, executa `a + a + b + 2`, que en aquest cas dona `13`."
+        "feedback": "Incorrecte. bool() pot convertir diferents tipus de dades, incloses les cadenes de text, sense necessitat que siguen booleans."
       }
     ]
   },
   {
-    "CE": "3f",
-    "titol": "Quina diferència hi ha entre `import mi_modulo` i `from mi_modulo import saludar`?",
-    "titol-curt": "Formes d'importar mòduls",
-    "pista": "Fixa't en si necessites escriure el nom del mòdul abans de la funció.",
+    "CE": "3e1",
+    "titol": "Quina diferència hi ha entre els mètodes find() i index() quan busquen una subcadena?",
+    "titol-curt": "Diferència entre find() i index()",
+    "pista": "Pensa què retorna cada mètode quan el text que busquem no apareix en la cadena.",
     "opcions": [
       {
-        "text": "Amb `import mi_modulo` s'utilitza `mi_modulo.saludar()`, mentre que amb `from mi_modulo import saludar` es pot utilitzar directament `saludar()`.",
+        "text": "find() retorna una excepció i index() retorna -1.",
+        "correcte": false,
+        "feedback": "Incorrecte. El comportament és just el contrari: find() retorna -1 si no troba la subcadena, mentre que index() genera una excepció."
+      },
+      {
+        "text": "Tots dos retornen -1 quan no troben la subcadena.",
+        "correcte": false,
+        "feedback": "Incorrecte. Només find() retorna -1 quan no troba el text. index() genera una excepció en eixa situació."
+      },
+      {
+        "text": "find() retorna -1 i index() genera una excepció.",
         "correcte": true,
-        "feedback": "Correcte. `import mi_modulo` importa el mòdul i conserva `mi_modulo` com a espai de noms. En canvi, `from mi_modulo import saludar` importa directament la funció, que es pot cridar sense el prefix del mòdul."
+        "feedback": "Correcte. Quan la subcadena no existeix, find() indica que no s'ha trobat retornant -1, mentre que index() llança una excepció."
       },
       {
-        "text": "Les dues formes són equivalents i sempre obliguen a escriure `mi_modulo.saludar()`.",
+        "text": "find() retorna False i index() retorna None.",
         "correcte": false,
-        "feedback": "No. Amb `from mi_modulo import saludar`, la funció s'importa directament i es pot cridar com `saludar()`, sense utilitzar `mi_modulo.`."
+        "feedback": "Incorrecte. Cap dels dos mètodes utilitza False o None per indicar que no ha trobat la subcadena."
+      }
+    ]
+  },
+   {
+    "CE": "3e1",
+    "titol": "Quina diferència hi ha entre els mètodes upper() i capitalize() aplicats a una cadena?",
+    "titol-curt": "Majúscules en cadenes",
+    "pista": "Un dels mètodes transforma totes les lletres en majúscules, mentre que l'altre modifica el format de la primera lletra.",
+    "opcions": [
+      {
+        "text": "upper() posa en majúscula la primera paraula i capitalize() totes les lletres.",
+        "correcte": false,
+        "feedback": "Incorrecte. Les funcions tenen el comportament contrari: upper() transforma totes les lletres en majúscules i capitalize() només posa en majúscula la primera lletra de la cadena."
       },
       {
-        "text": "Amb `import mi_modulo` només es poden importar variables, mentre que `from mi_modulo import saludar` permet importar funcions.",
-        "correcte": false,
-        "feedback": "No. `import mi_modulo` importa el mòdul complet, que pot contindre funcions, variables i classes. L'altra sintaxi permet seleccionar elements concrets."
+        "text": "upper() posa en majúscula totes les lletres i capitalize() només la primera.",
+        "correcte": true,
+        "feedback": "Correcte. upper() transforma tota la cadena en majúscules. capitalize() posa en majúscula la primera lletra i converteix la resta de lletres en minúscules."
       },
       {
-        "text": "Amb `from mi_modulo import saludar` s'importa tot el mòdul, mentre que `import mi_modulo` importa només la funció indicada.",
+        "text": "upper() posa en majúscula cada paraula i capitalize() conserva la resta.",
         "correcte": false,
-        "feedback": "És al contrari. `import mi_modulo` importa el mòdul, mentre que `from mi_modulo import saludar` importa específicament l'element `saludar`."
+        "feedback": "Incorrecte. El mètode que posa en majúscula la primera lletra de cada paraula és title(). capitalize() només afecta la primera lletra de tota la cadena."
+      },
+      {
+        "text": "upper() elimina les minúscules i capitalize() elimina els espais.",
+        "correcte": false,
+        "feedback": "Incorrecte. Cap dels dos mètodes elimina caràcters ni espais. upper() i capitalize() retornen una cadena amb un format de majúscules diferent."
       }
     ]
   },
   {
-    "CE": "3f",
-    "titol": "Després d'executar `import mi_modulo`, com s'ha d'utilitzar la funció `saludar()` que està definida dins del mòdul?",
-    "titol-curt": "Accedir a funcions d'un mòdul",
-    "pista": "Quan s'importa tot el mòdul, el seu nom passa a formar part de l'espai de noms utilitzat per accedir als seus elements.",
+    "CE": "3e1",
+    "titol": "Quin resultat s'obté en executar 'a,b,c'.split(',') en Python?",
+    "titol-curt": "Dividir cadenes amb split()",
+    "pista": "El mètode utilitza el separador indicat per dividir una cadena en diferents fragments.",
     "opcions": [
       {
-        "text": "`mi_modulo.saludar(\"Ana\")`",
+        "text": "Retorna una cadena única amb les comes substituïdes per espais.",
+        "correcte": false,
+        "feedback": "Incorrecte. split() no substitueix el separador per espais, sinó que divideix la cadena en fragments."
+      },
+      {
+        "text": "Retorna una tupla amb els tres fragments de text.",
+        "correcte": false,
+        "feedback": "Incorrecte. split() retorna una llista de subcadenes, no una tupla."
+      },
+      {
+        "text": "Retorna una llista amb els elements ['a', 'b', 'c'].",
         "correcte": true,
-        "feedback": "Correcte. Quan s'utilitza `import mi_modulo`, cal indicar l'espai de noms del mòdul, seguit d'un punt i del nom de l'element: `mi_modulo.saludar()`."
+        "feedback": "Correcte. split(',') utilitza la coma com a separador i retorna una llista amb cada fragment de la cadena."
       },
       {
-        "text": "`saludar(\"Ana\")`, perquè les funcions del mòdul passen automàticament a l'espai de noms global.",
+        "text": "Retorna un booleà que indica si existeixen tres fragments.",
         "correcte": false,
-        "feedback": "No. Amb `import mi_modulo`, la funció continua dins de l'espai de noms del mòdul. Per això cal escriure `mi_modulo.saludar()`."
-      },
-      {
-        "text": "`mi_modulo::saludar(\"Ana\")`, perquè els elements dels mòduls s'accedeixen mitjançant dos punts.",
-        "correcte": false,
-        "feedback": "No. En Python s'utilitza un punt (`.`) per accedir a un element d'un espai de noms. La sintaxi correcta és `mi_modulo.saludar()`."
-      },
-      {
-        "text": "`import mi_modulo.saludar(\"Ana\")`, perquè cal tornar a importar la funció cada vegada que s'utilitza.",
-        "correcte": false,
-        "feedback": "No. El mòdul només s'importa amb `import mi_modulo`. Després, els seus elements es poden utilitzar mitjançant l'espai de noms `mi_modulo`."
-      }
-    ]
-  },
-  {
-    "CE": "3g",
-    "titol": "Quin valor té `__name__` quan un fitxer Python s'executa directament?",
-    "titol-curt": "Valor de __name__ en executar un fitxer",
-    "pista": "Compara el valor de `__name__` quan el fitxer és el programa principal amb el valor que té quan s'importa.",
-    "opcions": [
-      {
-        "text": "`\"__main__\"`",
-        "correcte": true,
-        "feedback": "Correcte. Quan Python executa el fitxer directament, la variable especial `__name__` pren el valor `\"__main__\"`. Per això la condició `if __name__ == \"__main__\":` resulta verdadera."
-      },
-      {
-        "text": "El nom del fitxer incloent l'extensió `.py`.",
-        "correcte": false,
-        "feedback": "No. Quan el fitxer s'executa directament, `__name__` pren el valor `\"__main__\"`. En el cas de la importació, el text indica que pren el nom del fitxer sense `.py`."
-      },
-      {
-        "text": "`\"main.py\"`",
-        "correcte": false,
-        "feedback": "No. `__main__` és un valor especial que Python assigna a `__name__` quan el fitxer s'executa directament; no és el nom del fitxer."
-      },
-      {
-        "text": "El nom del mòdul que ha importat el fitxer.",
-        "correcte": false,
-        "feedback": "No. Quan el fitxer és el programa principal, `__name__` val `\"__main__\"`. Quan s'importa, pren el nom del fitxer segons el text."
-      }
-    ]
-  },
-  {
-    "CE": "3g",
-    "titol": "Quina és la finalitat principal de la construcció `if __name__ == \"__main__\":` en un programa Python?",
-    "titol-curt": "Finalitat de __main__",
-    "pista": "Pensa què ha de passar quan el fitxer s'executa directament i què ha de passar quan s'importa.",
-    "opcions": [
-      {
-        "text": "Fer que un bloc de codi només s'execute quan el fitxer es posa en marxa directament.",
-        "correcte": true,
-        "feedback": "Correcte. La construcció permet diferenciar entre executar el fitxer directament i importar-lo com a mòdul. El bloc només s'executa en el primer cas."
-      },
-      {
-        "text": "Fer que totes les funcions del fitxer s'executen automàticament quan el mòdul és importat.",
-        "correcte": false,
-        "feedback": "No. Precisament serveix per evitar que el codi principal del bloc s'execute quan el fitxer és importat com a mòdul."
-      },
-      {
-        "text": "Indicar a Python quin és el nom de la primera funció que ha d'executar del fitxer.",
-        "correcte": false,
-        "feedback": "No. `__main__` no identifica una funció. El seu objectiu és comprovar si el fitxer s'està executant directament."
-      },
-      {
-        "text": "Impedir que el fitxer puga ser importat des d'un altre programa Python.",
-        "correcte": false,
-        "feedback": "No. El fitxer continua podent importar-se. El que s'evita és que el codi situat dins del bloc `if` s'execute automàticament durant la importació."
-      }
-    ]
-  },
-  {
-    "CE": "3h",
-    "titol": "Quina és la principal diferència entre l'ASCII original i Unicode?",
-    "titol-curt": "ASCII i Unicode",
-    "pista": "Pensa en la quantitat i varietat de caràcters que pot representar cada estàndard.",
-    "opcions": [
-      {
-        "text": "ASCII original utilitza 7 bits i representa 128 caràcters, mentre que Unicode permet representar caràcters de molts idiomes, símbols i emojis.",
-        "correcte": true,
-        "feedback": "Correcte. ASCII original utilitza valors del 0 al 127 i està limitat principalment a l'alfabet anglès i alguns símbols. Unicode amplia enormement el conjunt de caràcters representables."
-      },
-      {
-        "text": "ASCII utilitza 8 bits i Unicode només 7 bits, però Unicode inclou els mateixos caràcters que ASCII.",
-        "correcte": false,
-        "feedback": "No. ASCII original utilitza 7 bits, mentre que Unicode no està limitat a 7 bits. Unicode defineix un conjunt molt més ampli de caràcters i pot utilitzar codificacions com UTF-8 i UTF-16."
-      },
-      {
-        "text": "ASCII i Unicode representen exactament els mateixos caràcters, però Unicode utilitza números diferents per a cada caràcter.",
-        "correcte": false,
-        "feedback": "No. Unicode comparteix els primers caràcters amb ASCII, però també inclou molts més caràcters, com lletres d'altres idiomes, símbols matemàtics i emojis."
-      },
-      {
-        "text": "ASCII només serveix per a números, mentre que Unicode és el que permet representar lletres i símbols.",
-        "correcte": false,
-        "feedback": "No. ASCII també representa lletres, signes de puntuació i altres símbols. La diferència principal és que el conjunt original d'ASCII és molt més limitat que Unicode."
-      }
-    ]
-  },
-  {
-    "CE": "3h",
-    "titol": "Quina és la finalitat principal de normalitzar cadenes Unicode amb `unicodedata.normalize(\"NFC\", text)`?",
-    "titol-curt": "Normalització de cadenes Unicode",
-    "pista": "Pensa en el problema que apareix quan dos textos es veuen igual però tenen representacions Unicode diferents.",
-    "opcions": [
-      {
-        "text": "Convertir diferents representacions Unicode equivalents en una forma normalitzada, facilitant comparacions coherents entre cadenes.",
-        "correcte": true,
-        "feedback": "Correcte. La normalització NFC pot convertir una seqüència com `e` + accent combinant en la forma composta `é`, de manera que representacions visualment equivalents puguen coincidir en la comparació."
-      },
-      {
-        "text": "Convertir qualsevol cadena Unicode a ASCII per eliminar els caràcters que no formen part de l'alfabet anglès.",
-        "correcte": false,
-        "feedback": "No. La normalització Unicode no converteix les cadenes a ASCII. El seu objectiu és unificar representacions Unicode equivalents segons una forma de normalització."
-      },
-      {
-        "text": "Transformar sempre cada caràcter compost en dos caràcters independents per facilitar-ne el processament.",
-        "correcte": false,
-        "feedback": "No. Això descriu més aviat una forma descomposta com NFD. NFC busca la forma composta quan és possible."
-      },
-      {
-        "text": "Eliminar les marques combinants de totes les cadenes perquè els accents no afecten mai les comparacions.",
-        "correcte": false,
-        "feedback": "No. La normalització no consisteix a eliminar els accents. En NFC, per exemple, una lletra base i una marca combinant poden convertir-se en un únic caràcter compost."
+        "feedback": "Incorrecte. split() no comprova una condició ni retorna un booleà: genera una llista amb les parts en què s'ha dividit la cadena."
       }
     ]
   }
